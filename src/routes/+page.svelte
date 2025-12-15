@@ -14,21 +14,23 @@
 		const formData = new FormData(form);
 
 		try {
-			const response = await fetch('https://formsubmit.co/ajax/milan.rother@gmx.de', {
+			const response = await fetch('https://api.web3forms.com/submit', {
 				method: 'POST',
-				body: formData,
-				headers: {
-					'Accept': 'application/json'
-				}
+				body: formData
 			});
 
-			if (response.ok) {
+			const data = await response.json();
+			console.log('Web3Forms response:', data);
+
+			if (data.success) {
 				formStatus = 'success';
 				form.reset();
 			} else {
+				console.error('Form error:', data);
 				formStatus = 'error';
 			}
-		} catch {
+		} catch (err) {
+			console.error('Form exception:', err);
 			formStatus = 'error';
 		}
 	}
@@ -367,9 +369,10 @@
 					</div>
 				{:else}
 					<form onsubmit={handleSubmit} class="card p-8 space-y-6">
-						<!-- FormSubmit configuration -->
-						<input type="hidden" name="_template" value="table" />
-						<input type="hidden" name="_captcha" value="false" />
+						<!-- Web3Forms configuration -->
+						<input type="hidden" name="access_key" value="6b5ed4bf-68a0-45cc-9b44-f89d78af8a94" />
+						<input type="hidden" name="subject" value="New contact from milanrother.com" />
+						<input type="hidden" name="from_name" value="Website Contact Form" />
 
 						<div class="grid sm:grid-cols-2 gap-6">
 							<div>
