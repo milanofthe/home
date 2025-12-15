@@ -14,7 +14,7 @@
 		const formData = new FormData(form);
 
 		try {
-			const response = await fetch('https://formspree.io/f/xpwzgkvq', {
+			const response = await fetch('https://formsubmit.co/ajax/milan.rother@gmx.de', {
 				method: 'POST',
 				body: formData,
 				headers: {
@@ -367,6 +367,10 @@
 					</div>
 				{:else}
 					<form onsubmit={handleSubmit} class="card p-8 space-y-6">
+						<!-- FormSubmit configuration -->
+						<input type="hidden" name="_template" value="table" />
+						<input type="hidden" name="_captcha" value="false" />
+
 						<div class="grid sm:grid-cols-2 gap-6">
 							<div>
 								<label for="name" class="block text-sm font-medium text-cream/70 mb-2">Name</label>
