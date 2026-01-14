@@ -338,13 +338,16 @@
 					</h2>
 					<div class="space-y-4 text-cream/70 leading-relaxed">
 						<p>
-							I'm a freelance consultant and PhD candidate in electrical engineering, specializing in numerical simulation and scientific computing. Currently, I'm working with MIT Plasma Science & Fusion Center on nuclear fusion fuel-cycle system modeling and simulation.
+							Research engineer and PhD candidate in electrical engineering. I build simulation software and solve numerical problems for teams working on complex physical systems.
 						</p>
 						<p>
-							I created <a href="https://pathsim.org" target="_blank" rel="noopener" class="link">PathSim</a>, an open-source Python framework for block-based dynamical system simulation. It's now used by researchers at MIT PSFC and CEA, and has been published in the Journal of Open Source Software.
+							Currently consulting for MIT Plasma Science & Fusion Center on nuclear fusion fuel-cycle modeling — building simulation infrastructure for systems that don't fit in commercial tools. Previously at TU Braunschweig, where I developed numerical methods for electrochemical sensors and EDA pipelines for cryogenic quantum applications, validated in silicon.
 						</p>
 						<p>
-							With a Master's degree in electrical engineering (honors) and a background spanning control systems, multi-physics simulation, and real-time computing, I help teams build simulations that are accurate, fast, and well-architected.
+							I built <a href="https://pathsim.org" target="_blank" rel="noopener" class="link">PathSim</a> because system modeling software has a long history of vendor lock-in and clunky UX. It's pure Python, open source, and designed from first principles. Now used by researchers at MIT and CEA.
+						</p>
+						<p>
+							Master's in electrical engineering (with honors) from TU Braunschweig. Background in software development for simulation, dynamical systems, and numerical methods. I've taught these subjects to hundreds of students — I care about making complex systems understandable.
 						</p>
 					</div>
 
