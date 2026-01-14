@@ -212,10 +212,10 @@
 						href="https://view.pathsim.org"
 						target="_blank"
 						rel="noopener"
-						class="btn-primary text-lg px-8 py-4"
+						class="inline-flex items-center gap-2 px-6 py-3 border border-pathsim/50 text-pathsim font-display font-medium rounded-lg transition-all duration-300 hover:bg-pathsim/10 hover:border-pathsim"
 					>
 						Try PathView
-						<Icons name="arrow-right" class="w-5 h-5" />
+						<Icons name="arrow-right" class="w-4 h-4" />
 					</a>
 					<p class="text-sm text-cream/50 mt-3">No installation required — build simulations in your browser</p>
 				</div>
@@ -235,6 +235,15 @@
 
 				<!-- Links -->
 				<div class="flex flex-wrap gap-4 justify-center">
+					<a
+						href="https://view.pathsim.org"
+						target="_blank"
+						rel="noopener"
+						class="inline-flex items-center gap-2 text-cream/70 hover:text-pathsim transition-colors"
+					>
+						<Icons name="globe" class="w-5 h-5" />
+						<span>Try PathView</span>
+					</a>
 					<a
 						href="https://github.com/milanofthe/pathsim"
 						target="_blank"
@@ -309,9 +318,9 @@
 	<!-- About Section -->
 	<section id="about" class="relative py-24 lg:py-32">
 		<div class="max-w-6xl mx-auto px-6">
-			<div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+			<div class="grid lg:grid-cols-4 gap-12 lg:gap-16 items-center">
 				<!-- Portrait -->
-				<div class="lg:col-span-2 flex justify-center">
+				<div class="lg:col-span-1 flex justify-center">
 					<div class="w-48 lg:w-56 rounded-lg border border-cream/10 overflow-hidden">
 						<img
 							src="/images/headshot_milan.png"
@@ -322,7 +331,7 @@
 				</div>
 
 				<!-- Bio -->
-				<div class="lg:col-span-3">
+				<div class="lg:col-span-3 lg:pl-4">
 					<p class="section-label mb-4">About Me</p>
 					<h2 class="font-display text-3xl sm:text-4xl font-bold text-cream mb-6">
 						Milan Rother
