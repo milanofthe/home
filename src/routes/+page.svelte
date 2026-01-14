@@ -291,11 +291,11 @@
 			<div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
 				<!-- Portrait -->
 				<div class="lg:col-span-2 flex justify-center">
-					<div class="w-48 h-48 lg:w-56 lg:h-56 rounded-2xl border border-cream/10 overflow-hidden">
+					<div class="w-48 lg:w-56 rounded-lg border border-cream/10 overflow-hidden">
 						<img
-							src="/images/headshot_linkedin_2_crop.png"
+							src="/images/headshot_milan.png"
 							alt="Milan Rother"
-							class="w-full h-full object-cover"
+							class="w-full h-auto"
 						/>
 					</div>
 				</div>

@@ -1,6 +1,11 @@
 # Dependencies
 node_modules
 
+# AI
+.claude
+claude.md
+CLAUDE.md
+
 # Build outputs
 build
 .svelte-kit
