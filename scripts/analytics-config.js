@@ -36,5 +36,5 @@ export const config = {
 	accountId: process.env.CF_ACCOUNT_ID || '',
 	apiToken: process.env.CF_API_TOKEN || '',
 	graphqlEndpoint: 'https://api.cloudflare.com/client/v4/graphql',
-	maxHistoryDays: 90 // Cloudflare keeps ~90 days
+	maxHistoryDays: 30 // Cloudflare free tier limits query range
 };
