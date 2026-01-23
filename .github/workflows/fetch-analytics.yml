@@ -1,0 +1,45 @@
+name: Fetch Analytics
+
+on:
+  schedule:
+    # Run daily at 6:00 UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch Cloudflare analytics
+        run: npm run fetch-analytics
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_SITE_TAG_PATHSIM: ${{ secrets.CF_SITE_TAG_PATHSIM }}
+          CF_SITE_TAG_PATHSIM_DOCS: ${{ secrets.CF_SITE_TAG_PATHSIM_DOCS }}
+          CF_SITE_TAG_PATHVIEW: ${{ secrets.CF_SITE_TAG_PATHVIEW }}
+          CF_SITE_TAG_PYSIMHUB: ${{ secrets.CF_SITE_TAG_PYSIMHUB }}
+          CF_SITE_TAG_MILANROTHER: ${{ secrets.CF_SITE_TAG_MILANROTHER }}
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/lib/data/analytics.json
+          git diff --staged --quiet || git commit -m "Update analytics data"
+          git push

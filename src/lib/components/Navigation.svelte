@@ -18,10 +18,11 @@
 	}
 
 	const navLinks = [
-		{ href: '#about', label: 'About' },
-		{ href: '#services', label: 'Services' },
-		{ href: '#projects', label: 'Projects' },
-		{ href: '#contact', label: 'Contact' }
+		{ href: '/#about', label: 'About' },
+		{ href: '/#services', label: 'Services' },
+		{ href: '/#projects', label: 'Projects' },
+		{ href: '/dashboard', label: 'Dashboard' },
+		{ href: '/#contact', label: 'Contact' }
 	];
 
 	let showBackground = $derived(scrolled || mobileMenuOpen);
@@ -42,7 +43,7 @@
 				{#each navLinks as link}
 					<a
 						href={link.href}
-						class="font-body text-sm transition-colors duration-200 {link.href === '#contact' ? 'text-teal hover:text-teal-light font-medium' : 'text-cream/70 hover:text-teal'}"
+						class="font-body text-sm transition-colors duration-200 {link.href === '/#contact' ? 'text-teal hover:text-teal-light font-medium' : 'text-cream/70 hover:text-teal'}"
 					>
 						{link.label}
 					</a>
@@ -72,7 +73,7 @@
 					{#each navLinks as link}
 						<a
 							href={link.href}
-							class="font-body transition-colors {link.href === '#contact' ? 'text-teal font-medium' : 'text-cream/70 hover:text-teal'}"
+							class="font-body transition-colors {link.href === '/#contact' ? 'text-teal font-medium' : 'text-cream/70 hover:text-teal'}"
 							onclick={closeMenu}
 						>
 							{link.label}
