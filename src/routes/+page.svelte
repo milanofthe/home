@@ -20,22 +20,40 @@
 			});
 
 			const data = await response.json();
-			console.log('Web3Forms response:', data);
 
 			if (data.success) {
 				formStatus = 'success';
 				form.reset();
 			} else {
-				console.error('Form error:', data);
 				formStatus = 'error';
 			}
 		} catch (err) {
-			console.error('Form exception:', err);
 			formStatus = 'error';
 		}
 	}
 
-	// Tiles with stats from GitHub (fetched at build time)
+	const services = [
+		{
+			icon: 'code' as const,
+			title: 'Model Development',
+			description: 'Mathematical models that fit your data and pipeline. From differential equations to state-space representations.',
+			items: ['System identification', 'Parameter estimation', 'Model order reduction', 'Validation']
+		},
+		{
+			icon: 'zap' as const,
+			title: 'Numerical Problem Solving',
+			description: 'Fixing stability, convergence, and performance issues. Making slow models fast and unstable models robust.',
+			items: ['Stiff system handling', 'Solver selection', 'Multirate integration', 'Parallelization']
+		},
+		{
+			icon: 'layers' as const,
+			title: 'Digital Twin Integration',
+			description: 'Connecting multiple models into unified simulations. Co-simulation of FEM, circuit, and system-level models.',
+			items: ['Multi-physics coupling', 'Co-simulation', 'Real-time integration', 'API design']
+		}
+	];
+
+	// PathSim tiles with stats
 	const pathsimTiles = [
 		{ icon: 'cpu' as const, title: 'Hot-Swappable', caption: 'Runtime changes' },
 		{ icon: 'layers' as const, title: 'Hierarchical', caption: 'Nested subsystems' },
@@ -44,6 +62,7 @@
 		{ icon: 'star' as const, title: `${githubStats.pathsim.stars}+`, caption: 'GitHub Stars' }
 	];
 
+	// PySimHub tiles
 	const pysimhubTiles = [
 		{ icon: 'layers' as const, title: 'Browse', caption: 'Simulation libraries' },
 		{ icon: 'code' as const, title: 'Submit', caption: 'Your projects' },
@@ -51,79 +70,107 @@
 		{ icon: 'github' as const, title: 'Open Source', caption: 'MIT licensed' },
 		{ icon: 'star' as const, title: `${githubStats.pysimhub.projects}`, caption: 'Featured Projects' }
 	];
-
-	const services = [
-		{
-			icon: 'code' as const,
-			title: 'Model Development',
-			description: 'Formulating mathematical models that fit your data and modeling pipeline. From differential equations to state-space representations.',
-			items: ['System identification', 'Parameter estimation', 'Model order reduction', 'Validation against data']
-		},
-		{
-			icon: 'zap' as const,
-			title: 'Numerical Problem Solving',
-			description: 'Fixing stability, convergence, and performance issues in your simulations. Making slow models fast and unstable models robust.',
-			items: ['Stiff system handling', 'Solver selection & tuning', 'Multirate integration', 'HPC & parallelization']
-		},
-		{
-			icon: 'layers' as const,
-			title: 'Digital Twin Integration',
-			description: 'Connecting multiple models into unified simulations. Co-simulation of FEM, circuit, and system-level models.',
-			items: ['Multi-physics coupling', 'Co-simulation orchestration', 'Real-time integration', 'API & pipeline design']
-		}
-	];
-
 </script>
 
 <Navigation />
 
-<main class="relative">
-	<!-- Background grid pattern -->
-	<div class="fixed inset-0 bg-grid-pattern bg-grid opacity-50 pointer-events-none"></div>
-
+<main class="bg-charcoal min-h-screen">
 	<!-- Hero Section -->
-	<section class="relative min-h-screen flex items-center overflow-hidden">
-		<div class="relative z-10 max-w-6xl mx-auto px-6 py-32">
-			<div class="max-w-3xl">
-				<p class="section-label mb-6 animate-fade-in">Dynamical Systems Modeling & Simulation</p>
+	<section class="relative min-h-screen flex items-center">
+		<div class="max-w-6xl mx-auto px-6 py-32 w-full">
+			<div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+				<!-- Photo -->
+				<div class="flex-shrink-0">
+					<div class="w-48 h-48 lg:w-56 lg:h-56 rounded-full border-2 border-cream/10 overflow-hidden">
+						<img
+							src="/images/headshot_milan.png"
+							alt="Milan Rother"
+							class="w-full h-full object-cover"
+						/>
+					</div>
+				</div>
 
-				<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-6 animate-slide-up">
-					Building interconnected
-					<span class="text-gradient">dynamical systems</span>
-				</h1>
-
-				<p class="text-lg sm:text-xl text-cream/70 leading-relaxed mb-8 max-w-2xl animate-slide-up animate-delay-100">
-					Creator of <a href="https://pathsim.org" target="_blank" rel="noopener" class="link font-medium">PathSim</a>, a Python-native open-source system modeling and simulation platform. With contributions from MIT Plasma Science & Fusion Center and CEA.
-				</p>
-
-				<!-- CTA -->
-				<div class="animate-slide-up animate-delay-200">
-					<a href="#contact" class="btn-primary">
-						Get in Touch
-						<Icons name="arrow-right" class="w-4 h-4" />
-					</a>
+				<!-- Intro -->
+				<div class="text-center lg:text-left">
+					<p class="section-label mb-4">Dynamical Systems & Simulation</p>
+					<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-6">
+						Milan Rother
+					</h1>
+					<p class="text-lg sm:text-xl text-cream/70 leading-relaxed mb-8 max-w-2xl">
+						Building tools and infrastructure for numerical modeling and simulation. Creator of <a href="https://pathsim.org" class="link">PathSim</a>. Currently consulting for MIT on nuclear fusion fuel-cycle modeling.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+						<a href="#contact" class="btn-primary">
+							Get in Touch
+							<Icons name="arrow-right" class="w-4 h-4" />
+						</a>
+						<a href="#projects" class="btn-secondary">
+							View Projects
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
+	</section>
 
-		<!-- Scroll indicator -->
-		<div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-			<div class="w-6 h-10 border-2 border-cream/20 rounded-full flex justify-center">
-				<div class="w-1 h-2 bg-teal rounded-full mt-2"></div>
+	<!-- About Section -->
+	<section id="about" class="py-24 lg:py-32 border-t border-cream/5">
+		<div class="max-w-4xl mx-auto px-6">
+			<div class="text-center mb-8">
+				<h2 class="font-display text-3xl sm:text-4xl font-bold text-teal uppercase">
+					Who am I
+				</h2>
+			</div>
+			<div class="space-y-6 text-lg text-cream/70 leading-relaxed">
+				<p>
+					I'm a research engineer and PhD candidate in electrical engineering. I build simulation software and solve numerical problems for teams working on complex physical systems.
+				</p>
+				<p>
+					Currently consulting for <span class="text-cream">MIT Plasma Science & Fusion Center</span> on nuclear fusion fuel-cycle modeling — building simulation infrastructure for systems that don't fit in commercial tools.
+				</p>
+				<p>
+					Previously at TU Braunschweig, where I developed numerical methods for electrochemical sensors and EDA pipelines for cryogenic quantum applications, validated in silicon.
+				</p>
+				<p>
+					I built <a href="https://pathsim.org" class="link">PathSim</a> because system modeling software has a long history of vendor lock-in and clunky UX. It's pure Python, open source, and designed from first principles. I also designed the documentation sites, landing pages, and <a href="https://view.pathsim.org" class="link">PathView</a> — the browser-based editor.
+				</p>
+			</div>
+
+			<!-- Social links -->
+			<div class="flex flex-wrap gap-4 mt-10 justify-center">
+				<a
+					href="https://github.com/milanofthe"
+					target="_blank"
+					rel="noopener"
+					class="inline-flex items-center gap-2 text-cream/70 hover:text-teal transition-colors"
+					aria-label="GitHub"
+				>
+					<Icons name="github" class="w-5 h-5" />
+					<span>GitHub</span>
+				</a>
+				<a
+					href="https://linkedin.com/in/milan-rother-648474183"
+					target="_blank"
+					rel="noopener"
+					class="inline-flex items-center gap-2 text-cream/70 hover:text-teal transition-colors"
+					aria-label="LinkedIn"
+				>
+					<Icons name="linkedin" class="w-5 h-5" />
+					<span>LinkedIn</span>
+				</a>
 			</div>
 		</div>
 	</section>
 
 	<!-- Services Section -->
-	<section id="services" class="relative py-24 lg:py-32">
+	<section id="services" class="py-24 lg:py-32 border-t border-cream/5">
 		<div class="max-w-6xl mx-auto px-6">
 			<div class="text-center mb-16">
-				<p class="section-label mb-4">What I Offer</p>
-				<h2 class="font-display text-3xl sm:text-4xl font-bold text-cream mb-4">
-					Services
+				<h2 class="font-display text-3xl sm:text-4xl font-bold text-teal uppercase mb-4">
+					What I do
 				</h2>
 				<p class="text-lg text-cream/60 max-w-2xl mx-auto">
-					Expert in dynamical systems, differential equations, numerics, and Python integration.
+					Building tools and infrastructure for numerical and modeling software — from solvers and APIs to documentation and developer UX.
 				</p>
 			</div>
 
@@ -149,13 +196,12 @@
 		</div>
 	</section>
 
-	<!-- PathSim Section -->
-	<section id="pathsim" class="relative py-24 lg:py-32">
+	<!-- Projects Section -->
+	<section id="projects" class="py-24 lg:py-32 border-t border-cream/5">
 		<div class="max-w-6xl mx-auto px-6">
-			<div class="text-center">
-				<p class="font-mono text-xs uppercase tracking-[0.2em] text-pathsim mb-8">Featured Project</p>
-
-				<!-- Logos side by side -->
+			<!-- PathSim -->
+			<div class="text-center mb-20">
+				<!-- Logos -->
 				<div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mb-8">
 					<img src="/images/pathsim_logo.png" alt="PathSim" class="h-20 w-auto" />
 					<span class="text-cream/30 text-2xl font-light hidden sm:block">+</span>
@@ -196,22 +242,13 @@
 				<!-- Links -->
 				<div class="flex flex-wrap gap-4 justify-center">
 					<a
-						href="https://view.pathsim.org"
+						href="https://pathsim.org"
 						target="_blank"
 						rel="noopener"
 						class="inline-flex items-center gap-2 text-cream/70 hover:text-pathsim transition-colors"
 					>
 						<Icons name="globe" class="w-5 h-5" />
-						<span>Try PathView</span>
-					</a>
-					<a
-						href="https://github.com/milanofthe/pathsim"
-						target="_blank"
-						rel="noopener"
-						class="inline-flex items-center gap-2 text-cream/70 hover:text-pathsim transition-colors"
-					>
-						<Icons name="github" class="w-5 h-5" />
-						<span>View on GitHub</span>
+						<span>Homepage</span>
 					</a>
 					<a
 						href="https://docs.pathsim.org"
@@ -222,20 +259,47 @@
 						<Icons name="book" class="w-5 h-5" />
 						<span>Documentation</span>
 					</a>
+					<a
+						href="https://view.pathsim.org"
+						target="_blank"
+						rel="noopener"
+						class="inline-flex items-center gap-2 text-cream/70 hover:text-pathsim transition-colors"
+					>
+						<Icons name="play" class="w-5 h-5" />
+						<span>PathView</span>
+					</a>
+					<a
+						href="https://github.com/milanofthe/pathsim"
+						target="_blank"
+						rel="noopener"
+						class="inline-flex items-center gap-2 text-cream/70 hover:text-pathsim transition-colors"
+					>
+						<Icons name="github" class="w-5 h-5" />
+						<span>GitHub</span>
+					</a>
 				</div>
 			</div>
-		</div>
-	</section>
 
-	<!-- PySimHub Section -->
-	<section id="pysimhub" class="relative py-24 lg:py-32 bg-charcoal-warm/30">
-		<div class="max-w-6xl mx-auto px-6">
-			<div class="text-center">
-				<p class="font-mono text-xs uppercase tracking-[0.2em] text-pysimhub mb-4">Founder</p>
+			<!-- PySimHub -->
+			<div class="text-center pt-16 border-t border-cream/5">
 				<img src="/images/pysimhub-logo.png" alt="PySimHub" class="h-16 w-auto mb-6 mx-auto" />
-				<p class="text-lg text-cream/70 leading-relaxed mb-10 max-w-2xl mx-auto">
+				<p class="text-lg text-cream/70 leading-relaxed mb-8 max-w-2xl mx-auto">
 					An open community catalog for Python simulation and numerics libraries. Helping researchers, engineers, and developers discover tools across robotics, control systems, fluid dynamics, optimization, and more.
 				</p>
+
+				<!-- Submit CTA -->
+				<div class="mb-10">
+					<a
+						href="https://pysimhub.io/submit/"
+						target="_blank"
+						rel="noopener"
+						class="inline-flex items-center gap-2 px-6 py-3 border border-pysimhub/50 text-pysimhub font-display font-medium rounded-lg transition-all duration-300 hover:bg-pysimhub/10 hover:border-pysimhub"
+					>
+						Submit Your Project
+						<Icons name="arrow-right" class="w-4 h-4" />
+					</a>
+					<p class="text-sm text-cream/50 mt-3">Add your library to the catalog</p>
+				</div>
 
 				<!-- Tiles -->
 				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
@@ -275,82 +339,18 @@
 		</div>
 	</section>
 
-	<!-- About Section -->
-	<section id="about" class="relative py-24 lg:py-32">
-		<div class="max-w-6xl mx-auto px-6">
-			<div class="grid lg:grid-cols-4 gap-12 lg:gap-16 items-center">
-				<!-- Portrait -->
-				<div class="lg:col-span-1 flex justify-center">
-					<div class="w-48 lg:w-56 rounded-lg border border-cream/10 overflow-hidden">
-						<img
-							src="/images/headshot_milan.png"
-							alt="Milan Rother"
-							class="w-full h-auto"
-						/>
-					</div>
-				</div>
-
-				<!-- Bio -->
-				<div class="lg:col-span-3 lg:pl-4">
-					<p class="section-label mb-4">About Me</p>
-					<h2 class="font-display text-3xl sm:text-4xl font-bold text-cream mb-6">
-						Milan Rother
-					</h2>
-					<div class="space-y-4 text-cream/70 leading-relaxed">
-						<p>
-							Research engineer and PhD candidate in electrical engineering. I build simulation software and solve numerical problems for teams working on complex physical systems.
-						</p>
-						<p>
-							Currently consulting for MIT Plasma Science & Fusion Center on nuclear fusion fuel-cycle modeling — building simulation infrastructure for systems that don't fit in commercial tools. Previously at TU Braunschweig, where I developed numerical methods for electrochemical sensors and EDA pipelines for cryogenic quantum applications, validated in silicon.
-						</p>
-						<p>
-							I built <a href="https://pathsim.org" target="_blank" rel="noopener" class="link">PathSim</a> because system modeling software has a long history of vendor lock-in and clunky UX. It's pure Python, open source, and designed from first principles. Now used by researchers at MIT and CEA.
-						</p>
-						<p>
-							Master's in electrical engineering (with honors) from TU Braunschweig. Background in software development for simulation, dynamical systems, and numerical methods. I've taught these subjects to hundreds of students — I care about making complex systems understandable.
-						</p>
-					</div>
-
-					<!-- Social links -->
-					<div class="flex gap-4 mt-8">
-						<a
-							href="https://github.com/milanofthe"
-							target="_blank"
-							rel="noopener"
-							class="w-10 h-10 rounded-lg bg-charcoal-light border border-cream/10 flex items-center justify-center text-cream/60 hover:text-teal hover:border-teal/30 transition-all"
-							aria-label="GitHub"
-						>
-							<Icons name="github" class="w-5 h-5" />
-						</a>
-						<a
-							href="https://linkedin.com/in/milan-rother-648474183"
-							target="_blank"
-							rel="noopener"
-							class="w-10 h-10 rounded-lg bg-charcoal-light border border-cream/10 flex items-center justify-center text-cream/60 hover:text-teal hover:border-teal/30 transition-all"
-							aria-label="LinkedIn"
-						>
-							<Icons name="linkedin" class="w-5 h-5" />
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- Contact Section -->
-	<section id="contact" class="relative py-24 lg:py-32 bg-charcoal-warm/30">
-		<div class="max-w-6xl mx-auto px-6">
+	<section id="contact" class="py-24 lg:py-32 border-t border-cream/5">
+		<div class="max-w-2xl mx-auto px-6">
 			<div class="text-center mb-10">
-				<p class="section-label mb-4">Get in Touch</p>
-				<h2 class="font-display text-3xl sm:text-4xl font-bold text-cream mb-6">
-					Let's Build Something Together
+				<h2 class="font-display text-3xl sm:text-4xl font-bold text-teal uppercase mb-6">
+					Let's Work Together
 				</h2>
 				<p class="text-lg text-cream/60">
-					Have a simulation challenge? I offer a free 30-minute consultation to discuss your needs.
+					Have a simulation challenge? I offer a free 30-minute consultation.
 				</p>
 			</div>
 
-			<!-- Contact Form -->
 			{#if formStatus === 'success'}
 				<div class="card p-8 border-glow text-center">
 					<div class="w-16 h-16 rounded-full bg-teal/10 flex items-center justify-center mx-auto mb-4">
@@ -361,7 +361,6 @@
 				</div>
 			{:else}
 				<form onsubmit={handleSubmit} class="card p-8 space-y-6">
-					<!-- Web3Forms configuration -->
 					<input type="hidden" name="access_key" value="6b5ed4bf-68a0-45cc-9b44-f89d78af8a94" />
 					<input type="hidden" name="subject" value="New contact from milanrother.com" />
 					<input type="hidden" name="from_name" value="Website Contact Form" />
@@ -432,7 +431,6 @@
 				</form>
 			{/if}
 
-			<!-- Alternative contact -->
 			<p class="text-sm text-cream/40 mt-8 text-center">
 				Prefer LinkedIn? <a href="https://linkedin.com/in/milan-rother-648474183" target="_blank" rel="noopener" class="link">Connect with me there</a>.
 			</p>
@@ -440,7 +438,7 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="relative py-12 border-t border-cream/5">
+	<footer class="py-12 border-t border-cream/5">
 		<div class="max-w-6xl mx-auto px-6">
 			<div class="flex flex-col sm:flex-row items-center justify-between gap-4">
 				<span class="text-sm text-cream/40">Milan Rother</span>

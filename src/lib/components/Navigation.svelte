@@ -18,16 +18,17 @@
 	}
 
 	const navLinks = [
-		{ href: '#services', label: 'Services' },
-		{ href: '#pathsim', label: 'PathSim' },
-		{ href: '#pysimhub', label: 'PySimHub' },
 		{ href: '#about', label: 'About' },
+		{ href: '#services', label: 'Services' },
+		{ href: '#projects', label: 'Projects' },
 		{ href: '#contact', label: 'Contact' }
 	];
+
+	let showBackground = $derived(scrolled || mobileMenuOpen);
 </script>
 
 <nav
-	class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 {scrolled ? 'bg-charcoal/90 backdrop-blur-md border-b border-cream/5' : ''}"
+	class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 {showBackground ? 'bg-charcoal border-b border-cream/10' : ''}"
 >
 	<div class="max-w-6xl mx-auto px-6 py-4">
 		<div class="flex items-center justify-between">
