@@ -4,19 +4,19 @@ export const sites = [
 		name: 'pathsim.org',
 		hostname: 'pathsim.org',
 		siteTag: process.env.CF_SITE_TAG_PATHSIM || '',
-		color: '#377eb8' // PathSim brand color
+		color: '#0070c0' // PathSim brand color
 	},
 	{
 		name: 'docs.pathsim.org',
 		hostname: 'docs.pathsim.org',
 		siteTag: process.env.CF_SITE_TAG_PATHSIM_DOCS || '',
-		color: '#377eb8'
+		color: '#0070c0'
 	},
 	{
 		name: 'view.pathsim.org',
 		hostname: 'view.pathsim.org',
 		siteTag: process.env.CF_SITE_TAG_PATHVIEW || '',
-		color: '#377eb8'
+		color: '#0070c0'
 	},
 	{
 		name: 'pysimhub.io',

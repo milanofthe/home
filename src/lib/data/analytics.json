@@ -3,7 +3,7 @@
 	"sites": {
 		"view.pathsim.org": {
 			"name": "view.pathsim.org",
-			"color": "#377eb8",
+			"color": "#0070c0",
 			"timeseries": [
 				{
 					"datetime": "2026-01-14T16:00:00",

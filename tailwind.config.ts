@@ -29,10 +29,10 @@ export default {
 				},
 				// PathSim brand
 				pathsim: {
-					DEFAULT: '#377eb8',
-					dark: '#2c6694',
-					light: '#5a9bcc',
-					glow: 'rgba(55, 126, 184, 0.15)'
+					DEFAULT: '#0070c0',
+					dark: '#005a9e',
+					light: '#3399d6',
+					glow: 'rgba(0, 112, 192, 0.15)'
 				},
 				// PySimHub brand
 				pysimhub: {

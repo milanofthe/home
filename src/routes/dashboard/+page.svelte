@@ -26,16 +26,6 @@
 
 	const analytics = analyticsRaw as AnalyticsData;
 
-	// Muted color palette
-	const mutedColors: Record<string, string> = {
-		'#377eb8': '#5a8fb8', // pathsim blue - softer
-		'#6366f1': '#8b8df5', // pysimhub purple - softer
-		'#00d9c0': '#4dd9c9'  // teal - softer
-	};
-
-	function getMutedColor(color: string): string {
-		return mutedColors[color] || color;
-	}
 
 	// Selected site state (null = all sites)
 	let selectedSite = $state<string | null>(null);
@@ -79,7 +69,7 @@
 	function getPageViewsData() {
 		if (selectedSite && analytics.sites[selectedSite]) {
 			const site = analytics.sites[selectedSite];
-			const color = getMutedColor(site.color);
+			const color = site.color;
 			return [
 				{
 					x: site.timeseries.map((d) => d.datetime),
@@ -95,7 +85,7 @@
 		const traces: any[] = [];
 		const siteEntries = Object.entries(analytics.sites);
 		siteEntries.forEach(([hostname, site]) => {
-			const color = getMutedColor(site.color);
+			const color = site.color;
 			traces.push({
 				x: site.timeseries.map((d) => d.datetime),
 				y: site.timeseries.map((d) => d.pageViews),
@@ -112,7 +102,7 @@
 	function getVisitorsData() {
 		if (selectedSite && analytics.sites[selectedSite]) {
 			const site = analytics.sites[selectedSite];
-			const color = getMutedColor(site.color);
+			const color = site.color;
 			return [
 				{
 					x: site.timeseries.map((d) => d.datetime),
@@ -128,7 +118,7 @@
 		const traces: any[] = [];
 		const siteEntries = Object.entries(analytics.sites);
 		siteEntries.forEach(([hostname, site]) => {
-			const color = getMutedColor(site.color);
+			const color = site.color;
 			traces.push({
 				x: site.timeseries.map((d) => d.datetime),
 				y: site.timeseries.map((d) => d.visits),
@@ -145,7 +135,7 @@
 	function getReferrersData() {
 		const site = getCurrentSiteData();
 		if (!site?.topReferrers?.length) return [];
-		const color = getMutedColor(site.color);
+		const color = site.color;
 		return [
 			{
 				x: site.topReferrers.map((d) => d.pageViews),
@@ -161,7 +151,7 @@
 	function getCountriesData() {
 		const site = getCurrentSiteData();
 		if (!site?.topCountries?.length) return [];
-		const color = getMutedColor(site.color);
+		const color = site.color;
 		return [
 			{
 				x: site.topCountries.map((d) => d.pageViews),
@@ -367,7 +357,7 @@
 							onclick={() => (selectedSite = site)}
 						>
 							<div class="flex items-center gap-2 mb-3">
-								<div class="w-2 h-2 rounded-full opacity-60" style="background-color: {siteData.color}"></div>
+								<div class="w-2 h-2 rounded-full" style="background-color: {siteData.color}"></div>
 								<span class="text-sm text-cream/70">{site}</span>
 							</div>
 							<div class="flex gap-4 text-sm">
