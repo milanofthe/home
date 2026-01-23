@@ -54,11 +54,11 @@
 	}
 
 	.card {
-		@apply bg-charcoal-light/50 backdrop-blur-sm border border-cream/5 rounded-lg;
+		@apply bg-charcoal-light border border-cream/10 rounded-lg;
 	}
 
 	.card-hover {
-		@apply transition-all duration-300 hover:border-teal/30 hover:bg-charcoal-light/70;
+		@apply transition-all duration-300 hover:border-teal/30;
 	}
 
 	.btn-primary {
