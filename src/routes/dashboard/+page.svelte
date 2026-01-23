@@ -249,18 +249,9 @@
 					<span class="text-cream/90 font-medium text-lg">{formatNumber(summary.visits)}</span>
 					<span class="text-cream/40 ml-1.5">visits</span>
 				</div>
-				<div class="text-cream/40">
-					{#if currentSite && currentSite.timeseries.length > 0}
-						{@const firstDate = currentSite.timeseries[0].datetime.split('T')[0]}
-						{@const lastDate = currentSite.timeseries[currentSite.timeseries.length - 1].datetime.split('T')[0]}
-						{Math.ceil((new Date(lastDate).getTime() - new Date(firstDate).getTime()) / (1000 * 60 * 60 * 24)) + 1}
-					{:else}
-						{@const allTimeseries = siteList.flatMap((s) => analytics.sites[s].timeseries)}
-						{@const dates = allTimeseries.map((d) => d.datetime.split('T')[0])}
-						{@const uniqueDates = [...new Set(dates)].sort()}
-						{uniqueDates.length}
-					{/if}
-					days
+				<div>
+					<span class="text-cream/90 font-medium text-lg">{#if currentSite && currentSite.timeseries.length > 0}{@const firstDate = currentSite.timeseries[0].datetime.split('T')[0]}{@const lastDate = currentSite.timeseries[currentSite.timeseries.length - 1].datetime.split('T')[0]}{Math.ceil((new Date(lastDate).getTime() - new Date(firstDate).getTime()) / (1000 * 60 * 60 * 24)) + 1}{:else}{@const allTimeseries = siteList.flatMap((s) => analytics.sites[s].timeseries)}{@const dates = allTimeseries.map((d) => d.datetime.split('T')[0])}{@const uniqueDates = [...new Set(dates)].sort()}{uniqueDates.length}{/if}</span>
+					<span class="text-cream/40 ml-1.5">days</span>
 				</div>
 			</div>
 
