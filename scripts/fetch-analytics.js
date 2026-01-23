@@ -100,14 +100,26 @@ async function graphqlRequest(query, variables) {
 	return json.data;
 }
 
-// Convert hour to 6-hour bucket (0, 6, 12, 18)
-function getQuarterDayBucket(datetimeHour) {
+// Convert hour to 4-hour bucket in CET (0, 4, 8, 12, 16, 20)
+function get4HourBucket(datetimeHour) {
 	// datetimeHour format: "2026-01-23T14:00:00Z"
 	const date = new Date(datetimeHour);
-	const hour = date.getUTCHours();
-	const bucketHour = Math.floor(hour / 6) * 6;
-	const dateStr = datetimeHour.split('T')[0];
-	return `${dateStr}T${String(bucketHour).padStart(2, '0')}:00:00Z`;
+
+	// Convert to CET/CEST using Intl
+	const cetString = date.toLocaleString('en-CA', {
+		timeZone: 'Europe/Berlin',
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit',
+		hour: '2-digit',
+		hour12: false
+	});
+	// Format: "2026-01-23, 15" -> extract date and hour
+	const [datePart, hourPart] = cetString.split(', ');
+	const cetHour = parseInt(hourPart, 10);
+	const bucketHour = Math.floor(cetHour / 4) * 4;
+
+	return `${datePart}T${String(bucketHour).padStart(2, '0')}:00:00`;
 }
 
 async function fetchTimeseriesForSite(site, startDate, endDate) {
@@ -124,10 +136,10 @@ async function fetchTimeseriesForSite(site, startDate, endDate) {
 	const data = await graphqlRequest(TIMESERIES_QUERY, variables);
 	const hourlyData = data.viewer.accounts[0]?.timeseries || [];
 
-	// Aggregate hourly data into 6-hour buckets
+	// Aggregate hourly data into 4-hour buckets
 	const buckets = new Map();
 	for (const d of hourlyData) {
-		const bucket = getQuarterDayBucket(d.dimensions.datetimeHour);
+		const bucket = get4HourBucket(d.dimensions.datetimeHour);
 		if (!buckets.has(bucket)) {
 			buckets.set(bucket, { pageViews: 0, visits: 0 });
 		}
@@ -218,18 +230,18 @@ async function fetchSiteData(site, existingData) {
 	let startDate;
 
 	if (latestDatetime) {
-		// Fetch from 6 hours after latest datetime
+		// Fetch from 4 hours after latest datetime
 		startDate = new Date(latestDatetime);
-		startDate.setUTCHours(startDate.getUTCHours() + 6);
+		startDate.setUTCHours(startDate.getUTCHours() + 4);
 	} else {
 		// Initial fetch: get max history
 		startDate = new Date();
 		startDate.setDate(startDate.getDate() - config.maxHistoryDays);
 	}
 
-	// Skip if we're already up to date (within 6 hours)
+	// Skip if we're already up to date (within 4 hours)
 	const hoursDiff = (endDate - startDate) / (1000 * 60 * 60);
-	if (hoursDiff < 6) {
+	if (hoursDiff < 4) {
 		console.log(`${site.name}: already up to date`);
 		// Still fetch aggregates to get fresh top pages, referrers, etc.
 		const aggregates = await fetchAggregatesForSite(site);

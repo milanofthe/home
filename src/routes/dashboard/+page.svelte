@@ -72,8 +72,8 @@
 		return { pageViews, visits };
 	}
 
-	// 6 hours in milliseconds for bar width (slightly wider to avoid gaps)
-	const sixHoursMs = 6.1 * 60 * 60 * 1000;
+	// 4 hours in milliseconds for bar width (slightly wider to avoid gaps)
+	const fourHoursMs = 4.1 * 60 * 60 * 1000;
 
 	// Build time series chart data for page views
 	function getPageViewsData() {
@@ -87,7 +87,7 @@
 					type: 'bar',
 					name: 'Page Views',
 					marker: { color, line: { width: 0 } },
-					width: sixHoursMs
+					width: fourHoursMs
 				}
 			];
 		}
@@ -102,7 +102,7 @@
 				type: 'bar',
 				name: hostname,
 				marker: { color, line: { width: 0 } },
-				width: sixHoursMs
+				width: fourHoursMs
 			});
 		});
 		return traces;
@@ -120,7 +120,7 @@
 					type: 'bar',
 					name: 'Visits',
 					marker: { color, line: { width: 0 } },
-					width: sixHoursMs
+					width: fourHoursMs
 				}
 			];
 		}
@@ -135,7 +135,7 @@
 				type: 'bar',
 				name: hostname,
 				marker: { color, line: { width: 0 } },
-				width: sixHoursMs
+				width: fourHoursMs
 			});
 		});
 		return traces;
