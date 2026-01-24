@@ -100,28 +100,27 @@ async function graphqlRequest(query, variables) {
 	return json.data;
 }
 
-// Convert hour to 4-hour bucket end time in CET (4, 8, 12, 16, 20, 24)
+// Convert hour to 4-hour bucket end time in UTC (4, 8, 12, 16, 20, 24)
 // Label represents the END of the 4-hour period (e.g., "12:00" = data from 08:00-12:00)
 function get4HourBucket(datetimeHour) {
 	// datetimeHour format: "2026-01-23T14:00:00Z"
 	const date = new Date(datetimeHour);
 
-	// Convert to CET/CEST using Intl
-	const cetString = date.toLocaleString('en-CA', {
-		timeZone: 'Europe/Berlin',
-		year: 'numeric',
-		month: '2-digit',
-		day: '2-digit',
-		hour: '2-digit',
-		hour12: false
-	});
-	// Format: "2026-01-23, 15" -> extract date and hour
-	const [datePart, hourPart] = cetString.split(', ');
-	const cetHour = parseInt(hourPart, 10);
-	// Use end of bucket: ceil to next 4-hour mark (1-4 -> 4, 5-8 -> 8, etc.)
-	const bucketEndHour = Math.ceil((cetHour + 1) / 4) * 4;
+	// Use UTC directly (no timezone conversion)
+	const year = date.getUTCFullYear();
+	const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+	const day = String(date.getUTCDate()).padStart(2, '0');
+	const utcHour = date.getUTCHours();
 
-	return `${datePart}T${String(bucketEndHour).padStart(2, '0')}:00:00`;
+	// Use end of bucket: ceil to next 4-hour mark (0 -> 4, 1-4 -> 4, 5-8 -> 8, etc.)
+	const bucketEndHour = Math.ceil((utcHour + 1) / 4) * 4;
+
+	// Handle day rollover (24 -> next day 00:00, but we label it as 24:00 same day for clarity)
+	if (bucketEndHour === 24) {
+		return `${year}-${month}-${day}T24:00:00`;
+	}
+
+	return `${year}-${month}-${day}T${String(bucketEndHour).padStart(2, '0')}:00:00`;
 }
 
 async function fetchTimeseriesForSite(site, startDate, endDate) {
@@ -232,9 +231,9 @@ async function fetchSiteData(site, existingData) {
 	let startDate;
 
 	if (latestDatetime) {
-		// Fetch from 4 hours after latest datetime
+		// With end-time labeling, latestDatetime IS the end of the last bucket
+		// So we fetch from that point onwards (no need to add 4 hours)
 		startDate = new Date(latestDatetime);
-		startDate.setUTCHours(startDate.getUTCHours() + 4);
 	} else {
 		// Initial fetch: get max history
 		startDate = new Date();
