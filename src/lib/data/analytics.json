@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-01-24T16:30:01.170Z",
+	"lastFetched": "2026-01-24T20:26:52.997Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -64,22 +64,56 @@
 					"datetime": "2026-01-24T16:00:00",
 					"pageViews": 8,
 					"visits": 5
+				},
+				{
+					"datetime": "2026-01-24T20:00:00",
+					"pageViews": 13,
+					"visits": 10
 				}
 			],
 			"topPages": [
+				{
+					"path": "/en/v0.6.5/modules/pathsim.solvers.ssprk22.html",
+					"pageViews": 10
+				},
+				{
+					"path": "/pathsim/v0.16.5/examples",
+					"pageViews": 10
+				},
+				{
+					"path": "/en/v0.16.2/modules/pathsim.blocks.multiplier.html",
+					"pageViews": 10
+				},
 				{
 					"path": "/en/latest/modules/pathsim.solvers.ssprk22.html",
 					"pageViews": 10
 				}
 			],
-			"topReferrers": [],
+			"topReferrers": [
+				{
+					"referrer": "www.google.com",
+					"pageViews": 20
+				},
+				{
+					"referrer": "docs.pathsim.org",
+					"pageViews": 10
+				}
+			],
 			"topCountries": [
+				{
+					"country": "US",
+					"pageViews": 30
+				},
 				{
 					"country": "GB",
 					"pageViews": 10
 				}
 			],
 			"topBrowsers": [
+				{
+					"browser": "Chrome",
+					"pageViews": 30
+				},
 				{
 					"browser": "ChromeMobile",
 					"pageViews": 10
@@ -483,6 +517,11 @@
 					"datetime": "2026-01-24T16:00:00",
 					"pageViews": 5,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-01-24T20:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"topPages": [
@@ -627,6 +666,11 @@
 					"datetime": "2026-01-24T16:00:00",
 					"pageViews": 18,
 					"visits": 16
+				},
+				{
+					"datetime": "2026-01-24T20:00:00",
+					"pageViews": 7,
+					"visits": 7
 				}
 			],
 			"topPages": [
