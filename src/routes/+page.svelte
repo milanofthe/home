@@ -5,18 +5,35 @@
 
 	const STATS_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/github-stats.json';
 
-	let githubStats = $state({
-		current: {
-			pathsim: { stars: 0 },
-			pysimhub: { projects: 0 }
+	let animatedStars = $state(0);
+	let animatedProjects = $state(0);
+
+	function animateCount(from: number, to: number, duration: number, onUpdate: (val: number) => void) {
+		const start = performance.now();
+		const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
+
+		function update(now: number) {
+			const elapsed = now - start;
+			const progress = Math.min(elapsed / duration, 1);
+			const easedProgress = easeOutQuart(progress);
+			const current = Math.round(from + (to - from) * easedProgress);
+			onUpdate(current);
+
+			if (progress < 1) {
+				requestAnimationFrame(update);
+			}
 		}
-	});
+		requestAnimationFrame(update);
+	}
 
 	onMount(async () => {
 		try {
 			const response = await fetch(STATS_URL, { cache: 'no-store' });
 			if (response.ok) {
-				githubStats = await response.json();
+				const data = await response.json();
+				// Animate the counters
+				animateCount(0, data.current.pathsim.stars, 1500, (val) => animatedStars = val);
+				animateCount(0, data.current.pysimhub.projects, 1500, (val) => animatedProjects = val);
 			}
 		} catch {
 			// Keep default values on error
@@ -73,22 +90,22 @@
 		}
 	];
 
-	// PathSim tiles with stats (reactive)
+	// PathSim tiles with animated stats
 	let pathsimTiles = $derived([
 		{ icon: 'cpu' as const, title: 'Hot-Swappable', caption: 'Runtime changes' },
 		{ icon: 'layers' as const, title: 'Hierarchical', caption: 'Nested subsystems' },
 		{ icon: 'chart' as const, title: 'Multi-Solver', caption: 'Adaptive integrators' },
 		{ icon: 'zap' as const, title: 'Event Handling', caption: 'Zero-crossing detection' },
-		{ icon: 'star' as const, title: `${githubStats.current.pathsim.stars}+`, caption: 'GitHub Stars' }
+		{ icon: 'star' as const, title: `${animatedStars}+`, caption: 'GitHub Stars' }
 	]);
 
-	// PySimHub tiles (reactive)
+	// PySimHub tiles with animated stats
 	let pysimhubTiles = $derived([
 		{ icon: 'layers' as const, title: 'Browse', caption: 'Simulation libraries' },
 		{ icon: 'code' as const, title: 'Submit', caption: 'Your projects' },
 		{ icon: 'users' as const, title: 'Community', caption: 'Open collaboration' },
 		{ icon: 'github' as const, title: 'Open Source', caption: 'MIT licensed' },
-		{ icon: 'star' as const, title: `${githubStats.current.pysimhub.projects}`, caption: 'Featured Projects' }
+		{ icon: 'star' as const, title: `${animatedProjects}`, caption: 'Featured Projects' }
 	]);
 </script>
 
