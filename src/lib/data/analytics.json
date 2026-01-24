@@ -1,6 +1,15 @@
 {
-	"lastFetched": "2026-01-24T08:37:13.152Z",
+	"lastFetched": "2026-01-24T09:07:20.247Z",
 	"sites": {
+		"pathsim.org": {
+			"name": "pathsim.org",
+			"color": "#0070c0",
+			"timeseries": [],
+			"topPages": [],
+			"topReferrers": [],
+			"topCountries": [],
+			"topBrowsers": []
+		},
 		"view.pathsim.org": {
 			"name": "view.pathsim.org",
 			"color": "#0070c0",
@@ -502,6 +511,11 @@
 					"datetime": "2026-01-23T20:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-24T08:00:00",
+					"pageViews": 19,
+					"visits": 19
 				}
 			],
 			"topPages": [
@@ -511,7 +525,7 @@
 				},
 				{
 					"path": "/dashboard/",
-					"pageViews": 20
+					"pageViews": 50
 				}
 			],
 			"topReferrers": [
@@ -523,7 +537,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 90
+					"pageViews": 120
 				},
 				{
 					"country": "US",
@@ -532,12 +546,12 @@
 			],
 			"topBrowsers": [
 				{
-					"browser": "MobileSafari",
+					"browser": "Chrome",
 					"pageViews": 60
 				},
 				{
-					"browser": "Chrome",
-					"pageViews": 30
+					"browser": "MobileSafari",
+					"pageViews": 60
 				},
 				{
 					"browser": "ChromeHeadless",
