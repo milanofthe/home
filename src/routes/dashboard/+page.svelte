@@ -34,7 +34,7 @@
 		loading = true;
 		error = null;
 		try {
-			const response = await fetch(DATA_URL);
+			const response = await fetch(DATA_URL, { cache: 'no-store' });
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
 			analytics = await response.json();
 		} catch (e) {
