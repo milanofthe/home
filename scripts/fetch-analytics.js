@@ -219,6 +219,7 @@ async function fetchSiteData(site, existingData) {
 		name: site.name,
 		color: site.color,
 		timeseries: [],
+		aggregateHistory: [],
 		topPages: [],
 		topReferrers: [],
 		topCountries: [],
@@ -246,8 +247,22 @@ async function fetchSiteData(site, existingData) {
 		console.log(`${site.name}: already up to date`);
 		// Still fetch aggregates to get fresh top pages, referrers, etc.
 		const aggregates = await fetchAggregatesForSite(site);
+
+		// Add to aggregate history (daily snapshots)
+		const today = formatDate(new Date());
+		const history = existingSiteData.aggregateHistory || [];
+		const hasToday = history.some(h => h.date === today);
+		if (!hasToday) {
+			history.push({ date: today, ...aggregates });
+		} else {
+			// Update today's entry
+			const idx = history.findIndex(h => h.date === today);
+			history[idx] = { date: today, ...aggregates };
+		}
+
 		return {
 			...existingSiteData,
+			aggregateHistory: history,
 			...aggregates
 		};
 	}
@@ -267,10 +282,23 @@ async function fetchSiteData(site, existingData) {
 	// Fetch fresh aggregates
 	const aggregates = await fetchAggregatesForSite(site);
 
+	// Add to aggregate history (daily snapshots)
+	const today = formatDate(new Date());
+	const history = existingSiteData.aggregateHistory || [];
+	const hasToday = history.some(h => h.date === today);
+	if (!hasToday) {
+		history.push({ date: today, ...aggregates });
+	} else {
+		// Update today's entry
+		const idx = history.findIndex(h => h.date === today);
+		history[idx] = { date: today, ...aggregates };
+	}
+
 	return {
 		name: site.name,
 		color: site.color,
 		timeseries: mergedTimeseries,
+		aggregateHistory: history.sort((a, b) => a.date.localeCompare(b.date)),
 		...aggregates
 	};
 }
