@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-01-24T20:26:52.997Z",
+	"lastFetched": "2026-01-25T02:20:19.510Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -17,6 +17,11 @@
 				},
 				{
 					"datetime": "2026-01-24T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-01-25T04:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -69,6 +74,16 @@
 					"datetime": "2026-01-24T20:00:00",
 					"pageViews": 13,
 					"visits": 10
+				},
+				{
+					"datetime": "2026-01-24T24:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-01-25T04:00:00",
+					"pageViews": 23,
+					"visits": 5
 				}
 			],
 			"topPages": [
@@ -278,6 +293,16 @@
 					"datetime": "2026-01-24T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-24T24:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-01-25T04:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"topPages": [
@@ -522,12 +547,17 @@
 					"datetime": "2026-01-24T20:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-24T24:00:00",
+					"pageViews": 4,
+					"visits": 3
 				}
 			],
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 350
+					"pageViews": 360
 				},
 				{
 					"path": "/about/",
@@ -586,6 +616,10 @@
 					"pageViews": 10
 				},
 				{
+					"country": "AU",
+					"pageViews": 10
+				},
+				{
 					"country": "IT",
 					"pageViews": 10
 				}
@@ -600,11 +634,11 @@
 					"pageViews": 50
 				},
 				{
-					"browser": "MobileSafari",
-					"pageViews": 30
+					"browser": "Safari",
+					"pageViews": 40
 				},
 				{
-					"browser": "Safari",
+					"browser": "MobileSafari",
 					"pageViews": 30
 				},
 				{
@@ -671,6 +705,16 @@
 					"datetime": "2026-01-24T20:00:00",
 					"pageViews": 7,
 					"visits": 7
+				},
+				{
+					"datetime": "2026-01-24T24:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-01-25T04:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"topPages": [
