@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-01-25T16:31:12.117Z",
+	"lastFetched": "2026-01-25T20:29:19.401Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -24,6 +24,11 @@
 					"datetime": "2026-01-25T04:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-25T20:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -123,12 +128,21 @@
 					"datetime": "2026-01-25T16:00:00",
 					"pageViews": 6,
 					"visits": 6
+				},
+				{
+					"datetime": "2026-01-25T24:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
 				{
 					"date": "2026-01-25",
 					"topPages": [
+						{
+							"path": "/en/latest/modules/pathsim.blocks.html",
+							"pageViews": 10
+						},
 						{
 							"path": "/en/v0.6.5/modules/pathsim.solvers.ssprk22.html",
 							"pageViews": 10
@@ -166,6 +180,10 @@
 							"pageViews": 30
 						},
 						{
+							"country": "JP",
+							"pageViews": 10
+						},
+						{
 							"country": "SG",
 							"pageViews": 10
 						},
@@ -181,12 +199,16 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 10
+							"pageViews": 20
 						}
 					]
 				}
 			],
 			"topPages": [
+				{
+					"path": "/en/latest/modules/pathsim.blocks.html",
+					"pageViews": 10
+				},
 				{
 					"path": "/en/v0.6.5/modules/pathsim.solvers.ssprk22.html",
 					"pageViews": 10
@@ -224,6 +246,10 @@
 					"pageViews": 30
 				},
 				{
+					"country": "JP",
+					"pageViews": 10
+				},
+				{
 					"country": "SG",
 					"pageViews": 10
 				},
@@ -239,7 +265,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 10
+					"pageViews": 20
 				}
 			]
 		},
