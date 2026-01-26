@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-01-26T02:19:39.659Z",
+	"lastFetched": "2026-01-26T04:57:52.258Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -173,6 +173,16 @@
 					"datetime": "2026-01-25T24:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-01-26T04:00:00",
+					"pageViews": 11,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-01-26T08:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -263,6 +273,10 @@
 							"pageViews": 10
 						},
 						{
+							"path": "/en/latest/examples/stick_slip.html",
+							"pageViews": 10
+						},
+						{
 							"path": "/en/v0.16.2/modules/pathsim.blocks.multiplier.html",
 							"pageViews": 10
 						},
@@ -315,6 +329,10 @@
 							"pageViews": 10
 						},
 						{
+							"country": "AU",
+							"pageViews": 10
+						},
+						{
 							"country": "GB",
 							"pageViews": 10
 						},
@@ -330,7 +348,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 20
+							"pageViews": 30
 						},
 						{
 							"browser": "Firefox",
@@ -354,6 +372,10 @@
 				},
 				{
 					"path": "/pathsim/v0.16.5/examples",
+					"pageViews": 10
+				},
+				{
+					"path": "/en/latest/examples/stick_slip.html",
 					"pageViews": 10
 				},
 				{
@@ -409,6 +431,10 @@
 					"pageViews": 10
 				},
 				{
+					"country": "AU",
+					"pageViews": 10
+				},
+				{
 					"country": "GB",
 					"pageViews": 10
 				},
@@ -424,7 +450,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 20
+					"pageViews": 30
 				},
 				{
 					"browser": "Firefox",

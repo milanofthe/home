@@ -4,7 +4,7 @@
 			"stars": 227,
 			"forks": 20,
 			"watchers": 6,
-			"openIssues": 14
+			"openIssues": 15
 		},
 		"pysimhub": {
 			"projects": 12,
@@ -57,7 +57,7 @@
 				"stars": 227,
 				"forks": 20,
 				"watchers": 6,
-				"openIssues": 14
+				"openIssues": 15
 			},
 			"pysimhub": {
 				"projects": 12,
@@ -65,5 +65,5 @@
 			}
 		}
 	],
-	"fetchedAt": "2026-01-26T02:19:44.016Z"
+	"fetchedAt": "2026-01-26T04:57:57.054Z"
 }
