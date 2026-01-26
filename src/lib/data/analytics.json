@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-01-26T16:39:37.649Z",
+	"lastFetched": "2026-01-26T20:32:35.766Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -44,6 +44,11 @@
 					"datetime": "2026-01-26T16:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-26T20:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -203,6 +208,16 @@
 					"datetime": "2026-01-26T16:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-26T20:00:00",
+					"pageViews": 7,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-01-26T24:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -277,6 +292,10 @@
 					"date": "2026-01-26",
 					"topPages": [
 						{
+							"path": "/en/v0.6.7/modules/pathsim.solvers.bdf.html",
+							"pageViews": 10
+						},
+						{
 							"path": "/en/v0.6.5/examples/fmcw_radar.html",
 							"pageViews": 10
 						},
@@ -305,15 +324,11 @@
 							"pageViews": 10
 						},
 						{
+							"path": "/en/v0.6.5/modules/pathsim.solvers.ssprk22.html",
+							"pageViews": 10
+						},
+						{
 							"path": "/en/v0.16.2/modules/pathsim.blocks.multiplier.html",
-							"pageViews": 10
-						},
-						{
-							"path": "/en/latest/modules/pathsim.blocks.html",
-							"pageViews": 10
-						},
-						{
-							"path": "/en/latest/examples/stick_slip.html",
 							"pageViews": 10
 						}
 					],
@@ -337,6 +352,10 @@
 							"pageViews": 30
 						},
 						{
+							"country": "SG",
+							"pageViews": 20
+						},
+						{
 							"country": "CN",
 							"pageViews": 20
 						},
@@ -346,10 +365,6 @@
 						},
 						{
 							"country": "JP",
-							"pageViews": 10
-						},
-						{
-							"country": "SG",
 							"pageViews": 10
 						},
 						{
@@ -371,12 +386,12 @@
 							"pageViews": 60
 						},
 						{
-							"browser": "ChromeMobile",
+							"browser": "Unknown",
 							"pageViews": 30
 						},
 						{
-							"browser": "Unknown",
-							"pageViews": 20
+							"browser": "ChromeMobile",
+							"pageViews": 30
 						},
 						{
 							"browser": "Firefox",
@@ -386,6 +401,10 @@
 				}
 			],
 			"topPages": [
+				{
+					"path": "/en/v0.6.7/modules/pathsim.solvers.bdf.html",
+					"pageViews": 10
+				},
 				{
 					"path": "/en/v0.6.5/examples/fmcw_radar.html",
 					"pageViews": 10
@@ -415,15 +434,11 @@
 					"pageViews": 10
 				},
 				{
+					"path": "/en/v0.6.5/modules/pathsim.solvers.ssprk22.html",
+					"pageViews": 10
+				},
+				{
 					"path": "/en/v0.16.2/modules/pathsim.blocks.multiplier.html",
-					"pageViews": 10
-				},
-				{
-					"path": "/en/latest/modules/pathsim.blocks.html",
-					"pageViews": 10
-				},
-				{
-					"path": "/en/latest/examples/stick_slip.html",
 					"pageViews": 10
 				}
 			],
@@ -447,6 +462,10 @@
 					"pageViews": 30
 				},
 				{
+					"country": "SG",
+					"pageViews": 20
+				},
+				{
 					"country": "CN",
 					"pageViews": 20
 				},
@@ -456,10 +475,6 @@
 				},
 				{
 					"country": "JP",
-					"pageViews": 10
-				},
-				{
-					"country": "SG",
 					"pageViews": 10
 				},
 				{
@@ -481,12 +496,12 @@
 					"pageViews": 60
 				},
 				{
-					"browser": "ChromeMobile",
+					"browser": "Unknown",
 					"pageViews": 30
 				},
 				{
-					"browser": "Unknown",
-					"pageViews": 20
+					"browser": "ChromeMobile",
+					"pageViews": 30
 				},
 				{
 					"browser": "Firefox",
@@ -687,6 +702,16 @@
 					"datetime": "2026-01-26T16:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-26T20:00:00",
+					"pageViews": 11,
+					"visits": 11
+				},
+				{
+					"datetime": "2026-01-26T24:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -766,7 +791,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 410
+							"pageViews": 420
 						},
 						{
 							"path": "/dev/",
@@ -794,7 +819,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 280
+							"pageViews": 290
 						},
 						{
 							"country": "US",
@@ -819,16 +844,16 @@
 							"pageViews": 20
 						},
 						{
+							"browser": "Unknown",
+							"pageViews": 20
+						},
+						{
 							"browser": "MobileSafari",
 							"pageViews": 20
 						},
 						{
 							"browser": "Safari",
 							"pageViews": 20
-						},
-						{
-							"browser": "Edge",
-							"pageViews": 10
 						}
 					]
 				}
@@ -836,7 +861,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 410
+					"pageViews": 420
 				},
 				{
 					"path": "/dev/",
@@ -864,7 +889,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 280
+					"pageViews": 290
 				},
 				{
 					"country": "US",
@@ -889,16 +914,16 @@
 					"pageViews": 20
 				},
 				{
+					"browser": "Unknown",
+					"pageViews": 20
+				},
+				{
 					"browser": "MobileSafari",
 					"pageViews": 20
 				},
 				{
 					"browser": "Safari",
 					"pageViews": 20
-				},
-				{
-					"browser": "Edge",
-					"pageViews": 10
 				}
 			]
 		},
@@ -1098,6 +1123,11 @@
 				},
 				{
 					"datetime": "2026-01-26T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-01-26T20:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -1488,6 +1518,16 @@
 				},
 				{
 					"datetime": "2026-01-26T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-01-26T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-01-26T24:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
