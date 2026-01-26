@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-01-26T08:39:01.672Z",
+	"lastFetched": "2026-01-26T12:57:54.271Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -34,6 +34,16 @@
 					"datetime": "2026-01-25T24:00:00",
 					"pageViews": 4,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-01-26T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-01-26T16:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -183,6 +193,16 @@
 					"datetime": "2026-01-26T08:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-26T12:00:00",
+					"pageViews": 9,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-01-26T16:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -261,11 +281,11 @@
 							"pageViews": 10
 						},
 						{
-							"path": "/pathsim/latest/examples",
+							"path": "/vehicle",
 							"pageViews": 10
 						},
 						{
-							"path": "/en/latest/modules/pathsim.solvers.bdf.html",
+							"path": "/pathsim/latest/examples",
 							"pageViews": 10
 						},
 						{
@@ -273,7 +293,15 @@
 							"pageViews": 10
 						},
 						{
+							"path": "/en/v0.12.3/_modules/pathsim/blocks/ctrl.html",
+							"pageViews": 10
+						},
+						{
 							"path": "/pathsim/v0.16.5/api",
+							"pageViews": 10
+						},
+						{
+							"path": "/en/latest/modules/pathsim.solvers.bdf.html",
 							"pageViews": 10
 						},
 						{
@@ -281,19 +309,11 @@
 							"pageViews": 10
 						},
 						{
-							"path": "/vehicle",
+							"path": "/en/latest/modules/pathsim.blocks.html",
 							"pageViews": 10
 						},
 						{
 							"path": "/en/latest/examples/stick_slip.html",
-							"pageViews": 10
-						},
-						{
-							"path": "/pathsim/v0.16.5/examples",
-							"pageViews": 10
-						},
-						{
-							"path": "/en/latest/modules/pathsim.blocks.html",
 							"pageViews": 10
 						}
 					],
@@ -317,6 +337,10 @@
 							"pageViews": 30
 						},
 						{
+							"country": "CN",
+							"pageViews": 20
+						},
+						{
 							"country": "DE",
 							"pageViews": 20
 						},
@@ -337,10 +361,6 @@
 							"pageViews": 10
 						},
 						{
-							"country": "CN",
-							"pageViews": 10
-						},
-						{
 							"country": "NZ",
 							"pageViews": 10
 						}
@@ -356,7 +376,7 @@
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 10
+							"pageViews": 20
 						},
 						{
 							"browser": "Firefox",
@@ -371,11 +391,11 @@
 					"pageViews": 10
 				},
 				{
-					"path": "/pathsim/latest/examples",
+					"path": "/vehicle",
 					"pageViews": 10
 				},
 				{
-					"path": "/en/latest/modules/pathsim.solvers.bdf.html",
+					"path": "/pathsim/latest/examples",
 					"pageViews": 10
 				},
 				{
@@ -383,7 +403,15 @@
 					"pageViews": 10
 				},
 				{
+					"path": "/en/v0.12.3/_modules/pathsim/blocks/ctrl.html",
+					"pageViews": 10
+				},
+				{
 					"path": "/pathsim/v0.16.5/api",
+					"pageViews": 10
+				},
+				{
+					"path": "/en/latest/modules/pathsim.solvers.bdf.html",
 					"pageViews": 10
 				},
 				{
@@ -391,19 +419,11 @@
 					"pageViews": 10
 				},
 				{
-					"path": "/vehicle",
+					"path": "/en/latest/modules/pathsim.blocks.html",
 					"pageViews": 10
 				},
 				{
 					"path": "/en/latest/examples/stick_slip.html",
-					"pageViews": 10
-				},
-				{
-					"path": "/pathsim/v0.16.5/examples",
-					"pageViews": 10
-				},
-				{
-					"path": "/en/latest/modules/pathsim.blocks.html",
 					"pageViews": 10
 				}
 			],
@@ -427,6 +447,10 @@
 					"pageViews": 30
 				},
 				{
+					"country": "CN",
+					"pageViews": 20
+				},
+				{
 					"country": "DE",
 					"pageViews": 20
 				},
@@ -447,10 +471,6 @@
 					"pageViews": 10
 				},
 				{
-					"country": "CN",
-					"pageViews": 10
-				},
-				{
 					"country": "NZ",
 					"pageViews": 10
 				}
@@ -466,7 +486,7 @@
 				},
 				{
 					"browser": "Unknown",
-					"pageViews": 10
+					"pageViews": 20
 				},
 				{
 					"browser": "Firefox",
@@ -662,6 +682,11 @@
 					"datetime": "2026-01-25T24:00:00",
 					"pageViews": 4,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-01-26T16:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -1455,6 +1480,11 @@
 					"datetime": "2026-01-26T08:00:00",
 					"pageViews": 4,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-01-26T16:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
