@@ -1,13 +1,13 @@
 {
 	"current": {
 		"pathsim": {
-			"stars": 227,
+			"stars": 228,
 			"forks": 20,
 			"watchers": 6,
 			"openIssues": 15
 		},
 		"pysimhub": {
-			"projects": 12,
+			"projects": 13,
 			"members": 3
 		}
 	},
@@ -67,16 +67,16 @@
 		{
 			"date": "2026-01-27",
 			"pathsim": {
-				"stars": 227,
+				"stars": 228,
 				"forks": 20,
 				"watchers": 6,
 				"openIssues": 15
 			},
 			"pysimhub": {
-				"projects": 12,
+				"projects": 13,
 				"members": 3
 			}
 		}
 	],
-	"fetchedAt": "2026-01-27T08:38:49.445Z"
+	"fetchedAt": "2026-01-27T13:00:31.919Z"
 }

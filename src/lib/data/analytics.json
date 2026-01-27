@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-01-27T08:38:43.103Z",
+	"lastFetched": "2026-01-27T13:00:25.362Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -269,6 +269,16 @@
 					"datetime": "2026-01-27T08:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-27T12:00:00",
+					"pageViews": 8,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-01-27T16:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -482,15 +492,15 @@
 							"pageViews": 10
 						},
 						{
-							"path": "/pathsim/latest/examples",
-							"pageViews": 10
-						},
-						{
 							"path": "/en/latest/modules/pathsim.solvers.ssprk22.html",
 							"pageViews": 10
 						},
 						{
-							"path": "/en/v0.6.5/modules/pathsim.solvers.ssprk22.html",
+							"path": "/en/latest/modules/pathsim.solvers.ssprk33.html",
+							"pageViews": 10
+						},
+						{
+							"path": "/pathsim/latest/examples",
 							"pageViews": 10
 						}
 					],
@@ -500,11 +510,11 @@
 							"pageViews": 50
 						},
 						{
-							"referrer": "pathsim.org",
-							"pageViews": 20
+							"referrer": "www.google.com",
+							"pageViews": 30
 						},
 						{
-							"referrer": "www.google.com",
+							"referrer": "pathsim.org",
 							"pageViews": 20
 						}
 					],
@@ -526,6 +536,14 @@
 							"pageViews": 20
 						},
 						{
+							"country": "NZ",
+							"pageViews": 10
+						},
+						{
+							"country": "GT",
+							"pageViews": 10
+						},
+						{
 							"country": "JP",
 							"pageViews": 10
 						},
@@ -534,26 +552,18 @@
 							"pageViews": 10
 						},
 						{
-							"country": "GT",
-							"pageViews": 10
-						},
-						{
-							"country": "AU",
+							"country": "NL",
 							"pageViews": 10
 						},
 						{
 							"country": "GB",
-							"pageViews": 10
-						},
-						{
-							"country": "NZ",
 							"pageViews": 10
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 100
+							"pageViews": 110
 						},
 						{
 							"browser": "Unknown",
@@ -604,15 +614,15 @@
 					"pageViews": 10
 				},
 				{
-					"path": "/pathsim/latest/examples",
-					"pageViews": 10
-				},
-				{
 					"path": "/en/latest/modules/pathsim.solvers.ssprk22.html",
 					"pageViews": 10
 				},
 				{
-					"path": "/en/v0.6.5/modules/pathsim.solvers.ssprk22.html",
+					"path": "/en/latest/modules/pathsim.solvers.ssprk33.html",
+					"pageViews": 10
+				},
+				{
+					"path": "/pathsim/latest/examples",
 					"pageViews": 10
 				}
 			],
@@ -622,11 +632,11 @@
 					"pageViews": 50
 				},
 				{
-					"referrer": "pathsim.org",
-					"pageViews": 20
+					"referrer": "www.google.com",
+					"pageViews": 30
 				},
 				{
-					"referrer": "www.google.com",
+					"referrer": "pathsim.org",
 					"pageViews": 20
 				}
 			],
@@ -648,6 +658,14 @@
 					"pageViews": 20
 				},
 				{
+					"country": "NZ",
+					"pageViews": 10
+				},
+				{
+					"country": "GT",
+					"pageViews": 10
+				},
+				{
 					"country": "JP",
 					"pageViews": 10
 				},
@@ -656,26 +674,18 @@
 					"pageViews": 10
 				},
 				{
-					"country": "GT",
-					"pageViews": 10
-				},
-				{
-					"country": "AU",
+					"country": "NL",
 					"pageViews": 10
 				},
 				{
 					"country": "GB",
-					"pageViews": 10
-				},
-				{
-					"country": "NZ",
 					"pageViews": 10
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 100
+					"pageViews": 110
 				},
 				{
 					"browser": "Unknown",
@@ -908,6 +918,16 @@
 					"datetime": "2026-01-27T08:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-27T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-01-27T16:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -1058,7 +1078,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 420
+							"pageViews": 440
 						},
 						{
 							"path": "/dev/",
@@ -1067,15 +1087,15 @@
 					],
 					"topReferrers": [
 						{
+							"referrer": "github.com",
+							"pageViews": 20
+						},
+						{
 							"referrer": "bing.com",
 							"pageViews": 10
 						},
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 10
-						},
-						{
-							"referrer": "github.com",
 							"pageViews": 10
 						},
 						{
@@ -1086,7 +1106,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 290
+							"pageViews": 310
 						},
 						{
 							"country": "US",
@@ -1104,7 +1124,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 350
+							"pageViews": 370
 						},
 						{
 							"browser": "ChromeMobile",
@@ -1128,7 +1148,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 420
+					"pageViews": 440
 				},
 				{
 					"path": "/dev/",
@@ -1137,15 +1157,15 @@
 			],
 			"topReferrers": [
 				{
+					"referrer": "github.com",
+					"pageViews": 20
+				},
+				{
 					"referrer": "bing.com",
 					"pageViews": 10
 				},
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 10
-				},
-				{
-					"referrer": "github.com",
 					"pageViews": 10
 				},
 				{
@@ -1156,7 +1176,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 290
+					"pageViews": 310
 				},
 				{
 					"country": "US",
@@ -1174,7 +1194,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 350
+					"pageViews": 370
 				},
 				{
 					"browser": "ChromeMobile",
@@ -1395,6 +1415,11 @@
 				},
 				{
 					"datetime": "2026-01-26T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-01-27T16:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -1897,6 +1922,11 @@
 					"datetime": "2026-01-27T08:00:00",
 					"pageViews": 4,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-01-27T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
