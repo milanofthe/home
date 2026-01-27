@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-01-27T04:51:06.763Z",
+	"lastFetched": "2026-01-27T08:38:43.103Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -478,6 +478,10 @@
 							"pageViews": 10
 						},
 						{
+							"path": "/en/latest/modules/pathsim.solvers.bdf.html",
+							"pageViews": 10
+						},
+						{
 							"path": "/pathsim/latest/examples",
 							"pageViews": 10
 						},
@@ -486,11 +490,7 @@
 							"pageViews": 10
 						},
 						{
-							"path": "/en/latest/modules/pathsim.solvers.bdf.html",
-							"pageViews": 10
-						},
-						{
-							"path": "/en/latest/modules/pathsim.blocks.html",
+							"path": "/en/v0.6.5/modules/pathsim.solvers.ssprk22.html",
 							"pageViews": 10
 						}
 					],
@@ -511,7 +511,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 60
+							"pageViews": 70
 						},
 						{
 							"country": "SG",
@@ -553,7 +553,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 90
+							"pageViews": 100
 						},
 						{
 							"browser": "Unknown",
@@ -600,6 +600,10 @@
 					"pageViews": 10
 				},
 				{
+					"path": "/en/latest/modules/pathsim.solvers.bdf.html",
+					"pageViews": 10
+				},
+				{
 					"path": "/pathsim/latest/examples",
 					"pageViews": 10
 				},
@@ -608,11 +612,7 @@
 					"pageViews": 10
 				},
 				{
-					"path": "/en/latest/modules/pathsim.solvers.bdf.html",
-					"pageViews": 10
-				},
-				{
-					"path": "/en/latest/modules/pathsim.blocks.html",
+					"path": "/en/v0.6.5/modules/pathsim.solvers.ssprk22.html",
 					"pageViews": 10
 				}
 			],
@@ -633,7 +633,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 60
+					"pageViews": 70
 				},
 				{
 					"country": "SG",
@@ -675,7 +675,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 90
+					"pageViews": 100
 				},
 				{
 					"browser": "Unknown",
@@ -901,6 +901,11 @@
 				},
 				{
 					"datetime": "2026-01-27T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-01-27T08:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -1887,6 +1892,11 @@
 					"datetime": "2026-01-26T24:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-01-27T08:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
