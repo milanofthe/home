@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-01-31T08:35:56.455Z",
+	"lastFetched": "2026-01-31T12:57:13.106Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -152,6 +152,16 @@
 				},
 				{
 					"datetime": "2026-01-31T04:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-01-31T12:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-01-31T16:00:00",
 					"pageViews": 2,
 					"visits": 2
 				}
@@ -492,7 +502,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 310
+							"pageViews": 320
 						}
 					],
 					"topReferrers": [
@@ -536,7 +546,7 @@
 						},
 						{
 							"country": "BR",
-							"pageViews": 30
+							"pageViews": 40
 						},
 						{
 							"country": "JP",
@@ -574,7 +584,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 40
+							"pageViews": 50
 						},
 						{
 							"browser": "Edge",
@@ -590,7 +600,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 310
+					"pageViews": 320
 				}
 			],
 			"topReferrers": [
@@ -634,7 +644,7 @@
 				},
 				{
 					"country": "BR",
-					"pageViews": 30
+					"pageViews": 40
 				},
 				{
 					"country": "JP",
@@ -672,7 +682,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 40
+					"pageViews": 50
 				},
 				{
 					"browser": "Edge",
@@ -1641,15 +1651,15 @@
 					"date": "2026-01-31",
 					"topPages": [
 						{
+							"path": "/pathsim/v0.16.7/examples",
+							"pageViews": 70
+						},
+						{
 							"path": "/pathsim",
 							"pageViews": 60
 						},
 						{
 							"path": "/",
-							"pageViews": 60
-						},
-						{
-							"path": "/pathsim/v0.16.7/examples",
 							"pageViews": 60
 						},
 						{
@@ -1666,7 +1676,7 @@
 						},
 						{
 							"path": "/en/latest/examples/stick_slip.html",
-							"pageViews": 20
+							"pageViews": 30
 						},
 						{
 							"path": "/vehicle",
@@ -1722,7 +1732,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 210
+							"pageViews": 220
 						},
 						{
 							"country": "DE",
@@ -1764,11 +1774,11 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 340
+							"pageViews": 350
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 90
+							"pageViews": 100
 						},
 						{
 							"browser": "Firefox",
@@ -1787,15 +1797,15 @@
 			],
 			"topPages": [
 				{
+					"path": "/pathsim/v0.16.7/examples",
+					"pageViews": 70
+				},
+				{
 					"path": "/pathsim",
 					"pageViews": 60
 				},
 				{
 					"path": "/",
-					"pageViews": 60
-				},
-				{
-					"path": "/pathsim/v0.16.7/examples",
 					"pageViews": 60
 				},
 				{
@@ -1812,7 +1822,7 @@
 				},
 				{
 					"path": "/en/latest/examples/stick_slip.html",
-					"pageViews": 20
+					"pageViews": 30
 				},
 				{
 					"path": "/vehicle",
@@ -1868,7 +1878,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 210
+					"pageViews": 220
 				},
 				{
 					"country": "DE",
@@ -1910,11 +1920,11 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 340
+					"pageViews": 350
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 90
+					"pageViews": 100
 				},
 				{
 					"browser": "Firefox",
@@ -2238,6 +2248,16 @@
 					"datetime": "2026-01-31T04:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-01-31T12:00:00",
+					"pageViews": 16,
+					"visits": 16
+				},
+				{
+					"datetime": "2026-01-31T16:00:00",
+					"pageViews": 7,
+					"visits": 7
 				}
 			],
 			"aggregateHistory": [
@@ -2772,7 +2792,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 770
+							"pageViews": 790
 						},
 						{
 							"path": "/dev/",
@@ -2782,14 +2802,14 @@
 					"topReferrers": [
 						{
 							"referrer": "com.linkedin.android",
-							"pageViews": 70
-						},
-						{
-							"referrer": "pathsim.org",
-							"pageViews": 40
+							"pageViews": 80
 						},
 						{
 							"referrer": "www.linkedin.com",
+							"pageViews": 50
+						},
+						{
+							"referrer": "pathsim.org",
 							"pageViews": 40
 						},
 						{
@@ -2823,12 +2843,12 @@
 							"pageViews": 160
 						},
 						{
-							"country": "FR",
+							"country": "GB",
 							"pageViews": 50
 						},
 						{
-							"country": "GB",
-							"pageViews": 40
+							"country": "FR",
+							"pageViews": 50
 						},
 						{
 							"country": "IN",
@@ -2843,7 +2863,7 @@
 							"pageViews": 20
 						},
 						{
-							"country": "PL",
+							"country": "AE",
 							"pageViews": 10
 						},
 						{
@@ -2862,7 +2882,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 100
+							"pageViews": 110
 						},
 						{
 							"browser": "Edge",
@@ -2870,7 +2890,7 @@
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 50
+							"pageViews": 60
 						},
 						{
 							"browser": "MobileSafari",
@@ -2882,7 +2902,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 770
+					"pageViews": 790
 				},
 				{
 					"path": "/dev/",
@@ -2892,14 +2912,14 @@
 			"topReferrers": [
 				{
 					"referrer": "com.linkedin.android",
-					"pageViews": 70
-				},
-				{
-					"referrer": "pathsim.org",
-					"pageViews": 40
+					"pageViews": 80
 				},
 				{
 					"referrer": "www.linkedin.com",
+					"pageViews": 50
+				},
+				{
+					"referrer": "pathsim.org",
 					"pageViews": 40
 				},
 				{
@@ -2933,12 +2953,12 @@
 					"pageViews": 160
 				},
 				{
-					"country": "FR",
+					"country": "GB",
 					"pageViews": 50
 				},
 				{
-					"country": "GB",
-					"pageViews": 40
+					"country": "FR",
+					"pageViews": 50
 				},
 				{
 					"country": "IN",
@@ -2953,7 +2973,7 @@
 					"pageViews": 20
 				},
 				{
-					"country": "PL",
+					"country": "AE",
 					"pageViews": 10
 				},
 				{
@@ -2972,7 +2992,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 100
+					"pageViews": 110
 				},
 				{
 					"browser": "Edge",
@@ -2980,7 +3000,7 @@
 				},
 				{
 					"browser": "Unknown",
-					"pageViews": 50
+					"pageViews": 60
 				},
 				{
 					"browser": "MobileSafari",
@@ -3261,6 +3281,11 @@
 					"datetime": "2026-01-31T08:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-01-31T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -4286,6 +4311,11 @@
 					"datetime": "2026-01-31T08:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-01-31T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
