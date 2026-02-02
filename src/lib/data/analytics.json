@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-02T02:37:18.246Z",
+	"lastFetched": "2026-02-02T05:25:38.125Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -202,6 +202,16 @@
 				},
 				{
 					"datetime": "2026-02-01T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-02T04:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-02-02T08:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -2269,19 +2279,19 @@
 							"pageViews": 40
 						},
 						{
-							"path": "/en/latest/examples/stick_slip.html",
-							"pageViews": 30
-						},
-						{
 							"path": "/en/v0.12.3/_modules/pathsim/blocks/ctrl.html",
 							"pageViews": 30
 						},
 						{
-							"path": "/en/latest/modules/pathsim.blocks.sources.html",
+							"path": "/en/latest/examples/stick_slip.html",
+							"pageViews": 30
+						},
+						{
+							"path": "/en/v0.8.1/modules/pathsim.solvers.bdf.html",
 							"pageViews": 20
 						},
 						{
-							"path": "/pathsim/v0.16.1/examples",
+							"path": "/pathsim/latest/examples",
 							"pageViews": 20
 						}
 					],
@@ -2345,6 +2355,10 @@
 							"pageViews": 40
 						},
 						{
+							"country": "CN",
+							"pageViews": 30
+						},
+						{
 							"country": "GB",
 							"pageViews": 30
 						},
@@ -2354,10 +2368,6 @@
 						},
 						{
 							"country": "AU",
-							"pageViews": 20
-						},
-						{
-							"country": "CN",
 							"pageViews": 20
 						},
 						{
@@ -2376,7 +2386,7 @@
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 80
+							"pageViews": 90
 						},
 						{
 							"browser": "Firefox",
@@ -2415,19 +2425,19 @@
 					"pageViews": 40
 				},
 				{
-					"path": "/en/latest/examples/stick_slip.html",
-					"pageViews": 30
-				},
-				{
 					"path": "/en/v0.12.3/_modules/pathsim/blocks/ctrl.html",
 					"pageViews": 30
 				},
 				{
-					"path": "/en/latest/modules/pathsim.blocks.sources.html",
+					"path": "/en/latest/examples/stick_slip.html",
+					"pageViews": 30
+				},
+				{
+					"path": "/en/v0.8.1/modules/pathsim.solvers.bdf.html",
 					"pageViews": 20
 				},
 				{
-					"path": "/pathsim/v0.16.1/examples",
+					"path": "/pathsim/latest/examples",
 					"pageViews": 20
 				}
 			],
@@ -2491,6 +2501,10 @@
 					"pageViews": 40
 				},
 				{
+					"country": "CN",
+					"pageViews": 30
+				},
+				{
 					"country": "GB",
 					"pageViews": 30
 				},
@@ -2500,10 +2514,6 @@
 				},
 				{
 					"country": "AU",
-					"pageViews": 20
-				},
-				{
-					"country": "CN",
 					"pageViews": 20
 				},
 				{
@@ -2522,7 +2532,7 @@
 				},
 				{
 					"browser": "Unknown",
-					"pageViews": 80
+					"pageViews": 90
 				},
 				{
 					"browser": "Firefox",
@@ -4184,6 +4194,11 @@
 					"datetime": "2026-02-01T20:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-02-02T08:00:00",
+					"pageViews": 9,
+					"visits": 9
 				}
 			],
 			"aggregateHistory": [
