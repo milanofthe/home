@@ -188,7 +188,7 @@
 					Let's Work Together
 				</h2>
 				<p class="text-lg text-cream/60">
-					Have a simulation challenge? I offer a free 30-minute consultation.
+					Need simulation infrastructure that's robust and also fun to use? Let's talk!
 				</p>
 			</div>
 
