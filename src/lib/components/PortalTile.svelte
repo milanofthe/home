@@ -20,14 +20,12 @@
 
 	const colorClasses = {
 		pathsim: {
-			border: 'hover:border-pathsim/50',
-			glow: 'hover:shadow-[0_0_30px_rgba(0,112,192,0.3)]',
-			gradient: 'from-charcoal/40 via-charcoal/60 to-charcoal/90'
+			border: 'border-pathsim',
+			glow: 'hover:shadow-[0_0_40px_rgba(0,112,192,0.5)]'
 		},
 		pysimhub: {
-			border: 'hover:border-pysimhub/50',
-			glow: 'hover:shadow-[0_0_30px_rgba(99,102,241,0.3)]',
-			gradient: 'from-charcoal/40 via-charcoal/60 to-charcoal/90'
+			border: 'border-pysimhub',
+			glow: 'hover:shadow-[0_0_40px_rgba(99,102,241,0.5)]'
 		}
 	};
 
@@ -37,7 +35,7 @@
 <button
 	bind:this={tileElement}
 	onclick={handleClick}
-	class="group relative aspect-[16/10] rounded-lg overflow-hidden border border-cream/10 cursor-pointer transition-all duration-300 {classes.border} {classes.glow} hover:scale-[1.02]"
+	class="group relative aspect-[16/9] rounded-xl overflow-hidden border-2 {classes.border} cursor-pointer transition-all duration-300 {classes.glow} hover:scale-[1.02]"
 	aria-label="Open {name}"
 >
 	<!-- Screenshot background -->
@@ -47,12 +45,9 @@
 		class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
 	/>
 
-	<!-- Gradient overlay -->
-	<div class="absolute inset-0 bg-gradient-to-t {classes.gradient} transition-opacity duration-300 group-hover:opacity-80"></div>
-
-	<!-- Text overlay -->
-	<div class="absolute bottom-0 left-0 right-0 p-4 text-left">
-		<h3 class="font-display font-semibold text-cream text-lg mb-1">{name}</h3>
-		<p class="text-sm text-cream/70">{description}</p>
+	<!-- Text overlay with subtle shadow for readability -->
+	<div class="absolute bottom-0 left-0 right-0 p-5 text-left bg-gradient-to-t from-black/60 to-transparent">
+		<h3 class="font-display font-bold text-cream text-xl mb-1 drop-shadow-lg">{name}</h3>
+		<p class="text-sm text-cream/80 drop-shadow">{description}</p>
 	</div>
 </button>

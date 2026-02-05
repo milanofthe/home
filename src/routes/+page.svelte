@@ -1,45 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
 	import Icons from '$lib/components/Icons.svelte';
 	import PortalGrid from '$lib/components/PortalGrid.svelte';
 
-	const STATS_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/github-stats.json';
-
-	let animatedStars = $state(0);
-	let animatedProjects = $state(0);
-
-	function animateCount(from: number, to: number, duration: number, onUpdate: (val: number) => void) {
-		const start = performance.now();
-		const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
-
-		function update(now: number) {
-			const elapsed = now - start;
-			const progress = Math.min(elapsed / duration, 1);
-			const easedProgress = easeOutQuart(progress);
-			const current = Math.round(from + (to - from) * easedProgress);
-			onUpdate(current);
-
-			if (progress < 1) {
-				requestAnimationFrame(update);
-			}
-		}
-		requestAnimationFrame(update);
-	}
-
-	onMount(async () => {
-		try {
-			const response = await fetch(STATS_URL, { cache: 'no-store' });
-			if (response.ok) {
-				const data = await response.json();
-				// Animate the counters
-				animateCount(0, data.current.pathsim.stars, 1500, (val) => animatedStars = val);
-				animateCount(0, data.current.pysimhub.projects, 1500, (val) => animatedProjects = val);
-			}
-		} catch {
-			// Keep default values on error
-		}
-	});
 
 	// Contact form state
 	let formStatus = $state<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -70,44 +33,6 @@
 		}
 	}
 
-	const services = [
-		{
-			icon: 'code' as const,
-			title: 'Model Development',
-			description: 'Mathematical models that fit your data and pipeline. From differential equations to state-space representations.',
-			items: ['System identification', 'Parameter estimation', 'Model order reduction', 'Validation']
-		},
-		{
-			icon: 'zap' as const,
-			title: 'Numerical Problem Solving',
-			description: 'Fixing stability, convergence, and performance issues. Making slow models fast and unstable models robust.',
-			items: ['Stiff system handling', 'Solver selection', 'Multirate integration', 'Parallelization']
-		},
-		{
-			icon: 'layers' as const,
-			title: 'Digital Twin Integration',
-			description: 'Connecting multiple models into unified simulations. Co-simulation of FEM, circuit, and system-level models.',
-			items: ['Multi-physics coupling', 'Co-simulation', 'Real-time integration', 'API design']
-		}
-	];
-
-	// PathSim tiles with animated stats
-	let pathsimTiles = $derived([
-		{ icon: 'cpu' as const, title: 'Hot-Swappable', caption: 'Runtime changes' },
-		{ icon: 'layers' as const, title: 'Hierarchical', caption: 'Nested subsystems' },
-		{ icon: 'chart' as const, title: 'Multi-Solver', caption: 'Adaptive integrators' },
-		{ icon: 'zap' as const, title: 'Event Handling', caption: 'Zero-crossing detection' },
-		{ icon: 'star' as const, title: `${animatedStars}+`, caption: 'GitHub Stars' }
-	]);
-
-	// PySimHub tiles with animated stats
-	let pysimhubTiles = $derived([
-		{ icon: 'layers' as const, title: 'Browse', caption: 'Simulation libraries' },
-		{ icon: 'code' as const, title: 'Submit', caption: 'Your projects' },
-		{ icon: 'users' as const, title: 'Community', caption: 'Open collaboration' },
-		{ icon: 'github' as const, title: 'Open Source', caption: 'MIT licensed' },
-		{ icon: 'star' as const, title: `${animatedProjects}`, caption: 'Featured Projects' }
-	]);
 </script>
 
 <Navigation />
@@ -164,7 +89,7 @@
 					I'm a research engineer and PhD candidate in electrical engineering. I build simulation software and solve numerical problems for teams working on complex physical systems.
 				</p>
 				<p>
-					Currently consulting for <span class="text-cream">MIT Plasma Science & Fusion Center</span> on nuclear fusion fuel-cycle modeling — building simulation infrastructure for systems that don't fit in commercial tools.
+					Currently consulting for MIT Plasma Science & Fusion Center on nuclear fusion fuel-cycle modeling — building simulation infrastructure for systems that don't fit in commercial tools.
 				</p>
 				<p>
 					Previously at TU Braunschweig, where I developed numerical methods for electrochemical sensors and EDA pipelines for cryogenic quantum applications, validated in silicon.
@@ -200,165 +125,58 @@
 		</div>
 	</section>
 
-	<!-- Services Section -->
-	<section id="services" class="py-24 lg:py-32 border-t border-cream/5">
-		<div class="max-w-6xl mx-auto px-6">
-			<div class="text-center mb-16">
-				<h2 class="font-display text-3xl sm:text-4xl font-bold text-teal uppercase mb-4">
-					What I do
-				</h2>
-				<p class="text-lg text-cream/60 max-w-2xl mx-auto">
-					Building tools and infrastructure for numerical and modeling software — from solvers and APIs to documentation and developer UX.
-				</p>
-			</div>
-
-			<div class="grid md:grid-cols-3 gap-6">
-				{#each services as service}
-					<div class="card card-hover p-8 flex flex-col">
-						<div class="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center mb-6">
-							<Icons name={service.icon} class="w-6 h-6 text-teal" />
-						</div>
-						<h3 class="font-display text-xl font-semibold text-cream mb-3">{service.title}</h3>
-						<p class="text-cream/60 leading-relaxed mb-6 flex-grow">{service.description}</p>
-						<ul class="space-y-2">
-							{#each service.items as item}
-								<li class="flex items-center gap-2 text-sm text-cream/70">
-									<Icons name="check" class="w-4 h-4 text-teal flex-shrink-0" />
-									{item}
-								</li>
-							{/each}
-						</ul>
-					</div>
-				{/each}
-			</div>
-		</div>
-	</section>
-
 	<!-- Projects Section -->
 	<section id="projects" class="py-24 lg:py-32 border-t border-cream/5">
-		<div class="max-w-6xl mx-auto px-6">
+		<div class="max-w-5xl mx-auto px-6">
 			<div class="text-center mb-16">
 				<h2 class="font-display text-3xl sm:text-4xl font-bold text-teal uppercase mb-4">
 					Projects
 				</h2>
 				<p class="text-lg text-cream/60 max-w-2xl mx-auto">
-					Open-source tools for numerical modeling and simulation. Click to explore.
+					Building open-source infrastructure for system modeling and simulation.
 				</p>
 			</div>
 
-			<!-- Portal Grid -->
-			<div class="mb-20">
-				<PortalGrid />
-			</div>
-
-			<!-- PathSim Details -->
-			<div class="text-center mb-20">
-				<!-- Logos -->
-				<div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mb-8">
+			<!-- PathSim Section -->
+			<div class="mb-20 text-center">
+				<div class="flex items-center justify-center gap-6 mb-6">
 					<img src="/images/pathsim_logo.png" alt="PathSim" class="h-20 w-auto" />
-					<span class="text-cream/30 text-2xl font-light hidden sm:block">+</span>
+					<span class="text-cream/30 text-2xl">+</span>
 					<img src="/images/pathview_logo.png" alt="PathView" class="h-20 w-auto" />
 				</div>
-
-				<p class="text-lg text-cream/70 leading-relaxed mb-8 max-w-2xl mx-auto">
-					A minimal-dependency Python framework for modeling and simulating complex dynamical systems using block diagrams. Applied and experimentally validated for nuclear fusion fuel-cycle modeling at MIT Plasma Science & Fusion Center.
+				<p class="text-cream/70 leading-relaxed mb-6 max-w-2xl mx-auto">
+					A complete ecosystem for dynamical system simulation — framework, documentation, browser-based editor, and community-driven toolbox development.
 				</p>
-
-				<!-- Tiles -->
-				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
-					{#each pathsimTiles as tile}
-						<div class="text-center p-6 card border-pathsim/10">
-							<div class="w-10 h-10 rounded-lg bg-pathsim/10 flex items-center justify-center mb-3 mx-auto">
-								<Icons name={tile.icon} class="w-5 h-5 text-pathsim" />
-							</div>
-							<div class="font-display font-semibold text-cream">{tile.title}</div>
-							<div class="text-xs text-cream/50 mt-1">{tile.caption}</div>
-						</div>
-					{/each}
-				</div>
-
-				<!-- Links -->
-				<div class="flex flex-wrap gap-4 justify-center">
-					<a
-						href="https://pathsim.org"
-						target="_blank"
-						rel="noopener"
-						class="inline-flex items-center gap-2 text-cream/70 hover:text-pathsim transition-colors"
-					>
-						<Icons name="globe" class="w-5 h-5" />
-						<span>Homepage</span>
-					</a>
-					<a
-						href="https://docs.pathsim.org"
-						target="_blank"
-						rel="noopener"
-						class="inline-flex items-center gap-2 text-cream/70 hover:text-pathsim transition-colors"
-					>
-						<Icons name="book" class="w-5 h-5" />
-						<span>Documentation</span>
-					</a>
-					<a
-						href="https://view.pathsim.org"
-						target="_blank"
-						rel="noopener"
-						class="inline-flex items-center gap-2 text-cream/70 hover:text-pathsim transition-colors"
-					>
-						<Icons name="play" class="w-5 h-5" />
-						<span>PathView</span>
-					</a>
-					<a
-						href="https://github.com/milanofthe/pathsim"
-						target="_blank"
-						rel="noopener"
-						class="inline-flex items-center gap-2 text-cream/70 hover:text-pathsim transition-colors"
-					>
+				<div class="flex flex-wrap justify-center gap-4 mb-8">
+					<a href="https://github.com/milanofthe/pathsim" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-cream/70 hover:text-pathsim transition-colors">
 						<Icons name="github" class="w-5 h-5" />
 						<span>GitHub</span>
 					</a>
 				</div>
+				<PortalGrid projects={[
+					{ id: 'pathsim-org', name: 'PathSim', url: 'https://pathsim.org', screenshot: '/screenshots/pathsim-org.png', description: 'Landing page', color: 'pathsim' },
+					{ id: 'docs-pathsim-org', name: 'Documentation', url: 'https://docs.pathsim.org', screenshot: '/screenshots/docs-pathsim-org.png', description: 'API reference & tutorials', color: 'pathsim' },
+					{ id: 'view-pathsim-org', name: 'PathView', url: 'https://view.pathsim.org', screenshot: '/screenshots/view-pathsim-org.png', description: 'Browser-based editor', color: 'pathsim' }
+				]} />
 			</div>
 
-			<!-- PySimHub Details -->
-			<div class="text-center pt-16 border-t border-cream/5">
-				<img src="/images/pysimhub-logo.png" alt="PySimHub" class="h-16 w-auto mb-6 mx-auto" />
-				<p class="text-lg text-cream/70 leading-relaxed mb-8 max-w-2xl mx-auto">
-					An open community catalog for Python simulation and numerics libraries. Helping researchers, engineers, and developers discover tools across robotics, control systems, fluid dynamics, optimization, and more.
+			<!-- PySimHub Section -->
+			<div class="pt-16 border-t border-cream/5 text-center">
+				<div class="flex items-center justify-center gap-4 mb-6">
+					<img src="/images/pysimhub-logo.png" alt="PySimHub" class="h-20 w-auto" />
+				</div>
+				<p class="text-cream/70 leading-relaxed mb-6 max-w-2xl mx-auto">
+					An open community platform for Python simulation and numerics libraries. Discover tools across robotics, control systems, fluid dynamics, and more.
 				</p>
-
-				<!-- Tiles -->
-				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
-					{#each pysimhubTiles as tile}
-						<div class="text-center p-6 card border-pysimhub/10">
-							<div class="w-10 h-10 rounded-lg bg-pysimhub/10 flex items-center justify-center mb-3 mx-auto">
-								<Icons name={tile.icon} class="w-5 h-5 text-pysimhub" />
-							</div>
-							<div class="font-display font-semibold text-cream">{tile.title}</div>
-							<div class="text-xs text-cream/50 mt-1">{tile.caption}</div>
-						</div>
-					{/each}
-				</div>
-
-				<!-- Links -->
-				<div class="flex flex-wrap gap-4 justify-center">
-					<a
-						href="https://github.com/pysimhub"
-						target="_blank"
-						rel="noopener"
-						class="inline-flex items-center gap-2 text-cream/70 hover:text-pysimhub transition-colors"
-					>
+				<div class="flex flex-wrap justify-center gap-4 mb-8">
+					<a href="https://github.com/pysimhub" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-cream/70 hover:text-pysimhub transition-colors">
 						<Icons name="github" class="w-5 h-5" />
-						<span>View on GitHub</span>
-					</a>
-					<a
-						href="https://pysimhub.io"
-						target="_blank"
-						rel="noopener"
-						class="inline-flex items-center gap-2 text-cream/70 hover:text-pysimhub transition-colors"
-					>
-						<Icons name="globe" class="w-5 h-5" />
-						<span>Visit pysimhub.io</span>
+						<span>GitHub</span>
 					</a>
 				</div>
+				<PortalGrid projects={[
+					{ id: 'pysimhub-io', name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', description: 'Community platform', color: 'pysimhub' }
+				]} />
 			</div>
 		</div>
 	</section>
