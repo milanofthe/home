@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
 	import Icons from '$lib/components/Icons.svelte';
+	import PortalGrid from '$lib/components/PortalGrid.svelte';
 
 	const STATS_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/github-stats.json';
 
@@ -236,7 +237,21 @@
 	<!-- Projects Section -->
 	<section id="projects" class="py-24 lg:py-32 border-t border-cream/5">
 		<div class="max-w-6xl mx-auto px-6">
-			<!-- PathSim -->
+			<div class="text-center mb-16">
+				<h2 class="font-display text-3xl sm:text-4xl font-bold text-teal uppercase mb-4">
+					Projects
+				</h2>
+				<p class="text-lg text-cream/60 max-w-2xl mx-auto">
+					Open-source tools for numerical modeling and simulation. Click to explore.
+				</p>
+			</div>
+
+			<!-- Portal Grid -->
+			<div class="mb-20">
+				<PortalGrid />
+			</div>
+
+			<!-- PathSim Details -->
 			<div class="text-center mb-20">
 				<!-- Logos -->
 				<div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mb-8">
@@ -248,20 +263,6 @@
 				<p class="text-lg text-cream/70 leading-relaxed mb-8 max-w-2xl mx-auto">
 					A minimal-dependency Python framework for modeling and simulating complex dynamical systems using block diagrams. Applied and experimentally validated for nuclear fusion fuel-cycle modeling at MIT Plasma Science & Fusion Center.
 				</p>
-
-				<!-- Try PathView CTA -->
-				<div class="mb-10">
-					<a
-						href="https://view.pathsim.org"
-						target="_blank"
-						rel="noopener"
-						class="inline-flex items-center gap-2 px-6 py-3 border border-pathsim/50 text-pathsim font-display font-medium rounded-lg transition-all duration-300 hover:bg-pathsim/10 hover:border-pathsim"
-					>
-						Try PathView
-						<Icons name="arrow-right" class="w-4 h-4" />
-					</a>
-					<p class="text-sm text-cream/50 mt-3">No installation required — build simulations in your browser</p>
-				</div>
 
 				<!-- Tiles -->
 				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
@@ -317,26 +318,12 @@
 				</div>
 			</div>
 
-			<!-- PySimHub -->
+			<!-- PySimHub Details -->
 			<div class="text-center pt-16 border-t border-cream/5">
 				<img src="/images/pysimhub-logo.png" alt="PySimHub" class="h-16 w-auto mb-6 mx-auto" />
 				<p class="text-lg text-cream/70 leading-relaxed mb-8 max-w-2xl mx-auto">
 					An open community catalog for Python simulation and numerics libraries. Helping researchers, engineers, and developers discover tools across robotics, control systems, fluid dynamics, optimization, and more.
 				</p>
-
-				<!-- Submit CTA -->
-				<div class="mb-10">
-					<a
-						href="https://pysimhub.io/submit/"
-						target="_blank"
-						rel="noopener"
-						class="inline-flex items-center gap-2 px-6 py-3 border border-pysimhub/50 text-pysimhub font-display font-medium rounded-lg transition-all duration-300 hover:bg-pysimhub/10 hover:border-pysimhub"
-					>
-						Submit Your Project
-						<Icons name="arrow-right" class="w-4 h-4" />
-					</a>
-					<p class="text-sm text-cream/50 mt-3">Add your library to the catalog</p>
-				</div>
 
 				<!-- Tiles -->
 				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
