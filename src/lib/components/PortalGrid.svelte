@@ -58,7 +58,7 @@
 </script>
 
 <!-- Grid - centered, columns match item count -->
-<div class="grid gap-6 mx-auto {projects.length === 1 ? 'grid-cols-1 max-w-md' : projects.length === 2 ? 'grid-cols-1 md:grid-cols-2 max-w-3xl' : 'grid-cols-1 md:grid-cols-3 max-w-5xl'}">
+<div class="grid gap-4 w-full h-full {projects.length === 1 ? 'grid-cols-1' : projects.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}">
 	{#each projects as project}
 		<PortalTile
 			{...project}

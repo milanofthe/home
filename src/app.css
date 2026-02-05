@@ -124,3 +124,118 @@
 .portal-overlay.expanding img {
 	transform: scale(1.05);
 }
+
+/* Code rain grid styles */
+.code-grid {
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	white-space: pre;
+	overflow: hidden;
+	width: 100%;
+}
+
+.code-grid-line {
+	line-height: inherit;
+	overflow: hidden;
+}
+
+.code-grid-filler {
+	color: rgba(240, 239, 233, 0.07);
+}
+
+.code-grid-content {
+	color: rgba(240, 239, 233, 0.85);
+}
+
+.code-grid-heading {
+	color: #00d9c0;
+	font-weight: bold;
+}
+
+.code-grid-heading-pathsim {
+	color: #0070c0;
+	font-weight: bold;
+}
+
+.code-grid-heading-pysimhub {
+	color: #6366f1;
+	font-weight: bold;
+}
+
+.code-grid-cta {
+	color: rgba(0, 217, 192, 0.9);
+	cursor: pointer;
+}
+
+.code-grid-link {
+	color: rgba(0, 217, 192, 0.7);
+}
+
+.code-grid-link-pathsim {
+	color: #0070c0;
+}
+
+.code-grid-link-pysimhub {
+	color: #6366f1;
+}
+
+.code-grid-footer {
+	color: rgba(240, 239, 233, 0.4);
+}
+
+.code-grid-empty {
+	color: transparent;
+}
+
+.code-grid-form-field {
+	color: rgba(0, 217, 192, 0.4);
+}
+
+.code-grid-frame {
+	color: rgba(0, 217, 192, 0.15);
+}
+
+.code-grid-frame-pathsim {
+	color: rgba(0, 112, 192, 0.25);
+}
+
+.code-grid-frame-pysimhub {
+	color: rgba(99, 102, 241, 0.25);
+}
+
+/* Spotlight: duplicate grid layer masked to cursor, only filler brightens */
+.spotlight-grid {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	pointer-events: none;
+	z-index: 1;
+	-webkit-mask-image: radial-gradient(circle 200px at var(--spotlight-x, -9999px) var(--spotlight-y, -9999px), black 0%, transparent 70%);
+	mask-image: radial-gradient(circle 200px at var(--spotlight-x, -9999px) var(--spotlight-y, -9999px), black 0%, transparent 70%);
+}
+
+.spotlight-grid .code-grid-filler {
+	color: rgba(240, 239, 233, 0.18);
+}
+
+.spotlight-grid span:not(.code-grid-filler) {
+	color: transparent;
+}
+
+/* Typewriter: filler-colored base with real-colored overlay that reveals L-to-R */
+.tw-wrapper {
+	position: relative;
+	display: inline;
+}
+
+.tw-overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	clip-path: inset(0 100% 0 0);
+}
+
+@keyframes type-reveal {
+	from { clip-path: inset(0 100% 0 0); }
+	to { clip-path: inset(0 0% 0 0); }
+}
