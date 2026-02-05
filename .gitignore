@@ -10,6 +10,9 @@ CLAUDE.md
 build
 .svelte-kit
 
+# Generated screenshots (captured at build time)
+static/screenshots
+
 # Environment
 .env
 .env.*

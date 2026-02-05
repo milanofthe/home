@@ -35,7 +35,7 @@
 <button
 	bind:this={tileElement}
 	onclick={handleClick}
-	class="group relative aspect-[16/9] rounded-xl overflow-hidden border-2 {classes.border} cursor-pointer transition-all duration-300 {classes.glow} hover:scale-[1.02]"
+	class="group relative aspect-[16/10] rounded-xl overflow-hidden border-2 {classes.border} cursor-pointer transition-all duration-300 {classes.glow} hover:scale-[1.02]"
 	aria-label="Open {name}"
 >
 	<!-- Screenshot background -->

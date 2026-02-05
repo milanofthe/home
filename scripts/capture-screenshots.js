@@ -24,7 +24,7 @@ async function captureScreenshot(browser, site) {
 	console.log(`Capturing ${site.id} (${site.url})...`);
 
 	const page = await browser.newPage();
-	await page.setViewport({ width: 2560, height: 1440, deviceScaleFactor: 2 });
+	await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 });
 
 	// Enable dark mode
 	await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'dark' }]);

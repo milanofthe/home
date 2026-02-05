@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Capture screenshots
+        run: npm run screenshots
+
       - name: Update sitemap
         run: npm run update-sitemap
 
