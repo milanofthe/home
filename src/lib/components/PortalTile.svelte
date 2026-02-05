@@ -42,7 +42,7 @@
 	<img
 		src={screenshot}
 		alt="{name} preview"
-		class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+		class="absolute inset-0 w-full h-full object-cover object-top"
 	/>
 
 	<!-- Text overlay with subtle shadow for readability -->
