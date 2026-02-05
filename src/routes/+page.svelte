@@ -165,7 +165,7 @@
 					<img src="/images/pysimhub-logo.png" alt="PySimHub" class="h-20 w-auto" />
 				</div>
 				<p class="text-cream/70 leading-relaxed mb-6 max-w-2xl mx-auto">
-					Python's simulation libraries are scattered across communities. PySimHub bridges the gaps — connecting practitioners across robotics, control, fluids, and beyond through tag-based discovery and fair exposure.
+					An open community catalog bridging Python's scattered simulation communities — an awesome list that's also awesome to use. Live data, real exploration, no stale links.
 				</p>
 				<div class="flex flex-wrap justify-center gap-4 mb-8">
 					<a href="https://github.com/pysimhub" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-cream/70 hover:text-pysimhub transition-colors">
