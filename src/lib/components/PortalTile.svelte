@@ -18,17 +18,11 @@
 	}
 
 	const colorClasses = {
-		pathsim: {
-			border: 'border-pathsim',
-			glow: 'hover:shadow-[0_0_40px_rgba(0,112,192,0.5)]'
-		},
-		pysimhub: {
-			border: 'border-pysimhub',
-			glow: 'hover:shadow-[0_0_40px_rgba(99,102,241,0.5)]'
-		}
+		pathsim: 'border-pathsim',
+		pysimhub: 'border-pysimhub'
 	};
 
-	const classes = colorClasses[color];
+	const borderClass = colorClasses[color];
 	const hostname = new URL(url).hostname;
 </script>
 
@@ -36,7 +30,7 @@
 	<button
 		bind:this={tileElement}
 		onclick={handleClick}
-		class="group relative aspect-[16/10] w-full rounded-xl overflow-hidden border-2 {classes.border} cursor-pointer transition-all duration-300 {classes.glow} hover:scale-[1.02]"
+		class="group relative aspect-[16/10] w-full rounded-xl overflow-hidden border-2 {borderClass} cursor-pointer transition-all duration-300 hover:scale-105"
 		aria-label="Open {name}"
 	>
 		<img
