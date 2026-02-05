@@ -4,12 +4,11 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		description: string;
 		color: 'pathsim' | 'pysimhub';
 		onclick: (rect: DOMRect) => void;
 	}
 
-	let { id, name, url, screenshot, description, color, onclick }: Props = $props();
+	let { id, name, url, screenshot, color, onclick }: Props = $props();
 
 	let tileElement: HTMLButtonElement;
 
@@ -30,24 +29,21 @@
 	};
 
 	const classes = colorClasses[color];
+	const hostname = new URL(url).hostname;
 </script>
 
-<button
-	bind:this={tileElement}
-	onclick={handleClick}
-	class="group relative aspect-[16/10] rounded-xl overflow-hidden border-2 {classes.border} cursor-pointer transition-all duration-300 {classes.glow} hover:scale-[1.02]"
-	aria-label="Open {name}"
->
-	<!-- Screenshot background -->
-	<img
-		src={screenshot}
-		alt="{name} preview"
-		class="absolute inset-0 w-full h-full object-cover object-top"
-	/>
-
-	<!-- Text overlay with subtle shadow for readability -->
-	<div class="absolute bottom-0 left-0 right-0 p-5 text-left bg-gradient-to-t from-black/60 to-transparent">
-		<h3 class="font-display font-bold text-cream text-xl mb-1 drop-shadow-lg">{name}</h3>
-		<p class="text-sm text-cream/80 drop-shadow">{description}</p>
-	</div>
-</button>
+<div class="flex flex-col items-center">
+	<button
+		bind:this={tileElement}
+		onclick={handleClick}
+		class="group relative aspect-[16/10] w-full rounded-xl overflow-hidden border-2 {classes.border} cursor-pointer transition-all duration-300 {classes.glow} hover:scale-[1.02]"
+		aria-label="Open {name}"
+	>
+		<img
+			src={screenshot}
+			alt="{name} preview"
+			class="absolute inset-0 w-full h-full object-cover object-top"
+		/>
+	</button>
+	<span class="mt-3 text-sm text-cream/40">{hostname}</span>
+</div>

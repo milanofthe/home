@@ -6,7 +6,6 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		description: string;
 		color: 'pathsim' | 'pysimhub';
 	}
 
@@ -66,12 +65,5 @@
 			alt="{expandingProject.name} preview"
 			class="absolute inset-0 w-full h-full object-cover object-top"
 		/>
-		<div
-			class="absolute bottom-0 left-0 right-0 p-5 text-left bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300"
-			class:opacity-0={isExpanding}
-		>
-			<h3 class="font-display font-bold text-cream text-xl mb-1 drop-shadow-lg">{expandingProject.name}</h3>
-			<p class="text-sm text-cream/80 drop-shadow">{expandingProject.description}</p>
-		</div>
 	</div>
 {/if}
