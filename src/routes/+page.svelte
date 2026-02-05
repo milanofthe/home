@@ -55,12 +55,11 @@
 
 				<!-- Intro -->
 				<div class="text-center lg:text-left">
-					<p class="section-label mb-4">Dynamical Systems & Simulation</p>
 					<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-6">
 						Milan Rother
 					</h1>
 					<p class="text-lg sm:text-xl text-cream/70 leading-relaxed mb-8 max-w-2xl">
-						Building tools and infrastructure for numerical modeling and simulation. Creator of <a href="https://pathsim.org" class="link">PathSim</a>. Currently consulting for MIT on nuclear fusion fuel-cycle modeling.
+						I build simulation tools end-to-end — numerical methods, infrastructure, and the interfaces to use them.
 					</p>
 					<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 						<a href="#contact" class="btn-primary">
