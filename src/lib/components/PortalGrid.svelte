@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import PortalTile from './PortalTile.svelte';
 
 	interface Project {
@@ -19,6 +20,18 @@
 	let overlayStyle = $state('');
 	let isExpanding = $state(false);
 
+	onMount(() => {
+		// Reset state when returning via back button
+		const handlePageShow = (event: PageTransitionEvent) => {
+			if (event.persisted) {
+				expandingProject = null;
+				isExpanding = false;
+			}
+		};
+		window.addEventListener('pageshow', handlePageShow);
+		return () => window.removeEventListener('pageshow', handlePageShow);
+	});
+
 	function handleTileClick(project: typeof projects[0], rect: DOMRect) {
 		expandingProject = project;
 
@@ -38,7 +51,7 @@
 				// Navigate after animation
 				setTimeout(() => {
 					window.location.href = project.url;
-				}, 650);
+				}, 350);
 			});
 		});
 	}

@@ -102,11 +102,11 @@
 	z-index: 50;
 	overflow: hidden;
 	border-radius: 0.75rem;
-	transition: top 700ms cubic-bezier(0.16, 1, 0.3, 1),
-	            left 700ms cubic-bezier(0.16, 1, 0.3, 1),
-	            width 700ms cubic-bezier(0.16, 1, 0.3, 1),
-	            height 700ms cubic-bezier(0.16, 1, 0.3, 1),
-	            border-radius 700ms cubic-bezier(0.16, 1, 0.3, 1);
+	transition: top 350ms cubic-bezier(0.16, 1, 0.3, 1),
+	            left 350ms cubic-bezier(0.16, 1, 0.3, 1),
+	            width 350ms cubic-bezier(0.16, 1, 0.3, 1),
+	            height 350ms cubic-bezier(0.16, 1, 0.3, 1),
+	            border-radius 350ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .portal-overlay.expanding {
@@ -118,7 +118,7 @@
 }
 
 .portal-overlay img {
-	transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+	transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .portal-overlay.expanding img {
