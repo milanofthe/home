@@ -193,19 +193,126 @@ export function computeGridLayout(cols: number): GridLayout {
 		}
 
 		if (region.type === 'embedded') {
-			const label = region.label || '';
 			const frameType: CellType =
 				region.frameColor === 'pathsim' ? 'frame-pathsim' :
 				region.frameColor === 'pysimhub' ? 'frame-pysimhub' :
 				'frame';
-			const innerCols = Math.min(region.embeddedCols || 40, cols - 6);
-			const frameCols = innerCols + 2;
-			const frameStartCol = Math.floor((cols - frameCols) / 2);
-			// Increase embedded rows for stacked tile grids on narrow viewports
-			let innerRows = region.embeddedRows || 10;
-			if (cols <= 40 && region.embeddedId === 'pathsim-tiles') {
-				innerRows = 18;
+			const totalInnerCols = Math.min(region.embeddedCols || 40, cols - 6);
+			const innerRows = region.embeddedRows || 10;
+
+			// Individual framed tiles
+			if (region.tiles && region.tiles.length > 0) {
+				const n = region.tiles.length;
+				const gap = 2;
+				const totalFrameCols = totalInnerCols + 2;
+				const totalStart = Math.floor((cols - totalFrameCols) / 2);
+				// Side by side if each tile gets at least 18 frame cols
+				const perTileFrameCols = Math.floor((totalFrameCols - (n - 1) * gap) / n);
+				const sideBySide = n === 1 || perTileFrameCols >= 18;
+
+				if (sideBySide) {
+					// Compute per-tile frame positions
+					const tileFrames: { start: number; frameCols: number; innerCols: number }[] = [];
+					let cursor = totalStart;
+					for (let t = 0; t < n; t++) {
+						const fc = t < n - 1 ? perTileFrameCols : totalFrameCols - (perTileFrameCols + gap) * (n - 1);
+						tileFrames.push({ start: cursor, frameCols: fc, innerCols: fc - 2 });
+						cursor += fc + gap;
+					}
+
+					// Top borders (all on one row)
+					const topRow: Cell[] = fillerLine(cols, fillerOffset);
+					for (let t = 0; t < n; t++) {
+						const tf = tileFrames[t];
+						const top = buildFrameTop(tf.frameCols, region.tiles[t].label);
+						for (let i = 0; i < top.length; i++) {
+							topRow[tf.start + i] = { char: top[i], type: frameType };
+						}
+					}
+					cells.push(topRow);
+					advanceOffset(cols);
+
+					// Record embedded block positions
+					for (let t = 0; t < n; t++) {
+						const tf = tileFrames[t];
+						embeddedBlocks.push({
+							id: region.tiles[t].id,
+							row: cells.length,
+							col: tf.start + 1,
+							rows: innerRows,
+							cols: tf.innerCols
+						});
+					}
+
+					// Content rows with side borders for all tiles
+					for (let r = 0; r < innerRows; r++) {
+						const row: Cell[] = fillerLine(cols, fillerOffset);
+						for (let t = 0; t < n; t++) {
+							const tf = tileFrames[t];
+							const end = tf.start + tf.frameCols;
+							row[tf.start] = { char: '│', type: frameType };
+							row[end - 1] = { char: '│', type: frameType };
+							for (let i = tf.start + 1; i < end - 1; i++) {
+								row[i] = { char: ' ', type: 'empty' };
+							}
+						}
+						cells.push(row);
+						advanceOffset(cols);
+					}
+
+					// Bottom borders (all on one row)
+					const botRow: Cell[] = fillerLine(cols, fillerOffset);
+					for (let t = 0; t < n; t++) {
+						const tf = tileFrames[t];
+						const bot = buildFrameBottom(tf.frameCols);
+						for (let i = 0; i < bot.length; i++) {
+							botRow[tf.start + i] = { char: bot[i], type: frameType };
+						}
+					}
+					cells.push(botRow);
+					advanceOffset(cols);
+				} else {
+					// Stacked: each tile gets its own frame, full width
+					const frameCols = totalFrameCols;
+					const tileInnerCols = frameCols - 2;
+					const frameStart = totalStart;
+
+					for (let t = 0; t < n; t++) {
+						// Top border
+						cells.push(frameBorderLine(cols, frameStart, buildFrameTop(frameCols, region.tiles[t].label), fillerOffset, frameType));
+						advanceOffset(cols);
+
+						embeddedBlocks.push({
+							id: region.tiles[t].id,
+							row: cells.length,
+							col: frameStart + 1,
+							rows: innerRows,
+							cols: tileInnerCols
+						});
+
+						for (let r = 0; r < innerRows; r++) {
+							cells.push(frameSideRow(cols, frameStart, frameCols, fillerOffset, frameType));
+							advanceOffset(cols);
+						}
+
+						// Bottom border
+						cells.push(frameBorderLine(cols, frameStart, buildFrameBottom(frameCols), fillerOffset, frameType));
+						advanceOffset(cols);
+
+						// Gap between stacked tiles
+						if (t < n - 1) {
+							cells.push(fillerLine(cols, fillerOffset));
+							advanceOffset(cols);
+						}
+					}
+				}
+				return;
 			}
+
+			// Single embedded block with frame
+			const label = region.label || '';
+			const frameCols = totalInnerCols + 2;
+			const frameStartCol = Math.floor((cols - frameCols) / 2);
 
 			// Top border
 			cells.push(frameBorderLine(cols, frameStartCol, buildFrameTop(frameCols, label), fillerOffset, frameType));
@@ -217,7 +324,7 @@ export function computeGridLayout(cols: number): GridLayout {
 				row: cells.length,
 				col: frameStartCol + 1,
 				rows: innerRows,
-				cols: innerCols
+				cols: totalInnerCols
 			});
 
 			// Content rows with side borders

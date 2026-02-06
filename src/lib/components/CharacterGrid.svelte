@@ -12,7 +12,6 @@
 	let { cells, fontSize, lineHeight, charWidth }: Props = $props();
 
 	let gridEl: HTMLDivElement;
-	let spotlightGridEl: HTMLDivElement;
 
 	const TYPE_CLASSES: Record<string, string> = {
 		filler: 'code-grid-filler',
@@ -142,7 +141,6 @@
 			}
 			const html = parts.join('');
 			gridEl.innerHTML = html;
-			if (spotlightGridEl) spotlightGridEl.innerHTML = html;
 			if (firstRender) {
 				setupTypewriter();
 				firstRender = false;
@@ -156,12 +154,6 @@
 <div
 	bind:this={gridEl}
 	class="code-grid"
-	style="line-height: {lineHeight}px; font-size: {fontSize}px;"
-	aria-hidden="true"
-></div>
-<div
-	bind:this={spotlightGridEl}
-	class="code-grid spotlight-grid"
 	style="line-height: {lineHeight}px; font-size: {fontSize}px;"
 	aria-hidden="true"
 ></div>

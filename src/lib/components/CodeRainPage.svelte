@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { computeGridLayout, getBreakpointConfig, type GridLayout, type EmbeddedBlockPosition, type FormFieldPosition, type CellType } from '$lib/layout/gridLayout';
 	import CharacterGrid from './CharacterGrid.svelte';
-	import PortalGrid from './PortalGrid.svelte';
+	import PortalTile from './PortalTile.svelte';
 
 	let containerEl: HTMLDivElement;
 
@@ -11,6 +11,38 @@
 	let lineHeight = $state(0);
 	let gridLayout = $state.raw<GridLayout | null>(null);
 	let mounted = $state(false);
+
+	// Tile data for individual embedded blocks
+	interface TileInfo {
+		name: string;
+		url: string;
+		screenshot: string;
+		mobileScreenshot?: string;
+		color: 'pathsim' | 'pysimhub';
+	}
+
+	const tileInfo: Record<string, TileInfo> = {
+		'pathsim-org': { name: 'PathSim', url: 'https://pathsim.org', screenshot: '/screenshots/pathsim-org.png', mobileScreenshot: '/screenshots/pathsim-org-mobile.png', color: 'pathsim' },
+		'docs-pathsim-org': { name: 'Documentation', url: 'https://docs.pathsim.org', screenshot: '/screenshots/docs-pathsim-org.png', mobileScreenshot: '/screenshots/docs-pathsim-org-mobile.png', color: 'pathsim' },
+		'view-pathsim-org': { name: 'PathView', url: 'https://view.pathsim.org', screenshot: '/screenshots/view-pathsim-org.png', mobileScreenshot: '/screenshots/view-pathsim-org-mobile.png', color: 'pathsim' },
+		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', mobileScreenshot: '/screenshots/pysimhub-io-mobile.png', color: 'pysimhub' }
+	};
+
+	// Expanding tile animation
+	let expandingTile = $state<TileInfo | null>(null);
+	let overlayStyle = $state('');
+	let isExpanding = $state(false);
+
+	function handleTileClick(info: TileInfo, rect: DOMRect) {
+		expandingTile = info;
+		overlayStyle = `top: ${rect.top}px; left: ${rect.left}px; width: ${rect.width}px; height: ${rect.height}px;`;
+		requestAnimationFrame(() => {
+			requestAnimationFrame(() => {
+				isExpanding = true;
+				setTimeout(() => { window.location.href = info.url; }, 350);
+			});
+		});
+	}
 
 	// Contact form state
 	let formStatus = $state<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -135,17 +167,44 @@
 		}
 	}
 
+	// Hovered word highlight
+	let hoveredWord = $state<{ row: number; col: number; length: number; text: string } | null>(null);
+
 	function handleMouseMove(e: MouseEvent) {
-		if (!containerEl) return;
+		if (!containerEl || !gridLayout) { hoveredWord = null; return; }
 		const rect = containerEl.getBoundingClientRect();
-		containerEl.style.setProperty('--spotlight-x', `${e.clientX - rect.left}px`);
-		containerEl.style.setProperty('--spotlight-y', `${e.clientY - rect.top}px`);
+		const row = Math.floor((e.clientY - rect.top) / lineHeight);
+		const col = Math.floor((e.clientX - rect.left) / charWidth);
+
+		const cells = gridLayout.cells;
+		if (row < 0 || row >= cells.length || col < 0 || col >= cells[0].length) {
+			hoveredWord = null;
+			return;
+		}
+
+		const cell = cells[row][col];
+		if (cell.type !== 'filler' || cell.char === ' ') {
+			hoveredWord = null;
+			return;
+		}
+
+		// Find whitespace-separated token boundaries
+		const rowCells = cells[row];
+		let start = col;
+		while (start > 0 && rowCells[start - 1].type === 'filler' && rowCells[start - 1].char !== ' ') start--;
+		let end = col;
+		while (end < rowCells.length - 1 && rowCells[end + 1].type === 'filler' && rowCells[end + 1].char !== ' ') end++;
+
+		// Skip update if same word
+		if (hoveredWord && hoveredWord.row === row && hoveredWord.col === start) return;
+
+		let text = '';
+		for (let i = start; i <= end; i++) text += rowCells[i].char;
+		hoveredWord = { row, col: start, length: end - start + 1, text };
 	}
 
 	function handleMouseLeave() {
-		if (!containerEl) return;
-		containerEl.style.setProperty('--spotlight-x', '-9999px');
-		containerEl.style.setProperty('--spotlight-y', '-9999px');
+		hoveredWord = null;
 	}
 
 	function flyIn(node: HTMLElement) {
@@ -202,10 +261,17 @@
 			setTimeout(() => scrollToSection(id), 100);
 		}
 
+		// Reset expand animation when returning via back button
+		function handlePageShow(e: PageTransitionEvent) {
+			if (e.persisted) { expandingTile = null; isExpanding = false; }
+		}
+
 		window.addEventListener('resize', computeLayout);
+		window.addEventListener('pageshow', handlePageShow);
 		document.addEventListener('click', handleNavClick);
 		return () => {
 			window.removeEventListener('resize', computeLayout);
+			window.removeEventListener('pageshow', handlePageShow);
 			document.removeEventListener('click', handleNavClick);
 		};
 	});
@@ -257,30 +323,27 @@
 					}}
 					onmouseleave={(e) => { e.currentTarget.style.transform = ''; }}
 				>
-					<img src="/images/headshot_milan.png" alt="Milan Rother" class="photo-img" />
+					<img src="/images/headshot_milan.webp" alt="Milan Rother" class="photo-img" />
 				</div>
 			</div>
 		{/if}
 
-		{#if blocks.has('pathsim-tiles')}
-			{@const b = blocks.get('pathsim-tiles')!}
-			<div class="overlay-block" use:flyIn style="top: {b.row * lineHeight}px; left: {b.col * charWidth}px; width: {b.cols * charWidth}px; height: {b.rows * lineHeight}px;">
-				<PortalGrid projects={[
-					{ id: 'pathsim-org', name: 'PathSim', url: 'https://pathsim.org', screenshot: '/screenshots/pathsim-org.png', mobileScreenshot: '/screenshots/pathsim-org-mobile.png', color: 'pathsim' },
-					{ id: 'docs-pathsim-org', name: 'Documentation', url: 'https://docs.pathsim.org', screenshot: '/screenshots/docs-pathsim-org.png', mobileScreenshot: '/screenshots/docs-pathsim-org-mobile.png', color: 'pathsim' },
-					{ id: 'view-pathsim-org', name: 'PathView', url: 'https://view.pathsim.org', screenshot: '/screenshots/view-pathsim-org.png', mobileScreenshot: '/screenshots/view-pathsim-org-mobile.png', color: 'pathsim' }
-				]} />
-			</div>
-		{/if}
-
-		{#if blocks.has('pysimhub-tiles')}
-			{@const b = blocks.get('pysimhub-tiles')!}
-			<div class="overlay-block" use:flyIn style="top: {b.row * lineHeight}px; left: {b.col * charWidth}px; width: {b.cols * charWidth}px; height: {b.rows * lineHeight}px;">
-				<PortalGrid projects={[
-					{ id: 'pysimhub-io', name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', mobileScreenshot: '/screenshots/pysimhub-io-mobile.png', color: 'pysimhub' }
-				]} />
-			</div>
-		{/if}
+		{#each gridLayout.embeddedBlocks as block}
+			{#if tileInfo[block.id]}
+				{@const info = tileInfo[block.id]}
+				<div class="overlay-block" use:flyIn style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
+					<PortalTile
+						id={block.id}
+						name={info.name}
+						url={info.url}
+						screenshot={info.screenshot}
+						mobileScreenshot={info.mobileScreenshot}
+						color={info.color}
+						onclick={(rect) => handleTileClick(info, rect)}
+					/>
+				</div>
+			{/if}
+		{/each}
 
 		<!-- Inline form inputs positioned over form-field grid rows -->
 		<form id="grid-contact-form" class="form-inputs-layer">
@@ -360,7 +423,33 @@
 			{/if}
 		{/each}
 	{/if}
+
+	{#if hoveredWord}
+		<span
+			class="hovered-word"
+			aria-hidden="true"
+			style="top: {hoveredWord.row * lineHeight}px; left: {hoveredWord.col * charWidth}px; font-size: {fontSize}px; line-height: {lineHeight}px;"
+		>{hoveredWord.text}</span>
+	{/if}
 </div>
+
+{#if expandingTile}
+	<div
+		class="portal-overlay {isExpanding ? 'expanding' : ''}"
+		style={overlayStyle}
+	>
+		<picture>
+			{#if expandingTile.mobileScreenshot}
+				<source media="(max-width: 639px)" srcset={expandingTile.mobileScreenshot} />
+			{/if}
+			<img
+				src={expandingTile.screenshot}
+				alt="{expandingTile.name} preview"
+				class="absolute inset-0 w-full h-full object-cover object-top"
+			/>
+		</picture>
+	</div>
+{/if}
 
 <style>
 	.code-rain-container {
@@ -380,7 +469,7 @@
 		height: 100%;
 		border-radius: 0.75rem;
 		overflow: hidden;
-		border: 2px solid rgba(0, 217, 192, 0.15);
+		border: none;
 		transition: transform 0.15s ease-out, box-shadow 0.3s;
 		will-change: transform;
 	}

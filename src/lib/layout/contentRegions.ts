@@ -1,6 +1,11 @@
 // Declarative content structure for the code rain grid
 // Each region defines what content goes where in the grid
 
+import githubStats from '$lib/data/github-stats.json';
+
+const ps = githubStats.current.pathsim;
+const ph = githubStats.current.pysimhub;
+
 export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'footer-line' | 'content' | 'form-field';
 
 export interface ContentRegion {
@@ -10,6 +15,7 @@ export interface ContentRegion {
 	embeddedId?: string; // for embedded blocks (photo, tiles, form)
 	embeddedRows?: number; // how many rows the embedded block takes
 	embeddedCols?: number; // how many cols the embedded block takes
+	tiles?: { id: string; label: string }[]; // individual framed tiles laid out side-by-side (or stacked on mobile)
 	url?: string; // for links within text
 	label?: string; // frame title for embedded blocks
 	frameColor?: 'pathsim' | 'pysimhub'; // project color for frame
@@ -165,13 +171,22 @@ export const contentSections: ContentSection[] = [
 			},
 			{ type: 'spacer', lines: [''] },
 			{
+				type: 'link-line-pathsim',
+				lines: [`${ps.stars} stars / ${ps.forks} forks`],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{
 				type: 'embedded',
 				lines: [],
-				embeddedId: 'pathsim-tiles',
-				label: 'pathsim',
 				frameColor: 'pathsim',
 				embeddedRows: 6,
 				embeddedCols: 80,
+				tiles: [
+					{ id: 'pathsim-org', label: 'PathSim' },
+					{ id: 'docs-pathsim-org', label: 'Docs' },
+					{ id: 'view-pathsim-org', label: 'PathView' }
+				],
 				align: 'center'
 			},
 			{ type: 'spacer', lines: [''] },
@@ -194,11 +209,18 @@ export const contentSections: ContentSection[] = [
 			},
 			{ type: 'spacer', lines: [''] },
 			{
+				type: 'link-line-pysimhub',
+				lines: [`${ph.projects} projects / ${ph.members} members`],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{
 				type: 'embedded',
 				lines: [],
-				embeddedId: 'pysimhub-tiles',
-				label: 'pysimhub',
 				frameColor: 'pysimhub',
+				tiles: [
+					{ id: 'pysimhub-io', label: 'PySimHub' }
+				],
 				embeddedRows: 6,
 				embeddedCols: 26,
 				align: 'center'

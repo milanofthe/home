@@ -29,17 +29,10 @@
 		tileElement.style.transform = '';
 	}
 
-	const colorClasses = {
-		pathsim: 'border-pathsim',
-		pysimhub: 'border-pysimhub'
-	};
-
 	const glowColors = {
 		pathsim: 'rgba(0, 112, 192, 0.3)',
 		pysimhub: 'rgba(99, 102, 241, 0.3)'
 	};
-
-	const borderClass = colorClasses[color];
 </script>
 
 <button
@@ -47,7 +40,7 @@
 	onclick={handleClick}
 	onmousemove={handleTilt}
 	onmouseleave={handleTiltReset}
-	class="group relative w-full h-full rounded-xl overflow-hidden border-2 {borderClass} cursor-pointer tile-tilt"
+	class="group relative w-full h-full overflow-hidden cursor-pointer tile-tilt"
 	style="--glow-color: {glowColors[color]};"
 	aria-label="Open {name}"
 >
