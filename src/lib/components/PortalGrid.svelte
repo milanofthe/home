@@ -7,6 +7,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
+		mobileScreenshot?: string;
 		color: 'pathsim' | 'pysimhub';
 	}
 
@@ -58,7 +59,7 @@
 </script>
 
 <!-- Grid - centered, columns match item count -->
-<div class="grid gap-4 w-full h-full {projects.length === 1 ? 'grid-cols-1' : projects.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}">
+<div class="grid gap-4 w-full h-full {projects.length === 1 ? 'grid-cols-1' : projects.length === 2 ? 'grid-cols-2' : 'grid-cols-1 sm:grid-cols-3'}">
 	{#each projects as project}
 		<PortalTile
 			{...project}
@@ -73,10 +74,15 @@
 		class="portal-overlay {isExpanding ? 'expanding' : ''}"
 		style={overlayStyle}
 	>
-		<img
-			src={expandingProject.screenshot}
-			alt="{expandingProject.name} preview"
-			class="absolute inset-0 w-full h-full object-cover object-top"
-		/>
+		<picture>
+			{#if expandingProject.mobileScreenshot}
+				<source media="(max-width: 639px)" srcset={expandingProject.mobileScreenshot} />
+			{/if}
+			<img
+				src={expandingProject.screenshot}
+				alt="{expandingProject.name} preview"
+				class="absolute inset-0 w-full h-full object-cover object-top"
+			/>
+		</picture>
 	</div>
 {/if}

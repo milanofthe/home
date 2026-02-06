@@ -203,23 +203,26 @@
 }
 
 /* Spotlight: duplicate grid layer masked to cursor, only filler brightens */
-.spotlight-grid {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	pointer-events: none;
-	z-index: 1;
-	-webkit-mask-image: radial-gradient(circle 200px at var(--spotlight-x, -9999px) var(--spotlight-y, -9999px), black 0%, transparent 70%);
-	mask-image: radial-gradient(circle 200px at var(--spotlight-x, -9999px) var(--spotlight-y, -9999px), black 0%, transparent 70%);
-}
+/* Only on hover-capable devices (skip on touch-only) */
+@media (hover: hover) {
+	.spotlight-grid {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		pointer-events: none;
+		z-index: 1;
+		-webkit-mask-image: radial-gradient(circle 200px at var(--spotlight-x, -9999px) var(--spotlight-y, -9999px), black 0%, transparent 70%);
+		mask-image: radial-gradient(circle 200px at var(--spotlight-x, -9999px) var(--spotlight-y, -9999px), black 0%, transparent 70%);
+	}
 
-.spotlight-grid .code-grid-filler {
-	color: rgba(240, 239, 233, 0.18);
-}
+	.spotlight-grid .code-grid-filler {
+		color: rgba(240, 239, 233, 0.18);
+	}
 
-.spotlight-grid span:not(.code-grid-filler) {
-	color: transparent;
+	.spotlight-grid span:not(.code-grid-filler) {
+		color: transparent;
+	}
 }
 
 /* Typewriter: filler-colored base with real-colored overlay that reveals L-to-R */

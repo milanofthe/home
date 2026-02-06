@@ -4,11 +4,12 @@
 		name: string;
 		url: string;
 		screenshot: string;
+		mobileScreenshot?: string;
 		color: 'pathsim' | 'pysimhub';
 		onclick: (rect: DOMRect) => void;
 	}
 
-	let { id, name, url, screenshot, color, onclick }: Props = $props();
+	let { id, name, url, screenshot, mobileScreenshot, color, onclick }: Props = $props();
 
 	let tileElement: HTMLButtonElement;
 
@@ -50,11 +51,16 @@
 	style="--glow-color: {glowColors[color]};"
 	aria-label="Open {name}"
 >
-	<img
-		src={screenshot}
-		alt="{name} preview"
-		class="absolute inset-0 w-full h-full object-cover object-top"
-	/>
+	<picture>
+		{#if mobileScreenshot}
+			<source media="(max-width: 639px)" srcset={mobileScreenshot} />
+		{/if}
+		<img
+			src={screenshot}
+			alt="{name} preview"
+			class="absolute inset-0 w-full h-full object-cover object-top"
+		/>
+	</picture>
 </button>
 
 <style>
