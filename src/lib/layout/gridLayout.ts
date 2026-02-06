@@ -197,36 +197,34 @@ export function computeGridLayout(cols: number): GridLayout {
 				region.frameColor === 'pathsim' ? 'frame-pathsim' :
 				region.frameColor === 'pysimhub' ? 'frame-pysimhub' :
 				'frame';
-			const totalInnerCols = Math.min(region.embeddedCols || 40, cols - 6);
 			const innerRows = region.embeddedRows || 10;
 
-			// Individual framed tiles
+			// Individual framed tiles (embeddedCols = per-tile inner width)
 			if (region.tiles && region.tiles.length > 0) {
 				const n = region.tiles.length;
 				const gap = 2;
-				const totalFrameCols = totalInnerCols + 2;
-				const totalStart = Math.floor((cols - totalFrameCols) / 2);
-				// Side by side if each tile gets at least 18 frame cols
-				const perTileFrameCols = Math.floor((totalFrameCols - (n - 1) * gap) / n);
-				const sideBySide = n === 1 || perTileFrameCols >= 18;
+				let perTileInnerCols = Math.min(region.embeddedCols || 26, cols - 8);
+				const perTileFrameCols = perTileInnerCols + 2;
+				const totalWidth = n * perTileFrameCols + (n - 1) * gap;
+				const sideBySide = totalWidth <= cols - 4;
+
+				// Stacked mobile tiles: narrower + taller for portrait screenshot AR
+				const stackedInnerCols = cols <= 60 ? Math.min(18, cols - 8) : perTileInnerCols;
+				const stackedRows = cols <= 60 ? 14 : innerRows;
 
 				if (sideBySide) {
-					// Compute per-tile frame positions
-					const tileFrames: { start: number; frameCols: number; innerCols: number }[] = [];
-					let cursor = totalStart;
+					const groupStart = Math.floor((cols - totalWidth) / 2);
+					const tileStarts: number[] = [];
 					for (let t = 0; t < n; t++) {
-						const fc = t < n - 1 ? perTileFrameCols : totalFrameCols - (perTileFrameCols + gap) * (n - 1);
-						tileFrames.push({ start: cursor, frameCols: fc, innerCols: fc - 2 });
-						cursor += fc + gap;
+						tileStarts.push(groupStart + t * (perTileFrameCols + gap));
 					}
 
 					// Top borders (all on one row)
 					const topRow: Cell[] = fillerLine(cols, fillerOffset);
 					for (let t = 0; t < n; t++) {
-						const tf = tileFrames[t];
-						const top = buildFrameTop(tf.frameCols, region.tiles[t].label);
+						const top = buildFrameTop(perTileFrameCols, region.tiles[t].label);
 						for (let i = 0; i < top.length; i++) {
-							topRow[tf.start + i] = { char: top[i], type: frameType };
+							topRow[tileStarts[t] + i] = { char: top[i], type: frameType };
 						}
 					}
 					cells.push(topRow);
@@ -234,13 +232,12 @@ export function computeGridLayout(cols: number): GridLayout {
 
 					// Record embedded block positions
 					for (let t = 0; t < n; t++) {
-						const tf = tileFrames[t];
 						embeddedBlocks.push({
 							id: region.tiles[t].id,
 							row: cells.length,
-							col: tf.start + 1,
+							col: tileStarts[t] + 1,
 							rows: innerRows,
-							cols: tf.innerCols
+							cols: perTileInnerCols
 						});
 					}
 
@@ -248,11 +245,11 @@ export function computeGridLayout(cols: number): GridLayout {
 					for (let r = 0; r < innerRows; r++) {
 						const row: Cell[] = fillerLine(cols, fillerOffset);
 						for (let t = 0; t < n; t++) {
-							const tf = tileFrames[t];
-							const end = tf.start + tf.frameCols;
-							row[tf.start] = { char: '│', type: frameType };
+							const s = tileStarts[t];
+							const end = s + perTileFrameCols;
+							row[s] = { char: '│', type: frameType };
 							row[end - 1] = { char: '│', type: frameType };
-							for (let i = tf.start + 1; i < end - 1; i++) {
+							for (let i = s + 1; i < end - 1; i++) {
 								row[i] = { char: ' ', type: 'empty' };
 							}
 						}
@@ -263,43 +260,38 @@ export function computeGridLayout(cols: number): GridLayout {
 					// Bottom borders (all on one row)
 					const botRow: Cell[] = fillerLine(cols, fillerOffset);
 					for (let t = 0; t < n; t++) {
-						const tf = tileFrames[t];
-						const bot = buildFrameBottom(tf.frameCols);
+						const bot = buildFrameBottom(perTileFrameCols);
 						for (let i = 0; i < bot.length; i++) {
-							botRow[tf.start + i] = { char: bot[i], type: frameType };
+							botRow[tileStarts[t] + i] = { char: bot[i], type: frameType };
 						}
 					}
 					cells.push(botRow);
 					advanceOffset(cols);
 				} else {
-					// Stacked: each tile gets its own frame, full width
-					const frameCols = totalFrameCols;
-					const tileInnerCols = frameCols - 2;
-					const frameStart = totalStart;
+					// Stacked: narrower portrait tiles on mobile
+					const stackedFrameCols = stackedInnerCols + 2;
+					const frameStart = Math.floor((cols - stackedFrameCols) / 2);
 
 					for (let t = 0; t < n; t++) {
-						// Top border
-						cells.push(frameBorderLine(cols, frameStart, buildFrameTop(frameCols, region.tiles[t].label), fillerOffset, frameType));
+						cells.push(frameBorderLine(cols, frameStart, buildFrameTop(stackedFrameCols, region.tiles[t].label), fillerOffset, frameType));
 						advanceOffset(cols);
 
 						embeddedBlocks.push({
 							id: region.tiles[t].id,
 							row: cells.length,
 							col: frameStart + 1,
-							rows: innerRows,
-							cols: tileInnerCols
+							rows: stackedRows,
+							cols: stackedInnerCols
 						});
 
-						for (let r = 0; r < innerRows; r++) {
-							cells.push(frameSideRow(cols, frameStart, frameCols, fillerOffset, frameType));
+						for (let r = 0; r < stackedRows; r++) {
+							cells.push(frameSideRow(cols, frameStart, stackedFrameCols, fillerOffset, frameType));
 							advanceOffset(cols);
 						}
 
-						// Bottom border
-						cells.push(frameBorderLine(cols, frameStart, buildFrameBottom(frameCols), fillerOffset, frameType));
+						cells.push(frameBorderLine(cols, frameStart, buildFrameBottom(stackedFrameCols), fillerOffset, frameType));
 						advanceOffset(cols);
 
-						// Gap between stacked tiles
 						if (t < n - 1) {
 							cells.push(fillerLine(cols, fillerOffset));
 							advanceOffset(cols);
@@ -309,31 +301,28 @@ export function computeGridLayout(cols: number): GridLayout {
 				return;
 			}
 
-			// Single embedded block with frame
+			// Single embedded block with frame (non-tile, e.g. photo)
 			const label = region.label || '';
-			const frameCols = totalInnerCols + 2;
+			const innerCols = Math.min(region.embeddedCols || 40, cols - 6);
+			const frameCols = innerCols + 2;
 			const frameStartCol = Math.floor((cols - frameCols) / 2);
 
-			// Top border
 			cells.push(frameBorderLine(cols, frameStartCol, buildFrameTop(frameCols, label), fillerOffset, frameType));
 			advanceOffset(cols);
 
-			// Record inner block position
 			embeddedBlocks.push({
 				id: region.embeddedId || '',
 				row: cells.length,
 				col: frameStartCol + 1,
 				rows: innerRows,
-				cols: totalInnerCols
+				cols: innerCols
 			});
 
-			// Content rows with side borders
 			for (let r = 0; r < innerRows; r++) {
 				cells.push(frameSideRow(cols, frameStartCol, frameCols, fillerOffset, frameType));
 				advanceOffset(cols);
 			}
 
-			// Bottom border
 			cells.push(frameBorderLine(cols, frameStartCol, buildFrameBottom(frameCols), fillerOffset, frameType));
 			advanceOffset(cols);
 			return;
