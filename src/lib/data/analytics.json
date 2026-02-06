@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-06T02:30:46.025Z",
+	"lastFetched": "2026-02-06T05:16:42.934Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1340,11 +1340,11 @@
 							"pageViews": 90
 						},
 						{
-							"country": "FR",
+							"country": "BR",
 							"pageViews": 60
 						},
 						{
-							"country": "BR",
+							"country": "FR",
 							"pageViews": 60
 						},
 						{
@@ -1356,15 +1356,15 @@
 							"pageViews": 40
 						},
 						{
+							"country": "JP",
+							"pageViews": 30
+						},
+						{
 							"country": "GB",
 							"pageViews": 30
 						},
 						{
 							"country": "AT",
-							"pageViews": 30
-						},
-						{
-							"country": "AU",
 							"pageViews": 30
 						}
 					],
@@ -1446,11 +1446,11 @@
 					"pageViews": 90
 				},
 				{
-					"country": "FR",
+					"country": "BR",
 					"pageViews": 60
 				},
 				{
-					"country": "BR",
+					"country": "FR",
 					"pageViews": 60
 				},
 				{
@@ -1462,15 +1462,15 @@
 					"pageViews": 40
 				},
 				{
+					"country": "JP",
+					"pageViews": 30
+				},
+				{
 					"country": "GB",
 					"pageViews": 30
 				},
 				{
 					"country": "AT",
-					"pageViews": 30
-				},
-				{
-					"country": "AU",
 					"pageViews": 30
 				}
 			],
@@ -3507,7 +3507,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 470
+							"pageViews": 480
 						},
 						{
 							"path": "/pathsim",
@@ -3527,7 +3527,7 @@
 						},
 						{
 							"path": "/vehicle",
-							"pageViews": 130
+							"pageViews": 140
 						},
 						{
 							"path": "/chem/",
@@ -3549,7 +3549,7 @@
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 700
+							"pageViews": 710
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -3587,7 +3587,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 380
+							"pageViews": 390
 						},
 						{
 							"country": "DE",
@@ -3633,7 +3633,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 440
+							"pageViews": 460
 						},
 						{
 							"browser": "Edge",
@@ -3653,7 +3653,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 470
+					"pageViews": 480
 				},
 				{
 					"path": "/pathsim",
@@ -3673,7 +3673,7 @@
 				},
 				{
 					"path": "/vehicle",
-					"pageViews": 130
+					"pageViews": 140
 				},
 				{
 					"path": "/chem/",
@@ -3695,7 +3695,7 @@
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 700
+					"pageViews": 710
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -3733,7 +3733,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 380
+					"pageViews": 390
 				},
 				{
 					"country": "DE",
@@ -3779,7 +3779,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 440
+					"pageViews": 460
 				},
 				{
 					"browser": "Edge",
