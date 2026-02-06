@@ -20,11 +20,16 @@ const sites = [
 	{ id: 'pysimhub-io', url: 'https://pysimhub.io' }
 ];
 
-async function captureScreenshot(browser, site) {
-	console.log(`Capturing ${site.id} (${site.url})...`);
+const viewports = [
+	{ suffix: '', width: 1440, height: 900, label: 'desktop' },
+	{ suffix: '-mobile', width: 390, height: 844, label: 'mobile' }
+];
+
+async function captureScreenshot(browser, site, viewport) {
+	console.log(`Capturing ${site.id} ${viewport.label} (${site.url})...`);
 
 	const page = await browser.newPage();
-	await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 });
+	await page.setViewport({ width: viewport.width, height: viewport.height, deviceScaleFactor: 2 });
 
 	// Enable dark mode
 	await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'dark' }]);
@@ -38,7 +43,7 @@ async function captureScreenshot(browser, site) {
 		// Wait a bit for any animations to settle
 		await new Promise((resolve) => setTimeout(resolve, 1000));
 
-		const outputPath = join(SCREENSHOTS_DIR, `${site.id}.png`);
+		const outputPath = join(SCREENSHOTS_DIR, `${site.id}${viewport.suffix}.png`);
 		await page.screenshot({
 			path: outputPath,
 			type: 'png'
@@ -46,7 +51,7 @@ async function captureScreenshot(browser, site) {
 
 		console.log(`  Saved: ${outputPath}`);
 	} catch (error) {
-		console.error(`  Error capturing ${site.id}:`, error.message);
+		console.error(`  Error capturing ${site.id} ${viewport.label}:`, error.message);
 	} finally {
 		await page.close();
 	}
@@ -67,7 +72,9 @@ async function main() {
 
 	try {
 		for (const site of sites) {
-			await captureScreenshot(browser, site);
+			for (const viewport of viewports) {
+				await captureScreenshot(browser, site, viewport);
+			}
 		}
 	} finally {
 		await browser.close();

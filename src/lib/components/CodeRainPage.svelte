@@ -266,9 +266,9 @@
 			{@const b = blocks.get('pathsim-tiles')!}
 			<div class="overlay-block" use:flyIn style="top: {b.row * lineHeight}px; left: {b.col * charWidth}px; width: {b.cols * charWidth}px; height: {b.rows * lineHeight}px;">
 				<PortalGrid projects={[
-					{ id: 'pathsim-org', name: 'PathSim', url: 'https://pathsim.org', screenshot: '/screenshots/pathsim-org.png', color: 'pathsim' },
-					{ id: 'docs-pathsim-org', name: 'Documentation', url: 'https://docs.pathsim.org', screenshot: '/screenshots/docs-pathsim-org.png', color: 'pathsim' },
-					{ id: 'view-pathsim-org', name: 'PathView', url: 'https://view.pathsim.org', screenshot: '/screenshots/view-pathsim-org.png', color: 'pathsim' }
+					{ id: 'pathsim-org', name: 'PathSim', url: 'https://pathsim.org', screenshot: '/screenshots/pathsim-org.png', mobileScreenshot: '/screenshots/pathsim-org-mobile.png', color: 'pathsim' },
+					{ id: 'docs-pathsim-org', name: 'Documentation', url: 'https://docs.pathsim.org', screenshot: '/screenshots/docs-pathsim-org.png', mobileScreenshot: '/screenshots/docs-pathsim-org-mobile.png', color: 'pathsim' },
+					{ id: 'view-pathsim-org', name: 'PathView', url: 'https://view.pathsim.org', screenshot: '/screenshots/view-pathsim-org.png', mobileScreenshot: '/screenshots/view-pathsim-org-mobile.png', color: 'pathsim' }
 				]} />
 			</div>
 		{/if}
@@ -277,7 +277,7 @@
 			{@const b = blocks.get('pysimhub-tiles')!}
 			<div class="overlay-block" use:flyIn style="top: {b.row * lineHeight}px; left: {b.col * charWidth}px; width: {b.cols * charWidth}px; height: {b.rows * lineHeight}px;">
 				<PortalGrid projects={[
-					{ id: 'pysimhub-io', name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' }
+					{ id: 'pysimhub-io', name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', mobileScreenshot: '/screenshots/pysimhub-io-mobile.png', color: 'pysimhub' }
 				]} />
 			</div>
 		{/if}

@@ -48,6 +48,29 @@ export function getBreakpointConfig(viewportWidth: number): BreakpointConfig {
 	return { cols: 120, fontSize: 14 };
 }
 
+// Word-wrap text to fit within maxWidth, splitting on word boundaries
+function wordWrap(text: string, maxWidth: number): string[] {
+	if (text.length <= maxWidth) return [text];
+	const words = text.split(' ');
+	const lines: string[] = [];
+	let current = '';
+	for (const word of words) {
+		if (current && (current + ' ' + word).length > maxWidth) {
+			lines.push(current);
+			current = word;
+		} else {
+			current = current ? current + ' ' + word : word;
+		}
+	}
+	if (current) lines.push(current);
+	return lines;
+}
+
+// Types that should be word-wrapped when lines exceed available width
+const WRAPPABLE_TYPES: Set<string> = new Set([
+	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'footer-line'
+]);
+
 // Fill a line with filler source characters, cycling through the source
 function fillerLine(cols: number, offset: number): Cell[] {
 	const cells: Cell[] = [];
@@ -178,7 +201,11 @@ export function computeGridLayout(cols: number): GridLayout {
 			const innerCols = Math.min(region.embeddedCols || 40, cols - 6);
 			const frameCols = innerCols + 2;
 			const frameStartCol = Math.floor((cols - frameCols) / 2);
-			const innerRows = region.embeddedRows || 10;
+			// Increase embedded rows for stacked tile grids on narrow viewports
+			let innerRows = region.embeddedRows || 10;
+			if (cols <= 40 && region.embeddedId === 'pathsim-tiles') {
+				innerRows = 18;
+			}
 
 			// Top border
 			cells.push(frameBorderLine(cols, frameStartCol, buildFrameTop(frameCols, label), fillerOffset, frameType));
@@ -224,7 +251,28 @@ export function computeGridLayout(cols: number): GridLayout {
 			return;
 		}
 
-		for (const line of region.lines) {
+		// Word-wrap paragraph-type regions only when lines would be truncated
+		let lines = region.lines;
+		const maxWidth = cols - 4;
+		if (region.type === 'cta') {
+			// Split CTA buttons onto separate lines when they don't fit
+			const expanded: string[] = [];
+			for (const line of lines) {
+				if (line.length > maxWidth) {
+					expanded.push(...line.split(/\s{2,}/).map(s => s.trim()).filter(Boolean));
+				} else {
+					expanded.push(line);
+				}
+			}
+			lines = expanded;
+		} else if (WRAPPABLE_TYPES.has(region.type)) {
+			if (lines.some(l => l.length > maxWidth)) {
+				const joined = lines.join(' ');
+				lines = wordWrap(joined, maxWidth);
+			}
+		}
+
+		for (const line of lines) {
 			cells.push(contentLine(line, cols, fillerOffset, type, region.align));
 			advanceOffset(cols);
 		}
