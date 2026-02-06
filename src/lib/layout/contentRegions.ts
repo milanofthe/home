@@ -181,7 +181,7 @@ export const contentSections: ContentSection[] = [
 				lines: [],
 				frameColor: 'pathsim',
 				embeddedRows: 6,
-				embeddedCols: 80,
+				embeddedCols: 26,
 				tiles: [
 					{ id: 'pathsim-org', label: 'PathSim' },
 					{ id: 'docs-pathsim-org', label: 'Docs' },

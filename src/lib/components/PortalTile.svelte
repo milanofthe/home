@@ -40,7 +40,7 @@
 	onclick={handleClick}
 	onmousemove={handleTilt}
 	onmouseleave={handleTiltReset}
-	class="group relative w-full h-full overflow-hidden cursor-pointer tile-tilt"
+	class="group relative w-full h-full rounded-lg overflow-hidden cursor-pointer tile-tilt"
 	style="--glow-color: {glowColors[color]};"
 	aria-label="Open {name}"
 >
