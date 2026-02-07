@@ -206,11 +206,11 @@ export function computeGridLayout(cols: number): GridLayout {
 				let perTileInnerCols = Math.min(region.embeddedCols || 26, cols - 8);
 				const perTileFrameCols = perTileInnerCols + 2;
 				const totalWidth = n * perTileFrameCols + (n - 1) * gap;
-				const sideBySide = totalWidth <= cols - 4;
+				const sideBySide = cols > 60 && totalWidth <= cols - 4;
 
 				// Stacked mobile tiles: narrower + taller for portrait screenshot AR
-				const stackedInnerCols = cols <= 60 ? Math.min(18, cols - 8) : perTileInnerCols;
-				const stackedRows = cols <= 60 ? 14 : innerRows;
+				const stackedInnerCols = cols <= 60 ? Math.min(20, cols - 8) : perTileInnerCols;
+				const stackedRows = cols <= 60 ? 10 : innerRows;
 
 				if (sideBySide) {
 					const groupStart = Math.floor((cols - totalWidth) / 2);

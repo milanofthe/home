@@ -215,13 +215,12 @@
 /* Typewriter: filler-colored base with real-colored overlay that reveals L-to-R */
 .tw-wrapper {
 	position: relative;
-	display: inline-block;
-	vertical-align: baseline;
 }
 
 .tw-overlay {
 	position: absolute;
-	inset: 0;
+	left: 0;
+	top: 0;
 	clip-path: inset(0 100% 0 0);
 }
 
