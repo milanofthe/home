@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-	import { computeGridLayout, getBreakpointConfig, type GridLayout, type FormFieldPosition, type CellType } from '$lib/layout/gridLayout';
+	import { computeGridLayout, type GridLayout, type FormFieldPosition, type CellType } from '$lib/layout/gridLayout';
 	import CharacterGrid from './CharacterGrid.svelte';
 	import PortalTile from './PortalTile.svelte';
 
@@ -123,46 +123,35 @@
 
 	function computeLayout() {
 		const vw = document.documentElement.clientWidth;
-		const config = getBreakpointConfig(vw);
 
-		// Exact character width: viewport divided evenly among columns
-		charWidth = vw / config.cols;
+		// Fixed font size — smaller on mobile so text isn't squished
+		fontSize = vw < 640 ? 11 : 14;
 
-		// Compute fontSize so the font's natural advance width ≈ charWidth.
+		// Measure the font's natural advance width at 14px
 		const probe = document.createElement('span');
-		probe.style.position = 'absolute';
-		probe.style.visibility = 'hidden';
-		probe.style.whiteSpace = 'pre';
-		probe.style.letterSpacing = '0px';
+		probe.style.cssText = 'position:absolute;visibility:hidden;white-space:pre;letter-spacing:0px';
+		probe.style.fontFamily = "'JetBrains Mono', 'Fira Code', monospace";
+		probe.style.fontSize = `${fontSize}px`;
 		probe.textContent = 'X';
 
 		const probeParent = containerEl || document.body;
 		probeParent.appendChild(probe);
-
-		probe.style.fontFamily = "'JetBrains Mono', 'Fira Code', monospace";
-		probe.style.fontSize = '16px';
-		const w16 = probe.getBoundingClientRect().width;
-		fontSize = charWidth * 16 / w16;
-
-		for (let i = 0; i < 3; i++) {
-			probe.style.fontSize = `${fontSize}px`;
-			const w = probe.getBoundingClientRect().width;
-			if (w > 0) fontSize *= charWidth / w;
-		}
-
-		// Measure the font's actual advance width at final fontSize
-		probe.style.fontSize = `${fontSize}px`;
 		const advanceWidth = probe.getBoundingClientRect().width;
 		probeParent.removeChild(probe);
 
-		// letter-spacing correction: forces each character to occupy exactly charWidth pixels.
-		// This bridges the tiny gap between the font's natural advance and vw/cols.
+		// Dynamic column count from viewport width, min 40
+		const cols = Math.max(40, Math.floor(vw / advanceWidth));
+
+		// Exact pixel width per column (fills viewport edge-to-edge)
+		charWidth = vw / cols;
+
+		// letter-spacing correction: forces each character to occupy exactly charWidth pixels
 		letterSpacingPx = charWidth - advanceWidth;
 
 		lineHeight = Math.ceil(fontSize * 1.5);
 
-		if (!gridLayout || gridLayout.cols !== config.cols) {
-			gridLayout = computeGridLayout(config.cols);
+		if (!gridLayout || gridLayout.cols !== cols) {
+			gridLayout = computeGridLayout(cols);
 		}
 
 		tick().then(() => {

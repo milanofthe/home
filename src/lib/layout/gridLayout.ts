@@ -35,19 +35,6 @@ export interface GridLayout {
 	sectionAnchors: { id: string; row: number }[];
 }
 
-export interface BreakpointConfig {
-	cols: number;
-	fontSize: number;
-}
-
-export function getBreakpointConfig(viewportWidth: number): BreakpointConfig {
-	if (viewportWidth < 640) return { cols: 40, fontSize: 11 };
-	if (viewportWidth < 768) return { cols: 60, fontSize: 12 };
-	if (viewportWidth < 1024) return { cols: 80, fontSize: 13 };
-	if (viewportWidth < 1280) return { cols: 100, fontSize: 13 };
-	return { cols: 120, fontSize: 14 };
-}
-
 // Word-wrap text to fit within maxWidth, splitting on word boundaries
 function wordWrap(text: string, maxWidth: number): string[] {
 	if (text.length <= maxWidth) return [text];
