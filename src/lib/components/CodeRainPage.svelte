@@ -91,6 +91,8 @@
 		{ text: '[ Get in Touch -> ]', types: ['cta'], scrollTo: 'contact' },
 		{ text: '[ View Projects ]', types: ['cta'], scrollTo: 'projects' },
 		{ text: '[ SEND MESSAGE -> ]', types: ['cta'], action: 'submit-form' },
+		{ text: 'Impressum', types: ['footer'], href: '/impressum/' },
+		{ text: 'Datenschutz', types: ['footer'], href: '/datenschutz/' },
 		{ text: 'GitHub', types: ['link', 'footer'], href: 'https://github.com/milanofthe' },
 		{ text: 'LinkedIn', types: ['link', 'footer', 'content'], href: 'https://linkedin.com/in/milan-rother-648474183' },
 	];
@@ -423,8 +425,8 @@
 				<a
 					class="click-overlay"
 					href={overlay.href}
-					target="_blank"
-					rel="noopener"
+					target={overlay.href.startsWith('/') ? undefined : '_blank'}
+					rel={overlay.href.startsWith('/') ? undefined : 'noopener'}
 					aria-label={overlay.label}
 					style="top: {overlay.row * lineHeight}px; left: {overlay.col * charWidth}px; width: {overlay.length * charWidth}px; height: {lineHeight}px;"
 				></a>
