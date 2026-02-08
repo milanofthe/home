@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-08T05:24:48.962Z",
+	"lastFetched": "2026-02-08T08:38:31.248Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2209,6 +2209,16 @@
 					"datetime": "2026-02-08T04:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-02-08T08:00:00",
+					"pageViews": 17,
+					"visits": 17
+				},
+				{
+					"datetime": "2026-02-08T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -4215,7 +4225,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 430
+							"pageViews": 440
 						},
 						{
 							"country": "DE",
@@ -4361,7 +4371,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 430
+					"pageViews": 440
 				},
 				{
 					"country": "DE",
@@ -4959,6 +4969,11 @@
 				},
 				{
 					"datetime": "2026-02-08T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-08T08:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -6411,7 +6426,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2210
+							"pageViews": 2220
 						},
 						{
 							"path": "/dev/",
@@ -6425,7 +6440,7 @@
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 190
+							"pageViews": 200
 						},
 						{
 							"referrer": "www.linkedin.com",
@@ -6509,7 +6524,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 240
+							"pageViews": 250
 						},
 						{
 							"browser": "Unknown",
@@ -6525,7 +6540,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2210
+					"pageViews": 2220
 				},
 				{
 					"path": "/dev/",
@@ -6539,7 +6554,7 @@
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 190
+					"pageViews": 200
 				},
 				{
 					"referrer": "www.linkedin.com",
@@ -6623,7 +6638,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 240
+					"pageViews": 250
 				},
 				{
 					"browser": "Unknown",
