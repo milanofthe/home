@@ -127,14 +127,10 @@
 
 /* Code rain grid styles */
 .code-grid {
-	font-family: 'JetBrains Mono', 'Fira Code', monospace;
-	white-space: pre;
-	overflow: hidden;
-	width: 100%;
+	display: contents;
 }
 
 .code-grid-line {
-	line-height: inherit;
 	overflow: hidden;
 }
 
@@ -143,7 +139,7 @@
 }
 
 .code-grid-content {
-	color: rgba(240, 239, 233, 0.85);
+	color: #f0efe9;
 }
 
 .code-grid-heading {
@@ -162,12 +158,12 @@
 }
 
 .code-grid-cta {
-	color: rgba(0, 217, 192, 0.9);
+	color: #00d9c0;
 	cursor: pointer;
 }
 
 .code-grid-link {
-	color: rgba(0, 217, 192, 0.7);
+	color: #00d9c0;
 }
 
 .code-grid-link-pathsim {
@@ -179,7 +175,7 @@
 }
 
 .code-grid-footer {
-	color: rgba(240, 239, 233, 0.4);
+	color: #f0efe9;
 }
 
 .code-grid-empty {
@@ -187,7 +183,7 @@
 }
 
 .code-grid-form-field {
-	color: rgba(0, 217, 192, 0.4);
+	color: #00d9c0;
 }
 
 .code-grid-frame {

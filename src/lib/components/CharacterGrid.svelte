@@ -4,12 +4,9 @@
 
 	interface Props {
 		cells: Cell[][];
-		fontSize: number;
-		lineHeight: number;
-		charWidth: number;
 	}
 
-	let { cells, fontSize, lineHeight, charWidth }: Props = $props();
+	let { cells }: Props = $props();
 
 	let gridEl: HTMLDivElement;
 
@@ -38,7 +35,7 @@
 		return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 	}
 
-	function rowToHtml(row: Cell[]): string {
+	function rowToSpans(row: Cell[]): string {
 		let allFiller = true;
 		for (const cell of row) {
 			if (cell.type !== 'filler') { allFiller = false; break; }
@@ -50,7 +47,7 @@
 			return `<div class="code-grid-line code-grid-filler">${esc(text)}</div>`;
 		}
 
-		let html = '<div class="code-grid-line">';
+		let inner = '';
 		let curText = row[0].char;
 		let curType = row[0].type;
 
@@ -58,14 +55,13 @@
 			if (row[i].type === curType) {
 				curText += row[i].char;
 			} else {
-				html += `<span class="${TYPE_CLASSES[curType] || 'code-grid-filler'}">${esc(curText)}</span>`;
+				inner += `<span class="${TYPE_CLASSES[curType] || 'code-grid-filler'}">${esc(curText)}</span>`;
 				curText = row[i].char;
 				curType = row[i].type;
 			}
 		}
-		html += `<span class="${TYPE_CLASSES[curType] || 'code-grid-filler'}">${esc(curText)}</span>`;
-		html += '</div>';
-		return html;
+		inner += `<span class="${TYPE_CLASSES[curType] || 'code-grid-filler'}">${esc(curText)}</span>`;
+		return `<div class="code-grid-line">${inner}</div>`;
 	}
 
 	function setupTypewriter() {
@@ -73,12 +69,12 @@
 		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 		if (typewriterObserver) typewriterObserver.disconnect();
 
-		const contentLines = gridEl.querySelectorAll<HTMLDivElement>('.code-grid-line:not(.code-grid-filler)');
+		const contentLines = gridEl.querySelectorAll<HTMLSpanElement>('.code-grid-line:not(.code-grid-filler)');
 		if (contentLines.length === 0) return;
 
-		// For each content span: keep filler-colored base, add real-colored overlay on top
+		// For each content span inside a line: keep filler-colored base, add real-colored overlay
 		for (const line of contentLines) {
-			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-empty)'));
+			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-empty):not(.code-grid-form-field)'));
 			for (const span of spans) {
 				const text = span.textContent || '';
 				if (!text.trim()) continue;
@@ -136,8 +132,8 @@
 		untrack(() => {
 			if (typewriterObserver) typewriterObserver.disconnect();
 			const parts: string[] = [];
-			for (const row of c) {
-				parts.push(rowToHtml(row));
+			for (let i = 0; i < c.length; i++) {
+				parts.push(rowToSpans(c[i]));
 			}
 			const html = parts.join('');
 			gridEl.innerHTML = html;
@@ -153,7 +149,6 @@
 
 <div
 	bind:this={gridEl}
-	class="code-grid"
-	style="line-height: {lineHeight}px; font-size: {fontSize}px;"
+	style="display: contents;"
 	aria-hidden="true"
 ></div>

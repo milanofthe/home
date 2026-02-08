@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { computeGridLayout, getBreakpointConfig, type GridLayout, type EmbeddedBlockPosition, type FormFieldPosition, type CellType } from '$lib/layout/gridLayout';
+	import { onMount, tick } from 'svelte';
+	import { computeGridLayout, getBreakpointConfig, type GridLayout, type FormFieldPosition, type CellType } from '$lib/layout/gridLayout';
 	import CharacterGrid from './CharacterGrid.svelte';
 	import PortalTile from './PortalTile.svelte';
 
@@ -9,6 +9,7 @@
 	let charWidth = $state(0);
 	let fontSize = $state(0);
 	let lineHeight = $state(0);
+	let letterSpacingPx = $state(0);
 	let gridLayout = $state.raw<GridLayout | null>(null);
 	let mounted = $state(false);
 
@@ -75,16 +76,6 @@
 		}
 	}
 
-	// Derived block positions
-	let blocks = $derived.by(() => {
-		if (!gridLayout) return new Map<string, EmbeddedBlockPosition>();
-		const map = new Map<string, EmbeddedBlockPosition>();
-		for (const b of gridLayout.embeddedBlocks) {
-			map.set(b.id, b);
-		}
-		return map;
-	});
-
 	// Unified clickable overlay system
 	interface ClickOverlay {
 		row: number;
@@ -130,32 +121,53 @@
 		return overlays;
 	});
 
-	function measureCharRatio(): number {
-		const testSize = 16;
-		const span = document.createElement('span');
-		span.style.fontFamily = "'JetBrains Mono', 'Fira Code', monospace";
-		span.style.fontSize = `${testSize}px`;
-		span.style.position = 'absolute';
-		span.style.visibility = 'hidden';
-		span.style.whiteSpace = 'pre';
-		span.textContent = 'X';
-		document.body.appendChild(span);
-		const ratio = span.getBoundingClientRect().width / testSize;
-		document.body.removeChild(span);
-		return ratio;
-	}
-
 	function computeLayout() {
-		const vw = window.innerWidth;
+		const vw = document.documentElement.clientWidth;
 		const config = getBreakpointConfig(vw);
-		const ratio = measureCharRatio();
+
+		// Exact character width: viewport divided evenly among columns
 		charWidth = vw / config.cols;
-		fontSize = charWidth / ratio;
+
+		// Compute fontSize so the font's natural advance width ≈ charWidth.
+		const probe = document.createElement('span');
+		probe.style.position = 'absolute';
+		probe.style.visibility = 'hidden';
+		probe.style.whiteSpace = 'pre';
+		probe.style.letterSpacing = '0px';
+		probe.textContent = 'X';
+
+		const probeParent = containerEl || document.body;
+		probeParent.appendChild(probe);
+
+		probe.style.fontFamily = "'JetBrains Mono', 'Fira Code', monospace";
+		probe.style.fontSize = '16px';
+		const w16 = probe.getBoundingClientRect().width;
+		fontSize = charWidth * 16 / w16;
+
+		for (let i = 0; i < 3; i++) {
+			probe.style.fontSize = `${fontSize}px`;
+			const w = probe.getBoundingClientRect().width;
+			if (w > 0) fontSize *= charWidth / w;
+		}
+
+		// Measure the font's actual advance width at final fontSize
+		probe.style.fontSize = `${fontSize}px`;
+		const advanceWidth = probe.getBoundingClientRect().width;
+		probeParent.removeChild(probe);
+
+		// letter-spacing correction: forces each character to occupy exactly charWidth pixels.
+		// This bridges the tiny gap between the font's natural advance and vw/cols.
+		letterSpacingPx = charWidth - advanceWidth;
+
 		lineHeight = Math.ceil(fontSize * 1.5);
-		// Only recompute grid when columns change (avoids destroying typewriter on fonts.ready)
+
 		if (!gridLayout || gridLayout.cols !== config.cols) {
 			gridLayout = computeGridLayout(config.cols);
 		}
+
+		tick().then(() => {
+			if (!mounted) mounted = true;
+		});
 	}
 
 	function scrollToSection(id: string) {
@@ -238,7 +250,6 @@
 
 	onMount(() => {
 		computeLayout();
-		mounted = true;
 
 		// Re-measure once fonts are ready (corrects char ratio if fallback was used)
 		document.fonts.ready.then(() => computeLayout());
@@ -298,38 +309,32 @@
 	</section>
 </main>
 
-<!-- Character grid + embedded blocks -->
-<div bind:this={containerEl} class="code-rain-container" class:opacity-0={!mounted} onmousemove={handleMouseMove} onmouseleave={handleMouseLeave}>
+<!-- Character grid + overlays -->
+<div bind:this={containerEl} class="code-rain-container" class:opacity-0={!mounted}
+	style="font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: {fontSize}px; line-height: {lineHeight}px; letter-spacing: {letterSpacingPx}px;"
+	onmousemove={handleMouseMove} onmouseleave={handleMouseLeave}>
 	{#if gridLayout}
-		<CharacterGrid
-			cells={gridLayout.cells}
-			{fontSize}
-			{lineHeight}
-			{charWidth}
-		/>
+		<CharacterGrid cells={gridLayout.cells} />
 
-		<!-- Overlays positioned at embedded block rows -->
-		{#if blocks.has('photo')}
-			{@const b = blocks.get('photo')!}
-			<div class="overlay-block" use:flyIn style="top: {b.row * lineHeight}px; left: {b.col * charWidth}px; width: {b.cols * charWidth}px; height: {b.rows * lineHeight}px;">
-				<div
-					class="photo-tile"
-					onmousemove={(e) => {
-						const el = e.currentTarget;
-						const rect = el.getBoundingClientRect();
-						const x = (e.clientX - rect.left) / rect.width - 0.5;
-						const y = (e.clientY - rect.top) / rect.height - 0.5;
-						el.style.transform = `perspective(600px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg) scale(1.03)`;
-					}}
-					onmouseleave={(e) => { e.currentTarget.style.transform = ''; }}
-				>
-					<img src="/images/headshot_milan.webp" alt="Milan Rother" class="photo-img" />
-				</div>
-			</div>
-		{/if}
-
+		<!-- Embedded block overlays — absolutely positioned to match frame -->
 		{#each gridLayout.embeddedBlocks as block}
-			{#if tileInfo[block.id]}
+			{#if block.id === 'photo'}
+				<div class="overlay-block" use:flyIn style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
+					<div
+						class="photo-tile"
+						onmousemove={(e) => {
+							const el = e.currentTarget;
+							const rect = el.getBoundingClientRect();
+							const x = (e.clientX - rect.left) / rect.width - 0.5;
+							const y = (e.clientY - rect.top) / rect.height - 0.5;
+							el.style.transform = `perspective(600px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg) scale(1.03)`;
+						}}
+						onmouseleave={(e) => { e.currentTarget.style.transform = ''; }}
+					>
+						<img src="/images/headshot_milan.webp" alt="Milan Rother" class="photo-img" />
+					</div>
+				</div>
+			{:else if tileInfo[block.id]}
 				{@const info = tileInfo[block.id]}
 				<div class="overlay-block" use:flyIn style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
 					<PortalTile
@@ -345,7 +350,7 @@
 			{/if}
 		{/each}
 
-		<!-- Inline form inputs positioned over form-field grid rows -->
+		<!-- Inline form inputs -->
 		<form id="grid-contact-form" class="form-inputs-layer">
 			<input type="hidden" name="access_key" value="6b5ed4bf-68a0-45cc-9b44-f89d78af8a94" />
 			<input type="hidden" name="subject" value="New contact from milanrother.com" />
@@ -456,12 +461,21 @@
 		position: relative;
 		width: 100%;
 		min-height: 100vh;
+		white-space: pre;
+		overflow: hidden;
 		transition: opacity 0.3s;
+		text-rendering: geometricPrecision;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
 	.overlay-block {
 		position: absolute;
 		z-index: 2;
+		overflow: hidden;
+		display: grid;
+		contain: paint;
+		clip-path: inset(0);
 	}
 
 	.photo-tile {
@@ -524,6 +538,7 @@
 		padding: 0;
 		z-index: 5;
 		display: block;
+		font: inherit;
 	}
 
 	:global(.sr-only) {

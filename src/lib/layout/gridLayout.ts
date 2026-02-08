@@ -116,13 +116,13 @@ function contentLine(
 function buildFrameTop(frameCols: number, label: string): string {
 	const maxLabel = frameCols - 5;
 	const trimmed = label.slice(0, Math.max(0, maxLabel));
-	if (!trimmed) return '┌' + '─'.repeat(frameCols - 2) + '┐';
-	const prefix = '┌─ ' + trimmed + ' ';
-	return prefix + '─'.repeat(Math.max(0, frameCols - prefix.length - 1)) + '┐';
+	if (!trimmed) return '+' + '-'.repeat(frameCols - 2) + '+';
+	const prefix = '+- ' + trimmed + ' ';
+	return prefix + '-'.repeat(Math.max(0, frameCols - prefix.length - 1)) + '+';
 }
 
 function buildFrameBottom(frameCols: number): string {
-	return '└' + '─'.repeat(frameCols - 2) + '┘';
+	return '+' + '-'.repeat(frameCols - 2) + '+';
 }
 
 function frameBorderLine(cols: number, frameStart: number, border: string, offset: number, frameType: CellType = 'frame'): Cell[] {
@@ -143,9 +143,10 @@ function frameSideRow(cols: number, frameStart: number, frameCols: number, offse
 	const frameEnd = frameStart + frameCols;
 	for (let i = 0; i < cols; i++) {
 		if (i === frameStart || i === frameEnd - 1) {
-			cells.push({ char: '│', type: frameType });
+			cells.push({ char: '|', type: frameType });
 		} else if (i > frameStart && i < frameEnd - 1) {
-			cells.push({ char: ' ', type: 'empty' });
+			const idx = (offset + i) % FILLER_SOURCE.length;
+			cells.push({ char: FILLER_SOURCE[idx], type: 'empty' });
 		} else {
 			const idx = (offset + i) % FILLER_SOURCE.length;
 			cells.push({ char: FILLER_SOURCE[idx], type: 'filler' });
@@ -247,10 +248,10 @@ export function computeGridLayout(cols: number): GridLayout {
 						for (let t = 0; t < n; t++) {
 							const s = tileStarts[t];
 							const end = s + perTileFrameCols;
-							row[s] = { char: '│', type: frameType };
-							row[end - 1] = { char: '│', type: frameType };
+							row[s] = { char: '|', type: frameType };
+							row[end - 1] = { char: '|', type: frameType };
 							for (let i = s + 1; i < end - 1; i++) {
-								row[i] = { char: ' ', type: 'empty' };
+								row[i] = { ...row[i], type: 'empty' };
 							}
 						}
 						cells.push(row);

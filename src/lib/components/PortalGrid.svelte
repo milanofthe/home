@@ -61,10 +61,12 @@
 <!-- Grid - centered, columns match item count -->
 <div class="grid gap-4 w-full h-full {projects.length === 1 ? 'grid-cols-1' : projects.length === 2 ? 'grid-cols-2' : 'grid-cols-1 sm:grid-cols-3'}">
 	{#each projects as project}
-		<PortalTile
-			{...project}
-			onclick={(rect) => handleTileClick(project, rect)}
-		/>
+		<div class="aspect-[16/10]">
+			<PortalTile
+				{...project}
+				onclick={(rect) => handleTileClick(project, rect)}
+			/>
+		</div>
 	{/each}
 </div>
 
