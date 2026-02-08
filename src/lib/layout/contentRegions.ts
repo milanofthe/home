@@ -263,6 +263,8 @@ export const contentSections: ContentSection[] = [
 			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-message-3' },
 			{ type: 'spacer', lines: [''] },
 			{ type: 'cta', lines: ['[ SEND MESSAGE -> ]'], align: 'center' },
+			{ type: 'spacer', lines: [''] },
+			{ type: 'content', lines: ['Your data is processed per our privacy policy.'], align: 'center' },
 		]
 	},
 
@@ -272,7 +274,7 @@ export const contentSections: ContentSection[] = [
 		regions: [
 			{
 				type: 'footer-line',
-				lines: ['Milan Rother    GitHub  LinkedIn    (c) 2026'],
+				lines: ['Milan Rother   Impressum  Datenschutz   GitHub  LinkedIn   (c) 2026'],
 				align: 'center'
 			},
 			{ type: 'spacer', lines: [''] },
