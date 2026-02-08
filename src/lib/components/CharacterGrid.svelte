@@ -29,7 +29,6 @@
 	};
 
 	let typewriterObserver: IntersectionObserver | null = null;
-	let firstRender = true;
 
 	function esc(s: string): string {
 		return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -137,10 +136,7 @@
 			}
 			const html = parts.join('');
 			gridEl.innerHTML = html;
-			if (firstRender) {
-				setupTypewriter();
-				firstRender = false;
-			}
+			setupTypewriter();
 		});
 	});
 
