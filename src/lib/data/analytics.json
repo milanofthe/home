@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-08T08:38:31.248Z",
+	"lastFetched": "2026-02-08T12:59:36.260Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -389,6 +389,11 @@
 					"datetime": "2026-02-08T04:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-02-08T16:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -4976,6 +4981,11 @@
 					"datetime": "2026-02-08T08:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-02-08T16:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -7081,6 +7091,11 @@
 				},
 				{
 					"datetime": "2026-02-07T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-08T12:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -9232,6 +9247,16 @@
 					"datetime": "2026-02-07T24:00:00",
 					"pageViews": 17,
 					"visits": 16
+				},
+				{
+					"datetime": "2026-02-08T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-08T16:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -10194,7 +10219,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 460
+							"pageViews": 470
 						},
 						{
 							"path": "/dashboard/",
@@ -10230,7 +10255,7 @@
 						},
 						{
 							"country": "CZ",
-							"pageViews": 250
+							"pageViews": 260
 						},
 						{
 							"country": "US",
@@ -10275,11 +10300,11 @@
 							"pageViews": 110
 						},
 						{
-							"browser": "Unknown",
-							"pageViews": 30
+							"browser": "Safari",
+							"pageViews": 40
 						},
 						{
-							"browser": "ChromeHeadless",
+							"browser": "Unknown",
 							"pageViews": 30
 						}
 					]
@@ -10288,7 +10313,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 460
+					"pageViews": 470
 				},
 				{
 					"path": "/dashboard/",
@@ -10324,7 +10349,7 @@
 				},
 				{
 					"country": "CZ",
-					"pageViews": 250
+					"pageViews": 260
 				},
 				{
 					"country": "US",
@@ -10369,11 +10394,11 @@
 					"pageViews": 110
 				},
 				{
-					"browser": "Unknown",
-					"pageViews": 30
+					"browser": "Safari",
+					"pageViews": 40
 				},
 				{
-					"browser": "ChromeHeadless",
+					"browser": "Unknown",
 					"pageViews": 30
 				}
 			]
