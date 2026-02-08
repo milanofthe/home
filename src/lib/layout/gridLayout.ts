@@ -335,7 +335,7 @@ export function computeGridLayout(cols: number): GridLayout {
 			return;
 		}
 
-		// Word-wrap paragraph-type regions only when lines would be truncated
+		// Word-wrap: paragraphs always re-wrap to fill available width (capped for readability)
 		let lines = region.lines;
 		const maxWidth = cols - 4;
 		if (region.type === 'cta') {
@@ -349,6 +349,11 @@ export function computeGridLayout(cols: number): GridLayout {
 				}
 			}
 			lines = expanded;
+		} else if (region.type === 'paragraph') {
+			// Always re-wrap paragraphs to fill available width, capped at 56 chars
+			const wrapWidth = Math.min(maxWidth, 56);
+			const joined = lines.join(' ');
+			lines = wordWrap(joined, wrapWidth);
 		} else if (WRAPPABLE_TYPES.has(region.type)) {
 			if (lines.some(l => l.length > maxWidth)) {
 				const joined = lines.join(' ');

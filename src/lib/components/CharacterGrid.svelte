@@ -73,7 +73,7 @@
 
 		// For each content span inside a line: keep filler-colored base, add real-colored overlay
 		for (const line of contentLines) {
-			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-empty):not(.code-grid-form-field)'));
+			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-empty)'));
 			for (const span of spans) {
 				const text = span.textContent || '';
 				if (!text.trim()) continue;
@@ -108,7 +108,7 @@
 					const chars = (overlay.textContent || '').length;
 					if (chars === 0) continue;
 					const isHeading = overlay.className.includes('heading');
-					const msPerChar = isHeading ? 50 : 25;
+					const msPerChar = isHeading ? 30 : 15;
 					overlay.style.animationName = 'type-reveal';
 					overlay.style.animationDuration = `${Math.max(chars * msPerChar, 200)}ms`;
 					overlay.style.animationTimingFunction = `steps(${chars})`;
