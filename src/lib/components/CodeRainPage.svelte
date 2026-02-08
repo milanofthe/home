@@ -219,33 +219,62 @@
 		hoveredWord = null;
 	}
 
-	function flyIn(node: HTMLElement) {
+	function tileReveal(node: HTMLElement) {
 		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 			return { destroy() {} };
 		}
-		node.style.opacity = '0';
-		node.style.transform = 'translateY(30px)';
+
+		const w = node.offsetWidth;
+		const h = node.offsetHeight;
+		const cols = Math.round(w / charWidth);
+		const rows = Math.round(h / lineHeight);
+		const total = cols * rows;
+
+		// Canvas overlay filled with page background, hides the image
+		const canvas = document.createElement('canvas');
+		const dpr = window.devicePixelRatio || 1;
+		canvas.width = w * dpr;
+		canvas.height = h * dpr;
+		canvas.style.cssText = `position:absolute;top:0;left:0;width:${w}px;height:${h}px;z-index:1;pointer-events:none`;
+		const ctx = canvas.getContext('2d')!;
+		ctx.scale(dpr, dpr);
+		ctx.fillStyle = '#0f0f0f';
+		ctx.fillRect(0, 0, w, h);
+		node.appendChild(canvas);
+
+		// Shuffled cell indices for random patch reveal
+		const order = Array.from({ length: total }, (_, i) => i);
+		for (let i = total - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[order[i], order[j]] = [order[j], order[i]];
+		}
+
 		const observer = new IntersectionObserver((entries) => {
 			for (const entry of entries) {
 				if (entry.isIntersecting) {
 					observer.unobserve(entry.target);
-					node.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-					// Clear transform after animation so position:fixed children work correctly
-					function onEnd() {
-						node.removeEventListener('transitionend', onEnd);
-						node.style.transform = '';
-						node.style.transition = '';
-					}
-					node.addEventListener('transitionend', onEnd);
-					requestAnimationFrame(() => {
-						node.style.opacity = '1';
-						node.style.transform = 'translateY(0)';
-					});
+					let i = 0;
+					const perFrame = Math.max(1, Math.ceil(total / 80));
+					(function step() {
+						for (let n = 0; n < perFrame && i < total; n++, i++) {
+							const c = order[i] % cols;
+							const r = (order[i] / cols) | 0;
+							ctx.clearRect(c * charWidth, r * lineHeight, charWidth + 1, lineHeight + 1);
+						}
+						if (i < total) requestAnimationFrame(step);
+						else canvas.remove();
+					})();
 				}
 			}
 		}, { threshold: 0.1 });
 		observer.observe(node);
-		return { destroy() { observer.disconnect(); } };
+
+		return {
+			destroy() {
+				observer.disconnect();
+				canvas.remove();
+			}
+		};
 	}
 
 	onMount(() => {
@@ -319,7 +348,7 @@
 		<!-- Embedded block overlays — absolutely positioned to match frame -->
 		{#each gridLayout.embeddedBlocks as block}
 			{#if block.id === 'photo'}
-				<div class="overlay-block" use:flyIn style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
+				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
 					<div
 						class="photo-tile"
 						onmousemove={(e) => {
@@ -336,7 +365,7 @@
 				</div>
 			{:else if tileInfo[block.id]}
 				{@const info = tileInfo[block.id]}
-				<div class="overlay-block" use:flyIn style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
+				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
 					<PortalTile
 						id={block.id}
 						name={info.name}
@@ -481,7 +510,6 @@
 	.photo-tile {
 		width: 100%;
 		height: 100%;
-		border-radius: 0.75rem;
 		overflow: hidden;
 		border: none;
 		transition: transform 0.15s ease-out, box-shadow 0.3s;
