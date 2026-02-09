@@ -199,8 +199,8 @@ export function computeGridLayout(cols: number): GridLayout {
 				const pairWidth = 2 * perTileFrameCols + gap;
 				const canFitPair = cols > 60 && pairWidth <= cols - 4;
 
-				// Stacked mobile tiles: narrower + taller for portrait screenshot AR
-				const stackedInnerCols = cols <= 60 ? Math.min(20, cols - 8) : perTileInnerCols;
+				// Stacked mobile tiles: use most of available width
+				const stackedInnerCols = cols <= 60 ? cols - 6 : perTileInnerCols;
 				const stackedRows = cols <= 60 ? 10 : innerRows;
 
 				if (canFitPair) {
