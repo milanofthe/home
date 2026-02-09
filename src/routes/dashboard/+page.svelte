@@ -52,6 +52,10 @@
 	// Selected site state (null = all sites)
 	let selectedSite = $state<string | null>(null);
 
+	// Bin size toggle
+	type BinSize = '4h' | '1d' | '1w';
+	let binSize = $state<BinSize>('4h');
+
 	// List of available sites (reactive)
 	let siteList = $derived(Object.keys(analytics.sites));
 	let hasSites = $derived(siteList.length > 0);
@@ -84,15 +88,52 @@
 		return { pageViews, visits };
 	}
 
-	// 3.5 hours in milliseconds for bar width (narrower to reduce overlap)
-	const barWidthMs = 3.5 * 60 * 60 * 1000;
+	// Bar width in ms per bin size
+	const barWidths: Record<BinSize, number> = {
+		'4h': 3.5 * 60 * 60 * 1000,
+		'1d': 22 * 60 * 60 * 1000,
+		'1w': 6 * 24 * 60 * 60 * 1000
+	};
 
-	// Shift datetime back by 2 hours to center bars on their period
-	// e.g., "12:00" (representing 08:00-12:00) becomes "10:00" (center of period)
+	let barWidthMs = $derived(barWidths[binSize]);
+
+	// Shift datetime back by half the bin to center bars on their period
 	function centerDatetime(datetime: string): string {
 		const date = new Date(datetime);
-		date.setHours(date.getHours() - 2);
+		if (binSize === '4h') date.setHours(date.getHours() - 2);
+		else if (binSize === '1d') date.setHours(date.getHours() - 12);
 		return date.toISOString().slice(0, 19);
+	}
+
+	// Get bin key for a datetime
+	function getBinKey(datetime: string): string {
+		const date = new Date(datetime);
+		if (binSize === '4h') return datetime;
+		if (binSize === '1d') return date.toISOString().slice(0, 10);
+		// 1w: use Monday of that week
+		const day = date.getDay();
+		const diff = day === 0 ? -6 : 1 - day;
+		const monday = new Date(date);
+		monday.setDate(monday.getDate() + diff);
+		return monday.toISOString().slice(0, 10);
+	}
+
+	// Aggregate timeseries into bins
+	function aggregateTimeseries(timeseries: Array<{ datetime: string; pageViews: number; visits: number }>) {
+		if (binSize === '4h') return timeseries;
+		const bins = new Map<string, { datetime: string; pageViews: number; visits: number }>();
+		for (const d of timeseries) {
+			const key = getBinKey(d.datetime);
+			const existing = bins.get(key);
+			if (existing) {
+				existing.pageViews += d.pageViews;
+				existing.visits += d.visits;
+			} else {
+				const dt = binSize === '1w' ? key + 'T12:00:00' : key + 'T12:00:00';
+				bins.set(key, { datetime: dt, pageViews: d.pageViews, visits: d.visits });
+			}
+		}
+		return [...bins.values()];
 	}
 
 	// Build time series chart data for page views
@@ -100,10 +141,11 @@
 		if (selectedSite && analytics.sites[selectedSite]) {
 			const site = analytics.sites[selectedSite];
 			const color = site.color;
+			const agg = aggregateTimeseries(site.timeseries);
 			return [
 				{
-					x: site.timeseries.map((d) => centerDatetime(d.datetime)),
-					y: site.timeseries.map((d) => d.pageViews),
+					x: agg.map((d) => centerDatetime(d.datetime)),
+					y: agg.map((d) => d.pageViews),
 					type: 'bar',
 					name: 'Page Views',
 					marker: { color, line: { width: 0 } },
@@ -116,9 +158,10 @@
 		const siteEntries = Object.entries(analytics.sites);
 		siteEntries.forEach(([hostname, site]) => {
 			const color = site.color;
+			const agg = aggregateTimeseries(site.timeseries);
 			traces.push({
-				x: site.timeseries.map((d) => centerDatetime(d.datetime)),
-				y: site.timeseries.map((d) => d.pageViews),
+				x: agg.map((d) => centerDatetime(d.datetime)),
+				y: agg.map((d) => d.pageViews),
 				type: 'bar',
 				name: hostname,
 				marker: { color, line: { width: 0 } },
@@ -133,10 +176,11 @@
 		if (selectedSite && analytics.sites[selectedSite]) {
 			const site = analytics.sites[selectedSite];
 			const color = site.color;
+			const agg = aggregateTimeseries(site.timeseries);
 			return [
 				{
-					x: site.timeseries.map((d) => centerDatetime(d.datetime)),
-					y: site.timeseries.map((d) => d.visits),
+					x: agg.map((d) => centerDatetime(d.datetime)),
+					y: agg.map((d) => d.visits),
 					type: 'bar',
 					name: 'Visits',
 					marker: { color, line: { width: 0 } },
@@ -149,9 +193,10 @@
 		const siteEntries = Object.entries(analytics.sites);
 		siteEntries.forEach(([hostname, site]) => {
 			const color = site.color;
+			const agg = aggregateTimeseries(site.timeseries);
 			traces.push({
-				x: site.timeseries.map((d) => centerDatetime(d.datetime)),
-				y: site.timeseries.map((d) => d.visits),
+				x: agg.map((d) => centerDatetime(d.datetime)),
+				y: agg.map((d) => d.visits),
 				type: 'bar',
 				name: hostname,
 				marker: { color, line: { width: 0 } },
@@ -256,26 +301,40 @@
 				</button>
 			</div>
 		{:else if hasSites}
-			<!-- Site Selector -->
-			<div class="flex flex-wrap gap-1.5 mb-6">
-				<button
-					class="px-3 py-1.5 rounded text-sm transition-colors {selectedSite === null
-						? 'bg-cream/10 text-cream'
-						: 'text-cream/50 hover:text-cream/70'}"
-					onclick={() => (selectedSite = null)}
-				>
-					All
-				</button>
-				{#each siteList as site}
+			<!-- Site Selector + Bin Size Toggle -->
+			<div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+				<div class="flex flex-wrap gap-1.5">
 					<button
-						class="px-3 py-1.5 rounded text-sm transition-colors {selectedSite === site
+						class="px-3 py-1.5 rounded text-sm transition-colors {selectedSite === null
 							? 'bg-cream/10 text-cream'
 							: 'text-cream/50 hover:text-cream/70'}"
-						onclick={() => (selectedSite = site)}
+						onclick={() => (selectedSite = null)}
 					>
-						{site}
+						All
 					</button>
-				{/each}
+					{#each siteList as site}
+						<button
+							class="px-3 py-1.5 rounded text-sm transition-colors {selectedSite === site
+								? 'bg-cream/10 text-cream'
+								: 'text-cream/50 hover:text-cream/70'}"
+							onclick={() => (selectedSite = site)}
+						>
+							{site}
+						</button>
+					{/each}
+				</div>
+				<div class="flex gap-1">
+					{#each (['4h', '1d', '1w'] as const) as bin}
+						<button
+							class="px-2.5 py-1 rounded text-xs font-mono transition-colors {binSize === bin
+								? 'bg-cream/10 text-cream'
+								: 'text-cream/40 hover:text-cream/60'}"
+							onclick={() => (binSize = bin)}
+						>
+							{bin}
+						</button>
+					{/each}
+				</div>
 			</div>
 
 			<!-- Summary -->
@@ -298,7 +357,7 @@
 			<div class="flex flex-col gap-4 mb-6">
 				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
 					<h2 class="text-sm text-cream/50 mb-3">Page Views</h2>
-					{#key selectedSite}
+					{#key `${selectedSite}-${binSize}`}
 						<PlotlyChart
 							data={pageViewsData}
 							layout={{
@@ -312,7 +371,7 @@
 				</div>
 				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
 					<h2 class="text-sm text-cream/50 mb-3">Visits</h2>
-					{#key selectedSite}
+					{#key `${selectedSite}-${binSize}`}
 						<PlotlyChart
 							data={visitorsData}
 							layout={{
