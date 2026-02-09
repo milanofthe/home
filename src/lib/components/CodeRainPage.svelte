@@ -216,17 +216,15 @@
 		const rows = Math.round(h / lineHeight);
 		const total = cols * rows;
 
-		// Lazy load: hide media until reveal starts
-		const mediaEls = node.querySelectorAll<HTMLVideoElement | HTMLImageElement>('video, img');
-		for (const el of mediaEls) {
-			if (el instanceof HTMLVideoElement) {
-				el.dataset.lazySrc = el.src;
-				el.removeAttribute('src');
-				el.pause();
-			}
+		// Lazy load: strip video src, preload early, play on reveal
+		const videoEls = node.querySelectorAll<HTMLVideoElement>('video');
+		for (const el of videoEls) {
+			el.dataset.lazySrc = el.src;
+			el.removeAttribute('src');
+			el.pause();
 		}
 
-		// Canvas overlay filled with page background, hides the image
+		// Canvas overlay filled with page background, hides the content
 		const canvas = document.createElement('canvas');
 		const dpr = window.devicePixelRatio || 1;
 		canvas.width = w * dpr;
@@ -245,18 +243,32 @@
 			[order[i], order[j]] = [order[j], order[i]];
 		}
 
-		const observer = new IntersectionObserver((entries) => {
+		// Preload observer: start fetching videos when tile is ~800px from viewport
+		const preloadObserver = new IntersectionObserver((entries) => {
 			for (const entry of entries) {
 				if (entry.isIntersecting) {
-					observer.unobserve(entry.target);
-
-					// Restore lazy-loaded media sources when reveal begins
-					for (const el of mediaEls) {
-						if (el instanceof HTMLVideoElement && el.dataset.lazySrc) {
+					preloadObserver.unobserve(entry.target);
+					for (const el of videoEls) {
+						if (el.dataset.lazySrc) {
 							el.src = el.dataset.lazySrc;
+							el.preload = 'auto';
+							el.load();
 							delete el.dataset.lazySrc;
-							el.play();
 						}
+					}
+				}
+			}
+		}, { rootMargin: '800px' });
+		preloadObserver.observe(node);
+
+		// Reveal observer: start animation and play video when tile is visible
+		const revealObserver = new IntersectionObserver((entries) => {
+			for (const entry of entries) {
+				if (entry.isIntersecting) {
+					revealObserver.unobserve(entry.target);
+
+					for (const el of videoEls) {
+						el.play();
 					}
 
 					let i = 0;
@@ -273,11 +285,12 @@
 				}
 			}
 		}, { threshold: 0.1 });
-		observer.observe(node);
+		revealObserver.observe(node);
 
 		return {
 			destroy() {
-				observer.disconnect();
+				preloadObserver.disconnect();
+				revealObserver.disconnect();
 				canvas.remove();
 			}
 		};
