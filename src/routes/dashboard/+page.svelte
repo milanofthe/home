@@ -92,17 +92,29 @@
 	const barWidths: Record<BinSize, number> = {
 		'4h': 3.5 * 60 * 60 * 1000,
 		'1d': 22 * 60 * 60 * 1000,
-		'1w': 6 * 24 * 60 * 60 * 1000
+		'1w': 5 * 24 * 60 * 60 * 1000
 	};
 
 	let barWidthMs = $derived(barWidths[binSize]);
 
-	// Shift datetime back by half the bin to center bars on their period
+	// For 4h bins, shift back 2h to center on the period
+	// For 1d/1w, the datetime is already set to midpoint during aggregation
 	function centerDatetime(datetime: string): string {
-		const date = new Date(datetime);
-		if (binSize === '4h') date.setHours(date.getHours() - 2);
-		else if (binSize === '1d') date.setHours(date.getHours() - 12);
-		return date.toISOString().slice(0, 19);
+		if (binSize === '4h') {
+			const date = new Date(datetime);
+			date.setHours(date.getHours() - 2);
+			return date.toISOString().slice(0, 19);
+		}
+		return datetime;
+	}
+
+	// Get Monday of the week for a given date (using UTC)
+	function getMonday(date: Date): Date {
+		const d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+		const day = d.getUTCDay();
+		const diff = day === 0 ? -6 : 1 - day;
+		d.setUTCDate(d.getUTCDate() + diff);
+		return d;
 	}
 
 	// Get bin key for a datetime
@@ -110,12 +122,8 @@
 		const date = new Date(datetime);
 		if (binSize === '4h') return datetime;
 		if (binSize === '1d') return date.toISOString().slice(0, 10);
-		// 1w: use Monday of that week
-		const day = date.getDay();
-		const diff = day === 0 ? -6 : 1 - day;
-		const monday = new Date(date);
-		monday.setDate(monday.getDate() + diff);
-		return monday.toISOString().slice(0, 10);
+		// 1w: Monday of that week
+		return getMonday(date).toISOString().slice(0, 10);
 	}
 
 	// Aggregate timeseries into bins
@@ -129,7 +137,16 @@
 				existing.pageViews += d.pageViews;
 				existing.visits += d.visits;
 			} else {
-				const dt = binSize === '1w' ? key + 'T12:00:00' : key + 'T12:00:00';
+				// Place bar at midpoint: noon for daily, Thursday noon for weekly
+				let dt: string;
+				if (binSize === '1d') {
+					dt = key + 'T12:00:00';
+				} else {
+					// Mid-week: Monday + 3 days = Thursday
+					const monday = new Date(key + 'T12:00:00Z');
+					monday.setUTCDate(monday.getUTCDate() + 3);
+					dt = monday.toISOString().slice(0, 19);
+				}
 				bins.set(key, { datetime: dt, pageViews: d.pageViews, visits: d.visits });
 			}
 		}
