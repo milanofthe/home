@@ -3,6 +3,7 @@
 	import { computeGridLayout, type GridLayout, type FormFieldPosition, type CellType } from '$lib/layout/gridLayout';
 	import CharacterGrid from './CharacterGrid.svelte';
 	import PortalTile from './PortalTile.svelte';
+	import VideoTile from './VideoTile.svelte';
 
 	let containerEl: HTMLDivElement;
 
@@ -18,32 +19,26 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		mobileScreenshot?: string;
 		color: 'pathsim' | 'pysimhub';
 	}
 
 	const tileInfo: Record<string, TileInfo> = {
-		'pathsim-org': { name: 'PathSim', url: 'https://pathsim.org', screenshot: '/screenshots/pathsim-org.png', mobileScreenshot: '/screenshots/pathsim-org-mobile.png', color: 'pathsim' },
-		'docs-pathsim-org': { name: 'Documentation', url: 'https://docs.pathsim.org', screenshot: '/screenshots/docs-pathsim-org.png', mobileScreenshot: '/screenshots/docs-pathsim-org-mobile.png', color: 'pathsim' },
-		'view-pathsim-org': { name: 'PathView', url: 'https://view.pathsim.org', screenshot: '/screenshots/view-pathsim-org.png', mobileScreenshot: '/screenshots/view-pathsim-org-mobile.png', color: 'pathsim' },
-		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', mobileScreenshot: '/screenshots/pysimhub-io-mobile.png', color: 'pysimhub' }
+		'pathsim-org': { name: 'PathSim', url: 'https://pathsim.org', screenshot: '/screenshots/pathsim-org.png', color: 'pathsim' },
+		'docs-pathsim-org': { name: 'Documentation', url: 'https://docs.pathsim.org', screenshot: '/screenshots/docs-pathsim-org.png', color: 'pathsim' },
+		'view-pathsim-org': { name: 'PathView', url: 'https://view.pathsim.org', screenshot: '/screenshots/view-pathsim-org.png', color: 'pathsim' },
+		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' }
 	};
 
-	// Expanding tile animation
-	let expandingTile = $state<TileInfo | null>(null);
-	let overlayStyle = $state('');
-	let isExpanding = $state(false);
-
-	function handleTileClick(info: TileInfo, rect: DOMRect) {
-		expandingTile = info;
-		overlayStyle = `top: ${rect.top}px; left: ${rect.left}px; width: ${rect.width}px; height: ${rect.height}px;`;
-		requestAnimationFrame(() => {
-			requestAnimationFrame(() => {
-				isExpanding = true;
-				setTimeout(() => { window.location.href = info.url + (info.url.includes('?') ? '&' : '?') + 'theme=dark'; }, 350);
-			});
-		});
+	// Video tile data
+	interface VideoInfo {
+		name: string;
+		src: string;
+		color: 'pathsim' | 'pysimhub';
 	}
+
+	const videoInfo: Record<string, VideoInfo> = {
+		'pathview-trailer': { name: 'PathView Demo', src: '/videos/PathView-Trailer-Thumbnail-2026-01-29.mp4', color: 'pathsim' }
+	};
 
 	// Contact form state
 	let formStatus = $state<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -221,6 +216,16 @@
 		const rows = Math.round(h / lineHeight);
 		const total = cols * rows;
 
+		// Lazy load: hide media until reveal starts
+		const mediaEls = node.querySelectorAll<HTMLVideoElement | HTMLImageElement>('video, img');
+		for (const el of mediaEls) {
+			if (el instanceof HTMLVideoElement) {
+				el.dataset.lazySrc = el.src;
+				el.removeAttribute('src');
+				el.pause();
+			}
+		}
+
 		// Canvas overlay filled with page background, hides the image
 		const canvas = document.createElement('canvas');
 		const dpr = window.devicePixelRatio || 1;
@@ -244,6 +249,16 @@
 			for (const entry of entries) {
 				if (entry.isIntersecting) {
 					observer.unobserve(entry.target);
+
+					// Restore lazy-loaded media sources when reveal begins
+					for (const el of mediaEls) {
+						if (el instanceof HTMLVideoElement && el.dataset.lazySrc) {
+							el.src = el.dataset.lazySrc;
+							delete el.dataset.lazySrc;
+							el.play();
+						}
+					}
+
 					let i = 0;
 					const perFrame = Math.max(1, Math.ceil(total / 80));
 					(function step() {
@@ -292,17 +307,10 @@
 			setTimeout(() => scrollToSection(id), 100);
 		}
 
-		// Reset expand animation when returning via back button
-		function handlePageShow(e: PageTransitionEvent) {
-			if (e.persisted) { expandingTile = null; isExpanding = false; }
-		}
-
 		window.addEventListener('resize', computeLayout);
-		window.addEventListener('pageshow', handlePageShow);
 		document.addEventListener('click', handleNavClick);
 		return () => {
 			window.removeEventListener('resize', computeLayout);
-			window.removeEventListener('pageshow', handlePageShow);
 			document.removeEventListener('click', handleNavClick);
 		};
 	});
@@ -354,6 +362,16 @@
 						<img src="/images/headshot_milan.webp" alt="Milan Rother" class="photo-img" />
 					</div>
 				</div>
+			{:else if videoInfo[block.id]}
+				{@const info = videoInfo[block.id]}
+				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
+					<VideoTile
+						id={block.id}
+						name={info.name}
+						src={info.src}
+						color={info.color}
+					/>
+				</div>
 			{:else if tileInfo[block.id]}
 				{@const info = tileInfo[block.id]}
 				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
@@ -362,9 +380,7 @@
 						name={info.name}
 						url={info.url}
 						screenshot={info.screenshot}
-						mobileScreenshot={info.mobileScreenshot}
 						color={info.color}
-						onclick={(rect) => handleTileClick(info, rect)}
 					/>
 				</div>
 			{/if}
@@ -458,23 +474,6 @@
 	{/if}
 </div>
 
-{#if expandingTile}
-	<div
-		class="portal-overlay {isExpanding ? 'expanding' : ''}"
-		style={overlayStyle}
-	>
-		<picture>
-			{#if expandingTile.mobileScreenshot}
-				<source media="(max-width: 639px)" srcset={expandingTile.mobileScreenshot} />
-			{/if}
-			<img
-				src={expandingTile.screenshot}
-				alt="{expandingTile.name} preview"
-				class="absolute inset-0 w-full h-full object-cover object-top"
-			/>
-		</picture>
-	</div>
-{/if}
 
 <style>
 	.code-rain-container {

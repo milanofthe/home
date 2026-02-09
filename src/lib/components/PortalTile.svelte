@@ -4,19 +4,12 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		mobileScreenshot?: string;
 		color: 'pathsim' | 'pysimhub';
-		onclick: (rect: DOMRect) => void;
 	}
 
-	let { id, name, url, screenshot, mobileScreenshot, color, onclick }: Props = $props();
+	let { id, name, url, screenshot, color }: Props = $props();
 
-	let tileElement: HTMLButtonElement;
-
-	function handleClick() {
-		const rect = tileElement.getBoundingClientRect();
-		onclick(rect);
-	}
+	let tileElement: HTMLAnchorElement;
 
 	function handleTilt(e: MouseEvent) {
 		const rect = tileElement.getBoundingClientRect();
@@ -35,34 +28,44 @@
 	};
 </script>
 
-<button
+<a
 	bind:this={tileElement}
-	onclick={handleClick}
+	href="{url}?theme=dark"
+	target="_blank"
+	rel="noopener"
 	onmousemove={handleTilt}
 	onmouseleave={handleTiltReset}
-	class="group relative w-full h-full overflow-hidden cursor-pointer tile-tilt"
+	class="tile-tilt"
 	style="--glow-color: {glowColors[color]};"
 	aria-label="Open {name}"
 >
-	<picture>
-		{#if mobileScreenshot}
-			<source media="(max-width: 639px)" srcset={mobileScreenshot} />
-		{/if}
-		<img
-			src={screenshot}
-			alt="{name} preview"
-			class="absolute inset-0 w-full h-full object-cover object-top"
-		/>
-	</picture>
-</button>
+	<img
+		src={screenshot}
+		alt="{name} preview"
+		class="tile-img"
+	/>
+</a>
 
 <style>
 	.tile-tilt {
+		display: block;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
 		transition: transform 0.15s ease-out, box-shadow 0.3s;
 		will-change: transform;
 	}
 
 	.tile-tilt:hover {
 		box-shadow: 0 8px 30px var(--glow-color, rgba(0, 217, 192, 0.2));
+	}
+
+	.tile-img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top;
 	}
 </style>

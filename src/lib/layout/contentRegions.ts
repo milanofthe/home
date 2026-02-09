@@ -155,17 +155,17 @@ export const contentSections: ContentSection[] = [
 			{ type: 'spacer', lines: [''] },
 			{
 				type: 'heading-pathsim',
-				lines: ['PathSim + PathView'],
+				lines: ['PathSim'],
 				align: 'center'
 			},
 			{ type: 'spacer', lines: [''] },
 			{
 				type: 'paragraph',
 				lines: [
-					'A complete ecosystem for dynamical system',
-					'simulation -- framework, documentation,',
-					'browser-based editor, and community-driven',
-					'toolbox development.'
+					'A pure-Python framework for modeling and',
+					'simulating dynamical systems. Built from',
+					'first principles with custom solvers, an event',
+					'system, and a modular block-diagram API.'
 				],
 				align: 'center'
 			},
@@ -184,7 +184,38 @@ export const contentSections: ContentSection[] = [
 				embeddedCols: 34,
 				tiles: [
 					{ id: 'pathsim-org', label: 'PathSim' },
-					{ id: 'docs-pathsim-org', label: 'Docs' },
+					{ id: 'docs-pathsim-org', label: 'Docs' }
+				],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{ type: 'spacer', lines: [''] },
+			{ type: 'spacer', lines: [''] },
+			{
+				type: 'heading-pathsim',
+				lines: ['PathView'],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{
+				type: 'paragraph',
+				lines: [
+					'A browser-based visual editor for PathSim',
+					'models. Drag-and-drop block diagrams, live',
+					'simulation preview, and instant sharing --',
+					'built with SvelteKit, SvelteFlow, and Pyodide.'
+				],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{
+				type: 'embedded',
+				lines: [],
+				frameColor: 'pathsim',
+				embeddedRows: 10,
+				embeddedCols: 34,
+				tiles: [
+					{ id: 'pathview-trailer', label: 'Demo' },
 					{ id: 'view-pathsim-org', label: 'PathView' }
 				],
 				align: 'center'

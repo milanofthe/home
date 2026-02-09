@@ -23,14 +23,11 @@ const sites = [
 
 const themes = ['dark', 'light'];
 
-const viewports = [
-	{ suffix: '', width: 1440, height: 900, label: 'desktop' },
-	{ suffix: '-mobile', width: 390, height: 844, label: 'mobile' }
-];
+const viewport = { width: 1440, height: 900 };
 
-async function captureScreenshot(browser, site, theme, viewport) {
+async function captureScreenshot(browser, site, theme) {
 	const url = `${site.url}${site.url.includes('?') ? '&' : '?'}theme=${theme}`;
-	console.log(`  ${site.id} ${theme} ${viewport.label}...`);
+	console.log(`  ${site.id} ${theme}...`);
 
 	const page = await browser.newPage();
 	await page.setViewport({ width: viewport.width, height: viewport.height, deviceScaleFactor: 2 });
@@ -39,7 +36,7 @@ async function captureScreenshot(browser, site, theme, viewport) {
 		await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
 		await new Promise((resolve) => setTimeout(resolve, 1500));
 
-		const filename = `${site.id}-${theme}${viewport.suffix}.png`;
+		const filename = `${site.id}-${theme}.png`;
 		const outputPath = join(SCREENSHOTS_DIR, filename);
 		await page.screenshot({ path: outputPath, type: 'png' });
 		console.log(`    Saved: ${filename}`);
@@ -67,9 +64,7 @@ async function main() {
 		for (const site of sites) {
 			console.log(`\nCapturing ${site.id} (${site.url}):`);
 			for (const theme of themes) {
-				for (const viewport of viewports) {
-					await captureScreenshot(browser, site, theme, viewport);
-				}
+				await captureScreenshot(browser, site, theme);
 			}
 		}
 	} finally {
