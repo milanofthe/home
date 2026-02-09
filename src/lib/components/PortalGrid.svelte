@@ -51,7 +51,7 @@
 
 				// Navigate after animation
 				setTimeout(() => {
-					window.location.href = project.url;
+					window.location.href = project.url + (project.url.includes('?') ? '&' : '?') + 'theme=dark';
 				}, 350);
 			});
 		});

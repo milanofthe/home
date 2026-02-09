@@ -40,7 +40,7 @@
 		requestAnimationFrame(() => {
 			requestAnimationFrame(() => {
 				isExpanding = true;
-				setTimeout(() => { window.location.href = info.url; }, 350);
+				setTimeout(() => { window.location.href = info.url + (info.url.includes('?') ? '&' : '?') + 'theme=dark'; }, 350);
 			});
 		});
 	}
