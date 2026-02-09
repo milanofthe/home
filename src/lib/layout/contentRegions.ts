@@ -180,8 +180,8 @@ export const contentSections: ContentSection[] = [
 				type: 'embedded',
 				lines: [],
 				frameColor: 'pathsim',
-				embeddedRows: 6,
-				embeddedCols: 26,
+				embeddedRows: 10,
+				embeddedCols: 34,
 				tiles: [
 					{ id: 'pathsim-org', label: 'PathSim' },
 					{ id: 'docs-pathsim-org', label: 'Docs' },
@@ -221,8 +221,8 @@ export const contentSections: ContentSection[] = [
 				tiles: [
 					{ id: 'pysimhub-io', label: 'PySimHub' }
 				],
-				embeddedRows: 6,
-				embeddedCols: 26,
+				embeddedRows: 10,
+				embeddedCols: 34,
 				align: 'center'
 			}
 		]
