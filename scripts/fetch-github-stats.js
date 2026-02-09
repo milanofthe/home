@@ -88,6 +88,29 @@ async function fetchPySimHubProjects() {
 	return response.json();
 }
 
+function parseGitHubUrl(url) {
+	const match = url.match(/github\.com\/([^/]+)\/([^/]+)/);
+	return match ? { owner: match[1], repo: match[2] } : null;
+}
+
+async function fetchCumulativeStars(projects) {
+	let total = 0;
+	for (const project of projects) {
+		if (!project.github) continue;
+		const parsed = parseGitHubUrl(project.github);
+		if (!parsed) continue;
+		try {
+			const data = await fetchGitHubRepo(parsed.owner, parsed.repo);
+			const stars = data.stargazers_count || 0;
+			total += stars;
+			console.log(`    ${parsed.owner}/${parsed.repo}: ${stars} stars`);
+		} catch {
+			console.log(`    ${parsed.owner}/${parsed.repo}: failed to fetch`);
+		}
+	}
+	return total;
+}
+
 async function main() {
 	const existingData = loadExistingData();
 	const today = getTodayDate();
@@ -97,7 +120,7 @@ async function main() {
 
 	const stats = {
 		pathsim: { stars: 0, forks: 0, watchers: 0, openIssues: 0 },
-		pysimhub: { projects: 0, members: 0 }
+		pysimhub: { projects: 0, members: 0, cumulativeStars: 0 }
 	};
 
 	try {
@@ -117,6 +140,11 @@ async function main() {
 		const projects = await fetchPySimHubProjects();
 		stats.pysimhub.projects = Array.isArray(projects) ? projects.length : 0;
 		console.log(`  Projects: ${stats.pysimhub.projects}`);
+
+		// Fetch cumulative stars across all listed projects
+		console.log('Fetching cumulative stars...');
+		stats.pysimhub.cumulativeStars = await fetchCumulativeStars(Array.isArray(projects) ? projects : []);
+		console.log(`  Cumulative stars: ${stats.pysimhub.cumulativeStars}`);
 
 		// Fetch PySimHub org members
 		console.log('Fetching PySimHub members...');

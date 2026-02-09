@@ -210,7 +210,7 @@ export const contentSections: ContentSection[] = [
 			{ type: 'spacer', lines: [''] },
 			{
 				type: 'link-line-pysimhub',
-				lines: [`${ph.projects} projects / ${ph.members} members`],
+				lines: [`${ph.projects} projects / ${ph.cumulativeStars} cumulative stars`],
 				align: 'center'
 			},
 			{ type: 'spacer', lines: [''] },
