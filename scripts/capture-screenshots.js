@@ -2,10 +2,11 @@
 
 /**
  * Captures screenshots of project websites using Puppeteer.
+ * Captures both dark and light themes using ?theme= URL parameter.
  * Run with: npm run screenshots
  */
 
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
 import { existsSync, mkdirSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
@@ -20,45 +21,36 @@ const sites = [
 	{ id: 'pysimhub-io', url: 'https://pysimhub.io' }
 ];
 
+const themes = ['dark', 'light'];
+
 const viewports = [
 	{ suffix: '', width: 1440, height: 900, label: 'desktop' },
 	{ suffix: '-mobile', width: 390, height: 844, label: 'mobile' }
 ];
 
-async function captureScreenshot(browser, site, viewport) {
-	console.log(`Capturing ${site.id} ${viewport.label} (${site.url})...`);
+async function captureScreenshot(browser, site, theme, viewport) {
+	const url = `${site.url}${site.url.includes('?') ? '&' : '?'}theme=${theme}`;
+	console.log(`  ${site.id} ${theme} ${viewport.label}...`);
 
 	const page = await browser.newPage();
 	await page.setViewport({ width: viewport.width, height: viewport.height, deviceScaleFactor: 2 });
 
-	// Enable dark mode
-	await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'dark' }]);
-
 	try {
-		await page.goto(site.url, {
-			waitUntil: 'networkidle2',
-			timeout: 30000
-		});
+		await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+		await new Promise((resolve) => setTimeout(resolve, 1500));
 
-		// Wait a bit for any animations to settle
-		await new Promise((resolve) => setTimeout(resolve, 1000));
-
-		const outputPath = join(SCREENSHOTS_DIR, `${site.id}${viewport.suffix}.png`);
-		await page.screenshot({
-			path: outputPath,
-			type: 'png'
-		});
-
-		console.log(`  Saved: ${outputPath}`);
+		const filename = `${site.id}-${theme}${viewport.suffix}.png`;
+		const outputPath = join(SCREENSHOTS_DIR, filename);
+		await page.screenshot({ path: outputPath, type: 'png' });
+		console.log(`    Saved: ${filename}`);
 	} catch (error) {
-		console.error(`  Error capturing ${site.id} ${viewport.label}:`, error.message);
+		console.error(`    Error: ${error.message}`);
 	} finally {
 		await page.close();
 	}
 }
 
 async function main() {
-	// Ensure screenshots directory exists
 	if (!existsSync(SCREENSHOTS_DIR)) {
 		mkdirSync(SCREENSHOTS_DIR, { recursive: true });
 		console.log(`Created directory: ${SCREENSHOTS_DIR}`);
@@ -67,13 +59,17 @@ async function main() {
 	console.log('Launching browser...');
 	const browser = await puppeteer.launch({
 		headless: true,
+		channel: 'chrome',
 		args: ['--no-sandbox', '--disable-setuid-sandbox']
 	});
 
 	try {
 		for (const site of sites) {
-			for (const viewport of viewports) {
-				await captureScreenshot(browser, site, viewport);
+			console.log(`\nCapturing ${site.id} (${site.url}):`);
+			for (const theme of themes) {
+				for (const viewport of viewports) {
+					await captureScreenshot(browser, site, theme, viewport);
+				}
 			}
 		}
 	} finally {
