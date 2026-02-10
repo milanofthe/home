@@ -68,22 +68,20 @@
 		return null;
 	}
 
-	// Calculate summary stats
+	// Calculate all-time summary stats
 	function getSummary() {
 		if (selectedSite && analytics.sites[selectedSite]) {
 			const site = analytics.sites[selectedSite];
-			const last30 = site.timeseries.slice(-30);
 			return {
-				pageViews: last30.reduce((sum, d) => sum + d.pageViews, 0),
-				visits: last30.reduce((sum, d) => sum + d.visits, 0)
+				pageViews: site.timeseries.reduce((sum, d) => sum + d.pageViews, 0),
+				visits: site.timeseries.reduce((sum, d) => sum + d.visits, 0)
 			};
 		}
 		let pageViews = 0;
 		let visits = 0;
 		for (const site of Object.values(analytics.sites)) {
-			const last30 = site.timeseries.slice(-30);
-			pageViews += last30.reduce((sum, d) => sum + d.pageViews, 0);
-			visits += last30.reduce((sum, d) => sum + d.visits, 0);
+			pageViews += site.timeseries.reduce((sum, d) => sum + d.pageViews, 0);
+			visits += site.timeseries.reduce((sum, d) => sum + d.visits, 0);
 		}
 		return { pageViews, visits };
 	}
@@ -225,34 +223,122 @@
 
 	// Build referrers bar chart
 	function getReferrersData() {
-		const site = getCurrentSiteData();
-		if (!site?.topReferrers?.length) return [];
-		const color = site.color;
-		return [
-			{
+		if (selectedSite && analytics.sites[selectedSite]) {
+			const site = analytics.sites[selectedSite];
+			if (!site.topReferrers?.length) return [];
+			return [{
 				x: site.topReferrers.map((d) => d.pageViews),
 				y: site.topReferrers.map((d) => d.referrer),
 				type: 'bar',
 				orientation: 'h',
-				marker: { color, line: { width: 0 } }
+				marker: { color: site.color, line: { width: 0 } }
+			}];
+		}
+		const map = new Map<string, number>();
+		for (const site of Object.values(analytics.sites)) {
+			for (const r of site.topReferrers || []) {
+				map.set(r.referrer, (map.get(r.referrer) || 0) + r.pageViews);
 			}
-		];
+		}
+		const combined = [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+		if (!combined.length) return [];
+		return [{
+			x: combined.map((d) => d[1]),
+			y: combined.map((d) => d[0]),
+			type: 'bar',
+			orientation: 'h',
+			marker: { color: '#64748b', line: { width: 0 } }
+		}];
 	}
 
 	// Build countries bar chart
 	function getCountriesData() {
-		const site = getCurrentSiteData();
-		if (!site?.topCountries?.length) return [];
-		const color = site.color;
-		return [
-			{
+		if (selectedSite && analytics.sites[selectedSite]) {
+			const site = analytics.sites[selectedSite];
+			if (!site.topCountries?.length) return [];
+			return [{
 				x: site.topCountries.map((d) => d.pageViews),
 				y: site.topCountries.map((d) => d.country),
 				type: 'bar',
 				orientation: 'h',
-				marker: { color, line: { width: 0 } }
+				marker: { color: site.color, line: { width: 0 } }
+			}];
+		}
+		const map = new Map<string, number>();
+		for (const site of Object.values(analytics.sites)) {
+			for (const c of site.topCountries || []) {
+				map.set(c.country, (map.get(c.country) || 0) + c.pageViews);
 			}
-		];
+		}
+		const combined = [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+		if (!combined.length) return [];
+		return [{
+			x: combined.map((d) => d[1]),
+			y: combined.map((d) => d[0]),
+			type: 'bar',
+			orientation: 'h',
+			marker: { color: '#64748b', line: { width: 0 } }
+		}];
+	}
+
+	// Build pages bar chart
+	function getPagesData() {
+		if (selectedSite && analytics.sites[selectedSite]) {
+			const site = analytics.sites[selectedSite];
+			if (!site.topPages?.length) return [];
+			return [{
+				x: site.topPages.map((d) => d.pageViews),
+				y: site.topPages.map((d) => d.path),
+				type: 'bar',
+				orientation: 'h',
+				marker: { color: site.color, line: { width: 0 } }
+			}];
+		}
+		const map = new Map<string, number>();
+		for (const site of Object.values(analytics.sites)) {
+			for (const p of site.topPages || []) {
+				map.set(p.path, (map.get(p.path) || 0) + p.pageViews);
+			}
+		}
+		const combined = [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+		if (!combined.length) return [];
+		return [{
+			x: combined.map((d) => d[1]),
+			y: combined.map((d) => d[0]),
+			type: 'bar',
+			orientation: 'h',
+			marker: { color: '#64748b', line: { width: 0 } }
+		}];
+	}
+
+	// Build browsers bar chart
+	function getBrowsersData() {
+		if (selectedSite && analytics.sites[selectedSite]) {
+			const site = analytics.sites[selectedSite];
+			if (!site.topBrowsers?.length) return [];
+			return [{
+				x: site.topBrowsers.map((d) => d.pageViews),
+				y: site.topBrowsers.map((d) => d.browser),
+				type: 'bar',
+				orientation: 'h',
+				marker: { color: site.color, line: { width: 0 } }
+			}];
+		}
+		const map = new Map<string, number>();
+		for (const site of Object.values(analytics.sites)) {
+			for (const b of site.topBrowsers || []) {
+				map.set(b.browser, (map.get(b.browser) || 0) + b.pageViews);
+			}
+		}
+		const combined = [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+		if (!combined.length) return [];
+		return [{
+			x: combined.map((d) => d[1]),
+			y: combined.map((d) => d[0]),
+			type: 'bar',
+			orientation: 'h',
+			marker: { color: '#64748b', line: { width: 0 } }
+		}];
 	}
 
 	function formatNumber(num: number): string {
@@ -277,6 +363,8 @@
 	let visitorsData = $derived(getVisitorsData());
 	let referrersData = $derived(getReferrersData());
 	let countriesData = $derived(getCountriesData());
+	let pagesData = $derived(getPagesData());
+	let browsersData = $derived(getBrowsersData());
 	let currentSite: SiteData | null = $derived(getCurrentSiteData());
 
 	// Layout for unified hover and stacked bars in all view
@@ -402,81 +490,13 @@
 				</div>
 			</div>
 
-			<!-- Detail Section -->
-			{#if selectedSite && currentSite}
-				<div class="grid md:grid-cols-2 gap-4">
-					<!-- Top Referrers -->
-					<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-						<h2 class="text-sm text-cream/50 mb-3">Referrers</h2>
-						{#if referrersData.length > 0}
-							{#key selectedSite}
-								<PlotlyChart
-									data={referrersData}
-									layout={{ height: 180, margin: { t: 0, r: 10, b: 20 }, yaxis: { automargin: true } }}
-								/>
-							{/key}
-						{:else}
-							<p class="text-cream/30 text-sm">No data</p>
-						{/if}
-					</div>
-
-					<!-- Top Countries -->
-					<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-						<h2 class="text-sm text-cream/50 mb-3">Countries</h2>
-						{#if countriesData.length > 0}
-							{#key selectedSite}
-								<PlotlyChart
-									data={countriesData}
-									layout={{ height: 180, margin: { t: 0, r: 10, b: 20 }, yaxis: { automargin: true } }}
-								/>
-							{/key}
-						{:else}
-							<p class="text-cream/30 text-sm">No data</p>
-						{/if}
-					</div>
-
-					<!-- Top Pages -->
-					<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-						<h2 class="text-sm text-cream/50 mb-3">Pages</h2>
-						{#if currentSite.topPages?.length > 0}
-							<ul class="space-y-2">
-								{#each currentSite.topPages.slice(0, 8) as page}
-									<li class="flex justify-between items-center text-sm">
-										<span class="text-cream/60 truncate pr-4 font-mono text-xs">{page.path}</span>
-										<span class="text-cream/40 font-mono text-xs">{formatNumber(page.pageViews)}</span>
-									</li>
-								{/each}
-							</ul>
-						{:else}
-							<p class="text-cream/30 text-sm">No data</p>
-						{/if}
-					</div>
-
-					<!-- Top Browsers -->
-					<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-						<h2 class="text-sm text-cream/50 mb-3">Browsers</h2>
-						{#if currentSite.topBrowsers?.length > 0}
-							<ul class="space-y-2">
-								{#each currentSite.topBrowsers as browser}
-									<li class="flex justify-between items-center text-sm">
-										<span class="text-cream/60">{browser.browser}</span>
-										<span class="text-cream/40 font-mono text-xs">{formatNumber(browser.pageViews)}</span>
-									</li>
-								{/each}
-							</ul>
-						{:else}
-							<p class="text-cream/30 text-sm">No data</p>
-						{/if}
-					</div>
-				</div>
-			{:else}
-				<!-- Site Overview Cards -->
-				<div class="grid md:grid-cols-3 gap-4">
+			<!-- Site Overview Cards (All view) -->
+			{#if !selectedSite}
+				<div class="grid md:grid-cols-3 gap-4 mb-4">
 					{#each siteList as site}
 						{@const siteData = analytics.sites[site]}
-						{@const last30 = siteData.timeseries.slice(-30)}
-						{@const sitePageViews = last30.reduce((sum, d) => sum + d.pageViews, 0)}
-						{@const siteVisits = last30.reduce((sum, d) => sum + d.visits, 0)}
+						{@const sitePageViews = siteData.timeseries.reduce((sum, d) => sum + d.pageViews, 0)}
+						{@const siteVisits = siteData.timeseries.reduce((sum, d) => sum + d.visits, 0)}
 						<button
 							class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5 text-left transition-all hover:bg-cream/[0.04] hover:border-cream/10"
 							onclick={() => (selectedSite = site)}
@@ -499,6 +519,65 @@
 					{/each}
 				</div>
 			{/if}
+
+			<!-- Aggregate Panels -->
+			<div class="grid md:grid-cols-2 gap-4">
+				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
+					<h2 class="text-sm text-cream/50 mb-3">Referrers</h2>
+					{#if referrersData.length > 0}
+						{#key selectedSite}
+							<PlotlyChart
+								data={referrersData}
+								layout={{ height: 180, margin: { t: 0, r: 10, b: 20 }, yaxis: { automargin: true } }}
+							/>
+						{/key}
+					{:else}
+						<p class="text-cream/30 text-sm">No data</p>
+					{/if}
+				</div>
+
+				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
+					<h2 class="text-sm text-cream/50 mb-3">Countries</h2>
+					{#if countriesData.length > 0}
+						{#key selectedSite}
+							<PlotlyChart
+								data={countriesData}
+								layout={{ height: 180, margin: { t: 0, r: 10, b: 20 }, yaxis: { automargin: true } }}
+							/>
+						{/key}
+					{:else}
+						<p class="text-cream/30 text-sm">No data</p>
+					{/if}
+				</div>
+
+				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
+					<h2 class="text-sm text-cream/50 mb-3">Pages</h2>
+					{#if pagesData.length > 0}
+						{#key selectedSite}
+							<PlotlyChart
+								data={pagesData}
+								layout={{ height: 180, margin: { t: 0, r: 10, b: 20 }, yaxis: { automargin: true } }}
+							/>
+						{/key}
+					{:else}
+						<p class="text-cream/30 text-sm">No data</p>
+					{/if}
+				</div>
+
+				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
+					<h2 class="text-sm text-cream/50 mb-3">Browsers</h2>
+					{#if browsersData.length > 0}
+						{#key selectedSite}
+							<PlotlyChart
+								data={browsersData}
+								layout={{ height: 180, margin: { t: 0, r: 10, b: 20 }, yaxis: { automargin: true } }}
+							/>
+						{/key}
+					{:else}
+						<p class="text-cream/30 text-sm">No data</p>
+					{/if}
+				</div>
+			</div>
 		{:else}
 			<!-- Empty State -->
 			<div class="text-center py-16">
