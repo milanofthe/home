@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-10T13:23:57.785Z",
+	"lastFetched": "2026-02-10T17:07:17.020Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1842,7 +1842,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1290
+							"pageViews": 1300
 						}
 					],
 					"topReferrers": [
@@ -1860,7 +1860,7 @@
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 80
+							"pageViews": 90
 						},
 						{
 							"referrer": "statics.teams.cdn.office.net",
@@ -1886,7 +1886,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 190
+							"pageViews": 200
 						},
 						{
 							"country": "IN",
@@ -1924,7 +1924,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 360
+							"pageViews": 370
 						},
 						{
 							"browser": "ChromeMobile",
@@ -1948,7 +1948,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1290
+					"pageViews": 1300
 				}
 			],
 			"topReferrers": [
@@ -1966,7 +1966,7 @@
 				},
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 80
+					"pageViews": 90
 				},
 				{
 					"referrer": "statics.teams.cdn.office.net",
@@ -1992,7 +1992,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 190
+					"pageViews": 200
 				},
 				{
 					"country": "IN",
@@ -2030,7 +2030,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 360
+					"pageViews": 370
 				},
 				{
 					"browser": "ChromeMobile",
@@ -4783,11 +4783,11 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 630
+							"pageViews": 640
 						},
 						{
 							"path": "/pathsim/",
-							"pageViews": 360
+							"pageViews": 370
 						},
 						{
 							"path": "/pathsim",
@@ -4825,7 +4825,7 @@
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 820
+							"pageViews": 830
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -4841,7 +4841,7 @@
 						},
 						{
 							"referrer": "github.com",
-							"pageViews": 80
+							"pageViews": 90
 						},
 						{
 							"referrer": "duckduckgo.com",
@@ -4867,7 +4867,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 460
+							"pageViews": 480
 						},
 						{
 							"country": "FR",
@@ -4905,7 +4905,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1080
+							"pageViews": 1100
 						},
 						{
 							"browser": "ChromeMobile",
@@ -4929,11 +4929,11 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 630
+					"pageViews": 640
 				},
 				{
 					"path": "/pathsim/",
-					"pageViews": 360
+					"pageViews": 370
 				},
 				{
 					"path": "/pathsim",
@@ -4971,7 +4971,7 @@
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 820
+					"pageViews": 830
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -4987,7 +4987,7 @@
 				},
 				{
 					"referrer": "github.com",
-					"pageViews": 80
+					"pageViews": 90
 				},
 				{
 					"referrer": "duckduckgo.com",
@@ -5013,7 +5013,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 460
+					"pageViews": 480
 				},
 				{
 					"country": "FR",
@@ -5051,7 +5051,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1080
+					"pageViews": 1100
 				},
 				{
 					"browser": "ChromeMobile",
@@ -7359,7 +7359,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2540
+							"pageViews": 2550
 						},
 						{
 							"path": "/dev/",
@@ -7369,7 +7369,7 @@
 					"topReferrers": [
 						{
 							"referrer": "com.linkedin.android",
-							"pageViews": 390
+							"pageViews": 400
 						},
 						{
 							"referrer": "pathsim.org",
@@ -7453,7 +7453,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 520
+							"pageViews": 530
 						},
 						{
 							"browser": "Edge",
@@ -7473,7 +7473,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2540
+					"pageViews": 2550
 				},
 				{
 					"path": "/dev/",
@@ -7483,7 +7483,7 @@
 			"topReferrers": [
 				{
 					"referrer": "com.linkedin.android",
-					"pageViews": 390
+					"pageViews": 400
 				},
 				{
 					"referrer": "pathsim.org",
@@ -7567,7 +7567,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 520
+					"pageViews": 530
 				},
 				{
 					"browser": "Edge",
