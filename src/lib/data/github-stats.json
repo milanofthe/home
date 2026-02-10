@@ -7,9 +7,9 @@
 			"openIssues": 15
 		},
 		"pysimhub": {
-			"projects": 18,
+			"projects": 19,
 			"members": 3,
-			"cumulativeStars": 11012
+			"cumulativeStars": 12865
 		}
 	},
 	"history": [
@@ -257,11 +257,11 @@
 				"openIssues": 15
 			},
 			"pysimhub": {
-				"projects": 18,
+				"projects": 19,
 				"members": 3,
-				"cumulativeStars": 11012
+				"cumulativeStars": 12865
 			}
 		}
 	],
-	"fetchedAt": "2026-02-10T09:01:27.859Z"
+	"fetchedAt": "2026-02-10T13:24:09.061Z"
 }
