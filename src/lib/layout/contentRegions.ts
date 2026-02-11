@@ -1,10 +1,13 @@
 // Declarative content structure for the code rain grid
 // Each region defines what content goes where in the grid
 
-import githubStats from '$lib/data/github-stats.json';
+import defaultStats from '$lib/data/github-stats.json';
 
-const ps = githubStats.current.pathsim;
-const ph = githubStats.current.pysimhub;
+export interface GitHubStats {
+	pathsim: { stars: number; forks: number; watchers?: number; openIssues?: number };
+	pathview: { stars: number; forks: number; watchers?: number; openIssues?: number };
+	pysimhub: { projects: number; members?: number; cumulativeStars: number };
+}
 
 export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'footer-line' | 'content' | 'form-field';
 
@@ -28,7 +31,12 @@ export interface ContentSection {
 	regions: ContentRegion[];
 }
 
-export const contentSections: ContentSection[] = [
+export function buildContentSections(stats?: GitHubStats): ContentSection[] {
+	const ps = stats?.pathsim ?? defaultStats.current.pathsim;
+	const pv = stats?.pathview ?? defaultStats.current.pathview ?? { stars: 0, forks: 0 };
+	const ph = stats?.pysimhub ?? defaultStats.current.pysimhub;
+
+	return [
 	// Hero section
 	{
 		fillerLinesBefore: 5,
@@ -209,6 +217,12 @@ export const contentSections: ContentSection[] = [
 			},
 			{ type: 'spacer', lines: [''] },
 			{
+				type: 'link-line-pathsim',
+				lines: [`${pv.stars} stars / ${pv.forks} forks`],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{
 				type: 'embedded',
 				lines: [],
 				frameColor: 'pathsim',
@@ -313,3 +327,7 @@ export const contentSections: ContentSection[] = [
 		]
 	}
 ];
+}
+
+// Default export for backward compatibility
+export const contentSections = buildContentSections();

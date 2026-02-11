@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-	import { computeGridLayout, type GridLayout, type FormFieldPosition, type CellType } from '$lib/layout/gridLayout';
+	import { computeGridLayout, type GridLayout, type FormFieldPosition, type CellType, type ContentSection } from '$lib/layout/gridLayout';
+	import { buildContentSections, type GitHubStats } from '$lib/layout/contentRegions';
 	import CharacterGrid from './CharacterGrid.svelte';
 	import PortalTile from './PortalTile.svelte';
 	import VideoTile from './VideoTile.svelte';
+
+	const STATS_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/github-stats.json';
 
 	let containerEl: HTMLDivElement;
 
@@ -13,6 +16,7 @@
 	let letterSpacingPx = $state(0);
 	let gridLayout = $state.raw<GridLayout | null>(null);
 	let mounted = $state(false);
+	let dynamicSections = $state<ContentSection[] | undefined>(undefined);
 
 	// Tile data for individual embedded blocks
 	interface TileInfo {
@@ -148,7 +152,7 @@
 		lineHeight = Math.ceil(fontSize * 1.5);
 
 		if (!gridLayout || gridLayout.cols !== cols) {
-			gridLayout = computeGridLayout(cols);
+			gridLayout = computeGridLayout(cols, dynamicSections);
 		}
 
 		tick().then(() => {
@@ -301,6 +305,18 @@
 
 		// Re-measure once fonts are ready (corrects char ratio if fallback was used)
 		document.fonts.ready.then(() => computeLayout());
+
+		// Fetch latest GitHub stats and rebuild grid with fresh data
+		fetch(STATS_URL, { cache: 'no-store' })
+			.then(r => r.ok ? r.json() : null)
+			.then(data => {
+				if (!data?.current) return;
+				dynamicSections = buildContentSections(data.current as GitHubStats);
+				// Force grid recompute with new sections
+				gridLayout = null;
+				computeLayout();
+			})
+			.catch(() => {});
 
 		// Intercept nav anchor clicks and scroll to grid section positions
 		function handleNavClick(e: Event) {

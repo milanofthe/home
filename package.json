@@ -9,6 +9,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"fetch-stats": "node scripts/fetch-github-stats.js",
+		"fetch-star-history": "node scripts/fetch-star-history.js",
 		"fetch-analytics": "node scripts/fetch-analytics.js",
 		"update-sitemap": "node scripts/update-sitemap.js",
 		"screenshots": "node scripts/capture-screenshots.js"

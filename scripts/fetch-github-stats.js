@@ -120,13 +120,14 @@ async function main() {
 
 	const stats = {
 		pathsim: { stars: 0, forks: 0, watchers: 0, openIssues: 0 },
+		pathview: { stars: 0, forks: 0, watchers: 0, openIssues: 0 },
 		pysimhub: { projects: 0, members: 0, cumulativeStars: 0 }
 	};
 
 	try {
 		// Fetch PathSim repo stats
 		console.log('Fetching PathSim stats...');
-		const pathsimData = await fetchGitHubRepo('milanofthe', 'pathsim');
+		const pathsimData = await fetchGitHubRepo('pathsim', 'pathsim');
 		stats.pathsim = {
 			stars: pathsimData.stargazers_count || 0,
 			forks: pathsimData.forks_count || 0,
@@ -134,6 +135,17 @@ async function main() {
 			openIssues: pathsimData.open_issues_count || 0
 		};
 		console.log(`  Stars: ${stats.pathsim.stars}, Forks: ${stats.pathsim.forks}`);
+
+		// Fetch PathView repo stats
+		console.log('Fetching PathView stats...');
+		const pathviewData = await fetchGitHubRepo('pathsim', 'pathview');
+		stats.pathview = {
+			stars: pathviewData.stargazers_count || 0,
+			forks: pathviewData.forks_count || 0,
+			watchers: pathviewData.subscribers_count || 0,
+			openIssues: pathviewData.open_issues_count || 0
+		};
+		console.log(`  Stars: ${stats.pathview.stars}, Forks: ${stats.pathview.forks}`);
 
 		// Fetch PySimHub projects
 		console.log('Fetching PySimHub projects...');
@@ -156,6 +168,7 @@ async function main() {
 		console.error('Error fetching stats:', error.message);
 		// Use existing current values as fallback
 		stats.pathsim = existingData.current.pathsim;
+		stats.pathview = existingData.current.pathview || { stars: 0, forks: 0, watchers: 0, openIssues: 0 };
 		stats.pysimhub = existingData.current.pysimhub;
 	}
 
@@ -168,6 +181,7 @@ async function main() {
 		existingData.history.push({
 			date: today,
 			pathsim: { ...stats.pathsim },
+			pathview: { ...stats.pathview },
 			pysimhub: { ...stats.pysimhub }
 		});
 		console.log(`Added history entry for ${today}`);
@@ -177,6 +191,7 @@ async function main() {
 		existingData.history[todayIndex] = {
 			date: today,
 			pathsim: { ...stats.pathsim },
+			pathview: { ...stats.pathview },
 			pysimhub: { ...stats.pysimhub }
 		};
 		console.log(`Updated history entry for ${today}`);

@@ -39,6 +39,9 @@ jobs:
       - name: Fetch GitHub stats
         run: npm run fetch-stats
 
+      - name: Fetch star history
+        run: npm run fetch-star-history
+
       - name: Commit if changed
         id: commit
         run: |

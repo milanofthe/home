@@ -3,6 +3,7 @@
 
 import { FILLER_SOURCE } from '$lib/data/filler-source';
 import { contentSections, type ContentSection, type ContentRegion } from './contentRegions';
+export type { ContentSection };
 
 export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub';
 
@@ -143,7 +144,7 @@ function frameSideRow(cols: number, frameStart: number, frameCols: number, offse
 }
 
 
-export function computeGridLayout(cols: number): GridLayout {
+export function computeGridLayout(cols: number, sections?: ContentSection[]): GridLayout {
 	const cells: Cell[][] = [];
 	const embeddedBlocks: EmbeddedBlockPosition[] = [];
 	const formFields: FormFieldPosition[] = [];
@@ -383,7 +384,7 @@ export function computeGridLayout(cols: number): GridLayout {
 		}
 	}
 
-	for (const section of contentSections) {
+	for (const section of (sections ?? contentSections)) {
 		if (section.id) {
 			sectionAnchors.push({ id: section.id, row: cells.length + section.fillerLinesBefore });
 		}

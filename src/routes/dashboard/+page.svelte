@@ -8,6 +8,7 @@
 	import Navigation from '$lib/components/Navigation.svelte';
 	import Icons from '$lib/components/Icons.svelte';
 	import PlotlyChart from '$lib/components/PlotlyChart.svelte';
+	import localGithubStats from '$lib/data/github-stats.json';
 
 	interface SiteData {
 		name: string;
@@ -25,18 +26,47 @@
 	}
 
 	const DATA_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/analytics.json';
+	const STATS_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/github-stats.json';
+
+	interface StarHistoryEntry {
+		date: string;
+		stars: number;
+	}
+
+	interface GitHubStatsData {
+		current: {
+			pathsim: { stars: number; forks: number };
+			pathview: { stars: number; forks: number };
+			pysimhub: { projects: number; cumulativeStars: number };
+		};
+		starHistory: {
+			pathsim: StarHistoryEntry[];
+			pathview: StarHistoryEntry[];
+		};
+		fetchedAt: string | null;
+	}
 
 	let loading = $state(true);
 	let error = $state<string | null>(null);
 	let analytics = $state<AnalyticsData>({ lastFetched: null, sites: {} });
+	let githubStats = $state<GitHubStatsData | null>(localGithubStats as unknown as GitHubStatsData);
 
 	async function fetchData() {
 		loading = true;
 		error = null;
 		try {
-			const response = await fetch(DATA_URL, { cache: 'no-store' });
-			if (!response.ok) throw new Error(`HTTP ${response.status}`);
-			analytics = await response.json();
+			const [analyticsRes, statsRes] = await Promise.all([
+				fetch(DATA_URL, { cache: 'no-store' }),
+				fetch(STATS_URL, { cache: 'no-store' })
+			]);
+			if (!analyticsRes.ok) throw new Error(`HTTP ${analyticsRes.status}`);
+			analytics = await analyticsRes.json();
+			if (statsRes.ok) {
+				const freshStats = await statsRes.json();
+				if (freshStats?.starHistory) {
+					githubStats = freshStats;
+				}
+			}
 		} catch (e) {
 			error = e instanceof Error ? e.message : 'Failed to load data';
 		} finally {
@@ -357,6 +387,96 @@
 		});
 	}
 
+	// Star history tab state (null = all repos)
+	type StarRepo = 'pathsim' | 'pathview';
+	let selectedRepo = $state<StarRepo | null>(null);
+
+	const repoMeta: Record<StarRepo, { name: string; color: string; fillcolor: string }> = {
+		pathsim: { name: 'PathSim', color: '#0070c0', fillcolor: 'rgba(0, 112, 192, 0.08)' },
+		pathview: { name: 'PathView', color: '#0070c0', fillcolor: 'rgba(0, 112, 192, 0.08)' }
+	};
+
+	function hexToFill(hex: string): string {
+		const r = parseInt(hex.slice(1, 3), 16);
+		const g = parseInt(hex.slice(3, 5), 16);
+		const b = parseInt(hex.slice(5, 7), 16);
+		return `rgba(${r}, ${g}, ${b}, 0.08)`;
+	}
+
+	// Build combined "total" star history by merging both repos day-by-day
+	function getTotalStarHistory(): StarHistoryEntry[] {
+		if (!githubStats?.starHistory) return [];
+		const ps = githubStats.starHistory.pathsim || [];
+		const pv = githubStats.starHistory.pathview || [];
+
+		// Collect all unique dates
+		const dateSet = new Set<string>();
+		for (const e of ps) dateSet.add(e.date);
+		for (const e of pv) dateSet.add(e.date);
+		const allDates = [...dateSet].sort();
+
+		let lastPs = 0, lastPv = 0;
+		let psIdx = 0, pvIdx = 0;
+		const result: StarHistoryEntry[] = [];
+
+		for (const date of allDates) {
+			if (psIdx < ps.length && ps[psIdx].date === date) lastPs = ps[psIdx++].stars;
+			if (pvIdx < pv.length && pv[pvIdx].date === date) lastPv = pv[pvIdx++].stars;
+			result.push({ date, stars: lastPs + lastPv });
+		}
+		return result;
+	}
+
+	// Build star history chart data based on selected tab
+	function getStarHistoryData() {
+		if (!githubStats?.starHistory) return [];
+
+		if (selectedRepo) {
+			const meta = repoMeta[selectedRepo];
+			const history = githubStats.starHistory[selectedRepo];
+			if (!history?.length) return [];
+			return [{
+				x: history.map((d: StarHistoryEntry) => d.date),
+				y: history.map((d: StarHistoryEntry) => d.stars),
+				type: 'scatter',
+				mode: 'lines',
+				name: meta.name,
+				line: { color: meta.color, width: 2, shape: 'hv' },
+				fill: 'tozeroy',
+				fillcolor: meta.fillcolor,
+			}];
+		}
+
+		// "All" view: single combined line
+		const total = getTotalStarHistory();
+		if (!total.length) return [];
+		return [{
+			x: total.map((d: StarHistoryEntry) => d.date),
+			y: total.map((d: StarHistoryEntry) => d.stars),
+			type: 'scatter',
+			mode: 'lines',
+			name: 'Total',
+			line: { color: '#64748b', width: 2, shape: 'hv' },
+			fill: 'tozeroy',
+			fillcolor: 'rgba(100, 116, 139, 0.08)',
+		}];
+	}
+
+	// Star history summary stats
+	function getStarSummary() {
+		if (!githubStats?.current) return { stars: 0, repos: 0 };
+		if (selectedRepo) {
+			const r = githubStats.current[selectedRepo];
+			return { stars: r?.stars || 0, forks: r?.forks || 0 };
+		}
+		const ps = githubStats.current.pathsim;
+		const pv = githubStats.current.pathview;
+		return {
+			stars: (ps?.stars || 0) + (pv?.stars || 0),
+			forks: (ps?.forks || 0) + (pv?.forks || 0)
+		};
+	}
+
 	// Reactive values
 	let summary = $derived(getSummary());
 	let pageViewsData = $derived(getPageViewsData());
@@ -366,6 +486,8 @@
 	let pagesData = $derived(getPagesData());
 	let browsersData = $derived(getBrowsersData());
 	let currentSite: SiteData | null = $derived(getCurrentSiteData());
+	let starHistoryData = $derived(getStarHistoryData());
+	let starSummary = $derived(getStarSummary());
 
 	// Layout for unified hover and stacked bars in all view
 	const allSitesLayout = {
@@ -385,6 +507,61 @@
 				<span class="text-xs text-cream/40">Updated {formatDate(analytics.lastFetched)}</span>
 			{/if}
 		</div>
+
+		<!-- Star History Section (always available from build-time data) -->
+		{#if githubStats?.starHistory}
+			<div class="mb-10">
+				<!-- Repo Tabs -->
+				<div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+					<div class="flex flex-wrap gap-1.5">
+						<button
+							class="px-3 py-1.5 rounded text-sm transition-colors {selectedRepo === null
+								? 'bg-cream/10 text-cream'
+								: 'text-cream/50 hover:text-cream/70'}"
+							onclick={() => (selectedRepo = null)}
+						>
+							All
+						</button>
+						{#each Object.entries(repoMeta) as [key, meta]}
+							<button
+								class="px-3 py-1.5 rounded text-sm transition-colors {selectedRepo === key
+									? 'bg-cream/10 text-cream'
+									: 'text-cream/50 hover:text-cream/70'}"
+								onclick={() => (selectedRepo = key as StarRepo)}
+							>
+								{meta.name}
+							</button>
+						{/each}
+					</div>
+				</div>
+
+				<!-- Summary -->
+				<div class="flex gap-8 mb-8 text-sm">
+					<div>
+						<span class="text-cream/90 font-medium text-lg">{formatNumber(starSummary.stars)}</span>
+						<span class="text-cream/40 ml-1.5">stars</span>
+					</div>
+					<div>
+						<span class="text-cream/90 font-medium text-lg">{formatNumber(starSummary.forks)}</span>
+						<span class="text-cream/40 ml-1.5">forks</span>
+					</div>
+				</div>
+
+				<!-- Chart -->
+				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
+					{#key `${selectedRepo}-${githubStats}`}
+						<PlotlyChart
+							data={starHistoryData}
+							layout={{
+								height: 180,
+								margin: { t: 5, r: 5, b: 45, l: 35 }
+							}}
+							class="w-full"
+						/>
+					{/key}
+				</div>
+			</div>
+		{/if}
 
 		{#if loading}
 			<!-- Loading State -->
@@ -490,36 +667,6 @@
 				</div>
 			</div>
 
-			<!-- Site Overview Cards (All view) -->
-			{#if !selectedSite}
-				<div class="grid md:grid-cols-3 gap-4 mb-4">
-					{#each siteList as site}
-						{@const siteData = analytics.sites[site]}
-						{@const sitePageViews = siteData.timeseries.reduce((sum, d) => sum + d.pageViews, 0)}
-						{@const siteVisits = siteData.timeseries.reduce((sum, d) => sum + d.visits, 0)}
-						<button
-							class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5 text-left transition-all hover:bg-cream/[0.04] hover:border-cream/10"
-							onclick={() => (selectedSite = site)}
-						>
-							<div class="flex items-center gap-2 mb-3">
-								<div class="w-2 h-2 rounded-full" style="background-color: {siteData.color}"></div>
-								<span class="text-sm text-cream/70">{site}</span>
-							</div>
-							<div class="flex gap-4 text-sm">
-								<div>
-									<span class="text-cream/80">{formatNumber(sitePageViews)}</span>
-									<span class="text-cream/30 ml-1">views</span>
-								</div>
-								<div>
-									<span class="text-cream/80">{formatNumber(siteVisits)}</span>
-									<span class="text-cream/30 ml-1">visits</span>
-								</div>
-							</div>
-						</button>
-					{/each}
-				</div>
-			{/if}
-
 			<!-- Aggregate Panels -->
 			<div class="grid md:grid-cols-2 gap-4">
 				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
@@ -579,7 +726,7 @@
 				</div>
 			</div>
 		{:else}
-			<!-- Empty State -->
+			<!-- Empty analytics State -->
 			<div class="text-center py-16">
 				<Icons name="chart" class="w-8 h-8 text-cream/20 mx-auto mb-3" />
 				<p class="text-cream/40 text-sm">No analytics data yet</p>
@@ -587,6 +734,6 @@
 		{/if}
 
 		<!-- Footer -->
-		<p class="text-xs text-cream/20 mt-12 text-center">Cloudflare Web Analytics</p>
+		<p class="text-xs text-cream/20 mt-12 text-center">Cloudflare Web Analytics &middot; GitHub API</p>
 	</div>
 </main>
