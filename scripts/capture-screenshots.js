@@ -40,6 +40,14 @@ async function captureScreenshot(browser, site, theme) {
 		const outputPath = join(SCREENSHOTS_DIR, filename);
 		await page.screenshot({ path: outputPath, type: 'png' });
 		console.log(`    Saved: ${filename}`);
+
+		// Also save dark theme as the default screenshot (used by the homepage)
+		if (theme === 'dark') {
+			const defaultFilename = `${site.id}.png`;
+			const defaultPath = join(SCREENSHOTS_DIR, defaultFilename);
+			await page.screenshot({ path: defaultPath, type: 'png' });
+			console.log(`    Saved: ${defaultFilename}`);
+		}
 	} catch (error) {
 		console.error(`    Error: ${error.message}`);
 	} finally {
