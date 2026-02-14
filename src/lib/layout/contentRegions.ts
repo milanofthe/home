@@ -89,9 +89,8 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 			{
 				type: 'paragraph',
 				lines: [
-					"I'm a research engineer and PhD candidate",
-					'in electrical engineering. I build simulation',
-					'software and solve numerical problems for',
+					'Simulation engineer. I build numerical',
+					'software and solve modeling problems for',
 					'teams working on complex physical systems.'
 				],
 				align: 'center'
@@ -111,10 +110,10 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 			{
 				type: 'paragraph',
 				lines: [
-					'Previously at TU Braunschweig, where I',
-					'developed numerical methods for electrochemical',
-					'sensors and EDA pipelines for cryogenic',
-					'quantum applications, validated in silicon.'
+					'M.Sc. Electrical Engineering. Background',
+					'in numerical methods, system modeling,',
+					'sensitivity and failure mode analysis, and',
+					'compact modeling for physical systems.'
 				],
 				align: 'center'
 			},
@@ -122,12 +121,10 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 			{
 				type: 'paragraph',
 				lines: [
-					'I built PathSim because system modeling',
-					'software has a long history of vendor lock-in',
-					'and clunky UX. It\'s pure Python, open source,',
-					'and designed from first principles. I also',
-					'designed the documentation sites, landing',
-					'pages, and PathView -- the browser-based editor.'
+					'I built PathSim because modeling software',
+					'has a long history of vendor lock-in and',
+					'clunky UX. Pure Python, open source, and',
+					'designed from first principles.'
 				],
 				align: 'center'
 			},
@@ -174,6 +171,16 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 					'simulating dynamical systems. Built from',
 					'first principles with custom solvers, an event',
 					'system, and a modular block-diagram API.'
+				],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{
+				type: 'paragraph',
+				lines: [
+					'Published in JOSS. Adopted by JSBSim for',
+					'flight dynamics and used at MIT PSFC for',
+					'nuclear fusion fuel-cycle modeling.'
 				],
 				align: 'center'
 			},
@@ -287,11 +294,85 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 			{
 				type: 'paragraph',
 				lines: [
-					'Need simulation infrastructure that\'s',
-					'robust and also fun to use? Let\'s talk!'
+					'I help engineering teams build and scale',
+					'simulation infrastructure. Available for',
+					'consulting, development, and training.'
 				],
 				align: 'center'
 			},
+			{ type: 'spacer', lines: [''] },
+			{ type: 'spacer', lines: [''] },
+			{ type: 'heading', lines: ['// simulink migration'], align: 'center' },
+			{
+				type: 'paragraph',
+				lines: [
+					'Move existing Simulink workflows to Python.',
+					'Reduce license costs, improve automation,',
+					'and eliminate vendor lock-in. Full model',
+					'validation against your existing results.'
+				],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{ type: 'heading', lines: ['// custom simulation'], align: 'center' },
+			{
+				type: 'paragraph',
+				lines: [
+					'Tailored models, solvers, and simulation',
+					'pipelines for your engineering domain.',
+					'From single-component ODEs to full',
+					'multi-domain system architectures.'
+				],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{ type: 'heading', lines: ['// digital twin & co-simulation'], align: 'center' },
+			{
+				type: 'paragraph',
+				lines: [
+					'FMU/FMI-compliant architectures connecting',
+					'simulation models to real-time sensor data',
+					'and control systems. Standards-based',
+					'interoperability across platforms.'
+				],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{ type: 'heading', lines: ['// simulation audit'], align: 'center' },
+			{
+				type: 'paragraph',
+				lines: [
+					'Review and validate your existing simulation',
+					'infrastructure. Identify numerical issues,',
+					'bottlenecks, and improvement opportunities.',
+					'Actionable recommendations, not just reports.'
+				],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{ type: 'heading', lines: ['// training & workshops'], align: 'center' },
+			{
+				type: 'paragraph',
+				lines: [
+					'Hands-on Python simulation workshops for',
+					'your team. From basics to advanced system',
+					'modeling. 1-2 days, remote or on-site.'
+				],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{ type: 'spacer', lines: [''] },
+			{
+				type: 'paragraph',
+				lines: ['Write me or use the form below.'],
+				align: 'center'
+			},
+			{
+				type: 'link-line',
+				lines: ['milan.rother@gmx.de'],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
 			{ type: 'spacer', lines: [''] },
 			{ type: 'content', lines: ['// name'], align: 'center' },
 			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-name' },
@@ -319,7 +400,7 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 		regions: [
 			{
 				type: 'footer-line',
-				lines: ['Milan Rother   Impressum  Datenschutz   GitHub  LinkedIn   (c) 2026'],
+				lines: ['Milan Rother   Impressum  Datenschutz   Email  GitHub  LinkedIn   (c) 2026'],
 				align: 'center'
 			},
 			{ type: 'spacer', lines: [''] },
