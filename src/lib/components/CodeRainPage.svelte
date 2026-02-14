@@ -92,6 +92,8 @@
 		{ text: '[ SEND MESSAGE -> ]', types: ['cta'], action: 'submit-form' },
 		{ text: 'Impressum', types: ['footer'], href: '/impressum/' },
 		{ text: 'Datenschutz', types: ['footer'], href: '/datenschutz/' },
+		{ text: 'milan.rother@gmx.de', types: ['link'], href: 'mailto:milan.rother@gmx.de' },
+		{ text: 'Email', types: ['footer'], href: 'mailto:milan.rother@gmx.de' },
 		{ text: 'GitHub', types: ['link', 'footer'], href: 'https://github.com/milanofthe' },
 		{ text: 'LinkedIn', types: ['link', 'footer', 'content'], href: 'https://linkedin.com/in/milan-rother-648474183' },
 	];
@@ -351,10 +353,10 @@
 	<p>I build simulation tools end-to-end — numerical methods, infrastructure, and the interfaces to use them.</p>
 	<section id="about">
 		<h2>Who am I</h2>
-		<p>I'm a research engineer and PhD candidate in electrical engineering. I build simulation software and solve numerical problems for teams working on complex physical systems.</p>
+		<p>Simulation engineer. I build numerical software and solve modeling problems for teams working on complex physical systems.</p>
 		<p>Currently consulting for MIT Plasma Science & Fusion Center on nuclear fusion fuel-cycle modeling.</p>
-		<p>Previously at TU Braunschweig, where I developed numerical methods for electrochemical sensors and EDA pipelines for cryogenic quantum applications.</p>
-		<p>I built <a href="https://pathsim.org">PathSim</a> because system modeling software has a long history of vendor lock-in and clunky UX. I also designed <a href="https://view.pathsim.org">PathView</a> — the browser-based editor.</p>
+		<p>M.Sc. Electrical Engineering. Background in numerical methods, system modeling, sensitivity and failure mode analysis, and compact modeling for physical systems.</p>
+		<p>I built <a href="https://pathsim.org">PathSim</a> because modeling software has a long history of vendor lock-in and clunky UX. Pure Python, open source, designed from first principles.</p>
 	</section>
 	<section id="projects">
 		<h2>Projects</h2>
@@ -362,7 +364,9 @@
 	</section>
 	<section id="contact">
 		<h2>Let's Work Together</h2>
-		<p>Need simulation infrastructure that's robust and also fun to use? Let's talk!</p>
+		<p>I help engineering teams build and scale simulation infrastructure. Available for consulting, development, and training.</p>
+		<p>Services: Simulink migration, custom simulation development, digital twin and co-simulation architecture, training and workshops.</p>
+		<p>Contact: <a href="mailto:milan.rother@gmx.de">milan.rother@gmx.de</a></p>
 	</section>
 </main>
 
