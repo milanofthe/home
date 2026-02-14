@@ -280,14 +280,14 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 		]
 	},
 
-	// Contact section
+	// Services section
 	{
-		id: 'contact',
+		id: 'services',
 		fillerLinesBefore: 5,
 		regions: [
 			{
 				type: 'heading',
-				lines: ["LET'S WORK TOGETHER"],
+				lines: ['SERVICES'],
 				align: 'center'
 			},
 			{ type: 'spacer', lines: [''] },
@@ -360,13 +360,30 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 				],
 				align: 'center'
 			},
-			{ type: 'spacer', lines: [''] },
+		]
+	},
+
+	// Contact section
+	{
+		id: 'contact',
+		fillerLinesBefore: 5,
+		regions: [
+			{
+				type: 'heading',
+				lines: ['GET IN TOUCH'],
+				align: 'center'
+			},
 			{ type: 'spacer', lines: [''] },
 			{
 				type: 'paragraph',
-				lines: ['Write me or use the form below.'],
+				lines: [
+					'Have a project in mind or want to discuss',
+					'your simulation challenges? Write me or',
+					'use the form below.'
+				],
 				align: 'center'
 			},
+			{ type: 'spacer', lines: [''] },
 			{
 				type: 'link-line',
 				lines: ['milan.rother@gmx.de'],

@@ -362,10 +362,14 @@
 		<h2>Projects</h2>
 		<p>Building open-source infrastructure for system modeling and simulation.</p>
 	</section>
-	<section id="contact">
-		<h2>Let's Work Together</h2>
+	<section id="services">
+		<h2>Services</h2>
 		<p>I help engineering teams build and scale simulation infrastructure. Available for consulting, development, and training.</p>
-		<p>Services: Simulink migration, custom simulation development, digital twin and co-simulation architecture, training and workshops.</p>
+		<p>Simulink migration, custom simulation development, digital twin and co-simulation architecture, simulation audit, training and workshops.</p>
+	</section>
+	<section id="contact">
+		<h2>Get in Touch</h2>
+		<p>Have a project in mind or want to discuss your simulation challenges?</p>
 		<p>Contact: <a href="mailto:milan.rother@gmx.de">milan.rother@gmx.de</a></p>
 	</section>
 </main>
