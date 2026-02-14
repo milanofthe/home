@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-14T08:38:10.190Z",
+	"lastFetched": "2026-02-14T12:58:43.619Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -552,6 +552,11 @@
 				},
 				{
 					"datetime": "2026-02-14T08:00:00",
+					"pageViews": 5,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-02-14T12:00:00",
 					"pageViews": 5,
 					"visits": 5
 				}
@@ -2378,7 +2383,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1470
+							"pageViews": 1480
 						}
 					],
 					"topReferrers": [
@@ -2407,16 +2412,16 @@
 							"pageViews": 30
 						},
 						{
+							"referrer": "m.facebook.com",
+							"pageViews": 20
+						},
+						{
 							"referrer": "github.com",
 							"pageViews": 20
 						},
 						{
 							"referrer": "statics.teams.cdn.office.net",
 							"pageViews": 20
-						},
-						{
-							"referrer": "l.facebook.com",
-							"pageViews": 10
 						}
 					],
 					"topCountries": [
@@ -2480,7 +2485,7 @@
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 150
+							"pageViews": 160
 						}
 					]
 				}
@@ -2488,7 +2493,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1470
+					"pageViews": 1480
 				}
 			],
 			"topReferrers": [
@@ -2517,16 +2522,16 @@
 					"pageViews": 30
 				},
 				{
+					"referrer": "m.facebook.com",
+					"pageViews": 20
+				},
+				{
 					"referrer": "github.com",
 					"pageViews": 20
 				},
 				{
 					"referrer": "statics.teams.cdn.office.net",
 					"pageViews": 20
-				},
-				{
-					"referrer": "l.facebook.com",
-					"pageViews": 10
 				}
 			],
 			"topCountries": [
@@ -2590,7 +2595,7 @@
 				},
 				{
 					"browser": "Unknown",
-					"pageViews": 150
+					"pageViews": 160
 				}
 			]
 		},
@@ -3216,6 +3221,11 @@
 				{
 					"datetime": "2026-02-14T08:00:00",
 					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-14T12:00:00",
+					"pageViews": 3,
 					"visits": 1
 				}
 			],
@@ -6999,6 +7009,11 @@
 					"datetime": "2026-02-14T08:00:00",
 					"pageViews": 8,
 					"visits": 7
+				},
+				{
+					"datetime": "2026-02-14T12:00:00",
+					"pageViews": 10,
+					"visits": 5
 				}
 			],
 			"aggregateHistory": [
@@ -9102,7 +9117,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3190
+							"pageViews": 3150
 						},
 						{
 							"path": "/dev/",
@@ -9150,11 +9165,11 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 800
+							"pageViews": 770
 						},
 						{
 							"country": "US",
-							"pageViews": 620
+							"pageViews": 610
 						},
 						{
 							"country": "GB",
@@ -9192,7 +9207,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1190
+							"pageViews": 1160
 						},
 						{
 							"browser": "ChromeMobile",
@@ -9216,7 +9231,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3190
+					"pageViews": 3150
 				},
 				{
 					"path": "/dev/",
@@ -9264,11 +9279,11 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 800
+					"pageViews": 770
 				},
 				{
 					"country": "US",
-					"pageViews": 620
+					"pageViews": 610
 				},
 				{
 					"country": "GB",
@@ -9306,7 +9321,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1190
+					"pageViews": 1160
 				},
 				{
 					"browser": "ChromeMobile",
@@ -12930,6 +12945,11 @@
 					"datetime": "2026-02-13T24:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-02-14T12:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -14462,7 +14482,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 630
+							"pageViews": 640
 						},
 						{
 							"path": "/dashboard/",
@@ -14471,11 +14491,11 @@
 					],
 					"topReferrers": [
 						{
-							"referrer": "github.com",
-							"pageViews": 50
+							"referrer": "www.google.com",
+							"pageViews": 60
 						},
 						{
-							"referrer": "www.google.com",
+							"referrer": "github.com",
 							"pageViews": 50
 						},
 						{
@@ -14521,6 +14541,10 @@
 							"pageViews": 10
 						},
 						{
+							"country": "AU",
+							"pageViews": 10
+						},
+						{
 							"country": "GB",
 							"pageViews": 10
 						},
@@ -14532,7 +14556,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 620
+							"pageViews": 630
 						},
 						{
 							"browser": "ChromeMobile",
@@ -14556,7 +14580,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 630
+					"pageViews": 640
 				},
 				{
 					"path": "/dashboard/",
@@ -14565,11 +14589,11 @@
 			],
 			"topReferrers": [
 				{
-					"referrer": "github.com",
-					"pageViews": 50
+					"referrer": "www.google.com",
+					"pageViews": 60
 				},
 				{
-					"referrer": "www.google.com",
+					"referrer": "github.com",
 					"pageViews": 50
 				},
 				{
@@ -14615,6 +14639,10 @@
 					"pageViews": 10
 				},
 				{
+					"country": "AU",
+					"pageViews": 10
+				},
+				{
 					"country": "GB",
 					"pageViews": 10
 				},
@@ -14626,7 +14654,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 620
+					"pageViews": 630
 				},
 				{
 					"browser": "ChromeMobile",
