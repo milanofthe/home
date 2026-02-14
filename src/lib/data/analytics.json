@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-14T05:11:26.139Z",
+	"lastFetched": "2026-02-14T08:38:10.190Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -549,6 +549,11 @@
 					"datetime": "2026-02-14T04:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-02-14T08:00:00",
+					"pageViews": 5,
+					"visits": 5
 				}
 			],
 			"aggregateHistory": [
@@ -9887,6 +9892,16 @@
 				},
 				{
 					"datetime": "2026-02-14T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-14T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-14T12:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
