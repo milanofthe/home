@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-15T02:40:57.969Z",
+	"lastFetched": "2026-02-15T05:20:55.067Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -9550,7 +9550,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3160
+							"pageViews": 3180
 						},
 						{
 							"path": "/dev/",
@@ -9572,7 +9572,7 @@
 						},
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 180
+							"pageViews": 190
 						},
 						{
 							"referrer": "github.com",
@@ -9587,11 +9587,11 @@
 							"pageViews": 40
 						},
 						{
-							"referrer": "milanrother.com",
-							"pageViews": 30
+							"referrer": "lm.facebook.com",
+							"pageViews": 40
 						},
 						{
-							"referrer": "lm.facebook.com",
+							"referrer": "milanrother.com",
 							"pageViews": 30
 						}
 					],
@@ -9664,7 +9664,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3160
+					"pageViews": 3180
 				},
 				{
 					"path": "/dev/",
@@ -9686,7 +9686,7 @@
 				},
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 180
+					"pageViews": 190
 				},
 				{
 					"referrer": "github.com",
@@ -9701,11 +9701,11 @@
 					"pageViews": 40
 				},
 				{
-					"referrer": "milanrother.com",
-					"pageViews": 30
+					"referrer": "lm.facebook.com",
+					"pageViews": 40
 				},
 				{
-					"referrer": "lm.facebook.com",
+					"referrer": "milanrother.com",
 					"pageViews": 30
 				}
 			],
@@ -15166,7 +15166,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 640
+							"pageViews": 630
 						},
 						{
 							"path": "/dashboard/",
@@ -15206,7 +15206,7 @@
 						},
 						{
 							"country": "US",
-							"pageViews": 100
+							"pageViews": 90
 						},
 						{
 							"country": "IN",
@@ -15240,7 +15240,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 640
+							"pageViews": 630
 						},
 						{
 							"browser": "ChromeMobile",
@@ -15264,7 +15264,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 640
+					"pageViews": 630
 				},
 				{
 					"path": "/dashboard/",
@@ -15304,7 +15304,7 @@
 				},
 				{
 					"country": "US",
-					"pageViews": 100
+					"pageViews": 90
 				},
 				{
 					"country": "IN",
@@ -15338,7 +15338,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 640
+					"pageViews": 630
 				},
 				{
 					"browser": "ChromeMobile",
