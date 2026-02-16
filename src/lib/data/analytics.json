@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-16T05:38:23.961Z",
+	"lastFetched": "2026-02-16T08:55:42.929Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -609,6 +609,16 @@
 					"datetime": "2026-02-16T04:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-02-16T08:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-02-16T12:00:00",
+					"pageViews": 3,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -2655,7 +2665,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1520
+							"pageViews": 1530
 						}
 					],
 					"topReferrers": [
@@ -2668,19 +2678,19 @@
 							"pageViews": 120
 						},
 						{
-							"referrer": "com.linkedin.android",
-							"pageViews": 110
-						},
-						{
 							"referrer": "docs.pathsim.org",
 							"pageViews": 110
 						},
 						{
-							"referrer": "lm.facebook.com",
-							"pageViews": 30
+							"referrer": "com.linkedin.android",
+							"pageViews": 110
 						},
 						{
 							"referrer": "milanrother.com",
+							"pageViews": 30
+						},
+						{
+							"referrer": "lm.facebook.com",
 							"pageViews": 30
 						},
 						{
@@ -2688,11 +2698,11 @@
 							"pageViews": 20
 						},
 						{
-							"referrer": "statics.teams.cdn.office.net",
+							"referrer": "m.facebook.com",
 							"pageViews": 20
 						},
 						{
-							"referrer": "m.facebook.com",
+							"referrer": "statics.teams.cdn.office.net",
 							"pageViews": 20
 						}
 					],
@@ -2710,11 +2720,11 @@
 							"pageViews": 120
 						},
 						{
-							"country": "BR",
+							"country": "FR",
 							"pageViews": 70
 						},
 						{
-							"country": "FR",
+							"country": "BR",
 							"pageViews": 70
 						},
 						{
@@ -2722,7 +2732,7 @@
 							"pageViews": 60
 						},
 						{
-							"country": "TR",
+							"country": "GB",
 							"pageViews": 50
 						},
 						{
@@ -2730,18 +2740,18 @@
 							"pageViews": 50
 						},
 						{
-							"country": "GB",
+							"country": "TR",
 							"pageViews": 50
 						},
 						{
-							"country": "AU",
+							"country": "NO",
 							"pageViews": 40
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 420
+							"pageViews": 430
 						},
 						{
 							"browser": "ChromeMobile",
@@ -2765,7 +2775,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1520
+					"pageViews": 1530
 				}
 			],
 			"topReferrers": [
@@ -2778,19 +2788,19 @@
 					"pageViews": 120
 				},
 				{
-					"referrer": "com.linkedin.android",
-					"pageViews": 110
-				},
-				{
 					"referrer": "docs.pathsim.org",
 					"pageViews": 110
 				},
 				{
-					"referrer": "lm.facebook.com",
-					"pageViews": 30
+					"referrer": "com.linkedin.android",
+					"pageViews": 110
 				},
 				{
 					"referrer": "milanrother.com",
+					"pageViews": 30
+				},
+				{
+					"referrer": "lm.facebook.com",
 					"pageViews": 30
 				},
 				{
@@ -2798,11 +2808,11 @@
 					"pageViews": 20
 				},
 				{
-					"referrer": "statics.teams.cdn.office.net",
+					"referrer": "m.facebook.com",
 					"pageViews": 20
 				},
 				{
-					"referrer": "m.facebook.com",
+					"referrer": "statics.teams.cdn.office.net",
 					"pageViews": 20
 				}
 			],
@@ -2820,11 +2830,11 @@
 					"pageViews": 120
 				},
 				{
-					"country": "BR",
+					"country": "FR",
 					"pageViews": 70
 				},
 				{
-					"country": "FR",
+					"country": "BR",
 					"pageViews": 70
 				},
 				{
@@ -2832,7 +2842,7 @@
 					"pageViews": 60
 				},
 				{
-					"country": "TR",
+					"country": "GB",
 					"pageViews": 50
 				},
 				{
@@ -2840,18 +2850,18 @@
 					"pageViews": 50
 				},
 				{
-					"country": "GB",
+					"country": "TR",
 					"pageViews": 50
 				},
 				{
-					"country": "AU",
+					"country": "NO",
 					"pageViews": 40
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 420
+					"pageViews": 430
 				},
 				{
 					"browser": "ChromeMobile",
