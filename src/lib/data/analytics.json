@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-18T17:09:43.886Z",
+	"lastFetched": "2026-02-18T20:45:52.237Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -684,6 +684,11 @@
 					"datetime": "2026-02-18T16:00:00",
 					"pageViews": 10,
 					"visits": 9
+				},
+				{
+					"datetime": "2026-02-18T20:00:00",
+					"pageViews": 6,
+					"visits": 5
 				}
 			],
 			"aggregateHistory": [
@@ -8416,6 +8421,16 @@
 					"datetime": "2026-02-18T16:00:00",
 					"pageViews": 30,
 					"visits": 17
+				},
+				{
+					"datetime": "2026-02-18T20:00:00",
+					"pageViews": 21,
+					"visits": 21
+				},
+				{
+					"datetime": "2026-02-18T24:00:00",
+					"pageViews": 21,
+					"visits": 20
 				}
 			],
 			"aggregateHistory": [
@@ -10979,7 +10994,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3730
+							"pageViews": 3710
 						},
 						{
 							"path": "/dev/",
@@ -11012,11 +11027,11 @@
 							"pageViews": 50
 						},
 						{
-							"referrer": "com.reddit.frontpage",
+							"referrer": "lm.facebook.com",
 							"pageViews": 40
 						},
 						{
-							"referrer": "lm.facebook.com",
+							"referrer": "com.reddit.frontpage",
 							"pageViews": 40
 						},
 						{
@@ -11027,7 +11042,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 1010
+							"pageViews": 990
 						},
 						{
 							"country": "DE",
@@ -11069,11 +11084,11 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1270
+							"pageViews": 1220
 						},
 						{
 							"browser": "ChromeHeadless",
-							"pageViews": 690
+							"pageViews": 730
 						},
 						{
 							"browser": "ChromeMobile",
@@ -11081,7 +11096,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 310
+							"pageViews": 300
 						},
 						{
 							"browser": "Unknown",
@@ -11093,7 +11108,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3730
+					"pageViews": 3710
 				},
 				{
 					"path": "/dev/",
@@ -11126,11 +11141,11 @@
 					"pageViews": 50
 				},
 				{
-					"referrer": "com.reddit.frontpage",
+					"referrer": "lm.facebook.com",
 					"pageViews": 40
 				},
 				{
-					"referrer": "lm.facebook.com",
+					"referrer": "com.reddit.frontpage",
 					"pageViews": 40
 				},
 				{
@@ -11141,7 +11156,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 1010
+					"pageViews": 990
 				},
 				{
 					"country": "DE",
@@ -11183,11 +11198,11 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1270
+					"pageViews": 1220
 				},
 				{
 					"browser": "ChromeHeadless",
-					"pageViews": 690
+					"pageViews": 730
 				},
 				{
 					"browser": "ChromeMobile",
@@ -11195,7 +11210,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 310
+					"pageViews": 300
 				},
 				{
 					"browser": "Unknown",
@@ -15452,6 +15467,16 @@
 					"datetime": "2026-02-18T16:00:00",
 					"pageViews": 7,
 					"visits": 7
+				},
+				{
+					"datetime": "2026-02-18T20:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-02-18T24:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
