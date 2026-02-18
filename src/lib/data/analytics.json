@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-18T02:36:13.960Z",
+	"lastFetched": "2026-02-18T05:24:38.356Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -664,6 +664,16 @@
 					"datetime": "2026-02-17T24:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-02-18T04:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-02-18T08:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -3881,6 +3891,11 @@
 					"datetime": "2026-02-17T24:00:00",
 					"pageViews": 4,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-02-18T08:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -8361,6 +8376,16 @@
 					"datetime": "2026-02-17T24:00:00",
 					"pageViews": 47,
 					"visits": 44
+				},
+				{
+					"datetime": "2026-02-18T04:00:00",
+					"pageViews": 8,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-02-18T08:00:00",
+					"pageViews": 21,
+					"visits": 21
 				}
 			],
 			"aggregateHistory": [
@@ -10924,7 +10949,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3600
+							"pageViews": 3660
 						},
 						{
 							"path": "/dev/",
@@ -10972,7 +10997,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 940
+							"pageViews": 1000
 						},
 						{
 							"country": "DE",
@@ -11014,15 +11039,15 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1220
+							"pageViews": 1230
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 690
 						},
 						{
 							"browser": "ChromeMobile",
 							"pageViews": 680
-						},
-						{
-							"browser": "ChromeHeadless",
-							"pageViews": 640
 						},
 						{
 							"browser": "Edge",
@@ -11038,7 +11063,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3600
+					"pageViews": 3660
 				},
 				{
 					"path": "/dev/",
@@ -11086,7 +11111,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 940
+					"pageViews": 1000
 				},
 				{
 					"country": "DE",
@@ -11128,15 +11153,15 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1220
+					"pageViews": 1230
+				},
+				{
+					"browser": "ChromeHeadless",
+					"pageViews": 690
 				},
 				{
 					"browser": "ChromeMobile",
 					"pageViews": 680
-				},
-				{
-					"browser": "ChromeHeadless",
-					"pageViews": 640
 				},
 				{
 					"browser": "Edge",
@@ -14492,7 +14517,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 480
+							"pageViews": 470
 						},
 						{
 							"path": "/submit/",
@@ -14522,7 +14547,7 @@
 						},
 						{
 							"referrer": "github.com",
-							"pageViews": 30
+							"pageViews": 20
 						},
 						{
 							"referrer": "statics.teams.cdn.office.net",
@@ -14543,11 +14568,11 @@
 					],
 					"topCountries": [
 						{
-							"country": "US",
-							"pageViews": 170
+							"country": "DE",
+							"pageViews": 160
 						},
 						{
-							"country": "DE",
+							"country": "US",
 							"pageViews": 160
 						},
 						{
@@ -14610,7 +14635,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 480
+					"pageViews": 470
 				},
 				{
 					"path": "/submit/",
@@ -14640,7 +14665,7 @@
 				},
 				{
 					"referrer": "github.com",
-					"pageViews": 30
+					"pageViews": 20
 				},
 				{
 					"referrer": "statics.teams.cdn.office.net",
@@ -14661,11 +14686,11 @@
 			],
 			"topCountries": [
 				{
-					"country": "US",
-					"pageViews": 170
+					"country": "DE",
+					"pageViews": 160
 				},
 				{
-					"country": "DE",
+					"country": "US",
 					"pageViews": 160
 				},
 				{
