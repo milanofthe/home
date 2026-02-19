@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-19T16:59:13.806Z",
+	"lastFetched": "2026-02-19T20:38:10.947Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -3098,7 +3098,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1740
+							"pageViews": 1750
 						}
 					],
 					"topReferrers": [
@@ -3131,18 +3131,18 @@
 							"pageViews": 30
 						},
 						{
-							"referrer": "github.com",
+							"referrer": "l.facebook.com",
 							"pageViews": 20
 						},
 						{
-							"referrer": "l.facebook.com",
+							"referrer": "github.com",
 							"pageViews": 20
 						}
 					],
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 460
+							"pageViews": 470
 						},
 						{
 							"country": "DE",
@@ -3184,7 +3184,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 490
+							"pageViews": 500
 						},
 						{
 							"browser": "ChromeMobile",
@@ -3208,7 +3208,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1740
+					"pageViews": 1750
 				}
 			],
 			"topReferrers": [
@@ -3241,18 +3241,18 @@
 					"pageViews": 30
 				},
 				{
-					"referrer": "github.com",
+					"referrer": "l.facebook.com",
 					"pageViews": 20
 				},
 				{
-					"referrer": "l.facebook.com",
+					"referrer": "github.com",
 					"pageViews": 20
 				}
 			],
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 460
+					"pageViews": 470
 				},
 				{
 					"country": "DE",
@@ -3294,7 +3294,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 490
+					"pageViews": 500
 				},
 				{
 					"browser": "ChromeMobile",
@@ -8764,6 +8764,16 @@
 					"datetime": "2026-02-19T16:00:00",
 					"pageViews": 77,
 					"visits": 75
+				},
+				{
+					"datetime": "2026-02-19T20:00:00",
+					"pageViews": 16,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-02-19T24:00:00",
+					"pageViews": 4,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -16061,6 +16071,16 @@
 					"datetime": "2026-02-19T16:00:00",
 					"pageViews": 4,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-02-19T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-19T24:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -18088,7 +18108,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 710
+							"pageViews": 690
 						},
 						{
 							"path": "/dashboard/",
@@ -18097,15 +18117,15 @@
 					],
 					"topReferrers": [
 						{
-							"referrer": "www.google.com",
-							"pageViews": 70
-						},
-						{
 							"referrer": "www.linkedin.com",
 							"pageViews": 50
 						},
 						{
 							"referrer": "github.com",
+							"pageViews": 50
+						},
+						{
+							"referrer": "www.google.com",
 							"pageViews": 50
 						},
 						{
@@ -18120,7 +18140,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 690
+							"pageViews": 670
 						},
 						{
 							"country": "CZ",
@@ -18170,7 +18190,7 @@
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 160
+							"pageViews": 140
 						},
 						{
 							"browser": "Unknown",
@@ -18186,7 +18206,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 710
+					"pageViews": 690
 				},
 				{
 					"path": "/dashboard/",
@@ -18195,15 +18215,15 @@
 			],
 			"topReferrers": [
 				{
-					"referrer": "www.google.com",
-					"pageViews": 70
-				},
-				{
 					"referrer": "www.linkedin.com",
 					"pageViews": 50
 				},
 				{
 					"referrer": "github.com",
+					"pageViews": 50
+				},
+				{
+					"referrer": "www.google.com",
 					"pageViews": 50
 				},
 				{
@@ -18218,7 +18238,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 690
+					"pageViews": 670
 				},
 				{
 					"country": "CZ",
@@ -18268,7 +18288,7 @@
 				},
 				{
 					"browser": "MobileSafari",
-					"pageViews": 160
+					"pageViews": 140
 				},
 				{
 					"browser": "Unknown",
