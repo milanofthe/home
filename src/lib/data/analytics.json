@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-19T13:16:34.256Z",
+	"lastFetched": "2026-02-19T16:59:13.806Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -709,6 +709,16 @@
 					"datetime": "2026-02-19T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-02-19T16:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-02-19T20:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -3088,7 +3098,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1730
+							"pageViews": 1740
 						}
 					],
 					"topReferrers": [
@@ -3144,7 +3154,7 @@
 						},
 						{
 							"country": "FR",
-							"pageViews": 100
+							"pageViews": 110
 						},
 						{
 							"country": "MX",
@@ -3174,7 +3184,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 480
+							"pageViews": 490
 						},
 						{
 							"browser": "ChromeMobile",
@@ -3198,7 +3208,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1730
+					"pageViews": 1740
 				}
 			],
 			"topReferrers": [
@@ -3254,7 +3264,7 @@
 				},
 				{
 					"country": "FR",
-					"pageViews": 100
+					"pageViews": 110
 				},
 				{
 					"country": "MX",
@@ -3284,7 +3294,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 480
+					"pageViews": 490
 				},
 				{
 					"browser": "ChromeMobile",
@@ -4067,6 +4077,16 @@
 					"datetime": "2026-02-19T12:00:00",
 					"pageViews": 5,
 					"visits": 5
+				},
+				{
+					"datetime": "2026-02-19T16:00:00",
+					"pageViews": 13,
+					"visits": 11
+				},
+				{
+					"datetime": "2026-02-19T20:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -7610,7 +7630,7 @@
 						},
 						{
 							"path": "/pathsim/latest/examples",
-							"pageViews": 60
+							"pageViews": 80
 						},
 						{
 							"path": "/en/latest/examples/delta_sigma_adc.html",
@@ -7624,11 +7644,11 @@
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 520
+							"pageViews": 530
 						},
 						{
 							"referrer": "www.google.com",
-							"pageViews": 380
+							"pageViews": 400
 						},
 						{
 							"referrer": "view.pathsim.org",
@@ -7685,22 +7705,22 @@
 							"pageViews": 120
 						},
 						{
+							"country": "NO",
+							"pageViews": 110
+						},
+						{
 							"country": "CH",
 							"pageViews": 100
 						},
 						{
 							"country": "CN",
 							"pageViews": 90
-						},
-						{
-							"country": "ES",
-							"pageViews": 90
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1290
+							"pageViews": 1320
 						},
 						{
 							"browser": "ChromeMobile",
@@ -7756,7 +7776,7 @@
 				},
 				{
 					"path": "/pathsim/latest/examples",
-					"pageViews": 60
+					"pageViews": 80
 				},
 				{
 					"path": "/en/latest/examples/delta_sigma_adc.html",
@@ -7770,11 +7790,11 @@
 				},
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 520
+					"pageViews": 530
 				},
 				{
 					"referrer": "www.google.com",
-					"pageViews": 380
+					"pageViews": 400
 				},
 				{
 					"referrer": "view.pathsim.org",
@@ -7831,22 +7851,22 @@
 					"pageViews": 120
 				},
 				{
+					"country": "NO",
+					"pageViews": 110
+				},
+				{
 					"country": "CH",
 					"pageViews": 100
 				},
 				{
 					"country": "CN",
 					"pageViews": 90
-				},
-				{
-					"country": "ES",
-					"pageViews": 90
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1290
+					"pageViews": 1320
 				},
 				{
 					"browser": "ChromeMobile",
@@ -11436,7 +11456,7 @@
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 310
+							"pageViews": 320
 						},
 						{
 							"referrer": "view.pathsim.org",
@@ -11470,7 +11490,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 1080
+							"pageViews": 1070
 						},
 						{
 							"country": "DE",
@@ -11478,7 +11498,7 @@
 						},
 						{
 							"country": "FR",
-							"pageViews": 170
+							"pageViews": 180
 						},
 						{
 							"country": "IT",
@@ -11550,7 +11570,7 @@
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 310
+					"pageViews": 320
 				},
 				{
 					"referrer": "view.pathsim.org",
@@ -11584,7 +11604,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 1080
+					"pageViews": 1070
 				},
 				{
 					"country": "DE",
@@ -11592,7 +11612,7 @@
 				},
 				{
 					"country": "FR",
-					"pageViews": 170
+					"pageViews": 180
 				},
 				{
 					"country": "IT",
@@ -12297,6 +12317,11 @@
 				},
 				{
 					"datetime": "2026-02-19T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-19T16:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -15129,11 +15154,11 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 440
+							"pageViews": 410
 						},
 						{
 							"path": "/submit/",
-							"pageViews": 40
+							"pageViews": 30
 						},
 						{
 							"path": "/about/",
@@ -15141,7 +15166,7 @@
 						},
 						{
 							"path": "/projects/pathsim/",
-							"pageViews": 10
+							"pageViews": 20
 						},
 						{
 							"path": "/projects/salabim/",
@@ -15176,12 +15201,12 @@
 					],
 					"topCountries": [
 						{
-							"country": "US",
-							"pageViews": 150
-						},
-						{
 							"country": "DE",
 							"pageViews": 140
+						},
+						{
+							"country": "US",
+							"pageViews": 130
 						},
 						{
 							"country": "FI",
@@ -15196,15 +15221,15 @@
 							"pageViews": 30
 						},
 						{
-							"country": "NL",
-							"pageViews": 20
-						},
-						{
 							"country": "NO",
 							"pageViews": 20
 						},
 						{
 							"country": "IT",
+							"pageViews": 10
+						},
+						{
+							"country": "NL",
 							"pageViews": 10
 						},
 						{
@@ -15219,22 +15244,22 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 220
+							"pageViews": 190
 						},
 						{
 							"browser": "MobileSafari",
 							"pageViews": 60
 						},
 						{
-							"browser": "ChromeMobile",
+							"browser": "ChromeHeadless",
 							"pageViews": 60
 						},
 						{
-							"browser": "ChromeHeadless",
+							"browser": "ChromeMobile",
 							"pageViews": 50
 						},
 						{
-							"browser": "Edge",
+							"browser": "Safari",
 							"pageViews": 40
 						}
 					]
@@ -15243,11 +15268,11 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 440
+					"pageViews": 410
 				},
 				{
 					"path": "/submit/",
-					"pageViews": 40
+					"pageViews": 30
 				},
 				{
 					"path": "/about/",
@@ -15255,7 +15280,7 @@
 				},
 				{
 					"path": "/projects/pathsim/",
-					"pageViews": 10
+					"pageViews": 20
 				},
 				{
 					"path": "/projects/salabim/",
@@ -15290,12 +15315,12 @@
 			],
 			"topCountries": [
 				{
-					"country": "US",
-					"pageViews": 150
-				},
-				{
 					"country": "DE",
 					"pageViews": 140
+				},
+				{
+					"country": "US",
+					"pageViews": 130
 				},
 				{
 					"country": "FI",
@@ -15310,15 +15335,15 @@
 					"pageViews": 30
 				},
 				{
-					"country": "NL",
-					"pageViews": 20
-				},
-				{
 					"country": "NO",
 					"pageViews": 20
 				},
 				{
 					"country": "IT",
+					"pageViews": 10
+				},
+				{
+					"country": "NL",
 					"pageViews": 10
 				},
 				{
@@ -15333,22 +15358,22 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 220
+					"pageViews": 190
 				},
 				{
 					"browser": "MobileSafari",
 					"pageViews": 60
 				},
 				{
-					"browser": "ChromeMobile",
+					"browser": "ChromeHeadless",
 					"pageViews": 60
 				},
 				{
-					"browser": "ChromeHeadless",
+					"browser": "ChromeMobile",
 					"pageViews": 50
 				},
 				{
-					"browser": "Edge",
+					"browser": "Safari",
 					"pageViews": 40
 				}
 			]
@@ -16030,6 +16055,11 @@
 				{
 					"datetime": "2026-02-19T12:00:00",
 					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-02-19T16:00:00",
+					"pageViews": 4,
 					"visits": 2
 				}
 			],
