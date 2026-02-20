@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-20T08:49:10.213Z",
+	"lastFetched": "2026-02-20T13:08:09.370Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -7942,7 +7942,7 @@
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 530
+							"pageViews": 540
 						},
 						{
 							"referrer": "www.google.com",
@@ -7999,12 +7999,12 @@
 							"pageViews": 140
 						},
 						{
-							"country": "NL",
+							"country": "NO",
 							"pageViews": 120
 						},
 						{
-							"country": "NO",
-							"pageViews": 110
+							"country": "NL",
+							"pageViews": 120
 						},
 						{
 							"country": "CH",
@@ -8018,7 +8018,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1330
+							"pageViews": 1340
 						},
 						{
 							"browser": "ChromeMobile",
@@ -8088,7 +8088,7 @@
 				},
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 530
+					"pageViews": 540
 				},
 				{
 					"referrer": "www.google.com",
@@ -8145,12 +8145,12 @@
 					"pageViews": 140
 				},
 				{
-					"country": "NL",
+					"country": "NO",
 					"pageViews": 120
 				},
 				{
-					"country": "NO",
-					"pageViews": 110
+					"country": "NL",
+					"pageViews": 120
 				},
 				{
 					"country": "CH",
@@ -8164,7 +8164,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1330
+					"pageViews": 1340
 				},
 				{
 					"browser": "ChromeMobile",
@@ -9082,6 +9082,11 @@
 					"datetime": "2026-02-20T08:00:00",
 					"pageViews": 19,
 					"visits": 19
+				},
+				{
+					"datetime": "2026-02-20T12:00:00",
+					"pageViews": 13,
+					"visits": 7
 				}
 			],
 			"aggregateHistory": [
@@ -11893,7 +11898,7 @@
 						},
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 300
+							"pageViews": 310
 						},
 						{
 							"referrer": "www.linkedin.com",
@@ -11927,14 +11932,14 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 860
-						},
-						{
-							"country": "FR",
-							"pageViews": 180
+							"pageViews": 850
 						},
 						{
 							"country": "IT",
+							"pageViews": 190
+						},
+						{
+							"country": "FR",
 							"pageViews": 180
 						},
 						{
@@ -11977,7 +11982,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 330
+							"pageViews": 340
 						},
 						{
 							"browser": "Unknown",
@@ -12007,7 +12012,7 @@
 				},
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 300
+					"pageViews": 310
 				},
 				{
 					"referrer": "www.linkedin.com",
@@ -12041,14 +12046,14 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 860
-				},
-				{
-					"country": "FR",
-					"pageViews": 180
+					"pageViews": 850
 				},
 				{
 					"country": "IT",
+					"pageViews": 190
+				},
+				{
+					"country": "FR",
 					"pageViews": 180
 				},
 				{
@@ -12091,7 +12096,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 330
+					"pageViews": 340
 				},
 				{
 					"browser": "Unknown",
@@ -15712,7 +15717,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 410
+							"pageViews": 400
 						},
 						{
 							"path": "/submit/",
@@ -15768,7 +15773,7 @@
 						},
 						{
 							"country": "FI",
-							"pageViews": 60
+							"pageViews": 50
 						},
 						{
 							"country": "CZ",
@@ -15817,7 +15822,7 @@
 							"pageViews": 50
 						},
 						{
-							"browser": "Safari",
+							"browser": "Firefox",
 							"pageViews": 40
 						}
 					]
@@ -15826,7 +15831,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 410
+					"pageViews": 400
 				},
 				{
 					"path": "/submit/",
@@ -15882,7 +15887,7 @@
 				},
 				{
 					"country": "FI",
-					"pageViews": 60
+					"pageViews": 50
 				},
 				{
 					"country": "CZ",
@@ -15931,7 +15936,7 @@
 					"pageViews": 50
 				},
 				{
-					"browser": "Safari",
+					"browser": "Firefox",
 					"pageViews": 40
 				}
 			]
@@ -16639,6 +16644,16 @@
 					"datetime": "2026-02-20T08:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-02-20T12:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-02-20T16:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
