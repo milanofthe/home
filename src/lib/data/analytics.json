@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-20T05:17:44.929Z",
+	"lastFetched": "2026-02-20T08:49:10.213Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -729,6 +729,16 @@
 					"datetime": "2026-02-20T04:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-02-20T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-20T12:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -4218,6 +4228,16 @@
 					"datetime": "2026-02-20T04:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-02-20T08:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-02-20T12:00:00",
+					"pageViews": 7,
+					"visits": 7
 				}
 			],
 			"aggregateHistory": [
@@ -7918,7 +7938,7 @@
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 980
+							"pageViews": 990
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -7964,7 +7984,7 @@
 						},
 						{
 							"country": "FR",
-							"pageViews": 200
+							"pageViews": 210
 						},
 						{
 							"country": "IT",
@@ -7998,7 +8018,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1320
+							"pageViews": 1330
 						},
 						{
 							"browser": "ChromeMobile",
@@ -8064,7 +8084,7 @@
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 980
+					"pageViews": 990
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -8110,7 +8130,7 @@
 				},
 				{
 					"country": "FR",
-					"pageViews": 200
+					"pageViews": 210
 				},
 				{
 					"country": "IT",
@@ -8144,7 +8164,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1320
+					"pageViews": 1330
 				},
 				{
 					"browser": "ChromeMobile",
@@ -11855,7 +11875,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3940
+							"pageViews": 3950
 						},
 						{
 							"path": "/dev/",
@@ -11888,11 +11908,11 @@
 							"pageViews": 50
 						},
 						{
-							"referrer": "lm.facebook.com",
+							"referrer": "com.reddit.frontpage",
 							"pageViews": 40
 						},
 						{
-							"referrer": "com.reddit.frontpage",
+							"referrer": "lm.facebook.com",
 							"pageViews": 40
 						},
 						{
@@ -11915,7 +11935,7 @@
 						},
 						{
 							"country": "IT",
-							"pageViews": 170
+							"pageViews": 180
 						},
 						{
 							"country": "IN",
@@ -11957,7 +11977,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 320
+							"pageViews": 330
 						},
 						{
 							"browser": "Unknown",
@@ -11969,7 +11989,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3940
+					"pageViews": 3950
 				},
 				{
 					"path": "/dev/",
@@ -12002,11 +12022,11 @@
 					"pageViews": 50
 				},
 				{
-					"referrer": "lm.facebook.com",
+					"referrer": "com.reddit.frontpage",
 					"pageViews": 40
 				},
 				{
-					"referrer": "com.reddit.frontpage",
+					"referrer": "lm.facebook.com",
 					"pageViews": 40
 				},
 				{
@@ -12029,7 +12049,7 @@
 				},
 				{
 					"country": "IT",
-					"pageViews": 170
+					"pageViews": 180
 				},
 				{
 					"country": "IN",
@@ -12071,7 +12091,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 320
+					"pageViews": 330
 				},
 				{
 					"browser": "Unknown",
@@ -12740,6 +12760,11 @@
 				},
 				{
 					"datetime": "2026-02-19T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-20T08:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
