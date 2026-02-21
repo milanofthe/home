@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-21T16:34:51.560Z",
+	"lastFetched": "2026-02-21T20:30:32.761Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -767,6 +767,11 @@
 				},
 				{
 					"datetime": "2026-02-21T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-21T20:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -4409,6 +4414,11 @@
 					"datetime": "2026-02-21T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-02-21T20:00:00",
+					"pageViews": 4,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -8222,7 +8232,7 @@
 						},
 						{
 							"path": "/pathsim",
-							"pageViews": 350
+							"pageViews": 360
 						},
 						{
 							"path": "/vehicle",
@@ -8260,7 +8270,7 @@
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 540
+							"pageViews": 550
 						},
 						{
 							"referrer": "www.google.com",
@@ -8294,7 +8304,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 790
+							"pageViews": 800
 						},
 						{
 							"country": "DE",
@@ -8336,7 +8346,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1370
+							"pageViews": 1380
 						},
 						{
 							"browser": "ChromeMobile",
@@ -8368,7 +8378,7 @@
 				},
 				{
 					"path": "/pathsim",
-					"pageViews": 350
+					"pageViews": 360
 				},
 				{
 					"path": "/vehicle",
@@ -8406,7 +8416,7 @@
 				},
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 540
+					"pageViews": 550
 				},
 				{
 					"referrer": "www.google.com",
@@ -8440,7 +8450,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 790
+					"pageViews": 800
 				},
 				{
 					"country": "DE",
@@ -8482,7 +8492,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1370
+					"pageViews": 1380
 				},
 				{
 					"browser": "ChromeMobile",
@@ -9440,6 +9450,16 @@
 					"datetime": "2026-02-21T16:00:00",
 					"pageViews": 7,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-02-21T20:00:00",
+					"pageViews": 7,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-02-21T24:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -12348,7 +12368,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3980
+							"pageViews": 3990
 						},
 						{
 							"path": "/dev/",
@@ -12370,7 +12390,7 @@
 						},
 						{
 							"referrer": "www.linkedin.com",
-							"pageViews": 240
+							"pageViews": 250
 						},
 						{
 							"referrer": "github.com",
@@ -12403,12 +12423,12 @@
 							"pageViews": 840
 						},
 						{
-							"country": "IT",
+							"country": "FR",
 							"pageViews": 190
 						},
 						{
-							"country": "FR",
-							"pageViews": 180
+							"country": "IT",
+							"pageViews": 190
 						},
 						{
 							"country": "IN",
@@ -12454,7 +12474,7 @@
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 300
+							"pageViews": 310
 						}
 					]
 				}
@@ -12462,7 +12482,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3980
+					"pageViews": 3990
 				},
 				{
 					"path": "/dev/",
@@ -12484,7 +12504,7 @@
 				},
 				{
 					"referrer": "www.linkedin.com",
-					"pageViews": 240
+					"pageViews": 250
 				},
 				{
 					"referrer": "github.com",
@@ -12517,12 +12537,12 @@
 					"pageViews": 840
 				},
 				{
-					"country": "IT",
+					"country": "FR",
 					"pageViews": 190
 				},
 				{
-					"country": "FR",
-					"pageViews": 180
+					"country": "IT",
+					"pageViews": 190
 				},
 				{
 					"country": "IN",
@@ -12568,7 +12588,7 @@
 				},
 				{
 					"browser": "Unknown",
-					"pageViews": 300
+					"pageViews": 310
 				}
 			]
 		},
@@ -17267,6 +17287,11 @@
 					"datetime": "2026-02-21T16:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-02-21T20:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
