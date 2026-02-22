@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-22T05:17:11.600Z",
+	"lastFetched": "2026-02-22T08:38:19.820Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -784,6 +784,16 @@
 					"datetime": "2026-02-22T04:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-02-22T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-22T12:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -3496,13 +3506,13 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1770
+							"pageViews": 1780
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 250
+							"pageViews": 260
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -3548,7 +3558,7 @@
 						},
 						{
 							"country": "IN",
-							"pageViews": 120
+							"pageViews": 130
 						},
 						{
 							"country": "FR",
@@ -3606,13 +3616,13 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1770
+					"pageViews": 1780
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 250
+					"pageViews": 260
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -3658,7 +3668,7 @@
 				},
 				{
 					"country": "IN",
-					"pageViews": 120
+					"pageViews": 130
 				},
 				{
 					"country": "FR",
@@ -4550,6 +4560,16 @@
 					"datetime": "2026-02-22T04:00:00",
 					"pageViews": 4,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-02-22T08:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-02-22T12:00:00",
+					"pageViews": 9,
+					"visits": 6
 				}
 			],
 			"aggregateHistory": [
@@ -8502,7 +8522,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 760
+							"pageViews": 770
 						},
 						{
 							"path": "/pathsim/",
@@ -8555,11 +8575,11 @@
 							"pageViews": 400
 						},
 						{
-							"referrer": "github.com",
-							"pageViews": 140
+							"referrer": "view.pathsim.org",
+							"pageViews": 150
 						},
 						{
-							"referrer": "view.pathsim.org",
+							"referrer": "github.com",
 							"pageViews": 140
 						},
 						{
@@ -8628,7 +8648,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 620
+							"pageViews": 630
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -8648,7 +8668,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 760
+					"pageViews": 770
 				},
 				{
 					"path": "/pathsim/",
@@ -8701,11 +8721,11 @@
 					"pageViews": 400
 				},
 				{
-					"referrer": "github.com",
-					"pageViews": 140
+					"referrer": "view.pathsim.org",
+					"pageViews": 150
 				},
 				{
-					"referrer": "view.pathsim.org",
+					"referrer": "github.com",
 					"pageViews": 140
 				},
 				{
@@ -8774,7 +8794,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 620
+					"pageViews": 630
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -12771,7 +12791,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 4040
+							"pageViews": 4050
 						},
 						{
 							"path": "/dev/",
@@ -12797,7 +12817,7 @@
 						},
 						{
 							"referrer": "github.com",
-							"pageViews": 80
+							"pageViews": 90
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -12869,7 +12889,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 730
+							"pageViews": 740
 						},
 						{
 							"browser": "Edge",
@@ -12885,7 +12905,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 4040
+					"pageViews": 4050
 				},
 				{
 					"path": "/dev/",
@@ -12911,7 +12931,7 @@
 				},
 				{
 					"referrer": "github.com",
-					"pageViews": 80
+					"pageViews": 90
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -12983,7 +13003,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 730
+					"pageViews": 740
 				},
 				{
 					"browser": "Edge",
@@ -17792,6 +17812,11 @@
 				},
 				{
 					"datetime": "2026-02-21T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-02-22T12:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
