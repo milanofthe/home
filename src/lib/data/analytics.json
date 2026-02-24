@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-24T08:55:30.974Z",
+	"lastFetched": "2026-02-24T13:16:42.003Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -839,6 +839,16 @@
 					"datetime": "2026-02-24T08:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-02-24T12:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-02-24T16:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -3773,13 +3783,13 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1770
+							"pageViews": 1780
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 260
+							"pageViews": 270
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -3817,7 +3827,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 490
+							"pageViews": 500
 						},
 						{
 							"country": "DE",
@@ -3863,7 +3873,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 350
+							"pageViews": 360
 						},
 						{
 							"browser": "Edge",
@@ -3883,13 +3893,13 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1770
+					"pageViews": 1780
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 260
+					"pageViews": 270
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -3927,7 +3937,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 490
+					"pageViews": 500
 				},
 				{
 					"country": "DE",
@@ -3973,7 +3983,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 350
+					"pageViews": 360
 				},
 				{
 					"browser": "Edge",
@@ -9171,7 +9181,7 @@
 						},
 						{
 							"path": "/pathsim/latest/examples",
-							"pageViews": 100
+							"pageViews": 110
 						},
 						{
 							"path": "/chem",
@@ -9205,7 +9215,7 @@
 						},
 						{
 							"referrer": "chatgpt.com",
-							"pageViews": 50
+							"pageViews": 60
 						},
 						{
 							"referrer": "www.linkedin.com",
@@ -9247,7 +9257,7 @@
 						},
 						{
 							"country": "SG",
-							"pageViews": 140
+							"pageViews": 130
 						},
 						{
 							"country": "NL",
@@ -9317,7 +9327,7 @@
 				},
 				{
 					"path": "/pathsim/latest/examples",
-					"pageViews": 100
+					"pageViews": 110
 				},
 				{
 					"path": "/chem",
@@ -9351,7 +9361,7 @@
 				},
 				{
 					"referrer": "chatgpt.com",
-					"pageViews": 50
+					"pageViews": 60
 				},
 				{
 					"referrer": "www.linkedin.com",
@@ -9393,7 +9403,7 @@
 				},
 				{
 					"country": "SG",
-					"pageViews": 140
+					"pageViews": 130
 				},
 				{
 					"country": "NL",
@@ -13755,11 +13765,11 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 1160
+							"pageViews": 1170
 						},
 						{
 							"country": "DE",
-							"pageViews": 870
+							"pageViews": 860
 						},
 						{
 							"country": "IT",
@@ -13797,7 +13807,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1250
+							"pageViews": 1240
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -13805,7 +13815,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 770
+							"pageViews": 780
 						},
 						{
 							"browser": "Edge",
@@ -13869,11 +13879,11 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 1160
+					"pageViews": 1170
 				},
 				{
 					"country": "DE",
-					"pageViews": 870
+					"pageViews": 860
 				},
 				{
 					"country": "IT",
@@ -13911,7 +13921,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1250
+					"pageViews": 1240
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -13919,7 +13929,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 770
+					"pageViews": 780
 				},
 				{
 					"browser": "Edge",
@@ -14649,6 +14659,11 @@
 					"datetime": "2026-02-24T08:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-02-24T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
