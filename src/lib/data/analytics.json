@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-25T13:15:40.603Z",
+	"lastFetched": "2026-02-25T17:11:44.461Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -9502,7 +9502,7 @@
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 560
+							"pageViews": 570
 						},
 						{
 							"referrer": "www.google.com",
@@ -9540,7 +9540,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 560
+							"pageViews": 570
 						},
 						{
 							"country": "FR",
@@ -9567,18 +9567,18 @@
 							"pageViews": 120
 						},
 						{
-							"country": "CH",
+							"country": "MX",
 							"pageViews": 100
 						},
 						{
-							"country": "MX",
-							"pageViews": 90
+							"country": "CH",
+							"pageViews": 100
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1420
+							"pageViews": 1440
 						},
 						{
 							"browser": "ChromeMobile",
@@ -9648,7 +9648,7 @@
 				},
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 560
+					"pageViews": 570
 				},
 				{
 					"referrer": "www.google.com",
@@ -9686,7 +9686,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 560
+					"pageViews": 570
 				},
 				{
 					"country": "FR",
@@ -9713,18 +9713,18 @@
 					"pageViews": 120
 				},
 				{
-					"country": "CH",
+					"country": "MX",
 					"pageViews": 100
 				},
 				{
-					"country": "MX",
-					"pageViews": 90
+					"country": "CH",
+					"pageViews": 100
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1420
+					"pageViews": 1440
 				},
 				{
 					"browser": "ChromeMobile",
@@ -15132,6 +15132,11 @@
 					"datetime": "2026-02-25T08:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-02-25T16:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
