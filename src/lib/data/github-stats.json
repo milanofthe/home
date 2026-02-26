@@ -15,7 +15,7 @@
 		"pysimhub": {
 			"projects": 21,
 			"members": 3,
-			"cumulativeStars": 13367
+			"cumulativeStars": 13369
 		}
 	},
 	"history": [
@@ -567,9 +567,29 @@
 				"members": 3,
 				"cumulativeStars": 13367
 			}
+		},
+		{
+			"date": "2026-02-26",
+			"pathsim": {
+				"stars": 269,
+				"forks": 22,
+				"watchers": 7,
+				"openIssues": 16
+			},
+			"pathview": {
+				"stars": 56,
+				"forks": 7,
+				"watchers": 2,
+				"openIssues": 20
+			},
+			"pysimhub": {
+				"projects": 21,
+				"members": 3,
+				"cumulativeStars": 13369
+			}
 		}
 	],
-	"fetchedAt": "2026-02-25T20:40:34.355Z",
+	"fetchedAt": "2026-02-26T02:30:45.142Z",
 	"starHistory": {
 		"pathsim": [
 			{
@@ -794,338 +814,342 @@
 			},
 			{
 				"date": "2025-06-01",
-				"stars": 135
+				"stars": 134
 			},
 			{
 				"date": "2025-06-12",
-				"stars": 136
+				"stars": 135
 			},
 			{
 				"date": "2025-06-20",
-				"stars": 137
+				"stars": 136
 			},
 			{
 				"date": "2025-06-23",
-				"stars": 139
+				"stars": 138
 			},
 			{
 				"date": "2025-06-30",
-				"stars": 141
+				"stars": 140
 			},
 			{
 				"date": "2025-07-06",
-				"stars": 142
+				"stars": 141
 			},
 			{
 				"date": "2025-07-14",
-				"stars": 143
+				"stars": 142
 			},
 			{
 				"date": "2025-07-23",
-				"stars": 144
+				"stars": 143
 			},
 			{
 				"date": "2025-07-25",
-				"stars": 145
+				"stars": 144
 			},
 			{
 				"date": "2025-07-28",
-				"stars": 146
+				"stars": 145
 			},
 			{
 				"date": "2025-07-31",
-				"stars": 147
+				"stars": 146
 			},
 			{
 				"date": "2025-08-03",
-				"stars": 148
+				"stars": 147
 			},
 			{
 				"date": "2025-08-05",
-				"stars": 149
+				"stars": 148
 			},
 			{
 				"date": "2025-08-06",
-				"stars": 150
+				"stars": 149
 			},
 			{
 				"date": "2025-08-08",
-				"stars": 151
+				"stars": 150
 			},
 			{
 				"date": "2025-08-20",
-				"stars": 152
+				"stars": 151
 			},
 			{
 				"date": "2025-08-22",
-				"stars": 154
+				"stars": 153
 			},
 			{
 				"date": "2025-08-25",
-				"stars": 155
+				"stars": 154
 			},
 			{
 				"date": "2025-09-01",
-				"stars": 156
+				"stars": 155
 			},
 			{
 				"date": "2025-09-05",
-				"stars": 157
+				"stars": 156
 			},
 			{
 				"date": "2025-09-09",
-				"stars": 158
+				"stars": 157
 			},
 			{
 				"date": "2025-09-23",
-				"stars": 159
+				"stars": 158
 			},
 			{
 				"date": "2025-09-24",
-				"stars": 160
+				"stars": 159
 			},
 			{
 				"date": "2025-09-29",
-				"stars": 162
+				"stars": 161
 			},
 			{
 				"date": "2025-09-30",
-				"stars": 163
+				"stars": 162
 			},
 			{
 				"date": "2025-10-05",
-				"stars": 164
+				"stars": 163
 			},
 			{
 				"date": "2025-10-07",
-				"stars": 166
+				"stars": 165
 			},
 			{
 				"date": "2025-10-09",
-				"stars": 170
+				"stars": 169
 			},
 			{
 				"date": "2025-10-10",
-				"stars": 171
+				"stars": 170
 			},
 			{
 				"date": "2025-10-14",
-				"stars": 174
+				"stars": 173
 			},
 			{
 				"date": "2025-10-15",
-				"stars": 175
+				"stars": 174
 			},
 			{
 				"date": "2025-10-16",
-				"stars": 177
+				"stars": 176
 			},
 			{
 				"date": "2025-10-20",
-				"stars": 179
+				"stars": 178
 			},
 			{
 				"date": "2025-10-24",
-				"stars": 182
+				"stars": 181
 			},
 			{
 				"date": "2025-10-25",
-				"stars": 183
+				"stars": 182
 			},
 			{
 				"date": "2025-10-27",
-				"stars": 184
+				"stars": 183
 			},
 			{
 				"date": "2025-10-28",
-				"stars": 187
+				"stars": 186
 			},
 			{
 				"date": "2025-10-29",
-				"stars": 188
+				"stars": 187
 			},
 			{
 				"date": "2025-10-31",
-				"stars": 189
+				"stars": 188
 			},
 			{
 				"date": "2025-11-03",
-				"stars": 190
+				"stars": 189
 			},
 			{
 				"date": "2025-11-09",
-				"stars": 191
+				"stars": 190
 			},
 			{
 				"date": "2025-11-14",
-				"stars": 193
+				"stars": 192
 			},
 			{
 				"date": "2025-11-17",
-				"stars": 194
+				"stars": 193
 			},
 			{
 				"date": "2025-11-21",
-				"stars": 198
+				"stars": 197
 			},
 			{
 				"date": "2025-11-22",
-				"stars": 199
+				"stars": 198
 			},
 			{
 				"date": "2025-11-23",
-				"stars": 200
+				"stars": 199
 			},
 			{
 				"date": "2025-11-25",
-				"stars": 201
+				"stars": 200
 			},
 			{
 				"date": "2025-11-28",
-				"stars": 202
+				"stars": 201
 			},
 			{
 				"date": "2025-11-30",
-				"stars": 203
+				"stars": 202
 			},
 			{
 				"date": "2025-12-02",
-				"stars": 204
+				"stars": 203
 			},
 			{
 				"date": "2025-12-03",
-				"stars": 206
+				"stars": 205
 			},
 			{
 				"date": "2025-12-04",
-				"stars": 208
+				"stars": 207
 			},
 			{
 				"date": "2025-12-05",
-				"stars": 209
+				"stars": 208
 			},
 			{
 				"date": "2025-12-09",
-				"stars": 212
+				"stars": 211
 			},
 			{
 				"date": "2025-12-11",
-				"stars": 213
+				"stars": 212
 			},
 			{
 				"date": "2025-12-21",
-				"stars": 214
+				"stars": 213
 			},
 			{
 				"date": "2025-12-23",
-				"stars": 216
+				"stars": 215
 			},
 			{
 				"date": "2026-01-02",
-				"stars": 217
+				"stars": 216
 			},
 			{
 				"date": "2026-01-09",
-				"stars": 218
+				"stars": 217
 			},
 			{
 				"date": "2026-01-12",
-				"stars": 219
+				"stars": 218
 			},
 			{
 				"date": "2026-01-13",
-				"stars": 221
+				"stars": 220
 			},
 			{
 				"date": "2026-01-14",
-				"stars": 224
+				"stars": 223
 			},
 			{
 				"date": "2026-01-15",
-				"stars": 225
+				"stars": 224
 			},
 			{
 				"date": "2026-01-21",
-				"stars": 226
+				"stars": 225
 			},
 			{
 				"date": "2026-01-24",
-				"stars": 227
+				"stars": 226
 			},
 			{
 				"date": "2026-01-27",
-				"stars": 228
+				"stars": 227
 			},
 			{
 				"date": "2026-01-29",
-				"stars": 231
+				"stars": 230
 			},
 			{
 				"date": "2026-01-30",
-				"stars": 235
+				"stars": 234
 			},
 			{
 				"date": "2026-01-31",
-				"stars": 238
+				"stars": 237
 			},
 			{
 				"date": "2026-02-01",
-				"stars": 240
+				"stars": 239
 			},
 			{
 				"date": "2026-02-02",
-				"stars": 243
+				"stars": 242
 			},
 			{
 				"date": "2026-02-03",
-				"stars": 244
+				"stars": 243
 			},
 			{
 				"date": "2026-02-04",
-				"stars": 246
+				"stars": 245
 			},
 			{
 				"date": "2026-02-05",
-				"stars": 248
+				"stars": 247
 			},
 			{
 				"date": "2026-02-06",
-				"stars": 249
+				"stars": 248
 			},
 			{
 				"date": "2026-02-07",
-				"stars": 250
+				"stars": 249
 			},
 			{
 				"date": "2026-02-11",
-				"stars": 252
+				"stars": 251
 			},
 			{
 				"date": "2026-02-12",
-				"stars": 256
+				"stars": 255
 			},
 			{
 				"date": "2026-02-13",
-				"stars": 259
+				"stars": 258
 			},
 			{
 				"date": "2026-02-15",
-				"stars": 261
+				"stars": 260
 			},
 			{
 				"date": "2026-02-16",
-				"stars": 266
+				"stars": 265
 			},
 			{
 				"date": "2026-02-17",
-				"stars": 267
+				"stars": 266
 			},
 			{
 				"date": "2026-02-23",
-				"stars": 268
+				"stars": 267
 			},
 			{
 				"date": "2026-02-24",
+				"stars": 268
+			},
+			{
+				"date": "2026-02-25",
 				"stars": 269
 			}
 		],
