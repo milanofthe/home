@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-02-26T05:21:09.433Z",
+	"lastFetched": "2026-02-26T08:55:13.948Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -4040,7 +4040,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1820
+							"pageViews": 1830
 						}
 					],
 					"topReferrers": [
@@ -4115,18 +4115,18 @@
 							"pageViews": 50
 						},
 						{
-							"country": "TR",
+							"country": "AU",
 							"pageViews": 50
 						},
 						{
-							"country": "AU",
+							"country": "NL",
 							"pageViews": 50
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 520
+							"pageViews": 530
 						},
 						{
 							"browser": "ChromeMobile",
@@ -4150,7 +4150,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1820
+					"pageViews": 1830
 				}
 			],
 			"topReferrers": [
@@ -4225,18 +4225,18 @@
 					"pageViews": 50
 				},
 				{
-					"country": "TR",
+					"country": "AU",
 					"pageViews": 50
 				},
 				{
-					"country": "AU",
+					"country": "NL",
 					"pageViews": 50
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 520
+					"pageViews": 530
 				},
 				{
 					"browser": "ChromeMobile",
@@ -9752,7 +9752,7 @@
 						},
 						{
 							"path": "/pathsim",
-							"pageViews": 370
+							"pageViews": 380
 						},
 						{
 							"path": "/vehicle",
@@ -9824,7 +9824,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 770
+							"pageViews": 760
 						},
 						{
 							"country": "DE",
@@ -9836,7 +9836,7 @@
 						},
 						{
 							"country": "IT",
-							"pageViews": 200
+							"pageViews": 210
 						},
 						{
 							"country": "IN",
@@ -9852,7 +9852,7 @@
 						},
 						{
 							"country": "NL",
-							"pageViews": 120
+							"pageViews": 110
 						},
 						{
 							"country": "MX",
@@ -9866,7 +9866,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1420
+							"pageViews": 1410
 						},
 						{
 							"browser": "ChromeMobile",
@@ -9898,7 +9898,7 @@
 				},
 				{
 					"path": "/pathsim",
-					"pageViews": 370
+					"pageViews": 380
 				},
 				{
 					"path": "/vehicle",
@@ -9970,7 +9970,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 770
+					"pageViews": 760
 				},
 				{
 					"country": "DE",
@@ -9982,7 +9982,7 @@
 				},
 				{
 					"country": "IT",
-					"pageViews": 200
+					"pageViews": 210
 				},
 				{
 					"country": "IN",
@@ -9998,7 +9998,7 @@
 				},
 				{
 					"country": "NL",
-					"pageViews": 120
+					"pageViews": 110
 				},
 				{
 					"country": "MX",
@@ -10012,7 +10012,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1420
+					"pageViews": 1410
 				},
 				{
 					"browser": "ChromeMobile",
@@ -11105,6 +11105,16 @@
 					"datetime": "2026-02-26T04:00:00",
 					"pageViews": 3,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-02-26T08:00:00",
+					"pageViews": 3,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-02-26T12:00:00",
+					"pageViews": 5,
+					"visits": 5
 				}
 			],
 			"aggregateHistory": [
