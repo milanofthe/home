@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-01T16:34:42.589Z",
+	"lastFetched": "2026-03-01T20:32:25.020Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -979,6 +979,16 @@
 					"datetime": "2026-03-01T16:00:00",
 					"pageViews": 5,
 					"visits": 5
+				},
+				{
+					"datetime": "2026-03-01T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-03-01T24:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -10725,7 +10735,7 @@
 						},
 						{
 							"path": "/vehicle",
-							"pageViews": 240
+							"pageViews": 250
 						},
 						{
 							"path": "/chem/",
@@ -10745,7 +10755,7 @@
 						},
 						{
 							"path": "/chem",
-							"pageViews": 80
+							"pageViews": 90
 						},
 						{
 							"path": "/en/latest/examples/delta_sigma_adc.html",
@@ -10755,7 +10765,7 @@
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 960
+							"pageViews": 970
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -10797,7 +10807,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 450
+							"pageViews": 470
 						},
 						{
 							"country": "FR",
@@ -10835,7 +10845,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1280
+							"pageViews": 1290
 						},
 						{
 							"browser": "ChromeMobile",
@@ -10871,7 +10881,7 @@
 				},
 				{
 					"path": "/vehicle",
-					"pageViews": 240
+					"pageViews": 250
 				},
 				{
 					"path": "/chem/",
@@ -10891,7 +10901,7 @@
 				},
 				{
 					"path": "/chem",
-					"pageViews": 80
+					"pageViews": 90
 				},
 				{
 					"path": "/en/latest/examples/delta_sigma_adc.html",
@@ -10901,7 +10911,7 @@
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 960
+					"pageViews": 970
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -10943,7 +10953,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 450
+					"pageViews": 470
 				},
 				{
 					"country": "FR",
@@ -10981,7 +10991,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1280
+					"pageViews": 1290
 				},
 				{
 					"browser": "ChromeMobile",
@@ -15997,7 +16007,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 4370
+							"pageViews": 4360
 						},
 						{
 							"path": "/dev/",
@@ -16065,7 +16075,7 @@
 						},
 						{
 							"country": "GB",
-							"pageViews": 140
+							"pageViews": 130
 						},
 						{
 							"country": "IN",
@@ -16091,7 +16101,7 @@
 						},
 						{
 							"browser": "Chrome",
-							"pageViews": 1190
+							"pageViews": 1180
 						},
 						{
 							"browser": "ChromeMobile",
@@ -16111,7 +16121,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 4370
+					"pageViews": 4360
 				},
 				{
 					"path": "/dev/",
@@ -16179,7 +16189,7 @@
 				},
 				{
 					"country": "GB",
-					"pageViews": 140
+					"pageViews": 130
 				},
 				{
 					"country": "IN",
@@ -16205,7 +16215,7 @@
 				},
 				{
 					"browser": "Chrome",
-					"pageViews": 1190
+					"pageViews": 1180
 				},
 				{
 					"browser": "ChromeMobile",
