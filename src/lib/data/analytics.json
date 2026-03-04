@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-04T02:27:31.361Z",
+	"lastFetched": "2026-03-04T05:10:20.997Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -11646,6 +11646,10 @@
 							"pageViews": 170
 						},
 						{
+							"path": "/pathsim/v0.16.7/examples",
+							"pageViews": 110
+						},
+						{
 							"path": "/pathsim/v0.16.7/api",
 							"pageViews": 110
 						},
@@ -11654,16 +11658,12 @@
 							"pageViews": 110
 						},
 						{
-							"path": "/pathsim/v0.16.7/examples",
-							"pageViews": 110
-						},
-						{
 							"path": "/chem",
 							"pageViews": 90
 						},
 						{
-							"path": "/en/latest/examples/delta_sigma_adc.html",
-							"pageViews": 50
+							"path": "/pathsim/v0.16.8/examples",
+							"pageViews": 40
 						}
 					],
 					"topReferrers": [
@@ -11765,7 +11765,7 @@
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 170
+							"pageViews": 160
 						}
 					]
 				}
@@ -11792,6 +11792,10 @@
 					"pageViews": 170
 				},
 				{
+					"path": "/pathsim/v0.16.7/examples",
+					"pageViews": 110
+				},
+				{
 					"path": "/pathsim/v0.16.7/api",
 					"pageViews": 110
 				},
@@ -11800,16 +11804,12 @@
 					"pageViews": 110
 				},
 				{
-					"path": "/pathsim/v0.16.7/examples",
-					"pageViews": 110
-				},
-				{
 					"path": "/chem",
 					"pageViews": 90
 				},
 				{
-					"path": "/en/latest/examples/delta_sigma_adc.html",
-					"pageViews": 50
+					"path": "/pathsim/v0.16.8/examples",
+					"pageViews": 40
 				}
 			],
 			"topReferrers": [
@@ -11911,7 +11911,7 @@
 				},
 				{
 					"browser": "Unknown",
-					"pageViews": 170
+					"pageViews": 160
 				}
 			]
 		},
