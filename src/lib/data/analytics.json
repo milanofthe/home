@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-05T13:10:16.360Z",
+	"lastFetched": "2026-03-05T18:10:09.326Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1084,6 +1084,16 @@
 					"datetime": "2026-03-05T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-03-05T16:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-03-05T20:00:00",
+					"pageViews": 1,
+					"visits": 0
 				}
 			],
 			"aggregateHistory": [
@@ -6389,6 +6399,16 @@
 				},
 				{
 					"datetime": "2026-03-05T12:00:00",
+					"pageViews": 5,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-03-05T16:00:00",
+					"pageViews": 13,
+					"visits": 13
+				},
+				{
+					"datetime": "2026-03-05T20:00:00",
 					"pageViews": 5,
 					"visits": 5
 				}
@@ -11980,14 +12000,14 @@
 						},
 						{
 							"path": "/pathsim/latest/examples",
-							"pageViews": 110
-						},
-						{
-							"path": "/pathsim/v0.16.7/examples",
-							"pageViews": 90
+							"pageViews": 100
 						},
 						{
 							"path": "/chem",
+							"pageViews": 80
+						},
+						{
+							"path": "/pathsim/v0.16.7/examples",
 							"pageViews": 80
 						},
 						{
@@ -12002,7 +12022,7 @@
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 740
+							"pageViews": 730
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -12044,11 +12064,11 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 460
+							"pageViews": 450
 						},
 						{
 							"country": "FR",
-							"pageViews": 180
+							"pageViews": 170
 						},
 						{
 							"country": "IN",
@@ -12126,14 +12146,14 @@
 				},
 				{
 					"path": "/pathsim/latest/examples",
-					"pageViews": 110
-				},
-				{
-					"path": "/pathsim/v0.16.7/examples",
-					"pageViews": 90
+					"pageViews": 100
 				},
 				{
 					"path": "/chem",
+					"pageViews": 80
+				},
+				{
+					"path": "/pathsim/v0.16.7/examples",
 					"pageViews": 80
 				},
 				{
@@ -12148,7 +12168,7 @@
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 740
+					"pageViews": 730
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -12190,11 +12210,11 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 460
+					"pageViews": 450
 				},
 				{
 					"country": "FR",
-					"pageViews": 180
+					"pageViews": 170
 				},
 				{
 					"country": "IN",
@@ -13516,6 +13536,16 @@
 					"datetime": "2026-03-05T12:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-03-05T16:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-03-05T20:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -17804,7 +17834,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3960
+							"pageViews": 3940
 						},
 						{
 							"path": "/dev/",
@@ -17826,11 +17856,11 @@
 						},
 						{
 							"referrer": "www.linkedin.com",
-							"pageViews": 180
+							"pageViews": 170
 						},
 						{
 							"referrer": "github.com",
-							"pageViews": 100
+							"pageViews": 90
 						},
 						{
 							"referrer": "milanrother.com",
@@ -17852,7 +17882,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 1440
+							"pageViews": 1450
 						},
 						{
 							"country": "DE",
@@ -17864,18 +17894,18 @@
 						},
 						{
 							"country": "NL",
-							"pageViews": 140
+							"pageViews": 130
 						},
 						{
 							"country": "FR",
 							"pageViews": 130
 						},
 						{
-							"country": "MX",
+							"country": "IN",
 							"pageViews": 110
 						},
 						{
-							"country": "IN",
+							"country": "MX",
 							"pageViews": 110
 						},
 						{
@@ -17898,7 +17928,7 @@
 						},
 						{
 							"browser": "Chrome",
-							"pageViews": 1130
+							"pageViews": 1120
 						},
 						{
 							"browser": "ChromeMobile",
@@ -17910,7 +17940,7 @@
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 240
+							"pageViews": 230
 						}
 					]
 				}
@@ -17918,7 +17948,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3960
+					"pageViews": 3940
 				},
 				{
 					"path": "/dev/",
@@ -17940,11 +17970,11 @@
 				},
 				{
 					"referrer": "www.linkedin.com",
-					"pageViews": 180
+					"pageViews": 170
 				},
 				{
 					"referrer": "github.com",
-					"pageViews": 100
+					"pageViews": 90
 				},
 				{
 					"referrer": "milanrother.com",
@@ -17966,7 +17996,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 1440
+					"pageViews": 1450
 				},
 				{
 					"country": "DE",
@@ -17978,18 +18008,18 @@
 				},
 				{
 					"country": "NL",
-					"pageViews": 140
+					"pageViews": 130
 				},
 				{
 					"country": "FR",
 					"pageViews": 130
 				},
 				{
-					"country": "MX",
+					"country": "IN",
 					"pageViews": 110
 				},
 				{
-					"country": "IN",
+					"country": "MX",
 					"pageViews": 110
 				},
 				{
@@ -18012,7 +18042,7 @@
 				},
 				{
 					"browser": "Chrome",
-					"pageViews": 1130
+					"pageViews": 1120
 				},
 				{
 					"browser": "ChromeMobile",
@@ -18024,7 +18054,7 @@
 				},
 				{
 					"browser": "Unknown",
-					"pageViews": 240
+					"pageViews": 230
 				}
 			]
 		},
@@ -24448,6 +24478,11 @@
 					"datetime": "2026-03-05T12:00:00",
 					"pageViews": 4,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-03-05T16:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -27957,11 +27992,11 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 450
+							"pageViews": 460
 						},
 						{
 							"country": "CZ",
-							"pageViews": 200
+							"pageViews": 190
 						},
 						{
 							"country": "US",
@@ -28063,11 +28098,11 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 450
+					"pageViews": 460
 				},
 				{
 					"country": "CZ",
-					"pageViews": 200
+					"pageViews": 190
 				},
 				{
 					"country": "US",
