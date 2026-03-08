@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-08T02:33:36.929Z",
+	"lastFetched": "2026-03-08T05:11:27.530Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -12884,7 +12884,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 430
+							"pageViews": 420
 						},
 						{
 							"path": "/pathsim/",
@@ -12896,7 +12896,7 @@
 						},
 						{
 							"path": "/vehicle",
-							"pageViews": 170
+							"pageViews": 160
 						},
 						{
 							"path": "/chem/",
@@ -12926,7 +12926,7 @@
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 410
+							"pageViews": 400
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -12964,7 +12964,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 730
+							"pageViews": 720
 						},
 						{
 							"country": "DE",
@@ -13014,7 +13014,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 310
+							"pageViews": 290
 						},
 						{
 							"browser": "Edge",
@@ -13030,7 +13030,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 430
+					"pageViews": 420
 				},
 				{
 					"path": "/pathsim/",
@@ -13042,7 +13042,7 @@
 				},
 				{
 					"path": "/vehicle",
-					"pageViews": 170
+					"pageViews": 160
 				},
 				{
 					"path": "/chem/",
@@ -13072,7 +13072,7 @@
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 410
+					"pageViews": 400
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -13110,7 +13110,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 730
+					"pageViews": 720
 				},
 				{
 					"country": "DE",
@@ -13160,7 +13160,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 310
+					"pageViews": 290
 				},
 				{
 					"browser": "Edge",
