@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-12T13:11:01.000Z",
+	"lastFetched": "2026-03-12T17:02:09.974Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -5999,7 +5999,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1010
+							"pageViews": 1000
 						}
 					],
 					"topReferrers": [
@@ -6009,7 +6009,7 @@
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 110
+							"pageViews": 100
 						},
 						{
 							"referrer": "github.com",
@@ -6047,7 +6047,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 180
+							"pageViews": 170
 						},
 						{
 							"country": "MX",
@@ -6085,7 +6085,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 340
+							"pageViews": 330
 						},
 						{
 							"browser": "ChromeMobile",
@@ -6109,7 +6109,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1010
+					"pageViews": 1000
 				}
 			],
 			"topReferrers": [
@@ -6119,7 +6119,7 @@
 				},
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 110
+					"pageViews": 100
 				},
 				{
 					"referrer": "github.com",
@@ -6157,7 +6157,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 180
+					"pageViews": 170
 				},
 				{
 					"country": "MX",
@@ -6195,7 +6195,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 340
+					"pageViews": 330
 				},
 				{
 					"browser": "ChromeMobile",
@@ -14181,7 +14181,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 390
+							"pageViews": 380
 						},
 						{
 							"path": "/pathsim",
@@ -14189,7 +14189,7 @@
 						},
 						{
 							"path": "/pathsim/",
-							"pageViews": 160
+							"pageViews": 150
 						},
 						{
 							"path": "/vehicle",
@@ -14216,7 +14216,7 @@
 							"pageViews": 60
 						},
 						{
-							"path": "/pathsim/v0.18.0/examples/linear-feedback",
+							"path": "/pathsim/v0.16.8/examples/harmonic-oscillator",
 							"pageViews": 50
 						}
 					],
@@ -14227,7 +14227,7 @@
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 430
+							"pageViews": 420
 						},
 						{
 							"referrer": "www.google.com",
@@ -14235,7 +14235,7 @@
 						},
 						{
 							"referrer": "github.com",
-							"pageViews": 110
+							"pageViews": 100
 						},
 						{
 							"referrer": "view.pathsim.org",
@@ -14261,11 +14261,11 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 530
+							"pageViews": 540
 						},
 						{
 							"country": "DE",
-							"pageViews": 380
+							"pageViews": 360
 						},
 						{
 							"country": "SG",
@@ -14303,11 +14303,11 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 960
+							"pageViews": 940
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 320
+							"pageViews": 340
 						},
 						{
 							"browser": "Edge",
@@ -14327,7 +14327,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 390
+					"pageViews": 380
 				},
 				{
 					"path": "/pathsim",
@@ -14335,7 +14335,7 @@
 				},
 				{
 					"path": "/pathsim/",
-					"pageViews": 160
+					"pageViews": 150
 				},
 				{
 					"path": "/vehicle",
@@ -14362,7 +14362,7 @@
 					"pageViews": 60
 				},
 				{
-					"path": "/pathsim/v0.18.0/examples/linear-feedback",
+					"path": "/pathsim/v0.16.8/examples/harmonic-oscillator",
 					"pageViews": 50
 				}
 			],
@@ -14373,7 +14373,7 @@
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 430
+					"pageViews": 420
 				},
 				{
 					"referrer": "www.google.com",
@@ -14381,7 +14381,7 @@
 				},
 				{
 					"referrer": "github.com",
-					"pageViews": 110
+					"pageViews": 100
 				},
 				{
 					"referrer": "view.pathsim.org",
@@ -14407,11 +14407,11 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 530
+					"pageViews": 540
 				},
 				{
 					"country": "DE",
-					"pageViews": 380
+					"pageViews": 360
 				},
 				{
 					"country": "SG",
@@ -14449,11 +14449,11 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 960
+					"pageViews": 940
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 320
+					"pageViews": 340
 				},
 				{
 					"browser": "Edge",
@@ -21025,7 +21025,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3570
+							"pageViews": 3550
 						},
 						{
 							"path": "/dev/",
@@ -21035,7 +21035,7 @@
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 710
+							"pageViews": 700
 						},
 						{
 							"referrer": "github.com",
@@ -21051,7 +21051,7 @@
 						},
 						{
 							"referrer": "com.linkedin.android",
-							"pageViews": 80
+							"pageViews": 70
 						},
 						{
 							"referrer": "www.reddit.com",
@@ -21077,7 +21077,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 710
+							"pageViews": 700
 						},
 						{
 							"country": "MX",
@@ -21088,11 +21088,11 @@
 							"pageViews": 110
 						},
 						{
-							"country": "FR",
+							"country": "IT",
 							"pageViews": 100
 						},
 						{
-							"country": "IT",
+							"country": "FR",
 							"pageViews": 100
 						},
 						{
@@ -21119,11 +21119,11 @@
 						},
 						{
 							"browser": "Chrome",
-							"pageViews": 1130
+							"pageViews": 1120
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 390
+							"pageViews": 380
 						},
 						{
 							"browser": "Edge",
@@ -21139,7 +21139,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3570
+					"pageViews": 3550
 				},
 				{
 					"path": "/dev/",
@@ -21149,7 +21149,7 @@
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 710
+					"pageViews": 700
 				},
 				{
 					"referrer": "github.com",
@@ -21165,7 +21165,7 @@
 				},
 				{
 					"referrer": "com.linkedin.android",
-					"pageViews": 80
+					"pageViews": 70
 				},
 				{
 					"referrer": "www.reddit.com",
@@ -21191,7 +21191,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 710
+					"pageViews": 700
 				},
 				{
 					"country": "MX",
@@ -21202,11 +21202,11 @@
 					"pageViews": 110
 				},
 				{
-					"country": "FR",
+					"country": "IT",
 					"pageViews": 100
 				},
 				{
-					"country": "IT",
+					"country": "FR",
 					"pageViews": 100
 				},
 				{
@@ -21233,11 +21233,11 @@
 				},
 				{
 					"browser": "Chrome",
-					"pageViews": 1130
+					"pageViews": 1120
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 390
+					"pageViews": 380
 				},
 				{
 					"browser": "Edge",
@@ -28593,6 +28593,11 @@
 				},
 				{
 					"datetime": "2026-03-12T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-03-12T20:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
