@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-14T16:37:23.742Z",
+	"lastFetched": "2026-03-14T20:33:51.848Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1333,6 +1333,11 @@
 				{
 					"datetime": "2026-03-14T16:00:00",
 					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-03-14T20:00:00",
+					"pageViews": 3,
 					"visits": 1
 				}
 			],
@@ -7910,6 +7915,11 @@
 					"datetime": "2026-03-14T16:00:00",
 					"pageViews": 5,
 					"visits": 5
+				},
+				{
+					"datetime": "2026-03-14T20:00:00",
+					"pageViews": 10,
+					"visits": 10
 				}
 			],
 			"aggregateHistory": [
@@ -14805,11 +14815,11 @@
 							"pageViews": 350
 						},
 						{
-							"path": "/pathsim",
-							"pageViews": 170
+							"path": "/pathsim/",
+							"pageViews": 150
 						},
 						{
-							"path": "/pathsim/",
+							"path": "/pathsim",
 							"pageViews": 150
 						},
 						{
@@ -14855,12 +14865,12 @@
 							"pageViews": 170
 						},
 						{
-							"referrer": "github.com",
-							"pageViews": 100
-						},
-						{
 							"referrer": "view.pathsim.org",
 							"pageViews": 90
+						},
+						{
+							"referrer": "github.com",
+							"pageViews": 80
 						},
 						{
 							"referrer": "com.linkedin.android",
@@ -14871,7 +14881,7 @@
 							"pageViews": 40
 						},
 						{
-							"referrer": "chatgpt.com",
+							"referrer": "www.linkedin.com",
 							"pageViews": 20
 						},
 						{
@@ -14882,11 +14892,11 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 510
+							"pageViews": 520
 						},
 						{
 							"country": "DE",
-							"pageViews": 350
+							"pageViews": 330
 						},
 						{
 							"country": "GB",
@@ -14898,22 +14908,22 @@
 						},
 						{
 							"country": "SG",
-							"pageViews": 120
+							"pageViews": 110
+						},
+						{
+							"country": "FR",
+							"pageViews": 110
 						},
 						{
 							"country": "MX",
 							"pageViews": 110
 						},
 						{
-							"country": "FR",
-							"pageViews": 100
-						},
-						{
-							"country": "ES",
+							"country": "IN",
 							"pageViews": 70
 						},
 						{
-							"country": "IN",
+							"country": "ES",
 							"pageViews": 70
 						},
 						{
@@ -14924,7 +14934,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 950
+							"pageViews": 940
 						},
 						{
 							"browser": "ChromeMobile",
@@ -14939,7 +14949,7 @@
 							"pageViews": 150
 						},
 						{
-							"browser": "ChromeHeadless",
+							"browser": "Firefox",
 							"pageViews": 120
 						}
 					]
@@ -14951,11 +14961,11 @@
 					"pageViews": 350
 				},
 				{
-					"path": "/pathsim",
-					"pageViews": 170
+					"path": "/pathsim/",
+					"pageViews": 150
 				},
 				{
-					"path": "/pathsim/",
+					"path": "/pathsim",
 					"pageViews": 150
 				},
 				{
@@ -15001,12 +15011,12 @@
 					"pageViews": 170
 				},
 				{
-					"referrer": "github.com",
-					"pageViews": 100
-				},
-				{
 					"referrer": "view.pathsim.org",
 					"pageViews": 90
+				},
+				{
+					"referrer": "github.com",
+					"pageViews": 80
 				},
 				{
 					"referrer": "com.linkedin.android",
@@ -15017,7 +15027,7 @@
 					"pageViews": 40
 				},
 				{
-					"referrer": "chatgpt.com",
+					"referrer": "www.linkedin.com",
 					"pageViews": 20
 				},
 				{
@@ -15028,11 +15038,11 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 510
+					"pageViews": 520
 				},
 				{
 					"country": "DE",
-					"pageViews": 350
+					"pageViews": 330
 				},
 				{
 					"country": "GB",
@@ -15044,22 +15054,22 @@
 				},
 				{
 					"country": "SG",
-					"pageViews": 120
+					"pageViews": 110
+				},
+				{
+					"country": "FR",
+					"pageViews": 110
 				},
 				{
 					"country": "MX",
 					"pageViews": 110
 				},
 				{
-					"country": "FR",
-					"pageViews": 100
-				},
-				{
-					"country": "ES",
+					"country": "IN",
 					"pageViews": 70
 				},
 				{
-					"country": "IN",
+					"country": "ES",
 					"pageViews": 70
 				},
 				{
@@ -15070,7 +15080,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 950
+					"pageViews": 940
 				},
 				{
 					"browser": "ChromeMobile",
@@ -15085,7 +15095,7 @@
 					"pageViews": 150
 				},
 				{
-					"browser": "ChromeHeadless",
+					"browser": "Firefox",
 					"pageViews": 120
 				}
 			]
@@ -16613,6 +16623,11 @@
 					"datetime": "2026-03-14T16:00:00",
 					"pageViews": 2,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-03-14T20:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -21932,13 +21947,13 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3170
+							"pageViews": 3160
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 650
+							"pageViews": 640
 						},
 						{
 							"referrer": "github.com",
@@ -22007,7 +22022,7 @@
 							"pageViews": 50
 						},
 						{
-							"country": "AT",
+							"country": "AU",
 							"pageViews": 40
 						},
 						{
@@ -22022,11 +22037,11 @@
 						},
 						{
 							"browser": "Chrome",
-							"pageViews": 940
+							"pageViews": 930
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 320
+							"pageViews": 310
 						},
 						{
 							"browser": "Firefox",
@@ -22042,13 +22057,13 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3170
+					"pageViews": 3160
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 650
+					"pageViews": 640
 				},
 				{
 					"referrer": "github.com",
@@ -22117,7 +22132,7 @@
 					"pageViews": 50
 				},
 				{
-					"country": "AT",
+					"country": "AU",
 					"pageViews": 40
 				},
 				{
@@ -22132,11 +22147,11 @@
 				},
 				{
 					"browser": "Chrome",
-					"pageViews": 940
+					"pageViews": 930
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 320
+					"pageViews": 310
 				},
 				{
 					"browser": "Firefox",
@@ -34179,7 +34194,7 @@
 						},
 						{
 							"path": "/dashboard/",
-							"pageViews": 140
+							"pageViews": 130
 						}
 					],
 					"topReferrers": [
@@ -34215,7 +34230,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 240
+							"pageViews": 230
 						},
 						{
 							"country": "US",
@@ -34261,7 +34276,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 140
+							"pageViews": 130
 						},
 						{
 							"browser": "MobileSafari",
@@ -34285,7 +34300,7 @@
 				},
 				{
 					"path": "/dashboard/",
-					"pageViews": 140
+					"pageViews": 130
 				}
 			],
 			"topReferrers": [
@@ -34321,7 +34336,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 240
+					"pageViews": 230
 				},
 				{
 					"country": "US",
@@ -34367,7 +34382,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 140
+					"pageViews": 130
 				},
 				{
 					"browser": "MobileSafari",
