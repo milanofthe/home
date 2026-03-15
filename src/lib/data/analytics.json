@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-15T02:48:28.851Z",
+	"lastFetched": "2026-03-15T05:38:04.548Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1338,6 +1338,11 @@
 				{
 					"datetime": "2026-03-14T20:00:00",
 					"pageViews": 3,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-03-15T08:00:00",
+					"pageViews": 1,
 					"visits": 1
 				}
 			],
@@ -6382,7 +6387,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 960
+							"pageViews": 950
 						}
 					],
 					"topReferrers": [
@@ -6404,7 +6409,7 @@
 						},
 						{
 							"referrer": "lm.facebook.com",
-							"pageViews": 50
+							"pageViews": 40
 						},
 						{
 							"referrer": "www.facebook.com",
@@ -6434,7 +6439,7 @@
 						},
 						{
 							"country": "MX",
-							"pageViews": 80
+							"pageViews": 70
 						},
 						{
 							"country": "IN",
@@ -6492,7 +6497,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 960
+					"pageViews": 950
 				}
 			],
 			"topReferrers": [
@@ -6514,7 +6519,7 @@
 				},
 				{
 					"referrer": "lm.facebook.com",
-					"pageViews": 50
+					"pageViews": 40
 				},
 				{
 					"referrer": "www.facebook.com",
@@ -6544,7 +6549,7 @@
 				},
 				{
 					"country": "MX",
-					"pageViews": 80
+					"pageViews": 70
 				},
 				{
 					"country": "IN",
@@ -15122,7 +15127,7 @@
 					"topReferrers": [
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 460
+							"pageViews": 450
 						},
 						{
 							"referrer": "pathsim.org",
@@ -15187,11 +15192,11 @@
 							"pageViews": 100
 						},
 						{
-							"country": "IN",
+							"country": "ES",
 							"pageViews": 70
 						},
 						{
-							"country": "ES",
+							"country": "IN",
 							"pageViews": 70
 						},
 						{
@@ -15202,7 +15207,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 930
+							"pageViews": 940
 						},
 						{
 							"browser": "ChromeMobile",
@@ -15268,7 +15273,7 @@
 			"topReferrers": [
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 460
+					"pageViews": 450
 				},
 				{
 					"referrer": "pathsim.org",
@@ -15333,11 +15338,11 @@
 					"pageViews": 100
 				},
 				{
-					"country": "IN",
+					"country": "ES",
 					"pageViews": 70
 				},
 				{
-					"country": "ES",
+					"country": "IN",
 					"pageViews": 70
 				},
 				{
@@ -15348,7 +15353,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 930
+					"pageViews": 940
 				},
 				{
 					"browser": "ChromeMobile",
@@ -22331,7 +22336,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3120
+							"pageViews": 3110
 						}
 					],
 					"topReferrers": [
@@ -22361,7 +22366,7 @@
 						},
 						{
 							"referrer": "lm.facebook.com",
-							"pageViews": 40
+							"pageViews": 30
 						},
 						{
 							"referrer": "www.facebook.com",
@@ -22398,19 +22403,19 @@
 							"pageViews": 90
 						},
 						{
-							"country": "SE",
-							"pageViews": 50
-						},
-						{
 							"country": "GB",
 							"pageViews": 50
 						},
 						{
-							"country": "IE",
-							"pageViews": 40
+							"country": "SE",
+							"pageViews": 50
 						},
 						{
 							"country": "AU",
+							"pageViews": 40
+						},
+						{
+							"country": "GR",
 							"pageViews": 40
 						}
 					],
@@ -22441,7 +22446,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3120
+					"pageViews": 3110
 				}
 			],
 			"topReferrers": [
@@ -22471,7 +22476,7 @@
 				},
 				{
 					"referrer": "lm.facebook.com",
-					"pageViews": 40
+					"pageViews": 30
 				},
 				{
 					"referrer": "www.facebook.com",
@@ -22508,19 +22513,19 @@
 					"pageViews": 90
 				},
 				{
-					"country": "SE",
-					"pageViews": 50
-				},
-				{
 					"country": "GB",
 					"pageViews": 50
 				},
 				{
-					"country": "IE",
-					"pageViews": 40
+					"country": "SE",
+					"pageViews": 50
 				},
 				{
 					"country": "AU",
+					"pageViews": 40
+				},
+				{
+					"country": "GR",
 					"pageViews": 40
 				}
 			],
