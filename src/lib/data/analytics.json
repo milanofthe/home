@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-15T16:37:30.775Z",
+	"lastFetched": "2026-03-15T20:35:06.145Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -8076,6 +8076,16 @@
 					"datetime": "2026-03-15T16:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-03-15T20:00:00",
+					"pageViews": 9,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-03-15T24:00:00",
+					"pageViews": 6,
+					"visits": 6
 				}
 			],
 			"aggregateHistory": [
@@ -15169,7 +15179,7 @@
 						},
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 90
+							"pageViews": 80
 						},
 						{
 							"referrer": "github.com",
@@ -15195,7 +15205,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 530
+							"pageViews": 520
 						},
 						{
 							"country": "DE",
@@ -15237,7 +15247,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 930
+							"pageViews": 920
 						},
 						{
 							"browser": "ChromeMobile",
@@ -15315,7 +15325,7 @@
 				},
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 90
+					"pageViews": 80
 				},
 				{
 					"referrer": "github.com",
@@ -15341,7 +15351,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 530
+					"pageViews": 520
 				},
 				{
 					"country": "DE",
@@ -15383,7 +15393,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 930
+					"pageViews": 920
 				},
 				{
 					"browser": "ChromeMobile",
@@ -28962,11 +28972,11 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 130
+							"pageViews": 120
 						},
 						{
 							"path": "/projects/pathsim/",
-							"pageViews": 50
+							"pageViews": 40
 						},
 						{
 							"path": "/projects/openmc/",
@@ -28980,7 +28990,7 @@
 					"topReferrers": [
 						{
 							"referrer": "github.com",
-							"pageViews": 50
+							"pageViews": 40
 						},
 						{
 							"referrer": "www.bing.com",
@@ -29001,10 +29011,6 @@
 							"pageViews": 50
 						},
 						{
-							"country": "PL",
-							"pageViews": 20
-						},
-						{
 							"country": "AU",
 							"pageViews": 20
 						},
@@ -29013,7 +29019,7 @@
 							"pageViews": 10
 						},
 						{
-							"country": "BE",
+							"country": "PL",
 							"pageViews": 10
 						},
 						{
@@ -29028,15 +29034,15 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 80
-						},
-						{
-							"browser": "Firefox",
-							"pageViews": 30
+							"pageViews": 70
 						},
 						{
 							"browser": "BingBot",
 							"pageViews": 30
+						},
+						{
+							"browser": "Firefox",
+							"pageViews": 20
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -29052,11 +29058,11 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 130
+					"pageViews": 120
 				},
 				{
 					"path": "/projects/pathsim/",
-					"pageViews": 50
+					"pageViews": 40
 				},
 				{
 					"path": "/projects/openmc/",
@@ -29070,7 +29076,7 @@
 			"topReferrers": [
 				{
 					"referrer": "github.com",
-					"pageViews": 50
+					"pageViews": 40
 				},
 				{
 					"referrer": "www.bing.com",
@@ -29091,10 +29097,6 @@
 					"pageViews": 50
 				},
 				{
-					"country": "PL",
-					"pageViews": 20
-				},
-				{
 					"country": "AU",
 					"pageViews": 20
 				},
@@ -29103,7 +29105,7 @@
 					"pageViews": 10
 				},
 				{
-					"country": "BE",
+					"country": "PL",
 					"pageViews": 10
 				},
 				{
@@ -29118,15 +29120,15 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 80
-				},
-				{
-					"browser": "Firefox",
-					"pageViews": 30
+					"pageViews": 70
 				},
 				{
 					"browser": "BingBot",
 					"pageViews": 30
+				},
+				{
+					"browser": "Firefox",
+					"pageViews": 20
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -30326,6 +30328,16 @@
 					"datetime": "2026-03-15T16:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-03-15T20:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-03-15T24:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
