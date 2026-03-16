@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-16T02:48:50.870Z",
+	"lastFetched": "2026-03-16T05:50:51.665Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -6523,7 +6523,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 890
+							"pageViews": 870
 						}
 					],
 					"topReferrers": [
@@ -6556,11 +6556,11 @@
 							"pageViews": 30
 						},
 						{
-							"referrer": "lm.facebook.com",
-							"pageViews": 30
+							"referrer": "statics.teams.cdn.office.net",
+							"pageViews": 20
 						},
 						{
-							"referrer": "pathsim.org",
+							"referrer": "old.reddit.com",
 							"pageViews": 20
 						}
 					],
@@ -6590,11 +6590,11 @@
 							"pageViews": 50
 						},
 						{
-							"country": "MX",
-							"pageViews": 50
+							"country": "IE",
+							"pageViews": 40
 						},
 						{
-							"country": "IE",
+							"country": "MX",
 							"pageViews": 40
 						},
 						{
@@ -6624,8 +6624,8 @@
 							"pageViews": 100
 						},
 						{
-							"browser": "Safari",
-							"pageViews": 70
+							"browser": "Unknown",
+							"pageViews": 60
 						}
 					]
 				}
@@ -6633,7 +6633,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 890
+					"pageViews": 870
 				}
 			],
 			"topReferrers": [
@@ -6666,11 +6666,11 @@
 					"pageViews": 30
 				},
 				{
-					"referrer": "lm.facebook.com",
-					"pageViews": 30
+					"referrer": "statics.teams.cdn.office.net",
+					"pageViews": 20
 				},
 				{
-					"referrer": "pathsim.org",
+					"referrer": "old.reddit.com",
 					"pageViews": 20
 				}
 			],
@@ -6700,11 +6700,11 @@
 					"pageViews": 50
 				},
 				{
-					"country": "MX",
-					"pageViews": 50
+					"country": "IE",
+					"pageViews": 40
 				},
 				{
-					"country": "IE",
+					"country": "MX",
 					"pageViews": 40
 				},
 				{
@@ -6734,8 +6734,8 @@
 					"pageViews": 100
 				},
 				{
-					"browser": "Safari",
-					"pageViews": 70
+					"browser": "Unknown",
+					"pageViews": 60
 				}
 			]
 		},
@@ -8207,6 +8207,11 @@
 					"datetime": "2026-03-15T24:00:00",
 					"pageViews": 6,
 					"visits": 6
+				},
+				{
+					"datetime": "2026-03-16T08:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -22775,13 +22780,13 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 3020
+							"pageViews": 3000
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 590
+							"pageViews": 580
 						},
 						{
 							"referrer": "github.com",
@@ -22801,7 +22806,7 @@
 						},
 						{
 							"referrer": "com.linkedin.android",
-							"pageViews": 40
+							"pageViews": 30
 						},
 						{
 							"referrer": "milanrother.com",
@@ -22827,7 +22832,7 @@
 						},
 						{
 							"country": "MX",
-							"pageViews": 120
+							"pageViews": 110
 						},
 						{
 							"country": "IT",
@@ -22842,10 +22847,6 @@
 							"pageViews": 90
 						},
 						{
-							"country": "AU",
-							"pageViews": 50
-						},
-						{
 							"country": "GB",
 							"pageViews": 50
 						},
@@ -22855,6 +22856,10 @@
 						},
 						{
 							"country": "IE",
+							"pageViews": 40
+						},
+						{
+							"country": "SG",
 							"pageViews": 40
 						}
 					],
@@ -22885,13 +22890,13 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 3020
+					"pageViews": 3000
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 590
+					"pageViews": 580
 				},
 				{
 					"referrer": "github.com",
@@ -22911,7 +22916,7 @@
 				},
 				{
 					"referrer": "com.linkedin.android",
-					"pageViews": 40
+					"pageViews": 30
 				},
 				{
 					"referrer": "milanrother.com",
@@ -22937,7 +22942,7 @@
 				},
 				{
 					"country": "MX",
-					"pageViews": 120
+					"pageViews": 110
 				},
 				{
 					"country": "IT",
@@ -22952,10 +22957,6 @@
 					"pageViews": 90
 				},
 				{
-					"country": "AU",
-					"pageViews": 50
-				},
-				{
 					"country": "GB",
 					"pageViews": 50
 				},
@@ -22965,6 +22966,10 @@
 				},
 				{
 					"country": "IE",
+					"pageViews": 40
+				},
+				{
+					"country": "SG",
 					"pageViews": 40
 				}
 			],
@@ -30822,6 +30827,11 @@
 				},
 				{
 					"datetime": "2026-03-15T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-03-16T08:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
