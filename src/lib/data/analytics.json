@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-17T02:32:01.381Z",
+	"lastFetched": "2026-03-17T05:23:00.618Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1389,6 +1389,16 @@
 					"datetime": "2026-03-16T24:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-03-17T04:00:00",
+					"pageViews": 10,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-03-17T08:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -15724,30 +15734,30 @@
 							"pageViews": 110
 						},
 						{
-							"path": "/pathsim/latest/examples",
-							"pageViews": 80
-						},
-						{
 							"path": "/rf",
 							"pageViews": 80
 						},
 						{
-							"path": "/pathsim/v0.18.0/examples/linear-feedback",
-							"pageViews": 50
+							"path": "/pathsim/latest/examples",
+							"pageViews": 80
 						},
 						{
-							"path": "/pathsim/v0.16.8/examples/harmonic-oscillator",
+							"path": "/pathsim/v0.18.0/examples/linear-feedback",
+							"pageViews": 60
+						},
+						{
+							"path": "/chem",
 							"pageViews": 50
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 450
+							"pageViews": 460
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 370
+							"pageViews": 380
 						},
 						{
 							"referrer": "www.google.com",
@@ -15785,7 +15795,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 320
+							"pageViews": 330
 						},
 						{
 							"country": "GB",
@@ -15831,7 +15841,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 290
+							"pageViews": 310
 						},
 						{
 							"browser": "Unknown",
@@ -15870,30 +15880,30 @@
 					"pageViews": 110
 				},
 				{
-					"path": "/pathsim/latest/examples",
-					"pageViews": 80
-				},
-				{
 					"path": "/rf",
 					"pageViews": 80
 				},
 				{
-					"path": "/pathsim/v0.18.0/examples/linear-feedback",
-					"pageViews": 50
+					"path": "/pathsim/latest/examples",
+					"pageViews": 80
 				},
 				{
-					"path": "/pathsim/v0.16.8/examples/harmonic-oscillator",
+					"path": "/pathsim/v0.18.0/examples/linear-feedback",
+					"pageViews": 60
+				},
+				{
+					"path": "/chem",
 					"pageViews": 50
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 450
+					"pageViews": 460
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 370
+					"pageViews": 380
 				},
 				{
 					"referrer": "www.google.com",
@@ -15931,7 +15941,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 320
+					"pageViews": 330
 				},
 				{
 					"country": "GB",
@@ -15977,7 +15987,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 290
+					"pageViews": 310
 				},
 				{
 					"browser": "Unknown",
@@ -17565,6 +17575,16 @@
 				},
 				{
 					"datetime": "2026-03-16T24:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-03-17T04:00:00",
+					"pageViews": 34,
+					"visits": 22
+				},
+				{
+					"datetime": "2026-03-17T08:00:00",
 					"pageViews": 2,
 					"visits": 2
 				}
@@ -23219,13 +23239,13 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2970
+							"pageViews": 2950
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 580
+							"pageViews": 570
 						},
 						{
 							"referrer": "github.com",
@@ -23271,7 +23291,7 @@
 						},
 						{
 							"country": "MX",
-							"pageViews": 110
+							"pageViews": 100
 						},
 						{
 							"country": "IT",
@@ -23294,11 +23314,11 @@
 							"pageViews": 50
 						},
 						{
-							"country": "AU",
+							"country": "IE",
 							"pageViews": 40
 						},
 						{
-							"country": "SG",
+							"country": "AU",
 							"pageViews": 40
 						}
 					],
@@ -23329,13 +23349,13 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2970
+					"pageViews": 2950
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 580
+					"pageViews": 570
 				},
 				{
 					"referrer": "github.com",
@@ -23381,7 +23401,7 @@
 				},
 				{
 					"country": "MX",
-					"pageViews": 110
+					"pageViews": 100
 				},
 				{
 					"country": "IT",
@@ -23404,11 +23424,11 @@
 					"pageViews": 50
 				},
 				{
-					"country": "AU",
+					"country": "IE",
 					"pageViews": 40
 				},
 				{
-					"country": "SG",
+					"country": "AU",
 					"pageViews": 40
 				}
 			],
