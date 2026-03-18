@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-18T02:37:48.269Z",
+	"lastFetched": "2026-03-18T05:27:47.864Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -16042,26 +16042,26 @@
 							"pageViews": 110
 						},
 						{
-							"path": "/pathsim/latest/examples",
-							"pageViews": 80
-						},
-						{
 							"path": "/rf",
 							"pageViews": 80
 						},
 						{
-							"path": "/chem",
-							"pageViews": 60
+							"path": "/pathsim/latest/examples",
+							"pageViews": 70
 						},
 						{
 							"path": "/pathsim/v0.18.0/examples/linear-feedback",
+							"pageViews": 60
+						},
+						{
+							"path": "/chem",
 							"pageViews": 60
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 490
+							"pageViews": 480
 						},
 						{
 							"referrer": "pathsim.org",
@@ -16069,7 +16069,7 @@
 						},
 						{
 							"referrer": "www.google.com",
-							"pageViews": 190
+							"pageViews": 180
 						},
 						{
 							"referrer": "view.pathsim.org",
@@ -16141,7 +16141,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 910
+							"pageViews": 890
 						},
 						{
 							"browser": "ChromeMobile",
@@ -16188,26 +16188,26 @@
 					"pageViews": 110
 				},
 				{
-					"path": "/pathsim/latest/examples",
-					"pageViews": 80
-				},
-				{
 					"path": "/rf",
 					"pageViews": 80
 				},
 				{
-					"path": "/chem",
-					"pageViews": 60
+					"path": "/pathsim/latest/examples",
+					"pageViews": 70
 				},
 				{
 					"path": "/pathsim/v0.18.0/examples/linear-feedback",
+					"pageViews": 60
+				},
+				{
+					"path": "/chem",
 					"pageViews": 60
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 490
+					"pageViews": 480
 				},
 				{
 					"referrer": "pathsim.org",
@@ -16215,7 +16215,7 @@
 				},
 				{
 					"referrer": "www.google.com",
-					"pageViews": 190
+					"pageViews": 180
 				},
 				{
 					"referrer": "view.pathsim.org",
@@ -16287,7 +16287,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 910
+					"pageViews": 890
 				},
 				{
 					"browser": "ChromeMobile",
@@ -23683,13 +23683,13 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2930
+							"pageViews": 2900
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 570
+							"pageViews": 560
 						},
 						{
 							"referrer": "github.com",
@@ -23727,7 +23727,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 1200
+							"pageViews": 1180
 						},
 						{
 							"country": "DE",
@@ -23742,11 +23742,11 @@
 							"pageViews": 100
 						},
 						{
-							"country": "MX",
-							"pageViews": 100
+							"country": "FR",
+							"pageViews": 90
 						},
 						{
-							"country": "FR",
+							"country": "MX",
 							"pageViews": 90
 						},
 						{
@@ -23769,7 +23769,7 @@
 					"topBrowsers": [
 						{
 							"browser": "ChromeHeadless",
-							"pageViews": 1050
+							"pageViews": 1030
 						},
 						{
 							"browser": "Chrome",
@@ -23785,7 +23785,7 @@
 						},
 						{
 							"browser": "Firefox",
-							"pageViews": 220
+							"pageViews": 210
 						}
 					]
 				}
@@ -23793,13 +23793,13 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2930
+					"pageViews": 2900
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 570
+					"pageViews": 560
 				},
 				{
 					"referrer": "github.com",
@@ -23837,7 +23837,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 1200
+					"pageViews": 1180
 				},
 				{
 					"country": "DE",
@@ -23852,11 +23852,11 @@
 					"pageViews": 100
 				},
 				{
-					"country": "MX",
-					"pageViews": 100
+					"country": "FR",
+					"pageViews": 90
 				},
 				{
-					"country": "FR",
+					"country": "MX",
 					"pageViews": 90
 				},
 				{
@@ -23879,7 +23879,7 @@
 			"topBrowsers": [
 				{
 					"browser": "ChromeHeadless",
-					"pageViews": 1050
+					"pageViews": 1030
 				},
 				{
 					"browser": "Chrome",
@@ -23895,7 +23895,7 @@
 				},
 				{
 					"browser": "Firefox",
-					"pageViews": 220
+					"pageViews": 210
 				}
 			]
 		},
