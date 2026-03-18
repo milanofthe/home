@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-18T05:27:47.864Z",
+	"lastFetched": "2026-03-18T08:56:02.154Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -6800,7 +6800,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 870
+							"pageViews": 860
 						}
 					],
 					"topReferrers": [
@@ -6821,10 +6821,6 @@
 							"pageViews": 50
 						},
 						{
-							"referrer": "pathsim.org",
-							"pageViews": 30
-						},
-						{
 							"referrer": "pypi.org",
 							"pageViews": 30
 						},
@@ -6839,6 +6835,10 @@
 						{
 							"referrer": "statics.teams.cdn.office.net",
 							"pageViews": 20
+						},
+						{
+							"referrer": "old.reddit.com",
+							"pageViews": 20
 						}
 					],
 					"topCountries": [
@@ -6851,20 +6851,16 @@
 							"pageViews": 150
 						},
 						{
-							"country": "GB",
+							"country": "FR",
 							"pageViews": 60
 						},
 						{
-							"country": "FR",
+							"country": "GB",
 							"pageViews": 60
 						},
 						{
 							"country": "IN",
 							"pageViews": 60
-						},
-						{
-							"country": "NL",
-							"pageViews": 50
 						},
 						{
 							"country": "MX",
@@ -6875,18 +6871,22 @@
 							"pageViews": 40
 						},
 						{
+							"country": "NL",
+							"pageViews": 40
+						},
+						{
 							"country": "PE",
 							"pageViews": 30
 						},
 						{
-							"country": "BR",
+							"country": "ES",
 							"pageViews": 20
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 290
+							"pageViews": 280
 						},
 						{
 							"browser": "ChromeMobile",
@@ -6910,7 +6910,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 870
+					"pageViews": 860
 				}
 			],
 			"topReferrers": [
@@ -6931,10 +6931,6 @@
 					"pageViews": 50
 				},
 				{
-					"referrer": "pathsim.org",
-					"pageViews": 30
-				},
-				{
 					"referrer": "pypi.org",
 					"pageViews": 30
 				},
@@ -6949,6 +6945,10 @@
 				{
 					"referrer": "statics.teams.cdn.office.net",
 					"pageViews": 20
+				},
+				{
+					"referrer": "old.reddit.com",
+					"pageViews": 20
 				}
 			],
 			"topCountries": [
@@ -6961,20 +6961,16 @@
 					"pageViews": 150
 				},
 				{
-					"country": "GB",
+					"country": "FR",
 					"pageViews": 60
 				},
 				{
-					"country": "FR",
+					"country": "GB",
 					"pageViews": 60
 				},
 				{
 					"country": "IN",
 					"pageViews": 60
-				},
-				{
-					"country": "NL",
-					"pageViews": 50
 				},
 				{
 					"country": "MX",
@@ -6985,18 +6981,22 @@
 					"pageViews": 40
 				},
 				{
+					"country": "NL",
+					"pageViews": 40
+				},
+				{
 					"country": "PE",
 					"pageViews": 30
 				},
 				{
-					"country": "BR",
+					"country": "ES",
 					"pageViews": 20
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 290
+					"pageViews": 280
 				},
 				{
 					"browser": "ChromeMobile",
@@ -8539,6 +8539,16 @@
 					"datetime": "2026-03-18T04:00:00",
 					"pageViews": 8,
 					"visits": 7
+				},
+				{
+					"datetime": "2026-03-18T08:00:00",
+					"pageViews": 5,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-03-18T12:00:00",
+					"pageViews": 6,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -16050,11 +16060,11 @@
 							"pageViews": 70
 						},
 						{
-							"path": "/pathsim/v0.18.0/examples/linear-feedback",
+							"path": "/chem",
 							"pageViews": 60
 						},
 						{
-							"path": "/chem",
+							"path": "/pathsim/v0.18.0/examples/linear-feedback",
 							"pageViews": 60
 						}
 					],
@@ -16110,11 +16120,11 @@
 							"pageViews": 150
 						},
 						{
-							"country": "FR",
+							"country": "NO",
 							"pageViews": 120
 						},
 						{
-							"country": "NO",
+							"country": "FR",
 							"pageViews": 120
 						},
 						{
@@ -16196,11 +16206,11 @@
 					"pageViews": 70
 				},
 				{
-					"path": "/pathsim/v0.18.0/examples/linear-feedback",
+					"path": "/chem",
 					"pageViews": 60
 				},
 				{
-					"path": "/chem",
+					"path": "/pathsim/v0.18.0/examples/linear-feedback",
 					"pageViews": 60
 				}
 			],
@@ -16256,11 +16266,11 @@
 					"pageViews": 150
 				},
 				{
-					"country": "FR",
+					"country": "NO",
 					"pageViews": 120
 				},
 				{
-					"country": "NO",
+					"country": "FR",
 					"pageViews": 120
 				},
 				{
@@ -17920,6 +17930,11 @@
 					"datetime": "2026-03-18T04:00:00",
 					"pageViews": 5,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-03-18T08:00:00",
+					"pageViews": 4,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -32002,6 +32017,11 @@
 					"datetime": "2026-03-17T20:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-03-18T08:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
