@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-19T02:39:06.988Z",
+	"lastFetched": "2026-03-19T05:24:18.273Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -16429,11 +16429,11 @@
 							"pageViews": 70
 						},
 						{
-							"country": "ES",
+							"country": "MX",
 							"pageViews": 70
 						},
 						{
-							"country": "MX",
+							"country": "ES",
 							"pageViews": 70
 						},
 						{
@@ -16575,11 +16575,11 @@
 					"pageViews": 70
 				},
 				{
-					"country": "ES",
+					"country": "MX",
 					"pageViews": 70
 				},
 				{
-					"country": "MX",
+					"country": "ES",
 					"pageViews": 70
 				},
 				{
@@ -24127,13 +24127,13 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2750
+							"pageViews": 2740
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 550
+							"pageViews": 540
 						},
 						{
 							"referrer": "github.com",
@@ -24171,7 +24171,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 1090
+							"pageViews": 1080
 						},
 						{
 							"country": "DE",
@@ -24217,7 +24217,7 @@
 						},
 						{
 							"browser": "Chrome",
-							"pageViews": 880
+							"pageViews": 870
 						},
 						{
 							"browser": "Edge",
@@ -24237,13 +24237,13 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2750
+					"pageViews": 2740
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 550
+					"pageViews": 540
 				},
 				{
 					"referrer": "github.com",
@@ -24281,7 +24281,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 1090
+					"pageViews": 1080
 				},
 				{
 					"country": "DE",
@@ -24327,7 +24327,7 @@
 				},
 				{
 					"browser": "Chrome",
-					"pageViews": 880
+					"pageViews": 870
 				},
 				{
 					"browser": "Edge",
