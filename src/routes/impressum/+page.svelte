@@ -23,7 +23,7 @@
 
 		<section class="mb-8">
 			<h2 class="text-lg font-bold text-cream mb-4">Kontakt</h2>
-			<p>E-Mail: milan.rother@gmx.de</p>
+			<p>E-Mail: info@milanrother.com</p>
 			<p>Telefon: +49 15202668142</p>
 		</section>
 

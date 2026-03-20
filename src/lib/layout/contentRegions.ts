@@ -386,7 +386,7 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 			{ type: 'spacer', lines: [''] },
 			{
 				type: 'link-line',
-				lines: ['milan.rother@gmx.de'],
+				lines: ['info@milanrother.com'],
 				align: 'center'
 			},
 			{ type: 'spacer', lines: [''] },
