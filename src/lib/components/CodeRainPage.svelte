@@ -92,8 +92,8 @@
 		{ text: '[ SEND MESSAGE -> ]', types: ['cta'], action: 'submit-form' },
 		{ text: 'Impressum', types: ['footer'], href: '/impressum/' },
 		{ text: 'Datenschutz', types: ['footer'], href: '/datenschutz/' },
-		{ text: 'milan.rother@gmx.de', types: ['link'], href: 'mailto:milan.rother@gmx.de' },
-		{ text: 'Email', types: ['footer'], href: 'mailto:milan.rother@gmx.de' },
+		{ text: 'info@milanrother.com', types: ['link'], href: 'mailto:info@milanrother.com' },
+		{ text: 'Email', types: ['footer'], href: 'mailto:info@milanrother.com' },
 		{ text: 'GitHub', types: ['link', 'footer'], href: 'https://github.com/milanofthe' },
 		{ text: 'LinkedIn', types: ['link', 'footer', 'content'], href: 'https://linkedin.com/in/milan-rother-648474183' },
 	];
@@ -370,7 +370,7 @@
 	<section id="contact">
 		<h2>Get in Touch</h2>
 		<p>Have a project in mind or want to discuss your simulation challenges?</p>
-		<p>Contact: <a href="mailto:milan.rother@gmx.de">milan.rother@gmx.de</a></p>
+		<p>Contact: <a href="mailto:info@milanrother.com">info@milanrother.com</a></p>
 	</section>
 </main>
 
