@@ -3,7 +3,7 @@
 		id: string;
 		name: string;
 		src: string;
-		color: 'pathsim' | 'pysimhub';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives';
 	}
 
 	let { id, name, src, color }: Props = $props();

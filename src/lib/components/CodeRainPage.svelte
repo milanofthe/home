@@ -23,21 +23,24 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives';
+		themeParam?: boolean;
 	}
 
 	const tileInfo: Record<string, TileInfo> = {
 		'pathsim-org': { name: 'PathSim', url: 'https://pathsim.org', screenshot: '/screenshots/pathsim-org.png', color: 'pathsim' },
 		'docs-pathsim-org': { name: 'Documentation', url: 'https://docs.pathsim.org', screenshot: '/screenshots/docs-pathsim-org.png', color: 'pathsim' },
 		'view-pathsim-org': { name: 'PathView', url: 'https://view.pathsim.org', screenshot: '/screenshots/view-pathsim-org.png', color: 'pathsim' },
-		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' }
+		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' },
+		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
+		'rapidpassives-transformer': { name: 'Symmetric Transformer', url: 'https://rapidpassives.org/symmetric-transformer', screenshot: '/screenshots/rapidpassives-transformer.png', color: 'rapidpassives', themeParam: false }
 	};
 
 	// Video tile data
 	interface VideoInfo {
 		name: string;
 		src: string;
-		color: 'pathsim' | 'pysimhub';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives';
 	}
 
 	const videoInfo: Record<string, VideoInfo> = {
@@ -96,6 +99,7 @@
 		{ text: 'Email', types: ['footer'], href: 'mailto:info@milanrother.com' },
 		{ text: 'GitHub', types: ['link', 'footer'], href: 'https://github.com/milanofthe' },
 		{ text: 'LinkedIn', types: ['link', 'footer', 'content'], href: 'https://linkedin.com/in/milan-rother-648474183' },
+		{ text: 'rapidpassives.org', types: ['link-rapidpassives'], href: 'https://rapidpassives.org' },
 	];
 
 	let clickOverlays = $derived.by((): ClickOverlay[] => {
@@ -418,6 +422,7 @@
 						url={info.url}
 						screenshot={info.screenshot}
 						color={info.color}
+						themeParam={info.themeParam}
 					/>
 				</div>
 			{/if}

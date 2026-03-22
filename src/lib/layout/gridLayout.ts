@@ -5,7 +5,7 @@ import { FILLER_SOURCE } from '$lib/data/filler-source';
 import { contentSections, type ContentSection, type ContentRegion } from './contentRegions';
 export type { ContentSection };
 
-export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub';
+export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives';
 
 export interface Cell {
 	char: string;
@@ -167,10 +167,12 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 			region.type === 'heading' ? 'heading' :
 			region.type === 'heading-pathsim' ? 'heading-pathsim' :
 			region.type === 'heading-pysimhub' ? 'heading-pysimhub' :
+			region.type === 'heading-rapidpassives' ? 'heading-rapidpassives' :
 			region.type === 'cta' ? 'cta' :
 			region.type === 'link-line' ? 'link' :
 			region.type === 'link-line-pathsim' ? 'link-pathsim' :
 			region.type === 'link-line-pysimhub' ? 'link-pysimhub' :
+			region.type === 'link-line-rapidpassives' ? 'link-rapidpassives' :
 			region.type === 'footer-line' ? 'footer' :
 			region.type === 'form-field' ? 'form-field' :
 			'content';
@@ -185,6 +187,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 			const frameType: CellType =
 				region.frameColor === 'pathsim' ? 'frame-pathsim' :
 				region.frameColor === 'pysimhub' ? 'frame-pysimhub' :
+				region.frameColor === 'rapidpassives' ? 'frame-rapidpassives' :
 				'frame';
 			const innerRows = region.embeddedRows || 10;
 

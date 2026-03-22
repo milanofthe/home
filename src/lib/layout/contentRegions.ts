@@ -9,7 +9,7 @@ export interface GitHubStats {
 	pysimhub: { projects: number; members?: number; cumulativeStars: number };
 }
 
-export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'footer-line' | 'content' | 'form-field';
+export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'footer-line' | 'content' | 'form-field';
 
 export interface ContentRegion {
 	type: RegionType;
@@ -21,7 +21,7 @@ export interface ContentRegion {
 	tiles?: { id: string; label: string }[]; // individual framed tiles laid out side-by-side (or stacked on mobile)
 	url?: string; // for links within text
 	label?: string; // frame title for embedded blocks
-	frameColor?: 'pathsim' | 'pysimhub'; // project color for frame
+	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives'; // project color for frame
 	align?: 'center' | 'left';
 }
 
@@ -275,6 +275,43 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 				],
 				embeddedRows: 10,
 				embeddedCols: 34,
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{ type: 'spacer', lines: [''] },
+			{ type: 'spacer', lines: [''] },
+			{
+				type: 'heading-rapidpassives',
+				lines: ['RapidPassives'],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{
+				type: 'paragraph',
+				lines: [
+					'RFIC passive design tool. Browser-based layout',
+					'generation with real-time preview, GDS export,',
+					'and integrated MOM solver.'
+				],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{
+				type: 'link-line-rapidpassives',
+				lines: ['rapidpassives.org'],
+				align: 'center'
+			},
+			{ type: 'spacer', lines: [''] },
+			{
+				type: 'embedded',
+				lines: [],
+				frameColor: 'rapidpassives',
+				embeddedRows: 10,
+				embeddedCols: 34,
+				tiles: [
+					{ id: 'rapidpassives-org', label: 'RapidPassives' },
+					{ id: 'rapidpassives-transformer', label: 'Transformer' }
+				],
 				align: 'center'
 			}
 		]
