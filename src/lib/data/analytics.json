@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-22T17:21:29.972Z",
+	"lastFetched": "2026-03-22T20:33:44.512Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1504,6 +1504,11 @@
 					"datetime": "2026-03-22T16:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-03-22T20:00:00",
+					"pageViews": 8,
+					"visits": 8
 				}
 			],
 			"aggregateHistory": [
@@ -9188,6 +9193,11 @@
 					"datetime": "2026-03-22T16:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-03-22T20:00:00",
+					"pageViews": 8,
+					"visits": 7
 				}
 			],
 			"aggregateHistory": [
@@ -17287,11 +17297,11 @@
 							"pageViews": 80
 						},
 						{
-							"path": "/pathsim/v0.18.0/examples/linear-feedback",
+							"path": "/pathsim/latest/examples",
 							"pageViews": 60
 						},
 						{
-							"path": "/pathsim/latest/examples",
+							"path": "/pathsim/v0.18.0/examples/linear-feedback",
 							"pageViews": 60
 						}
 					],
@@ -17336,7 +17346,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 590
+							"pageViews": 580
 						},
 						{
 							"country": "DE",
@@ -17367,18 +17377,18 @@
 							"pageViews": 70
 						},
 						{
-							"country": "CN",
+							"country": "MX",
 							"pageViews": 50
 						},
 						{
-							"country": "MX",
+							"country": "CO",
 							"pageViews": 50
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 810
+							"pageViews": 800
 						},
 						{
 							"browser": "ChromeMobile",
@@ -17433,11 +17443,11 @@
 					"pageViews": 80
 				},
 				{
-					"path": "/pathsim/v0.18.0/examples/linear-feedback",
+					"path": "/pathsim/latest/examples",
 					"pageViews": 60
 				},
 				{
-					"path": "/pathsim/latest/examples",
+					"path": "/pathsim/v0.18.0/examples/linear-feedback",
 					"pageViews": 60
 				}
 			],
@@ -17482,7 +17492,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 590
+					"pageViews": 580
 				},
 				{
 					"country": "DE",
@@ -17513,18 +17523,18 @@
 					"pageViews": 70
 				},
 				{
-					"country": "CN",
+					"country": "MX",
 					"pageViews": 50
 				},
 				{
-					"country": "MX",
+					"country": "CO",
 					"pageViews": 50
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 810
+					"pageViews": 800
 				},
 				{
 					"browser": "ChromeMobile",
@@ -19282,6 +19292,11 @@
 					"datetime": "2026-03-22T16:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-03-22T20:00:00",
+					"pageViews": 9,
+					"visits": 6
 				}
 			],
 			"aggregateHistory": [
@@ -25560,11 +25575,11 @@
 							"pageViews": 50
 						},
 						{
-							"country": "AU",
+							"country": "SG",
 							"pageViews": 40
 						},
 						{
-							"country": "SG",
+							"country": "AU",
 							"pageViews": 40
 						},
 						{
@@ -25670,11 +25685,11 @@
 					"pageViews": 50
 				},
 				{
-					"country": "AU",
+					"country": "SG",
 					"pageViews": 40
 				},
 				{
-					"country": "SG",
+					"country": "AU",
 					"pageViews": 40
 				},
 				{
@@ -39633,7 +39648,7 @@
 						},
 						{
 							"path": "/dashboard/",
-							"pageViews": 130
+							"pageViews": 140
 						}
 					],
 					"topReferrers": [
@@ -39665,7 +39680,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 200
+							"pageViews": 210
 						},
 						{
 							"country": "US",
@@ -39707,7 +39722,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 140
+							"pageViews": 150
 						},
 						{
 							"browser": "ChromeMobile",
@@ -39735,7 +39750,7 @@
 				},
 				{
 					"path": "/dashboard/",
-					"pageViews": 130
+					"pageViews": 140
 				}
 			],
 			"topReferrers": [
@@ -39767,7 +39782,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 200
+					"pageViews": 210
 				},
 				{
 					"country": "US",
@@ -39809,7 +39824,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 140
+					"pageViews": 150
 				},
 				{
 					"browser": "ChromeMobile",
