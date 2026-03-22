@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-22T16:36:42.404Z",
+	"lastFetched": "2026-03-22T17:20:41.222Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -7324,7 +7324,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 680
+							"pageViews": 690
 						}
 					],
 					"topReferrers": [
@@ -7368,7 +7368,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 130
+							"pageViews": 140
 						},
 						{
 							"country": "DE",
@@ -7413,11 +7413,11 @@
 							"pageViews": 220
 						},
 						{
-							"browser": "Edge",
+							"browser": "ChromeMobile",
 							"pageViews": 130
 						},
 						{
-							"browser": "ChromeMobile",
+							"browser": "Edge",
 							"pageViews": 130
 						},
 						{
@@ -7434,7 +7434,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 680
+					"pageViews": 690
 				}
 			],
 			"topReferrers": [
@@ -7478,7 +7478,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 130
+					"pageViews": 140
 				},
 				{
 					"country": "DE",
@@ -7523,11 +7523,11 @@
 					"pageViews": 220
 				},
 				{
-					"browser": "Edge",
+					"browser": "ChromeMobile",
 					"pageViews": 130
 				},
 				{
-					"browser": "ChromeMobile",
+					"browser": "Edge",
 					"pageViews": 130
 				},
 				{
@@ -25560,11 +25560,11 @@
 							"pageViews": 50
 						},
 						{
-							"country": "AU",
+							"country": "SG",
 							"pageViews": 40
 						},
 						{
-							"country": "SG",
+							"country": "AU",
 							"pageViews": 40
 						},
 						{
@@ -25670,11 +25670,11 @@
 					"pageViews": 50
 				},
 				{
-					"country": "AU",
+					"country": "SG",
 					"pageViews": 40
 				},
 				{
-					"country": "SG",
+					"country": "AU",
 					"pageViews": 40
 				},
 				{
@@ -33008,6 +33008,24 @@
 					"pageViews": 10
 				}
 			]
+		},
+		"rapidpassives.org": {
+			"name": "rapidpassives.org",
+			"color": "#d9513c",
+			"timeseries": [],
+			"aggregateHistory": [
+				{
+					"date": "2026-03-22",
+					"topPages": [],
+					"topReferrers": [],
+					"topCountries": [],
+					"topBrowsers": []
+				}
+			],
+			"topPages": [],
+			"topReferrers": [],
+			"topCountries": [],
+			"topBrowsers": []
 		},
 		"milanrother.com": {
 			"name": "milanrother.com",
