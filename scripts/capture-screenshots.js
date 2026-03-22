@@ -18,7 +18,9 @@ const sites = [
 	{ id: 'pathsim-org', url: 'https://pathsim.org' },
 	{ id: 'docs-pathsim-org', url: 'https://docs.pathsim.org' },
 	{ id: 'view-pathsim-org', url: 'https://view.pathsim.org' },
-	{ id: 'pysimhub-io', url: 'https://pysimhub.io' }
+	{ id: 'pysimhub-io', url: 'https://pysimhub.io' },
+	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true },
+	{ id: 'rapidpassives-transformer', url: 'https://rapidpassives.org/symmetric-transformer', darkOnly: true }
 ];
 
 const themes = ['dark', 'light'];
@@ -26,7 +28,7 @@ const themes = ['dark', 'light'];
 const viewport = { width: 1440, height: 900 };
 
 async function captureScreenshot(browser, site, theme) {
-	const url = `${site.url}${site.url.includes('?') ? '&' : '?'}theme=${theme}`;
+	const url = site.darkOnly ? site.url : `${site.url}${site.url.includes('?') ? '&' : '?'}theme=${theme}`;
 	console.log(`  ${site.id} ${theme}...`);
 
 	const page = await browser.newPage();
@@ -71,7 +73,8 @@ async function main() {
 	try {
 		for (const site of sites) {
 			console.log(`\nCapturing ${site.id} (${site.url}):`);
-			for (const theme of themes) {
+			const siteThemes = site.darkOnly ? ['dark'] : themes;
+			for (const theme of siteThemes) {
 				await captureScreenshot(browser, site, theme);
 			}
 		}

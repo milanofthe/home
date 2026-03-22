@@ -25,6 +25,12 @@ export const sites = [
 		color: '#6366f1' // PySimHub brand color
 	},
 	{
+		name: 'rapidpassives.org',
+		hostname: 'rapidpassives.org',
+		siteTag: process.env.CF_SITE_TAG_RAPIDPASSIVES || '',
+		color: '#d9513c' // RapidPassives brand color
+	},
+	{
 		name: 'milanrother.com',
 		hostname: 'milanrother.com',
 		siteTag: process.env.CF_SITE_TAG_MILANROTHER || '',
