@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-22T05:20:24.849Z",
+	"lastFetched": "2026-03-22T08:39:57.339Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -17287,7 +17287,7 @@
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 370
+							"pageViews": 360
 						},
 						{
 							"referrer": "www.google.com",
@@ -17328,11 +17328,11 @@
 							"pageViews": 330
 						},
 						{
-							"country": "FR",
-							"pageViews": 150
+							"country": "GB",
+							"pageViews": 140
 						},
 						{
-							"country": "GB",
+							"country": "FR",
 							"pageViews": 140
 						},
 						{
@@ -17363,7 +17363,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 840
+							"pageViews": 830
 						},
 						{
 							"browser": "ChromeMobile",
@@ -17433,7 +17433,7 @@
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 370
+					"pageViews": 360
 				},
 				{
 					"referrer": "www.google.com",
@@ -17474,11 +17474,11 @@
 					"pageViews": 330
 				},
 				{
-					"country": "FR",
-					"pageViews": 150
+					"country": "GB",
+					"pageViews": 140
 				},
 				{
-					"country": "GB",
+					"country": "FR",
 					"pageViews": 140
 				},
 				{
@@ -17509,7 +17509,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 840
+					"pageViews": 830
 				},
 				{
 					"browser": "ChromeMobile",
@@ -19252,6 +19252,11 @@
 					"datetime": "2026-03-22T04:00:00",
 					"pageViews": 23,
 					"visits": 20
+				},
+				{
+					"datetime": "2026-03-22T08:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -26758,6 +26763,11 @@
 					"datetime": "2026-03-21T24:00:00",
 					"pageViews": 4,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-03-22T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -34290,6 +34300,11 @@
 				},
 				{
 					"datetime": "2026-03-22T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-03-22T12:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
