@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-22T17:20:41.222Z",
+	"lastFetched": "2026-03-22T17:21:29.972Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -17367,11 +17367,11 @@
 							"pageViews": 70
 						},
 						{
-							"country": "MX",
+							"country": "CN",
 							"pageViews": 50
 						},
 						{
-							"country": "CO",
+							"country": "MX",
 							"pageViews": 50
 						}
 					],
@@ -17513,11 +17513,11 @@
 					"pageViews": 70
 				},
 				{
-					"country": "MX",
+					"country": "CN",
 					"pageViews": 50
 				},
 				{
-					"country": "CO",
+					"country": "MX",
 					"pageViews": 50
 				}
 			],
@@ -25560,11 +25560,11 @@
 							"pageViews": 50
 						},
 						{
-							"country": "SG",
+							"country": "AU",
 							"pageViews": 40
 						},
 						{
-							"country": "AU",
+							"country": "SG",
 							"pageViews": 40
 						},
 						{
@@ -25670,11 +25670,11 @@
 					"pageViews": 50
 				},
 				{
-					"country": "SG",
+					"country": "AU",
 					"pageViews": 40
 				},
 				{
-					"country": "AU",
+					"country": "SG",
 					"pageViews": 40
 				},
 				{
