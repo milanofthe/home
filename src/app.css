@@ -249,6 +249,19 @@
 	color: #6366f1;
 }
 
+.code-grid-heading-rapidpassives {
+	color: #d9513c;
+	font-weight: bold;
+}
+
+.code-grid-link-rapidpassives {
+	color: #d9513c;
+}
+
+.code-grid-frame-rapidpassives {
+	color: #d9513c;
+}
+
 /* Hovered word highlight: brightens the filler token under the cursor */
 .hovered-word {
 	position: absolute;

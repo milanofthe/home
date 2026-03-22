@@ -40,6 +40,13 @@ export default {
 					dark: '#4f46e5',
 					light: '#818cf8',
 					glow: 'rgba(99, 102, 241, 0.15)'
+				},
+				// RapidPassives brand
+				rapidpassives: {
+					DEFAULT: '#d9513c',
+					dark: '#b8402f',
+					light: '#e5634f',
+					glow: 'rgba(217, 81, 60, 0.15)'
 				}
 			},
 			fontFamily: {

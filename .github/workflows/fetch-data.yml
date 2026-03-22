@@ -34,6 +34,7 @@ jobs:
           CF_SITE_TAG_PATHSIM_DOCS: ${{ secrets.CF_SITE_TAG_PATHSIM_DOCS }}
           CF_SITE_TAG_PATHVIEW: ${{ secrets.CF_SITE_TAG_PATHVIEW }}
           CF_SITE_TAG_PYSIMHUB: ${{ secrets.CF_SITE_TAG_PYSIMHUB }}
+          CF_SITE_TAG_RAPIDPASSIVES: ${{ secrets.CF_SITE_TAG_RAPIDPASSIVES }}
           CF_SITE_TAG_MILANROTHER: ${{ secrets.CF_SITE_TAG_MILANROTHER }}
 
       - name: Fetch GitHub stats

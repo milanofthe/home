@@ -4,10 +4,11 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives';
+		themeParam?: boolean;
 	}
 
-	let { id, name, url, screenshot, color }: Props = $props();
+	let { id, name, url, screenshot, color, themeParam = true }: Props = $props();
 
 	let tileElement: HTMLAnchorElement;
 
@@ -24,13 +25,14 @@
 
 	const glowColors = {
 		pathsim: 'rgba(0, 112, 192, 0.3)',
-		pysimhub: 'rgba(99, 102, 241, 0.3)'
+		pysimhub: 'rgba(99, 102, 241, 0.3)',
+		rapidpassives: 'rgba(217, 81, 60, 0.3)'
 	};
 </script>
 
 <a
 	bind:this={tileElement}
-	href="{url}?theme=dark"
+	href="{url}{themeParam ? '?theme=dark' : ''}"
 	target="_blank"
 	rel="noopener"
 	onmousemove={handleTilt}
