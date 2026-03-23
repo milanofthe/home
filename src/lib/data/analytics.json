@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-23T13:35:52.461Z",
+	"lastFetched": "2026-03-23T13:40:57.719Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -33552,7 +33552,18 @@
 		"rapidpassives.org": {
 			"name": "rapidpassives.org",
 			"color": "#d9513c",
-			"timeseries": [],
+			"timeseries": [
+				{
+					"datetime": "2026-03-22T20:00:00",
+					"pageViews": 20,
+					"visits": 20
+				},
+				{
+					"datetime": "2026-03-23T12:00:00",
+					"pageViews": 10,
+					"visits": 10
+				}
+			],
 			"aggregateHistory": [
 				{
 					"date": "2026-03-22",
@@ -33563,16 +33574,88 @@
 				},
 				{
 					"date": "2026-03-23",
-					"topPages": [],
-					"topReferrers": [],
-					"topCountries": [],
-					"topBrowsers": []
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 20
+						},
+						{
+							"path": "/symmetric-transformer",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "milanrother.com",
+							"pageViews": 10
+						}
+					],
+					"topCountries": [
+						{
+							"country": "NL",
+							"pageViews": 10
+						},
+						{
+							"country": "US",
+							"pageViews": 10
+						},
+						{
+							"country": "DE",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 20
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 10
+						}
+					]
 				}
 			],
-			"topPages": [],
-			"topReferrers": [],
-			"topCountries": [],
-			"topBrowsers": []
+			"topPages": [
+				{
+					"path": "/",
+					"pageViews": 20
+				},
+				{
+					"path": "/symmetric-transformer",
+					"pageViews": 10
+				}
+			],
+			"topReferrers": [
+				{
+					"referrer": "milanrother.com",
+					"pageViews": 10
+				}
+			],
+			"topCountries": [
+				{
+					"country": "NL",
+					"pageViews": 10
+				},
+				{
+					"country": "US",
+					"pageViews": 10
+				},
+				{
+					"country": "DE",
+					"pageViews": 10
+				}
+			],
+			"topBrowsers": [
+				{
+					"browser": "Chrome",
+					"pageViews": 20
+				},
+				{
+					"browser": "ChromeHeadless",
+					"pageViews": 10
+				}
+			]
 		},
 		"milanrother.com": {
 			"name": "milanrother.com",
