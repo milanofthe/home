@@ -36,6 +36,7 @@ jobs:
           CF_SITE_TAG_PYSIMHUB: ${{ secrets.CF_SITE_TAG_PYSIMHUB }}
           CF_SITE_TAG_RAPIDPASSIVES: ${{ secrets.CF_SITE_TAG_RAPIDPASSIVES }}
           CF_SITE_TAG_MILANROTHER: ${{ secrets.CF_SITE_TAG_MILANROTHER }}
+          CF_SITE_TAG_CODEGEN: ${{ secrets.CF_SITE_TAG_CODEGEN }}
 
       - name: Fetch GitHub stats
         run: npm run fetch-stats

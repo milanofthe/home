@@ -35,6 +35,12 @@ export const sites = [
 		hostname: 'milanrother.com',
 		siteTag: process.env.CF_SITE_TAG_MILANROTHER || '',
 		color: '#00d9c0' // Teal brand color
+	},
+	{
+		name: 'code.pathsim.org',
+		hostname: 'code.pathsim.org',
+		siteTag: process.env.CF_SITE_TAG_CODEGEN || '',
+		color: '#0070c0' // PathSim brand color
 	}
 ];
 
