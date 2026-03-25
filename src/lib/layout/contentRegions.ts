@@ -272,7 +272,7 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 				frameColor: 'pysimhub',
 				tiles: [
 					{ id: 'pysimhub-io', label: 'PySimHub' },
-					{ id: 'pysimhub-pathsim', label: 'PathSim' }
+					{ id: 'pysimhub-pathsim', label: 'Project Page' }
 				],
 				embeddedRows: 10,
 				embeddedCols: 34,
