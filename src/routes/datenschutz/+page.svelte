@@ -3,7 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>Datenschutzerklaerung - Milan Rother</title>
+	<title>Datenschutz — Milan Rother</title>
+	<link rel="canonical" href="https://milanrother.com/datenschutz" />
 </svelte:head>
 
 <Navigation />

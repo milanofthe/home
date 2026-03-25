@@ -3,7 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>Impressum - Milan Rother</title>
+	<title>Impressum — Milan Rother</title>
+	<link rel="canonical" href="https://milanrother.com/impressum" />
 </svelte:head>
 
 <Navigation />
