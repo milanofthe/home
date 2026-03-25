@@ -19,8 +19,9 @@ const sites = [
 	{ id: 'docs-pathsim-org', url: 'https://docs.pathsim.org' },
 	{ id: 'view-pathsim-org', url: 'https://view.pathsim.org' },
 	{ id: 'pysimhub-io', url: 'https://pysimhub.io' },
+	{ id: 'pysimhub-pathsim', url: 'https://pysimhub.io/projects/pathsim/' },
 	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true },
-	{ id: 'rapidpassives-transformer', url: 'https://rapidpassives.org/symmetric-transformer', darkOnly: true }
+	{ id: 'rapidpassives-transformer', url: 'https://rapidpassives.org/generator/symmetric-transformer', darkOnly: true }
 ];
 
 const themes = ['dark', 'light'];
