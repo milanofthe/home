@@ -33,7 +33,7 @@
 		'view-pathsim-org': { name: 'PathView', url: 'https://view.pathsim.org', screenshot: '/screenshots/view-pathsim-org.png', color: 'pathsim' },
 		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' },
 		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
-		'rapidpassives-transformer': { name: 'Symmetric Transformer', url: 'https://rapidpassives.org/symmetric-transformer', screenshot: '/screenshots/rapidpassives-transformer.png', color: 'rapidpassives', themeParam: false }
+		'rapidpassives-transformer': { name: 'Symmetric Transformer', url: 'https://rapidpassives.org/generator/symmetric-transformer', screenshot: '/screenshots/rapidpassives-transformer.png', color: 'rapidpassives', themeParam: false }
 	};
 
 	// Video tile data
