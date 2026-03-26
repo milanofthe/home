@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-26T02:44:13.992Z",
+	"lastFetched": "2026-03-26T05:42:45.461Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -18473,11 +18473,11 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 380
+							"pageViews": 390
 						},
 						{
 							"path": "/pathsim",
-							"pageViews": 230
+							"pageViews": 240
 						},
 						{
 							"path": "/pathsim/",
@@ -18530,15 +18530,15 @@
 							"pageViews": 90
 						},
 						{
+							"referrer": "pathsim.readthedocs.io",
+							"pageViews": 70
+						},
+						{
 							"referrer": "github.com",
 							"pageViews": 60
 						},
 						{
 							"referrer": "com.linkedin.android",
-							"pageViews": 50
-						},
-						{
-							"referrer": "pathsim.readthedocs.io",
 							"pageViews": 50
 						},
 						{
@@ -18595,7 +18595,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 790
+							"pageViews": 810
 						},
 						{
 							"browser": "ChromeMobile",
@@ -18610,7 +18610,7 @@
 							"pageViews": 390
 						},
 						{
-							"browser": "Firefox",
+							"browser": "Unknown",
 							"pageViews": 120
 						}
 					]
@@ -18619,11 +18619,11 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 380
+					"pageViews": 390
 				},
 				{
 					"path": "/pathsim",
-					"pageViews": 230
+					"pageViews": 240
 				},
 				{
 					"path": "/pathsim/",
@@ -18676,15 +18676,15 @@
 					"pageViews": 90
 				},
 				{
+					"referrer": "pathsim.readthedocs.io",
+					"pageViews": 70
+				},
+				{
 					"referrer": "github.com",
 					"pageViews": 60
 				},
 				{
 					"referrer": "com.linkedin.android",
-					"pageViews": 50
-				},
-				{
-					"referrer": "pathsim.readthedocs.io",
 					"pageViews": 50
 				},
 				{
@@ -18741,7 +18741,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 790
+					"pageViews": 810
 				},
 				{
 					"browser": "ChromeMobile",
@@ -18756,7 +18756,7 @@
 					"pageViews": 390
 				},
 				{
-					"browser": "Firefox",
+					"browser": "Unknown",
 					"pageViews": 120
 				}
 			]
@@ -27250,13 +27250,13 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2330
+							"pageViews": 2320
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 500
+							"pageViews": 490
 						},
 						{
 							"referrer": "github.com",
@@ -27298,7 +27298,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 360
+							"pageViews": 350
 						},
 						{
 							"country": "GB",
@@ -27348,7 +27348,7 @@
 						},
 						{
 							"browser": "Firefox",
-							"pageViews": 220
+							"pageViews": 210
 						},
 						{
 							"browser": "ChromeMobile",
@@ -27360,13 +27360,13 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2330
+					"pageViews": 2320
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 500
+					"pageViews": 490
 				},
 				{
 					"referrer": "github.com",
@@ -27408,7 +27408,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 360
+					"pageViews": 350
 				},
 				{
 					"country": "GB",
@@ -27458,7 +27458,7 @@
 				},
 				{
 					"browser": "Firefox",
-					"pageViews": 220
+					"pageViews": 210
 				},
 				{
 					"browser": "ChromeMobile",
@@ -35568,7 +35568,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 390
+							"pageViews": 400
 						},
 						{
 							"path": "/generator/mom-capacitor",
@@ -35659,6 +35659,10 @@
 							"pageViews": 30
 						},
 						{
+							"country": "GB",
+							"pageViews": 30
+						},
+						{
 							"country": "EG",
 							"pageViews": 30
 						},
@@ -35667,18 +35671,14 @@
 							"pageViews": 20
 						},
 						{
-							"country": "GB",
-							"pageViews": 20
-						},
-						{
-							"country": "IT",
+							"country": "CH",
 							"pageViews": 20
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 250
+							"pageViews": 260
 						},
 						{
 							"browser": "Edge",
@@ -35702,7 +35702,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 390
+					"pageViews": 400
 				},
 				{
 					"path": "/generator/mom-capacitor",
@@ -35793,6 +35793,10 @@
 					"pageViews": 30
 				},
 				{
+					"country": "GB",
+					"pageViews": 30
+				},
+				{
 					"country": "EG",
 					"pageViews": 30
 				},
@@ -35801,18 +35805,14 @@
 					"pageViews": 20
 				},
 				{
-					"country": "GB",
-					"pageViews": 20
-				},
-				{
-					"country": "IT",
+					"country": "CH",
 					"pageViews": 20
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 250
+					"pageViews": 260
 				},
 				{
 					"browser": "Edge",
@@ -42939,11 +42939,11 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 290
+							"pageViews": 300
 						},
 						{
 							"path": "/dashboard/",
-							"pageViews": 200
+							"pageViews": 210
 						}
 					],
 					"topReferrers": [
@@ -42987,7 +42987,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 300
+							"pageViews": 310
 						},
 						{
 							"country": "US",
@@ -42995,7 +42995,7 @@
 						},
 						{
 							"country": "IN",
-							"pageViews": 20
+							"pageViews": 30
 						},
 						{
 							"country": "TT",
@@ -43029,11 +43029,11 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 210
+							"pageViews": 220
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 110
+							"pageViews": 120
 						},
 						{
 							"browser": "MobileSafari",
@@ -43053,11 +43053,11 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 290
+					"pageViews": 300
 				},
 				{
 					"path": "/dashboard/",
-					"pageViews": 200
+					"pageViews": 210
 				}
 			],
 			"topReferrers": [
@@ -43101,7 +43101,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 300
+					"pageViews": 310
 				},
 				{
 					"country": "US",
@@ -43109,7 +43109,7 @@
 				},
 				{
 					"country": "IN",
-					"pageViews": 20
+					"pageViews": 30
 				},
 				{
 					"country": "TT",
@@ -43143,11 +43143,11 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 210
+					"pageViews": 220
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 110
+					"pageViews": 120
 				},
 				{
 					"browser": "MobileSafari",
