@@ -432,6 +432,7 @@
 							height="100%"
 							speed="1"
 							phi="30"
+							preset="sky130"
 						></gds-viewer>
 					</div>
 				</div>
