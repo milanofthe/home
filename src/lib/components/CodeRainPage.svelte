@@ -430,7 +430,8 @@
 							explode
 							width="100%"
 							height="100%"
-							speed="0.5"
+							speed="1"
+							phi="30"
 						></gds-viewer>
 					</div>
 				</div>
