@@ -20,7 +20,7 @@ const sites = [
 	{ id: 'view-pathsim-org', url: 'https://view.pathsim.org' },
 	{ id: 'pysimhub-io', url: 'https://pysimhub.io' },
 	{ id: 'pysimhub-pathsim', url: 'https://pysimhub.io/projects/pathsim/' },
-	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true }
+	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000 }
 ];
 
 const themes = ['dark', 'light'];
@@ -35,7 +35,7 @@ async function captureScreenshot(browser, site, theme) {
 	await page.setViewport({ width: viewport.width, height: viewport.height, deviceScaleFactor: 2 });
 
 	try {
-		await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+		await page.goto(url, { waitUntil: site.waitUntil || 'networkidle2', timeout: site.timeout || 30000 });
 		await new Promise((resolve) => setTimeout(resolve, 1500));
 
 		const filename = `${site.id}-${theme}.png`;
