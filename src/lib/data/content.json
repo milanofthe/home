@@ -1,0 +1,99 @@
+{
+	"hero": {
+		"heading": "MILAN ROTHER",
+		"tagline": "I build simulation tools end-to-end. Numerical methods, infrastructure, and the interfaces to use them.",
+		"cta": "[ Get in Touch -> ]   [ View Projects ]"
+	},
+	"about": {
+		"heading": "WHO AM I",
+		"paragraphs": [
+			"I build simulation infrastructure and the tools to use it. The numerics, the methods, the implementation, and the UI.",
+			"Currently consulting for MIT Plasma Science & Fusion Center, building the simulation stack for nuclear fusion fuel-cycle modeling.",
+			"M.Sc. Electrical Engineering. Deep background in numerical methods, dynamical systems, and scientific computing. My work spans from ODE solvers and EM methods in C and Rust to full browser-based engineering tools in SvelteKit.",
+			"PathSim is my open platform for dynamical system modeling. Collaborating with JSBSim, scikit-rf, python-control, and MIT PSFC. Check LinkedIn to see what I'm up to."
+		],
+		"links": "GitHub   LinkedIn   X"
+	},
+	"projects": {
+		"heading": "PROJECTS",
+		"intro": "Building open-source infrastructure for system modeling and simulation.",
+		"items": [
+			{
+				"id": "pathsim",
+				"heading": "PathSim",
+				"headingType": "pathsim",
+				"paragraphs": [
+					"A pure-Python framework for modeling and simulating dynamical systems. Built from first principles with custom solvers, an event system, and a modular block-diagram API.",
+					"Published in JOSS. Adopted by JSBSim for flight dynamics and used at MIT PSFC for nuclear fusion fuel-cycle modeling."
+				],
+				"statsTemplate": "{stars} stars / {forks} forks",
+				"statsSource": "pathsim"
+			},
+			{
+				"id": "pathview",
+				"heading": "PathView",
+				"headingType": "pathsim",
+				"paragraphs": [
+					"A browser-based visual editor for PathSim models. Drag-and-drop block diagrams, live simulation preview, and instant sharing. Built with SvelteKit, SvelteFlow, and Pyodide."
+				],
+				"statsTemplate": "{stars} stars / {forks} forks",
+				"statsSource": "pathview"
+			},
+			{
+				"id": "pysimhub",
+				"heading": "PySimHub",
+				"headingType": "pysimhub",
+				"paragraphs": [
+					"An open community catalog bridging Python's scattered simulation communities. An awesome list that's also awesome to use."
+				],
+				"statsTemplate": "{projects} projects / {cumulativeStars} cumulative stars",
+				"statsSource": "pysimhub"
+			},
+			{
+				"id": "rapidpassives",
+				"heading": "RapidPassives",
+				"headingType": "rapidpassives",
+				"paragraphs": [
+					"RFIC passive design tool. Browser-based layout generation with real-time preview, GDS export, and integrated MOM solver."
+				],
+				"statsText": "rapidpassives.org"
+			}
+		]
+	},
+	"services": {
+		"heading": "SERVICES",
+		"intro": "I help engineering teams answer strategic questions and build features in the simulation modeling and scientific UI/UX domain.",
+		"categories": [
+			{
+				"heading": "// simulation infrastructure",
+				"text": "Custom solvers, model architectures, and simulation pipelines. From numerical methods to deployment. Python, C, Rust, WASM. Including Simulink migration to open-source."
+			},
+			{
+				"heading": "// scientific UI/UX",
+				"text": "Browser-based tools for engineering workflows. Interactive visualization, model editors, and dashboards. SvelteKit, TypeScript, Pyodide."
+			},
+			{
+				"heading": "// PathSim integration & support",
+				"text": "Adopt PathSim for your domain. Custom blocks, solver tuning, toolbox development. Ongoing support contracts available."
+			},
+			{
+				"heading": "// digital twin & co-simulation",
+				"text": "FMU/FMI-compliant architectures connecting simulation models to real-time sensor data and control systems. Standards-based interoperability across platforms."
+			},
+			{
+				"heading": "// training & workshops",
+				"text": "Hands-on Python simulation workshops for your team. From basics to advanced system modeling. 1-2 days, remote or on-site."
+			}
+		],
+		"closing": "I scope work to weekly sprints and multi-week projects. Let's talk about what you need."
+	},
+	"contact": {
+		"heading": "GET IN TOUCH",
+		"intro": "Have a project in mind or want to discuss your simulation challenges? Write me or use the form below.",
+		"email": "info@milanrother.com",
+		"privacy": "Your data is processed per our privacy policy."
+	},
+	"footer": {
+		"line": "Milan Rother   Impressum  Datenschutz   Email  GitHub  LinkedIn  X   (c) 2026"
+	}
+}

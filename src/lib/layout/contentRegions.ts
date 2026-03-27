@@ -1,6 +1,7 @@
 // Declarative content structure for the code rain grid
-// Each region defines what content goes where in the grid
+// Content text lives in content.json — this file handles layout and structure
 
+import contentData from '$lib/data/content.json';
 import defaultStats from '$lib/data/github-stats.json';
 
 export interface GitHubStats {
@@ -31,438 +32,229 @@ export interface ContentSection {
 	regions: ContentRegion[];
 }
 
+// --- Region builder helpers ---
+
+const spacer = (): ContentRegion => ({ type: 'spacer', lines: [''] });
+
+const heading = (text: string, type: RegionType = 'heading'): ContentRegion => ({
+	type, lines: [text], align: 'center'
+});
+
+const paragraph = (text: string): ContentRegion => ({
+	type: 'paragraph', lines: [text], align: 'center'
+});
+
+const linkLine = (text: string, type: RegionType = 'link-line'): ContentRegion => ({
+	type, lines: [text], align: 'center'
+});
+
+// --- Stats template resolution ---
+
+function resolveStats(template: string, stats: Record<string, number | undefined>): string {
+	return template.replace(/\{(\w+)\}/g, (_, key) => String(stats[key] ?? 0));
+}
+
+// --- Embedded block definitions (layout, not content) ---
+
+const PROJECT_EMBEDS: Record<string, ContentRegion> = {
+	pathsim: {
+		type: 'embedded', lines: [], frameColor: 'pathsim',
+		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		tiles: [{ id: 'pathsim-org', label: 'PathSim' }, { id: 'docs-pathsim-org', label: 'Docs' }]
+	},
+	pathview: {
+		type: 'embedded', lines: [], frameColor: 'pathsim',
+		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		tiles: [{ id: 'pathview-trailer', label: 'Demo' }, { id: 'view-pathsim-org', label: 'PathView' }]
+	},
+	pysimhub: {
+		type: 'embedded', lines: [], frameColor: 'pysimhub',
+		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		tiles: [{ id: 'pysimhub-io', label: 'PySimHub' }, { id: 'pysimhub-pathsim', label: 'Project Page' }]
+	},
+	rapidpassives: {
+		type: 'embedded', lines: [], frameColor: 'rapidpassives',
+		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		tiles: [{ id: 'rapidpassives-org', label: 'RapidPassives' }, { id: 'rapidpassives-transformer', label: 'Transformer' }]
+	}
+};
+
+const LINK_LINE_TYPES: Record<string, RegionType> = {
+	pathsim: 'link-line-pathsim',
+	pathview: 'link-line-pathsim',
+	pysimhub: 'link-line-pysimhub',
+	rapidpassives: 'link-line-rapidpassives'
+};
+
+const HEADING_TYPES: Record<string, RegionType> = {
+	pathsim: 'heading-pathsim',
+	pysimhub: 'heading-pysimhub',
+	rapidpassives: 'heading-rapidpassives'
+};
+
+// --- Section builders ---
+
+function buildHeroSection(): ContentSection {
+	const c = contentData.hero;
+	return {
+		fillerLinesBefore: 5,
+		regions: [
+			{
+				type: 'embedded', lines: [], embeddedId: 'photo',
+				label: 'milan.png', embeddedRows: 10, embeddedCols: 22, align: 'center'
+			},
+			spacer(),
+			heading(c.heading),
+			spacer(),
+			paragraph(c.tagline),
+			spacer(),
+			{ type: 'cta', lines: [c.cta], align: 'center' }
+		]
+	};
+}
+
+function buildAboutSection(): ContentSection {
+	const c = contentData.about;
+	const regions: ContentRegion[] = [
+		heading(c.heading),
+		spacer()
+	];
+	for (const p of c.paragraphs) {
+		regions.push(paragraph(p), spacer());
+	}
+	regions.push(linkLine(c.links));
+	return { id: 'about', fillerLinesBefore: 5, regions };
+}
+
+function buildProjectsSection(stats: GitHubStats): ContentSection {
+	const c = contentData.projects;
+	const regions: ContentRegion[] = [
+		heading(c.heading),
+		spacer(),
+		paragraph(c.intro),
+		spacer()
+	];
+
+	const statsMap: Record<string, Record<string, number | undefined>> = {
+		pathsim: stats.pathsim as unknown as Record<string, number | undefined>,
+		pathview: stats.pathview as unknown as Record<string, number | undefined>,
+		pysimhub: stats.pysimhub as unknown as Record<string, number | undefined>
+	};
+
+	for (const item of c.items) {
+		regions.push(spacer());
+		regions.push(heading(item.heading, HEADING_TYPES[item.headingType] ?? 'heading'));
+		regions.push(spacer());
+
+		for (const p of item.paragraphs) {
+			regions.push(paragraph(p), spacer());
+		}
+
+		// Stats line
+		if (item.statsTemplate && item.statsSource) {
+			const resolved = resolveStats(item.statsTemplate, statsMap[item.statsSource] ?? {});
+			regions.push(linkLine(resolved, LINK_LINE_TYPES[item.id] ?? 'link-line'));
+		} else if (item.statsText) {
+			regions.push(linkLine(item.statsText, LINK_LINE_TYPES[item.id] ?? 'link-line'));
+		}
+
+		regions.push(spacer());
+
+		// Embedded tiles
+		if (PROJECT_EMBEDS[item.id]) {
+			regions.push(PROJECT_EMBEDS[item.id]);
+		}
+
+		// Extra spacing between projects
+		regions.push(spacer(), spacer());
+	}
+
+	return { id: 'projects', fillerLinesBefore: 5, regions };
+}
+
+function buildServicesSection(): ContentSection {
+	const c = contentData.services;
+	const regions: ContentRegion[] = [
+		heading(c.heading),
+		spacer(),
+		paragraph(c.intro),
+		spacer(),
+		spacer()
+	];
+
+	for (const cat of c.categories) {
+		regions.push(heading(cat.heading));
+		regions.push(paragraph(cat.text));
+		regions.push(spacer());
+	}
+
+	regions.push(paragraph(c.closing));
+
+	return { id: 'services', fillerLinesBefore: 5, regions };
+}
+
+function buildContactSection(): ContentSection {
+	const c = contentData.contact;
+	return {
+		id: 'contact',
+		fillerLinesBefore: 5,
+		regions: [
+			heading(c.heading),
+			spacer(),
+			paragraph(c.intro),
+			spacer(),
+			linkLine(c.email),
+			spacer(),
+			spacer(),
+			{ type: 'content', lines: ['// name'], align: 'center' },
+			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-name' },
+			spacer(),
+			{ type: 'content', lines: ['// email'], align: 'center' },
+			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-email' },
+			spacer(),
+			{ type: 'content', lines: ['// subject'], align: 'center' },
+			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-subject' },
+			spacer(),
+			{ type: 'content', lines: ['// message'], align: 'center' },
+			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-message-1' },
+			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-message-2' },
+			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-message-3' },
+			spacer(),
+			{ type: 'cta', lines: ['[ SEND MESSAGE -> ]'], align: 'center' },
+			spacer(),
+			{ type: 'content', lines: [c.privacy], align: 'center' },
+		]
+	};
+}
+
+function buildFooterSection(): ContentSection {
+	return {
+		fillerLinesBefore: 3,
+		regions: [
+			{ type: 'footer-line', lines: [contentData.footer.line], align: 'center' },
+			spacer(),
+			spacer()
+		]
+	};
+}
+
+// --- Main builder ---
+
 export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 	const ps = stats?.pathsim ?? defaultStats.current.pathsim;
 	const pv = stats?.pathview ?? defaultStats.current.pathview ?? { stars: 0, forks: 0 };
 	const ph = stats?.pysimhub ?? defaultStats.current.pysimhub;
 
+	const resolvedStats: GitHubStats = { pathsim: ps, pathview: pv, pysimhub: ph };
+
 	return [
-	// Hero section
-	{
-		fillerLinesBefore: 5,
-		regions: [
-			{
-				type: 'embedded',
-				lines: [],
-				embeddedId: 'photo',
-				label: 'milan.png',
-				embeddedRows: 10,
-				embeddedCols: 22,
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'heading',
-				lines: ['MILAN ROTHER'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'I build simulation tools end-to-end --',
-					'numerical methods, infrastructure, and',
-					'the interfaces to use them.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'cta',
-				lines: ['[ Get in Touch -> ]   [ View Projects ]'],
-				align: 'center'
-			}
-		]
-	},
-
-	// About section
-	{
-		id: 'about',
-		fillerLinesBefore: 5,
-		regions: [
-			{
-				type: 'heading',
-				lines: ['WHO AM I'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'Simulation engineer. I build numerical',
-					'software and solve modeling problems for',
-					'teams working on complex physical systems.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'Currently consulting for MIT Plasma Science',
-					'& Fusion Center on nuclear fusion fuel-cycle',
-					'modeling -- building simulation infrastructure',
-					'for systems that don\'t fit in commercial tools.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'M.Sc. Electrical Engineering. Background',
-					'in numerical methods, system modeling,',
-					'sensitivity and failure mode analysis, and',
-					'compact modeling for physical systems.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'I built PathSim because modeling software',
-					'has a long history of vendor lock-in and',
-					'clunky UX. Pure Python, open source, and',
-					'designed from first principles.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'link-line',
-				lines: ['GitHub   LinkedIn'],
-				align: 'center'
-			}
-		]
-	},
-
-	// Projects section
-	{
-		id: 'projects',
-		fillerLinesBefore: 5,
-		regions: [
-			{
-				type: 'heading',
-				lines: ['PROJECTS'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'Building open-source infrastructure for',
-					'system modeling and simulation.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'heading-pathsim',
-				lines: ['PathSim'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'A pure-Python framework for modeling and',
-					'simulating dynamical systems. Built from',
-					'first principles with custom solvers, an event',
-					'system, and a modular block-diagram API.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'Published in JOSS. Adopted by JSBSim for',
-					'flight dynamics and used at MIT PSFC for',
-					'nuclear fusion fuel-cycle modeling.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'link-line-pathsim',
-				lines: [`${ps.stars} stars / ${ps.forks} forks`],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'embedded',
-				lines: [],
-				frameColor: 'pathsim',
-				embeddedRows: 10,
-				embeddedCols: 34,
-				tiles: [
-					{ id: 'pathsim-org', label: 'PathSim' },
-					{ id: 'docs-pathsim-org', label: 'Docs' }
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'spacer', lines: [''] },
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'heading-pathsim',
-				lines: ['PathView'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'A browser-based visual editor for PathSim',
-					'models. Drag-and-drop block diagrams, live',
-					'simulation preview, and instant sharing --',
-					'built with SvelteKit, SvelteFlow, and Pyodide.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'link-line-pathsim',
-				lines: [`${pv.stars} stars / ${pv.forks} forks`],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'embedded',
-				lines: [],
-				frameColor: 'pathsim',
-				embeddedRows: 10,
-				embeddedCols: 34,
-				tiles: [
-					{ id: 'pathview-trailer', label: 'Demo' },
-					{ id: 'view-pathsim-org', label: 'PathView' }
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'spacer', lines: [''] },
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'heading-pysimhub',
-				lines: ['PySimHub'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'An open community catalog bridging Python\'s',
-					'scattered simulation communities -- an awesome',
-					'list that\'s also awesome to use.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'link-line-pysimhub',
-				lines: [`${ph.projects} projects / ${ph.cumulativeStars} cumulative stars`],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'embedded',
-				lines: [],
-				frameColor: 'pysimhub',
-				tiles: [
-					{ id: 'pysimhub-io', label: 'PySimHub' },
-					{ id: 'pysimhub-pathsim', label: 'Project Page' }
-				],
-				embeddedRows: 10,
-				embeddedCols: 34,
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'spacer', lines: [''] },
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'heading-rapidpassives',
-				lines: ['RapidPassives'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'RFIC passive design tool. Browser-based layout',
-					'generation with real-time preview, GDS export,',
-					'and integrated MOM solver.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'link-line-rapidpassives',
-				lines: ['rapidpassives.org'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'embedded',
-				lines: [],
-				frameColor: 'rapidpassives',
-				embeddedRows: 10,
-				embeddedCols: 34,
-				tiles: [
-					{ id: 'rapidpassives-org', label: 'RapidPassives' },
-					{ id: 'rapidpassives-transformer', label: 'Transformer' }
-				],
-				align: 'center'
-			}
-		]
-	},
-
-	// Services section
-	{
-		id: 'services',
-		fillerLinesBefore: 5,
-		regions: [
-			{
-				type: 'heading',
-				lines: ['SERVICES'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'I help engineering teams build and scale',
-					'simulation infrastructure. Available for',
-					'consulting, development, and training.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'spacer', lines: [''] },
-			{ type: 'heading', lines: ['// simulink migration'], align: 'center' },
-			{
-				type: 'paragraph',
-				lines: [
-					'Move existing Simulink workflows to Python.',
-					'Reduce license costs, improve automation,',
-					'and eliminate vendor lock-in. Full model',
-					'validation against your existing results.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'heading', lines: ['// custom simulation'], align: 'center' },
-			{
-				type: 'paragraph',
-				lines: [
-					'Tailored models, solvers, and simulation',
-					'pipelines for your engineering domain.',
-					'From single-component ODEs to full',
-					'multi-domain system architectures.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'heading', lines: ['// digital twin & co-simulation'], align: 'center' },
-			{
-				type: 'paragraph',
-				lines: [
-					'FMU/FMI-compliant architectures connecting',
-					'simulation models to real-time sensor data',
-					'and control systems. Standards-based',
-					'interoperability across platforms.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'heading', lines: ['// simulation audit'], align: 'center' },
-			{
-				type: 'paragraph',
-				lines: [
-					'Review and validate your existing simulation',
-					'infrastructure. Identify numerical issues,',
-					'bottlenecks, and improvement opportunities.',
-					'Actionable recommendations, not just reports.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'heading', lines: ['// training & workshops'], align: 'center' },
-			{
-				type: 'paragraph',
-				lines: [
-					'Hands-on Python simulation workshops for',
-					'your team. From basics to advanced system',
-					'modeling. 1-2 days, remote or on-site.'
-				],
-				align: 'center'
-			},
-		]
-	},
-
-	// Contact section
-	{
-		id: 'contact',
-		fillerLinesBefore: 5,
-		regions: [
-			{
-				type: 'heading',
-				lines: ['GET IN TOUCH'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'paragraph',
-				lines: [
-					'Have a project in mind or want to discuss',
-					'your simulation challenges? Write me or',
-					'use the form below.'
-				],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{
-				type: 'link-line',
-				lines: ['info@milanrother.com'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'spacer', lines: [''] },
-			{ type: 'content', lines: ['// name'], align: 'center' },
-			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-name' },
-			{ type: 'spacer', lines: [''] },
-			{ type: 'content', lines: ['// email'], align: 'center' },
-			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-email' },
-			{ type: 'spacer', lines: [''] },
-			{ type: 'content', lines: ['// subject'], align: 'center' },
-			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-subject' },
-			{ type: 'spacer', lines: [''] },
-			{ type: 'content', lines: ['// message'], align: 'center' },
-			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-message-1' },
-			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-message-2' },
-			{ type: 'form-field', lines: ['> ________________________________________'], align: 'center', id: 'field-message-3' },
-			{ type: 'spacer', lines: [''] },
-			{ type: 'cta', lines: ['[ SEND MESSAGE -> ]'], align: 'center' },
-			{ type: 'spacer', lines: [''] },
-			{ type: 'content', lines: ['Your data is processed per our privacy policy.'], align: 'center' },
-		]
-	},
-
-	// Footer
-	{
-		fillerLinesBefore: 3,
-		regions: [
-			{
-				type: 'footer-line',
-				lines: ['Milan Rother   Impressum  Datenschutz   Email  GitHub  LinkedIn   (c) 2026'],
-				align: 'center'
-			},
-			{ type: 'spacer', lines: [''] },
-			{ type: 'spacer', lines: [''] }
-		]
-	}
-];
+		buildHeroSection(),
+		buildAboutSection(),
+		buildProjectsSection(resolvedStats),
+		buildServicesSection(),
+		buildContactSection(),
+		buildFooterSection()
+	];
 }
 
 // Default export for backward compatibility

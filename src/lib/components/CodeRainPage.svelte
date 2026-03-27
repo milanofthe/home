@@ -100,6 +100,7 @@
 		{ text: 'Email', types: ['footer'], href: 'mailto:info@milanrother.com' },
 		{ text: 'GitHub', types: ['link', 'footer'], href: 'https://github.com/milanofthe' },
 		{ text: 'LinkedIn', types: ['link', 'footer', 'content'], href: 'https://linkedin.com/in/milan-rother-648474183' },
+		{ text: 'X', types: ['link', 'footer'], href: 'https://x.com/Milan1115268' },
 		{ text: 'rapidpassives.org', types: ['link-rapidpassives'], href: 'https://rapidpassives.org' },
 	];
 

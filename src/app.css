@@ -179,6 +179,9 @@
 
 .code-grid-line {
 	overflow: hidden;
+	white-space: pre;
+	line-height: inherit;
+	height: 1lh;
 }
 
 .code-grid-filler {
@@ -272,15 +275,17 @@
 	z-index: 1;
 }
 
-/* Typewriter: filler-colored base with real-colored overlay that reveals L-to-R */
+/* Typewriter: filler-colored base with real-colored overlay stacked via CSS grid */
 .tw-wrapper {
-	position: relative;
+	display: inline-grid;
+	vertical-align: baseline;
+}
+
+.tw-wrapper > * {
+	grid-area: 1 / 1;
 }
 
 .tw-overlay {
-	position: absolute;
-	left: 0;
-	top: 0;
 	clip-path: inset(0 100% 0 0);
 }
 
