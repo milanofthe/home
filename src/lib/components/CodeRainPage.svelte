@@ -34,7 +34,7 @@
 		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' },
 		'pysimhub-pathsim': { name: 'Project Page', url: 'https://pysimhub.io/projects/pathsim/', screenshot: '/screenshots/pysimhub-pathsim.png', color: 'pysimhub' },
 		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
-		'rapidpassives-transformer': { name: 'Symmetric Transformer', url: 'https://rapidpassives.org/generator/symmetric-transformer', screenshot: '/screenshots/rapidpassives-transformer.png', color: 'rapidpassives', themeParam: false }
+		
 	};
 
 	// Video tile data
@@ -309,6 +309,12 @@
 	}
 
 	onMount(() => {
+		// Load GDS viewer web component
+		if (!document.querySelector('script[src*="gds-viewer"]')) {
+			const s = document.createElement('script');
+			s.src = 'https://rapidpassives.org/embed/gds-viewer.js';
+			document.head.appendChild(s);
+		}
 		computeLayout();
 
 		// Re-measure once fonts are ready (corrects char ratio if fallback was used)
@@ -414,6 +420,19 @@
 						src={info.src}
 						color={info.color}
 					/>
+				</div>
+			{:else if block.id === 'rapidpassives-transformer'}
+				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
+					<div style="width: 100%; height: 100%; border-radius: 8px; overflow: hidden;">
+						<gds-viewer
+							src="https://rapidpassives.org/embed/demo.gds"
+							rotate
+							explode
+							width="100%"
+							height="100%"
+							speed="0.5"
+						></gds-viewer>
+					</div>
 				</div>
 			{:else if tileInfo[block.id]}
 				{@const info = tileInfo[block.id]}
