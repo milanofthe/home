@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-27T02:46:24.630Z",
+	"lastFetched": "2026-03-27T05:43:53.301Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1609,6 +1609,11 @@
 					"datetime": "2026-03-26T24:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-03-27T08:00:00",
+					"pageViews": 5,
+					"visits": 5
 				}
 			],
 			"aggregateHistory": [
@@ -7984,7 +7989,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 770
+							"pageViews": 760
 						}
 					],
 					"topReferrers": [
@@ -8047,10 +8052,6 @@
 							"pageViews": 30
 						},
 						{
-							"country": "MX",
-							"pageViews": 30
-						},
-						{
 							"country": "PE",
 							"pageViews": 30
 						},
@@ -8065,6 +8066,10 @@
 						{
 							"country": "AU",
 							"pageViews": 20
+						},
+						{
+							"country": "MX",
+							"pageViews": 20
 						}
 					],
 					"topBrowsers": [
@@ -8078,7 +8083,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 150
+							"pageViews": 140
 						},
 						{
 							"browser": "Firefox",
@@ -8094,7 +8099,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 770
+					"pageViews": 760
 				}
 			],
 			"topReferrers": [
@@ -8157,10 +8162,6 @@
 					"pageViews": 30
 				},
 				{
-					"country": "MX",
-					"pageViews": 30
-				},
-				{
 					"country": "PE",
 					"pageViews": 30
 				},
@@ -8175,6 +8176,10 @@
 				{
 					"country": "AU",
 					"pageViews": 20
+				},
+				{
+					"country": "MX",
+					"pageViews": 20
 				}
 			],
 			"topBrowsers": [
@@ -8188,7 +8193,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 150
+					"pageViews": 140
 				},
 				{
 					"browser": "Firefox",
@@ -18786,7 +18791,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 410
+							"pageViews": 420
 						},
 						{
 							"path": "/pathsim",
@@ -18840,7 +18845,7 @@
 						},
 						{
 							"referrer": "pathsim.readthedocs.io",
-							"pageViews": 90
+							"pageViews": 100
 						},
 						{
 							"referrer": "view.pathsim.org",
@@ -18886,7 +18891,7 @@
 						},
 						{
 							"country": "CN",
-							"pageViews": 70
+							"pageViews": 80
 						},
 						{
 							"country": "ES",
@@ -18916,14 +18921,14 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 420
+							"pageViews": 430
 						},
 						{
 							"browser": "ChromeHeadless",
 							"pageViews": 390
 						},
 						{
-							"browser": "Unknown",
+							"browser": "Firefox",
 							"pageViews": 120
 						}
 					]
@@ -18932,7 +18937,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 410
+					"pageViews": 420
 				},
 				{
 					"path": "/pathsim",
@@ -18986,7 +18991,7 @@
 				},
 				{
 					"referrer": "pathsim.readthedocs.io",
-					"pageViews": 90
+					"pageViews": 100
 				},
 				{
 					"referrer": "view.pathsim.org",
@@ -19032,7 +19037,7 @@
 				},
 				{
 					"country": "CN",
-					"pageViews": 70
+					"pageViews": 80
 				},
 				{
 					"country": "ES",
@@ -19062,14 +19067,14 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 420
+					"pageViews": 430
 				},
 				{
 					"browser": "ChromeHeadless",
 					"pageViews": 390
 				},
 				{
-					"browser": "Unknown",
+					"browser": "Firefox",
 					"pageViews": 120
 				}
 			]
@@ -29083,6 +29088,11 @@
 					"datetime": "2026-03-26T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-03-27T08:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -36308,11 +36318,11 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 610
+							"pageViews": 630
 						},
 						{
 							"path": "/viewer",
-							"pageViews": 80
+							"pageViews": 90
 						},
 						{
 							"path": "/generator/mom-capacitor",
@@ -36358,6 +36368,10 @@
 						},
 						{
 							"referrer": "milanrother.com",
+							"pageViews": 30
+						},
+						{
+							"referrer": "www.google.com",
 							"pageViews": 20
 						},
 						{
@@ -36373,7 +36387,7 @@
 							"pageViews": 10
 						},
 						{
-							"referrer": "www.google.com",
+							"referrer": "wiki.yandex.ru",
 							"pageViews": 10
 						}
 					],
@@ -36388,7 +36402,7 @@
 						},
 						{
 							"country": "IN",
-							"pageViews": 70
+							"pageViews": 80
 						},
 						{
 							"country": "CH",
@@ -36403,30 +36417,30 @@
 							"pageViews": 50
 						},
 						{
-							"country": "IL",
-							"pageViews": 40
-						},
-						{
 							"country": "FR",
 							"pageViews": 40
 						},
 						{
-							"country": "SG",
-							"pageViews": 30
+							"country": "IL",
+							"pageViews": 40
 						},
 						{
 							"country": "EG",
+							"pageViews": 30
+						},
+						{
+							"country": "SG",
 							"pageViews": 30
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 340
+							"pageViews": 360
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 200
+							"pageViews": 210
 						},
 						{
 							"browser": "MobileSafari",
@@ -36446,11 +36460,11 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 610
+					"pageViews": 630
 				},
 				{
 					"path": "/viewer",
-					"pageViews": 80
+					"pageViews": 90
 				},
 				{
 					"path": "/generator/mom-capacitor",
@@ -36496,6 +36510,10 @@
 				},
 				{
 					"referrer": "milanrother.com",
+					"pageViews": 30
+				},
+				{
+					"referrer": "www.google.com",
 					"pageViews": 20
 				},
 				{
@@ -36511,7 +36529,7 @@
 					"pageViews": 10
 				},
 				{
-					"referrer": "www.google.com",
+					"referrer": "wiki.yandex.ru",
 					"pageViews": 10
 				}
 			],
@@ -36526,7 +36544,7 @@
 				},
 				{
 					"country": "IN",
-					"pageViews": 70
+					"pageViews": 80
 				},
 				{
 					"country": "CH",
@@ -36541,30 +36559,30 @@
 					"pageViews": 50
 				},
 				{
-					"country": "IL",
-					"pageViews": 40
-				},
-				{
 					"country": "FR",
 					"pageViews": 40
 				},
 				{
-					"country": "SG",
-					"pageViews": 30
+					"country": "IL",
+					"pageViews": 40
 				},
 				{
 					"country": "EG",
+					"pageViews": 30
+				},
+				{
+					"country": "SG",
 					"pageViews": 30
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 340
+					"pageViews": 360
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 200
+					"pageViews": 210
 				},
 				{
 					"browser": "MobileSafari",
@@ -38028,6 +38046,11 @@
 					"datetime": "2026-03-26T24:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-03-27T08:00:00",
+					"pageViews": 7,
+					"visits": 7
 				}
 			],
 			"aggregateHistory": [
@@ -44084,6 +44107,11 @@
 					"datetime": "2026-03-26T24:00:00",
 					"pageViews": 1,
 					"visits": 0
+				},
+				{
+					"datetime": "2026-03-27T08:00:00",
+					"pageViews": 3,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
