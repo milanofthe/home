@@ -8,7 +8,8 @@
 	import Navigation from '$lib/components/Navigation.svelte';
 	import Icons from '$lib/components/Icons.svelte';
 	import PlotlyChart from '$lib/components/PlotlyChart.svelte';
-	import localGithubStats from '$lib/data/github-stats.json';
+
+	// --- Types ---
 
 	interface SiteData {
 		name: string;
@@ -26,47 +27,31 @@
 	}
 
 	const DATA_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/analytics.json';
-	const STATS_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/github-stats.json';
+	const TEAL = '#00d9c0';
+	const TEAL_DIM = 'rgba(0, 217, 192, 0.15)';
 
-	interface StarHistoryEntry {
-		date: string;
-		stars: number;
-	}
-
-	interface GitHubStatsData {
-		current: {
-			pathsim: { stars: number; forks: number };
-			pathview: { stars: number; forks: number };
-			pysimhub: { projects: number; cumulativeStars: number };
-		};
-		starHistory: {
-			pathsim: StarHistoryEntry[];
-			pathview: StarHistoryEntry[];
-		};
-		fetchedAt: string | null;
-	}
+	// --- State ---
 
 	let loading = $state(true);
 	let error = $state<string | null>(null);
 	let analytics = $state<AnalyticsData>({ lastFetched: null, sites: {} });
-	let githubStats = $state<GitHubStatsData | null>(localGithubStats as unknown as GitHubStatsData);
+
+	type BinSize = '4h' | '1d' | '1w';
+	let selectedSite = $state<string | null>(null);
+	let binSize = $state<BinSize>('1d');
+
+	let siteList = $derived(Object.keys(analytics.sites));
+	let hasSites = $derived(siteList.length > 0);
+
+	// --- Data fetching ---
 
 	async function fetchData() {
 		loading = true;
 		error = null;
 		try {
-			const [analyticsRes, statsRes] = await Promise.all([
-				fetch(DATA_URL, { cache: 'no-store' }),
-				fetch(STATS_URL, { cache: 'no-store' })
-			]);
-			if (!analyticsRes.ok) throw new Error(`HTTP ${analyticsRes.status}`);
-			analytics = await analyticsRes.json();
-			if (statsRes.ok) {
-				const freshStats = await statsRes.json();
-				if (freshStats?.starHistory) {
-					githubStats = freshStats;
-				}
-			}
+			const res = await fetch(DATA_URL, { cache: 'no-store' });
+			if (!res.ok) throw new Error(`HTTP ${res.status}`);
+			analytics = await res.json();
 		} catch (e) {
 			error = e instanceof Error ? e.message : 'Failed to load data';
 		} finally {
@@ -74,49 +59,25 @@
 		}
 	}
 
-	onMount(() => {
-		fetchData();
-	});
+	onMount(() => { fetchData(); });
 
+	// --- Helpers ---
 
-	// Selected site state (null = all sites)
-	let selectedSite = $state<string | null>(null);
-
-	// Bin size toggle
-	type BinSize = '4h' | '1d' | '1w';
-	let binSize = $state<BinSize>('4h');
-
-	// List of available sites (reactive)
-	let siteList = $derived(Object.keys(analytics.sites));
-	let hasSites = $derived(siteList.length > 0);
-
-	// Get current site data
-	function getCurrentSiteData(): SiteData | null {
-		if (selectedSite && analytics.sites[selectedSite]) {
-			return analytics.sites[selectedSite];
-		}
-		return null;
+	function formatNumber(num: number): string {
+		if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+		if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+		return num.toLocaleString();
 	}
 
-	// Calculate all-time summary stats
-	function getSummary() {
-		if (selectedSite && analytics.sites[selectedSite]) {
-			const site = analytics.sites[selectedSite];
-			return {
-				pageViews: site.timeseries.reduce((sum, d) => sum + d.pageViews, 0),
-				visits: site.timeseries.reduce((sum, d) => sum + d.visits, 0)
-			};
-		}
-		let pageViews = 0;
-		let visits = 0;
-		for (const site of Object.values(analytics.sites)) {
-			pageViews += site.timeseries.reduce((sum, d) => sum + d.pageViews, 0);
-			visits += site.timeseries.reduce((sum, d) => sum + d.visits, 0);
-		}
-		return { pageViews, visits };
+	function formatDate(isoString: string | null): string {
+		if (!isoString) return 'never';
+		return new Date(isoString).toLocaleDateString('en-US', {
+			month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+		});
 	}
 
-	// Bar width in ms per bin size
+	// --- Time series aggregation ---
+
 	const barWidths: Record<BinSize, number> = {
 		'4h': 3.5 * 60 * 60 * 1000,
 		'1d': 22 * 60 * 60 * 1000,
@@ -125,8 +86,6 @@
 
 	let barWidthMs = $derived(barWidths[binSize]);
 
-	// For 4h bins, shift back 2h to center on the period
-	// For 1d/1w, the datetime is already set to midpoint during aggregation
 	function centerDatetime(datetime: string): string {
 		if (binSize === '4h') {
 			const date = new Date(datetime);
@@ -136,7 +95,6 @@
 		return datetime;
 	}
 
-	// Get Monday of the week for a given date (using UTC)
 	function getMonday(date: Date): Date {
 		const d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
 		const day = d.getUTCDay();
@@ -145,16 +103,13 @@
 		return d;
 	}
 
-	// Get bin key for a datetime
 	function getBinKey(datetime: string): string {
 		const date = new Date(datetime);
 		if (binSize === '4h') return datetime;
 		if (binSize === '1d') return date.toISOString().slice(0, 10);
-		// 1w: Monday of that week
 		return getMonday(date).toISOString().slice(0, 10);
 	}
 
-	// Aggregate timeseries into bins
 	function aggregateTimeseries(timeseries: Array<{ datetime: string; pageViews: number; visits: number }>) {
 		if (binSize === '4h') return timeseries;
 		const bins = new Map<string, { datetime: string; pageViews: number; visits: number }>();
@@ -165,12 +120,10 @@
 				existing.pageViews += d.pageViews;
 				existing.visits += d.visits;
 			} else {
-				// Place bar at midpoint: noon for daily, Thursday noon for weekly
 				let dt: string;
 				if (binSize === '1d') {
 					dt = key + 'T12:00:00';
 				} else {
-					// Mid-week: Monday + 3 days = Thursday
 					const monday = new Date(key + 'T12:00:00Z');
 					monday.setUTCDate(monday.getUTCDate() + 3);
 					dt = monday.toISOString().slice(0, 19);
@@ -181,436 +134,242 @@
 		return [...bins.values()];
 	}
 
-	// Build time series chart data for page views
-	function getPageViewsData() {
+	// --- Site colors: use teal for single site, site colors for stacked ---
+
+	function siteColor(site: SiteData): string {
+		return site.color || TEAL;
+	}
+
+	// --- Chart data builders ---
+
+	function getTimeseriesData(field: 'pageViews' | 'visits') {
 		if (selectedSite && analytics.sites[selectedSite]) {
 			const site = analytics.sites[selectedSite];
-			const color = site.color;
 			const agg = aggregateTimeseries(site.timeseries);
-			return [
-				{
-					x: agg.map((d) => centerDatetime(d.datetime)),
-					y: agg.map((d) => d.pageViews),
-					type: 'bar',
-					name: 'Page Views',
-					marker: { color, line: { width: 0 } },
-					width: barWidthMs
-				}
-			];
+			return [{
+				x: agg.map(d => centerDatetime(d.datetime)),
+				y: agg.map(d => d[field]),
+				type: 'bar',
+				name: field === 'pageViews' ? 'Page Views' : 'Visits',
+				marker: { color: siteColor(site), line: { width: 0 } },
+				width: barWidthMs
+			}];
 		}
-		// Stacked view for all sites
-		const traces: any[] = [];
-		const siteEntries = Object.entries(analytics.sites);
-		siteEntries.forEach(([hostname, site]) => {
-			const color = site.color;
+		return Object.entries(analytics.sites).map(([hostname, site]) => {
 			const agg = aggregateTimeseries(site.timeseries);
-			traces.push({
-				x: agg.map((d) => centerDatetime(d.datetime)),
-				y: agg.map((d) => d.pageViews),
+			return {
+				x: agg.map(d => centerDatetime(d.datetime)),
+				y: agg.map(d => d[field]),
 				type: 'bar',
 				name: hostname,
-				marker: { color, line: { width: 0 } },
+				marker: { color: siteColor(site), line: { width: 0 } },
 				width: barWidthMs
-			});
+			};
 		});
-		return traces;
 	}
 
-	// Build time series chart data for visits
-	function getVisitorsData() {
+	function getAggregateData(
+		getter: (site: SiteData) => Array<{ label: string; value: number }>
+	) {
+		if (selectedSite && analytics.sites[selectedSite]) {
+			const items = getter(analytics.sites[selectedSite]);
+			if (!items.length) return [];
+			return [{
+				x: items.map(d => d.value),
+				y: items.map(d => d.label),
+				type: 'bar',
+				orientation: 'h',
+				marker: { color: siteColor(analytics.sites[selectedSite]), line: { width: 0 } }
+			}];
+		}
+		const map = new Map<string, number>();
+		for (const site of Object.values(analytics.sites)) {
+			for (const item of getter(site)) {
+				map.set(item.label, (map.get(item.label) || 0) + item.value);
+			}
+		}
+		const combined = [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+		if (!combined.length) return [];
+		return [{
+			x: combined.map(d => d[1]),
+			y: combined.map(d => d[0]),
+			type: 'bar',
+			orientation: 'h',
+			marker: { color: TEAL, line: { width: 0 } }
+		}];
+	}
+
+	// --- Reactive chart data ---
+
+
+	// Build pages/visit ratio time series
+	function getPagesPerVisitData() {
+		function computeRatio(timeseries: Array<{ datetime: string; pageViews: number; visits: number }>) {
+			const agg = aggregateTimeseries(timeseries);
+			return agg.map(d => ({
+				datetime: centerDatetime(d.datetime),
+				ratio: d.visits > 0 ? Math.round((d.pageViews / d.visits) * 100) / 100 : 0
+			}));
+		}
+
 		if (selectedSite && analytics.sites[selectedSite]) {
 			const site = analytics.sites[selectedSite];
-			const color = site.color;
+			const ratios = computeRatio(site.timeseries);
+			return [{
+				x: ratios.map(d => d.datetime),
+				y: ratios.map(d => d.ratio),
+				type: 'bar',
+				name: 'Pages/Visit',
+				marker: { color: siteColor(analytics.sites[selectedSite]), line: { width: 0 } },
+				width: barWidthMs
+			}];
+		}
+		// All sites combined
+		const allBins = new Map<string, { pageViews: number; visits: number }>();
+		for (const site of Object.values(analytics.sites)) {
 			const agg = aggregateTimeseries(site.timeseries);
-			return [
-				{
-					x: agg.map((d) => centerDatetime(d.datetime)),
-					y: agg.map((d) => d.visits),
-					type: 'bar',
-					name: 'Visits',
-					marker: { color, line: { width: 0 } },
-					width: barWidthMs
+			for (const d of agg) {
+				const key = centerDatetime(d.datetime);
+				const existing = allBins.get(key);
+				if (existing) {
+					existing.pageViews += d.pageViews;
+					existing.visits += d.visits;
+				} else {
+					allBins.set(key, { pageViews: d.pageViews, visits: d.visits });
 				}
-			];
-		}
-		// Stacked view for all sites
-		const traces: any[] = [];
-		const siteEntries = Object.entries(analytics.sites);
-		siteEntries.forEach(([hostname, site]) => {
-			const color = site.color;
-			const agg = aggregateTimeseries(site.timeseries);
-			traces.push({
-				x: agg.map((d) => centerDatetime(d.datetime)),
-				y: agg.map((d) => d.visits),
-				type: 'bar',
-				name: hostname,
-				marker: { color, line: { width: 0 } },
-				width: barWidthMs
-			});
-		});
-		return traces;
-	}
-
-	// Build referrers bar chart
-	function getReferrersData() {
-		if (selectedSite && analytics.sites[selectedSite]) {
-			const site = analytics.sites[selectedSite];
-			if (!site.topReferrers?.length) return [];
-			return [{
-				x: site.topReferrers.map((d) => d.pageViews),
-				y: site.topReferrers.map((d) => d.referrer),
-				type: 'bar',
-				orientation: 'h',
-				marker: { color: site.color, line: { width: 0 } }
-			}];
-		}
-		const map = new Map<string, number>();
-		for (const site of Object.values(analytics.sites)) {
-			for (const r of site.topReferrers || []) {
-				map.set(r.referrer, (map.get(r.referrer) || 0) + r.pageViews);
 			}
 		}
-		const combined = [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
-		if (!combined.length) return [];
+		const sorted = [...allBins.entries()].sort((a, b) => a[0].localeCompare(b[0]));
 		return [{
-			x: combined.map((d) => d[1]),
-			y: combined.map((d) => d[0]),
+			x: sorted.map(d => d[0]),
+			y: sorted.map(d => d[1].visits > 0 ? Math.round((d[1].pageViews / d[1].visits) * 100) / 100 : 0),
 			type: 'bar',
-			orientation: 'h',
-			marker: { color: '#64748b', line: { width: 0 } }
+			name: 'Pages/Visit',
+			marker: { color: TEAL, line: { width: 0 } },
+			width: barWidthMs
 		}];
 	}
+	let pageViewsData = $derived(getTimeseriesData('pageViews'));
+	let visitsData = $derived(getTimeseriesData('visits'));
+	let pagesPerVisitData = $derived(getPagesPerVisitData());
 
-	// Build countries bar chart
-	function getCountriesData() {
+	let referrersData = $derived(getAggregateData(
+		s => (s.topReferrers || []).map(r => ({ label: r.referrer, value: r.pageViews }))
+	));
+	let countriesData = $derived(getAggregateData(
+		s => (s.topCountries || []).map(c => ({ label: c.country, value: c.pageViews }))
+	));
+	let pagesData = $derived(getAggregateData(
+		s => (s.topPages || []).map(p => ({ label: p.path, value: p.pageViews }))
+	));
+	let browsersData = $derived(getAggregateData(
+		s => (s.topBrowsers || []).map(b => ({ label: b.browser, value: b.pageViews }))
+	));
+
+	let summary = $derived(() => {
+		let pageViews = 0, visits = 0;
 		if (selectedSite && analytics.sites[selectedSite]) {
 			const site = analytics.sites[selectedSite];
-			if (!site.topCountries?.length) return [];
-			return [{
-				x: site.topCountries.map((d) => d.pageViews),
-				y: site.topCountries.map((d) => d.country),
-				type: 'bar',
-				orientation: 'h',
-				marker: { color: site.color, line: { width: 0 } }
-			}];
-		}
-		const map = new Map<string, number>();
-		for (const site of Object.values(analytics.sites)) {
-			for (const c of site.topCountries || []) {
-				map.set(c.country, (map.get(c.country) || 0) + c.pageViews);
+			pageViews = site.timeseries.reduce((sum, d) => sum + d.pageViews, 0);
+			visits = site.timeseries.reduce((sum, d) => sum + d.visits, 0);
+		} else {
+			for (const site of Object.values(analytics.sites)) {
+				pageViews += site.timeseries.reduce((sum, d) => sum + d.pageViews, 0);
+				visits += site.timeseries.reduce((sum, d) => sum + d.visits, 0);
 			}
 		}
-		const combined = [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
-		if (!combined.length) return [];
-		return [{
-			x: combined.map((d) => d[1]),
-			y: combined.map((d) => d[0]),
-			type: 'bar',
-			orientation: 'h',
-			marker: { color: '#64748b', line: { width: 0 } }
-		}];
-	}
+		return { pageViews, visits };
+	});
 
-	// Build pages bar chart
-	function getPagesData() {
+	let dayCount = $derived(() => {
 		if (selectedSite && analytics.sites[selectedSite]) {
-			const site = analytics.sites[selectedSite];
-			if (!site.topPages?.length) return [];
-			return [{
-				x: site.topPages.map((d) => d.pageViews),
-				y: site.topPages.map((d) => d.path),
-				type: 'bar',
-				orientation: 'h',
-				marker: { color: site.color, line: { width: 0 } }
-			}];
+			const ts = analytics.sites[selectedSite].timeseries;
+			if (ts.length === 0) return 0;
+			const first = ts[0].datetime.split('T')[0];
+			const last = ts[ts.length - 1].datetime.split('T')[0];
+			return Math.ceil((new Date(last).getTime() - new Date(first).getTime()) / (1000 * 60 * 60 * 24)) + 1;
 		}
-		const map = new Map<string, number>();
+		const allDates = new Set<string>();
 		for (const site of Object.values(analytics.sites)) {
-			for (const p of site.topPages || []) {
-				map.set(p.path, (map.get(p.path) || 0) + p.pageViews);
-			}
+			for (const d of site.timeseries) allDates.add(d.datetime.split('T')[0]);
 		}
-		const combined = [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
-		if (!combined.length) return [];
-		return [{
-			x: combined.map((d) => d[1]),
-			y: combined.map((d) => d[0]),
-			type: 'bar',
-			orientation: 'h',
-			marker: { color: '#64748b', line: { width: 0 } }
-		}];
-	}
+		return allDates.size;
+	});
 
-	// Build browsers bar chart
-	function getBrowsersData() {
-		if (selectedSite && analytics.sites[selectedSite]) {
-			const site = analytics.sites[selectedSite];
-			if (!site.topBrowsers?.length) return [];
-			return [{
-				x: site.topBrowsers.map((d) => d.pageViews),
-				y: site.topBrowsers.map((d) => d.browser),
-				type: 'bar',
-				orientation: 'h',
-				marker: { color: site.color, line: { width: 0 } }
-			}];
-		}
-		const map = new Map<string, number>();
-		for (const site of Object.values(analytics.sites)) {
-			for (const b of site.topBrowsers || []) {
-				map.set(b.browser, (map.get(b.browser) || 0) + b.pageViews);
-			}
-		}
-		const combined = [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
-		if (!combined.length) return [];
-		return [{
-			x: combined.map((d) => d[1]),
-			y: combined.map((d) => d[0]),
-			type: 'bar',
-			orientation: 'h',
-			marker: { color: '#64748b', line: { width: 0 } }
-		}];
-	}
-
-	function formatNumber(num: number): string {
-		if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
-		if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
-		return num.toLocaleString();
-	}
-
-	function formatDate(isoString: string | null): string {
-		if (!isoString) return 'Never';
-		return new Date(isoString).toLocaleDateString('en-US', {
-			month: 'short',
-			day: 'numeric',
-			hour: '2-digit',
-			minute: '2-digit'
-		});
-	}
-
-	// Star history tab state (null = all repos)
-	type StarRepo = 'pathsim' | 'pathview';
-	let selectedRepo = $state<StarRepo | null>(null);
-
-	const repoMeta: Record<StarRepo, { name: string; color: string; fillcolor: string }> = {
-		pathsim: { name: 'PathSim', color: '#0070c0', fillcolor: 'rgba(0, 112, 192, 0.08)' },
-		pathview: { name: 'PathView', color: '#0070c0', fillcolor: 'rgba(0, 112, 192, 0.08)' }
-	};
-
-	function hexToFill(hex: string): string {
-		const r = parseInt(hex.slice(1, 3), 16);
-		const g = parseInt(hex.slice(3, 5), 16);
-		const b = parseInt(hex.slice(5, 7), 16);
-		return `rgba(${r}, ${g}, ${b}, 0.08)`;
-	}
-
-	// Build combined "total" star history by merging both repos day-by-day
-	function getTotalStarHistory(): StarHistoryEntry[] {
-		if (!githubStats?.starHistory) return [];
-		const ps = githubStats.starHistory.pathsim || [];
-		const pv = githubStats.starHistory.pathview || [];
-
-		// Collect all unique dates
-		const dateSet = new Set<string>();
-		for (const e of ps) dateSet.add(e.date);
-		for (const e of pv) dateSet.add(e.date);
-		const allDates = [...dateSet].sort();
-
-		let lastPs = 0, lastPv = 0;
-		let psIdx = 0, pvIdx = 0;
-		const result: StarHistoryEntry[] = [];
-
-		for (const date of allDates) {
-			if (psIdx < ps.length && ps[psIdx].date === date) lastPs = ps[psIdx++].stars;
-			if (pvIdx < pv.length && pv[pvIdx].date === date) lastPv = pv[pvIdx++].stars;
-			result.push({ date, stars: lastPs + lastPv });
-		}
-		return result;
-	}
-
-	// Build star history chart data based on selected tab
-	function getStarHistoryData() {
-		if (!githubStats?.starHistory) return [];
-
-		if (selectedRepo) {
-			const meta = repoMeta[selectedRepo];
-			const history = githubStats.starHistory[selectedRepo];
-			if (!history?.length) return [];
-			return [{
-				x: history.map((d: StarHistoryEntry) => d.date),
-				y: history.map((d: StarHistoryEntry) => d.stars),
-				type: 'scatter',
-				mode: 'lines',
-				name: meta.name,
-				line: { color: meta.color, width: 2, shape: 'hv' },
-				fill: 'tozeroy',
-				fillcolor: meta.fillcolor,
-			}];
-		}
-
-		// "All" view: single combined line
-		const total = getTotalStarHistory();
-		if (!total.length) return [];
-		return [{
-			x: total.map((d: StarHistoryEntry) => d.date),
-			y: total.map((d: StarHistoryEntry) => d.stars),
-			type: 'scatter',
-			mode: 'lines',
-			name: 'Total',
-			line: { color: '#64748b', width: 2, shape: 'hv' },
-			fill: 'tozeroy',
-			fillcolor: 'rgba(100, 116, 139, 0.08)',
-		}];
-	}
-
-	// Star history summary stats
-	function getStarSummary() {
-		if (!githubStats?.current) return { stars: 0, repos: 0 };
-		if (selectedRepo) {
-			const r = githubStats.current[selectedRepo];
-			return { stars: r?.stars || 0, forks: r?.forks || 0 };
-		}
-		const ps = githubStats.current.pathsim;
-		const pv = githubStats.current.pathview;
-		return {
-			stars: (ps?.stars || 0) + (pv?.stars || 0),
-			forks: (ps?.forks || 0) + (pv?.forks || 0)
-		};
-	}
-
-	// Reactive values
-	let summary = $derived(getSummary());
-	let pageViewsData = $derived(getPageViewsData());
-	let visitorsData = $derived(getVisitorsData());
-	let referrersData = $derived(getReferrersData());
-	let countriesData = $derived(getCountriesData());
-	let pagesData = $derived(getPagesData());
-	let browsersData = $derived(getBrowsersData());
-	let currentSite: SiteData | null = $derived(getCurrentSiteData());
-	let starHistoryData = $derived(getStarHistoryData());
-	let starSummary = $derived(getStarSummary());
-
-	// Layout for unified hover and stacked bars in all view
 	const allSitesLayout = {
 		hovermode: 'x unified' as const,
 		barmode: 'stack' as const
+	};
+
+	const hBarLayout = {
+		height: 200,
+		margin: { t: 0, r: 10, b: 20, l: 0 },
+		yaxis: { automargin: true }
 	};
 </script>
 
 <Navigation />
 
-<main class="bg-charcoal min-h-screen pt-20 pb-12">
-	<div class="max-w-5xl mx-auto px-4">
-		<!-- Header -->
-		<div class="flex items-baseline justify-between mb-8">
-			<h1 class="font-display text-2xl font-semibold text-cream/90">Analytics</h1>
-			{#if hasSites}
-				<span class="text-xs text-cream/40">Updated {formatDate(analytics.lastFetched)}</span>
-			{/if}
-		</div>
+<main class="min-h-screen pt-20 pb-12" style="background: #0f0f0f;">
+	<div class="max-w-5xl mx-auto px-4 font-mono">
 
-		<!-- Star History Section (always available from build-time data) -->
-		{#if githubStats?.starHistory}
-			<div class="mb-10">
-				<!-- Repo Tabs -->
-				<div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-					<div class="flex flex-wrap gap-1.5">
-						<button
-							class="px-3 py-1.5 rounded text-sm transition-colors {selectedRepo === null
-								? 'bg-cream/10 text-cream'
-								: 'text-cream/50 hover:text-cream/70'}"
-							onclick={() => (selectedRepo = null)}
-						>
-							All
-						</button>
-						{#each Object.entries(repoMeta) as [key, meta]}
-							<button
-								class="px-3 py-1.5 rounded text-sm transition-colors {selectedRepo === key
-									? 'bg-cream/10 text-cream'
-									: 'text-cream/50 hover:text-cream/70'}"
-								onclick={() => (selectedRepo = key as StarRepo)}
-							>
-								{meta.name}
-							</button>
-						{/each}
-					</div>
-				</div>
-
-				<!-- Summary -->
-				<div class="flex gap-8 mb-8 text-sm">
-					<div>
-						<span class="text-cream/90 font-medium text-lg">{formatNumber(starSummary.stars)}</span>
-						<span class="text-cream/40 ml-1.5">stars</span>
-					</div>
-					<div>
-						<span class="text-cream/90 font-medium text-lg">{formatNumber(starSummary.forks)}</span>
-						<span class="text-cream/40 ml-1.5">forks</span>
-					</div>
-				</div>
-
-				<!-- Chart -->
-				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-					{#key `${selectedRepo}-${githubStats}`}
-						<PlotlyChart
-							data={starHistoryData}
-							layout={{
-								height: 180,
-								margin: { t: 5, r: 5, b: 45, l: 35 }
-							}}
-							class="w-full"
-						/>
-					{/key}
-				</div>
-			</div>
-		{/if}
+		
 
 		{#if loading}
-			<!-- Loading State -->
-			<div class="text-center py-16">
-				<div class="w-6 h-6 border-2 border-cream/20 border-t-cream/60 rounded-full animate-spin mx-auto mb-3"></div>
-				<p class="text-cream/40 text-sm">Loading analytics...</p>
+			<div class="text-center py-20">
+				<div class="w-5 h-5 border border-current border-t-transparent rounded-full animate-spin mx-auto mb-3"
+					style="color: {TEAL};"></div>
+				<p class="text-xs" style="color: rgba(240, 239, 233, 0.3);">loading...</p>
 			</div>
+
 		{:else if error}
-			<!-- Error State -->
-			<div class="text-center py-16">
-				<Icons name="chart" class="w-8 h-8 text-red-400/60 mx-auto mb-3" />
-				<p class="text-cream/60 text-sm mb-4">Failed to load analytics</p>
-				<p class="text-cream/30 text-xs mb-4">{error}</p>
+			<div class="text-center py-20">
+				<span class="block mx-auto mb-3 w-6 h-6" style="color: rgba(240, 239, 233, 0.2);"><Icons name="chart" class="w-6 h-6" /></span>
+				<p class="text-sm mb-2" style="color: rgba(240, 239, 233, 0.5);">failed to load</p>
+				<p class="text-xs mb-4" style="color: rgba(240, 239, 233, 0.25);">{error}</p>
 				<button
 					onclick={() => fetchData()}
-					class="px-4 py-2 text-sm bg-cream/10 hover:bg-cream/15 text-cream/70 rounded transition-colors"
+					class="px-3 py-1.5 text-xs border rounded transition-colors"
+					style="color: {TEAL}; border-color: rgba(0, 217, 192, 0.3);"
+					onmouseenter={(e) => e.currentTarget.style.borderColor = TEAL}
+					onmouseleave={(e) => e.currentTarget.style.borderColor = 'rgba(0, 217, 192, 0.3)'}
 				>
-					Retry
+					[ retry ]
 				</button>
 			</div>
+
 		{:else if hasSites}
-			<!-- Site Selector + Bin Size Toggle -->
-			<div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-				<div class="flex flex-wrap gap-1.5">
+
+			<!-- Controls -->
+			<div class="flex flex-wrap items-center justify-between gap-3 mb-8">
+				<!-- Site selector -->
+				<div class="flex flex-wrap gap-1">
 					<button
-						class="px-3 py-1.5 rounded text-sm transition-colors {selectedSite === null
-							? 'bg-cream/10 text-cream'
-							: 'text-cream/50 hover:text-cream/70'}"
+						class="px-2.5 py-1 text-xs border rounded transition-colors"
+						style="color: {selectedSite === null ? TEAL : 'rgba(240, 239, 233, 0.35)'};
+							border-color: {selectedSite === null ? 'rgba(0, 217, 192, 0.3)' : 'rgba(240, 239, 233, 0.07)'};"
 						onclick={() => (selectedSite = null)}
 					>
-						All
+						all
 					</button>
 					{#each siteList as site}
 						<button
-							class="px-3 py-1.5 rounded text-sm transition-colors {selectedSite === site
-								? 'bg-cream/10 text-cream'
-								: 'text-cream/50 hover:text-cream/70'}"
+							class="px-2.5 py-1 text-xs border rounded transition-colors"
+							style="color: {selectedSite === site ? TEAL : 'rgba(240, 239, 233, 0.35)'};
+								border-color: {selectedSite === site ? 'rgba(0, 217, 192, 0.3)' : 'rgba(240, 239, 233, 0.07)'};"
 							onclick={() => (selectedSite = site)}
 						>
 							{site}
 						</button>
 					{/each}
 				</div>
+				<!-- Bin size -->
 				<div class="flex gap-1">
 					{#each (['4h', '1d', '1w'] as const) as bin}
 						<button
-							class="px-2.5 py-1 rounded text-xs font-mono transition-colors {binSize === bin
-								? 'bg-cream/10 text-cream'
-								: 'text-cream/40 hover:text-cream/60'}"
+							class="px-2 py-1 text-xs border rounded transition-colors"
+							style="color: {binSize === bin ? TEAL : 'rgba(240, 239, 233, 0.35)'};
+								border-color: {binSize === bin ? 'rgba(0, 217, 192, 0.3)' : 'rgba(240, 239, 233, 0.07)'};"
 							onclick={() => (binSize = bin)}
 						>
 							{bin}
@@ -619,47 +378,65 @@
 				</div>
 			</div>
 
-			<!-- Summary -->
-			<div class="flex gap-8 mb-8 text-sm">
+			<!-- Summary metrics -->
+			<div class="flex gap-10 mb-8">
 				<div>
-					<span class="text-cream/90 font-medium text-lg">{formatNumber(summary.pageViews)}</span>
-					<span class="text-cream/40 ml-1.5">views</span>
+					<span class="text-lg" style="color: {TEAL};">{formatNumber(summary().pageViews)}</span>
+					<span class="text-xs ml-1.5" style="color: rgba(240, 239, 233, 0.3);">views</span>
 				</div>
 				<div>
-					<span class="text-cream/90 font-medium text-lg">{formatNumber(summary.visits)}</span>
-					<span class="text-cream/40 ml-1.5">visits</span>
+					<span class="text-lg" style="color: {TEAL};">{formatNumber(summary().visits)}</span>
+					<span class="text-xs ml-1.5" style="color: rgba(240, 239, 233, 0.3);">visits</span>
 				</div>
 				<div>
-					<span class="text-cream/90 font-medium text-lg">{#if currentSite && currentSite.timeseries.length > 0}{@const firstDate = currentSite.timeseries[0].datetime.split('T')[0]}{@const lastDate = currentSite.timeseries[currentSite.timeseries.length - 1].datetime.split('T')[0]}{Math.ceil((new Date(lastDate).getTime() - new Date(firstDate).getTime()) / (1000 * 60 * 60 * 24)) + 1}{:else}{@const allTimeseries = siteList.flatMap((s) => analytics.sites[s].timeseries)}{@const dates = allTimeseries.map((d) => d.datetime.split('T')[0])}{@const uniqueDates = [...new Set(dates)].sort()}{uniqueDates.length}{/if}</span>
-					<span class="text-cream/40 ml-1.5">days</span>
+					<span class="text-lg" style="color: {TEAL};">{dayCount()}</span>
+					<span class="text-xs ml-1.5" style="color: rgba(240, 239, 233, 0.3);">days</span>
+				</div>
+				<div>
+					<span class="text-lg" style="color: {TEAL};">{summary().visits > 0 ? (summary().pageViews / summary().visits).toFixed(1) : '0'}</span>
+					<span class="text-xs ml-1.5" style="color: rgba(240, 239, 233, 0.3);">pages/visit</span>
 				</div>
 			</div>
 
-			<!-- Time Series Charts -->
-			<div class="flex flex-col gap-4 mb-6">
-				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-					<h2 class="text-sm text-cream/50 mb-3">Page Views</h2>
+			<!-- Time series charts -->
+			<div class="flex flex-col gap-6 mb-8">
+				<div>
+					<h2 class="chart-label">page_views</h2>
 					{#key `${selectedSite}-${binSize}`}
 						<PlotlyChart
 							data={pageViewsData}
 							layout={{
-								height: 180,
-								margin: { t: 5, r: 5, b: 45, l: 35 },
+								height: 200,
+								margin: { t: 5, r: 5, b: 45, l: 40 },
 								...(selectedSite ? {} : allSitesLayout)
 							}}
 							class="w-full"
 						/>
 					{/key}
 				</div>
-				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-					<h2 class="text-sm text-cream/50 mb-3">Visits</h2>
+				<div>
+					<h2 class="chart-label">visits</h2>
 					{#key `${selectedSite}-${binSize}`}
 						<PlotlyChart
-							data={visitorsData}
+							data={visitsData}
 							layout={{
-								height: 180,
-								margin: { t: 5, r: 5, b: 45, l: 35 },
+								height: 200,
+								margin: { t: 5, r: 5, b: 45, l: 40 },
 								...(selectedSite ? {} : allSitesLayout)
+							}}
+							class="w-full"
+						/>
+					{/key}
+				</div>
+				<div>
+					<h2 class="chart-label">pages_per_visit</h2>
+					{#key `${selectedSite}-${binSize}`}
+						<PlotlyChart
+							data={pagesPerVisitData}
+							layout={{
+								height: 200,
+								margin: { t: 5, r: 5, b: 45, l: 40 }
+								
 							}}
 							class="w-full"
 						/>
@@ -667,73 +444,71 @@
 				</div>
 			</div>
 
-			<!-- Aggregate Panels -->
-			<div class="grid md:grid-cols-2 gap-4">
-				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-					<h2 class="text-sm text-cream/50 mb-3">Referrers</h2>
+			<!-- Aggregate panels -->
+			<div class="grid md:grid-cols-2 gap-6">
+				<div>
+					<h2 class="chart-label">referrers</h2>
 					{#if referrersData.length > 0}
 						{#key selectedSite}
-							<PlotlyChart
-								data={referrersData}
-								layout={{ height: 180, margin: { t: 0, r: 10, b: 20 }, yaxis: { automargin: true } }}
-							/>
+							<PlotlyChart data={referrersData} layout={hBarLayout} />
 						{/key}
 					{:else}
-						<p class="text-cream/30 text-sm">No data</p>
+						<p class="text-xs py-8 text-center" style="color: rgba(240, 239, 233, 0.2);">no data</p>
 					{/if}
 				</div>
-
-				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-					<h2 class="text-sm text-cream/50 mb-3">Countries</h2>
+				<div>
+					<h2 class="chart-label">countries</h2>
 					{#if countriesData.length > 0}
 						{#key selectedSite}
-							<PlotlyChart
-								data={countriesData}
-								layout={{ height: 180, margin: { t: 0, r: 10, b: 20 }, yaxis: { automargin: true } }}
-							/>
+							<PlotlyChart data={countriesData} layout={hBarLayout} />
 						{/key}
 					{:else}
-						<p class="text-cream/30 text-sm">No data</p>
+						<p class="text-xs py-8 text-center" style="color: rgba(240, 239, 233, 0.2);">no data</p>
 					{/if}
 				</div>
-
-				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-					<h2 class="text-sm text-cream/50 mb-3">Pages</h2>
+				<div>
+					<h2 class="chart-label">pages</h2>
 					{#if pagesData.length > 0}
 						{#key selectedSite}
-							<PlotlyChart
-								data={pagesData}
-								layout={{ height: 180, margin: { t: 0, r: 10, b: 20 }, yaxis: { automargin: true } }}
-							/>
+							<PlotlyChart data={pagesData} layout={hBarLayout} />
 						{/key}
 					{:else}
-						<p class="text-cream/30 text-sm">No data</p>
+						<p class="text-xs py-8 text-center" style="color: rgba(240, 239, 233, 0.2);">no data</p>
 					{/if}
 				</div>
-
-				<div class="p-3 rounded-lg bg-cream/[0.02] border border-cream/5">
-					<h2 class="text-sm text-cream/50 mb-3">Browsers</h2>
+				<div>
+					<h2 class="chart-label">browsers</h2>
 					{#if browsersData.length > 0}
 						{#key selectedSite}
-							<PlotlyChart
-								data={browsersData}
-								layout={{ height: 180, margin: { t: 0, r: 10, b: 20 }, yaxis: { automargin: true } }}
-							/>
+							<PlotlyChart data={browsersData} layout={hBarLayout} />
 						{/key}
 					{:else}
-						<p class="text-cream/30 text-sm">No data</p>
+						<p class="text-xs py-8 text-center" style="color: rgba(240, 239, 233, 0.2);">no data</p>
 					{/if}
 				</div>
 			</div>
+
+			<!-- Footer -->
+			<p class="text-xs mt-12 text-center" style="color: rgba(240, 239, 233, 0.15);">
+				cloudflare web analytics{#if analytics.lastFetched} &middot; updated {formatDate(analytics.lastFetched)}{/if}
+			</p>
+
 		{:else}
-			<!-- Empty analytics State -->
-			<div class="text-center py-16">
-				<Icons name="chart" class="w-8 h-8 text-cream/20 mx-auto mb-3" />
-				<p class="text-cream/40 text-sm">No analytics data yet</p>
+			<div class="text-center py-20">
+				<span class="block mx-auto mb-3 w-6 h-6" style="color: rgba(240, 239, 233, 0.15);"><Icons name="chart" class="w-6 h-6" /></span>
+				<p class="text-xs" style="color: rgba(240, 239, 233, 0.3);">no data</p>
 			</div>
 		{/if}
-
-		<!-- Footer -->
-		<p class="text-xs text-cream/20 mt-12 text-center">Cloudflare Web Analytics &middot; GitHub API</p>
 	</div>
 </main>
+
+<style>
+	
+
+	.chart-label {
+		font-size: 0.75rem;
+		letter-spacing: 0.05em;
+		color: #00d9c0;
+		margin-bottom: 0.5rem;
+	}
+</style>
