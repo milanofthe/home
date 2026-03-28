@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-28T13:03:55.930Z",
+	"lastFetched": "2026-03-28T16:39:46.254Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -19142,7 +19142,7 @@
 						},
 						{
 							"path": "/pathsim/",
-							"pageViews": 180
+							"pageViews": 170
 						},
 						{
 							"path": "/chem",
@@ -19214,7 +19214,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 720
+							"pageViews": 710
 						},
 						{
 							"country": "DE",
@@ -19229,11 +19229,11 @@
 							"pageViews": 150
 						},
 						{
-							"country": "IN",
+							"country": "CN",
 							"pageViews": 90
 						},
 						{
-							"country": "CN",
+							"country": "IN",
 							"pageViews": 90
 						},
 						{
@@ -19245,11 +19245,11 @@
 							"pageViews": 70
 						},
 						{
-							"country": "NO",
+							"country": "GR",
 							"pageViews": 60
 						},
 						{
-							"country": "GR",
+							"country": "NO",
 							"pageViews": 60
 						}
 					],
@@ -19272,7 +19272,7 @@
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 130
+							"pageViews": 120
 						}
 					]
 				}
@@ -19288,7 +19288,7 @@
 				},
 				{
 					"path": "/pathsim/",
-					"pageViews": 180
+					"pageViews": 170
 				},
 				{
 					"path": "/chem",
@@ -19360,7 +19360,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 720
+					"pageViews": 710
 				},
 				{
 					"country": "DE",
@@ -19375,11 +19375,11 @@
 					"pageViews": 150
 				},
 				{
-					"country": "IN",
+					"country": "CN",
 					"pageViews": 90
 				},
 				{
-					"country": "CN",
+					"country": "IN",
 					"pageViews": 90
 				},
 				{
@@ -19391,11 +19391,11 @@
 					"pageViews": 70
 				},
 				{
-					"country": "NO",
+					"country": "GR",
 					"pageViews": 60
 				},
 				{
-					"country": "GR",
+					"country": "NO",
 					"pageViews": 60
 				}
 			],
@@ -19418,7 +19418,7 @@
 				},
 				{
 					"browser": "Unknown",
-					"pageViews": 130
+					"pageViews": 120
 				}
 			]
 		},
@@ -28208,7 +28208,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2290
+							"pageViews": 2270
 						}
 					],
 					"topReferrers": [
@@ -28256,7 +28256,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 310
+							"pageViews": 300
 						},
 						{
 							"country": "NL",
@@ -28283,18 +28283,18 @@
 							"pageViews": 60
 						},
 						{
-							"country": "PT",
+							"country": "AU",
 							"pageViews": 60
 						},
 						{
-							"country": "AU",
+							"country": "PT",
 							"pageViews": 60
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 700
+							"pageViews": 690
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -28318,7 +28318,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2290
+					"pageViews": 2270
 				}
 			],
 			"topReferrers": [
@@ -28366,7 +28366,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 310
+					"pageViews": 300
 				},
 				{
 					"country": "NL",
@@ -28393,18 +28393,18 @@
 					"pageViews": 60
 				},
 				{
-					"country": "PT",
+					"country": "AU",
 					"pageViews": 60
 				},
 				{
-					"country": "AU",
+					"country": "PT",
 					"pageViews": 60
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 700
+					"pageViews": 690
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -36613,6 +36613,11 @@
 					"datetime": "2026-03-28T12:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-03-28T16:00:00",
+					"pageViews": 16,
+					"visits": 15
 				}
 			],
 			"aggregateHistory": [
@@ -44826,7 +44831,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 330
+							"pageViews": 340
 						},
 						{
 							"path": "/dashboard/",
@@ -44901,15 +44906,15 @@
 							"pageViews": 10
 						},
 						{
+							"country": "UA",
+							"pageViews": 10
+						},
+						{
+							"country": "SA",
+							"pageViews": 10
+						},
+						{
 							"country": "CZ",
-							"pageViews": 10
-						},
-						{
-							"country": "GR",
-							"pageViews": 10
-						},
-						{
-							"country": "DK",
 							"pageViews": 10
 						}
 					],
@@ -44940,7 +44945,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 330
+					"pageViews": 340
 				},
 				{
 					"path": "/dashboard/",
@@ -45015,15 +45020,15 @@
 					"pageViews": 10
 				},
 				{
+					"country": "UA",
+					"pageViews": 10
+				},
+				{
+					"country": "SA",
+					"pageViews": 10
+				},
+				{
 					"country": "CZ",
-					"pageViews": 10
-				},
-				{
-					"country": "GR",
-					"pageViews": 10
-				},
-				{
-					"country": "DK",
 					"pageViews": 10
 				}
 			],
