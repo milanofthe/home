@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-29T02:50:13.780Z",
+	"lastFetched": "2026-03-29T05:44:59.096Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -19491,8 +19491,8 @@
 							"pageViews": 50
 						},
 						{
-							"referrer": "pharry.github.io",
-							"pageViews": 30
+							"referrer": "chatgpt.com",
+							"pageViews": 40
 						},
 						{
 							"referrer": "milanrother.com",
@@ -19522,7 +19522,7 @@
 						},
 						{
 							"country": "IN",
-							"pageViews": 90
+							"pageViews": 80
 						},
 						{
 							"country": "SG",
@@ -19544,7 +19544,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 790
+							"pageViews": 810
 						},
 						{
 							"browser": "ChromeMobile",
@@ -19637,8 +19637,8 @@
 					"pageViews": 50
 				},
 				{
-					"referrer": "pharry.github.io",
-					"pageViews": 30
+					"referrer": "chatgpt.com",
+					"pageViews": 40
 				},
 				{
 					"referrer": "milanrother.com",
@@ -19668,7 +19668,7 @@
 				},
 				{
 					"country": "IN",
-					"pageViews": 90
+					"pageViews": 80
 				},
 				{
 					"country": "SG",
@@ -19690,7 +19690,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 790
+					"pageViews": 810
 				},
 				{
 					"browser": "ChromeMobile",
