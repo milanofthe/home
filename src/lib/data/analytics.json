@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-29T08:47:55.345Z",
+	"lastFetched": "2026-03-29T13:05:15.119Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -19553,11 +19553,11 @@
 							"pageViews": 70
 						},
 						{
-							"country": "GR",
+							"country": "NO",
 							"pageViews": 60
 						},
 						{
-							"country": "NO",
+							"country": "GR",
 							"pageViews": 60
 						}
 					],
@@ -19699,11 +19699,11 @@
 					"pageViews": 70
 				},
 				{
-					"country": "GR",
+					"country": "NO",
 					"pageViews": 60
 				},
 				{
-					"country": "NO",
+					"country": "GR",
 					"pageViews": 60
 				}
 			],
@@ -21658,6 +21658,16 @@
 					"datetime": "2026-03-29T08:00:00",
 					"pageViews": 23,
 					"visits": 20
+				},
+				{
+					"datetime": "2026-03-29T12:00:00",
+					"pageViews": 40,
+					"visits": 37
+				},
+				{
+					"datetime": "2026-03-29T16:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -28642,7 +28652,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2190
+							"pageViews": 2260
 						}
 					],
 					"topReferrers": [
@@ -28686,11 +28696,11 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 800
+							"pageViews": 870
 						},
 						{
 							"country": "DE",
-							"pageViews": 290
+							"pageViews": 300
 						},
 						{
 							"country": "NL",
@@ -28717,26 +28727,26 @@
 							"pageViews": 60
 						},
 						{
-							"country": "AU",
+							"country": "IN",
 							"pageViews": 60
 						},
 						{
-							"country": "IN",
+							"country": "AU",
 							"pageViews": 60
 						}
 					],
 					"topBrowsers": [
 						{
-							"browser": "Chrome",
-							"pageViews": 680
+							"browser": "ChromeHeadless",
+							"pageViews": 710
 						},
 						{
-							"browser": "ChromeHeadless",
-							"pageViews": 640
+							"browser": "Chrome",
+							"pageViews": 690
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 370
+							"pageViews": 360
 						},
 						{
 							"browser": "Firefox",
@@ -28752,7 +28762,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2190
+					"pageViews": 2260
 				}
 			],
 			"topReferrers": [
@@ -28796,11 +28806,11 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 800
+					"pageViews": 870
 				},
 				{
 					"country": "DE",
-					"pageViews": 290
+					"pageViews": 300
 				},
 				{
 					"country": "NL",
@@ -28827,26 +28837,26 @@
 					"pageViews": 60
 				},
 				{
-					"country": "AU",
+					"country": "IN",
 					"pageViews": 60
 				},
 				{
-					"country": "IN",
+					"country": "AU",
 					"pageViews": 60
 				}
 			],
 			"topBrowsers": [
 				{
-					"browser": "Chrome",
-					"pageViews": 680
+					"browser": "ChromeHeadless",
+					"pageViews": 710
 				},
 				{
-					"browser": "ChromeHeadless",
-					"pageViews": 640
+					"browser": "Chrome",
+					"pageViews": 690
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 370
+					"pageViews": 360
 				},
 				{
 					"browser": "Firefox",
@@ -37864,7 +37874,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 760
+							"pageViews": 770
 						},
 						{
 							"path": "/viewer",
@@ -37948,7 +37958,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 170
+							"pageViews": 180
 						},
 						{
 							"country": "IN",
@@ -37986,7 +37996,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 440
+							"pageViews": 450
 						},
 						{
 							"browser": "ChromeMobile",
@@ -38010,7 +38020,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 760
+					"pageViews": 770
 				},
 				{
 					"path": "/viewer",
@@ -38094,7 +38104,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 170
+					"pageViews": 180
 				},
 				{
 					"country": "IN",
@@ -38132,7 +38142,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 440
+					"pageViews": 450
 				},
 				{
 					"browser": "ChromeMobile",
@@ -46170,6 +46180,10 @@
 						{
 							"path": "/app",
 							"pageViews": 20
+						},
+						{
+							"path": "/report",
+							"pageViews": 10
 						}
 					],
 					"topReferrers": [
@@ -46189,7 +46203,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 50
+							"pageViews": 60
 						},
 						{
 							"country": "IT",
@@ -46203,7 +46217,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 40
+							"pageViews": 50
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -46224,6 +46238,10 @@
 				{
 					"path": "/app",
 					"pageViews": 20
+				},
+				{
+					"path": "/report",
+					"pageViews": 10
 				}
 			],
 			"topReferrers": [
@@ -46243,7 +46261,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 50
+					"pageViews": 60
 				},
 				{
 					"country": "IT",
@@ -46257,7 +46275,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 40
+					"pageViews": 50
 				},
 				{
 					"browser": "ChromeHeadless",
