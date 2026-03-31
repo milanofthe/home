@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-03-31T09:06:23.312Z",
+	"lastFetched": "2026-03-31T13:43:15.054Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -10673,6 +10673,16 @@
 					"datetime": "2026-03-31T08:00:00",
 					"pageViews": 5,
 					"visits": 5
+				},
+				{
+					"datetime": "2026-03-31T12:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-03-31T16:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -20087,11 +20097,11 @@
 							"pageViews": 130
 						},
 						{
-							"path": "/pathsim/v0.18.0/examples",
+							"path": "/pathsim/v0.18.0/api",
 							"pageViews": 110
 						},
 						{
-							"path": "/pathsim/v0.18.0/api",
+							"path": "/pathsim/v0.18.0/examples",
 							"pageViews": 110
 						},
 						{
@@ -20099,14 +20109,14 @@
 							"pageViews": 80
 						},
 						{
-							"path": "/flight",
+							"path": "/pathsim/v0.18.0/examples/linear-feedback",
 							"pageViews": 80
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 540
+							"pageViews": 550
 						},
 						{
 							"referrer": "pathsim.org",
@@ -20168,14 +20178,14 @@
 						},
 						{
 							"country": "GR",
+							"pageViews": 80
+						},
+						{
+							"country": "ES",
 							"pageViews": 70
 						},
 						{
 							"country": "SG",
-							"pageViews": 70
-						},
-						{
-							"country": "ES",
 							"pageViews": 70
 						},
 						{
@@ -20186,7 +20196,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 870
+							"pageViews": 880
 						},
 						{
 							"browser": "Edge",
@@ -20233,11 +20243,11 @@
 					"pageViews": 130
 				},
 				{
-					"path": "/pathsim/v0.18.0/examples",
+					"path": "/pathsim/v0.18.0/api",
 					"pageViews": 110
 				},
 				{
-					"path": "/pathsim/v0.18.0/api",
+					"path": "/pathsim/v0.18.0/examples",
 					"pageViews": 110
 				},
 				{
@@ -20245,14 +20255,14 @@
 					"pageViews": 80
 				},
 				{
-					"path": "/flight",
+					"path": "/pathsim/v0.18.0/examples/linear-feedback",
 					"pageViews": 80
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 540
+					"pageViews": 550
 				},
 				{
 					"referrer": "pathsim.org",
@@ -20314,14 +20324,14 @@
 				},
 				{
 					"country": "GR",
+					"pageViews": 80
+				},
+				{
+					"country": "ES",
 					"pageViews": 70
 				},
 				{
 					"country": "SG",
-					"pageViews": 70
-				},
-				{
-					"country": "ES",
 					"pageViews": 70
 				},
 				{
@@ -20332,7 +20342,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 870
+					"pageViews": 880
 				},
 				{
 					"browser": "Edge",
@@ -22340,6 +22350,16 @@
 					"datetime": "2026-03-31T08:00:00",
 					"pageViews": 25,
 					"visits": 22
+				},
+				{
+					"datetime": "2026-03-31T12:00:00",
+					"pageViews": 13,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-03-31T16:00:00",
+					"pageViews": 4,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -29550,7 +29570,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2290
+							"pageViews": 2280
 						},
 						{
 							"path": "/app/",
@@ -29560,7 +29580,7 @@
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 460
+							"pageViews": 470
 						},
 						{
 							"referrer": "github.com",
@@ -29598,7 +29618,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 880
+							"pageViews": 870
 						},
 						{
 							"country": "DE",
@@ -29639,16 +29659,16 @@
 					],
 					"topBrowsers": [
 						{
-							"browser": "ChromeHeadless",
-							"pageViews": 710
+							"browser": "Chrome",
+							"pageViews": 700
 						},
 						{
-							"browser": "Chrome",
-							"pageViews": 680
+							"browser": "ChromeHeadless",
+							"pageViews": 670
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 410
+							"pageViews": 420
 						},
 						{
 							"browser": "Firefox",
@@ -29664,7 +29684,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2290
+					"pageViews": 2280
 				},
 				{
 					"path": "/app/",
@@ -29674,7 +29694,7 @@
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 460
+					"pageViews": 470
 				},
 				{
 					"referrer": "github.com",
@@ -29712,7 +29732,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 880
+					"pageViews": 870
 				},
 				{
 					"country": "DE",
@@ -29753,16 +29773,16 @@
 			],
 			"topBrowsers": [
 				{
-					"browser": "ChromeHeadless",
-					"pageViews": 710
+					"browser": "Chrome",
+					"pageViews": 700
 				},
 				{
-					"browser": "Chrome",
-					"pageViews": 680
+					"browser": "ChromeHeadless",
+					"pageViews": 670
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 410
+					"pageViews": 420
 				},
 				{
 					"browser": "Firefox",
@@ -39377,20 +39397,20 @@
 							"pageViews": 920
 						},
 						{
+							"path": "/viewer",
+							"pageViews": 120
+						},
+						{
 							"path": "/generator/spiral",
 							"pageViews": 120
 						},
 						{
-							"path": "/viewer",
-							"pageViews": 110
+							"path": "/generator/mom-capacitor",
+							"pageViews": 90
 						},
 						{
 							"path": "/generator/stacked-transformer",
 							"pageViews": 90
-						},
-						{
-							"path": "/generator/mom-capacitor",
-							"pageViews": 80
 						},
 						{
 							"path": "/generator/symmetric-transformer",
@@ -39469,15 +39489,11 @@
 							"pageViews": 80
 						},
 						{
-							"country": "CH",
-							"pageViews": 60
-						},
-						{
 							"country": "IE",
-							"pageViews": 60
+							"pageViews": 70
 						},
 						{
-							"country": "TW",
+							"country": "CH",
 							"pageViews": 60
 						},
 						{
@@ -39489,6 +39505,10 @@
 							"pageViews": 60
 						},
 						{
+							"country": "TW",
+							"pageViews": 60
+						},
+						{
 							"country": "GB",
 							"pageViews": 50
 						}
@@ -39496,7 +39516,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 590
+							"pageViews": 600
 						},
 						{
 							"browser": "ChromeMobile",
@@ -39504,7 +39524,7 @@
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 220
+							"pageViews": 230
 						},
 						{
 							"browser": "Edge",
@@ -39523,20 +39543,20 @@
 					"pageViews": 920
 				},
 				{
+					"path": "/viewer",
+					"pageViews": 120
+				},
+				{
 					"path": "/generator/spiral",
 					"pageViews": 120
 				},
 				{
-					"path": "/viewer",
-					"pageViews": 110
+					"path": "/generator/mom-capacitor",
+					"pageViews": 90
 				},
 				{
 					"path": "/generator/stacked-transformer",
 					"pageViews": 90
-				},
-				{
-					"path": "/generator/mom-capacitor",
-					"pageViews": 80
 				},
 				{
 					"path": "/generator/symmetric-transformer",
@@ -39615,15 +39635,11 @@
 					"pageViews": 80
 				},
 				{
-					"country": "CH",
-					"pageViews": 60
-				},
-				{
 					"country": "IE",
-					"pageViews": 60
+					"pageViews": 70
 				},
 				{
-					"country": "TW",
+					"country": "CH",
 					"pageViews": 60
 				},
 				{
@@ -39635,6 +39651,10 @@
 					"pageViews": 60
 				},
 				{
+					"country": "TW",
+					"pageViews": 60
+				},
+				{
 					"country": "GB",
 					"pageViews": 50
 				}
@@ -39642,7 +39662,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 590
+					"pageViews": 600
 				},
 				{
 					"browser": "ChromeMobile",
@@ -39650,7 +39670,7 @@
 				},
 				{
 					"browser": "MobileSafari",
-					"pageViews": 220
+					"pageViews": 230
 				},
 				{
 					"browser": "Edge",
@@ -41225,6 +41245,16 @@
 					"datetime": "2026-03-31T08:00:00",
 					"pageViews": 8,
 					"visits": 8
+				},
+				{
+					"datetime": "2026-03-31T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-03-31T16:00:00",
+					"pageViews": 6,
+					"visits": 6
 				}
 			],
 			"aggregateHistory": [
