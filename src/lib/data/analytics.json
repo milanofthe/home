@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-03T02:44:27.339Z",
+	"lastFetched": "2026-04-03T05:43:40.241Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -21104,11 +21104,11 @@
 							"pageViews": 70
 						},
 						{
-							"country": "NO",
+							"country": "AT",
 							"pageViews": 60
 						},
 						{
-							"country": "AT",
+							"country": "NO",
 							"pageViews": 60
 						}
 					],
@@ -21250,11 +21250,11 @@
 					"pageViews": 70
 				},
 				{
-					"country": "NO",
+					"country": "AT",
 					"pageViews": 60
 				},
 				{
-					"country": "AT",
+					"country": "NO",
 					"pageViews": 60
 				}
 			],
@@ -23344,6 +23344,11 @@
 					"datetime": "2026-04-02T24:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-03T08:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -41583,7 +41588,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1000
+							"pageViews": 1010
 						},
 						{
 							"path": "/viewer",
@@ -41598,12 +41603,12 @@
 							"pageViews": 110
 						},
 						{
-							"path": "/generator/mom-capacitor",
+							"path": "/generator/symmetric-inductor",
 							"pageViews": 90
 						},
 						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 80
+							"path": "/generator/mom-capacitor",
+							"pageViews": 90
 						},
 						{
 							"path": "/generator/symmetric-transformer",
@@ -41705,7 +41710,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 700
+							"pageViews": 710
 						},
 						{
 							"browser": "ChromeMobile",
@@ -41717,7 +41722,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 190
+							"pageViews": 200
 						},
 						{
 							"browser": "SamsungInternet",
@@ -41729,7 +41734,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1000
+					"pageViews": 1010
 				},
 				{
 					"path": "/viewer",
@@ -41744,12 +41749,12 @@
 					"pageViews": 110
 				},
 				{
-					"path": "/generator/mom-capacitor",
+					"path": "/generator/symmetric-inductor",
 					"pageViews": 90
 				},
 				{
-					"path": "/generator/symmetric-inductor",
-					"pageViews": 80
+					"path": "/generator/mom-capacitor",
+					"pageViews": 90
 				},
 				{
 					"path": "/generator/symmetric-transformer",
@@ -41851,7 +41856,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 700
+					"pageViews": 710
 				},
 				{
 					"browser": "ChromeMobile",
@@ -41863,7 +41868,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 190
+					"pageViews": 200
 				},
 				{
 					"browser": "SamsungInternet",
@@ -43504,6 +43509,11 @@
 					"datetime": "2026-04-02T20:00:00",
 					"pageViews": 7,
 					"visits": 7
+				},
+				{
+					"datetime": "2026-04-03T08:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
