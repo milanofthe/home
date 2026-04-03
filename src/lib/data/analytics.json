@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-03T16:37:33.939Z",
+	"lastFetched": "2026-04-03T16:47:58.663Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -30959,7 +30959,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2290
+							"pageViews": 2300
 						},
 						{
 							"path": "/app/",
@@ -31007,7 +31007,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 850
+							"pageViews": 860
 						},
 						{
 							"country": "DE",
@@ -31053,7 +31053,7 @@
 						},
 						{
 							"browser": "ChromeHeadless",
-							"pageViews": 610
+							"pageViews": 620
 						},
 						{
 							"browser": "Edge",
@@ -31073,7 +31073,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2290
+					"pageViews": 2300
 				},
 				{
 					"path": "/app/",
@@ -31121,7 +31121,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 850
+					"pageViews": 860
 				},
 				{
 					"country": "DE",
@@ -31167,7 +31167,7 @@
 				},
 				{
 					"browser": "ChromeHeadless",
-					"pageViews": 610
+					"pageViews": 620
 				},
 				{
 					"browser": "Edge",
