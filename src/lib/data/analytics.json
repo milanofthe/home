@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-04T13:04:49.511Z",
+	"lastFetched": "2026-04-04T16:40:55.931Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1844,6 +1844,16 @@
 					"datetime": "2026-04-04T12:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-04-04T16:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-04T20:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -11352,6 +11362,16 @@
 					"datetime": "2026-04-04T12:00:00",
 					"pageViews": 23,
 					"visits": 23
+				},
+				{
+					"datetime": "2026-04-04T16:00:00",
+					"pageViews": 11,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-04-04T20:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -21342,12 +21362,12 @@
 							"pageViews": 160
 						},
 						{
-							"path": "/pathsim/",
-							"pageViews": 140
+							"path": "/vehicle",
+							"pageViews": 150
 						},
 						{
-							"path": "/vehicle",
-							"pageViews": 140
+							"path": "/pathsim/",
+							"pageViews": 130
 						},
 						{
 							"path": "/rf",
@@ -21377,7 +21397,7 @@
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 480
+							"pageViews": 470
 						},
 						{
 							"referrer": "pathsim.readthedocs.io",
@@ -21411,7 +21431,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 600
+							"pageViews": 610
 						},
 						{
 							"country": "DE",
@@ -21442,7 +21462,7 @@
 							"pageViews": 70
 						},
 						{
-							"country": "AT",
+							"country": "ES",
 							"pageViews": 60
 						},
 						{
@@ -21453,7 +21473,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 860
+							"pageViews": 850
 						},
 						{
 							"browser": "ChromeMobile",
@@ -21488,12 +21508,12 @@
 					"pageViews": 160
 				},
 				{
-					"path": "/pathsim/",
-					"pageViews": 140
+					"path": "/vehicle",
+					"pageViews": 150
 				},
 				{
-					"path": "/vehicle",
-					"pageViews": 140
+					"path": "/pathsim/",
+					"pageViews": 130
 				},
 				{
 					"path": "/rf",
@@ -21523,7 +21543,7 @@
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 480
+					"pageViews": 470
 				},
 				{
 					"referrer": "pathsim.readthedocs.io",
@@ -21557,7 +21577,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 600
+					"pageViews": 610
 				},
 				{
 					"country": "DE",
@@ -21588,7 +21608,7 @@
 					"pageViews": 70
 				},
 				{
-					"country": "AT",
+					"country": "ES",
 					"pageViews": 60
 				},
 				{
@@ -21599,7 +21619,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 860
+					"pageViews": 850
 				},
 				{
 					"browser": "ChromeMobile",
@@ -44364,6 +44384,11 @@
 					"datetime": "2026-04-04T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-04T16:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -51087,7 +51112,7 @@
 						},
 						{
 							"path": "/dashboard/",
-							"pageViews": 230
+							"pageViews": 220
 						}
 					],
 					"topReferrers": [
@@ -51131,7 +51156,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 350
+							"pageViews": 340
 						},
 						{
 							"country": "US",
@@ -51173,7 +51198,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 240
+							"pageViews": 230
 						},
 						{
 							"browser": "ChromeMobile",
@@ -51201,7 +51226,7 @@
 				},
 				{
 					"path": "/dashboard/",
-					"pageViews": 230
+					"pageViews": 220
 				}
 			],
 			"topReferrers": [
@@ -51245,7 +51270,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 350
+					"pageViews": 340
 				},
 				{
 					"country": "US",
@@ -51287,7 +51312,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 240
+					"pageViews": 230
 				},
 				{
 					"browser": "ChromeMobile",
@@ -51515,6 +51540,11 @@
 					"datetime": "2026-04-04T12:00:00",
 					"pageViews": 4,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-04T16:00:00",
+					"pageViews": 2,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
