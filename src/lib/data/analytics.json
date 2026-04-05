@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-05T05:46:16.321Z",
+	"lastFetched": "2026-04-05T08:51:22.908Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1864,6 +1864,11 @@
 					"datetime": "2026-04-05T04:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-05T08:00:00",
+					"pageViews": 12,
+					"visits": 12
 				}
 			],
 			"aggregateHistory": [
@@ -11503,6 +11508,11 @@
 					"datetime": "2026-04-05T04:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-04-05T08:00:00",
+					"pageViews": 37,
+					"visits": 37
 				}
 			],
 			"aggregateHistory": [
@@ -21664,18 +21674,18 @@
 							"pageViews": 70
 						},
 						{
-							"path": "/pathsim/v0.18.0/api",
+							"path": "/pathsim/v0.18.0/examples/linear-feedback",
 							"pageViews": 60
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 520
+							"pageViews": 510
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 470
+							"pageViews": 480
 						},
 						{
 							"referrer": "pathsim.readthedocs.io",
@@ -21716,20 +21726,16 @@
 							"pageViews": 250
 						},
 						{
-							"country": "FR",
+							"country": "CN",
 							"pageViews": 140
 						},
 						{
-							"country": "CN",
+							"country": "FR",
 							"pageViews": 140
 						},
 						{
 							"country": "GB",
 							"pageViews": 100
-						},
-						{
-							"country": "IT",
-							"pageViews": 80
 						},
 						{
 							"country": "IN",
@@ -21744,6 +21750,10 @@
 							"pageViews": 60
 						},
 						{
+							"country": "CA",
+							"pageViews": 60
+						},
+						{
 							"country": "NO",
 							"pageViews": 60
 						}
@@ -21751,7 +21761,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 850
+							"pageViews": 860
 						},
 						{
 							"browser": "ChromeMobile",
@@ -21767,7 +21777,7 @@
 						},
 						{
 							"browser": "Firefox",
-							"pageViews": 250
+							"pageViews": 230
 						}
 					]
 				}
@@ -21810,18 +21820,18 @@
 					"pageViews": 70
 				},
 				{
-					"path": "/pathsim/v0.18.0/api",
+					"path": "/pathsim/v0.18.0/examples/linear-feedback",
 					"pageViews": 60
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 520
+					"pageViews": 510
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 470
+					"pageViews": 480
 				},
 				{
 					"referrer": "pathsim.readthedocs.io",
@@ -21862,20 +21872,16 @@
 					"pageViews": 250
 				},
 				{
-					"country": "FR",
+					"country": "CN",
 					"pageViews": 140
 				},
 				{
-					"country": "CN",
+					"country": "FR",
 					"pageViews": 140
 				},
 				{
 					"country": "GB",
 					"pageViews": 100
-				},
-				{
-					"country": "IT",
-					"pageViews": 80
 				},
 				{
 					"country": "IN",
@@ -21890,6 +21896,10 @@
 					"pageViews": 60
 				},
 				{
+					"country": "CA",
+					"pageViews": 60
+				},
+				{
 					"country": "NO",
 					"pageViews": 60
 				}
@@ -21897,7 +21907,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 850
+					"pageViews": 860
 				},
 				{
 					"browser": "ChromeMobile",
@@ -21913,7 +21923,7 @@
 				},
 				{
 					"browser": "Firefox",
-					"pageViews": 250
+					"pageViews": 230
 				}
 			]
 		},
@@ -24030,6 +24040,11 @@
 					"datetime": "2026-04-04T24:00:00",
 					"pageViews": 10,
 					"visits": 6
+				},
+				{
+					"datetime": "2026-04-05T08:00:00",
+					"pageViews": 28,
+					"visits": 26
 				}
 			],
 			"aggregateHistory": [
@@ -33327,6 +33342,11 @@
 					"datetime": "2026-04-04T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-05T08:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -41401,6 +41421,16 @@
 					"datetime": "2026-04-05T04:00:00",
 					"pageViews": 9,
 					"visits": 7
+				},
+				{
+					"datetime": "2026-04-05T08:00:00",
+					"pageViews": 7,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-04-05T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -43095,7 +43125,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1030
+							"pageViews": 1040
 						},
 						{
 							"path": "/viewer",
@@ -43182,12 +43212,12 @@
 							"pageViews": 250
 						},
 						{
-							"country": "FR",
+							"country": "IN",
 							"pageViews": 100
 						},
 						{
-							"country": "IN",
-							"pageViews": 90
+							"country": "FR",
+							"pageViews": 100
 						},
 						{
 							"country": "IE",
@@ -43225,7 +43255,7 @@
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 270
+							"pageViews": 280
 						},
 						{
 							"browser": "Edge",
@@ -43241,7 +43271,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1030
+					"pageViews": 1040
 				},
 				{
 					"path": "/viewer",
@@ -43328,12 +43358,12 @@
 					"pageViews": 250
 				},
 				{
-					"country": "FR",
+					"country": "IN",
 					"pageViews": 100
 				},
 				{
-					"country": "IN",
-					"pageViews": 90
+					"country": "FR",
+					"pageViews": 100
 				},
 				{
 					"country": "IE",
@@ -43371,7 +43401,7 @@
 				},
 				{
 					"browser": "MobileSafari",
-					"pageViews": 270
+					"pageViews": 280
 				},
 				{
 					"browser": "Edge",
@@ -52342,6 +52372,11 @@
 					"datetime": "2026-04-04T16:00:00",
 					"pageViews": 2,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-05T08:00:00",
+					"pageViews": 5,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
