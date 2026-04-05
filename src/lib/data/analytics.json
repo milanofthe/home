@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-05T16:41:29.455Z",
+	"lastFetched": "2026-04-05T20:39:05.275Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1879,6 +1879,11 @@
 					"datetime": "2026-04-05T16:00:00",
 					"pageViews": 6,
 					"visits": 6
+				},
+				{
+					"datetime": "2026-04-05T20:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -21744,7 +21749,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 630
+							"pageViews": 640
 						},
 						{
 							"country": "DE",
@@ -21786,7 +21791,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 890
+							"pageViews": 900
 						},
 						{
 							"browser": "ChromeMobile",
@@ -21890,7 +21895,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 630
+					"pageViews": 640
 				},
 				{
 					"country": "DE",
@@ -21932,7 +21937,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 890
+					"pageViews": 900
 				},
 				{
 					"browser": "ChromeMobile",
@@ -33395,6 +33400,11 @@
 					"datetime": "2026-04-05T12:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-05T20:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -41482,6 +41492,11 @@
 				},
 				{
 					"datetime": "2026-04-05T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-05T20:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -52449,6 +52464,11 @@
 				{
 					"datetime": "2026-04-05T16:00:00",
 					"pageViews": 4,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-05T20:00:00",
+					"pageViews": 3,
 					"visits": 3
 				}
 			],
