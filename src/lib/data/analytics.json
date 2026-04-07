@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-07T02:47:36.002Z",
+	"lastFetched": "2026-04-07T05:48:22.854Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -1914,6 +1914,16 @@
 					"datetime": "2026-04-06T24:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-07T04:00:00",
+					"pageViews": 8,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-04-07T08:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -11830,6 +11840,16 @@
 					"datetime": "2026-04-06T24:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-04-07T04:00:00",
+					"pageViews": 15,
+					"visits": 13
+				},
+				{
+					"datetime": "2026-04-07T08:00:00",
+					"pageViews": 9,
+					"visits": 7
 				}
 			],
 			"aggregateHistory": [
@@ -22250,7 +22270,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 600
+							"pageViews": 610
 						},
 						{
 							"path": "/pathsim",
@@ -22304,7 +22324,7 @@
 						},
 						{
 							"referrer": "www.google.com",
-							"pageViews": 130
+							"pageViews": 140
 						},
 						{
 							"referrer": "view.pathsim.org",
@@ -22342,7 +22362,7 @@
 						},
 						{
 							"country": "FR",
-							"pageViews": 130
+							"pageViews": 140
 						},
 						{
 							"country": "GB",
@@ -22361,11 +22381,11 @@
 							"pageViews": 70
 						},
 						{
-							"country": "NO",
+							"country": "AT",
 							"pageViews": 60
 						},
 						{
-							"country": "AT",
+							"country": "ES",
 							"pageViews": 60
 						}
 					],
@@ -22376,7 +22396,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 470
+							"pageViews": 480
 						},
 						{
 							"browser": "Edge",
@@ -22396,7 +22416,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 600
+					"pageViews": 610
 				},
 				{
 					"path": "/pathsim",
@@ -22450,7 +22470,7 @@
 				},
 				{
 					"referrer": "www.google.com",
-					"pageViews": 130
+					"pageViews": 140
 				},
 				{
 					"referrer": "view.pathsim.org",
@@ -22488,7 +22508,7 @@
 				},
 				{
 					"country": "FR",
-					"pageViews": 130
+					"pageViews": 140
 				},
 				{
 					"country": "GB",
@@ -22507,11 +22527,11 @@
 					"pageViews": 70
 				},
 				{
-					"country": "NO",
+					"country": "AT",
 					"pageViews": 60
 				},
 				{
-					"country": "AT",
+					"country": "ES",
 					"pageViews": 60
 				}
 			],
@@ -22522,7 +22542,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 470
+					"pageViews": 480
 				},
 				{
 					"browser": "Edge",
@@ -24701,6 +24721,16 @@
 					"datetime": "2026-04-06T24:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-07T04:00:00",
+					"pageViews": 6,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-07T08:00:00",
+					"pageViews": 4,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -44633,7 +44663,7 @@
 						},
 						{
 							"path": "/generator/symmetric-inductor",
-							"pageViews": 90
+							"pageViews": 100
 						},
 						{
 							"path": "/generator/mom-capacitor",
@@ -44697,7 +44727,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 550
+							"pageViews": 560
 						},
 						{
 							"country": "DE",
@@ -44739,7 +44769,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 750
+							"pageViews": 760
 						},
 						{
 							"browser": "ChromeMobile",
@@ -44779,7 +44809,7 @@
 				},
 				{
 					"path": "/generator/symmetric-inductor",
-					"pageViews": 90
+					"pageViews": 100
 				},
 				{
 					"path": "/generator/mom-capacitor",
@@ -44843,7 +44873,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 550
+					"pageViews": 560
 				},
 				{
 					"country": "DE",
@@ -44885,7 +44915,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 750
+					"pageViews": 760
 				},
 				{
 					"browser": "ChromeMobile",
