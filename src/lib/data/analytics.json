@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-10T02:54:35.163Z",
+	"lastFetched": "2026-04-10T06:00:32.730Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -34140,7 +34140,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2020
+							"pageViews": 2030
 						},
 						{
 							"path": "/dev/",
@@ -34158,7 +34158,7 @@
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 170
+							"pageViews": 180
 						},
 						{
 							"referrer": "github.com",
@@ -34196,7 +34196,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 260
+							"pageViews": 270
 						},
 						{
 							"country": "BE",
@@ -34234,7 +34234,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 720
+							"pageViews": 730
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -34258,7 +34258,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2020
+					"pageViews": 2030
 				},
 				{
 					"path": "/dev/",
@@ -34276,7 +34276,7 @@
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 170
+					"pageViews": 180
 				},
 				{
 					"referrer": "github.com",
@@ -34314,7 +34314,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 260
+					"pageViews": 270
 				},
 				{
 					"country": "BE",
@@ -34352,7 +34352,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 720
+					"pageViews": 730
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -44513,6 +44513,11 @@
 					"datetime": "2026-04-09T24:00:00",
 					"pageViews": 4,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-04-10T04:00:00",
+					"pageViews": 11,
+					"visits": 11
 				}
 			],
 			"aggregateHistory": [
@@ -46953,12 +46958,12 @@
 							"pageViews": 140
 						},
 						{
-							"path": "/generator/stacked-transformer",
+							"path": "/generator/symmetric-inductor",
 							"pageViews": 110
 						},
 						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 100
+							"path": "/generator/stacked-transformer",
+							"pageViews": 110
 						},
 						{
 							"path": "/generator/mom-capacitor",
@@ -47022,7 +47027,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 590
+							"pageViews": 600
 						},
 						{
 							"country": "DE",
@@ -47064,7 +47069,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 780
+							"pageViews": 790
 						},
 						{
 							"browser": "ChromeMobile",
@@ -47099,12 +47104,12 @@
 					"pageViews": 140
 				},
 				{
-					"path": "/generator/stacked-transformer",
+					"path": "/generator/symmetric-inductor",
 					"pageViews": 110
 				},
 				{
-					"path": "/generator/symmetric-inductor",
-					"pageViews": 100
+					"path": "/generator/stacked-transformer",
+					"pageViews": 110
 				},
 				{
 					"path": "/generator/mom-capacitor",
@@ -47168,7 +47173,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 590
+					"pageViews": 600
 				},
 				{
 					"country": "DE",
@@ -47210,7 +47215,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 780
+					"pageViews": 790
 				},
 				{
 					"browser": "ChromeMobile",
