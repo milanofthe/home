@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-11T08:51:08.144Z",
+	"lastFetched": "2026-04-11T13:08:00.705Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -23552,11 +23552,11 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 660
+							"pageViews": 670
 						},
 						{
 							"path": "/pathsim",
-							"pageViews": 250
+							"pageViews": 260
 						},
 						{
 							"path": "/chem",
@@ -23572,7 +23572,7 @@
 						},
 						{
 							"path": "/rf",
-							"pageViews": 80
+							"pageViews": 90
 						},
 						{
 							"path": "/pathsim/",
@@ -23594,7 +23594,7 @@
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 440
+							"pageViews": 460
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -23632,11 +23632,11 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 620
+							"pageViews": 630
 						},
 						{
 							"country": "CN",
-							"pageViews": 180
+							"pageViews": 190
 						},
 						{
 							"country": "DE",
@@ -23651,7 +23651,7 @@
 							"pageViews": 90
 						},
 						{
-							"country": "CA",
+							"country": "PT",
 							"pageViews": 70
 						},
 						{
@@ -23659,22 +23659,22 @@
 							"pageViews": 70
 						},
 						{
-							"country": "AT",
-							"pageViews": 60
+							"country": "CA",
+							"pageViews": 70
 						},
 						{
 							"country": "IN",
 							"pageViews": 60
 						},
 						{
-							"country": "PT",
+							"country": "JP",
 							"pageViews": 60
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 800
+							"pageViews": 820
 						},
 						{
 							"browser": "ChromeMobile",
@@ -23698,11 +23698,11 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 660
+					"pageViews": 670
 				},
 				{
 					"path": "/pathsim",
-					"pageViews": 250
+					"pageViews": 260
 				},
 				{
 					"path": "/chem",
@@ -23718,7 +23718,7 @@
 				},
 				{
 					"path": "/rf",
-					"pageViews": 80
+					"pageViews": 90
 				},
 				{
 					"path": "/pathsim/",
@@ -23740,7 +23740,7 @@
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 440
+					"pageViews": 460
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -23778,11 +23778,11 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 620
+					"pageViews": 630
 				},
 				{
 					"country": "CN",
-					"pageViews": 180
+					"pageViews": 190
 				},
 				{
 					"country": "DE",
@@ -23797,7 +23797,7 @@
 					"pageViews": 90
 				},
 				{
-					"country": "CA",
+					"country": "PT",
 					"pageViews": 70
 				},
 				{
@@ -23805,22 +23805,22 @@
 					"pageViews": 70
 				},
 				{
-					"country": "AT",
-					"pageViews": 60
+					"country": "CA",
+					"pageViews": 70
 				},
 				{
 					"country": "IN",
 					"pageViews": 60
 				},
 				{
-					"country": "PT",
+					"country": "JP",
 					"pageViews": 60
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 800
+					"pageViews": 820
 				},
 				{
 					"browser": "ChromeMobile",
@@ -44402,7 +44402,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 180
+							"pageViews": 150
 						},
 						{
 							"path": "/projects/pathsim/",
@@ -44427,10 +44427,6 @@
 					],
 					"topReferrers": [
 						{
-							"referrer": "github.com",
-							"pageViews": 30
-						},
-						{
 							"referrer": "milanrother.com",
 							"pageViews": 30
 						},
@@ -44439,15 +44435,15 @@
 							"pageViews": 20
 						},
 						{
+							"referrer": "github.com",
+							"pageViews": 10
+						},
+						{
 							"referrer": "pysimhub.io",
 							"pageViews": 10
 						},
 						{
 							"referrer": "www.bing.com",
-							"pageViews": 10
-						},
-						{
-							"referrer": "www.google.com",
 							"pageViews": 10
 						}
 					],
@@ -44458,7 +44454,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 80
+							"pageViews": 50
 						},
 						{
 							"country": "NL",
@@ -44487,10 +44483,6 @@
 							"pageViews": 70
 						},
 						{
-							"browser": "Chrome",
-							"pageViews": 70
-						},
-						{
 							"browser": "Edge",
 							"pageViews": 60
 						},
@@ -44499,8 +44491,12 @@
 							"pageViews": 50
 						},
 						{
+							"browser": "Chrome",
+							"pageViews": 50
+						},
+						{
 							"browser": "Firefox",
-							"pageViews": 20
+							"pageViews": 10
 						}
 					]
 				}
@@ -44508,7 +44504,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 180
+					"pageViews": 150
 				},
 				{
 					"path": "/projects/pathsim/",
@@ -44533,10 +44529,6 @@
 			],
 			"topReferrers": [
 				{
-					"referrer": "github.com",
-					"pageViews": 30
-				},
-				{
 					"referrer": "milanrother.com",
 					"pageViews": 30
 				},
@@ -44545,15 +44537,15 @@
 					"pageViews": 20
 				},
 				{
+					"referrer": "github.com",
+					"pageViews": 10
+				},
+				{
 					"referrer": "pysimhub.io",
 					"pageViews": 10
 				},
 				{
 					"referrer": "www.bing.com",
-					"pageViews": 10
-				},
-				{
-					"referrer": "www.google.com",
 					"pageViews": 10
 				}
 			],
@@ -44564,7 +44556,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 80
+					"pageViews": 50
 				},
 				{
 					"country": "NL",
@@ -44593,10 +44585,6 @@
 					"pageViews": 70
 				},
 				{
-					"browser": "Chrome",
-					"pageViews": 70
-				},
-				{
 					"browser": "Edge",
 					"pageViews": 60
 				},
@@ -44605,8 +44593,12 @@
 					"pageViews": 50
 				},
 				{
+					"browser": "Chrome",
+					"pageViews": 50
+				},
+				{
 					"browser": "Firefox",
-					"pageViews": 20
+					"pageViews": 10
 				}
 			]
 		},
@@ -47783,7 +47775,7 @@
 						},
 						{
 							"path": "/generator/symmetric-transformer",
-							"pageViews": 80
+							"pageViews": 90
 						},
 						{
 							"path": "/generator/patch-antenna",
@@ -47809,7 +47801,7 @@
 						},
 						{
 							"referrer": "www.google.com",
-							"pageViews": 80
+							"pageViews": 90
 						},
 						{
 							"referrer": "milanrother.com",
@@ -47843,7 +47835,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 270
+							"pageViews": 280
 						},
 						{
 							"country": "FR",
@@ -47870,11 +47862,11 @@
 							"pageViews": 60
 						},
 						{
-							"country": "CH",
+							"country": "TW",
 							"pageViews": 60
 						},
 						{
-							"country": "TW",
+							"country": "CH",
 							"pageViews": 60
 						}
 					],
@@ -47929,7 +47921,7 @@
 				},
 				{
 					"path": "/generator/symmetric-transformer",
-					"pageViews": 80
+					"pageViews": 90
 				},
 				{
 					"path": "/generator/patch-antenna",
@@ -47955,7 +47947,7 @@
 				},
 				{
 					"referrer": "www.google.com",
-					"pageViews": 80
+					"pageViews": 90
 				},
 				{
 					"referrer": "milanrother.com",
@@ -47989,7 +47981,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 270
+					"pageViews": 280
 				},
 				{
 					"country": "FR",
@@ -48016,11 +48008,11 @@
 					"pageViews": 60
 				},
 				{
-					"country": "CH",
+					"country": "TW",
 					"pageViews": 60
 				},
 				{
-					"country": "TW",
+					"country": "CH",
 					"pageViews": 60
 				}
 			],
