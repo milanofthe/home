@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-12T05:55:55.795Z",
+	"lastFetched": "2026-04-12T08:55:07.214Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2069,6 +2069,11 @@
 					"datetime": "2026-04-12T04:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-12T08:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -12695,6 +12700,11 @@
 					"datetime": "2026-04-12T04:00:00",
 					"pageViews": 6,
 					"visits": 5
+				},
+				{
+					"datetime": "2026-04-12T08:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -26454,6 +26464,16 @@
 				},
 				{
 					"datetime": "2026-04-12T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-12T08:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-12T12:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -45740,6 +45760,11 @@
 					"datetime": "2026-04-12T04:00:00",
 					"pageViews": 4,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-04-12T08:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -48463,7 +48488,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1140
+							"pageViews": 1150
 						},
 						{
 							"path": "/generator/spiral",
@@ -48574,18 +48599,18 @@
 							"pageViews": 60
 						},
 						{
-							"country": "TW",
+							"country": "CH",
 							"pageViews": 60
 						},
 						{
-							"country": "CH",
+							"country": "TW",
 							"pageViews": 60
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 830
+							"pageViews": 840
 						},
 						{
 							"browser": "ChromeMobile",
@@ -48609,7 +48634,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1140
+					"pageViews": 1150
 				},
 				{
 					"path": "/generator/spiral",
@@ -48720,18 +48745,18 @@
 					"pageViews": 60
 				},
 				{
-					"country": "TW",
+					"country": "CH",
 					"pageViews": 60
 				},
 				{
-					"country": "CH",
+					"country": "TW",
 					"pageViews": 60
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 830
+					"pageViews": 840
 				},
 				{
 					"browser": "ChromeMobile",
@@ -60266,7 +60291,7 @@
 							"pageViews": 10
 						},
 						{
-							"country": "CH",
+							"country": "CN",
 							"pageViews": 10
 						},
 						{
@@ -60274,7 +60299,7 @@
 							"pageViews": 10
 						},
 						{
-							"country": "CN",
+							"country": "CH",
 							"pageViews": 10
 						}
 					],
@@ -60364,7 +60389,7 @@
 					"pageViews": 10
 				},
 				{
-					"country": "CH",
+					"country": "CN",
 					"pageViews": 10
 				},
 				{
@@ -60372,7 +60397,7 @@
 					"pageViews": 10
 				},
 				{
-					"country": "CN",
+					"country": "CH",
 					"pageViews": 10
 				}
 			],
