@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-12T13:10:25.647Z",
+	"lastFetched": "2026-04-12T16:45:30.136Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2072,6 +2072,11 @@
 				},
 				{
 					"datetime": "2026-04-12T08:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-12T16:00:00",
 					"pageViews": 2,
 					"visits": 2
 				}
@@ -10221,7 +10226,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 800
+							"pageViews": 790
 						}
 					],
 					"topReferrers": [
@@ -10288,15 +10293,15 @@
 							"pageViews": 40
 						},
 						{
-							"country": "GB",
-							"pageViews": 30
-						},
-						{
 							"country": "BR",
 							"pageViews": 30
 						},
 						{
 							"country": "CN",
+							"pageViews": 20
+						},
+						{
+							"country": "FI",
 							"pageViews": 20
 						},
 						{
@@ -10307,23 +10312,23 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 300
-						},
-						{
-							"browser": "Edge",
-							"pageViews": 200
+							"pageViews": 290
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 200
+							"pageViews": 160
+						},
+						{
+							"browser": "Edge",
+							"pageViews": 130
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 60
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 100
-						},
-						{
-							"browser": "Firefox",
-							"pageViews": 100
+							"pageViews": 40
 						}
 					]
 				}
@@ -10331,7 +10336,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 800
+					"pageViews": 790
 				}
 			],
 			"topReferrers": [
@@ -10398,15 +10403,15 @@
 					"pageViews": 40
 				},
 				{
-					"country": "GB",
-					"pageViews": 30
-				},
-				{
 					"country": "BR",
 					"pageViews": 30
 				},
 				{
 					"country": "CN",
+					"pageViews": 20
+				},
+				{
+					"country": "FI",
 					"pageViews": 20
 				},
 				{
@@ -10417,23 +10422,23 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 300
-				},
-				{
-					"browser": "Edge",
-					"pageViews": 200
+					"pageViews": 290
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 200
+					"pageViews": 160
+				},
+				{
+					"browser": "Edge",
+					"pageViews": 130
+				},
+				{
+					"browser": "ChromeHeadless",
+					"pageViews": 60
 				},
 				{
 					"browser": "MobileSafari",
-					"pageViews": 100
-				},
-				{
-					"browser": "Firefox",
-					"pageViews": 100
+					"pageViews": 40
 				}
 			]
 		},
@@ -23870,11 +23875,11 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 670
+							"pageViews": 680
 						},
 						{
 							"path": "/pathsim",
-							"pageViews": 260
+							"pageViews": 250
 						},
 						{
 							"path": "/vehicle",
@@ -23905,7 +23910,7 @@
 							"pageViews": 40
 						},
 						{
-							"path": "/rf/v0.1.1/examples/superheterodyne-receiver",
+							"path": "/pathsim/latest/examples",
 							"pageViews": 40
 						}
 					],
@@ -23916,7 +23921,7 @@
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 330
+							"pageViews": 320
 						},
 						{
 							"referrer": "pathsim.readthedocs.io",
@@ -23965,20 +23970,12 @@
 							"pageViews": 90
 						},
 						{
-							"country": "PT",
-							"pageViews": 70
-						},
-						{
 							"country": "IN",
 							"pageViews": 70
 						},
 						{
-							"country": "CO",
+							"country": "PT",
 							"pageViews": 70
-						},
-						{
-							"country": "CA",
-							"pageViews": 60
 						},
 						{
 							"country": "GB",
@@ -23987,16 +23984,24 @@
 						{
 							"country": "AT",
 							"pageViews": 60
+						},
+						{
+							"country": "CO",
+							"pageViews": 60
+						},
+						{
+							"country": "CA",
+							"pageViews": 60
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 790
+							"pageViews": 770
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 400
+							"pageViews": 410
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -24016,11 +24021,11 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 670
+					"pageViews": 680
 				},
 				{
 					"path": "/pathsim",
-					"pageViews": 260
+					"pageViews": 250
 				},
 				{
 					"path": "/vehicle",
@@ -24051,7 +24056,7 @@
 					"pageViews": 40
 				},
 				{
-					"path": "/rf/v0.1.1/examples/superheterodyne-receiver",
+					"path": "/pathsim/latest/examples",
 					"pageViews": 40
 				}
 			],
@@ -24062,7 +24067,7 @@
 				},
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 330
+					"pageViews": 320
 				},
 				{
 					"referrer": "pathsim.readthedocs.io",
@@ -24111,20 +24116,12 @@
 					"pageViews": 90
 				},
 				{
-					"country": "PT",
-					"pageViews": 70
-				},
-				{
 					"country": "IN",
 					"pageViews": 70
 				},
 				{
-					"country": "CO",
+					"country": "PT",
 					"pageViews": 70
-				},
-				{
-					"country": "CA",
-					"pageViews": 60
 				},
 				{
 					"country": "GB",
@@ -24133,16 +24130,24 @@
 				{
 					"country": "AT",
 					"pageViews": 60
+				},
+				{
+					"country": "CO",
+					"pageViews": 60
+				},
+				{
+					"country": "CA",
+					"pageViews": 60
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 790
+					"pageViews": 770
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 400
+					"pageViews": 410
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -26486,6 +26491,11 @@
 					"datetime": "2026-04-12T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-12T16:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -36739,6 +36749,11 @@
 					"datetime": "2026-04-11T20:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-12T16:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -48508,7 +48523,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1150
+							"pageViews": 1160
 						},
 						{
 							"path": "/generator/spiral",
@@ -48588,7 +48603,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 640
+							"pageViews": 650
 						},
 						{
 							"country": "DE",
@@ -48630,7 +48645,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 840
+							"pageViews": 850
 						},
 						{
 							"browser": "ChromeMobile",
@@ -48654,7 +48669,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1150
+					"pageViews": 1160
 				},
 				{
 					"path": "/generator/spiral",
@@ -48734,7 +48749,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 640
+					"pageViews": 650
 				},
 				{
 					"country": "DE",
@@ -48776,7 +48791,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 840
+					"pageViews": 850
 				},
 				{
 					"browser": "ChromeMobile",
