@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-13T03:23:45.307Z",
+	"lastFetched": "2026-04-13T06:19:05.013Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -24163,7 +24163,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 680
+							"pageViews": 690
 						},
 						{
 							"path": "/pathsim",
@@ -24247,7 +24247,7 @@
 						},
 						{
 							"country": "CN",
-							"pageViews": 200
+							"pageViews": 210
 						},
 						{
 							"country": "DE",
@@ -24309,7 +24309,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 680
+					"pageViews": 690
 				},
 				{
 					"path": "/pathsim",
@@ -24393,7 +24393,7 @@
 				},
 				{
 					"country": "CN",
-					"pageViews": 200
+					"pageViews": 210
 				},
 				{
 					"country": "DE",
@@ -45525,11 +45525,11 @@
 							"pageViews": 150
 						},
 						{
-							"path": "/projects/pathsim/",
-							"pageViews": 30
+							"path": "/projects/emerge/",
+							"pageViews": 40
 						},
 						{
-							"path": "/projects/emerge/",
+							"path": "/projects/pathsim/",
 							"pageViews": 30
 						},
 						{
@@ -45553,6 +45553,10 @@
 						{
 							"referrer": "pypi.org",
 							"pageViews": 20
+						},
+						{
+							"referrer": "cn.bing.com",
+							"pageViews": 10
 						},
 						{
 							"referrer": "github.com",
@@ -45585,6 +45589,10 @@
 							"pageViews": 10
 						},
 						{
+							"country": "CN",
+							"pageViews": 10
+						},
+						{
 							"country": "KR",
 							"pageViews": 10
 						}
@@ -45596,7 +45604,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 50
+							"pageViews": 60
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -45619,11 +45627,11 @@
 					"pageViews": 150
 				},
 				{
-					"path": "/projects/pathsim/",
-					"pageViews": 30
+					"path": "/projects/emerge/",
+					"pageViews": 40
 				},
 				{
-					"path": "/projects/emerge/",
+					"path": "/projects/pathsim/",
 					"pageViews": 30
 				},
 				{
@@ -45647,6 +45655,10 @@
 				{
 					"referrer": "pypi.org",
 					"pageViews": 20
+				},
+				{
+					"referrer": "cn.bing.com",
+					"pageViews": 10
 				},
 				{
 					"referrer": "github.com",
@@ -45679,6 +45691,10 @@
 					"pageViews": 10
 				},
 				{
+					"country": "CN",
+					"pageViews": 10
+				},
+				{
 					"country": "KR",
 					"pageViews": 10
 				}
@@ -45690,7 +45706,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 50
+					"pageViews": 60
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -49199,7 +49215,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1170
+							"pageViews": 1180
 						},
 						{
 							"path": "/generator/spiral",
@@ -49302,6 +49318,10 @@
 							"pageViews": 70
 						},
 						{
+							"country": "TW",
+							"pageViews": 70
+						},
+						{
 							"country": "CA",
 							"pageViews": 60
 						},
@@ -49311,10 +49331,6 @@
 						},
 						{
 							"country": "CH",
-							"pageViews": 60
-						},
-						{
-							"country": "TW",
 							"pageViews": 60
 						}
 					],
@@ -49337,7 +49353,7 @@
 						},
 						{
 							"browser": "SamsungInternet",
-							"pageViews": 100
+							"pageViews": 110
 						}
 					]
 				}
@@ -49345,7 +49361,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1170
+					"pageViews": 1180
 				},
 				{
 					"path": "/generator/spiral",
@@ -49448,6 +49464,10 @@
 					"pageViews": 70
 				},
 				{
+					"country": "TW",
+					"pageViews": 70
+				},
+				{
 					"country": "CA",
 					"pageViews": 60
 				},
@@ -49457,10 +49477,6 @@
 				},
 				{
 					"country": "CH",
-					"pageViews": 60
-				},
-				{
-					"country": "TW",
 					"pageViews": 60
 				}
 			],
@@ -49483,7 +49499,7 @@
 				},
 				{
 					"browser": "SamsungInternet",
-					"pageViews": 100
+					"pageViews": 110
 				}
 			]
 		},
