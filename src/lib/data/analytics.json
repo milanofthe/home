@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-14T02:55:43.557Z",
+	"lastFetched": "2026-04-14T06:02:16.499Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -24556,7 +24556,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 610
+							"pageViews": 600
 						},
 						{
 							"country": "CN",
@@ -24598,7 +24598,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 770
+							"pageViews": 760
 						},
 						{
 							"browser": "ChromeMobile",
@@ -24702,7 +24702,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 610
+					"pageViews": 600
 				},
 				{
 					"country": "CN",
@@ -24744,7 +24744,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 770
+					"pageViews": 760
 				},
 				{
 					"browser": "ChromeMobile",
@@ -49977,7 +49977,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1200
+							"pageViews": 1210
 						},
 						{
 							"path": "/generator/spiral",
@@ -50057,7 +50057,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 680
+							"pageViews": 690
 						},
 						{
 							"country": "DE",
@@ -50076,11 +50076,11 @@
 							"pageViews": 80
 						},
 						{
-							"country": "TW",
+							"country": "NL",
 							"pageViews": 70
 						},
 						{
-							"country": "NL",
+							"country": "TW",
 							"pageViews": 70
 						},
 						{
@@ -50107,7 +50107,7 @@
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 310
+							"pageViews": 320
 						},
 						{
 							"browser": "Edge",
@@ -50123,7 +50123,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1200
+					"pageViews": 1210
 				},
 				{
 					"path": "/generator/spiral",
@@ -50203,7 +50203,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 680
+					"pageViews": 690
 				},
 				{
 					"country": "DE",
@@ -50222,11 +50222,11 @@
 					"pageViews": 80
 				},
 				{
-					"country": "TW",
+					"country": "NL",
 					"pageViews": 70
 				},
 				{
-					"country": "NL",
+					"country": "TW",
 					"pageViews": 70
 				},
 				{
@@ -50253,7 +50253,7 @@
 				},
 				{
 					"browser": "MobileSafari",
-					"pageViews": 310
+					"pageViews": 320
 				},
 				{
 					"browser": "Edge",
