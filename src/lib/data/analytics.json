@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-15T02:53:27.896Z",
+	"lastFetched": "2026-04-15T06:02:27.999Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2144,6 +2144,16 @@
 					"datetime": "2026-04-14T24:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-15T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-15T08:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -13188,6 +13198,16 @@
 					"datetime": "2026-04-14T24:00:00",
 					"pageViews": 5,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-04-15T04:00:00",
+					"pageViews": 6,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-04-15T08:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -27469,6 +27489,11 @@
 				{
 					"datetime": "2026-04-14T24:00:00",
 					"pageViews": 2,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-15T04:00:00",
+					"pageViews": 1,
 					"visits": 1
 				}
 			],
@@ -50748,7 +50773,7 @@
 						},
 						{
 							"path": "/generator/symmetric-transformer",
-							"pageViews": 120
+							"pageViews": 130
 						},
 						{
 							"path": "/generator/symmetric-inductor",
@@ -50835,19 +50860,19 @@
 							"pageViews": 80
 						},
 						{
-							"country": "TW",
-							"pageViews": 70
-						},
-						{
 							"country": "NL",
 							"pageViews": 70
 						},
 						{
-							"country": "CA",
-							"pageViews": 60
+							"country": "TW",
+							"pageViews": 70
 						},
 						{
 							"country": "GB",
+							"pageViews": 60
+						},
+						{
+							"country": "CA",
 							"pageViews": 60
 						},
 						{
@@ -50858,7 +50883,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 910
+							"pageViews": 920
 						},
 						{
 							"browser": "ChromeMobile",
@@ -50894,7 +50919,7 @@
 				},
 				{
 					"path": "/generator/symmetric-transformer",
-					"pageViews": 120
+					"pageViews": 130
 				},
 				{
 					"path": "/generator/symmetric-inductor",
@@ -50981,19 +51006,19 @@
 					"pageViews": 80
 				},
 				{
-					"country": "TW",
-					"pageViews": 70
-				},
-				{
 					"country": "NL",
 					"pageViews": 70
 				},
 				{
-					"country": "CA",
-					"pageViews": 60
+					"country": "TW",
+					"pageViews": 70
 				},
 				{
 					"country": "GB",
+					"pageViews": 60
+				},
+				{
+					"country": "CA",
 					"pageViews": 60
 				},
 				{
@@ -51004,7 +51029,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 910
+					"pageViews": 920
 				},
 				{
 					"browser": "ChromeMobile",
@@ -52942,6 +52967,11 @@
 					"datetime": "2026-04-14T20:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-15T04:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
