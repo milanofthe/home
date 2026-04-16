@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-16T06:04:42.053Z",
+	"lastFetched": "2026-04-16T09:24:12.142Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2177,6 +2177,16 @@
 				},
 				{
 					"datetime": "2026-04-16T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-16T08:00:00",
+					"pageViews": 10,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-04-16T12:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -27838,6 +27848,16 @@
 					"datetime": "2026-04-16T04:00:00",
 					"pageViews": 2,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-16T08:00:00",
+					"pageViews": 7,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-04-16T12:00:00",
+					"pageViews": 3,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -36932,7 +36952,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1980
+							"pageViews": 1970
 						},
 						{
 							"path": "/dev/",
@@ -36995,11 +37015,11 @@
 							"pageViews": 110
 						},
 						{
-							"country": "BE",
+							"country": "FR",
 							"pageViews": 100
 						},
 						{
-							"country": "FR",
+							"country": "BE",
 							"pageViews": 100
 						},
 						{
@@ -37026,7 +37046,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 740
+							"pageViews": 730
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -37050,7 +37070,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1980
+					"pageViews": 1970
 				},
 				{
 					"path": "/dev/",
@@ -37113,11 +37133,11 @@
 					"pageViews": 110
 				},
 				{
-					"country": "BE",
+					"country": "FR",
 					"pageViews": 100
 				},
 				{
-					"country": "FR",
+					"country": "BE",
 					"pageViews": 100
 				},
 				{
@@ -37144,7 +37164,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 740
+					"pageViews": 730
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -38635,6 +38655,16 @@
 				},
 				{
 					"datetime": "2026-04-15T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-16T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-16T12:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -47291,7 +47321,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 110
+							"pageViews": 120
 						},
 						{
 							"path": "/projects/emerge/",
@@ -47343,7 +47373,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 60
+							"pageViews": 70
 						},
 						{
 							"country": "PT",
@@ -47364,20 +47394,20 @@
 					],
 					"topBrowsers": [
 						{
-							"browser": "Edge",
-							"pageViews": 50
-						},
-						{
 							"browser": "ChromeHeadless",
 							"pageViews": 50
 						},
 						{
-							"browser": "Chrome",
-							"pageViews": 40
+							"browser": "Edge",
+							"pageViews": 50
 						},
 						{
 							"browser": "Firefox",
-							"pageViews": 30
+							"pageViews": 40
+						},
+						{
+							"browser": "Chrome",
+							"pageViews": 40
 						},
 						{
 							"browser": "BingBot",
@@ -47389,7 +47419,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 110
+					"pageViews": 120
 				},
 				{
 					"path": "/projects/emerge/",
@@ -47441,7 +47471,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 60
+					"pageViews": 70
 				},
 				{
 					"country": "PT",
@@ -47462,20 +47492,20 @@
 			],
 			"topBrowsers": [
 				{
-					"browser": "Edge",
-					"pageViews": 50
-				},
-				{
 					"browser": "ChromeHeadless",
 					"pageViews": 50
 				},
 				{
-					"browser": "Chrome",
-					"pageViews": 40
+					"browser": "Edge",
+					"pageViews": 50
 				},
 				{
 					"browser": "Firefox",
-					"pageViews": 30
+					"pageViews": 40
+				},
+				{
+					"browser": "Chrome",
+					"pageViews": 40
 				},
 				{
 					"browser": "BingBot",
@@ -48196,6 +48226,16 @@
 					"datetime": "2026-04-16T04:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-16T08:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-16T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
