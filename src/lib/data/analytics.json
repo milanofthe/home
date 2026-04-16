@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-16T03:20:19.229Z",
+	"lastFetched": "2026-04-16T06:04:42.053Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -13364,6 +13364,16 @@
 					"datetime": "2026-04-15T24:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-16T04:00:00",
+					"pageViews": 7,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-04-16T08:00:00",
+					"pageViews": 6,
+					"visits": 6
 				}
 			],
 			"aggregateHistory": [
@@ -25107,7 +25117,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 780
+							"pageViews": 770
 						},
 						{
 							"path": "/pathsim",
@@ -25115,7 +25125,7 @@
 						},
 						{
 							"path": "/chem",
-							"pageViews": 140
+							"pageViews": 120
 						},
 						{
 							"path": "/vehicle",
@@ -25149,11 +25159,11 @@
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 490
+							"pageViews": 470
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 310
+							"pageViews": 290
 						},
 						{
 							"referrer": "pathsim.readthedocs.io",
@@ -25195,7 +25205,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 200
+							"pageViews": 170
 						},
 						{
 							"country": "JP",
@@ -25241,7 +25251,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 270
+							"pageViews": 230
 						},
 						{
 							"browser": "Firefox",
@@ -25253,7 +25263,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 780
+					"pageViews": 770
 				},
 				{
 					"path": "/pathsim",
@@ -25261,7 +25271,7 @@
 				},
 				{
 					"path": "/chem",
-					"pageViews": 140
+					"pageViews": 120
 				},
 				{
 					"path": "/vehicle",
@@ -25295,11 +25305,11 @@
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 490
+					"pageViews": 470
 				},
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 310
+					"pageViews": 290
 				},
 				{
 					"referrer": "pathsim.readthedocs.io",
@@ -25341,7 +25351,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 200
+					"pageViews": 170
 				},
 				{
 					"country": "JP",
@@ -25387,7 +25397,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 270
+					"pageViews": 230
 				},
 				{
 					"browser": "Firefox",
@@ -37001,11 +37011,11 @@
 							"pageViews": 70
 						},
 						{
-							"country": "GB",
+							"country": "IN",
 							"pageViews": 60
 						},
 						{
-							"country": "IN",
+							"country": "GB",
 							"pageViews": 60
 						},
 						{
@@ -37119,11 +37129,11 @@
 					"pageViews": 70
 				},
 				{
-					"country": "GB",
+					"country": "IN",
 					"pageViews": 60
 				},
 				{
-					"country": "IN",
+					"country": "GB",
 					"pageViews": 60
 				},
 				{
@@ -53728,6 +53738,16 @@
 					"datetime": "2026-04-15T24:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-16T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-16T08:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
