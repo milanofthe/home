@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-17T02:56:06.360Z",
+	"lastFetched": "2026-04-17T06:05:42.286Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -25472,7 +25472,7 @@
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 460
+							"pageViews": 470
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -25533,11 +25533,11 @@
 							"pageViews": 70
 						},
 						{
-							"country": "SG",
-							"pageViews": 60
+							"country": "IN",
+							"pageViews": 70
 						},
 						{
-							"country": "IN",
+							"country": "SG",
 							"pageViews": 60
 						},
 						{
@@ -25564,7 +25564,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 210
+							"pageViews": 220
 						},
 						{
 							"browser": "Firefox",
@@ -25618,7 +25618,7 @@
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 460
+					"pageViews": 470
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -25679,11 +25679,11 @@
 					"pageViews": 70
 				},
 				{
-					"country": "SG",
-					"pageViews": 60
+					"country": "IN",
+					"pageViews": 70
 				},
 				{
-					"country": "IN",
+					"country": "SG",
 					"pageViews": 60
 				},
 				{
@@ -25710,7 +25710,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 210
+					"pageViews": 220
 				},
 				{
 					"browser": "Firefox",
@@ -28176,6 +28176,16 @@
 					"datetime": "2026-04-16T24:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-17T04:00:00",
+					"pageViews": 4,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-17T08:00:00",
+					"pageViews": 4,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -52295,11 +52305,11 @@
 							"pageViews": 130
 						},
 						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 110
+							"path": "/generator/mom-capacitor",
+							"pageViews": 120
 						},
 						{
-							"path": "/generator/mom-capacitor",
+							"path": "/generator/symmetric-inductor",
 							"pageViews": 110
 						},
 						{
@@ -52360,7 +52370,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 740
+							"pageViews": 750
 						},
 						{
 							"country": "DE",
@@ -52375,11 +52385,11 @@
 							"pageViews": 100
 						},
 						{
-							"country": "IE",
+							"country": "TW",
 							"pageViews": 80
 						},
 						{
-							"country": "TW",
+							"country": "IE",
 							"pageViews": 80
 						},
 						{
@@ -52402,7 +52412,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 950
+							"pageViews": 960
 						},
 						{
 							"browser": "ChromeMobile",
@@ -52441,11 +52451,11 @@
 					"pageViews": 130
 				},
 				{
-					"path": "/generator/symmetric-inductor",
-					"pageViews": 110
+					"path": "/generator/mom-capacitor",
+					"pageViews": 120
 				},
 				{
-					"path": "/generator/mom-capacitor",
+					"path": "/generator/symmetric-inductor",
 					"pageViews": 110
 				},
 				{
@@ -52506,7 +52516,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 740
+					"pageViews": 750
 				},
 				{
 					"country": "DE",
@@ -52521,11 +52531,11 @@
 					"pageViews": 100
 				},
 				{
-					"country": "IE",
+					"country": "TW",
 					"pageViews": 80
 				},
 				{
-					"country": "TW",
+					"country": "IE",
 					"pageViews": 80
 				},
 				{
@@ -52548,7 +52558,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 950
+					"pageViews": 960
 				},
 				{
 					"browser": "ChromeMobile",
