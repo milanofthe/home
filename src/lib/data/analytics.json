@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-17T06:05:42.286Z",
+	"lastFetched": "2026-04-17T09:23:09.819Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2207,6 +2207,16 @@
 				},
 				{
 					"datetime": "2026-04-17T04:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-17T08:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-17T12:00:00",
 					"pageViews": 2,
 					"visits": 2
 				}
@@ -13540,6 +13550,16 @@
 					"datetime": "2026-04-17T04:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-17T08:00:00",
+					"pageViews": 14,
+					"visits": 14
+				},
+				{
+					"datetime": "2026-04-17T12:00:00",
+					"pageViews": 5,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -37399,7 +37419,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1990
+							"pageViews": 2010
 						},
 						{
 							"path": "/dev/",
@@ -37413,7 +37433,7 @@
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 490
+							"pageViews": 500
 						},
 						{
 							"referrer": "pathsim.org",
@@ -37422,6 +37442,10 @@
 						{
 							"referrer": "github.com",
 							"pageViews": 80
+						},
+						{
+							"referrer": "www.linkedin.com",
+							"pageViews": 40
 						},
 						{
 							"referrer": "www.google.com",
@@ -37436,15 +37460,11 @@
 							"pageViews": 30
 						},
 						{
-							"referrer": "www.linkedin.com",
-							"pageViews": 30
-						},
-						{
-							"referrer": "com.linkedin.android",
+							"referrer": "www.bing.com",
 							"pageViews": 20
 						},
 						{
-							"referrer": "www.bing.com",
+							"referrer": "com.linkedin.android",
 							"pageViews": 20
 						}
 					],
@@ -37455,7 +37475,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 280
+							"pageViews": 290
 						},
 						{
 							"country": "BE",
@@ -37470,15 +37490,15 @@
 							"pageViews": 100
 						},
 						{
+							"country": "IT",
+							"pageViews": 80
+						},
+						{
 							"country": "PT",
 							"pageViews": 80
 						},
 						{
 							"country": "GB",
-							"pageViews": 70
-						},
-						{
-							"country": "IT",
 							"pageViews": 70
 						},
 						{
@@ -37493,7 +37513,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 720
+							"pageViews": 730
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -37517,7 +37537,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1990
+					"pageViews": 2010
 				},
 				{
 					"path": "/dev/",
@@ -37531,7 +37551,7 @@
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 490
+					"pageViews": 500
 				},
 				{
 					"referrer": "pathsim.org",
@@ -37540,6 +37560,10 @@
 				{
 					"referrer": "github.com",
 					"pageViews": 80
+				},
+				{
+					"referrer": "www.linkedin.com",
+					"pageViews": 40
 				},
 				{
 					"referrer": "www.google.com",
@@ -37554,15 +37578,11 @@
 					"pageViews": 30
 				},
 				{
-					"referrer": "www.linkedin.com",
-					"pageViews": 30
-				},
-				{
-					"referrer": "com.linkedin.android",
+					"referrer": "www.bing.com",
 					"pageViews": 20
 				},
 				{
-					"referrer": "www.bing.com",
+					"referrer": "com.linkedin.android",
 					"pageViews": 20
 				}
 			],
@@ -37573,7 +37593,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 280
+					"pageViews": 290
 				},
 				{
 					"country": "BE",
@@ -37588,15 +37608,15 @@
 					"pageViews": 100
 				},
 				{
+					"country": "IT",
+					"pageViews": 80
+				},
+				{
 					"country": "PT",
 					"pageViews": 80
 				},
 				{
 					"country": "GB",
-					"pageViews": 70
-				},
-				{
-					"country": "IT",
 					"pageViews": 70
 				},
 				{
@@ -37611,7 +37631,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 720
+					"pageViews": 730
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -48832,6 +48852,16 @@
 					"datetime": "2026-04-17T04:00:00",
 					"pageViews": 9,
 					"visits": 9
+				},
+				{
+					"datetime": "2026-04-17T08:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-17T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -54546,6 +54576,16 @@
 					"datetime": "2026-04-16T24:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-17T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-17T12:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -62835,7 +62875,7 @@
 							"pageViews": 10
 						},
 						{
-							"country": "IT",
+							"country": "CN",
 							"pageViews": 10
 						},
 						{
@@ -62843,7 +62883,7 @@
 							"pageViews": 10
 						},
 						{
-							"country": "CH",
+							"country": "IT",
 							"pageViews": 10
 						}
 					],
@@ -62949,7 +62989,7 @@
 					"pageViews": 10
 				},
 				{
-					"country": "IT",
+					"country": "CN",
 					"pageViews": 10
 				},
 				{
@@ -62957,7 +62997,7 @@
 					"pageViews": 10
 				},
 				{
-					"country": "CH",
+					"country": "IT",
 					"pageViews": 10
 				}
 			],
@@ -63377,6 +63417,16 @@
 					"datetime": "2026-04-16T24:00:00",
 					"pageViews": 2,
 					"visits": 0
+				},
+				{
+					"datetime": "2026-04-17T08:00:00",
+					"pageViews": 1,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-04-17T12:00:00",
+					"pageViews": 3,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
