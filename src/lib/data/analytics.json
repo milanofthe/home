@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-18T16:48:59.453Z",
+	"lastFetched": "2026-04-18T20:41:59.978Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -11072,7 +11072,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 890
+							"pageViews": 910
 						}
 					],
 					"topReferrers": [
@@ -11115,11 +11115,11 @@
 					],
 					"topCountries": [
 						{
-							"country": "DE",
-							"pageViews": 200
+							"country": "US",
+							"pageViews": 220
 						},
 						{
-							"country": "US",
+							"country": "DE",
 							"pageViews": 200
 						},
 						{
@@ -11158,7 +11158,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 350
+							"pageViews": 370
 						},
 						{
 							"browser": "ChromeMobile",
@@ -11182,7 +11182,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 890
+					"pageViews": 910
 				}
 			],
 			"topReferrers": [
@@ -11225,11 +11225,11 @@
 			],
 			"topCountries": [
 				{
-					"country": "DE",
-					"pageViews": 200
+					"country": "US",
+					"pageViews": 220
 				},
 				{
-					"country": "US",
+					"country": "DE",
 					"pageViews": 200
 				},
 				{
@@ -11268,7 +11268,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 350
+					"pageViews": 370
 				},
 				{
 					"browser": "ChromeMobile",
@@ -13746,6 +13746,16 @@
 					"datetime": "2026-04-18T16:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-18T20:00:00",
+					"pageViews": 6,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-04-18T24:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -28579,6 +28589,11 @@
 					"datetime": "2026-04-18T16:00:00",
 					"pageViews": 5,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-04-18T20:00:00",
+					"pageViews": 8,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -37911,7 +37926,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2080
+							"pageViews": 2100
 						},
 						{
 							"path": "/dev/",
@@ -37929,7 +37944,7 @@
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 210
+							"pageViews": 230
 						},
 						{
 							"referrer": "github.com",
@@ -37963,7 +37978,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 760
+							"pageViews": 780
 						},
 						{
 							"country": "DE",
@@ -38005,7 +38020,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 760
+							"pageViews": 780
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -38029,7 +38044,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 2080
+					"pageViews": 2100
 				},
 				{
 					"path": "/dev/",
@@ -38047,7 +38062,7 @@
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 210
+					"pageViews": 230
 				},
 				{
 					"referrer": "github.com",
@@ -38081,7 +38096,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 760
+					"pageViews": 780
 				},
 				{
 					"country": "DE",
@@ -38123,7 +38138,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 760
+					"pageViews": 780
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -49528,6 +49543,16 @@
 					"datetime": "2026-04-18T16:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-04-18T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-18T24:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -55424,6 +55449,11 @@
 					"datetime": "2026-04-18T16:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-18T20:00:00",
+					"pageViews": 5,
+					"visits": 5
 				}
 			],
 			"aggregateHistory": [
@@ -63753,7 +63783,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 430
+							"pageViews": 420
 						},
 						{
 							"path": "/dashboard/",
@@ -63801,7 +63831,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 340
+							"pageViews": 330
 						},
 						{
 							"country": "US",
@@ -63867,7 +63897,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 430
+					"pageViews": 420
 				},
 				{
 					"path": "/dashboard/",
@@ -63915,7 +63945,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 340
+					"pageViews": 330
 				},
 				{
 					"country": "US",
