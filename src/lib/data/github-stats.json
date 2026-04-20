@@ -15,7 +15,7 @@
 		"pysimhub": {
 			"projects": 22,
 			"members": 3,
-			"cumulativeStars": 14899
+			"cumulativeStars": 14904
 		}
 	},
 	"history": [
@@ -1645,11 +1645,11 @@
 			"pysimhub": {
 				"projects": 22,
 				"members": 3,
-				"cumulativeStars": 14899
+				"cumulativeStars": 14904
 			}
 		}
 	],
-	"fetchedAt": "2026-04-20T13:51:43.116Z",
+	"fetchedAt": "2026-04-20T20:54:00.057Z",
 	"starHistory": {
 		"pathsim": [
 			{
@@ -2190,154 +2190,158 @@
 			},
 			{
 				"date": "2026-02-15",
-				"stars": 259
+				"stars": 258
 			},
 			{
 				"date": "2026-02-16",
-				"stars": 264
+				"stars": 263
 			},
 			{
 				"date": "2026-02-17",
-				"stars": 265
+				"stars": 264
 			},
 			{
 				"date": "2026-02-23",
-				"stars": 266
+				"stars": 265
 			},
 			{
 				"date": "2026-02-24",
-				"stars": 267
+				"stars": 266
 			},
 			{
 				"date": "2026-02-25",
-				"stars": 268
+				"stars": 267
 			},
 			{
 				"date": "2026-03-01",
-				"stars": 269
+				"stars": 268
 			},
 			{
 				"date": "2026-03-02",
-				"stars": 272
+				"stars": 271
 			},
 			{
 				"date": "2026-03-03",
-				"stars": 273
+				"stars": 272
 			},
 			{
 				"date": "2026-03-04",
-				"stars": 274
+				"stars": 273
 			},
 			{
 				"date": "2026-03-05",
-				"stars": 276
+				"stars": 275
 			},
 			{
 				"date": "2026-03-06",
-				"stars": 278
+				"stars": 277
 			},
 			{
 				"date": "2026-03-08",
-				"stars": 298
+				"stars": 297
 			},
 			{
 				"date": "2026-03-09",
-				"stars": 313
+				"stars": 312
 			},
 			{
 				"date": "2026-03-10",
-				"stars": 318
+				"stars": 317
 			},
 			{
 				"date": "2026-03-11",
-				"stars": 321
+				"stars": 320
 			},
 			{
 				"date": "2026-03-12",
-				"stars": 322
+				"stars": 321
 			},
 			{
 				"date": "2026-03-13",
-				"stars": 324
+				"stars": 323
 			},
 			{
 				"date": "2026-03-16",
-				"stars": 331
+				"stars": 330
 			},
 			{
 				"date": "2026-03-17",
-				"stars": 333
+				"stars": 332
 			},
 			{
 				"date": "2026-03-19",
-				"stars": 334
+				"stars": 333
 			},
 			{
 				"date": "2026-03-23",
-				"stars": 335
+				"stars": 334
 			},
 			{
 				"date": "2026-03-25",
-				"stars": 336
+				"stars": 335
 			},
 			{
 				"date": "2026-03-27",
-				"stars": 337
+				"stars": 336
 			},
 			{
 				"date": "2026-03-28",
-				"stars": 338
+				"stars": 337
 			},
 			{
 				"date": "2026-03-30",
-				"stars": 339
+				"stars": 338
 			},
 			{
 				"date": "2026-04-01",
-				"stars": 340
+				"stars": 339
 			},
 			{
 				"date": "2026-04-02",
-				"stars": 341
+				"stars": 340
 			},
 			{
 				"date": "2026-04-03",
-				"stars": 345
+				"stars": 344
 			},
 			{
 				"date": "2026-04-08",
-				"stars": 347
+				"stars": 346
 			},
 			{
 				"date": "2026-04-11",
-				"stars": 349
+				"stars": 348
 			},
 			{
 				"date": "2026-04-13",
-				"stars": 352
+				"stars": 351
 			},
 			{
 				"date": "2026-04-14",
-				"stars": 353
+				"stars": 352
 			},
 			{
 				"date": "2026-04-15",
-				"stars": 354
+				"stars": 353
 			},
 			{
 				"date": "2026-04-16",
-				"stars": 356
+				"stars": 355
 			},
 			{
 				"date": "2026-04-17",
-				"stars": 357
+				"stars": 356
 			},
 			{
 				"date": "2026-04-18",
-				"stars": 359
+				"stars": 358
 			},
 			{
 				"date": "2026-04-19",
+				"stars": 359
+			},
+			{
+				"date": "2026-04-20",
 				"stars": 360
 			}
 		],
