@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-22T02:55:47.458Z",
+	"lastFetched": "2026-04-22T06:02:12.780Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2347,6 +2347,11 @@
 				},
 				{
 					"datetime": "2026-04-21T24:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-22T04:00:00",
 					"pageViews": 2,
 					"visits": 2
 				}
@@ -14380,6 +14385,11 @@
 					"datetime": "2026-04-21T24:00:00",
 					"pageViews": 7,
 					"visits": 7
+				},
+				{
+					"datetime": "2026-04-22T04:00:00",
+					"pageViews": 12,
+					"visits": 6
 				}
 			],
 			"aggregateHistory": [
@@ -51895,6 +51905,16 @@
 					"datetime": "2026-04-21T24:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-22T04:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-22T08:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -56103,11 +56123,11 @@
 							"pageViews": 130
 						},
 						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 110
+							"path": "/generator/stacked-transformer",
+							"pageViews": 120
 						},
 						{
-							"path": "/generator/stacked-transformer",
+							"path": "/generator/symmetric-inductor",
 							"pageViews": 110
 						},
 						{
@@ -56202,7 +56222,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 1030
+							"pageViews": 1040
 						},
 						{
 							"browser": "ChromeMobile",
@@ -56245,11 +56265,11 @@
 					"pageViews": 130
 				},
 				{
-					"path": "/generator/symmetric-inductor",
-					"pageViews": 110
+					"path": "/generator/stacked-transformer",
+					"pageViews": 120
 				},
 				{
-					"path": "/generator/stacked-transformer",
+					"path": "/generator/symmetric-inductor",
 					"pageViews": 110
 				},
 				{
@@ -56344,7 +56364,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 1030
+					"pageViews": 1040
 				},
 				{
 					"browser": "ChromeMobile",
@@ -67297,7 +67317,7 @@
 							"pageViews": 20
 						},
 						{
-							"country": "CZ",
+							"country": "AT",
 							"pageViews": 20
 						},
 						{
@@ -67305,7 +67325,7 @@
 							"pageViews": 20
 						},
 						{
-							"country": "AT",
+							"country": "CZ",
 							"pageViews": 20
 						},
 						{
@@ -67411,7 +67431,7 @@
 					"pageViews": 20
 				},
 				{
-					"country": "CZ",
+					"country": "AT",
 					"pageViews": 20
 				},
 				{
@@ -67419,7 +67439,7 @@
 					"pageViews": 20
 				},
 				{
-					"country": "AT",
+					"country": "CZ",
 					"pageViews": 20
 				},
 				{
@@ -70344,11 +70364,11 @@
 							"pageViews": 70
 						},
 						{
-							"country": "IT",
+							"country": "CN",
 							"pageViews": 20
 						},
 						{
-							"country": "CN",
+							"country": "IT",
 							"pageViews": 20
 						},
 						{
@@ -70364,11 +70384,11 @@
 							"pageViews": 20
 						},
 						{
-							"country": "KR",
+							"country": "IN",
 							"pageViews": 10
 						},
 						{
-							"country": "IN",
+							"country": "KR",
 							"pageViews": 10
 						},
 						{
@@ -70442,11 +70462,11 @@
 					"pageViews": 70
 				},
 				{
-					"country": "IT",
+					"country": "CN",
 					"pageViews": 20
 				},
 				{
-					"country": "CN",
+					"country": "IT",
 					"pageViews": 20
 				},
 				{
@@ -70462,11 +70482,11 @@
 					"pageViews": 20
 				},
 				{
-					"country": "KR",
+					"country": "IN",
 					"pageViews": 10
 				},
 				{
-					"country": "IN",
+					"country": "KR",
 					"pageViews": 10
 				},
 				{
