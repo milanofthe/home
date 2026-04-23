@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-23T13:55:03.104Z",
+	"lastFetched": "2026-04-23T17:23:56.795Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -11762,7 +11762,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 910
+							"pageViews": 700
 						}
 					],
 					"topReferrers": [
@@ -11872,7 +11872,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 910
+					"pageViews": 700
 				}
 			],
 			"topReferrers": [
@@ -14581,6 +14581,16 @@
 					"datetime": "2026-04-23T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-23T16:00:00",
+					"pageViews": 13,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-04-23T20:00:00",
+					"pageViews": 5,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -30269,6 +30279,16 @@
 					"datetime": "2026-04-23T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-23T16:00:00",
+					"pageViews": 12,
+					"visits": 11
+				},
+				{
+					"datetime": "2026-04-23T20:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -40196,7 +40216,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1900
+							"pageViews": 1890
 						},
 						{
 							"path": "/dev/",
@@ -40214,7 +40234,7 @@
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 230
+							"pageViews": 220
 						},
 						{
 							"referrer": "github.com",
@@ -40256,7 +40276,7 @@
 						},
 						{
 							"country": "FR",
-							"pageViews": 130
+							"pageViews": 120
 						},
 						{
 							"country": "NL",
@@ -40302,7 +40322,7 @@
 						},
 						{
 							"browser": "Firefox",
-							"pageViews": 190
+							"pageViews": 180
 						},
 						{
 							"browser": "ChromeMobile",
@@ -40314,7 +40334,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1900
+					"pageViews": 1890
 				},
 				{
 					"path": "/dev/",
@@ -40332,7 +40352,7 @@
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 230
+					"pageViews": 220
 				},
 				{
 					"referrer": "github.com",
@@ -40374,7 +40394,7 @@
 				},
 				{
 					"country": "FR",
-					"pageViews": 130
+					"pageViews": 120
 				},
 				{
 					"country": "NL",
@@ -40420,7 +40440,7 @@
 				},
 				{
 					"browser": "Firefox",
-					"pageViews": 190
+					"pageViews": 180
 				},
 				{
 					"browser": "ChromeMobile",
@@ -52573,6 +52593,11 @@
 					"datetime": "2026-04-23T12:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-23T16:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
