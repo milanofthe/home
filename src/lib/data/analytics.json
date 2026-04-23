@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-23T17:23:56.795Z",
+	"lastFetched": "2026-04-23T20:56:46.848Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2394,6 +2394,11 @@
 					"datetime": "2026-04-23T16:00:00",
 					"pageViews": 4,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-04-23T20:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -11762,7 +11767,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 700
+							"pageViews": 910
 						}
 					],
 					"topReferrers": [
@@ -11872,7 +11877,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 700
+					"pageViews": 910
 				}
 			],
 			"topReferrers": [
@@ -52598,6 +52603,11 @@
 					"datetime": "2026-04-23T16:00:00",
 					"pageViews": 4,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-04-23T20:00:00",
+					"pageViews": 6,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -59323,6 +59333,11 @@
 					"datetime": "2026-04-23T16:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-23T20:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -68227,7 +68242,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 490
+							"pageViews": 500
 						},
 						{
 							"path": "/dashboard/",
@@ -68248,6 +68263,10 @@
 							"pageViews": 20
 						},
 						{
+							"referrer": "github.com",
+							"pageViews": 20
+						},
+						{
 							"referrer": "com.linkedin.android",
 							"pageViews": 20
 						},
@@ -68264,10 +68283,6 @@
 							"pageViews": 10
 						},
 						{
-							"referrer": "github.com",
-							"pageViews": 10
-						},
-						{
 							"referrer": "milanrother.com",
 							"pageViews": 10
 						}
@@ -68279,7 +68294,7 @@
 						},
 						{
 							"country": "US",
-							"pageViews": 70
+							"pageViews": 80
 						},
 						{
 							"country": "FR",
@@ -68317,7 +68332,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 250
+							"pageViews": 260
 						},
 						{
 							"browser": "MobileSafari",
@@ -68341,7 +68356,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 490
+					"pageViews": 500
 				},
 				{
 					"path": "/dashboard/",
@@ -68362,6 +68377,10 @@
 					"pageViews": 20
 				},
 				{
+					"referrer": "github.com",
+					"pageViews": 20
+				},
+				{
 					"referrer": "com.linkedin.android",
 					"pageViews": 20
 				},
@@ -68378,10 +68397,6 @@
 					"pageViews": 10
 				},
 				{
-					"referrer": "github.com",
-					"pageViews": 10
-				},
-				{
 					"referrer": "milanrother.com",
 					"pageViews": 10
 				}
@@ -68393,7 +68408,7 @@
 				},
 				{
 					"country": "US",
-					"pageViews": 70
+					"pageViews": 80
 				},
 				{
 					"country": "FR",
@@ -68431,7 +68446,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 250
+					"pageViews": 260
 				},
 				{
 					"browser": "MobileSafari",
