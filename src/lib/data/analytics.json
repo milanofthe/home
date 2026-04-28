@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-28T03:36:39.488Z",
+	"lastFetched": "2026-04-28T06:32:39.805Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -12437,7 +12437,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 860
+							"pageViews": 870
 						}
 					],
 					"topReferrers": [
@@ -12523,7 +12523,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 410
+							"pageViews": 420
 						},
 						{
 							"browser": "Edge",
@@ -12547,7 +12547,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 860
+					"pageViews": 870
 				}
 			],
 			"topReferrers": [
@@ -12633,7 +12633,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 410
+					"pageViews": 420
 				},
 				{
 					"browser": "Edge",
@@ -28934,11 +28934,11 @@
 							"pageViews": 50
 						},
 						{
-							"path": "/en/v0.13.1/examples/abs_braking.html",
+							"path": "/pathsim/v0.20.0/api",
 							"pageViews": 30
 						},
 						{
-							"path": "/pathsim/v0.20.0/api",
+							"path": "/pathsim/v0.18.0/examples",
 							"pageViews": 30
 						}
 					],
@@ -28960,23 +28960,23 @@
 							"pageViews": 90
 						},
 						{
-							"referrer": "chatgpt.com",
-							"pageViews": 90
-						},
-						{
 							"referrer": "view.pathsim.org",
 							"pageViews": 80
+						},
+						{
+							"referrer": "chatgpt.com",
+							"pageViews": 60
 						},
 						{
 							"referrer": "github.com",
 							"pageViews": 30
 						},
 						{
-							"referrer": "milanrother.com",
+							"referrer": "114.114.114.114",
 							"pageViews": 20
 						},
 						{
-							"referrer": "114.114.114.114",
+							"referrer": "milanrother.com",
 							"pageViews": 20
 						}
 					],
@@ -29025,7 +29025,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 840
+							"pageViews": 810
 						},
 						{
 							"browser": "ChromeMobile",
@@ -29080,11 +29080,11 @@
 					"pageViews": 50
 				},
 				{
-					"path": "/en/v0.13.1/examples/abs_braking.html",
+					"path": "/pathsim/v0.20.0/api",
 					"pageViews": 30
 				},
 				{
-					"path": "/pathsim/v0.20.0/api",
+					"path": "/pathsim/v0.18.0/examples",
 					"pageViews": 30
 				}
 			],
@@ -29106,23 +29106,23 @@
 					"pageViews": 90
 				},
 				{
-					"referrer": "chatgpt.com",
-					"pageViews": 90
-				},
-				{
 					"referrer": "view.pathsim.org",
 					"pageViews": 80
+				},
+				{
+					"referrer": "chatgpt.com",
+					"pageViews": 60
 				},
 				{
 					"referrer": "github.com",
 					"pageViews": 30
 				},
 				{
-					"referrer": "milanrother.com",
+					"referrer": "114.114.114.114",
 					"pageViews": 20
 				},
 				{
-					"referrer": "114.114.114.114",
+					"referrer": "milanrother.com",
 					"pageViews": 20
 				}
 			],
@@ -29171,7 +29171,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 840
+					"pageViews": 810
 				},
 				{
 					"browser": "ChromeMobile",
@@ -42466,7 +42466,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1580
+							"pageViews": 1550
 						},
 						{
 							"path": "/dev/",
@@ -42518,7 +42518,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 550
+							"pageViews": 520
 						},
 						{
 							"country": "DE",
@@ -42564,7 +42564,7 @@
 						},
 						{
 							"browser": "ChromeHeadless",
-							"pageViews": 260
+							"pageViews": 230
 						},
 						{
 							"browser": "Edge",
@@ -42584,7 +42584,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1580
+					"pageViews": 1550
 				},
 				{
 					"path": "/dev/",
@@ -42636,7 +42636,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 550
+					"pageViews": 520
 				},
 				{
 					"country": "DE",
@@ -42682,7 +42682,7 @@
 				},
 				{
 					"browser": "ChromeHeadless",
-					"pageViews": 260
+					"pageViews": 230
 				},
 				{
 					"browser": "Edge",
@@ -62990,6 +62990,11 @@
 					"datetime": "2026-04-27T24:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-28T08:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -72437,7 +72442,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 340
+							"pageViews": 350
 						},
 						{
 							"path": "/dashboard/",
@@ -72484,19 +72489,19 @@
 							"pageViews": 70
 						},
 						{
+							"country": "FR",
+							"pageViews": 40
+						},
+						{
 							"country": "CA",
 							"pageViews": 30
 						},
 						{
-							"country": "FR",
-							"pageViews": 30
-						},
-						{
-							"country": "AT",
+							"country": "GB",
 							"pageViews": 20
 						},
 						{
-							"country": "GB",
+							"country": "AT",
 							"pageViews": 20
 						},
 						{
@@ -72504,7 +72509,7 @@
 							"pageViews": 20
 						},
 						{
-							"country": "CH",
+							"country": "CZ",
 							"pageViews": 10
 						},
 						{
@@ -72512,7 +72517,7 @@
 							"pageViews": 10
 						},
 						{
-							"country": "CZ",
+							"country": "CH",
 							"pageViews": 10
 						}
 					],
@@ -72523,7 +72528,7 @@
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 100
+							"pageViews": 110
 						},
 						{
 							"browser": "Firefox",
@@ -72543,7 +72548,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 340
+					"pageViews": 350
 				},
 				{
 					"path": "/dashboard/",
@@ -72590,19 +72595,19 @@
 					"pageViews": 70
 				},
 				{
+					"country": "FR",
+					"pageViews": 40
+				},
+				{
 					"country": "CA",
 					"pageViews": 30
 				},
 				{
-					"country": "FR",
-					"pageViews": 30
-				},
-				{
-					"country": "AT",
+					"country": "GB",
 					"pageViews": 20
 				},
 				{
-					"country": "GB",
+					"country": "AT",
 					"pageViews": 20
 				},
 				{
@@ -72610,7 +72615,7 @@
 					"pageViews": 20
 				},
 				{
-					"country": "CH",
+					"country": "CZ",
 					"pageViews": 10
 				},
 				{
@@ -72618,7 +72623,7 @@
 					"pageViews": 10
 				},
 				{
-					"country": "CZ",
+					"country": "CH",
 					"pageViews": 10
 				}
 			],
@@ -72629,7 +72634,7 @@
 				},
 				{
 					"browser": "MobileSafari",
-					"pageViews": 100
+					"pageViews": 110
 				},
 				{
 					"browser": "Firefox",
@@ -73128,6 +73133,11 @@
 					"datetime": "2026-04-27T24:00:00",
 					"pageViews": 1,
 					"visits": 0
+				},
+				{
+					"datetime": "2026-04-28T08:00:00",
+					"pageViews": 13,
+					"visits": 7
 				}
 			],
 			"aggregateHistory": [
@@ -76106,7 +76116,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 230
+							"pageViews": 250
 						},
 						{
 							"path": "/app",
@@ -76141,6 +76151,10 @@
 							"pageViews": 70
 						},
 						{
+							"country": "CN",
+							"pageViews": 40
+						},
+						{
 							"country": "PT",
 							"pageViews": 20
 						},
@@ -76150,10 +76164,6 @@
 						},
 						{
 							"country": "GB",
-							"pageViews": 20
-						},
-						{
-							"country": "CN",
 							"pageViews": 20
 						},
 						{
@@ -76187,11 +76197,11 @@
 							"pageViews": 30
 						},
 						{
-							"browser": "Edge",
-							"pageViews": 20
+							"browser": "ChromeMobile",
+							"pageViews": 30
 						},
 						{
-							"browser": "ChromeMobile",
+							"browser": "ChromeMobileWebview",
 							"pageViews": 20
 						}
 					]
@@ -76200,7 +76210,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 230
+					"pageViews": 250
 				},
 				{
 					"path": "/app",
@@ -76235,6 +76245,10 @@
 					"pageViews": 70
 				},
 				{
+					"country": "CN",
+					"pageViews": 40
+				},
+				{
 					"country": "PT",
 					"pageViews": 20
 				},
@@ -76244,10 +76258,6 @@
 				},
 				{
 					"country": "GB",
-					"pageViews": 20
-				},
-				{
-					"country": "CN",
 					"pageViews": 20
 				},
 				{
@@ -76281,11 +76291,11 @@
 					"pageViews": 30
 				},
 				{
-					"browser": "Edge",
-					"pageViews": 20
+					"browser": "ChromeMobile",
+					"pageViews": 30
 				},
 				{
-					"browser": "ChromeMobile",
+					"browser": "ChromeMobileWebview",
 					"pageViews": 20
 				}
 			]
