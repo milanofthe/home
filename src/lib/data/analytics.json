@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-04-29T17:42:11.728Z",
+	"lastFetched": "2026-04-29T21:09:41.649Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2549,6 +2549,11 @@
 					"datetime": "2026-04-29T16:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-04-29T20:00:00",
+					"pageViews": 5,
+					"visits": 5
 				}
 			],
 			"aggregateHistory": [
@@ -29250,7 +29255,7 @@
 						},
 						{
 							"path": "/pathsim",
-							"pageViews": 220
+							"pageViews": 210
 						},
 						{
 							"path": "/vehicle",
@@ -29288,7 +29293,7 @@
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 510
+							"pageViews": 500
 						},
 						{
 							"referrer": "pathsim.readthedocs.io",
@@ -29326,7 +29331,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 410
+							"pageViews": 400
 						},
 						{
 							"country": "CN",
@@ -29368,7 +29373,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 800
+							"pageViews": 790
 						},
 						{
 							"browser": "ChromeMobile",
@@ -29396,7 +29401,7 @@
 				},
 				{
 					"path": "/pathsim",
-					"pageViews": 220
+					"pageViews": 210
 				},
 				{
 					"path": "/vehicle",
@@ -29434,7 +29439,7 @@
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 510
+					"pageViews": 500
 				},
 				{
 					"referrer": "pathsim.readthedocs.io",
@@ -29472,7 +29477,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 410
+					"pageViews": 400
 				},
 				{
 					"country": "CN",
@@ -29514,7 +29519,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 800
+					"pageViews": 790
 				},
 				{
 					"browser": "ChromeMobile",
@@ -32327,6 +32332,11 @@
 					"datetime": "2026-04-29T16:00:00",
 					"pageViews": 2,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-29T20:00:00",
+					"pageViews": 7,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -42968,14 +42978,10 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1380
+							"pageViews": 1370
 						},
 						{
 							"path": "/dev/",
-							"pageViews": 10
-						},
-						{
-							"path": "/app/",
 							"pageViews": 10
 						}
 					],
@@ -43005,16 +43011,16 @@
 							"pageViews": 30
 						},
 						{
-							"referrer": "pathsim.cyber-secure-te.src.surf-hosted.nl",
-							"pageViews": 30
-						},
-						{
 							"referrer": "www.reddit.com",
 							"pageViews": 20
 						},
 						{
 							"referrer": "docs.pathsim.org",
 							"pageViews": 20
+						},
+						{
+							"referrer": "com.linkedin.android",
+							"pageViews": 10
 						}
 					],
 					"topCountries": [
@@ -43040,7 +43046,7 @@
 						},
 						{
 							"country": "NL",
-							"pageViews": 80
+							"pageViews": 60
 						},
 						{
 							"country": "GB",
@@ -43055,7 +43061,7 @@
 							"pageViews": 40
 						},
 						{
-							"country": "CH",
+							"country": "FI",
 							"pageViews": 20
 						}
 					],
@@ -43066,7 +43072,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 190
+							"pageViews": 170
 						},
 						{
 							"browser": "Firefox",
@@ -43086,14 +43092,10 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1380
+					"pageViews": 1370
 				},
 				{
 					"path": "/dev/",
-					"pageViews": 10
-				},
-				{
-					"path": "/app/",
 					"pageViews": 10
 				}
 			],
@@ -43123,16 +43125,16 @@
 					"pageViews": 30
 				},
 				{
-					"referrer": "pathsim.cyber-secure-te.src.surf-hosted.nl",
-					"pageViews": 30
-				},
-				{
 					"referrer": "www.reddit.com",
 					"pageViews": 20
 				},
 				{
 					"referrer": "docs.pathsim.org",
 					"pageViews": 20
+				},
+				{
+					"referrer": "com.linkedin.android",
+					"pageViews": 10
 				}
 			],
 			"topCountries": [
@@ -43158,7 +43160,7 @@
 				},
 				{
 					"country": "NL",
-					"pageViews": 80
+					"pageViews": 60
 				},
 				{
 					"country": "GB",
@@ -43173,7 +43175,7 @@
 					"pageViews": 40
 				},
 				{
-					"country": "CH",
+					"country": "FI",
 					"pageViews": 20
 				}
 			],
@@ -43184,7 +43186,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 190
+					"pageViews": 170
 				},
 				{
 					"browser": "Firefox",
@@ -56145,6 +56147,11 @@
 					"datetime": "2026-04-29T16:00:00",
 					"pageViews": 9,
 					"visits": 9
+				},
+				{
+					"datetime": "2026-04-29T24:00:00",
+					"pageViews": 2,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -61335,7 +61342,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 490
+							"pageViews": 480
 						},
 						{
 							"path": "/viewer",
@@ -61434,26 +61441,26 @@
 							"pageViews": 40
 						},
 						{
-							"country": "IE",
-							"pageViews": 30
-						},
-						{
 							"country": "RU",
 							"pageViews": 30
 						},
 						{
-							"country": "TW",
+							"country": "EG",
 							"pageViews": 20
 						},
 						{
-							"country": "CA",
+							"country": "SG",
+							"pageViews": 20
+						},
+						{
+							"country": "IT",
 							"pageViews": 20
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 570
+							"pageViews": 560
 						},
 						{
 							"browser": "MobileSafari",
@@ -61477,7 +61484,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 490
+					"pageViews": 480
 				},
 				{
 					"path": "/viewer",
@@ -61576,26 +61583,26 @@
 					"pageViews": 40
 				},
 				{
-					"country": "IE",
-					"pageViews": 30
-				},
-				{
 					"country": "RU",
 					"pageViews": 30
 				},
 				{
-					"country": "TW",
+					"country": "EG",
 					"pageViews": 20
 				},
 				{
-					"country": "CA",
+					"country": "SG",
+					"pageViews": 20
+				},
+				{
+					"country": "IT",
 					"pageViews": 20
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 570
+					"pageViews": 560
 				},
 				{
 					"browser": "MobileSafari",
@@ -63828,6 +63835,11 @@
 					"datetime": "2026-04-29T16:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-04-29T20:00:00",
+					"pageViews": 4,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -73382,7 +73394,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 340
+							"pageViews": 330
 						},
 						{
 							"path": "/dashboard/",
@@ -73404,10 +73416,6 @@
 						},
 						{
 							"referrer": "github.com",
-							"pageViews": 10
-						},
-						{
-							"referrer": "com.linkedin.android",
 							"pageViews": 10
 						},
 						{
@@ -73437,11 +73445,11 @@
 							"pageViews": 30
 						},
 						{
-							"country": "GB",
+							"country": "CN",
 							"pageViews": 20
 						},
 						{
-							"country": "CN",
+							"country": "GB",
 							"pageViews": 20
 						},
 						{
@@ -73457,7 +73465,7 @@
 							"pageViews": 10
 						},
 						{
-							"country": "CH",
+							"country": "JP",
 							"pageViews": 10
 						}
 					],
@@ -73476,7 +73484,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 50
+							"pageViews": 40
 						},
 						{
 							"browser": "Edge",
@@ -73488,7 +73496,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 340
+					"pageViews": 330
 				},
 				{
 					"path": "/dashboard/",
@@ -73510,10 +73518,6 @@
 				},
 				{
 					"referrer": "github.com",
-					"pageViews": 10
-				},
-				{
-					"referrer": "com.linkedin.android",
 					"pageViews": 10
 				},
 				{
@@ -73543,11 +73547,11 @@
 					"pageViews": 30
 				},
 				{
-					"country": "GB",
+					"country": "CN",
 					"pageViews": 20
 				},
 				{
-					"country": "CN",
+					"country": "GB",
 					"pageViews": 20
 				},
 				{
@@ -73563,7 +73567,7 @@
 					"pageViews": 10
 				},
 				{
-					"country": "CH",
+					"country": "JP",
 					"pageViews": 10
 				}
 			],
@@ -73582,7 +73586,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 50
+					"pageViews": 40
 				},
 				{
 					"browser": "Edge",
