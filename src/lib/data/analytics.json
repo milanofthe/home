@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-05-01T17:00:28.960Z",
+	"lastFetched": "2026-05-01T20:57:20.252Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -29881,7 +29881,7 @@
 						},
 						{
 							"path": "/pathsim",
-							"pageViews": 180
+							"pageViews": 190
 						},
 						{
 							"path": "/vehicle",
@@ -29999,7 +29999,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 660
+							"pageViews": 670
 						},
 						{
 							"browser": "ChromeMobile",
@@ -30027,7 +30027,7 @@
 				},
 				{
 					"path": "/pathsim",
-					"pageViews": 180
+					"pageViews": 190
 				},
 				{
 					"path": "/vehicle",
@@ -30145,7 +30145,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 660
+					"pageViews": 670
 				},
 				{
 					"browser": "ChromeMobile",
@@ -33013,6 +33013,11 @@
 					"datetime": "2026-05-01T16:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-05-01T20:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -43884,7 +43889,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1310
+							"pageViews": 1290
 						},
 						{
 							"path": "/dev/",
@@ -43898,7 +43903,7 @@
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 230
+							"pageViews": 210
 						},
 						{
 							"referrer": "www.google.com",
@@ -43936,7 +43941,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 240
+							"pageViews": 230
 						},
 						{
 							"country": "IT",
@@ -43986,7 +43991,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 90
+							"pageViews": 80
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -43998,7 +44003,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1310
+					"pageViews": 1290
 				},
 				{
 					"path": "/dev/",
@@ -44012,7 +44017,7 @@
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 230
+					"pageViews": 210
 				},
 				{
 					"referrer": "www.google.com",
@@ -44050,7 +44055,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 240
+					"pageViews": 230
 				},
 				{
 					"country": "IT",
@@ -44100,7 +44105,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 90
+					"pageViews": 80
 				},
 				{
 					"browser": "ChromeHeadless",
@@ -45784,6 +45789,11 @@
 				},
 				{
 					"datetime": "2026-05-01T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-01T20:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -62799,7 +62809,7 @@
 						},
 						{
 							"path": "/generator/spiral",
-							"pageViews": 110
+							"pageViews": 120
 						},
 						{
 							"path": "/generator/symmetric-inductor",
@@ -62829,7 +62839,7 @@
 					"topReferrers": [
 						{
 							"referrer": "rapidpassives.org",
-							"pageViews": 70
+							"pageViews": 80
 						},
 						{
 							"referrer": "www.google.com",
@@ -62863,7 +62873,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 400
+							"pageViews": 410
 						},
 						{
 							"country": "DE",
@@ -62894,18 +62904,18 @@
 							"pageViews": 20
 						},
 						{
-							"country": "IT",
+							"country": "CN",
 							"pageViews": 20
 						},
 						{
-							"country": "CN",
+							"country": "IT",
 							"pageViews": 20
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 510
+							"pageViews": 520
 						},
 						{
 							"browser": "MobileSafari",
@@ -62937,7 +62947,7 @@
 				},
 				{
 					"path": "/generator/spiral",
-					"pageViews": 110
+					"pageViews": 120
 				},
 				{
 					"path": "/generator/symmetric-inductor",
@@ -62967,7 +62977,7 @@
 			"topReferrers": [
 				{
 					"referrer": "rapidpassives.org",
-					"pageViews": 70
+					"pageViews": 80
 				},
 				{
 					"referrer": "www.google.com",
@@ -63001,7 +63011,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 400
+					"pageViews": 410
 				},
 				{
 					"country": "DE",
@@ -63032,18 +63042,18 @@
 					"pageViews": 20
 				},
 				{
-					"country": "IT",
+					"country": "CN",
 					"pageViews": 20
 				},
 				{
-					"country": "CN",
+					"country": "IT",
 					"pageViews": 20
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 510
+					"pageViews": 520
 				},
 				{
 					"browser": "MobileSafari",
@@ -75787,6 +75797,11 @@
 					"datetime": "2026-05-01T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-05-01T20:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -79034,7 +79049,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 190
+							"pageViews": 200
 						},
 						{
 							"path": "/app",
@@ -79048,7 +79063,7 @@
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 30
+							"pageViews": 40
 						},
 						{
 							"referrer": "view.pathsim.org",
@@ -79058,7 +79073,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 70
+							"pageViews": 80
 						},
 						{
 							"country": "DE",
@@ -79092,7 +79107,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 100
+							"pageViews": 110
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -79116,7 +79131,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 190
+					"pageViews": 200
 				},
 				{
 					"path": "/app",
@@ -79130,7 +79145,7 @@
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 30
+					"pageViews": 40
 				},
 				{
 					"referrer": "view.pathsim.org",
@@ -79140,7 +79155,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 70
+					"pageViews": 80
 				},
 				{
 					"country": "DE",
@@ -79174,7 +79189,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 100
+					"pageViews": 110
 				},
 				{
 					"browser": "ChromeHeadless",
