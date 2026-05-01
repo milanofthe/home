@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-05-01T06:40:12.695Z",
+	"lastFetched": "2026-05-01T09:49:46.982Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2584,6 +2584,16 @@
 					"datetime": "2026-05-01T04:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-05-01T08:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-05-01T12:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -15889,6 +15899,16 @@
 					"datetime": "2026-05-01T04:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-05-01T08:00:00",
+					"pageViews": 12,
+					"visits": 12
+				},
+				{
+					"datetime": "2026-05-01T12:00:00",
+					"pageViews": 9,
+					"visits": 4
 				}
 			],
 			"aggregateHistory": [
@@ -29865,14 +29885,14 @@
 						},
 						{
 							"path": "/pathsim/v0.20.0/api",
-							"pageViews": 30
+							"pageViews": 40
 						},
 						{
 							"path": "/pathsim/v0.18.0/examples/linear-feedback",
 							"pageViews": 30
 						},
 						{
-							"path": "/pathsim/latest/examples",
+							"path": "/pathsim/v0.20.0/examples/linear-feedback",
 							"pageViews": 20
 						}
 					],
@@ -29887,7 +29907,7 @@
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 140
+							"pageViews": 150
 						},
 						{
 							"referrer": "www.google.com",
@@ -29903,7 +29923,7 @@
 						},
 						{
 							"referrer": "chatgpt.com",
-							"pageViews": 50
+							"pageViews": 40
 						},
 						{
 							"referrer": "114.114.114.114",
@@ -29959,7 +29979,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 700
+							"pageViews": 690
 						},
 						{
 							"browser": "ChromeMobile",
@@ -29967,7 +29987,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 180
+							"pageViews": 190
 						},
 						{
 							"browser": "Firefox",
@@ -30011,14 +30031,14 @@
 				},
 				{
 					"path": "/pathsim/v0.20.0/api",
-					"pageViews": 30
+					"pageViews": 40
 				},
 				{
 					"path": "/pathsim/v0.18.0/examples/linear-feedback",
 					"pageViews": 30
 				},
 				{
-					"path": "/pathsim/latest/examples",
+					"path": "/pathsim/v0.20.0/examples/linear-feedback",
 					"pageViews": 20
 				}
 			],
@@ -30033,7 +30053,7 @@
 				},
 				{
 					"referrer": "docs.pathsim.org",
-					"pageViews": 140
+					"pageViews": 150
 				},
 				{
 					"referrer": "www.google.com",
@@ -30049,7 +30069,7 @@
 				},
 				{
 					"referrer": "chatgpt.com",
-					"pageViews": 50
+					"pageViews": 40
 				},
 				{
 					"referrer": "114.114.114.114",
@@ -30105,7 +30125,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 700
+					"pageViews": 690
 				},
 				{
 					"browser": "ChromeMobile",
@@ -30113,7 +30133,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 180
+					"pageViews": 190
 				},
 				{
 					"browser": "Firefox",
@@ -43844,7 +43864,7 @@
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 390
+							"pageViews": 400
 						},
 						{
 							"referrer": "pathsim.org",
@@ -43859,11 +43879,11 @@
 							"pageViews": 50
 						},
 						{
-							"referrer": "agodemar.github.io",
+							"referrer": "github.com",
 							"pageViews": 30
 						},
 						{
-							"referrer": "github.com",
+							"referrer": "agodemar.github.io",
 							"pageViews": 30
 						},
 						{
@@ -43871,12 +43891,12 @@
 							"pageViews": 20
 						},
 						{
-							"referrer": "docs.pathsim.org",
+							"referrer": "com.linkedin.android",
 							"pageViews": 20
 						},
 						{
-							"referrer": "com.linkedin.android",
-							"pageViews": 10
+							"referrer": "docs.pathsim.org",
+							"pageViews": 20
 						}
 					],
 					"topCountries": [
@@ -43894,18 +43914,18 @@
 						},
 						{
 							"country": "FR",
-							"pageViews": 100
+							"pageViews": 110
 						},
 						{
 							"country": "CO",
 							"pageViews": 80
 						},
 						{
-							"country": "NL",
-							"pageViews": 60
+							"country": "GB",
+							"pageViews": 50
 						},
 						{
-							"country": "GB",
+							"country": "NL",
 							"pageViews": 50
 						},
 						{
@@ -43914,7 +43934,7 @@
 						},
 						{
 							"country": "IE",
-							"pageViews": 40
+							"pageViews": 30
 						},
 						{
 							"country": "FI",
@@ -43928,7 +43948,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 180
+							"pageViews": 170
 						},
 						{
 							"browser": "Firefox",
@@ -43958,7 +43978,7 @@
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 390
+					"pageViews": 400
 				},
 				{
 					"referrer": "pathsim.org",
@@ -43973,11 +43993,11 @@
 					"pageViews": 50
 				},
 				{
-					"referrer": "agodemar.github.io",
+					"referrer": "github.com",
 					"pageViews": 30
 				},
 				{
-					"referrer": "github.com",
+					"referrer": "agodemar.github.io",
 					"pageViews": 30
 				},
 				{
@@ -43985,12 +44005,12 @@
 					"pageViews": 20
 				},
 				{
-					"referrer": "docs.pathsim.org",
+					"referrer": "com.linkedin.android",
 					"pageViews": 20
 				},
 				{
-					"referrer": "com.linkedin.android",
-					"pageViews": 10
+					"referrer": "docs.pathsim.org",
+					"pageViews": 20
 				}
 			],
 			"topCountries": [
@@ -44008,18 +44028,18 @@
 				},
 				{
 					"country": "FR",
-					"pageViews": 100
+					"pageViews": 110
 				},
 				{
 					"country": "CO",
 					"pageViews": 80
 				},
 				{
-					"country": "NL",
-					"pageViews": 60
+					"country": "GB",
+					"pageViews": 50
 				},
 				{
-					"country": "GB",
+					"country": "NL",
 					"pageViews": 50
 				},
 				{
@@ -44028,7 +44048,7 @@
 				},
 				{
 					"country": "IE",
-					"pageViews": 40
+					"pageViews": 30
 				},
 				{
 					"country": "FI",
@@ -44042,7 +44062,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 180
+					"pageViews": 170
 				},
 				{
 					"browser": "Firefox",
@@ -45729,6 +45749,11 @@
 				},
 				{
 					"datetime": "2026-04-30T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-01T12:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -62750,11 +62775,11 @@
 						},
 						{
 							"path": "/generator/stacked-transformer",
-							"pageViews": 40
+							"pageViews": 30
 						},
 						{
 							"path": "/generator/patch-antenna",
-							"pageViews": 30
+							"pageViews": 20
 						},
 						{
 							"path": "/embed/test",
@@ -62806,7 +62831,7 @@
 						},
 						{
 							"country": "FR",
-							"pageViews": 70
+							"pageViews": 60
 						},
 						{
 							"country": "KR",
@@ -62840,7 +62865,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 530
+							"pageViews": 510
 						},
 						{
 							"browser": "MobileSafari",
@@ -62888,11 +62913,11 @@
 				},
 				{
 					"path": "/generator/stacked-transformer",
-					"pageViews": 40
+					"pageViews": 30
 				},
 				{
 					"path": "/generator/patch-antenna",
-					"pageViews": 30
+					"pageViews": 20
 				},
 				{
 					"path": "/embed/test",
@@ -62944,7 +62969,7 @@
 				},
 				{
 					"country": "FR",
-					"pageViews": 70
+					"pageViews": 60
 				},
 				{
 					"country": "KR",
@@ -62978,7 +63003,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 530
+					"pageViews": 510
 				},
 				{
 					"browser": "MobileSafari",
@@ -75697,6 +75722,16 @@
 					"datetime": "2026-04-30T16:00:00",
 					"pageViews": 3,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-05-01T08:00:00",
+					"pageViews": 2,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-01T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
