@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-05-02T16:54:47.720Z",
+	"lastFetched": "2026-05-02T20:49:24.696Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2622,6 +2622,16 @@
 				},
 				{
 					"datetime": "2026-05-02T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-02T20:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-05-02T24:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -12991,7 +13001,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 830
+							"pageViews": 840
 						}
 					],
 					"topReferrers": [
@@ -13035,7 +13045,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 190
+							"pageViews": 200
 						},
 						{
 							"country": "DE",
@@ -13077,7 +13087,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 400
+							"pageViews": 410
 						},
 						{
 							"browser": "Edge",
@@ -13101,7 +13111,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 830
+					"pageViews": 840
 				}
 			],
 			"topReferrers": [
@@ -13145,7 +13155,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 190
+					"pageViews": 200
 				},
 				{
 					"country": "DE",
@@ -13187,7 +13197,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 400
+					"pageViews": 410
 				},
 				{
 					"browser": "Edge",
@@ -16085,6 +16095,16 @@
 					"datetime": "2026-05-02T16:00:00",
 					"pageViews": 6,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-05-02T20:00:00",
+					"pageViews": 7,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-05-02T24:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -30195,11 +30215,11 @@
 							"pageViews": 70
 						},
 						{
-							"path": "/flight",
+							"path": "/rf/v0.1.1/examples/superheterodyne-receiver",
 							"pageViews": 50
 						},
 						{
-							"path": "/rf/v0.1.1/examples/superheterodyne-receiver",
+							"path": "/flight",
 							"pageViews": 50
 						},
 						{
@@ -30207,15 +30227,15 @@
 							"pageViews": 40
 						},
 						{
-							"path": "/pathsim/v0.18.0/examples/linear-feedback",
-							"pageViews": 30
-						},
-						{
 							"path": "/pathsim/v0.20.0/examples",
 							"pageViews": 30
 						},
 						{
-							"path": "/pathsim/v0.16.0/examples",
+							"path": "/pathsim/v0.18.0/examples/linear-feedback",
+							"pageViews": 30
+						},
+						{
+							"path": "/pathsim/roadmap",
 							"pageViews": 20
 						}
 					],
@@ -30287,11 +30307,11 @@
 							"pageViews": 80
 						},
 						{
-							"country": "IT",
-							"pageViews": 60
+							"country": "IN",
+							"pageViews": 70
 						},
 						{
-							"country": "IN",
+							"country": "IT",
 							"pageViews": 60
 						},
 						{
@@ -30306,7 +30326,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 380
+							"pageViews": 390
 						},
 						{
 							"browser": "Edge",
@@ -30341,11 +30361,11 @@
 					"pageViews": 70
 				},
 				{
-					"path": "/flight",
+					"path": "/rf/v0.1.1/examples/superheterodyne-receiver",
 					"pageViews": 50
 				},
 				{
-					"path": "/rf/v0.1.1/examples/superheterodyne-receiver",
+					"path": "/flight",
 					"pageViews": 50
 				},
 				{
@@ -30353,15 +30373,15 @@
 					"pageViews": 40
 				},
 				{
-					"path": "/pathsim/v0.18.0/examples/linear-feedback",
-					"pageViews": 30
-				},
-				{
 					"path": "/pathsim/v0.20.0/examples",
 					"pageViews": 30
 				},
 				{
-					"path": "/pathsim/v0.16.0/examples",
+					"path": "/pathsim/v0.18.0/examples/linear-feedback",
+					"pageViews": 30
+				},
+				{
+					"path": "/pathsim/roadmap",
 					"pageViews": 20
 				}
 			],
@@ -30433,11 +30453,11 @@
 					"pageViews": 80
 				},
 				{
-					"country": "IT",
-					"pageViews": 60
+					"country": "IN",
+					"pageViews": 70
 				},
 				{
-					"country": "IN",
+					"country": "IT",
 					"pageViews": 60
 				},
 				{
@@ -30452,7 +30472,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 380
+					"pageViews": 390
 				},
 				{
 					"browser": "Edge",
@@ -33341,6 +33361,11 @@
 					"datetime": "2026-05-02T16:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-05-02T20:00:00",
+					"pageViews": 12,
+					"visits": 10
 				}
 			],
 			"aggregateHistory": [
@@ -44327,7 +44352,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1260
+							"pageViews": 1280
 						},
 						{
 							"path": "/dev/",
@@ -44383,7 +44408,7 @@
 						},
 						{
 							"country": "IT",
-							"pageViews": 140
+							"pageViews": 150
 						},
 						{
 							"country": "FR",
@@ -44392,6 +44417,10 @@
 						{
 							"country": "CO",
 							"pageViews": 80
+						},
+						{
+							"country": "IN",
+							"pageViews": 50
 						},
 						{
 							"country": "JP",
@@ -44406,10 +44435,6 @@
 							"pageViews": 50
 						},
 						{
-							"country": "IN",
-							"pageViews": 40
-						},
-						{
 							"country": "IE",
 							"pageViews": 30
 						}
@@ -44417,7 +44442,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 670
+							"pageViews": 680
 						},
 						{
 							"browser": "Edge",
@@ -44441,7 +44466,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1260
+					"pageViews": 1280
 				},
 				{
 					"path": "/dev/",
@@ -44497,7 +44522,7 @@
 				},
 				{
 					"country": "IT",
-					"pageViews": 140
+					"pageViews": 150
 				},
 				{
 					"country": "FR",
@@ -44506,6 +44531,10 @@
 				{
 					"country": "CO",
 					"pageViews": 80
+				},
+				{
+					"country": "IN",
+					"pageViews": 50
 				},
 				{
 					"country": "JP",
@@ -44520,10 +44549,6 @@
 					"pageViews": 50
 				},
 				{
-					"country": "IN",
-					"pageViews": 40
-				},
-				{
 					"country": "IE",
 					"pageViews": 30
 				}
@@ -44531,7 +44556,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 670
+					"pageViews": 680
 				},
 				{
 					"browser": "Edge",
@@ -57900,6 +57925,16 @@
 					"datetime": "2026-05-02T16:00:00",
 					"pageViews": 11,
 					"visits": 6
+				},
+				{
+					"datetime": "2026-05-02T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-02T24:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -63511,7 +63546,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 430
+							"pageViews": 420
 						},
 						{
 							"path": "/generator/spiral",
@@ -63583,7 +63618,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 420
+							"pageViews": 410
 						},
 						{
 							"country": "FR",
@@ -63614,18 +63649,18 @@
 							"pageViews": 20
 						},
 						{
-							"country": "CN",
+							"country": "IT",
 							"pageViews": 20
 						},
 						{
-							"country": "IT",
+							"country": "CN",
 							"pageViews": 20
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 510
+							"pageViews": 500
 						},
 						{
 							"browser": "MobileSafari",
@@ -63649,7 +63684,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 430
+					"pageViews": 420
 				},
 				{
 					"path": "/generator/spiral",
@@ -63721,7 +63756,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 420
+					"pageViews": 410
 				},
 				{
 					"country": "FR",
@@ -63752,18 +63787,18 @@
 					"pageViews": 20
 				},
 				{
-					"country": "CN",
+					"country": "IT",
 					"pageViews": 20
 				},
 				{
-					"country": "IT",
+					"country": "CN",
 					"pageViews": 20
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 510
+					"pageViews": 500
 				},
 				{
 					"browser": "MobileSafari",
@@ -66046,6 +66081,11 @@
 					"datetime": "2026-05-02T12:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-05-02T20:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
