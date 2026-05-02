@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-05-02T09:11:27.420Z",
+	"lastFetched": "2026-05-02T13:21:06.983Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -30170,7 +30170,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 820
+							"pageViews": 830
 						},
 						{
 							"path": "/pathsim",
@@ -30197,15 +30197,15 @@
 							"pageViews": 40
 						},
 						{
-							"path": "/pathsim/v0.20.0/examples",
-							"pageViews": 40
-						},
-						{
 							"path": "/pathsim/v0.18.0/examples/linear-feedback",
 							"pageViews": 30
 						},
 						{
-							"path": "/en/v0.15.2/examples/cascade_controller.html",
+							"path": "/pathsim/v0.20.0/examples",
+							"pageViews": 30
+						},
+						{
+							"path": "/pathsim/v0.16.0/examples",
 							"pageViews": 20
 						}
 					],
@@ -30258,7 +30258,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 140
+							"pageViews": 150
 						},
 						{
 							"country": "SG",
@@ -30278,7 +30278,7 @@
 						},
 						{
 							"country": "IT",
-							"pageViews": 70
+							"pageViews": 60
 						},
 						{
 							"country": "IN",
@@ -30292,7 +30292,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 690
+							"pageViews": 700
 						},
 						{
 							"browser": "ChromeMobile",
@@ -30304,7 +30304,7 @@
 						},
 						{
 							"browser": "Firefox",
-							"pageViews": 160
+							"pageViews": 150
 						},
 						{
 							"browser": "Unknown",
@@ -30316,7 +30316,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 820
+					"pageViews": 830
 				},
 				{
 					"path": "/pathsim",
@@ -30343,15 +30343,15 @@
 					"pageViews": 40
 				},
 				{
-					"path": "/pathsim/v0.20.0/examples",
-					"pageViews": 40
-				},
-				{
 					"path": "/pathsim/v0.18.0/examples/linear-feedback",
 					"pageViews": 30
 				},
 				{
-					"path": "/en/v0.15.2/examples/cascade_controller.html",
+					"path": "/pathsim/v0.20.0/examples",
+					"pageViews": 30
+				},
+				{
+					"path": "/pathsim/v0.16.0/examples",
 					"pageViews": 20
 				}
 			],
@@ -30404,7 +30404,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 140
+					"pageViews": 150
 				},
 				{
 					"country": "SG",
@@ -30424,7 +30424,7 @@
 				},
 				{
 					"country": "IT",
-					"pageViews": 70
+					"pageViews": 60
 				},
 				{
 					"country": "IN",
@@ -30438,7 +30438,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 690
+					"pageViews": 700
 				},
 				{
 					"browser": "ChromeMobile",
@@ -30450,7 +30450,7 @@
 				},
 				{
 					"browser": "Firefox",
-					"pageViews": 160
+					"pageViews": 150
 				},
 				{
 					"browser": "Unknown",
@@ -33321,6 +33321,16 @@
 					"datetime": "2026-05-02T08:00:00",
 					"pageViews": 4,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-05-02T12:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-02T16:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -44307,7 +44317,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1280
+							"pageViews": 1270
 						},
 						{
 							"path": "/dev/",
@@ -44340,7 +44350,7 @@
 							"pageViews": 30
 						},
 						{
-							"referrer": "www.reddit.com",
+							"referrer": "docs.pathsim.org",
 							"pageViews": 20
 						},
 						{
@@ -44348,7 +44358,7 @@
 							"pageViews": 20
 						},
 						{
-							"referrer": "docs.pathsim.org",
+							"referrer": "www.reddit.com",
 							"pageViews": 20
 						}
 					],
@@ -44401,7 +44411,7 @@
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 180
+							"pageViews": 170
 						},
 						{
 							"browser": "Firefox",
@@ -44421,7 +44431,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1280
+					"pageViews": 1270
 				},
 				{
 					"path": "/dev/",
@@ -44454,7 +44464,7 @@
 					"pageViews": 30
 				},
 				{
-					"referrer": "www.reddit.com",
+					"referrer": "docs.pathsim.org",
 					"pageViews": 20
 				},
 				{
@@ -44462,7 +44472,7 @@
 					"pageViews": 20
 				},
 				{
-					"referrer": "docs.pathsim.org",
+					"referrer": "www.reddit.com",
 					"pageViews": 20
 				}
 			],
@@ -44515,7 +44525,7 @@
 				},
 				{
 					"browser": "Edge",
-					"pageViews": 180
+					"pageViews": 170
 				},
 				{
 					"browser": "Firefox",
@@ -46222,6 +46232,11 @@
 				},
 				{
 					"datetime": "2026-05-02T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-02T12:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -63481,7 +63496,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 440
+							"pageViews": 430
 						},
 						{
 							"path": "/generator/spiral",
@@ -63561,7 +63576,7 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 60
+							"pageViews": 50
 						},
 						{
 							"country": "KR",
@@ -63603,7 +63618,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 100
+							"pageViews": 90
 						},
 						{
 							"browser": "Firefox",
@@ -63619,7 +63634,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 440
+					"pageViews": 430
 				},
 				{
 					"path": "/generator/spiral",
@@ -63699,7 +63714,7 @@
 				},
 				{
 					"country": "DE",
-					"pageViews": 60
+					"pageViews": 50
 				},
 				{
 					"country": "KR",
@@ -63741,7 +63756,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 100
+					"pageViews": 90
 				},
 				{
 					"browser": "Firefox",
@@ -66009,6 +66024,11 @@
 				},
 				{
 					"datetime": "2026-05-02T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-02T12:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -76591,6 +76611,11 @@
 					"datetime": "2026-05-01T24:00:00",
 					"pageViews": 1,
 					"visits": 0
+				},
+				{
+					"datetime": "2026-05-02T16:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
