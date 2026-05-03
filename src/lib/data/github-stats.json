@@ -10,7 +10,7 @@
 			"stars": 72,
 			"forks": 8,
 			"watchers": 4,
-			"openIssues": 16
+			"openIssues": 15
 		},
 		"pysimhub": {
 			"projects": 22,
@@ -1900,7 +1900,7 @@
 				"stars": 72,
 				"forks": 8,
 				"watchers": 4,
-				"openIssues": 16
+				"openIssues": 15
 			},
 			"pysimhub": {
 				"projects": 22,
@@ -1909,7 +1909,7 @@
 			}
 		}
 	],
-	"fetchedAt": "2026-05-03T13:20:25.610Z",
+	"fetchedAt": "2026-05-03T16:56:44.754Z",
 	"starHistory": {
 		"pathsim": [
 			{
