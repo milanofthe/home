@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-05-04T14:11:15.949Z",
+	"lastFetched": "2026-05-04T17:44:02.708Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2674,6 +2674,16 @@
 					"datetime": "2026-05-04T12:00:00",
 					"pageViews": 7,
 					"visits": 7
+				},
+				{
+					"datetime": "2026-05-04T16:00:00",
+					"pageViews": 8,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-05-04T20:00:00",
+					"pageViews": 2,
+					"visits": 2
 				}
 			],
 			"aggregateHistory": [
@@ -13263,7 +13273,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 800
+							"pageViews": 810
 						}
 					],
 					"topReferrers": [
@@ -13307,7 +13317,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 190
+							"pageViews": 200
 						},
 						{
 							"country": "US",
@@ -13349,7 +13359,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 400
+							"pageViews": 410
 						},
 						{
 							"browser": "Edge",
@@ -13373,7 +13383,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 800
+					"pageViews": 810
 				}
 			],
 			"topReferrers": [
@@ -13417,7 +13427,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 190
+					"pageViews": 200
 				},
 				{
 					"country": "US",
@@ -13459,7 +13469,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 400
+					"pageViews": 410
 				},
 				{
 					"browser": "Edge",
@@ -16412,6 +16422,11 @@
 					"datetime": "2026-05-04T12:00:00",
 					"pageViews": 12,
 					"visits": 11
+				},
+				{
+					"datetime": "2026-05-04T16:00:00",
+					"pageViews": 59,
+					"visits": 59
 				}
 			],
 			"aggregateHistory": [
@@ -30805,14 +30820,14 @@
 						},
 						{
 							"path": "/pathsim",
-							"pageViews": 220
-						},
-						{
-							"path": "/rf/v0.1.1/examples/superheterodyne-receiver",
-							"pageViews": 50
+							"pageViews": 230
 						},
 						{
 							"path": "/flight",
+							"pageViews": 100
+						},
+						{
+							"path": "/rf/v0.1.1/examples/superheterodyne-receiver",
 							"pageViews": 50
 						},
 						{
@@ -30881,7 +30896,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 330
+							"pageViews": 380
 						},
 						{
 							"country": "CN",
@@ -30908,22 +30923,22 @@
 							"pageViews": 70
 						},
 						{
+							"country": "MX",
+							"pageViews": 50
+						},
+						{
 							"country": "CO",
 							"pageViews": 50
 						},
 						{
 							"country": "IT",
 							"pageViews": 50
-						},
-						{
-							"country": "CA",
-							"pageViews": 40
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 690
+							"pageViews": 700
 						},
 						{
 							"browser": "ChromeMobile",
@@ -30934,11 +30949,11 @@
 							"pageViews": 200
 						},
 						{
-							"browser": "Unknown",
-							"pageViews": 90
+							"browser": "ChromeHeadless",
+							"pageViews": 120
 						},
 						{
-							"browser": "Firefox",
+							"browser": "Unknown",
 							"pageViews": 90
 						}
 					]
@@ -30951,14 +30966,14 @@
 				},
 				{
 					"path": "/pathsim",
-					"pageViews": 220
-				},
-				{
-					"path": "/rf/v0.1.1/examples/superheterodyne-receiver",
-					"pageViews": 50
+					"pageViews": 230
 				},
 				{
 					"path": "/flight",
+					"pageViews": 100
+				},
+				{
+					"path": "/rf/v0.1.1/examples/superheterodyne-receiver",
 					"pageViews": 50
 				},
 				{
@@ -31027,7 +31042,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 330
+					"pageViews": 380
 				},
 				{
 					"country": "CN",
@@ -31054,22 +31069,22 @@
 					"pageViews": 70
 				},
 				{
+					"country": "MX",
+					"pageViews": 50
+				},
+				{
 					"country": "CO",
 					"pageViews": 50
 				},
 				{
 					"country": "IT",
 					"pageViews": 50
-				},
-				{
-					"country": "CA",
-					"pageViews": 40
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 690
+					"pageViews": 700
 				},
 				{
 					"browser": "ChromeMobile",
@@ -31080,11 +31095,11 @@
 					"pageViews": 200
 				},
 				{
-					"browser": "Unknown",
-					"pageViews": 90
+					"browser": "ChromeHeadless",
+					"pageViews": 120
 				},
 				{
-					"browser": "Firefox",
+					"browser": "Unknown",
 					"pageViews": 90
 				}
 			]
@@ -34007,6 +34022,16 @@
 					"datetime": "2026-05-04T12:00:00",
 					"pageViews": 26,
 					"visits": 22
+				},
+				{
+					"datetime": "2026-05-04T16:00:00",
+					"pageViews": 12,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-05-04T20:00:00",
+					"pageViews": 3,
+					"visits": 3
 				}
 			],
 			"aggregateHistory": [
@@ -47168,6 +47193,16 @@
 				},
 				{
 					"datetime": "2026-05-04T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-04T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-04T20:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
@@ -77587,7 +77622,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 290
+							"pageViews": 300
 						},
 						{
 							"path": "/dashboard/",
@@ -77622,12 +77657,16 @@
 							"pageViews": 160
 						},
 						{
+							"country": "US",
+							"pageViews": 60
+						},
+						{
 							"country": "FR",
 							"pageViews": 50
 						},
 						{
-							"country": "US",
-							"pageViews": 50
+							"country": "GB",
+							"pageViews": 20
 						},
 						{
 							"country": "CN",
@@ -77638,11 +77677,7 @@
 							"pageViews": 20
 						},
 						{
-							"country": "GB",
-							"pageViews": 20
-						},
-						{
-							"country": "BE",
+							"country": "DK",
 							"pageViews": 10
 						},
 						{
@@ -77668,11 +77703,11 @@
 							"pageViews": 110
 						},
 						{
-							"browser": "Firefox",
+							"browser": "ChromeMobile",
 							"pageViews": 40
 						},
 						{
-							"browser": "ChromeMobile",
+							"browser": "Firefox",
 							"pageViews": 40
 						},
 						{
@@ -77685,7 +77720,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 290
+					"pageViews": 300
 				},
 				{
 					"path": "/dashboard/",
@@ -77720,12 +77755,16 @@
 					"pageViews": 160
 				},
 				{
+					"country": "US",
+					"pageViews": 60
+				},
+				{
 					"country": "FR",
 					"pageViews": 50
 				},
 				{
-					"country": "US",
-					"pageViews": 50
+					"country": "GB",
+					"pageViews": 20
 				},
 				{
 					"country": "CN",
@@ -77736,11 +77775,7 @@
 					"pageViews": 20
 				},
 				{
-					"country": "GB",
-					"pageViews": 20
-				},
-				{
-					"country": "BE",
+					"country": "DK",
 					"pageViews": 10
 				},
 				{
@@ -77766,11 +77801,11 @@
 					"pageViews": 110
 				},
 				{
-					"browser": "Firefox",
+					"browser": "ChromeMobile",
 					"pageViews": 40
 				},
 				{
-					"browser": "ChromeMobile",
+					"browser": "Firefox",
 					"pageViews": 40
 				},
 				{
@@ -78332,6 +78367,11 @@
 					"datetime": "2026-05-04T08:00:00",
 					"pageViews": 1,
 					"visits": 0
+				},
+				{
+					"datetime": "2026-05-04T16:00:00",
+					"pageViews": 8,
+					"visits": 5
 				}
 			],
 			"aggregateHistory": [
@@ -81828,7 +81868,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 180
+							"pageViews": 190
 						},
 						{
 							"path": "/app",
@@ -81852,7 +81892,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 60
+							"pageViews": 70
 						},
 						{
 							"country": "DE",
@@ -81889,15 +81929,15 @@
 							"pageViews": 100
 						},
 						{
+							"browser": "ChromeHeadless",
+							"pageViews": 30
+						},
+						{
 							"browser": "ChromeMobileWebview",
 							"pageViews": 20
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 20
-						},
-						{
-							"browser": "ChromeHeadless",
 							"pageViews": 20
 						},
 						{
@@ -81910,7 +81950,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 180
+					"pageViews": 190
 				},
 				{
 					"path": "/app",
@@ -81934,7 +81974,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 60
+					"pageViews": 70
 				},
 				{
 					"country": "DE",
@@ -81971,15 +82011,15 @@
 					"pageViews": 100
 				},
 				{
+					"browser": "ChromeHeadless",
+					"pageViews": 30
+				},
+				{
 					"browser": "ChromeMobileWebview",
 					"pageViews": 20
 				},
 				{
 					"browser": "MobileSafari",
-					"pageViews": 20
-				},
-				{
-					"browser": "ChromeHeadless",
 					"pageViews": 20
 				},
 				{
