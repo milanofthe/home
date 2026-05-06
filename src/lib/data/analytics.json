@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-05-06T03:34:41.407Z",
+	"lastFetched": "2026-05-06T06:32:48.545Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -2719,6 +2719,16 @@
 					"datetime": "2026-05-05T24:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-05-06T04:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-06T08:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -16688,6 +16698,16 @@
 					"datetime": "2026-05-05T24:00:00",
 					"pageViews": 5,
 					"visits": 4
+				},
+				{
+					"datetime": "2026-05-06T04:00:00",
+					"pageViews": 18,
+					"visits": 15
+				},
+				{
+					"datetime": "2026-05-06T08:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -31478,11 +31498,11 @@
 							"pageViews": 70
 						},
 						{
-							"country": "MX",
+							"country": "IT",
 							"pageViews": 50
 						},
 						{
-							"country": "IT",
+							"country": "MX",
 							"pageViews": 50
 						},
 						{
@@ -31624,11 +31644,11 @@
 					"pageViews": 70
 				},
 				{
-					"country": "MX",
+					"country": "IT",
 					"pageViews": 50
 				},
 				{
-					"country": "IT",
+					"country": "MX",
 					"pageViews": 50
 				},
 				{
@@ -34622,6 +34642,16 @@
 					"datetime": "2026-05-05T24:00:00",
 					"pageViews": 13,
 					"visits": 10
+				},
+				{
+					"datetime": "2026-05-06T04:00:00",
+					"pageViews": 13,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-05-06T08:00:00",
+					"pageViews": 3,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -46064,7 +46094,7 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1570
+							"pageViews": 1530
 						}
 					],
 					"topReferrers": [
@@ -46082,7 +46112,7 @@
 						},
 						{
 							"referrer": "www.linkedin.com",
-							"pageViews": 60
+							"pageViews": 50
 						},
 						{
 							"referrer": "github.com",
@@ -46108,11 +46138,11 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 530
+							"pageViews": 500
 						},
 						{
 							"country": "DE",
-							"pageViews": 200
+							"pageViews": 190
 						},
 						{
 							"country": "IT",
@@ -46135,11 +46165,11 @@
 							"pageViews": 50
 						},
 						{
-							"country": "JP",
+							"country": "IN",
 							"pageViews": 50
 						},
 						{
-							"country": "IN",
+							"country": "JP",
 							"pageViews": 50
 						},
 						{
@@ -46154,7 +46184,7 @@
 						},
 						{
 							"browser": "ChromeHeadless",
-							"pageViews": 260
+							"pageViews": 230
 						},
 						{
 							"browser": "Edge",
@@ -46162,7 +46192,7 @@
 						},
 						{
 							"browser": "Firefox",
-							"pageViews": 140
+							"pageViews": 130
 						},
 						{
 							"browser": "ChromeMobile",
@@ -46174,7 +46204,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1570
+					"pageViews": 1530
 				}
 			],
 			"topReferrers": [
@@ -46192,7 +46222,7 @@
 				},
 				{
 					"referrer": "www.linkedin.com",
-					"pageViews": 60
+					"pageViews": 50
 				},
 				{
 					"referrer": "github.com",
@@ -46218,11 +46248,11 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 530
+					"pageViews": 500
 				},
 				{
 					"country": "DE",
-					"pageViews": 200
+					"pageViews": 190
 				},
 				{
 					"country": "IT",
@@ -46245,11 +46275,11 @@
 					"pageViews": 50
 				},
 				{
-					"country": "JP",
+					"country": "IN",
 					"pageViews": 50
 				},
 				{
-					"country": "IN",
+					"country": "JP",
 					"pageViews": 50
 				},
 				{
@@ -46264,7 +46294,7 @@
 				},
 				{
 					"browser": "ChromeHeadless",
-					"pageViews": 260
+					"pageViews": 230
 				},
 				{
 					"browser": "Edge",
@@ -46272,7 +46302,7 @@
 				},
 				{
 					"browser": "Firefox",
-					"pageViews": 140
+					"pageViews": 130
 				},
 				{
 					"browser": "ChromeMobile",
@@ -48021,6 +48051,11 @@
 				},
 				{
 					"datetime": "2026-05-05T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-06T08:00:00",
 					"pageViews": 1,
 					"visits": 1
 				}
