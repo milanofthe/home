@@ -7,7 +7,7 @@
 			"openIssues": 12
 		},
 		"pathview": {
-			"stars": 73,
+			"stars": 72,
 			"forks": 8,
 			"watchers": 4,
 			"openIssues": 14
@@ -15,7 +15,7 @@
 		"pysimhub": {
 			"projects": 22,
 			"members": 3,
-			"cumulativeStars": 15083
+			"cumulativeStars": 15085
 		}
 	},
 	"history": [
@@ -2017,7 +2017,7 @@
 				"openIssues": 12
 			},
 			"pathview": {
-				"stars": 73,
+				"stars": 72,
 				"forks": 8,
 				"watchers": 4,
 				"openIssues": 14
@@ -2025,11 +2025,11 @@
 			"pysimhub": {
 				"projects": 22,
 				"members": 3,
-				"cumulativeStars": 15083
+				"cumulativeStars": 15085
 			}
 		}
 	],
-	"fetchedAt": "2026-05-09T13:25:54.222Z",
+	"fetchedAt": "2026-05-09T16:59:52.427Z",
 	"starHistory": {
 		"pathsim": [
 			{
@@ -2775,164 +2775,160 @@
 				"stars": 11
 			},
 			{
-				"date": "2025-11-02",
+				"date": "2025-11-21",
 				"stars": 12
 			},
 			{
-				"date": "2025-11-21",
+				"date": "2025-12-30",
 				"stars": 13
 			},
 			{
-				"date": "2025-12-30",
+				"date": "2026-01-09",
 				"stars": 14
 			},
 			{
-				"date": "2026-01-09",
+				"date": "2026-01-14",
 				"stars": 15
 			},
 			{
-				"date": "2026-01-14",
+				"date": "2026-01-20",
 				"stars": 16
 			},
 			{
-				"date": "2026-01-20",
-				"stars": 17
-			},
-			{
 				"date": "2026-01-29",
-				"stars": 21
+				"stars": 20
 			},
 			{
 				"date": "2026-01-30",
-				"stars": 22
+				"stars": 21
 			},
 			{
 				"date": "2026-01-31",
-				"stars": 25
+				"stars": 24
 			},
 			{
 				"date": "2026-02-01",
-				"stars": 26
+				"stars": 25
 			},
 			{
 				"date": "2026-02-02",
-				"stars": 29
+				"stars": 28
 			},
 			{
 				"date": "2026-02-03",
-				"stars": 31
+				"stars": 30
 			},
 			{
 				"date": "2026-02-04",
-				"stars": 33
+				"stars": 32
 			},
 			{
 				"date": "2026-02-05",
-				"stars": 35
+				"stars": 34
 			},
 			{
 				"date": "2026-02-09",
-				"stars": 36
+				"stars": 35
 			},
 			{
 				"date": "2026-02-11",
-				"stars": 43
+				"stars": 42
 			},
 			{
 				"date": "2026-02-12",
-				"stars": 48
+				"stars": 47
 			},
 			{
 				"date": "2026-02-13",
-				"stars": 49
+				"stars": 48
 			},
 			{
 				"date": "2026-02-15",
-				"stars": 50
+				"stars": 49
 			},
 			{
 				"date": "2026-02-16",
-				"stars": 52
+				"stars": 51
 			},
 			{
 				"date": "2026-02-17",
-				"stars": 53
+				"stars": 52
 			},
 			{
 				"date": "2026-02-20",
-				"stars": 54
+				"stars": 53
 			},
 			{
 				"date": "2026-02-21",
-				"stars": 55
+				"stars": 54
 			},
 			{
 				"date": "2026-02-24",
-				"stars": 56
+				"stars": 55
 			},
 			{
 				"date": "2026-02-26",
-				"stars": 57
+				"stars": 56
 			},
 			{
 				"date": "2026-02-28",
-				"stars": 58
+				"stars": 57
 			},
 			{
 				"date": "2026-03-01",
-				"stars": 59
+				"stars": 58
 			},
 			{
 				"date": "2026-03-02",
-				"stars": 61
+				"stars": 60
 			},
 			{
 				"date": "2026-03-03",
-				"stars": 62
+				"stars": 61
 			},
 			{
 				"date": "2026-03-06",
-				"stars": 63
+				"stars": 62
 			},
 			{
 				"date": "2026-03-11",
-				"stars": 64
+				"stars": 63
 			},
 			{
 				"date": "2026-03-13",
-				"stars": 65
+				"stars": 64
 			},
 			{
 				"date": "2026-03-30",
-				"stars": 66
+				"stars": 65
 			},
 			{
 				"date": "2026-04-02",
-				"stars": 67
+				"stars": 66
 			},
 			{
 				"date": "2026-04-08",
-				"stars": 68
+				"stars": 67
 			},
 			{
 				"date": "2026-04-17",
-				"stars": 69
+				"stars": 68
 			},
 			{
 				"date": "2026-04-23",
-				"stars": 70
+				"stars": 69
 			},
 			{
 				"date": "2026-04-27",
-				"stars": 71
+				"stars": 70
 			},
 			{
 				"date": "2026-04-28",
-				"stars": 72
+				"stars": 71
 			},
 			{
 				"date": "2026-05-06",
-				"stars": 73
+				"stars": 72
 			}
 		]
 	}
