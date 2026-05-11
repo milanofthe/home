@@ -37,6 +37,8 @@ jobs:
           CF_SITE_TAG_RAPIDPASSIVES: ${{ secrets.CF_SITE_TAG_RAPIDPASSIVES }}
           CF_SITE_TAG_MILANROTHER: ${{ secrets.CF_SITE_TAG_MILANROTHER }}
           CF_SITE_TAG_CODEGEN: ${{ secrets.CF_SITE_TAG_CODEGEN }}
+          CF_SITE_TAG_SCIDATA: ${{ secrets.CF_SITE_TAG_SCIDATA }}
+          CF_SITE_TAG_FASTSIM: ${{ secrets.CF_SITE_TAG_FASTSIM }}
 
       - name: Fetch GitHub stats
         run: npm run fetch-stats

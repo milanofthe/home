@@ -41,6 +41,18 @@ export const sites = [
 		hostname: 'code.pathsim.org',
 		siteTag: process.env.CF_SITE_TAG_CODEGEN || '',
 		color: '#0070c0' // PathSim brand color
+	},
+	{
+		name: 'scidata.io',
+		hostname: 'scidata.io',
+		siteTag: process.env.CF_SITE_TAG_SCIDATA || '',
+		color: '#d8351a' // SciData lava red
+	},
+	{
+		name: 'fast.pathsim.org',
+		hostname: 'fast.pathsim.org',
+		siteTag: process.env.CF_SITE_TAG_FASTSIM || '',
+		color: '#D14129' // FastSim brand red
 	}
 ];
 
