@@ -265,6 +265,32 @@
 	color: #d9513c;
 }
 
+.code-grid-heading-scidata {
+	color: #d8351a;
+	font-weight: bold;
+}
+
+.code-grid-link-scidata {
+	color: #d8351a;
+}
+
+.code-grid-frame-scidata {
+	color: #d8351a;
+}
+
+.code-grid-heading-fastsim {
+	color: #D14129;
+	font-weight: bold;
+}
+
+.code-grid-link-fastsim {
+	color: #D14129;
+}
+
+.code-grid-frame-fastsim {
+	color: #D14129;
+}
+
 /* Hovered word highlight: brightens the filler token under the cursor */
 .hovered-word {
 	position: absolute;

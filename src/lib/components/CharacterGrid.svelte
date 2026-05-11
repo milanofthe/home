@@ -17,18 +17,24 @@
 		'heading-pathsim': 'code-grid-heading-pathsim',
 		'heading-pysimhub': 'code-grid-heading-pysimhub',
 		'heading-rapidpassives': 'code-grid-heading-rapidpassives',
+		'heading-scidata': 'code-grid-heading-scidata',
+		'heading-fastsim': 'code-grid-heading-fastsim',
 		cta: 'code-grid-cta',
 		link: 'code-grid-link',
 		'link-pathsim': 'code-grid-link-pathsim',
 		'link-pysimhub': 'code-grid-link-pysimhub',
 		'link-rapidpassives': 'code-grid-link-rapidpassives',
+		'link-scidata': 'code-grid-link-scidata',
+		'link-fastsim': 'code-grid-link-fastsim',
 		footer: 'code-grid-footer',
 		empty: 'code-grid-empty',
 		'form-field': 'code-grid-form-field',
 		frame: 'code-grid-frame',
 		'frame-pathsim': 'code-grid-frame-pathsim',
 		'frame-pysimhub': 'code-grid-frame-pysimhub',
-		'frame-rapidpassives': 'code-grid-frame-rapidpassives'
+		'frame-rapidpassives': 'code-grid-frame-rapidpassives',
+		'frame-scidata': 'code-grid-frame-scidata',
+		'frame-fastsim': 'code-grid-frame-fastsim'
 	};
 
 	let typewriterObserver: IntersectionObserver | null = null;
@@ -76,7 +82,7 @@
 
 		// For each content span inside a line: keep filler-colored base, add real-colored overlay
 		for (const line of contentLines) {
-			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-frame-rapidpassives):not(.code-grid-empty)'));
+			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-frame-rapidpassives):not(.code-grid-frame-scidata):not(.code-grid-frame-fastsim):not(.code-grid-empty)'));
 			for (const span of spans) {
 				const text = span.textContent || '';
 				if (!text.trim()) continue;

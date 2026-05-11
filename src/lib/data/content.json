@@ -27,7 +27,8 @@
 					"Published in JOSS. Adopted by JSBSim for flight dynamics and used at MIT PSFC for nuclear fusion fuel-cycle modeling."
 				],
 				"statsTemplate": "{stars} stars / {forks} forks",
-				"statsSource": "pathsim"
+				"statsSource": "pathsim",
+				"domain": "pathsim.org"
 			},
 			{
 				"id": "pathview",
@@ -37,7 +38,8 @@
 					"A browser-based visual editor for PathSim models. Drag-and-drop block diagrams, live simulation preview, and instant sharing. Built with SvelteKit, SvelteFlow, and Pyodide."
 				],
 				"statsTemplate": "{stars} stars / {forks} forks",
-				"statsSource": "pathview"
+				"statsSource": "pathview",
+				"domain": "view.pathsim.org"
 			},
 			{
 				"id": "pysimhub",
@@ -47,16 +49,35 @@
 					"An open community catalog bridging Python's scattered simulation communities. An awesome list that's also awesome to use."
 				],
 				"statsTemplate": "{projects} projects / {cumulativeStars} cumulative stars",
-				"statsSource": "pysimhub"
+				"statsSource": "pysimhub",
+				"domain": "pysimhub.io"
 			},
 			{
 				"id": "rapidpassives",
 				"heading": "RapidPassives",
 				"headingType": "rapidpassives",
 				"paragraphs": [
-					"RFIC passive design tool. Browser-based layout generation with real-time preview, GDS export, and integrated MOM solver."
+					"RFIC passive design tool. Browser-based layout generation with real-time preview, GDS export, and a custom instanced-WebGL viewer that renders million-polygon external GDS files at 60 fps."
 				],
 				"statsText": "rapidpassives.org"
+			},
+			{
+				"id": "fastsim",
+				"heading": "FastSim",
+				"headingType": "fastsim",
+				"paragraphs": [
+					"A drop-in Rust port of PathSim. Same Python API, 50-100x faster solvers reaching μs-scale timesteps, and a JIT that compiles user-supplied Python callbacks to native code at runtime."
+				],
+				"statsText": "fast.pathsim.org"
+			},
+			{
+				"id": "scidata",
+				"heading": "SciData",
+				"headingType": "scidata",
+				"paragraphs": [
+					"A node-based environment for scientific data analysis. Drop a CSV, chain pandas, scipy, statsmodels and plotly blocks; the pipeline is a declarative graph that compiles to plain Python."
+				],
+				"statsText": "scidata.io"
 			}
 		]
 	},

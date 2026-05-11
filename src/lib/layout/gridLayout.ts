@@ -5,7 +5,7 @@ import { FILLER_SOURCE } from '$lib/data/filler-source';
 import { contentSections, type ContentSection, type ContentRegion } from './contentRegions';
 export type { ContentSection };
 
-export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives';
+export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim';
 
 export interface Cell {
 	char: string;
@@ -56,7 +56,7 @@ function wordWrap(text: string, maxWidth: number): string[] {
 
 // Types that should be word-wrapped when lines exceed available width
 const WRAPPABLE_TYPES: Set<string> = new Set([
-	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'footer-line'
+	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'link-line-rapidpassives', 'link-line-scidata', 'link-line-fastsim', 'footer-line'
 ]);
 
 // Fill a line with filler source characters, cycling through the source
@@ -168,11 +168,15 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 			region.type === 'heading-pathsim' ? 'heading-pathsim' :
 			region.type === 'heading-pysimhub' ? 'heading-pysimhub' :
 			region.type === 'heading-rapidpassives' ? 'heading-rapidpassives' :
+			region.type === 'heading-scidata' ? 'heading-scidata' :
+			region.type === 'heading-fastsim' ? 'heading-fastsim' :
 			region.type === 'cta' ? 'cta' :
 			region.type === 'link-line' ? 'link' :
 			region.type === 'link-line-pathsim' ? 'link-pathsim' :
 			region.type === 'link-line-pysimhub' ? 'link-pysimhub' :
 			region.type === 'link-line-rapidpassives' ? 'link-rapidpassives' :
+			region.type === 'link-line-scidata' ? 'link-scidata' :
+			region.type === 'link-line-fastsim' ? 'link-fastsim' :
 			region.type === 'footer-line' ? 'footer' :
 			region.type === 'form-field' ? 'form-field' :
 			'content';
@@ -188,6 +192,8 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 				region.frameColor === 'pathsim' ? 'frame-pathsim' :
 				region.frameColor === 'pysimhub' ? 'frame-pysimhub' :
 				region.frameColor === 'rapidpassives' ? 'frame-rapidpassives' :
+				region.frameColor === 'scidata' ? 'frame-scidata' :
+				region.frameColor === 'fastsim' ? 'frame-fastsim' :
 				'frame';
 			const innerRows = region.embeddedRows || 10;
 

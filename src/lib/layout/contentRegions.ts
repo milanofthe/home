@@ -10,7 +10,7 @@ export interface GitHubStats {
 	pysimhub: { projects: number; members?: number; cumulativeStars: number };
 }
 
-export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'footer-line' | 'content' | 'form-field';
+export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'footer-line' | 'content' | 'form-field';
 
 export interface ContentRegion {
 	type: RegionType;
@@ -22,7 +22,7 @@ export interface ContentRegion {
 	tiles?: { id: string; label: string }[]; // individual framed tiles laid out side-by-side (or stacked on mobile)
 	url?: string; // for links within text
 	label?: string; // frame title for embedded blocks
-	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives'; // project color for frame
+	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim'; // project color for frame
 	align?: 'center' | 'left';
 }
 
@@ -76,6 +76,16 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		type: 'embedded', lines: [], frameColor: 'rapidpassives',
 		embeddedRows: 10, embeddedCols: 34, align: 'center',
 		tiles: [{ id: 'rapidpassives-org', label: 'RapidPassives' }, { id: 'rapidpassives-transformer', label: 'Transformer' }]
+	},
+	scidata: {
+		type: 'embedded', lines: [], frameColor: 'scidata',
+		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		tiles: [{ id: 'scidata-io', label: 'SciData' }, { id: 'scidata-app', label: 'Canvas' }]
+	},
+	fastsim: {
+		type: 'embedded', lines: [], frameColor: 'fastsim',
+		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		tiles: [{ id: 'fastsim-org', label: 'FastSim' }]
 	}
 };
 
@@ -83,13 +93,17 @@ const LINK_LINE_TYPES: Record<string, RegionType> = {
 	pathsim: 'link-line-pathsim',
 	pathview: 'link-line-pathsim',
 	pysimhub: 'link-line-pysimhub',
-	rapidpassives: 'link-line-rapidpassives'
+	rapidpassives: 'link-line-rapidpassives',
+	scidata: 'link-line-scidata',
+	fastsim: 'link-line-fastsim'
 };
 
 const HEADING_TYPES: Record<string, RegionType> = {
 	pathsim: 'heading-pathsim',
 	pysimhub: 'heading-pysimhub',
-	rapidpassives: 'heading-rapidpassives'
+	rapidpassives: 'heading-rapidpassives',
+	scidata: 'heading-scidata',
+	fastsim: 'heading-fastsim'
 };
 
 // --- Section builders ---
@@ -156,6 +170,13 @@ function buildProjectsSection(stats: GitHubStats): ContentSection {
 			regions.push(linkLine(resolved, LINK_LINE_TYPES[item.id] ?? 'link-line'));
 		} else if (item.statsText) {
 			regions.push(linkLine(item.statsText, LINK_LINE_TYPES[item.id] ?? 'link-line'));
+		}
+
+		// Domain line (rendered when domain is set alongside a stats line —
+		// projects using statsText already encode the domain there, so we
+		// only emit this extra line when it would not be redundant).
+		if (item.domain && item.statsTemplate) {
+			regions.push(linkLine(item.domain, LINK_LINE_TYPES[item.id] ?? 'link-line'));
 		}
 
 		regions.push(spacer());

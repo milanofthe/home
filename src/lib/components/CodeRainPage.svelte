@@ -23,7 +23,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim';
 		themeParam?: boolean;
 	}
 
@@ -34,7 +34,9 @@
 		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' },
 		'pysimhub-pathsim': { name: 'Project Page', url: 'https://pysimhub.io/projects/pathsim/', screenshot: '/screenshots/pysimhub-pathsim.png', color: 'pysimhub' },
 		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
-		
+		'scidata-io': { name: 'SciData', url: 'https://scidata.io', screenshot: '/screenshots/scidata-io.png', color: 'scidata', themeParam: false },
+		'scidata-app': { name: 'Canvas', url: 'https://scidata.io/app', screenshot: '/screenshots/scidata-app.png', color: 'scidata', themeParam: false },
+		'fastsim-org': { name: 'FastSim', url: 'https://fast.pathsim.org', screenshot: '/screenshots/fastsim-org.png', color: 'fastsim', themeParam: false }
 	};
 
 	// Video tile data
@@ -102,6 +104,11 @@
 		{ text: 'LinkedIn', types: ['link', 'footer', 'content'], href: 'https://linkedin.com/in/milan-rother-648474183' },
 		{ text: 'X', types: ['link', 'footer'], href: 'https://x.com/Milan1115268' },
 		{ text: 'rapidpassives.org', types: ['link-rapidpassives'], href: 'https://rapidpassives.org' },
+		{ text: 'scidata.io', types: ['link-scidata'], href: 'https://scidata.io' },
+		{ text: 'fast.pathsim.org', types: ['link-fastsim'], href: 'https://fast.pathsim.org' },
+		{ text: 'pathsim.org', types: ['link-pathsim'], href: 'https://pathsim.org' },
+		{ text: 'view.pathsim.org', types: ['link-pathsim'], href: 'https://view.pathsim.org' },
+		{ text: 'pysimhub.io', types: ['link-pysimhub'], href: 'https://pysimhub.io' },
 	];
 
 	let clickOverlays = $derived.by((): ClickOverlay[] => {

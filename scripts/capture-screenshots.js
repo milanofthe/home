@@ -20,7 +20,10 @@ const sites = [
 	{ id: 'view-pathsim-org', url: 'https://view.pathsim.org' },
 	{ id: 'pysimhub-io', url: 'https://pysimhub.io' },
 	{ id: 'pysimhub-pathsim', url: 'https://pysimhub.io/projects/pathsim/' },
-	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000 }
+	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000 },
+	{ id: 'scidata-io', url: 'https://scidata.io', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 },
+	{ id: 'scidata-app', url: 'https://scidata.io/app?template=peak-detection', darkOnly: true, waitUntil: 'networkidle2', timeout: 120000, extraWaitMs: 15000 },
+	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 }
 ];
 
 const themes = ['dark', 'light'];
@@ -36,7 +39,10 @@ async function captureScreenshot(browser, site, theme) {
 
 	try {
 		await page.goto(url, { waitUntil: site.waitUntil || 'networkidle2', timeout: site.timeout || 30000 });
-		await new Promise((resolve) => setTimeout(resolve, 1500));
+		// Default settle wait — most sites are done after 4 s. Per-site override
+		// for pages that need longer (e.g. Pyodide boot + template apply + plot render).
+		const settleMs = site.extraWaitMs ?? 4000;
+		await new Promise((resolve) => setTimeout(resolve, settleMs));
 
 		const filename = `${site.id}-${theme}.png`;
 		const outputPath = join(SCREENSHOTS_DIR, filename);
