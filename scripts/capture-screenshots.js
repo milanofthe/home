@@ -23,7 +23,7 @@ const sites = [
 	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000 },
 	{ id: 'scidata-io', url: 'https://scidata.io', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 },
 	{ id: 'scidata-app', url: 'https://scidata.io/app?template=peak-detection', darkOnly: true, waitUntil: 'networkidle2', timeout: 120000, extraWaitMs: 15000 },
-	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 }
+	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000 }
 ];
 
 const themes = ['dark', 'light'];
