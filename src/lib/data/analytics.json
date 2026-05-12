@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-05-12T14:33:30.810Z",
+	"lastFetched": "2026-05-12T18:02:56.665Z",
 	"sites": {
 		"pathsim.org": {
 			"name": "pathsim.org",
@@ -33312,7 +33312,7 @@
 						},
 						{
 							"country": "SG",
-							"pageViews": 120
+							"pageViews": 130
 						},
 						{
 							"country": "GB",
@@ -33342,7 +33342,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 660
+							"pageViews": 670
 						},
 						{
 							"browser": "ChromeMobile",
@@ -33458,7 +33458,7 @@
 				},
 				{
 					"country": "SG",
-					"pageViews": 120
+					"pageViews": 130
 				},
 				{
 					"country": "GB",
@@ -33488,7 +33488,7 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 660
+					"pageViews": 670
 				},
 				{
 					"browser": "ChromeMobile",
@@ -48759,13 +48759,13 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1740
+							"pageViews": 1750
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 280
+							"pageViews": 290
 						},
 						{
 							"referrer": "pathsim.org",
@@ -48869,13 +48869,13 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1740
+					"pageViews": 1750
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 280
+					"pageViews": 290
 				},
 				{
 					"referrer": "pathsim.org",
@@ -50838,6 +50838,11 @@
 					"datetime": "2026-05-12T12:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-05-12T16:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"aggregateHistory": [
@@ -70674,19 +70679,19 @@
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 350
+							"pageViews": 340
 						},
 						{
 							"path": "/viewer",
 							"pageViews": 100
 						},
 						{
-							"path": "/generator/spiral",
+							"path": "/generator/symmetric-inductor",
 							"pageViews": 80
 						},
 						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 70
+							"path": "/generator/spiral",
+							"pageViews": 80
 						},
 						{
 							"path": "/generator/symmetric-transformer",
@@ -70708,7 +70713,7 @@
 					"topReferrers": [
 						{
 							"referrer": "rapidpassives.org",
-							"pageViews": 80
+							"pageViews": 90
 						},
 						{
 							"referrer": "www.google.com",
@@ -70734,7 +70739,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 360
+							"pageViews": 350
 						},
 						{
 							"country": "DE",
@@ -70769,14 +70774,14 @@
 							"pageViews": 20
 						},
 						{
-							"country": "TW",
+							"country": "CA",
 							"pageViews": 20
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 420
+							"pageViews": 410
 						},
 						{
 							"browser": "MobileSafari",
@@ -70800,19 +70805,19 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 350
+					"pageViews": 340
 				},
 				{
 					"path": "/viewer",
 					"pageViews": 100
 				},
 				{
-					"path": "/generator/spiral",
+					"path": "/generator/symmetric-inductor",
 					"pageViews": 80
 				},
 				{
-					"path": "/generator/symmetric-inductor",
-					"pageViews": 70
+					"path": "/generator/spiral",
+					"pageViews": 80
 				},
 				{
 					"path": "/generator/symmetric-transformer",
@@ -70834,7 +70839,7 @@
 			"topReferrers": [
 				{
 					"referrer": "rapidpassives.org",
-					"pageViews": 80
+					"pageViews": 90
 				},
 				{
 					"referrer": "www.google.com",
@@ -70860,7 +70865,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 360
+					"pageViews": 350
 				},
 				{
 					"country": "DE",
@@ -70895,14 +70900,14 @@
 					"pageViews": 20
 				},
 				{
-					"country": "TW",
+					"country": "CA",
 					"pageViews": 20
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 420
+					"pageViews": 410
 				},
 				{
 					"browser": "MobileSafari",
@@ -85110,6 +85115,16 @@
 				},
 				{
 					"datetime": "2026-05-12T12:00:00",
+					"pageViews": 1,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-05-12T16:00:00",
+					"pageViews": 1,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-05-12T20:00:00",
 					"pageViews": 1,
 					"visits": 0
 				}
