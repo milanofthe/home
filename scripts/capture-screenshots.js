@@ -21,6 +21,7 @@ const sites = [
 	{ id: 'pysimhub-io', url: 'https://pysimhub.io' },
 	{ id: 'pysimhub-pathsim', url: 'https://pysimhub.io/projects/pathsim/' },
 	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000 },
+	{ id: 'rapidfem-editor', url: 'https://fem.rapidpassives.org/notebook?example=iris_filter', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 },
 	{ id: 'scidata-io', url: 'https://scidata.io', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 },
 	{ id: 'scidata-app', url: 'https://scidata.io/app?template=peak-detection', darkOnly: true, waitUntil: 'networkidle2', timeout: 120000, extraWaitMs: 15000 },
 	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000 }

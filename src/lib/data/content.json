@@ -62,6 +62,15 @@
 				"statsText": "rapidpassives.org"
 			},
 			{
+				"id": "rapidfem",
+				"heading": "RapidFEM",
+				"headingType": "rapidfem",
+				"paragraphs": [
+					"Open-source frequency-domain Maxwell FEM solver in Rust. Python API and a local notebook UI with interactive geometry, mesh, and field renderers."
+				],
+				"statsText": "fem.rapidpassives.org"
+			},
+			{
 				"id": "fastsim",
 				"heading": "FastSim",
 				"headingType": "fastsim",

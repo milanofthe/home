@@ -59,32 +59,38 @@ function resolveStats(template: string, stats: Record<string, number | undefined
 const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 	pathsim: {
 		type: 'embedded', lines: [], frameColor: 'pathsim',
-		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		embeddedRows: 10, embeddedCols: 42, align: 'center',
 		tiles: [{ id: 'pathsim-org', label: 'PathSim' }, { id: 'docs-pathsim-org', label: 'Docs' }]
 	},
 	pathview: {
 		type: 'embedded', lines: [], frameColor: 'pathsim',
-		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		embeddedRows: 10, embeddedCols: 42, align: 'center',
 		tiles: [{ id: 'pathview-trailer', label: 'Demo' }, { id: 'view-pathsim-org', label: 'PathView' }]
 	},
 	pysimhub: {
 		type: 'embedded', lines: [], frameColor: 'pysimhub',
-		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		embeddedRows: 10, embeddedCols: 42, align: 'center',
 		tiles: [{ id: 'pysimhub-io', label: 'PySimHub' }, { id: 'pysimhub-pathsim', label: 'Project Page' }]
 	},
 	rapidpassives: {
 		type: 'embedded', lines: [], frameColor: 'rapidpassives',
-		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		embeddedRows: 10, embeddedCols: 42, align: 'center',
 		tiles: [{ id: 'rapidpassives-org', label: 'RapidPassives' }, { id: 'rapidpassives-transformer', label: 'Transformer' }]
+	},
+	rapidfem: {
+		// Shares the rapidpassives brand color.
+		type: 'embedded', lines: [], frameColor: 'rapidpassives',
+		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		tiles: [{ id: 'rapidfem-editor', label: 'Notebook' }, { id: 'rapidfem-microstrip', label: 'Microstrip' }]
 	},
 	scidata: {
 		type: 'embedded', lines: [], frameColor: 'scidata',
-		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		embeddedRows: 10, embeddedCols: 42, align: 'center',
 		tiles: [{ id: 'scidata-io', label: 'SciData' }, { id: 'scidata-app', label: 'Canvas' }]
 	},
 	fastsim: {
 		type: 'embedded', lines: [], frameColor: 'fastsim',
-		embeddedRows: 10, embeddedCols: 34, align: 'center',
+		embeddedRows: 10, embeddedCols: 42, align: 'center',
 		tiles: [{ id: 'fastsim-org', label: 'FastSim' }]
 	}
 };
@@ -94,6 +100,7 @@ const LINK_LINE_TYPES: Record<string, RegionType> = {
 	pathview: 'link-line-pathsim',
 	pysimhub: 'link-line-pysimhub',
 	rapidpassives: 'link-line-rapidpassives',
+	rapidfem: 'link-line-rapidpassives',
 	scidata: 'link-line-scidata',
 	fastsim: 'link-line-fastsim'
 };
@@ -102,6 +109,7 @@ const HEADING_TYPES: Record<string, RegionType> = {
 	pathsim: 'heading-pathsim',
 	pysimhub: 'heading-pysimhub',
 	rapidpassives: 'heading-rapidpassives',
+	rapidfem: 'heading-rapidpassives',
 	scidata: 'heading-scidata',
 	fastsim: 'heading-fastsim'
 };

@@ -53,6 +53,12 @@ export const sites = [
 		hostname: 'fast.pathsim.org',
 		siteTag: process.env.CF_SITE_TAG_FASTSIM || '',
 		color: '#D14129' // FastSim brand red
+	},
+	{
+		name: 'fem.rapidpassives.org',
+		hostname: 'fem.rapidpassives.org',
+		siteTag: process.env.CF_SITE_TAG_RAPIDFEM || '',
+		color: '#d9513c' // shares RapidPassives brand color
 	}
 ];
 

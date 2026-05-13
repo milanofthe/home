@@ -34,6 +34,7 @@
 		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' },
 		'pysimhub-pathsim': { name: 'Project Page', url: 'https://pysimhub.io/projects/pathsim/', screenshot: '/screenshots/pysimhub-pathsim.png', color: 'pysimhub' },
 		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
+		'rapidfem-editor': { name: 'Iris Filter', url: 'https://fem.rapidpassives.org/notebook?example=iris_filter', screenshot: '/screenshots/rapidfem-editor.png', color: 'rapidpassives', themeParam: false },
 		'scidata-io': { name: 'SciData', url: 'https://scidata.io', screenshot: '/screenshots/scidata-io.png', color: 'scidata', themeParam: false },
 		'scidata-app': { name: 'Canvas', url: 'https://scidata.io/app', screenshot: '/screenshots/scidata-app.png', color: 'scidata', themeParam: false },
 		'fastsim-org': { name: 'FastSim', url: 'https://fast.pathsim.org', screenshot: '/screenshots/fastsim-org.png', color: 'fastsim' }
@@ -104,6 +105,7 @@
 		{ text: 'LinkedIn', types: ['link', 'footer', 'content'], href: 'https://linkedin.com/in/milan-rother-648474183' },
 		{ text: 'X', types: ['link', 'footer'], href: 'https://x.com/Milan1115268' },
 		{ text: 'rapidpassives.org', types: ['link-rapidpassives'], href: 'https://rapidpassives.org' },
+		{ text: 'fem.rapidpassives.org', types: ['link-rapidpassives'], href: 'https://fem.rapidpassives.org' },
 		{ text: 'scidata.io', types: ['link-scidata'], href: 'https://scidata.io' },
 		{ text: 'fast.pathsim.org', types: ['link-fastsim'], href: 'https://fast.pathsim.org' },
 		{ text: 'pathsim.org', types: ['link-pathsim'], href: 'https://pathsim.org' },
@@ -322,6 +324,12 @@
 			s.src = 'https://rapidpassives.org/embed/gds-viewer.js';
 			document.head.appendChild(s);
 		}
+		// Load FEM viewer web component
+		if (!document.querySelector('script[src*="fem-viewer"]')) {
+			const s = document.createElement('script');
+			s.src = 'https://fem.rapidpassives.org/embed/fem-viewer.js';
+			document.head.appendChild(s);
+		}
 		computeLayout();
 
 		// Re-measure once fonts are ready (corrects char ratio if fallback was used)
@@ -441,6 +449,21 @@
 							phi="30"
 							preset="sky130"
 						></gds-viewer>
+					</div>
+				</div>
+			{:else if block.id === 'rapidfem-microstrip'}
+				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
+					<div style="width: 100%; height: 100%; border-radius: 8px; overflow: hidden;">
+						<fem-viewer
+							src="https://fem.rapidpassives.org/demo/microstrip_line.json"
+							rotate
+							cycle
+							speed="0.6"
+							field-samples="5000"
+							field-mode="log"
+							width="100%"
+							height="100%"
+						></fem-viewer>
 					</div>
 				</div>
 			{:else if tileInfo[block.id]}
