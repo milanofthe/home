@@ -13,26 +13,26 @@
 	<div class="max-w-2xl mx-auto">
 		<a href="/" class="text-teal text-sm hover:text-teal-light transition-colors">&larr; Back</a>
 
-		<h1 class="text-2xl font-bold text-teal mt-8 mb-8">Datenschutzerklaerung</h1>
+		<h1 class="text-2xl font-bold text-teal mt-8 mb-8">Datenschutzerklärung</h1>
 
 		<!-- 1. Verantwortlicher -->
 		<section class="mb-8">
 			<h2 class="text-lg font-bold text-cream mb-4">1. Verantwortlicher</h2>
 			<p>Milan Rother</p>
-			<p>Abtstrasse 11, 38106 Braunschweig</p>
-			<p>E-Mail: info@milanrother.com</p>
-			<p>Telefon: +49 15202668142</p>
+			<p>Abtstraße 11, 38106 Braunschweig</p>
+			<p>E-Mail: <a href="mailto:info@milanrother.com" class="text-teal hover:text-teal-light">info@milanrother.com</a></p>
 		</section>
 
 		<!-- 2. Hosting -->
 		<section class="mb-8">
 			<h2 class="text-lg font-bold text-cream mb-4">2. Hosting</h2>
 			<p class="text-cream/60 mb-2">
-				Diese Website wird ueber Cloudflare Pages / GitHub Pages gehostet. Beim Abruf der
-				Website werden automatisch technische Daten (z.B. IP-Adresse, Zeitpunkt des Zugriffs,
-				Browser-Typ) durch den Hosting-Anbieter verarbeitet. Dies ist erforderlich, um die
-				Website auszuliefern, und erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
-				(berechtigtes Interesse an einer zuverlaessigen Bereitstellung der Website).
+				Diese Website wird über Cloudflare Pages / GitHub Pages gehostet. Beim Abruf der
+				Website werden automatisch technische Daten (z. B. IP-Adresse, Zeitpunkt des
+				Zugriffs, Browser-Typ) durch den Hosting-Anbieter verarbeitet. Dies ist
+				erforderlich, um die Website auszuliefern, und erfolgt auf Grundlage von
+				Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer zuverlässigen
+				Bereitstellung der Website).
 			</p>
 		</section>
 
@@ -42,8 +42,8 @@
 			<p class="text-cream/60 mb-2">
 				Diese Website verwendet Cloudflare Web Analytics, einen datenschutzfreundlichen
 				Analysedienst der Cloudflare, Inc. Cloudflare Web Analytics setzt keine Cookies,
-				verwendet kein Fingerprinting und speichert keine IP-Adressen. Die IP-Adresse wird
-				am Edge-Server verworfen und nicht an Cloudflare weitergeleitet.
+				verwendet kein Fingerprinting und speichert keine IP-Adressen. Die IP-Adresse
+				wird am Edge-Server verworfen und nicht an Cloudflare weitergeleitet.
 			</p>
 			<p class="text-cream/60 mb-2">
 				Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
@@ -57,25 +57,31 @@
 			</p>
 		</section>
 
-		<!-- 4. Kontaktformular / Web3Forms -->
+		<!-- 4. Kontaktformular / Formspark -->
 		<section class="mb-8">
-			<h2 class="text-lg font-bold text-cream mb-4">4. Kontaktformular (Web3Forms)</h2>
+			<h2 class="text-lg font-bold text-cream mb-4">4. Kontaktformular (Formspark)</h2>
 			<p class="text-cream/60 mb-2">
-				Das Kontaktformular auf dieser Website nutzt den Dienst Web3Forms
-				(Web3Creative, Indien/USA). Wenn Sie das Kontaktformular verwenden, werden
-				folgende Daten uebermittelt: Name, E-Mail-Adresse, Betreff und Nachricht.
+				Wenn Sie das Kontaktformular auf dieser Website nutzen, werden die von Ihnen
+				eingegebenen Daten (Name, E-Mail-Adresse, Betreff und Nachricht) über den
+				Dienst Formspark (Formspark Ltd., Vereinigtes Königreich) verarbeitet und
+				per E-Mail an mich übermittelt. Formspark fungiert dabei ausschließlich als
+				Form-Endpoint und speichert die Anfragen nicht dauerhaft.
 			</p>
 			<p class="text-cream/60 mb-2">
-				Die Daten werden an Server in den USA uebertragen. Es gelten die
-				Datenschutzbestimmungen von Web3Forms.
+				Da Formspark seinen Sitz im Vereinigten Königreich hat, findet eine
+				Datenübermittlung in ein Drittland statt. Für das Vereinigte Königreich
+				besteht ein Angemessenheitsbeschluss der Europäischen Kommission gemäß
+				Art. 45 DSGVO.
 			</p>
 			<p class="text-cream/60 mb-2">
-				Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Massnahmen) bzw.
-				Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).
+				Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw.
+				Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von
+				Anfragen).
 			</p>
 			<p class="text-cream/60">
-				Speicherdauer: Die ueber Web3Forms uebermittelten Daten werden dort fuer maximal
-				30 Tage gespeichert.
+				Speicherdauer: Anfragen werden bis zur vollständigen Bearbeitung Ihres
+				Anliegens gespeichert und anschließend gelöscht, sofern keine gesetzlichen
+				Aufbewahrungspflichten entgegenstehen.
 			</p>
 		</section>
 
@@ -85,7 +91,7 @@
 			<p class="text-cream/60">
 				Diese Website verwendet selbst gehostete Schriftarten (JetBrains Mono, Inter,
 				Space Grotesk). Es werden keine Verbindungen zu externen Font-Diensten wie
-				Google Fonts hergestellt. Es findet keine Datenuebertragung an Dritte statt.
+				Google Fonts hergestellt. Es findet keine Datenübertragung an Dritte statt.
 			</p>
 		</section>
 
@@ -93,30 +99,30 @@
 		<section class="mb-8">
 			<h2 class="text-lg font-bold text-cream mb-4">6. Ihre Rechte</h2>
 			<p class="text-cream/60 mb-2">
-				Sie haben gegenueber dem Verantwortlichen folgende Rechte hinsichtlich der Sie
+				Sie haben gegenüber dem Verantwortlichen folgende Rechte hinsichtlich der Sie
 				betreffenden personenbezogenen Daten:
 			</p>
 			<ul class="text-cream/60 list-disc list-inside space-y-1 mb-2">
 				<li>Recht auf Auskunft (Art. 15 DSGVO)</li>
 				<li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
-				<li>Recht auf Loeschung (Art. 17 DSGVO)</li>
-				<li>Recht auf Einschraenkung der Verarbeitung (Art. 18 DSGVO)</li>
-				<li>Recht auf Datenuebertragbarkeit (Art. 20 DSGVO)</li>
+				<li>Recht auf Löschung (Art. 17 DSGVO)</li>
+				<li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+				<li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
 				<li>Widerspruchsrecht (Art. 21 DSGVO)</li>
 			</ul>
 		</section>
 
 		<!-- 7. Beschwerderecht -->
 		<section class="mb-8">
-			<h2 class="text-lg font-bold text-cream mb-4">7. Beschwerderecht bei einer Aufsichtsbehoerde</h2>
+			<h2 class="text-lg font-bold text-cream mb-4">7. Beschwerderecht bei einer Aufsichtsbehörde</h2>
 			<p class="text-cream/60 mb-2">
-				Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehoerde ueber die
+				Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die
 				Verarbeitung Ihrer personenbezogenen Daten zu beschweren.
 			</p>
 			<p class="text-cream/60">
-				Zustaendige Aufsichtsbehoerde:<br />
-				Die Landesbeauftragte fuer den Datenschutz Niedersachsen<br />
-				Prinzenstrasse 5, 30159 Hannover<br />
+				Zuständige Aufsichtsbehörde:<br />
+				Die Landesbeauftragte für den Datenschutz Niedersachsen<br />
+				Prinzenstraße 5, 30159 Hannover<br />
 				<a href="https://www.lfd.niedersachsen.de" class="text-teal hover:text-teal-light" target="_blank" rel="noopener">
 					lfd.niedersachsen.de
 				</a>

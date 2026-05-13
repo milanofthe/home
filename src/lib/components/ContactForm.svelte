@@ -1,22 +1,38 @@
 <script lang="ts">
+	/**
+	 * Contact form, posts to Formspark. Formspark accepts a plain HTML form
+	 * POST and emails me a notification with the submission contents.
+	 * Reserved fields start with an underscore (Formspark convention):
+	 *  - _gotcha: honeypot, must stay empty
+	 *  - _email.subject: subject of the notification mail I receive
+	 *  - _email.from: reply-to address on the notification mail (so a
+	 *    "Reply" in Fastmail goes straight to the submitter)
+	 */
+
+	const FORMSPARK_FORM_ID = '6bMmIUb3i';
+	const FORMSPARK_ACTION = `https://submit-form.com/${FORMSPARK_FORM_ID}`;
+
 	let formStatus = $state<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
 	async function handleSubmit(event: SubmitEvent) {
 		event.preventDefault();
+		if (FORMSPARK_FORM_ID.startsWith('__')) {
+			console.warn('[contact-form] FORMSPARK_FORM_ID placeholder not yet set');
+			formStatus = 'error';
+			return;
+		}
 		formStatus = 'submitting';
 
 		const form = event.target as HTMLFormElement;
 		const formData = new FormData(form);
 
 		try {
-			const response = await fetch('https://api.web3forms.com/submit', {
+			const response = await fetch(FORMSPARK_ACTION, {
 				method: 'POST',
-				body: formData
+				body: formData,
+				headers: { Accept: 'application/json' }
 			});
-
-			const data = await response.json();
-
-			if (data.success) {
+			if (response.ok) {
 				formStatus = 'success';
 				form.reset();
 			} else {
@@ -37,9 +53,12 @@
 		</div>
 	{:else}
 		<form onsubmit={handleSubmit} class="terminal-fields">
-			<input type="hidden" name="access_key" value="6b5ed4bf-68a0-45cc-9b44-f89d78af8a94" />
-			<input type="hidden" name="subject" value="New contact from milanrother.com" />
-			<input type="hidden" name="from_name" value="Website Contact Form" />
+			<!-- _gotcha is Formspark's honeypot: bots will fill it, real
+			     users won't. Submissions with a non-empty value are dropped
+			     server-side. _email.subject sets the subject line on the
+			     notification mail that lands in my inbox. -->
+			<input type="text" name="_gotcha" value="" class="honeypot" tabindex="-1" autocomplete="off" />
+			<input type="hidden" name="_email.subject" value="New contact from milanrother.com" />
 
 			<div class="terminal-field">
 				<label for="cf-name">// name</label>
@@ -229,6 +248,15 @@
 
 	.terminal-alt a:hover {
 		color: #33e3cf;
+	}
+
+	.honeypot {
+		position: absolute;
+		left: -9999px;
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+		pointer-events: none;
 	}
 
 	.terminal-success {
