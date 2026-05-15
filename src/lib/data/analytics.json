@@ -1,5 +1,5 @@
 {
-	"lastFetched": "2026-05-15T07:27:11.193Z",
+	"lastFetched": "2026-05-15T10:28:30.201Z",
 	"sites": {
 		"pysimhub.io": {
 			"name": "pysimhub.io",
@@ -1909,6 +1909,11 @@
 					"datetime": "2026-05-15T04:00:00",
 					"pageViews": 2,
 					"visits": 2
+				},
+				{
+					"datetime": "2026-05-15T12:00:00",
+					"pageViews": 1,
+					"visits": 1
 				}
 			],
 			"dailyAggregates": [
@@ -2420,7 +2425,7 @@
 			"aggregates": {
 				"today": {
 					"periodStart": "2026-05-15T00:00:00.000Z",
-					"periodEnd": "2026-05-15T07:27:11.243Z",
+					"periodEnd": "2026-05-15T10:28:30.254Z",
 					"topPages": [
 						{
 							"path": "/projects/quatorch",
@@ -2428,6 +2433,10 @@
 						},
 						{
 							"path": "/projects/mujoco-scene-editor/",
+							"pageViews": 1
+						},
+						{
+							"path": "/projects/pathsim/",
 							"pageViews": 1
 						}
 					],
@@ -2440,7 +2449,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 1
+							"pageViews": 2
 						},
 						{
 							"country": "CN",
@@ -2450,7 +2459,7 @@
 					"topBrowsers": [
 						{
 							"browser": "BingBot",
-							"pageViews": 1
+							"pageViews": 2
 						},
 						{
 							"browser": "Chrome",
@@ -2459,36 +2468,31 @@
 					]
 				},
 				"4h": {
-					"periodStart": "2026-05-15T03:27:11.243Z",
-					"periodEnd": "2026-05-15T07:27:11.243Z",
+					"periodStart": "2026-05-15T06:28:30.254Z",
+					"periodEnd": "2026-05-15T10:28:30.254Z",
 					"topPages": [
 						{
-							"path": "/projects/mujoco-scene-editor/",
+							"path": "/projects/pathsim/",
 							"pageViews": 1
 						}
 					],
-					"topReferrers": [
-						{
-							"referrer": "cn.bing.com",
-							"pageViews": 1
-						}
-					],
+					"topReferrers": [],
 					"topCountries": [
 						{
-							"country": "CN",
+							"country": "US",
 							"pageViews": 1
 						}
 					],
 					"topBrowsers": [
 						{
-							"browser": "Chrome",
+							"browser": "BingBot",
 							"pageViews": 1
 						}
 					]
 				},
 				"24h": {
-					"periodStart": "2026-05-14T07:27:11.243Z",
-					"periodEnd": "2026-05-15T07:27:11.243Z",
+					"periodStart": "2026-05-14T10:28:30.254Z",
+					"periodEnd": "2026-05-15T10:28:30.254Z",
 					"topPages": [
 						{
 							"path": "/",
@@ -2504,6 +2508,10 @@
 						},
 						{
 							"path": "/projects/mujoco-scene-editor/",
+							"pageViews": 1
+						},
+						{
+							"path": "/projects/pathsim/",
 							"pageViews": 1
 						}
 					],
@@ -2524,7 +2532,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 2
+							"pageViews": 3
 						},
 						{
 							"country": "NL",
@@ -2542,7 +2550,7 @@
 					"topBrowsers": [
 						{
 							"browser": "BingBot",
-							"pageViews": 2
+							"pageViews": 3
 						},
 						{
 							"browser": "Chrome",
@@ -2555,16 +2563,16 @@
 					]
 				},
 				"7d": {
-					"periodStart": "2026-05-08T07:27:11.243Z",
-					"periodEnd": "2026-05-15T07:27:11.243Z",
+					"periodStart": "2026-05-08T10:28:30.254Z",
+					"periodEnd": "2026-05-15T10:28:30.254Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 56
+							"pageViews": 55
 						},
 						{
 							"path": "/projects/pathsim/",
-							"pageViews": 21
+							"pageViews": 22
 						},
 						{
 							"path": "/projects/emerge/",
@@ -2594,7 +2602,7 @@
 						},
 						{
 							"referrer": "www.bing.com",
-							"pageViews": 4
+							"pageViews": 3
 						},
 						{
 							"referrer": "cn.bing.com",
@@ -2612,7 +2620,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 43
+							"pageViews": 44
 						},
 						{
 							"country": "DE",
@@ -2643,10 +2651,6 @@
 							"pageViews": 1
 						},
 						{
-							"country": "GB",
-							"pageViews": 1
-						},
-						{
 							"country": "AE",
 							"pageViews": 1
 						}
@@ -2662,11 +2666,11 @@
 						},
 						{
 							"browser": "BingBot",
-							"pageViews": 11
+							"pageViews": 12
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 6
+							"pageViews": 5
 						},
 						{
 							"browser": "ChromeMobile",
@@ -2683,8 +2687,8 @@
 					]
 				},
 				"30d": {
-					"periodStart": "2026-04-15T07:27:11.243Z",
-					"periodEnd": "2026-05-15T07:27:11.243Z",
+					"periodStart": "2026-04-15T10:28:30.254Z",
+					"periodEnd": "2026-05-15T10:28:30.254Z",
 					"topPages": [
 						{
 							"path": "/",
@@ -5874,6 +5878,16 @@
 					"datetime": "2026-05-15T04:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-05-15T08:00:00",
+					"pageViews": 5,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-05-15T12:00:00",
+					"pageViews": 11,
+					"visits": 11
 				}
 			],
 			"dailyAggregates": [
@@ -7219,37 +7233,69 @@
 			"aggregates": {
 				"today": {
 					"periodStart": "2026-05-15T00:00:00.000Z",
-					"periodEnd": "2026-05-15T07:27:11.208Z",
+					"periodEnd": "2026-05-15T10:28:30.243Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 7
+							"pageViews": 19
 						}
 					],
 					"topReferrers": [
 						{
+							"referrer": "view.pathsim.org",
+							"pageViews": 3
+						},
+						{
+							"referrer": "teams.public.onecdn.static.microsoft",
+							"pageViews": 2
+						},
+						{
 							"referrer": "127.0.0.1",
+							"pageViews": 1
+						},
+						{
+							"referrer": "www.google.com",
 							"pageViews": 1
 						}
 					],
 					"topCountries": [
 						{
-							"country": "US",
-							"pageViews": 3
+							"country": "JP",
+							"pageViews": 8
 						},
 						{
-							"country": "JP",
-							"pageViews": 2
+							"country": "US",
+							"pageViews": 5
+						},
+						{
+							"country": "FR",
+							"pageViews": 3
 						},
 						{
 							"country": "PE",
 							"pageViews": 2
+						},
+						{
+							"country": "DE",
+							"pageViews": 1
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
+							"pageViews": 6
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 4
+						},
+						{
+							"browser": "MobileSafari",
 							"pageViews": 3
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 2
 						},
 						{
 							"browser": "Unknown",
@@ -7262,51 +7308,72 @@
 					]
 				},
 				"4h": {
-					"periodStart": "2026-05-15T03:27:11.208Z",
-					"periodEnd": "2026-05-15T07:27:11.208Z",
+					"periodStart": "2026-05-15T06:28:30.243Z",
+					"periodEnd": "2026-05-15T10:28:30.243Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 4
+							"pageViews": 12
 						}
 					],
-					"topReferrers": [],
+					"topReferrers": [
+						{
+							"referrer": "view.pathsim.org",
+							"pageViews": 3
+						},
+						{
+							"referrer": "teams.public.onecdn.static.microsoft",
+							"pageViews": 2
+						},
+						{
+							"referrer": "www.google.com",
+							"pageViews": 1
+						}
+					],
 					"topCountries": [
+						{
+							"country": "JP",
+							"pageViews": 6
+						},
+						{
+							"country": "FR",
+							"pageViews": 3
+						},
 						{
 							"country": "US",
 							"pageViews": 2
 						},
 						{
-							"country": "JP",
-							"pageViews": 1
-						},
-						{
-							"country": "PE",
+							"country": "DE",
 							"pageViews": 1
 						}
 					],
 					"topBrowsers": [
 						{
-							"browser": "Unknown",
-							"pageViews": 2
-						},
-						{
-							"browser": "Edge",
-							"pageViews": 1
+							"browser": "Safari",
+							"pageViews": 4
 						},
 						{
 							"browser": "Chrome",
-							"pageViews": 1
+							"pageViews": 3
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 3
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 2
 						}
 					]
 				},
 				"24h": {
-					"periodStart": "2026-05-14T07:27:11.208Z",
-					"periodEnd": "2026-05-15T07:27:11.208Z",
+					"periodStart": "2026-05-14T10:28:30.243Z",
+					"periodEnd": "2026-05-15T10:28:30.243Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 23
+							"pageViews": 31
 						}
 					],
 					"topReferrers": [
@@ -7315,26 +7382,30 @@
 							"pageViews": 6
 						},
 						{
+							"referrer": "view.pathsim.org",
+							"pageViews": 3
+						},
+						{
+							"referrer": "teams.public.onecdn.static.microsoft",
+							"pageViews": 2
+						},
+						{
 							"referrer": "127.0.0.1",
-							"pageViews": 1
-						},
-						{
-							"referrer": "github.com",
-							"pageViews": 1
-						},
-						{
-							"referrer": "www.bing.com",
 							"pageViews": 1
 						}
 					],
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 9
+							"pageViews": 10
 						},
 						{
 							"country": "JP",
-							"pageViews": 3
+							"pageViews": 8
+						},
+						{
+							"country": "FR",
+							"pageViews": 4
 						},
 						{
 							"country": "AR",
@@ -7349,19 +7420,11 @@
 							"pageViews": 2
 						},
 						{
-							"country": "FR",
-							"pageViews": 1
-						},
-						{
 							"country": "RS",
 							"pageViews": 1
 						},
 						{
 							"country": "BR",
-							"pageViews": 1
-						},
-						{
-							"country": "IE",
 							"pageViews": 1
 						},
 						{
@@ -7372,39 +7435,51 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 12
+							"pageViews": 13
 						},
 						{
 							"browser": "Unknown",
 							"pageViews": 4
 						},
 						{
-							"browser": "Edge",
+							"browser": "Safari",
 							"pageViews": 4
 						},
 						{
-							"browser": "Firefox",
+							"browser": "Edge",
+							"pageViews": 3
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 3
+						},
+						{
+							"browser": "ChromeHeadless",
 							"pageViews": 2
 						},
 						{
 							"browser": "ChromeMobile",
 							"pageViews": 1
+						},
+						{
+							"browser": "Firefox",
+							"pageViews": 1
 						}
 					]
 				},
 				"7d": {
-					"periodStart": "2026-05-08T07:27:11.208Z",
-					"periodEnd": "2026-05-15T07:27:11.208Z",
+					"periodStart": "2026-05-08T10:28:30.243Z",
+					"periodEnd": "2026-05-15T10:28:30.243Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 250
+							"pageViews": 258
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "www.google.com",
-							"pageViews": 47
+							"pageViews": 48
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -7412,7 +7487,7 @@
 						},
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 12
+							"pageViews": 15
 						},
 						{
 							"referrer": "com.linkedin.android",
@@ -7455,6 +7530,10 @@
 							"pageViews": 2
 						},
 						{
+							"referrer": "teams.public.onecdn.static.microsoft",
+							"pageViews": 2
+						},
+						{
 							"referrer": "www.google.de",
 							"pageViews": 1
 						},
@@ -7482,15 +7561,15 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 63
+							"pageViews": 64
 						},
 						{
 							"country": "DE",
-							"pageViews": 34
+							"pageViews": 33
 						},
 						{
 							"country": "FR",
-							"pageViews": 17
+							"pageViews": 20
 						},
 						{
 							"country": "RU",
@@ -7499,6 +7578,10 @@
 						{
 							"country": "CN",
 							"pageViews": 15
+						},
+						{
+							"country": "JP",
+							"pageViews": 12
 						},
 						{
 							"country": "IT",
@@ -7525,10 +7608,6 @@
 							"pageViews": 6
 						},
 						{
-							"country": "JP",
-							"pageViews": 6
-						},
-						{
 							"country": "IN",
 							"pageViews": 5
 						},
@@ -7549,15 +7628,15 @@
 							"pageViews": 4
 						},
 						{
-							"country": "IE",
-							"pageViews": 3
-						},
-						{
 							"country": "CH",
 							"pageViews": 3
 						},
 						{
 							"country": "SE",
+							"pageViews": 2
+						},
+						{
+							"country": "IE",
 							"pageViews": 2
 						},
 						{
@@ -7624,23 +7703,23 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 111
+							"pageViews": 112
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 28
+							"pageViews": 27
 						},
 						{
 							"browser": "Firefox",
 							"pageViews": 24
 						},
 						{
-							"browser": "Unknown",
-							"pageViews": 22
+							"browser": "ChromeHeadless",
+							"pageViews": 23
 						},
 						{
-							"browser": "ChromeHeadless",
-							"pageViews": 21
+							"browser": "Unknown",
+							"pageViews": 22
 						},
 						{
 							"browser": "Edge",
@@ -7648,11 +7727,11 @@
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 11
+							"pageViews": 13
 						},
 						{
 							"browser": "Safari",
-							"pageViews": 4
+							"pageViews": 8
 						},
 						{
 							"browser": "SamsungInternet",
@@ -7673,12 +7752,12 @@
 					]
 				},
 				"30d": {
-					"periodStart": "2026-04-15T07:27:11.208Z",
-					"periodEnd": "2026-05-15T07:27:11.208Z",
+					"periodStart": "2026-04-15T10:28:30.243Z",
+					"periodEnd": "2026-05-15T10:28:30.243Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 940
+							"pageViews": 950
 						}
 					],
 					"topReferrers": [
@@ -7738,7 +7817,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 210
+							"pageViews": 220
 						},
 						{
 							"country": "DE",
@@ -7867,16 +7946,16 @@
 							"pageViews": 50
 						},
 						{
+							"browser": "ChromeHeadless",
+							"pageViews": 20
+						},
+						{
 							"browser": "Safari",
 							"pageViews": 20
 						},
 						{
 							"browser": "Opera",
 							"pageViews": 20
-						},
-						{
-							"browser": "ChromeHeadless",
-							"pageViews": 10
 						}
 					]
 				}
@@ -7884,7 +7963,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 940
+					"pageViews": 950
 				}
 			],
 			"topReferrers": [
@@ -7944,7 +8023,7 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 210
+					"pageViews": 220
 				},
 				{
 					"country": "DE",
@@ -8073,3047 +8152,16 @@
 					"pageViews": 50
 				},
 				{
+					"browser": "ChromeHeadless",
+					"pageViews": 20
+				},
+				{
 					"browser": "Safari",
 					"pageViews": 20
 				},
 				{
 					"browser": "Opera",
 					"pageViews": 20
-				},
-				{
-					"browser": "ChromeHeadless",
-					"pageViews": 10
-				}
-			]
-		},
-		"rapidpassives.org": {
-			"name": "rapidpassives.org",
-			"color": "#d9513c",
-			"timeseries": [
-				{
-					"datetime": "2026-03-22T20:00:00",
-					"pageViews": 20,
-					"visits": 20
-				},
-				{
-					"datetime": "2026-03-23T04:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-03-23T08:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-03-23T12:00:00",
-					"pageViews": 10,
-					"visits": 10
-				},
-				{
-					"datetime": "2026-03-23T16:00:00",
-					"pageViews": 3,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-03-23T20:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-03-23T24:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-03-24T04:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-03-24T08:00:00",
-					"pageViews": 5,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-03-24T12:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-03-24T16:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-03-24T20:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-03-25T04:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-03-25T08:00:00",
-					"pageViews": 36,
-					"visits": 35
-				},
-				{
-					"datetime": "2026-03-25T12:00:00",
-					"pageViews": 49,
-					"visits": 37
-				},
-				{
-					"datetime": "2026-03-25T16:00:00",
-					"pageViews": 200,
-					"visits": 186
-				},
-				{
-					"datetime": "2026-03-25T20:00:00",
-					"pageViews": 70,
-					"visits": 47
-				},
-				{
-					"datetime": "2026-03-25T24:00:00",
-					"pageViews": 114,
-					"visits": 103
-				},
-				{
-					"datetime": "2026-03-26T04:00:00",
-					"pageViews": 27,
-					"visits": 23
-				},
-				{
-					"datetime": "2026-03-26T08:00:00",
-					"pageViews": 52,
-					"visits": 28
-				},
-				{
-					"datetime": "2026-03-26T12:00:00",
-					"pageViews": 10,
-					"visits": 10
-				},
-				{
-					"datetime": "2026-03-26T16:00:00",
-					"pageViews": 109,
-					"visits": 92
-				},
-				{
-					"datetime": "2026-03-26T20:00:00",
-					"pageViews": 12,
-					"visits": 12
-				},
-				{
-					"datetime": "2026-03-26T24:00:00",
-					"pageViews": 20,
-					"visits": 15
-				},
-				{
-					"datetime": "2026-03-27T04:00:00",
-					"pageViews": 25,
-					"visits": 25
-				},
-				{
-					"datetime": "2026-03-27T08:00:00",
-					"pageViews": 36,
-					"visits": 35
-				},
-				{
-					"datetime": "2026-03-27T12:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-03-27T16:00:00",
-					"pageViews": 64,
-					"visits": 64
-				},
-				{
-					"datetime": "2026-03-27T20:00:00",
-					"pageViews": 16,
-					"visits": 5
-				},
-				{
-					"datetime": "2026-03-27T24:00:00",
-					"pageViews": 21,
-					"visits": 19
-				},
-				{
-					"datetime": "2026-03-28T04:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-03-28T08:00:00",
-					"pageViews": 14,
-					"visits": 14
-				},
-				{
-					"datetime": "2026-03-28T12:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-03-28T16:00:00",
-					"pageViews": 16,
-					"visits": 15
-				},
-				{
-					"datetime": "2026-03-28T20:00:00",
-					"pageViews": 7,
-					"visits": 7
-				},
-				{
-					"datetime": "2026-03-28T24:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-03-29T04:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-03-29T08:00:00",
-					"pageViews": 9,
-					"visits": 9
-				},
-				{
-					"datetime": "2026-03-29T12:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-03-29T16:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-03-29T20:00:00",
-					"pageViews": 14,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-03-29T24:00:00",
-					"pageViews": 8,
-					"visits": 8
-				},
-				{
-					"datetime": "2026-03-30T04:00:00",
-					"pageViews": 7,
-					"visits": 7
-				},
-				{
-					"datetime": "2026-03-30T08:00:00",
-					"pageViews": 12,
-					"visits": 11
-				},
-				{
-					"datetime": "2026-03-30T12:00:00",
-					"pageViews": 17,
-					"visits": 14
-				},
-				{
-					"datetime": "2026-03-30T16:00:00",
-					"pageViews": 36,
-					"visits": 33
-				},
-				{
-					"datetime": "2026-03-30T20:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-03-30T24:00:00",
-					"pageViews": 8,
-					"visits": 8
-				},
-				{
-					"datetime": "2026-03-31T04:00:00",
-					"pageViews": 14,
-					"visits": 14
-				},
-				{
-					"datetime": "2026-03-31T08:00:00",
-					"pageViews": 5,
-					"visits": 5
-				},
-				{
-					"datetime": "2026-03-31T12:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-03-31T16:00:00",
-					"pageViews": 21,
-					"visits": 19
-				},
-				{
-					"datetime": "2026-03-31T20:00:00",
-					"pageViews": 2,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-03-31T24:00:00",
-					"pageViews": 10,
-					"visits": 9
-				},
-				{
-					"datetime": "2026-04-01T04:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-01T08:00:00",
-					"pageViews": 10,
-					"visits": 10
-				},
-				{
-					"datetime": "2026-04-01T12:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-04-01T16:00:00",
-					"pageViews": 6,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-01T20:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-01T24:00:00",
-					"pageViews": 2,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-02T04:00:00",
-					"pageViews": 9,
-					"visits": 9
-				},
-				{
-					"datetime": "2026-04-02T08:00:00",
-					"pageViews": 8,
-					"visits": 8
-				},
-				{
-					"datetime": "2026-04-02T12:00:00",
-					"pageViews": 2,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-02T16:00:00",
-					"pageViews": 19,
-					"visits": 18
-				},
-				{
-					"datetime": "2026-04-02T20:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-02T24:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-03T04:00:00",
-					"pageViews": 12,
-					"visits": 12
-				},
-				{
-					"datetime": "2026-04-03T08:00:00",
-					"pageViews": 16,
-					"visits": 14
-				},
-				{
-					"datetime": "2026-04-03T12:00:00",
-					"pageViews": 3,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-03T16:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-03T20:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-03T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-04T04:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-04T08:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-04T12:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-04T20:00:00",
-					"pageViews": 3,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-04T24:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-05T04:00:00",
-					"pageViews": 9,
-					"visits": 7
-				},
-				{
-					"datetime": "2026-04-05T08:00:00",
-					"pageViews": 7,
-					"visits": 7
-				},
-				{
-					"datetime": "2026-04-05T12:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-05T16:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-05T20:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-05T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-06T04:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-06T08:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-06T16:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-06T20:00:00",
-					"pageViews": 7,
-					"visits": 5
-				},
-				{
-					"datetime": "2026-04-06T24:00:00",
-					"pageViews": 8,
-					"visits": 8
-				},
-				{
-					"datetime": "2026-04-07T04:00:00",
-					"pageViews": 12,
-					"visits": 10
-				},
-				{
-					"datetime": "2026-04-07T08:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-07T12:00:00",
-					"pageViews": 5,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-07T16:00:00",
-					"pageViews": 15,
-					"visits": 13
-				},
-				{
-					"datetime": "2026-04-07T20:00:00",
-					"pageViews": 5,
-					"visits": 5
-				},
-				{
-					"datetime": "2026-04-07T24:00:00",
-					"pageViews": 5,
-					"visits": 5
-				},
-				{
-					"datetime": "2026-04-08T04:00:00",
-					"pageViews": 1,
-					"visits": 0
-				},
-				{
-					"datetime": "2026-04-08T08:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-08T12:00:00",
-					"pageViews": 13,
-					"visits": 13
-				},
-				{
-					"datetime": "2026-04-08T16:00:00",
-					"pageViews": 11,
-					"visits": 9
-				},
-				{
-					"datetime": "2026-04-08T20:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-08T24:00:00",
-					"pageViews": 2,
-					"visits": 0
-				},
-				{
-					"datetime": "2026-04-09T08:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-09T12:00:00",
-					"pageViews": 1,
-					"visits": 0
-				},
-				{
-					"datetime": "2026-04-09T16:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-09T20:00:00",
-					"pageViews": 7,
-					"visits": 7
-				},
-				{
-					"datetime": "2026-04-09T24:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-10T04:00:00",
-					"pageViews": 11,
-					"visits": 11
-				},
-				{
-					"datetime": "2026-04-10T08:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-10T12:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-10T16:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-10T20:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-10T24:00:00",
-					"pageViews": 12,
-					"visits": 10
-				},
-				{
-					"datetime": "2026-04-11T04:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-11T08:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-11T12:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-11T16:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-11T20:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-04-11T24:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-12T04:00:00",
-					"pageViews": 4,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-12T08:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-12T12:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-04-12T16:00:00",
-					"pageViews": 9,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-12T20:00:00",
-					"pageViews": 7,
-					"visits": 7
-				},
-				{
-					"datetime": "2026-04-12T24:00:00",
-					"pageViews": 9,
-					"visits": 9
-				},
-				{
-					"datetime": "2026-04-13T04:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-13T08:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-04-13T12:00:00",
-					"pageViews": 9,
-					"visits": 8
-				},
-				{
-					"datetime": "2026-04-13T16:00:00",
-					"pageViews": 13,
-					"visits": 12
-				},
-				{
-					"datetime": "2026-04-13T20:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-13T24:00:00",
-					"pageViews": 7,
-					"visits": 7
-				},
-				{
-					"datetime": "2026-04-14T04:00:00",
-					"pageViews": 3,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-14T08:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-04-14T12:00:00",
-					"pageViews": 8,
-					"visits": 7
-				},
-				{
-					"datetime": "2026-04-14T16:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-14T20:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-04-14T24:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-15T04:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-15T08:00:00",
-					"pageViews": 9,
-					"visits": 9
-				},
-				{
-					"datetime": "2026-04-15T12:00:00",
-					"pageViews": 3,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-15T16:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-15T20:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-15T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-16T04:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-16T08:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-16T12:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-16T16:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-04-16T20:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-16T24:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-17T04:00:00",
-					"pageViews": 9,
-					"visits": 9
-				},
-				{
-					"datetime": "2026-04-17T08:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-17T12:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-17T16:00:00",
-					"pageViews": 11,
-					"visits": 11
-				},
-				{
-					"datetime": "2026-04-17T20:00:00",
-					"pageViews": 5,
-					"visits": 5
-				},
-				{
-					"datetime": "2026-04-17T24:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-18T04:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-18T08:00:00",
-					"pageViews": 10,
-					"visits": 9
-				},
-				{
-					"datetime": "2026-04-18T12:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-18T16:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-18T20:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-18T24:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-19T04:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-19T08:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-19T12:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-19T16:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-19T20:00:00",
-					"pageViews": 8,
-					"visits": 8
-				},
-				{
-					"datetime": "2026-04-19T24:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-20T04:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-20T08:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-20T12:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-20T16:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-20T20:00:00",
-					"pageViews": 11,
-					"visits": 11
-				},
-				{
-					"datetime": "2026-04-20T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-21T04:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-21T08:00:00",
-					"pageViews": 4,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-21T12:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-21T16:00:00",
-					"pageViews": 21,
-					"visits": 18
-				},
-				{
-					"datetime": "2026-04-21T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-22T04:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-22T08:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-22T12:00:00",
-					"pageViews": 10,
-					"visits": 10
-				},
-				{
-					"datetime": "2026-04-22T16:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-22T20:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-22T24:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-23T04:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-23T08:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-23T12:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-23T16:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-23T20:00:00",
-					"pageViews": 6,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-23T24:00:00",
-					"pageViews": 11,
-					"visits": 7
-				},
-				{
-					"datetime": "2026-04-24T08:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-24T12:00:00",
-					"pageViews": 5,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-24T20:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-24T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-25T16:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-25T20:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-25T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-26T04:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-26T20:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-26T24:00:00",
-					"pageViews": 5,
-					"visits": 5
-				},
-				{
-					"datetime": "2026-04-27T04:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-27T12:00:00",
-					"pageViews": 6,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-04-27T16:00:00",
-					"pageViews": 9,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-27T20:00:00",
-					"pageViews": 5,
-					"visits": 5
-				},
-				{
-					"datetime": "2026-04-27T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-28T04:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-28T08:00:00",
-					"pageViews": 8,
-					"visits": 7
-				},
-				{
-					"datetime": "2026-04-28T12:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-28T16:00:00",
-					"pageViews": 2,
-					"visits": 0
-				},
-				{
-					"datetime": "2026-04-28T20:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-28T24:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-29T12:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-04-29T16:00:00",
-					"pageViews": 9,
-					"visits": 9
-				},
-				{
-					"datetime": "2026-04-29T24:00:00",
-					"pageViews": 2,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-30T04:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-04-30T08:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-04-30T16:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-04-30T24:00:00",
-					"pageViews": 8,
-					"visits": 8
-				},
-				{
-					"datetime": "2026-05-01T04:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-01T16:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-05-01T20:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-05-01T24:00:00",
-					"pageViews": 3,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-02T04:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-02T16:00:00",
-					"pageViews": 11,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-05-02T20:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-02T24:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-03T04:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-03T12:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-03T16:00:00",
-					"pageViews": 10,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-03T20:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-03T24:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-04T04:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-05-04T08:00:00",
-					"pageViews": 3,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-04T12:00:00",
-					"pageViews": 1,
-					"visits": 0
-				},
-				{
-					"datetime": "2026-05-04T16:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-04T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-05T04:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-05T12:00:00",
-					"pageViews": 3,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-05T20:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-05T24:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-06T08:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-06T12:00:00",
-					"pageViews": 4,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-06T16:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-06T20:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-06T24:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-07T12:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-07T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-08T04:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-08T12:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-08T16:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-08T20:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-09T20:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-10T08:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-10T12:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-10T16:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-10T20:00:00",
-					"pageViews": 5,
-					"visits": 0
-				},
-				{
-					"datetime": "2026-05-10T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-11T04:00:00",
-					"pageViews": 1,
-					"visits": 0
-				},
-				{
-					"datetime": "2026-05-11T08:00:00",
-					"pageViews": 4,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-11T12:00:00",
-					"pageViews": 11,
-					"visits": 10
-				},
-				{
-					"datetime": "2026-05-11T16:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-05-11T20:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-11T24:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-12T08:00:00",
-					"pageViews": 5,
-					"visits": 5
-				},
-				{
-					"datetime": "2026-05-12T12:00:00",
-					"pageViews": 1,
-					"visits": 0
-				},
-				{
-					"datetime": "2026-05-12T16:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-12T20:00:00",
-					"pageViews": 8,
-					"visits": 6
-				},
-				{
-					"datetime": "2026-05-13T04:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-13T08:00:00",
-					"pageViews": 4,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-13T12:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-13T16:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-13T20:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-13T24:00:00",
-					"pageViews": 1,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-14T04:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-14T08:00:00",
-					"pageViews": 2,
-					"visits": 2
-				},
-				{
-					"datetime": "2026-05-14T12:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-14T16:00:00",
-					"pageViews": 2,
-					"visits": 1
-				},
-				{
-					"datetime": "2026-05-14T20:00:00",
-					"pageViews": 4,
-					"visits": 4
-				},
-				{
-					"datetime": "2026-05-14T24:00:00",
-					"pageViews": 3,
-					"visits": 3
-				},
-				{
-					"datetime": "2026-05-15T04:00:00",
-					"pageViews": 2,
-					"visits": 1
-				}
-			],
-			"dailyAggregates": [
-				{
-					"date": "2026-04-13",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 40
-						},
-						{
-							"path": "/generator/spiral",
-							"pageViews": 20
-						},
-						{
-							"path": "/generator/symmetric-transformer",
-							"pageViews": 10
-						},
-						{
-							"path": "/viewer",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "www.google.fr",
-							"pageViews": 10
-						},
-						{
-							"referrer": "statics.teams.cdn.office.net",
-							"pageViews": 10
-						},
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 10
-						}
-					],
-					"topCountries": [
-						{
-							"country": "FR",
-							"pageViews": 40
-						},
-						{
-							"country": "US",
-							"pageViews": 20
-						},
-						{
-							"country": "TW",
-							"pageViews": 10
-						},
-						{
-							"country": "DE",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 50
-						},
-						{
-							"browser": "MobileSafari",
-							"pageViews": 20
-						},
-						{
-							"browser": "SamsungInternet",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-04-14",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 30
-						},
-						{
-							"path": "/generator/spiral",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 40
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "MobileSafari",
-							"pageViews": 30
-						},
-						{
-							"browser": "ChromeMobile",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-04-15",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 10
-						},
-						{
-							"path": "/generator/symmetric-transformer",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [],
-					"topCountries": [
-						{
-							"country": "KR",
-							"pageViews": 10
-						},
-						{
-							"country": "DE",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 20
-						}
-					]
-				},
-				{
-					"date": "2026-04-16",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 10
-						},
-						{
-							"path": "/generator/spiral",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 10
-						},
-						{
-							"country": "TW",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "SamsungInternet",
-							"pageViews": 10
-						},
-						{
-							"browser": "Chrome",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-04-17",
-					"topPages": [
-						{
-							"path": "/viewer",
-							"pageViews": 30
-						},
-						{
-							"path": "/generator/mom-capacitor",
-							"pageViews": 20
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "com.linkedin.android",
-							"pageViews": 10
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 30
-						},
-						{
-							"country": "EG",
-							"pageViews": 10
-						},
-						{
-							"country": "IN",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 50
-						}
-					]
-				},
-				{
-					"date": "2026-04-18",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 40
-						},
-						{
-							"path": "/viewer",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "com.linkedin.android",
-							"pageViews": 20
-						}
-					],
-					"topCountries": [
-						{
-							"country": "IN",
-							"pageViews": 20
-						},
-						{
-							"country": "GR",
-							"pageViews": 10
-						},
-						{
-							"country": "JP",
-							"pageViews": 10
-						},
-						{
-							"country": "BE",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "ChromeMobile",
-							"pageViews": 30
-						},
-						{
-							"browser": "MobileSafari",
-							"pageViews": 20
-						}
-					]
-				},
-				{
-					"date": "2026-04-19",
-					"topPages": [
-						{
-							"path": "/viewer",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [],
-					"topCountries": [
-						{
-							"country": "EG",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-04-20",
-					"topPages": [
-						{
-							"path": "/generator/symmetric-transformer",
-							"pageViews": 10
-						},
-						{
-							"path": "/generator/mom-capacitor",
-							"pageViews": 10
-						},
-						{
-							"path": "/generator/spiral",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "www.google.com",
-							"pageViews": 20
-						}
-					],
-					"topCountries": [
-						{
-							"country": "BE",
-							"pageViews": 10
-						},
-						{
-							"country": "US",
-							"pageViews": 10
-						},
-						{
-							"country": "CA",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 30
-						}
-					]
-				},
-				{
-					"date": "2026-04-21",
-					"topPages": [
-						{
-							"path": "/viewer",
-							"pageViews": 20
-						},
-						{
-							"path": "/",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "com.linkedin.android",
-							"pageViews": 10
-						},
-						{
-							"referrer": "milanrother.com",
-							"pageViews": 10
-						}
-					],
-					"topCountries": [
-						{
-							"country": "GR",
-							"pageViews": 10
-						},
-						{
-							"country": "US",
-							"pageViews": 10
-						},
-						{
-							"country": "CZ",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "ChromeMobile",
-							"pageViews": 10
-						},
-						{
-							"browser": "Firefox",
-							"pageViews": 10
-						},
-						{
-							"browser": "MobileSafari",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-04-22",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 10
-						},
-						{
-							"path": "/generator/stacked-transformer",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 10
-						},
-						{
-							"country": "KR",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 20
-						}
-					]
-				},
-				{
-					"date": "2026-04-23",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 20
-						}
-					],
-					"topReferrers": [],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 10
-						},
-						{
-							"country": "CA",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 10
-						},
-						{
-							"browser": "Unknown",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-04-24",
-					"topPages": [
-						{
-							"path": "/generator/stacked-transformer",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "www.google.com",
-							"pageViews": 10
-						}
-					],
-					"topCountries": [
-						{
-							"country": "ES",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Safari",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-04-25",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 10
-						},
-						{
-							"path": "/viewer",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 20
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "MobileSafari",
-							"pageViews": 10
-						},
-						{
-							"browser": "Chrome",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-04-27",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 20
-						},
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 20
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 20
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 30
-						},
-						{
-							"country": "SG",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 20
-						},
-						{
-							"browser": "Safari",
-							"pageViews": 20
-						}
-					]
-				},
-				{
-					"date": "2026-04-28",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 20
-						},
-						{
-							"path": "/generator/symmetric-transformer",
-							"pageViews": 10
-						},
-						{
-							"path": "/generator/spiral",
-							"pageViews": 10
-						},
-						{
-							"path": "/viewer",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 10
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 20
-						},
-						{
-							"country": "IT",
-							"pageViews": 10
-						},
-						{
-							"country": "SG",
-							"pageViews": 10
-						},
-						{
-							"country": "BE",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 40
-						},
-						{
-							"browser": "MobileSafari",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-04-30",
-					"topPages": [
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 10
-						},
-						{
-							"path": "/generator/spiral",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "www.google.com",
-							"pageViews": 20
-						}
-					],
-					"topCountries": [
-						{
-							"country": "BE",
-							"pageViews": 10
-						},
-						{
-							"country": "US",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Firefox",
-							"pageViews": 10
-						},
-						{
-							"browser": "Chrome",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-05-01",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 20
-						},
-						{
-							"path": "/generator/spiral",
-							"pageViews": 10
-						},
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 10
-						},
-						{
-							"referrer": "statics.teams.cdn.office.net",
-							"pageViews": 10
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 30
-						},
-						{
-							"country": "GB",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 30
-						},
-						{
-							"browser": "Edge",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-05-02",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-05-03",
-					"topPages": [
-						{
-							"path": "/embed/test",
-							"pageViews": 30
-						},
-						{
-							"path": "/",
-							"pageViews": 20
-						},
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 30
-						},
-						{
-							"country": "JP",
-							"pageViews": 30
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Edge",
-							"pageViews": 30
-						},
-						{
-							"browser": "Chrome",
-							"pageViews": 20
-						},
-						{
-							"browser": "BingBot",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-05-10",
-					"topPages": [
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 20
-						},
-						{
-							"path": "/",
-							"pageViews": 20
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 20
-						}
-					],
-					"topCountries": [
-						{
-							"country": "DE",
-							"pageViews": 20
-						},
-						{
-							"country": "US",
-							"pageViews": 20
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 20
-						},
-						{
-							"browser": "Safari",
-							"pageViews": 20
-						}
-					]
-				},
-				{
-					"date": "2026-05-11",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 40
-						},
-						{
-							"path": "/generator/stacked-transformer",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 10
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 20
-						},
-						{
-							"country": "BR",
-							"pageViews": 10
-						},
-						{
-							"country": "NL",
-							"pageViews": 10
-						},
-						{
-							"country": "DE",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 20
-						},
-						{
-							"browser": "ChromeHeadless",
-							"pageViews": 10
-						},
-						{
-							"browser": "Edge",
-							"pageViews": 10
-						},
-						{
-							"browser": "ChromeMobile",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-05-12",
-					"topPages": [
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 10
-						},
-						{
-							"path": "/",
-							"pageViews": 10
-						},
-						{
-							"path": "/generator/symmetric-transformer",
-							"pageViews": 10
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 10
-						}
-					],
-					"topCountries": [
-						{
-							"country": "DE",
-							"pageViews": 10
-						},
-						{
-							"country": "US",
-							"pageViews": 10
-						},
-						{
-							"country": "CN",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 20
-						},
-						{
-							"browser": "Unknown",
-							"pageViews": 10
-						}
-					]
-				},
-				{
-					"date": "2026-05-13",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 11
-						},
-						{
-							"path": "/generator/spiral",
-							"pageViews": 2
-						},
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 1
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 2
-						},
-						{
-							"referrer": "github.com",
-							"pageViews": 1
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 6
-						},
-						{
-							"country": "IT",
-							"pageViews": 4
-						},
-						{
-							"country": "TW",
-							"pageViews": 1
-						},
-						{
-							"country": "IN",
-							"pageViews": 1
-						},
-						{
-							"country": "AT",
-							"pageViews": 1
-						},
-						{
-							"country": "NL",
-							"pageViews": 1
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 7
-						},
-						{
-							"browser": "Edge",
-							"pageViews": 3
-						},
-						{
-							"browser": "ChromeHeadless",
-							"pageViews": 3
-						},
-						{
-							"browser": "BingBot",
-							"pageViews": 1
-						}
-					]
-				},
-				{
-					"date": "2026-05-14",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 16
-						},
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 2
-						},
-						{
-							"path": "/generator/mom-capacitor",
-							"pageViews": 1
-						},
-						{
-							"path": "/viewer",
-							"pageViews": 1
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "fem.rapidpassives.org",
-							"pageViews": 1
-						},
-						{
-							"referrer": "milanrother.com",
-							"pageViews": 1
-						},
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 1
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 14
-						},
-						{
-							"country": "IT",
-							"pageViews": 2
-						},
-						{
-							"country": "DE",
-							"pageViews": 2
-						},
-						{
-							"country": "CN",
-							"pageViews": 1
-						},
-						{
-							"country": "EG",
-							"pageViews": 1
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "MobileSafari",
-							"pageViews": 12
-						},
-						{
-							"browser": "Chrome",
-							"pageViews": 6
-						},
-						{
-							"browser": "Edge",
-							"pageViews": 1
-						},
-						{
-							"browser": "Safari",
-							"pageViews": 1
-						}
-					]
-				}
-			],
-			"aggregates": {
-				"today": {
-					"periodStart": "2026-05-15T00:00:00.000Z",
-					"periodEnd": "2026-05-15T07:27:11.245Z",
-					"topPages": [
-						{
-							"path": "/generator/symmetric-transformer",
-							"pageViews": 1
-						},
-						{
-							"path": "/",
-							"pageViews": 1
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 1
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 2
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 1
-						},
-						{
-							"browser": "MobileSafari",
-							"pageViews": 1
-						}
-					]
-				},
-				"4h": {
-					"periodStart": "2026-05-15T03:27:11.245Z",
-					"periodEnd": "2026-05-15T07:27:11.245Z",
-					"topPages": [],
-					"topReferrers": [],
-					"topCountries": [],
-					"topBrowsers": []
-				},
-				"24h": {
-					"periodStart": "2026-05-14T07:27:11.245Z",
-					"periodEnd": "2026-05-15T07:27:11.245Z",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 12
-						},
-						{
-							"path": "/viewer",
-							"pageViews": 1
-						},
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 1
-						},
-						{
-							"path": "/generator/mom-capacitor",
-							"pageViews": 1
-						},
-						{
-							"path": "/generator/symmetric-transformer",
-							"pageViews": 1
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 2
-						},
-						{
-							"referrer": "fem.rapidpassives.org",
-							"pageViews": 1
-						},
-						{
-							"referrer": "milanrother.com",
-							"pageViews": 1
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 12
-						},
-						{
-							"country": "DE",
-							"pageViews": 2
-						},
-						{
-							"country": "EG",
-							"pageViews": 1
-						},
-						{
-							"country": "CN",
-							"pageViews": 1
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "MobileSafari",
-							"pageViews": 10
-						},
-						{
-							"browser": "Chrome",
-							"pageViews": 4
-						},
-						{
-							"browser": "Safari",
-							"pageViews": 1
-						},
-						{
-							"browser": "Edge",
-							"pageViews": 1
-						}
-					]
-				},
-				"7d": {
-					"periodStart": "2026-05-08T07:27:11.245Z",
-					"periodEnd": "2026-05-15T07:27:11.245Z",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 72
-						},
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 13
-						},
-						{
-							"path": "/generator/symmetric-transformer",
-							"pageViews": 8
-						},
-						{
-							"path": "/generator/spiral",
-							"pageViews": 5
-						},
-						{
-							"path": "/embed/test",
-							"pageViews": 3
-						},
-						{
-							"path": "/generator/stacked-transformer",
-							"pageViews": 3
-						},
-						{
-							"path": "/viewer",
-							"pageViews": 2
-						},
-						{
-							"path": "/generator/mom-capacitor",
-							"pageViews": 1
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 15
-						},
-						{
-							"referrer": "cn.bing.com",
-							"pageViews": 4
-						},
-						{
-							"referrer": "milanrother.com",
-							"pageViews": 3
-						},
-						{
-							"referrer": "www.linkedin.com",
-							"pageViews": 2
-						},
-						{
-							"referrer": "github.com",
-							"pageViews": 2
-						},
-						{
-							"referrer": "fem.rapidpassives.org",
-							"pageViews": 2
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 49
-						},
-						{
-							"country": "DE",
-							"pageViews": 32
-						},
-						{
-							"country": "CN",
-							"pageViews": 8
-						},
-						{
-							"country": "IT",
-							"pageViews": 6
-						},
-						{
-							"country": "NL",
-							"pageViews": 2
-						},
-						{
-							"country": "EG",
-							"pageViews": 2
-						},
-						{
-							"country": "IN",
-							"pageViews": 2
-						},
-						{
-							"country": "RS",
-							"pageViews": 1
-						},
-						{
-							"country": "CA",
-							"pageViews": 1
-						},
-						{
-							"country": "TW",
-							"pageViews": 1
-						},
-						{
-							"country": "BR",
-							"pageViews": 1
-						},
-						{
-							"country": "AT",
-							"pageViews": 1
-						},
-						{
-							"country": "CH",
-							"pageViews": 1
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 49
-						},
-						{
-							"browser": "MobileSafari",
-							"pageViews": 15
-						},
-						{
-							"browser": "Safari",
-							"pageViews": 13
-						},
-						{
-							"browser": "ChromeHeadless",
-							"pageViews": 12
-						},
-						{
-							"browser": "Edge",
-							"pageViews": 8
-						},
-						{
-							"browser": "Unknown",
-							"pageViews": 7
-						},
-						{
-							"browser": "ChromeMobile",
-							"pageViews": 2
-						},
-						{
-							"browser": "BingBot",
-							"pageViews": 1
-						}
-					]
-				},
-				"30d": {
-					"periodStart": "2026-04-15T07:27:11.245Z",
-					"periodEnd": "2026-05-15T07:27:11.245Z",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 290
-						},
-						{
-							"path": "/viewer",
-							"pageViews": 100
-						},
-						{
-							"path": "/generator/symmetric-inductor",
-							"pageViews": 80
-						},
-						{
-							"path": "/generator/spiral",
-							"pageViews": 60
-						},
-						{
-							"path": "/generator/mom-capacitor",
-							"pageViews": 30
-						},
-						{
-							"path": "/generator/symmetric-transformer",
-							"pageViews": 30
-						},
-						{
-							"path": "/embed/test",
-							"pageViews": 30
-						},
-						{
-							"path": "/generator/stacked-transformer",
-							"pageViews": 30
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "rapidpassives.org",
-							"pageViews": 100
-						},
-						{
-							"referrer": "www.google.com",
-							"pageViews": 50
-						},
-						{
-							"referrer": "com.linkedin.android",
-							"pageViews": 40
-						},
-						{
-							"referrer": "statics.teams.cdn.office.net",
-							"pageViews": 10
-						},
-						{
-							"referrer": "milanrother.com",
-							"pageViews": 10
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
-							"pageViews": 300
-						},
-						{
-							"country": "DE",
-							"pageViews": 50
-						},
-						{
-							"country": "JP",
-							"pageViews": 40
-						},
-						{
-							"country": "BE",
-							"pageViews": 40
-						},
-						{
-							"country": "EG",
-							"pageViews": 30
-						},
-						{
-							"country": "IN",
-							"pageViews": 30
-						},
-						{
-							"country": "CA",
-							"pageViews": 20
-						},
-						{
-							"country": "GR",
-							"pageViews": 20
-						},
-						{
-							"country": "SG",
-							"pageViews": 20
-						},
-						{
-							"country": "IT",
-							"pageViews": 20
-						},
-						{
-							"country": "NL",
-							"pageViews": 10
-						},
-						{
-							"country": "CZ",
-							"pageViews": 10
-						},
-						{
-							"country": "TW",
-							"pageViews": 10
-						},
-						{
-							"country": "BR",
-							"pageViews": 10
-						},
-						{
-							"country": "GB",
-							"pageViews": 10
-						},
-						{
-							"country": "CN",
-							"pageViews": 10
-						},
-						{
-							"country": "ES",
-							"pageViews": 10
-						},
-						{
-							"country": "KR",
-							"pageViews": 10
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 350
-						},
-						{
-							"browser": "MobileSafari",
-							"pageViews": 70
-						},
-						{
-							"browser": "Edge",
-							"pageViews": 60
-						},
-						{
-							"browser": "Safari",
-							"pageViews": 50
-						},
-						{
-							"browser": "ChromeMobile",
-							"pageViews": 50
-						},
-						{
-							"browser": "Unknown",
-							"pageViews": 20
-						},
-						{
-							"browser": "Firefox",
-							"pageViews": 20
-						},
-						{
-							"browser": "ChromeHeadless",
-							"pageViews": 10
-						},
-						{
-							"browser": "BingBot",
-							"pageViews": 10
-						},
-						{
-							"browser": "SamsungInternet",
-							"pageViews": 10
-						}
-					]
-				}
-			},
-			"topPages": [
-				{
-					"path": "/",
-					"pageViews": 290
-				},
-				{
-					"path": "/viewer",
-					"pageViews": 100
-				},
-				{
-					"path": "/generator/symmetric-inductor",
-					"pageViews": 80
-				},
-				{
-					"path": "/generator/spiral",
-					"pageViews": 60
-				},
-				{
-					"path": "/generator/mom-capacitor",
-					"pageViews": 30
-				},
-				{
-					"path": "/generator/symmetric-transformer",
-					"pageViews": 30
-				},
-				{
-					"path": "/embed/test",
-					"pageViews": 30
-				},
-				{
-					"path": "/generator/stacked-transformer",
-					"pageViews": 30
-				}
-			],
-			"topReferrers": [
-				{
-					"referrer": "rapidpassives.org",
-					"pageViews": 100
-				},
-				{
-					"referrer": "www.google.com",
-					"pageViews": 50
-				},
-				{
-					"referrer": "com.linkedin.android",
-					"pageViews": 40
-				},
-				{
-					"referrer": "statics.teams.cdn.office.net",
-					"pageViews": 10
-				},
-				{
-					"referrer": "milanrother.com",
-					"pageViews": 10
-				}
-			],
-			"topCountries": [
-				{
-					"country": "US",
-					"pageViews": 300
-				},
-				{
-					"country": "DE",
-					"pageViews": 50
-				},
-				{
-					"country": "JP",
-					"pageViews": 40
-				},
-				{
-					"country": "BE",
-					"pageViews": 40
-				},
-				{
-					"country": "EG",
-					"pageViews": 30
-				},
-				{
-					"country": "IN",
-					"pageViews": 30
-				},
-				{
-					"country": "CA",
-					"pageViews": 20
-				},
-				{
-					"country": "GR",
-					"pageViews": 20
-				},
-				{
-					"country": "SG",
-					"pageViews": 20
-				},
-				{
-					"country": "IT",
-					"pageViews": 20
-				},
-				{
-					"country": "NL",
-					"pageViews": 10
-				},
-				{
-					"country": "CZ",
-					"pageViews": 10
-				},
-				{
-					"country": "TW",
-					"pageViews": 10
-				},
-				{
-					"country": "BR",
-					"pageViews": 10
-				},
-				{
-					"country": "GB",
-					"pageViews": 10
-				},
-				{
-					"country": "CN",
-					"pageViews": 10
-				},
-				{
-					"country": "ES",
-					"pageViews": 10
-				},
-				{
-					"country": "KR",
-					"pageViews": 10
-				}
-			],
-			"topBrowsers": [
-				{
-					"browser": "Chrome",
-					"pageViews": 350
-				},
-				{
-					"browser": "MobileSafari",
-					"pageViews": 70
-				},
-				{
-					"browser": "Edge",
-					"pageViews": 60
-				},
-				{
-					"browser": "Safari",
-					"pageViews": 50
-				},
-				{
-					"browser": "ChromeMobile",
-					"pageViews": 50
-				},
-				{
-					"browser": "Unknown",
-					"pageViews": 20
-				},
-				{
-					"browser": "Firefox",
-					"pageViews": 20
-				},
-				{
-					"browser": "ChromeHeadless",
-					"pageViews": 10
-				},
-				{
-					"browser": "BingBot",
-					"pageViews": 10
-				},
-				{
-					"browser": "SamsungInternet",
-					"pageViews": 10
 				}
 			]
 		},
@@ -14330,6 +11378,16 @@
 					"datetime": "2026-05-15T04:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-05-15T08:00:00",
+					"pageViews": 4,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-15T12:00:00",
+					"pageViews": 11,
+					"visits": 9
 				}
 			],
 			"dailyAggregates": [
@@ -15817,20 +12875,24 @@
 			"aggregates": {
 				"today": {
 					"periodStart": "2026-05-15T00:00:00.000Z",
-					"periodEnd": "2026-05-15T07:27:11.240Z",
+					"periodEnd": "2026-05-15T10:28:30.251Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 5
+							"pageViews": 16
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 1
+							"pageViews": 4
 						},
 						{
 							"referrer": "view.pathsim.org",
+							"pageViews": 3
+						},
+						{
+							"referrer": "docs.pathsim.org",
 							"pageViews": 1
 						},
 						{
@@ -15840,6 +12902,18 @@
 					],
 					"topCountries": [
 						{
+							"country": "JP",
+							"pageViews": 4
+						},
+						{
+							"country": "FR",
+							"pageViews": 3
+						},
+						{
+							"country": "IN",
+							"pageViews": 3
+						},
+						{
 							"country": "PE",
 							"pageViews": 2
 						},
@@ -15848,7 +12922,83 @@
 							"pageViews": 2
 						},
 						{
+							"country": "PL",
+							"pageViews": 1
+						},
+						{
+							"country": "DE",
+							"pageViews": 1
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 6
+						},
+						{
+							"browser": "Unknown",
+							"pageViews": 3
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 3
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 2
+						},
+						{
+							"browser": "ChromeMobile",
+							"pageViews": 1
+						},
+						{
+							"browser": "Firefox",
+							"pageViews": 1
+						}
+					]
+				},
+				"4h": {
+					"periodStart": "2026-05-15T06:28:30.251Z",
+					"periodEnd": "2026-05-15T10:28:30.251Z",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 11
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "pathsim.org",
+							"pageViews": 3
+						},
+						{
+							"referrer": "view.pathsim.org",
+							"pageViews": 2
+						},
+						{
+							"referrer": "docs.pathsim.org",
+							"pageViews": 1
+						}
+					],
+					"topCountries": [
+						{
+							"country": "JP",
+							"pageViews": 4
+						},
+						{
+							"country": "FR",
+							"pageViews": 3
+						},
+						{
 							"country": "IN",
+							"pageViews": 2
+						},
+						{
+							"country": "PL",
+							"pageViews": 1
+						},
+						{
+							"country": "DE",
 							"pageViews": 1
 						}
 					],
@@ -15858,80 +13008,52 @@
 							"pageViews": 3
 						},
 						{
-							"browser": "Unknown",
-							"pageViews": 2
-						}
-					]
-				},
-				"4h": {
-					"periodStart": "2026-05-15T03:27:11.240Z",
-					"periodEnd": "2026-05-15T07:27:11.240Z",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 4
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "pathsim.org",
-							"pageViews": 1
+							"browser": "MobileSafari",
+							"pageViews": 3
 						},
 						{
-							"referrer": "view.pathsim.org",
-							"pageViews": 1
-						}
-					],
-					"topCountries": [
-						{
-							"country": "US",
+							"browser": "Safari",
 							"pageViews": 2
 						},
-						{
-							"country": "PE",
-							"pageViews": 1
-						},
-						{
-							"country": "IN",
-							"pageViews": 1
-						}
-					],
-					"topBrowsers": [
 						{
 							"browser": "Unknown",
-							"pageViews": 2
+							"pageViews": 1
 						},
 						{
-							"browser": "Chrome",
-							"pageViews": 2
+							"browser": "ChromeMobile",
+							"pageViews": 1
+						},
+						{
+							"browser": "Firefox",
+							"pageViews": 1
 						}
 					]
 				},
 				"24h": {
-					"periodStart": "2026-05-14T07:27:11.240Z",
-					"periodEnd": "2026-05-15T07:27:11.240Z",
+					"periodStart": "2026-05-14T10:28:30.251Z",
+					"periodEnd": "2026-05-15T10:28:30.251Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 42
+							"pageViews": 44
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 14
+							"pageViews": 12
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 6
+							"pageViews": 8
 						},
 						{
 							"referrer": "com.linkedin.android",
 							"pageViews": 4
 						},
 						{
-							"referrer": "www.google.com",
-							"pageViews": 3
+							"referrer": "docs.pathsim.org",
+							"pageViews": 1
 						},
 						{
 							"referrer": "github.com",
@@ -15940,13 +13062,13 @@
 						{
 							"referrer": "chatgpt.com",
 							"pageViews": 1
+						},
+						{
+							"referrer": "www.google.com",
+							"pageViews": 1
 						}
 					],
 					"topCountries": [
-						{
-							"country": "RS",
-							"pageViews": 7
-						},
 						{
 							"country": "IT",
 							"pageViews": 6
@@ -15956,7 +13078,11 @@
 							"pageViews": 5
 						},
 						{
-							"country": "RU",
+							"country": "IN",
+							"pageViews": 5
+						},
+						{
+							"country": "JP",
 							"pageViews": 4
 						},
 						{
@@ -15968,24 +13094,32 @@
 							"pageViews": 4
 						},
 						{
-							"country": "IN",
+							"country": "FR",
 							"pageViews": 3
 						},
 						{
-							"country": "IE",
-							"pageViews": 2
+							"country": "RS",
+							"pageViews": 3
+						},
+						{
+							"country": "DE",
+							"pageViews": 3
 						},
 						{
 							"country": "PE",
 							"pageViews": 2
 						},
 						{
-							"country": "DE",
+							"country": "IL",
 							"pageViews": 2
 						},
 						{
-							"country": "IL",
-							"pageViews": 2
+							"country": "RU",
+							"pageViews": 1
+						},
+						{
+							"country": "PL",
+							"pageViews": 1
 						},
 						{
 							"country": "NO",
@@ -15995,19 +13129,27 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 24
+							"pageViews": 20
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 9
+							"pageViews": 10
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 4
+							"pageViews": 5
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 3
 						},
 						{
 							"browser": "Firefox",
-							"pageViews": 4
+							"pageViews": 3
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 2
 						},
 						{
 							"browser": "Edge",
@@ -16016,22 +13158,22 @@
 					]
 				},
 				"7d": {
-					"periodStart": "2026-05-08T07:27:11.240Z",
-					"periodEnd": "2026-05-15T07:27:11.240Z",
+					"periodStart": "2026-05-08T10:28:30.251Z",
+					"periodEnd": "2026-05-15T10:28:30.251Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 384
+							"pageViews": 392
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 74
+							"pageViews": 76
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 66
+							"pageViews": 68
 						},
 						{
 							"referrer": "github.com",
@@ -16051,7 +13193,7 @@
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 2
+							"pageViews": 3
 						},
 						{
 							"referrer": "statics.teams.cdn.office.net",
@@ -16089,7 +13231,7 @@
 						},
 						{
 							"country": "IT",
-							"pageViews": 31
+							"pageViews": 30
 						},
 						{
 							"country": "RU",
@@ -16097,15 +13239,15 @@
 						},
 						{
 							"country": "IN",
-							"pageViews": 18
+							"pageViews": 20
 						},
 						{
 							"country": "FR",
-							"pageViews": 14
+							"pageViews": 17
 						},
 						{
 							"country": "PL",
-							"pageViews": 11
+							"pageViews": 12
 						},
 						{
 							"country": "BR",
@@ -16114,6 +13256,10 @@
 						{
 							"country": "NO",
 							"pageViews": 9
+						},
+						{
+							"country": "JP",
+							"pageViews": 8
 						},
 						{
 							"country": "SE",
@@ -16132,15 +13278,11 @@
 							"pageViews": 5
 						},
 						{
-							"country": "IE",
-							"pageViews": 5
-						},
-						{
-							"country": "JP",
+							"country": "AT",
 							"pageViews": 4
 						},
 						{
-							"country": "AT",
+							"country": "IE",
 							"pageViews": 4
 						},
 						{
@@ -16211,7 +13353,7 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 138
+							"pageViews": 139
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -16219,27 +13361,27 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 42
+							"pageViews": 43
 						},
 						{
 							"browser": "Firefox",
-							"pageViews": 35
+							"pageViews": 36
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 25
+							"pageViews": 24
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 16
-						},
-						{
-							"browser": "Safari",
-							"pageViews": 5
+							"pageViews": 17
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 5
+							"pageViews": 8
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 7
 						},
 						{
 							"browser": "BingBot",
@@ -16260,22 +13402,22 @@
 					]
 				},
 				"30d": {
-					"periodStart": "2026-04-15T07:27:11.240Z",
-					"periodEnd": "2026-05-15T07:27:11.240Z",
+					"periodStart": "2026-04-15T10:28:30.251Z",
+					"periodEnd": "2026-05-15T10:28:30.251Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1750
+							"pageViews": 1780
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 270
+							"pageViews": 280
 						},
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 150
+							"pageViews": 170
 						},
 						{
 							"referrer": "www.google.com",
@@ -16333,11 +13475,11 @@
 						},
 						{
 							"country": "IN",
-							"pageViews": 70
+							"pageViews": 80
 						},
 						{
 							"country": "FR",
-							"pageViews": 60
+							"pageViews": 70
 						},
 						{
 							"country": "RU",
@@ -16380,7 +13522,7 @@
 							"pageViews": 10
 						},
 						{
-							"country": "HK",
+							"country": "UA",
 							"pageViews": 10
 						},
 						{
@@ -16388,7 +13530,11 @@
 							"pageViews": 10
 						},
 						{
-							"country": "UA",
+							"country": "PE",
+							"pageViews": 10
+						},
+						{
+							"country": "PL",
 							"pageViews": 10
 						},
 						{
@@ -16444,7 +13590,7 @@
 							"pageViews": 10
 						},
 						{
-							"country": "PE",
+							"country": "HK",
 							"pageViews": 10
 						}
 					],
@@ -16455,18 +13601,18 @@
 						},
 						{
 							"browser": "Chrome",
-							"pageViews": 580
+							"pageViews": 590
 						},
 						{
 							"browser": "Edge",
 							"pageViews": 180
 						},
 						{
-							"browser": "ChromeMobile",
-							"pageViews": 100
+							"browser": "Firefox",
+							"pageViews": 110
 						},
 						{
-							"browser": "Firefox",
+							"browser": "ChromeMobile",
 							"pageViews": 100
 						},
 						{
@@ -16475,7 +13621,7 @@
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 40
+							"pageViews": 50
 						},
 						{
 							"browser": "Safari",
@@ -16499,17 +13645,17 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 1750
+					"pageViews": 1780
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "view.pathsim.org",
-					"pageViews": 270
+					"pageViews": 280
 				},
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 150
+					"pageViews": 170
 				},
 				{
 					"referrer": "www.google.com",
@@ -16567,11 +13713,11 @@
 				},
 				{
 					"country": "IN",
-					"pageViews": 70
+					"pageViews": 80
 				},
 				{
 					"country": "FR",
-					"pageViews": 60
+					"pageViews": 70
 				},
 				{
 					"country": "RU",
@@ -16614,7 +13760,7 @@
 					"pageViews": 10
 				},
 				{
-					"country": "HK",
+					"country": "UA",
 					"pageViews": 10
 				},
 				{
@@ -16622,7 +13768,11 @@
 					"pageViews": 10
 				},
 				{
-					"country": "UA",
+					"country": "PE",
+					"pageViews": 10
+				},
+				{
+					"country": "PL",
 					"pageViews": 10
 				},
 				{
@@ -16678,7 +13828,7 @@
 					"pageViews": 10
 				},
 				{
-					"country": "PE",
+					"country": "HK",
 					"pageViews": 10
 				}
 			],
@@ -16689,18 +13839,18 @@
 				},
 				{
 					"browser": "Chrome",
-					"pageViews": 580
+					"pageViews": 590
 				},
 				{
 					"browser": "Edge",
 					"pageViews": 180
 				},
 				{
-					"browser": "ChromeMobile",
-					"pageViews": 100
+					"browser": "Firefox",
+					"pageViews": 110
 				},
 				{
-					"browser": "Firefox",
+					"browser": "ChromeMobile",
 					"pageViews": 100
 				},
 				{
@@ -16709,7 +13859,7 @@
 				},
 				{
 					"browser": "MobileSafari",
-					"pageViews": 40
+					"pageViews": 50
 				},
 				{
 					"browser": "Safari",
@@ -19982,6 +17132,16 @@
 					"datetime": "2026-05-15T04:00:00",
 					"pageViews": 3,
 					"visits": 3
+				},
+				{
+					"datetime": "2026-05-15T08:00:00",
+					"pageViews": 11,
+					"visits": 11
+				},
+				{
+					"datetime": "2026-05-15T12:00:00",
+					"pageViews": 11,
+					"visits": 11
 				}
 			],
 			"dailyAggregates": [
@@ -22301,18 +19461,26 @@
 			"aggregates": {
 				"today": {
 					"periodStart": "2026-05-15T00:00:00.000Z",
-					"periodEnd": "2026-05-15T07:27:11.237Z",
+					"periodEnd": "2026-05-15T10:28:30.247Z",
 					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 6
+						},
+						{
+							"path": "/batt",
+							"pageViews": 5
+						},
 						{
 							"path": "/pathsim/v0.22.0/examples",
 							"pageViews": 2
 						},
 						{
-							"path": "/",
-							"pageViews": 2
+							"path": "/pathsim/v0.21.1/examples/bouncing-ball",
+							"pageViews": 1
 						},
 						{
-							"path": "/pathsim/v0.21.1/examples/bouncing-ball",
+							"path": "/chem/v0.2.4/api",
 							"pageViews": 1
 						},
 						{
@@ -22328,11 +19496,27 @@
 							"pageViews": 1
 						},
 						{
+							"path": "/en/latest/_modules/pathsim/blocks/rng.html",
+							"pageViews": 1
+						},
+						{
 							"path": "/pathsim/v0.21.1/examples/thermostat",
 							"pageViews": 1
 						},
 						{
+							"path": "/en/latest/modules/pathsim.utils.realtimeplotter.html",
+							"pageViews": 1
+						},
+						{
+							"path": "/vehicle",
+							"pageViews": 1
+						},
+						{
 							"path": "/chem/v0.2.2/examples",
+							"pageViews": 1
+						},
+						{
+							"path": "/en/v0.15.0/examples/poincare_maps.html",
 							"pageViews": 1
 						},
 						{
@@ -22342,22 +19526,30 @@
 					],
 					"topReferrers": [
 						{
-							"referrer": "pathsim.readthedocs.io",
-							"pageViews": 3
+							"referrer": "pathsim.org",
+							"pageViews": 7
 						},
 						{
-							"referrer": "pathsim.org",
-							"pageViews": 2
+							"referrer": "pathsim.readthedocs.io",
+							"pageViews": 4
 						}
 					],
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 5
+							"pageViews": 12
 						},
 						{
 							"country": "JP",
-							"pageViews": 4
+							"pageViews": 7
+						},
+						{
+							"country": "SG",
+							"pageViews": 2
+						},
+						{
+							"country": "DE",
+							"pageViews": 2
 						},
 						{
 							"country": "CA",
@@ -22370,41 +19562,53 @@
 					],
 					"topBrowsers": [
 						{
+							"browser": "Chrome",
+							"pageViews": 7
+						},
+						{
+							"browser": "ChromeMobile",
+							"pageViews": 6
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 4
+						},
+						{
 							"browser": "Edge",
 							"pageViews": 4
 						},
 						{
-							"browser": "ChromeMobile",
+							"browser": "BingBot",
 							"pageViews": 3
 						},
 						{
-							"browser": "BingBot",
-							"pageViews": 2
-						},
-						{
-							"browser": "Chrome",
-							"pageViews": 2
+							"browser": "Unknown",
+							"pageViews": 1
 						}
 					]
 				},
 				"4h": {
-					"periodStart": "2026-05-15T03:27:11.237Z",
-					"periodEnd": "2026-05-15T07:27:11.237Z",
+					"periodStart": "2026-05-15T06:28:30.247Z",
+					"periodEnd": "2026-05-15T10:28:30.247Z",
 					"topPages": [
 						{
-							"path": "/pathsim/v0.22.0/examples",
-							"pageViews": 2
+							"path": "/batt",
+							"pageViews": 5
+						},
+						{
+							"path": "/",
+							"pageViews": 4
 						},
 						{
 							"path": "/pathsim/v0.21.1/examples/bouncing-ball",
 							"pageViews": 1
 						},
 						{
-							"path": "/pathsim/v0.21.1/examples/elastic-pendulum",
+							"path": "/chem/v0.2.4/api",
 							"pageViews": 1
 						},
 						{
-							"path": "/en/v0.10.0/examples/lorenz_attractor.html",
+							"path": "/en/latest/_modules/pathsim/blocks/rng.html",
 							"pageViews": 1
 						},
 						{
@@ -22412,7 +19616,11 @@
 							"pageViews": 1
 						},
 						{
-							"path": "/",
+							"path": "/en/latest/modules/pathsim.utils.realtimeplotter.html",
+							"pageViews": 1
+						},
+						{
+							"path": "/vehicle",
 							"pageViews": 1
 						},
 						{
@@ -22420,28 +19628,36 @@
 							"pageViews": 1
 						},
 						{
-							"path": "/pathsim",
+							"path": "/en/v0.15.0/examples/poincare_maps.html",
 							"pageViews": 1
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 2
+							"pageViews": 5
 						},
 						{
 							"referrer": "pathsim.readthedocs.io",
-							"pageViews": 2
+							"pageViews": 1
 						}
 					],
 					"topCountries": [
 						{
-							"country": "JP",
-							"pageViews": 4
+							"country": "US",
+							"pageViews": 8
 						},
 						{
-							"country": "US",
+							"country": "JP",
 							"pageViews": 3
+						},
+						{
+							"country": "SG",
+							"pageViews": 2
+						},
+						{
+							"country": "DE",
+							"pageViews": 2
 						},
 						{
 							"country": "CA",
@@ -22454,65 +19670,57 @@
 					],
 					"topBrowsers": [
 						{
-							"browser": "Edge",
-							"pageViews": 4
+							"browser": "Chrome",
+							"pageViews": 5
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 3
+							"pageViews": 5
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 4
 						},
 						{
 							"browser": "BingBot",
-							"pageViews": 1
+							"pageViews": 2
 						},
 						{
-							"browser": "Chrome",
+							"browser": "Unknown",
 							"pageViews": 1
 						}
 					]
 				},
 				"24h": {
-					"periodStart": "2026-05-14T07:27:11.237Z",
-					"periodEnd": "2026-05-15T07:27:11.237Z",
+					"periodStart": "2026-05-14T10:28:30.247Z",
+					"periodEnd": "2026-05-15T10:28:30.247Z",
 					"topPages": [
 						{
 							"path": "/",
 							"pageViews": 14
 						},
 						{
+							"path": "/batt",
+							"pageViews": 5
+						},
+						{
 							"path": "/pathsim",
-							"pageViews": 6
+							"pageViews": 4
 						},
 						{
 							"path": "/pathsim/v0.22.0/examples",
 							"pageViews": 4
 						},
 						{
-							"path": "/chem/v0.2.4/examples/heat-exchanger",
-							"pageViews": 1
-						},
-						{
-							"path": "/pathsim/v0.21.1/examples/bouncing-ball",
-							"pageViews": 1
-						},
-						{
-							"path": "/flight/v0.1.1/api",
-							"pageViews": 1
-						},
-						{
 							"path": "/pathsim/v0.22.0/examples/fmu-cosimulation",
 							"pageViews": 1
 						},
 						{
-							"path": "/flight",
+							"path": "/chem/v0.2.4/api",
 							"pageViews": 1
 						},
 						{
 							"path": "/pathsim/v0.21.1/examples/elastic-pendulum",
-							"pageViews": 1
-						},
-						{
-							"path": "/pathsim/v0.21.1/examples/rf-network-oneport",
 							"pageViews": 1
 						},
 						{
@@ -22532,7 +19740,15 @@
 							"pageViews": 1
 						},
 						{
-							"path": "/pathsim/v0.21.1/examples/thermostat",
+							"path": "/en/latest/_modules/pathsim/blocks/rng.html",
+							"pageViews": 1
+						},
+						{
+							"path": "/flight/v0.1.1/api",
+							"pageViews": 1
+						},
+						{
+							"path": "/en/latest/modules/pathsim.utils.realtimeplotter.html",
 							"pageViews": 1
 						},
 						{
@@ -22548,11 +19764,19 @@
 							"pageViews": 1
 						},
 						{
-							"path": "/chem/v0.2.4/examples",
+							"path": "/pathsim/v0.21.1/examples/bouncing-ball",
+							"pageViews": 1
+						},
+						{
+							"path": "/vehicle",
 							"pageViews": 1
 						},
 						{
 							"path": "/chem/v0.2.2/examples",
+							"pageViews": 1
+						},
+						{
+							"path": "/en/v0.15.0/examples/poincare_maps.html",
 							"pageViews": 1
 						},
 						{
@@ -22562,28 +19786,32 @@
 						{
 							"path": "/pathsim/v0.21.1/examples/bouncing-pendulum",
 							"pageViews": 1
+						},
+						{
+							"path": "/pathsim/v0.21.1/examples/thermostat",
+							"pageViews": 1
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 10
-						},
-						{
-							"referrer": "view.pathsim.org",
-							"pageViews": 6
+							"pageViews": 12
 						},
 						{
 							"referrer": "pathsim.readthedocs.io",
-							"pageViews": 5
+							"pageViews": 6
 						},
 						{
 							"referrer": "docs.pathsim.org",
-							"pageViews": 4
+							"pageViews": 3
 						},
 						{
 							"referrer": "github.com",
-							"pageViews": 4
+							"pageViews": 3
+						},
+						{
+							"referrer": "view.pathsim.org",
+							"pageViews": 2
 						},
 						{
 							"referrer": "milanrother.com",
@@ -22593,26 +19821,30 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 13
-						},
-						{
-							"country": "IE",
-							"pageViews": 8
+							"pageViews": 19
 						},
 						{
 							"country": "JP",
-							"pageViews": 5
+							"pageViews": 7
 						},
 						{
 							"country": "PT",
 							"pageViews": 4
 						},
 						{
-							"country": "IN",
-							"pageViews": 4
+							"country": "SG",
+							"pageViews": 3
 						},
 						{
 							"country": "DE",
+							"pageViews": 3
+						},
+						{
+							"country": "IN",
+							"pageViews": 3
+						},
+						{
+							"country": "IE",
 							"pageViews": 2
 						},
 						{
@@ -22632,10 +19864,6 @@
 							"pageViews": 1
 						},
 						{
-							"country": "SG",
-							"pageViews": 1
-						},
-						{
 							"country": "AU",
 							"pageViews": 1
 						},
@@ -22647,31 +19875,31 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 15
+							"pageViews": 14
 						},
 						{
 							"browser": "Edge",
-							"pageViews": 10
+							"pageViews": 9
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 7
+							"pageViews": 9
 						},
 						{
 							"browser": "BingBot",
-							"pageViews": 5
+							"pageViews": 6
 						},
 						{
-							"browser": "SamsungInternet",
-							"pageViews": 3
+							"browser": "Safari",
+							"pageViews": 4
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 1
+							"pageViews": 2
 						},
 						{
-							"browser": "Firefox",
-							"pageViews": 1
+							"browser": "SamsungInternet",
+							"pageViews": 2
 						},
 						{
 							"browser": "ChromeMobileWebview",
@@ -22680,28 +19908,28 @@
 					]
 				},
 				"7d": {
-					"periodStart": "2026-05-08T07:27:11.237Z",
-					"periodEnd": "2026-05-15T07:27:11.237Z",
+					"periodStart": "2026-05-08T10:28:30.247Z",
+					"periodEnd": "2026-05-15T10:28:30.247Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 139
+							"pageViews": 142
 						},
 						{
 							"path": "/pathsim",
 							"pageViews": 52
 						},
 						{
-							"path": "/flight",
-							"pageViews": 22
+							"path": "/batt",
+							"pageViews": 24
 						},
 						{
-							"path": "/batt",
-							"pageViews": 19
+							"path": "/flight",
+							"pageViews": 20
 						},
 						{
 							"path": "/vehicle",
-							"pageViews": 16
+							"pageViews": 17
 						},
 						{
 							"path": "/batt/v0.1.0/api",
@@ -22712,11 +19940,11 @@
 							"pageViews": 10
 						},
 						{
-							"path": "/pathsim/v0.21.1/examples",
+							"path": "/rf",
 							"pageViews": 9
 						},
 						{
-							"path": "/rf",
+							"path": "/pathsim/v0.21.1/examples",
 							"pageViews": 9
 						},
 						{
@@ -22728,11 +19956,11 @@
 							"pageViews": 5
 						},
 						{
-							"path": "/vehicle/v0.1.0/api",
+							"path": "/pathsim/latest/examples",
 							"pageViews": 4
 						},
 						{
-							"path": "/pathsim/latest/examples",
+							"path": "/vehicle/v0.1.0/api",
 							"pageViews": 4
 						},
 						{
@@ -22740,15 +19968,7 @@
 							"pageViews": 4
 						},
 						{
-							"path": "/pathsim/v0.21.1/examples/pendulum",
-							"pageViews": 3
-						},
-						{
 							"path": "/rf/v0.1.1/examples",
-							"pageViews": 3
-						},
-						{
-							"path": "/pathsim/v0.21.1/examples/harmonic-oscillator",
 							"pageViews": 3
 						},
 						{
@@ -22756,7 +19976,7 @@
 							"pageViews": 3
 						},
 						{
-							"path": "/flight/v0.1.1/api",
+							"path": "/pathsim/v0.21.1/examples/harmonic-oscillator",
 							"pageViews": 3
 						},
 						{
@@ -22764,15 +19984,15 @@
 							"pageViews": 3
 						},
 						{
+							"path": "/flight/v0.1.1/api",
+							"pageViews": 3
+						},
+						{
+							"path": "/pathsim/v0.21.1/examples/pendulum",
+							"pageViews": 3
+						},
+						{
 							"path": "/chem/v0.2.4/examples/cstr-reaction",
-							"pageViews": 2
-						},
-						{
-							"path": "/chem/v0.2.2/examples",
-							"pageViews": 2
-						},
-						{
-							"path": "/rf/v0.1.1/examples/rf-amplifier-compression",
 							"pageViews": 2
 						},
 						{
@@ -22780,11 +20000,19 @@
 							"pageViews": 2
 						},
 						{
+							"path": "/rf/v0.1.1/examples/rf-amplifier-compression",
+							"pageViews": 2
+						},
+						{
+							"path": "/chem/v0.2.2/examples",
+							"pageViews": 2
+						},
+						{
 							"path": "/en/v0.5.9/_modules/pathsim/solvers/bdf.html",
 							"pageViews": 1
 						},
 						{
-							"path": "/en/latest/examples/harmonic_oscillator.html",
+							"path": "/en/latest/examples/poincare_maps.html",
 							"pageViews": 1
 						},
 						{
@@ -22792,11 +20020,27 @@
 							"pageViews": 1
 						},
 						{
+							"path": "/en/latest/modules/pathsim.solvers.html",
+							"pageViews": 1
+						},
+						{
+							"path": "/en/v0.8.4/modules/pathsim.solvers.bdf.html",
+							"pageViews": 1
+						},
+						{
 							"path": "/en/v0.12.1/modules/pathsim.solvers.rkf78.html",
 							"pageViews": 1
 						},
 						{
-							"path": "/en/latest/modules/pathsim.solvers.html",
+							"path": "/en/latest/modules/pathsim.subsystem.html",
+							"pageViews": 1
+						},
+						{
+							"path": "/en/latest/examples/harmonic_oscillator.html",
+							"pageViews": 1
+						},
+						{
+							"path": "/en/stable/examples/nested_subsystems.html",
 							"pageViews": 1
 						},
 						{
@@ -22808,27 +20052,11 @@
 							"pageViews": 1
 						},
 						{
+							"path": "/modules/pathsim.blocks.counter.html",
+							"pageViews": 1
+						},
+						{
 							"path": "/chem/v0.2.4/examples",
-							"pageViews": 1
-						},
-						{
-							"path": "/en/v0.16.2/examples/vanderpol.html",
-							"pageViews": 1
-						},
-						{
-							"path": "/modules/pathsim.blocks.math.html",
-							"pageViews": 1
-						},
-						{
-							"path": "/pathsim/v0.21.1/examples/cascade-controller",
-							"pageViews": 1
-						},
-						{
-							"path": "/en/latest/modules/pathsim.subsystem.html",
-							"pageViews": 1
-						},
-						{
-							"path": "/en/latest/examples/billards.html",
 							"pageViews": 1
 						},
 						{
@@ -22836,23 +20064,11 @@
 							"pageViews": 1
 						},
 						{
-							"path": "/pathsim/v0.21.1/examples/lorenz-attractor",
-							"pageViews": 1
-						},
-						{
-							"path": "/en/v0.8.4/modules/pathsim.solvers.bdf.html",
-							"pageViews": 1
-						},
-						{
-							"path": "/en/latest/examples/linear_feedback.html",
+							"path": "/modules/pathsim.blocks.math.html",
 							"pageViews": 1
 						},
 						{
 							"path": "/pathsim/v0.12.3/examples",
-							"pageViews": 1
-						},
-						{
-							"path": "/pathsim/v0.20.0/examples",
 							"pageViews": 1
 						},
 						{
@@ -22868,11 +20084,19 @@
 							"pageViews": 1
 						},
 						{
-							"path": "/pathsim/v0.21.1/examples/linear-feedback",
+							"path": "/pathsim/v0.21.1/examples/cascade-controller",
 							"pageViews": 1
 						},
 						{
-							"path": "/chem/v0.2.4/examples/heat-exchanger",
+							"path": "/en/stable/examples/dcmotor_control.html",
+							"pageViews": 1
+						},
+						{
+							"path": "/en/v0.5.7/_modules/pathsim/solvers/esdirk4.html",
+							"pageViews": 1
+						},
+						{
+							"path": "/en/v0.15.0/examples/poincare_maps.html",
 							"pageViews": 1
 						},
 						{
@@ -22880,14 +20104,18 @@
 							"pageViews": 1
 						},
 						{
-							"path": "/examples/pid_controller.html",
+							"path": "/pathsim/v0.21.1/examples/linear-feedback",
+							"pageViews": 1
+						},
+						{
+							"path": "/en/latest/examples/billards.html",
 							"pageViews": 1
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 111
+							"pageViews": 114
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -22895,11 +20123,11 @@
 						},
 						{
 							"referrer": "pathsim.readthedocs.io",
-							"pageViews": 36
+							"pageViews": 37
 						},
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 14
+							"pageViews": 13
 						},
 						{
 							"referrer": "github.com",
@@ -22957,7 +20185,7 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 108
+							"pageViews": 115
 						},
 						{
 							"country": "CN",
@@ -22965,11 +20193,11 @@
 						},
 						{
 							"country": "DE",
-							"pageViews": 46
+							"pageViews": 45
 						},
 						{
 							"country": "SG",
-							"pageViews": 28
+							"pageViews": 30
 						},
 						{
 							"country": "IN",
@@ -22981,7 +20209,7 @@
 						},
 						{
 							"country": "JP",
-							"pageViews": 12
+							"pageViews": 15
 						},
 						{
 							"country": "NO",
@@ -23111,15 +20339,15 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 146
+							"pageViews": 150
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 81
+							"pageViews": 82
 						},
 						{
 							"browser": "Unknown",
-							"pageViews": 51
+							"pageViews": 52
 						},
 						{
 							"browser": "Firefox",
@@ -23131,7 +20359,7 @@
 						},
 						{
 							"browser": "BingBot",
-							"pageViews": 25
+							"pageViews": 26
 						},
 						{
 							"browser": "ChromeHeadless",
@@ -23139,7 +20367,7 @@
 						},
 						{
 							"browser": "Safari",
-							"pageViews": 8
+							"pageViews": 12
 						},
 						{
 							"browser": "SamsungInternet",
@@ -23156,12 +20384,12 @@
 					]
 				},
 				"30d": {
-					"periodStart": "2026-04-15T07:27:11.237Z",
-					"periodEnd": "2026-05-15T07:27:11.237Z",
+					"periodStart": "2026-04-15T10:28:30.247Z",
+					"periodEnd": "2026-05-15T10:28:30.247Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 640
+							"pageViews": 630
 						},
 						{
 							"path": "/pathsim",
@@ -23172,15 +20400,15 @@
 							"pageViews": 100
 						},
 						{
+							"path": "/batt",
+							"pageViews": 80
+						},
+						{
 							"path": "/rf",
 							"pageViews": 60
 						},
 						{
 							"path": "/chem",
-							"pageViews": 50
-						},
-						{
-							"path": "/batt",
 							"pageViews": 50
 						},
 						{
@@ -23200,7 +20428,7 @@
 							"pageViews": 30
 						},
 						{
-							"path": "/rf/v0.1.1/examples",
+							"path": "/pathsim/v0.16.0/examples",
 							"pageViews": 20
 						},
 						{
@@ -23212,15 +20440,19 @@
 							"pageViews": 20
 						},
 						{
-							"path": "/pathsim/v0.16.0/examples",
+							"path": "/rf/v0.1.1/examples",
 							"pageViews": 20
 						},
 						{
-							"path": "/en/v0.6.6/_modules/pathsim/connection.html",
+							"path": "/chem/v0.2.4/api",
 							"pageViews": 10
 						},
 						{
 							"path": "/en/latest/modules/pathsim.solvers.steadystate.html",
+							"pageViews": 10
+						},
+						{
+							"path": "/pathsim/v0.22.0/examples/fmu-cosimulation",
 							"pageViews": 10
 						},
 						{
@@ -23236,7 +20468,7 @@
 							"pageViews": 10
 						},
 						{
-							"path": "/examples/dcmotor_control.html",
+							"path": "/modules/pathsim.blocks._block.html",
 							"pageViews": 10
 						},
 						{
@@ -23244,7 +20476,7 @@
 							"pageViews": 10
 						},
 						{
-							"path": "/modules/pathsim.blocks._block.html",
+							"path": "/pathsim/v0.20.0/examples/abs-braking",
 							"pageViews": 10
 						},
 						{
@@ -23272,7 +20504,7 @@
 							"pageViews": 10
 						},
 						{
-							"path": "/pathsim/v0.20.0/examples/abs-braking",
+							"path": "/en/v0.7.2/modules/pathsim.solvers.esdirk4.html",
 							"pageViews": 10
 						},
 						{
@@ -23304,7 +20536,7 @@
 							"pageViews": 10
 						},
 						{
-							"path": "/en/v0.7.2/modules/pathsim.solvers.esdirk4.html",
+							"path": "/pathsim/v0.21.1/examples",
 							"pageViews": 10
 						},
 						{
@@ -23340,22 +20572,22 @@
 							"pageViews": 10
 						},
 						{
-							"path": "/pathsim/v0.21.1/examples",
+							"path": "/en/v0.6.6/_modules/pathsim/connection.html",
 							"pageViews": 10
 						},
 						{
-							"path": "/pathsim/v0.22.0/examples/fmu-cosimulation",
+							"path": "/examples/dcmotor_control.html",
 							"pageViews": 10
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "pathsim.org",
-							"pageViews": 390
+							"pageViews": 410
 						},
 						{
 							"referrer": "pathsim.readthedocs.io",
-							"pageViews": 260
+							"pageViews": 250
 						},
 						{
 							"referrer": "docs.pathsim.org",
@@ -23397,15 +20629,15 @@
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 430
+							"pageViews": 460
 						},
 						{
 							"country": "DE",
-							"pageViews": 210
+							"pageViews": 230
 						},
 						{
 							"country": "CN",
-							"pageViews": 190
+							"pageViews": 170
 						},
 						{
 							"country": "SG",
@@ -23531,11 +20763,11 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 700
+							"pageViews": 720
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 250
+							"pageViews": 260
 						},
 						{
 							"browser": "Edge",
@@ -23563,11 +20795,7 @@
 						},
 						{
 							"browser": "Safari",
-							"pageViews": 40
-						},
-						{
-							"browser": "ChromeMobileWebview",
-							"pageViews": 10
+							"pageViews": 50
 						}
 					]
 				}
@@ -23575,7 +20803,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 640
+					"pageViews": 630
 				},
 				{
 					"path": "/pathsim",
@@ -23586,15 +20814,15 @@
 					"pageViews": 100
 				},
 				{
+					"path": "/batt",
+					"pageViews": 80
+				},
+				{
 					"path": "/rf",
 					"pageViews": 60
 				},
 				{
 					"path": "/chem",
-					"pageViews": 50
-				},
-				{
-					"path": "/batt",
 					"pageViews": 50
 				},
 				{
@@ -23614,7 +20842,7 @@
 					"pageViews": 30
 				},
 				{
-					"path": "/rf/v0.1.1/examples",
+					"path": "/pathsim/v0.16.0/examples",
 					"pageViews": 20
 				},
 				{
@@ -23626,15 +20854,19 @@
 					"pageViews": 20
 				},
 				{
-					"path": "/pathsim/v0.16.0/examples",
+					"path": "/rf/v0.1.1/examples",
 					"pageViews": 20
 				},
 				{
-					"path": "/en/v0.6.6/_modules/pathsim/connection.html",
+					"path": "/chem/v0.2.4/api",
 					"pageViews": 10
 				},
 				{
 					"path": "/en/latest/modules/pathsim.solvers.steadystate.html",
+					"pageViews": 10
+				},
+				{
+					"path": "/pathsim/v0.22.0/examples/fmu-cosimulation",
 					"pageViews": 10
 				},
 				{
@@ -23650,7 +20882,7 @@
 					"pageViews": 10
 				},
 				{
-					"path": "/examples/dcmotor_control.html",
+					"path": "/modules/pathsim.blocks._block.html",
 					"pageViews": 10
 				},
 				{
@@ -23658,7 +20890,7 @@
 					"pageViews": 10
 				},
 				{
-					"path": "/modules/pathsim.blocks._block.html",
+					"path": "/pathsim/v0.20.0/examples/abs-braking",
 					"pageViews": 10
 				},
 				{
@@ -23686,7 +20918,7 @@
 					"pageViews": 10
 				},
 				{
-					"path": "/pathsim/v0.20.0/examples/abs-braking",
+					"path": "/en/v0.7.2/modules/pathsim.solvers.esdirk4.html",
 					"pageViews": 10
 				},
 				{
@@ -23718,7 +20950,7 @@
 					"pageViews": 10
 				},
 				{
-					"path": "/en/v0.7.2/modules/pathsim.solvers.esdirk4.html",
+					"path": "/pathsim/v0.21.1/examples",
 					"pageViews": 10
 				},
 				{
@@ -23754,22 +20986,22 @@
 					"pageViews": 10
 				},
 				{
-					"path": "/pathsim/v0.21.1/examples",
+					"path": "/en/v0.6.6/_modules/pathsim/connection.html",
 					"pageViews": 10
 				},
 				{
-					"path": "/pathsim/v0.22.0/examples/fmu-cosimulation",
+					"path": "/examples/dcmotor_control.html",
 					"pageViews": 10
 				}
 			],
 			"topReferrers": [
 				{
 					"referrer": "pathsim.org",
-					"pageViews": 390
+					"pageViews": 410
 				},
 				{
 					"referrer": "pathsim.readthedocs.io",
-					"pageViews": 260
+					"pageViews": 250
 				},
 				{
 					"referrer": "docs.pathsim.org",
@@ -23811,15 +21043,15 @@
 			"topCountries": [
 				{
 					"country": "US",
-					"pageViews": 430
+					"pageViews": 460
 				},
 				{
 					"country": "DE",
-					"pageViews": 210
+					"pageViews": 230
 				},
 				{
 					"country": "CN",
-					"pageViews": 190
+					"pageViews": 170
 				},
 				{
 					"country": "SG",
@@ -23945,11 +21177,11 @@
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
-					"pageViews": 700
+					"pageViews": 720
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 250
+					"pageViews": 260
 				},
 				{
 					"browser": "Edge",
@@ -23977,40 +21209,1463 @@
 				},
 				{
 					"browser": "Safari",
-					"pageViews": 40
-				},
-				{
-					"browser": "ChromeMobileWebview",
-					"pageViews": 10
+					"pageViews": 50
 				}
 			]
 		},
-		"fast.pathsim.org": {
-			"name": "fast.pathsim.org",
-			"color": "#D14129",
+		"rapidpassives.org": {
+			"name": "rapidpassives.org",
+			"color": "#d9513c",
 			"timeseries": [
 				{
-					"datetime": "2026-05-14T12:00:00",
+					"datetime": "2026-03-22T20:00:00",
+					"pageViews": 20,
+					"visits": 20
+				},
+				{
+					"datetime": "2026-03-23T04:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-03-23T08:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-03-23T12:00:00",
 					"pageViews": 10,
 					"visits": 10
+				},
+				{
+					"datetime": "2026-03-23T16:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-03-23T20:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-03-23T24:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-03-24T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-03-24T08:00:00",
+					"pageViews": 5,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-03-24T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-03-24T16:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-03-24T20:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-03-25T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-03-25T08:00:00",
+					"pageViews": 36,
+					"visits": 35
+				},
+				{
+					"datetime": "2026-03-25T12:00:00",
+					"pageViews": 49,
+					"visits": 37
+				},
+				{
+					"datetime": "2026-03-25T16:00:00",
+					"pageViews": 200,
+					"visits": 186
+				},
+				{
+					"datetime": "2026-03-25T20:00:00",
+					"pageViews": 70,
+					"visits": 47
+				},
+				{
+					"datetime": "2026-03-25T24:00:00",
+					"pageViews": 114,
+					"visits": 103
+				},
+				{
+					"datetime": "2026-03-26T04:00:00",
+					"pageViews": 27,
+					"visits": 23
+				},
+				{
+					"datetime": "2026-03-26T08:00:00",
+					"pageViews": 52,
+					"visits": 28
+				},
+				{
+					"datetime": "2026-03-26T12:00:00",
+					"pageViews": 10,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-03-26T16:00:00",
+					"pageViews": 109,
+					"visits": 92
+				},
+				{
+					"datetime": "2026-03-26T20:00:00",
+					"pageViews": 12,
+					"visits": 12
+				},
+				{
+					"datetime": "2026-03-26T24:00:00",
+					"pageViews": 20,
+					"visits": 15
+				},
+				{
+					"datetime": "2026-03-27T04:00:00",
+					"pageViews": 25,
+					"visits": 25
+				},
+				{
+					"datetime": "2026-03-27T08:00:00",
+					"pageViews": 36,
+					"visits": 35
+				},
+				{
+					"datetime": "2026-03-27T12:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-03-27T16:00:00",
+					"pageViews": 64,
+					"visits": 64
+				},
+				{
+					"datetime": "2026-03-27T20:00:00",
+					"pageViews": 16,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-03-27T24:00:00",
+					"pageViews": 21,
+					"visits": 19
+				},
+				{
+					"datetime": "2026-03-28T04:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-03-28T08:00:00",
+					"pageViews": 14,
+					"visits": 14
+				},
+				{
+					"datetime": "2026-03-28T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-03-28T16:00:00",
+					"pageViews": 16,
+					"visits": 15
+				},
+				{
+					"datetime": "2026-03-28T20:00:00",
+					"pageViews": 7,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-03-28T24:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-03-29T04:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-03-29T08:00:00",
+					"pageViews": 9,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-03-29T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-03-29T16:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-03-29T20:00:00",
+					"pageViews": 14,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-03-29T24:00:00",
+					"pageViews": 8,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-03-30T04:00:00",
+					"pageViews": 7,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-03-30T08:00:00",
+					"pageViews": 12,
+					"visits": 11
+				},
+				{
+					"datetime": "2026-03-30T12:00:00",
+					"pageViews": 17,
+					"visits": 14
+				},
+				{
+					"datetime": "2026-03-30T16:00:00",
+					"pageViews": 36,
+					"visits": 33
+				},
+				{
+					"datetime": "2026-03-30T20:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-03-30T24:00:00",
+					"pageViews": 8,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-03-31T04:00:00",
+					"pageViews": 14,
+					"visits": 14
+				},
+				{
+					"datetime": "2026-03-31T08:00:00",
+					"pageViews": 5,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-03-31T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-03-31T16:00:00",
+					"pageViews": 21,
+					"visits": 19
+				},
+				{
+					"datetime": "2026-03-31T20:00:00",
+					"pageViews": 2,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-03-31T24:00:00",
+					"pageViews": 10,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-04-01T04:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-01T08:00:00",
+					"pageViews": 10,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-04-01T12:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-04-01T16:00:00",
+					"pageViews": 6,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-01T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-01T24:00:00",
+					"pageViews": 2,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-02T04:00:00",
+					"pageViews": 9,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-04-02T08:00:00",
+					"pageViews": 8,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-04-02T12:00:00",
+					"pageViews": 2,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-02T16:00:00",
+					"pageViews": 19,
+					"visits": 18
+				},
+				{
+					"datetime": "2026-04-02T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-02T24:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-03T04:00:00",
+					"pageViews": 12,
+					"visits": 12
+				},
+				{
+					"datetime": "2026-04-03T08:00:00",
+					"pageViews": 16,
+					"visits": 14
+				},
+				{
+					"datetime": "2026-04-03T12:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-03T16:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-03T20:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-03T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-04T04:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-04T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-04T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-04T20:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-04T24:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-05T04:00:00",
+					"pageViews": 9,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-04-05T08:00:00",
+					"pageViews": 7,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-04-05T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-05T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-05T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-05T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-06T04:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-06T08:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-06T16:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-06T20:00:00",
+					"pageViews": 7,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-04-06T24:00:00",
+					"pageViews": 8,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-04-07T04:00:00",
+					"pageViews": 12,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-04-07T08:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-07T12:00:00",
+					"pageViews": 5,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-07T16:00:00",
+					"pageViews": 15,
+					"visits": 13
+				},
+				{
+					"datetime": "2026-04-07T20:00:00",
+					"pageViews": 5,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-04-07T24:00:00",
+					"pageViews": 5,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-04-08T04:00:00",
+					"pageViews": 1,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-04-08T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-08T12:00:00",
+					"pageViews": 13,
+					"visits": 13
+				},
+				{
+					"datetime": "2026-04-08T16:00:00",
+					"pageViews": 11,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-04-08T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-08T24:00:00",
+					"pageViews": 2,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-04-09T08:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-09T12:00:00",
+					"pageViews": 1,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-04-09T16:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-09T20:00:00",
+					"pageViews": 7,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-04-09T24:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-10T04:00:00",
+					"pageViews": 11,
+					"visits": 11
+				},
+				{
+					"datetime": "2026-04-10T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-10T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-10T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-10T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-10T24:00:00",
+					"pageViews": 12,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-04-11T04:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-11T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-11T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-11T16:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-11T20:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-04-11T24:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-12T04:00:00",
+					"pageViews": 4,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-12T08:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-12T12:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-04-12T16:00:00",
+					"pageViews": 9,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-12T20:00:00",
+					"pageViews": 7,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-04-12T24:00:00",
+					"pageViews": 9,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-04-13T04:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-13T08:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-04-13T12:00:00",
+					"pageViews": 9,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-04-13T16:00:00",
+					"pageViews": 13,
+					"visits": 12
+				},
+				{
+					"datetime": "2026-04-13T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-13T24:00:00",
+					"pageViews": 7,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-04-14T04:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-14T08:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-04-14T12:00:00",
+					"pageViews": 8,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-04-14T16:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-14T20:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-04-14T24:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-15T04:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-15T08:00:00",
+					"pageViews": 9,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-04-15T12:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-15T16:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-15T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-15T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-16T04:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-16T08:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-16T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-16T16:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-04-16T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-16T24:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-17T04:00:00",
+					"pageViews": 9,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-04-17T08:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-17T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-17T16:00:00",
+					"pageViews": 11,
+					"visits": 11
+				},
+				{
+					"datetime": "2026-04-17T20:00:00",
+					"pageViews": 5,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-04-17T24:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-18T04:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-18T08:00:00",
+					"pageViews": 10,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-04-18T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-18T16:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-18T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-18T24:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-19T04:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-19T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-19T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-19T16:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-19T20:00:00",
+					"pageViews": 8,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-04-19T24:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-20T04:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-20T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-20T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-20T16:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-20T20:00:00",
+					"pageViews": 11,
+					"visits": 11
+				},
+				{
+					"datetime": "2026-04-20T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-21T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-21T08:00:00",
+					"pageViews": 4,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-21T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-21T16:00:00",
+					"pageViews": 21,
+					"visits": 18
+				},
+				{
+					"datetime": "2026-04-21T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-22T04:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-22T08:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-22T12:00:00",
+					"pageViews": 10,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-04-22T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-22T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-22T24:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-23T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-23T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-23T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-23T16:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-23T20:00:00",
+					"pageViews": 6,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-23T24:00:00",
+					"pageViews": 11,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-04-24T08:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-24T12:00:00",
+					"pageViews": 5,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-24T20:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-24T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-25T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-25T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-25T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-26T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-26T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-26T24:00:00",
+					"pageViews": 5,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-04-27T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-27T12:00:00",
+					"pageViews": 6,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-04-27T16:00:00",
+					"pageViews": 9,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-27T20:00:00",
+					"pageViews": 5,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-04-27T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-28T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-28T08:00:00",
+					"pageViews": 8,
+					"visits": 7
+				},
+				{
+					"datetime": "2026-04-28T12:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-28T16:00:00",
+					"pageViews": 2,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-04-28T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-28T24:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-29T12:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-04-29T16:00:00",
+					"pageViews": 9,
+					"visits": 9
+				},
+				{
+					"datetime": "2026-04-29T24:00:00",
+					"pageViews": 2,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-30T04:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-04-30T08:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-04-30T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-04-30T24:00:00",
+					"pageViews": 8,
+					"visits": 8
+				},
+				{
+					"datetime": "2026-05-01T04:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-01T16:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-05-01T20:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-05-01T24:00:00",
+					"pageViews": 3,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-02T04:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-02T16:00:00",
+					"pageViews": 11,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-05-02T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-02T24:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-03T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-03T12:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-03T16:00:00",
+					"pageViews": 10,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-03T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-03T24:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-04T04:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-05-04T08:00:00",
+					"pageViews": 3,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-04T12:00:00",
+					"pageViews": 1,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-05-04T16:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-04T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-05T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-05T12:00:00",
+					"pageViews": 3,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-05T20:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-05T24:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-06T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-06T12:00:00",
+					"pageViews": 4,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-06T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-06T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-06T24:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-07T12:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-07T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-08T04:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-08T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-08T16:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-08T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-09T20:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-10T08:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-10T12:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-10T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-10T20:00:00",
+					"pageViews": 5,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-05-10T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-11T04:00:00",
+					"pageViews": 1,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-05-11T08:00:00",
+					"pageViews": 4,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-11T12:00:00",
+					"pageViews": 11,
+					"visits": 10
+				},
+				{
+					"datetime": "2026-05-11T16:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-05-11T20:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-11T24:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-12T08:00:00",
+					"pageViews": 5,
+					"visits": 5
+				},
+				{
+					"datetime": "2026-05-12T12:00:00",
+					"pageViews": 1,
+					"visits": 0
+				},
+				{
+					"datetime": "2026-05-12T16:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-12T20:00:00",
+					"pageViews": 8,
+					"visits": 6
+				},
+				{
+					"datetime": "2026-05-13T04:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-13T08:00:00",
+					"pageViews": 4,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-13T12:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-13T16:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-13T20:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-13T24:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-14T04:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-14T08:00:00",
+					"pageViews": 2,
+					"visits": 2
+				},
+				{
+					"datetime": "2026-05-14T12:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-14T16:00:00",
+					"pageViews": 2,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-14T20:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-05-14T24:00:00",
+					"pageViews": 3,
+					"visits": 3
+				},
+				{
+					"datetime": "2026-05-15T04:00:00",
+					"pageViews": 2,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-15T08:00:00",
+					"pageViews": 1,
+					"visits": 1
+				},
+				{
+					"datetime": "2026-05-15T12:00:00",
+					"pageViews": 4,
+					"visits": 3
 				}
 			],
 			"dailyAggregates": [
 				{
-					"date": "2026-05-14",
+					"date": "2026-04-13",
 					"topPages": [
 						{
 							"path": "/",
+							"pageViews": 40
+						},
+						{
+							"path": "/generator/spiral",
+							"pageViews": 20
+						},
+						{
+							"path": "/generator/symmetric-transformer",
+							"pageViews": 10
+						},
+						{
+							"path": "/viewer",
 							"pageViews": 10
 						}
 					],
 					"topReferrers": [
 						{
-							"referrer": "milanrother.com",
+							"referrer": "www.google.fr",
+							"pageViews": 10
+						},
+						{
+							"referrer": "statics.teams.cdn.office.net",
+							"pageViews": 10
+						},
+						{
+							"referrer": "rapidpassives.org",
 							"pageViews": 10
 						}
 					],
 					"topCountries": [
+						{
+							"country": "FR",
+							"pageViews": 40
+						},
+						{
+							"country": "US",
+							"pageViews": 20
+						},
+						{
+							"country": "TW",
+							"pageViews": 10
+						},
 						{
 							"country": "DE",
 							"pageViews": 10
@@ -24019,7 +22674,959 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
+							"pageViews": 50
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 20
+						},
+						{
+							"browser": "SamsungInternet",
 							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-04-14",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 30
+						},
+						{
+							"path": "/generator/spiral",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 40
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "MobileSafari",
+							"pageViews": 30
+						},
+						{
+							"browser": "ChromeMobile",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-04-15",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 10
+						},
+						{
+							"path": "/generator/symmetric-transformer",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [],
+					"topCountries": [
+						{
+							"country": "KR",
+							"pageViews": 10
+						},
+						{
+							"country": "DE",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 20
+						}
+					]
+				},
+				{
+					"date": "2026-04-16",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 10
+						},
+						{
+							"path": "/generator/spiral",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 10
+						},
+						{
+							"country": "TW",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "SamsungInternet",
+							"pageViews": 10
+						},
+						{
+							"browser": "Chrome",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-04-17",
+					"topPages": [
+						{
+							"path": "/viewer",
+							"pageViews": 30
+						},
+						{
+							"path": "/generator/mom-capacitor",
+							"pageViews": 20
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "com.linkedin.android",
+							"pageViews": 10
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 30
+						},
+						{
+							"country": "EG",
+							"pageViews": 10
+						},
+						{
+							"country": "IN",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 50
+						}
+					]
+				},
+				{
+					"date": "2026-04-18",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 40
+						},
+						{
+							"path": "/viewer",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "com.linkedin.android",
+							"pageViews": 20
+						}
+					],
+					"topCountries": [
+						{
+							"country": "IN",
+							"pageViews": 20
+						},
+						{
+							"country": "GR",
+							"pageViews": 10
+						},
+						{
+							"country": "JP",
+							"pageViews": 10
+						},
+						{
+							"country": "BE",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "ChromeMobile",
+							"pageViews": 30
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 20
+						}
+					]
+				},
+				{
+					"date": "2026-04-19",
+					"topPages": [
+						{
+							"path": "/viewer",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [],
+					"topCountries": [
+						{
+							"country": "EG",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-04-20",
+					"topPages": [
+						{
+							"path": "/generator/symmetric-transformer",
+							"pageViews": 10
+						},
+						{
+							"path": "/generator/mom-capacitor",
+							"pageViews": 10
+						},
+						{
+							"path": "/generator/spiral",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "www.google.com",
+							"pageViews": 20
+						}
+					],
+					"topCountries": [
+						{
+							"country": "BE",
+							"pageViews": 10
+						},
+						{
+							"country": "US",
+							"pageViews": 10
+						},
+						{
+							"country": "CA",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 30
+						}
+					]
+				},
+				{
+					"date": "2026-04-21",
+					"topPages": [
+						{
+							"path": "/viewer",
+							"pageViews": 20
+						},
+						{
+							"path": "/",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "com.linkedin.android",
+							"pageViews": 10
+						},
+						{
+							"referrer": "milanrother.com",
+							"pageViews": 10
+						}
+					],
+					"topCountries": [
+						{
+							"country": "GR",
+							"pageViews": 10
+						},
+						{
+							"country": "US",
+							"pageViews": 10
+						},
+						{
+							"country": "CZ",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "ChromeMobile",
+							"pageViews": 10
+						},
+						{
+							"browser": "Firefox",
+							"pageViews": 10
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-04-22",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 10
+						},
+						{
+							"path": "/generator/stacked-transformer",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 10
+						},
+						{
+							"country": "KR",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 20
+						}
+					]
+				},
+				{
+					"date": "2026-04-23",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 20
+						}
+					],
+					"topReferrers": [],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 10
+						},
+						{
+							"country": "CA",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 10
+						},
+						{
+							"browser": "Unknown",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-04-24",
+					"topPages": [
+						{
+							"path": "/generator/stacked-transformer",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "www.google.com",
+							"pageViews": 10
+						}
+					],
+					"topCountries": [
+						{
+							"country": "ES",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Safari",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-04-25",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 10
+						},
+						{
+							"path": "/viewer",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 20
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "MobileSafari",
+							"pageViews": 10
+						},
+						{
+							"browser": "Chrome",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-04-27",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 20
+						},
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 20
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 20
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 30
+						},
+						{
+							"country": "SG",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 20
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 20
+						}
+					]
+				},
+				{
+					"date": "2026-04-28",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 20
+						},
+						{
+							"path": "/generator/symmetric-transformer",
+							"pageViews": 10
+						},
+						{
+							"path": "/generator/spiral",
+							"pageViews": 10
+						},
+						{
+							"path": "/viewer",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 10
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 20
+						},
+						{
+							"country": "IT",
+							"pageViews": 10
+						},
+						{
+							"country": "SG",
+							"pageViews": 10
+						},
+						{
+							"country": "BE",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 40
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-04-30",
+					"topPages": [
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 10
+						},
+						{
+							"path": "/generator/spiral",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "www.google.com",
+							"pageViews": 20
+						}
+					],
+					"topCountries": [
+						{
+							"country": "BE",
+							"pageViews": 10
+						},
+						{
+							"country": "US",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Firefox",
+							"pageViews": 10
+						},
+						{
+							"browser": "Chrome",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-05-01",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 20
+						},
+						{
+							"path": "/generator/spiral",
+							"pageViews": 10
+						},
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 10
+						},
+						{
+							"referrer": "statics.teams.cdn.office.net",
+							"pageViews": 10
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 30
+						},
+						{
+							"country": "GB",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 30
+						},
+						{
+							"browser": "Edge",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-05-02",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-05-03",
+					"topPages": [
+						{
+							"path": "/embed/test",
+							"pageViews": 30
+						},
+						{
+							"path": "/",
+							"pageViews": 20
+						},
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 30
+						},
+						{
+							"country": "JP",
+							"pageViews": 30
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Edge",
+							"pageViews": 30
+						},
+						{
+							"browser": "Chrome",
+							"pageViews": 20
+						},
+						{
+							"browser": "BingBot",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-05-10",
+					"topPages": [
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 20
+						},
+						{
+							"path": "/",
+							"pageViews": 20
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 20
+						}
+					],
+					"topCountries": [
+						{
+							"country": "DE",
+							"pageViews": 20
+						},
+						{
+							"country": "US",
+							"pageViews": 20
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 20
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 20
+						}
+					]
+				},
+				{
+					"date": "2026-05-11",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 40
+						},
+						{
+							"path": "/generator/stacked-transformer",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 10
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 20
+						},
+						{
+							"country": "BR",
+							"pageViews": 10
+						},
+						{
+							"country": "NL",
+							"pageViews": 10
+						},
+						{
+							"country": "DE",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 20
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 10
+						},
+						{
+							"browser": "Edge",
+							"pageViews": 10
+						},
+						{
+							"browser": "ChromeMobile",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-05-12",
+					"topPages": [
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 10
+						},
+						{
+							"path": "/",
+							"pageViews": 10
+						},
+						{
+							"path": "/generator/symmetric-transformer",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 10
+						}
+					],
+					"topCountries": [
+						{
+							"country": "DE",
+							"pageViews": 10
+						},
+						{
+							"country": "US",
+							"pageViews": 10
+						},
+						{
+							"country": "CN",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 20
+						},
+						{
+							"browser": "Unknown",
+							"pageViews": 10
+						}
+					]
+				},
+				{
+					"date": "2026-05-13",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 11
+						},
+						{
+							"path": "/generator/spiral",
+							"pageViews": 2
+						},
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 1
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 2
+						},
+						{
+							"referrer": "github.com",
+							"pageViews": 1
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 6
+						},
+						{
+							"country": "IT",
+							"pageViews": 4
+						},
+						{
+							"country": "TW",
+							"pageViews": 1
+						},
+						{
+							"country": "IN",
+							"pageViews": 1
+						},
+						{
+							"country": "AT",
+							"pageViews": 1
+						},
+						{
+							"country": "NL",
+							"pageViews": 1
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 7
+						},
+						{
+							"browser": "Edge",
+							"pageViews": 3
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 3
+						},
+						{
+							"browser": "BingBot",
+							"pageViews": 1
+						}
+					]
+				},
+				{
+					"date": "2026-05-14",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 16
+						},
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 2
+						},
+						{
+							"path": "/generator/mom-capacitor",
+							"pageViews": 1
+						},
+						{
+							"path": "/viewer",
+							"pageViews": 1
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "fem.rapidpassives.org",
+							"pageViews": 1
+						},
+						{
+							"referrer": "milanrother.com",
+							"pageViews": 1
+						},
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 1
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 14
+						},
+						{
+							"country": "IT",
+							"pageViews": 2
+						},
+						{
+							"country": "DE",
+							"pageViews": 2
+						},
+						{
+							"country": "CN",
+							"pageViews": 1
+						},
+						{
+							"country": "EG",
+							"pageViews": 1
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "MobileSafari",
+							"pageViews": 12
+						},
+						{
+							"browser": "Chrome",
+							"pageViews": 6
+						},
+						{
+							"browser": "Edge",
+							"pageViews": 1
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 1
 						}
 					]
 				}
@@ -24027,106 +23634,386 @@
 			"aggregates": {
 				"today": {
 					"periodStart": "2026-05-15T00:00:00.000Z",
-					"periodEnd": "2026-05-15T07:27:14.227Z",
-					"topPages": [],
-					"topReferrers": [],
-					"topCountries": [],
-					"topBrowsers": []
-				},
-				"4h": {
-					"periodStart": "2026-05-15T03:27:14.227Z",
-					"periodEnd": "2026-05-15T07:27:14.227Z",
-					"topPages": [],
-					"topReferrers": [],
-					"topCountries": [],
-					"topBrowsers": []
-				},
-				"24h": {
-					"periodStart": "2026-05-14T07:27:14.227Z",
-					"periodEnd": "2026-05-15T07:27:14.227Z",
+					"periodEnd": "2026-05-15T10:28:30.256Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "milanrother.com",
-							"pageViews": 1
-						}
-					],
-					"topCountries": [
-						{
-							"country": "DE",
-							"pageViews": 2
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "Chrome",
-							"pageViews": 2
-						}
-					]
-				},
-				"7d": {
-					"periodStart": "2026-05-08T07:27:14.227Z",
-					"periodEnd": "2026-05-15T07:27:14.227Z",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 21
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "milanrother.com",
-							"pageViews": 4
+							"pageViews": 5
 						},
 						{
-							"referrer": "localhost",
+							"path": "/generator/symmetric-transformer",
 							"pageViews": 1
+						},
+						{
+							"path": "/generator/stacked-transformer",
+							"pageViews": 1
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 2
 						}
 					],
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 10
+							"pageViews": 6
 						},
 						{
 							"country": "DE",
-							"pageViews": 10
-						},
-						{
-							"country": "BR",
 							"pageViews": 1
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "ChromeHeadless",
-							"pageViews": 12
+							"pageViews": 3
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 2
+						},
+						{
+							"browser": "Edge",
+							"pageViews": 1
 						},
 						{
 							"browser": "Chrome",
+							"pageViews": 1
+						}
+					]
+				},
+				"4h": {
+					"periodStart": "2026-05-15T06:28:30.256Z",
+					"periodEnd": "2026-05-15T10:28:30.256Z",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 4
+						},
+						{
+							"path": "/generator/stacked-transformer",
+							"pageViews": 1
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 1
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 4
+						},
+						{
+							"country": "DE",
+							"pageViews": 1
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 3
+						},
+						{
+							"browser": "Edge",
+							"pageViews": 1
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 1
+						}
+					]
+				},
+				"24h": {
+					"periodStart": "2026-05-14T10:28:30.256Z",
+					"periodEnd": "2026-05-15T10:28:30.256Z",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 16
+						},
+						{
+							"path": "/viewer",
+							"pageViews": 1
+						},
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 1
+						},
+						{
+							"path": "/generator/mom-capacitor",
+							"pageViews": 1
+						},
+						{
+							"path": "/generator/symmetric-transformer",
+							"pageViews": 1
+						},
+						{
+							"path": "/generator/stacked-transformer",
+							"pageViews": 1
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 3
+						},
+						{
+							"referrer": "fem.rapidpassives.org",
+							"pageViews": 1
+						},
+						{
+							"referrer": "milanrother.com",
+							"pageViews": 1
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 16
+						},
+						{
+							"country": "DE",
+							"pageViews": 3
+						},
+						{
+							"country": "EG",
+							"pageViews": 1
+						},
+						{
+							"country": "CN",
+							"pageViews": 1
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "MobileSafari",
+							"pageViews": 11
+						},
+						{
+							"browser": "Chrome",
+							"pageViews": 4
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 3
+						},
+						{
+							"browser": "Edge",
+							"pageViews": 2
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 1
+						}
+					]
+				},
+				"7d": {
+					"periodStart": "2026-05-08T10:28:30.256Z",
+					"periodEnd": "2026-05-15T10:28:30.256Z",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 74
+						},
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 13
+						},
+						{
+							"path": "/generator/symmetric-transformer",
 							"pageViews": 8
 						},
 						{
+							"path": "/generator/spiral",
+							"pageViews": 5
+						},
+						{
+							"path": "/generator/stacked-transformer",
+							"pageViews": 4
+						},
+						{
+							"path": "/embed/test",
+							"pageViews": 3
+						},
+						{
+							"path": "/viewer",
+							"pageViews": 2
+						},
+						{
+							"path": "/generator/mom-capacitor",
+							"pageViews": 1
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 16
+						},
+						{
+							"referrer": "cn.bing.com",
+							"pageViews": 4
+						},
+						{
+							"referrer": "milanrother.com",
+							"pageViews": 3
+						},
+						{
+							"referrer": "www.linkedin.com",
+							"pageViews": 2
+						},
+						{
+							"referrer": "github.com",
+							"pageViews": 2
+						},
+						{
+							"referrer": "fem.rapidpassives.org",
+							"pageViews": 2
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 53
+						},
+						{
+							"country": "DE",
+							"pageViews": 32
+						},
+						{
+							"country": "CN",
+							"pageViews": 8
+						},
+						{
+							"country": "IT",
+							"pageViews": 6
+						},
+						{
+							"country": "NL",
+							"pageViews": 2
+						},
+						{
+							"country": "EG",
+							"pageViews": 2
+						},
+						{
+							"country": "IN",
+							"pageViews": 2
+						},
+						{
+							"country": "CA",
+							"pageViews": 1
+						},
+						{
+							"country": "TW",
+							"pageViews": 1
+						},
+						{
+							"country": "BR",
+							"pageViews": 1
+						},
+						{
+							"country": "AT",
+							"pageViews": 1
+						},
+						{
+							"country": "CH",
+							"pageViews": 1
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 47
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 16
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 15
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 13
+						},
+						{
+							"browser": "Edge",
+							"pageViews": 9
+						},
+						{
+							"browser": "Unknown",
+							"pageViews": 7
+						},
+						{
 							"browser": "ChromeMobile",
+							"pageViews": 2
+						},
+						{
+							"browser": "BingBot",
 							"pageViews": 1
 						}
 					]
 				},
 				"30d": {
-					"periodStart": "2026-04-15T07:27:14.227Z",
-					"periodEnd": "2026-05-15T07:27:14.227Z",
+					"periodStart": "2026-04-15T10:28:30.256Z",
+					"periodEnd": "2026-05-15T10:28:30.256Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 10
+							"pageViews": 300
+						},
+						{
+							"path": "/viewer",
+							"pageViews": 100
+						},
+						{
+							"path": "/generator/symmetric-inductor",
+							"pageViews": 80
+						},
+						{
+							"path": "/generator/spiral",
+							"pageViews": 60
+						},
+						{
+							"path": "/generator/mom-capacitor",
+							"pageViews": 30
+						},
+						{
+							"path": "/generator/symmetric-transformer",
+							"pageViews": 30
+						},
+						{
+							"path": "/embed/test",
+							"pageViews": 30
+						},
+						{
+							"path": "/generator/stacked-transformer",
+							"pageViews": 30
 						}
 					],
 					"topReferrers": [
+						{
+							"referrer": "rapidpassives.org",
+							"pageViews": 100
+						},
+						{
+							"referrer": "www.google.com",
+							"pageViews": 50
+						},
+						{
+							"referrer": "com.linkedin.android",
+							"pageViews": 40
+						},
+						{
+							"referrer": "statics.teams.cdn.office.net",
+							"pageViews": 10
+						},
 						{
 							"referrer": "milanrother.com",
 							"pageViews": 10
@@ -24134,13 +24021,117 @@
 					],
 					"topCountries": [
 						{
+							"country": "US",
+							"pageViews": 310
+						},
+						{
 							"country": "DE",
+							"pageViews": 50
+						},
+						{
+							"country": "JP",
+							"pageViews": 40
+						},
+						{
+							"country": "BE",
+							"pageViews": 40
+						},
+						{
+							"country": "EG",
+							"pageViews": 30
+						},
+						{
+							"country": "IN",
+							"pageViews": 30
+						},
+						{
+							"country": "CA",
+							"pageViews": 20
+						},
+						{
+							"country": "GR",
+							"pageViews": 20
+						},
+						{
+							"country": "SG",
+							"pageViews": 20
+						},
+						{
+							"country": "IT",
+							"pageViews": 20
+						},
+						{
+							"country": "NL",
+							"pageViews": 10
+						},
+						{
+							"country": "CZ",
+							"pageViews": 10
+						},
+						{
+							"country": "TW",
+							"pageViews": 10
+						},
+						{
+							"country": "BR",
+							"pageViews": 10
+						},
+						{
+							"country": "GB",
+							"pageViews": 10
+						},
+						{
+							"country": "CN",
+							"pageViews": 10
+						},
+						{
+							"country": "ES",
+							"pageViews": 10
+						},
+						{
+							"country": "KR",
 							"pageViews": 10
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
+							"pageViews": 350
+						},
+						{
+							"browser": "MobileSafari",
+							"pageViews": 70
+						},
+						{
+							"browser": "Edge",
+							"pageViews": 60
+						},
+						{
+							"browser": "Safari",
+							"pageViews": 50
+						},
+						{
+							"browser": "ChromeMobile",
+							"pageViews": 50
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 20
+						},
+						{
+							"browser": "Unknown",
+							"pageViews": 20
+						},
+						{
+							"browser": "Firefox",
+							"pageViews": 20
+						},
+						{
+							"browser": "BingBot",
+							"pageViews": 10
+						},
+						{
+							"browser": "SamsungInternet",
 							"pageViews": 10
 						}
 					]
@@ -24149,10 +24140,54 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 10
+					"pageViews": 300
+				},
+				{
+					"path": "/viewer",
+					"pageViews": 100
+				},
+				{
+					"path": "/generator/symmetric-inductor",
+					"pageViews": 80
+				},
+				{
+					"path": "/generator/spiral",
+					"pageViews": 60
+				},
+				{
+					"path": "/generator/mom-capacitor",
+					"pageViews": 30
+				},
+				{
+					"path": "/generator/symmetric-transformer",
+					"pageViews": 30
+				},
+				{
+					"path": "/embed/test",
+					"pageViews": 30
+				},
+				{
+					"path": "/generator/stacked-transformer",
+					"pageViews": 30
 				}
 			],
 			"topReferrers": [
+				{
+					"referrer": "rapidpassives.org",
+					"pageViews": 100
+				},
+				{
+					"referrer": "www.google.com",
+					"pageViews": 50
+				},
+				{
+					"referrer": "com.linkedin.android",
+					"pageViews": 40
+				},
+				{
+					"referrer": "statics.teams.cdn.office.net",
+					"pageViews": 10
+				},
 				{
 					"referrer": "milanrother.com",
 					"pageViews": 10
@@ -24160,13 +24195,117 @@
 			],
 			"topCountries": [
 				{
+					"country": "US",
+					"pageViews": 310
+				},
+				{
 					"country": "DE",
+					"pageViews": 50
+				},
+				{
+					"country": "JP",
+					"pageViews": 40
+				},
+				{
+					"country": "BE",
+					"pageViews": 40
+				},
+				{
+					"country": "EG",
+					"pageViews": 30
+				},
+				{
+					"country": "IN",
+					"pageViews": 30
+				},
+				{
+					"country": "CA",
+					"pageViews": 20
+				},
+				{
+					"country": "GR",
+					"pageViews": 20
+				},
+				{
+					"country": "SG",
+					"pageViews": 20
+				},
+				{
+					"country": "IT",
+					"pageViews": 20
+				},
+				{
+					"country": "NL",
+					"pageViews": 10
+				},
+				{
+					"country": "CZ",
+					"pageViews": 10
+				},
+				{
+					"country": "TW",
+					"pageViews": 10
+				},
+				{
+					"country": "BR",
+					"pageViews": 10
+				},
+				{
+					"country": "GB",
+					"pageViews": 10
+				},
+				{
+					"country": "CN",
+					"pageViews": 10
+				},
+				{
+					"country": "ES",
+					"pageViews": 10
+				},
+				{
+					"country": "KR",
 					"pageViews": 10
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "Chrome",
+					"pageViews": 350
+				},
+				{
+					"browser": "MobileSafari",
+					"pageViews": 70
+				},
+				{
+					"browser": "Edge",
+					"pageViews": 60
+				},
+				{
+					"browser": "Safari",
+					"pageViews": 50
+				},
+				{
+					"browser": "ChromeMobile",
+					"pageViews": 50
+				},
+				{
+					"browser": "ChromeHeadless",
+					"pageViews": 20
+				},
+				{
+					"browser": "Unknown",
+					"pageViews": 20
+				},
+				{
+					"browser": "Firefox",
+					"pageViews": 20
+				},
+				{
+					"browser": "BingBot",
+					"pageViews": 10
+				},
+				{
+					"browser": "SamsungInternet",
 					"pageViews": 10
 				}
 			]
@@ -25312,59 +25451,55 @@
 			"aggregates": {
 				"today": {
 					"periodStart": "2026-05-15T00:00:00.000Z",
-					"periodEnd": "2026-05-15T07:27:14.187Z",
+					"periodEnd": "2026-05-15T10:28:33.096Z",
 					"topPages": [],
 					"topReferrers": [],
 					"topCountries": [],
 					"topBrowsers": []
 				},
 				"4h": {
-					"periodStart": "2026-05-15T03:27:14.187Z",
-					"periodEnd": "2026-05-15T07:27:14.187Z",
+					"periodStart": "2026-05-15T06:28:33.096Z",
+					"periodEnd": "2026-05-15T10:28:33.096Z",
 					"topPages": [],
 					"topReferrers": [],
 					"topCountries": [],
 					"topBrowsers": []
 				},
 				"24h": {
-					"periodStart": "2026-05-14T07:27:14.187Z",
-					"periodEnd": "2026-05-15T07:27:14.187Z",
+					"periodStart": "2026-05-14T10:28:33.096Z",
+					"periodEnd": "2026-05-15T10:28:33.096Z",
 					"topPages": [
 						{
 							"path": "/app",
-							"pageViews": 5
+							"pageViews": 3
 						}
 					],
 					"topReferrers": [
 						{
 							"referrer": "view.pathsim.org",
-							"pageViews": 3
+							"pageViews": 2
 						},
 						{
 							"referrer": "code.pathsim.org",
-							"pageViews": 2
+							"pageViews": 1
 						}
 					],
 					"topCountries": [
 						{
 							"country": "IE",
 							"pageViews": 3
-						},
-						{
-							"country": "RS",
-							"pageViews": 2
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 5
+							"pageViews": 3
 						}
 					]
 				},
 				"7d": {
-					"periodStart": "2026-05-08T07:27:14.187Z",
-					"periodEnd": "2026-05-15T07:27:14.187Z",
+					"periodStart": "2026-05-08T10:28:33.096Z",
+					"periodEnd": "2026-05-15T10:28:33.096Z",
 					"topPages": [
 						{
 							"path": "/app",
@@ -25479,12 +25614,12 @@
 					]
 				},
 				"30d": {
-					"periodStart": "2026-04-15T07:27:14.187Z",
-					"periodEnd": "2026-05-15T07:27:14.187Z",
+					"periodStart": "2026-04-15T10:28:33.096Z",
+					"periodEnd": "2026-05-15T10:28:33.096Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 120
+							"pageViews": 110
 						},
 						{
 							"path": "/app",
@@ -25511,15 +25646,15 @@
 							"pageViews": 60
 						},
 						{
-							"country": "CN",
-							"pageViews": 30
-						},
-						{
 							"country": "FR",
 							"pageViews": 20
 						},
 						{
 							"country": "AT",
+							"pageViews": 20
+						},
+						{
+							"country": "CN",
 							"pageViews": 20
 						},
 						{
@@ -25565,11 +25700,11 @@
 							"pageViews": 20
 						},
 						{
-							"browser": "ChromeMobileWebview",
-							"pageViews": 20
+							"browser": "BingBot",
+							"pageViews": 10
 						},
 						{
-							"browser": "BingBot",
+							"browser": "ChromeMobileWebview",
 							"pageViews": 10
 						}
 					]
@@ -25578,7 +25713,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 120
+					"pageViews": 110
 				},
 				{
 					"path": "/app",
@@ -25605,15 +25740,15 @@
 					"pageViews": 60
 				},
 				{
-					"country": "CN",
-					"pageViews": 30
-				},
-				{
 					"country": "FR",
 					"pageViews": 20
 				},
 				{
 					"country": "AT",
+					"pageViews": 20
+				},
+				{
+					"country": "CN",
 					"pageViews": 20
 				},
 				{
@@ -25659,11 +25794,11 @@
 					"pageViews": 20
 				},
 				{
-					"browser": "ChromeMobileWebview",
-					"pageViews": 20
+					"browser": "BingBot",
+					"pageViews": 10
 				},
 				{
-					"browser": "BingBot",
+					"browser": "ChromeMobileWebview",
 					"pageViews": 10
 				}
 			]
@@ -28236,6 +28371,16 @@
 					"datetime": "2026-05-15T04:00:00",
 					"pageViews": 1,
 					"visits": 1
+				},
+				{
+					"datetime": "2026-05-15T08:00:00",
+					"pageViews": 4,
+					"visits": 4
+				},
+				{
+					"datetime": "2026-05-15T12:00:00",
+					"pageViews": 8,
+					"visits": 8
 				}
 			],
 			"dailyAggregates": [
@@ -28980,15 +29125,15 @@
 			"aggregates": {
 				"today": {
 					"periodStart": "2026-05-15T00:00:00.000Z",
-					"periodEnd": "2026-05-15T07:27:14.184Z",
+					"periodEnd": "2026-05-15T10:28:33.081Z",
 					"topPages": [
 						{
-							"path": "/dashboard/",
-							"pageViews": 3
+							"path": "/",
+							"pageViews": 7
 						},
 						{
-							"path": "/",
-							"pageViews": 1
+							"path": "/dashboard/",
+							"pageViews": 6
 						}
 					],
 					"topReferrers": [
@@ -29000,17 +29145,29 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 3
+							"pageViews": 7
+						},
+						{
+							"country": "US",
+							"pageViews": 4
 						},
 						{
 							"country": "JP",
-							"pageViews": 1
+							"pageViews": 2
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 3
+							"pageViews": 6
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 4
+						},
+						{
+							"browser": "Chrome",
+							"pageViews": 2
 						},
 						{
 							"browser": "Edge",
@@ -29019,70 +29176,86 @@
 					]
 				},
 				"4h": {
-					"periodStart": "2026-05-15T03:27:14.184Z",
-					"periodEnd": "2026-05-15T07:27:14.184Z",
+					"periodStart": "2026-05-15T06:28:33.081Z",
+					"periodEnd": "2026-05-15T10:28:33.081Z",
 					"topPages": [
 						{
 							"path": "/dashboard/",
-							"pageViews": 3
+							"pageViews": 6
+						},
+						{
+							"path": "/",
+							"pageViews": 6
 						}
 					],
 					"topReferrers": [],
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 3
-						}
-					],
-					"topBrowsers": [
-						{
-							"browser": "ChromeMobile",
-							"pageViews": 3
-						}
-					]
-				},
-				"24h": {
-					"periodStart": "2026-05-14T07:27:14.184Z",
-					"periodEnd": "2026-05-15T07:27:14.184Z",
-					"topPages": [
-						{
-							"path": "/",
-							"pageViews": 13
-						},
-						{
-							"path": "/dashboard/",
-							"pageViews": 12
-						}
-					],
-					"topReferrers": [
-						{
-							"referrer": "pathsim.org",
-							"pageViews": 5
-						},
-						{
-							"referrer": "127.0.0.1",
-							"pageViews": 1
-						},
-						{
-							"referrer": "milanrother.com",
-							"pageViews": 1
-						}
-					],
-					"topCountries": [
-						{
-							"country": "DE",
-							"pageViews": 17
+							"pageViews": 7
 						},
 						{
 							"country": "US",
 							"pageViews": 4
 						},
 						{
-							"country": "RU",
+							"country": "JP",
+							"pageViews": 1
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "ChromeMobile",
+							"pageViews": 6
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 4
+						},
+						{
+							"browser": "Chrome",
 							"pageViews": 2
+						}
+					]
+				},
+				"24h": {
+					"periodStart": "2026-05-14T10:28:33.081Z",
+					"periodEnd": "2026-05-15T10:28:33.081Z",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 15
+						},
+						{
+							"path": "/dashboard/",
+							"pageViews": 11
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "pathsim.org",
+							"pageViews": 4
+						},
+						{
+							"referrer": "127.0.0.1",
+							"pageViews": 1
+						}
+					],
+					"topCountries": [
+						{
+							"country": "DE",
+							"pageViews": 14
+						},
+						{
+							"country": "US",
+							"pageViews": 8
 						},
 						{
 							"country": "JP",
+							"pageViews": 2
+						},
+						{
+							"country": "RU",
 							"pageViews": 1
 						},
 						{
@@ -29093,11 +29266,15 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 12
+							"pageViews": 10
 						},
 						{
 							"browser": "ChromeMobile",
 							"pageViews": 9
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 4
 						},
 						{
 							"browser": "Edge",
@@ -29105,17 +29282,17 @@
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 2
+							"pageViews": 1
 						}
 					]
 				},
 				"7d": {
-					"periodStart": "2026-05-08T07:27:14.184Z",
-					"periodEnd": "2026-05-15T07:27:14.184Z",
+					"periodStart": "2026-05-08T10:28:33.081Z",
+					"periodEnd": "2026-05-15T10:28:33.081Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 85
+							"pageViews": 88
 						},
 						{
 							"path": "/dashboard/",
@@ -29175,19 +29352,19 @@
 						},
 						{
 							"country": "US",
-							"pageViews": 27
+							"pageViews": 31
 						},
 						{
 							"country": "RU",
 							"pageViews": 7
 						},
 						{
-							"country": "FR",
+							"country": "SG",
 							"pageViews": 4
 						},
 						{
-							"country": "SG",
-							"pageViews": 4
+							"country": "FR",
+							"pageViews": 3
 						},
 						{
 							"country": "BR",
@@ -29198,7 +29375,7 @@
 							"pageViews": 2
 						},
 						{
-							"country": "IE",
+							"country": "JP",
 							"pageViews": 2
 						},
 						{
@@ -29206,15 +29383,15 @@
 							"pageViews": 2
 						},
 						{
-							"country": "JP",
-							"pageViews": 1
-						},
-						{
 							"country": "DK",
 							"pageViews": 1
 						},
 						{
 							"country": "AT",
+							"pageViews": 1
+						},
+						{
+							"country": "IE",
 							"pageViews": 1
 						},
 						{
@@ -29233,15 +29410,19 @@
 					"topBrowsers": [
 						{
 							"browser": "Chrome",
-							"pageViews": 105
+							"pageViews": 102
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 24
+							"pageViews": 27
 						},
 						{
 							"browser": "MobileSafari",
-							"pageViews": 14
+							"pageViews": 13
+						},
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 6
 						},
 						{
 							"browser": "Edge",
@@ -29256,10 +29437,6 @@
 							"pageViews": 3
 						},
 						{
-							"browser": "ChromeHeadless",
-							"pageViews": 2
-						},
-						{
 							"browser": "BingBot",
 							"pageViews": 1
 						},
@@ -29270,8 +29447,8 @@
 					]
 				},
 				"30d": {
-					"periodStart": "2026-04-15T07:27:14.184Z",
-					"periodEnd": "2026-05-15T07:27:14.184Z",
+					"periodStart": "2026-04-15T10:28:33.081Z",
+					"periodEnd": "2026-05-15T10:28:33.081Z",
 					"topPages": [
 						{
 							"path": "/",
@@ -29279,7 +29456,7 @@
 						},
 						{
 							"path": "/dashboard/",
-							"pageViews": 140
+							"pageViews": 150
 						}
 					],
 					"topReferrers": [
@@ -29315,7 +29492,7 @@
 					"topCountries": [
 						{
 							"country": "DE",
-							"pageViews": 190
+							"pageViews": 200
 						},
 						{
 							"country": "FR",
@@ -29358,11 +29535,11 @@
 							"pageViews": 10
 						},
 						{
-							"country": "IT",
+							"country": "CN",
 							"pageViews": 10
 						},
 						{
-							"country": "CN",
+							"country": "IT",
 							"pageViews": 10
 						}
 					],
@@ -29377,7 +29554,7 @@
 						},
 						{
 							"browser": "ChromeMobile",
-							"pageViews": 60
+							"pageViews": 70
 						},
 						{
 							"browser": "Firefox",
@@ -29405,7 +29582,7 @@
 				},
 				{
 					"path": "/dashboard/",
-					"pageViews": 140
+					"pageViews": 150
 				}
 			],
 			"topReferrers": [
@@ -29441,7 +29618,7 @@
 			"topCountries": [
 				{
 					"country": "DE",
-					"pageViews": 190
+					"pageViews": 200
 				},
 				{
 					"country": "FR",
@@ -29484,11 +29661,11 @@
 					"pageViews": 10
 				},
 				{
-					"country": "IT",
+					"country": "CN",
 					"pageViews": 10
 				},
 				{
-					"country": "CN",
+					"country": "IT",
 					"pageViews": 10
 				}
 			],
@@ -29503,7 +29680,7 @@
 				},
 				{
 					"browser": "ChromeMobile",
-					"pageViews": 60
+					"pageViews": 70
 				},
 				{
 					"browser": "Firefox",
@@ -29718,21 +29895,25 @@
 			"aggregates": {
 				"today": {
 					"periodStart": "2026-05-15T00:00:00.000Z",
-					"periodEnd": "2026-05-15T07:27:14.223Z",
+					"periodEnd": "2026-05-15T10:28:33.142Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1
+							"pageViews": 3
 						}
 					],
 					"topReferrers": [],
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 1
+							"pageViews": 3
 						}
 					],
 					"topBrowsers": [
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 2
+						},
 						{
 							"browser": "Chrome",
 							"pageViews": 1
@@ -29740,71 +29921,62 @@
 					]
 				},
 				"4h": {
-					"periodStart": "2026-05-15T03:27:14.223Z",
-					"periodEnd": "2026-05-15T07:27:14.223Z",
+					"periodStart": "2026-05-15T06:28:33.142Z",
+					"periodEnd": "2026-05-15T10:28:33.142Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 1
+							"pageViews": 2
 						}
 					],
 					"topReferrers": [],
 					"topCountries": [
 						{
 							"country": "US",
-							"pageViews": 1
+							"pageViews": 2
 						}
 					],
 					"topBrowsers": [
 						{
-							"browser": "Chrome",
-							"pageViews": 1
+							"browser": "ChromeHeadless",
+							"pageViews": 2
 						}
 					]
 				},
 				"24h": {
-					"periodStart": "2026-05-14T07:27:14.223Z",
-					"periodEnd": "2026-05-15T07:27:14.223Z",
+					"periodStart": "2026-05-14T10:28:33.142Z",
+					"periodEnd": "2026-05-15T10:28:33.142Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 2
-						},
-						{
-							"path": "/app",
-							"pageViews": 1
+							"pageViews": 3
 						}
 					],
-					"topReferrers": [
-						{
-							"referrer": "milanrother.com",
-							"pageViews": 2
-						}
-					],
+					"topReferrers": [],
 					"topCountries": [
 						{
-							"country": "DE",
-							"pageViews": 2
-						},
-						{
 							"country": "US",
-							"pageViews": 1
+							"pageViews": 3
 						}
 					],
 					"topBrowsers": [
 						{
+							"browser": "ChromeHeadless",
+							"pageViews": 2
+						},
+						{
 							"browser": "Chrome",
-							"pageViews": 3
+							"pageViews": 1
 						}
 					]
 				},
 				"7d": {
-					"periodStart": "2026-05-08T07:27:14.223Z",
-					"periodEnd": "2026-05-15T07:27:14.223Z",
+					"periodStart": "2026-05-08T10:28:33.142Z",
+					"periodEnd": "2026-05-15T10:28:33.142Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 28
+							"pageViews": 30
 						},
 						{
 							"path": "/app",
@@ -29824,7 +29996,7 @@
 						},
 						{
 							"country": "US",
-							"pageViews": 14
+							"pageViews": 16
 						},
 						{
 							"country": "CA",
@@ -29834,7 +30006,7 @@
 					"topBrowsers": [
 						{
 							"browser": "ChromeHeadless",
-							"pageViews": 18
+							"pageViews": 20
 						},
 						{
 							"browser": "Chrome",
@@ -29855,12 +30027,12 @@
 					]
 				},
 				"30d": {
-					"periodStart": "2026-04-15T07:27:14.223Z",
-					"periodEnd": "2026-05-15T07:27:14.223Z",
+					"periodStart": "2026-04-15T10:28:33.142Z",
+					"periodEnd": "2026-05-15T10:28:33.142Z",
 					"topPages": [
 						{
 							"path": "/",
-							"pageViews": 50
+							"pageViews": 60
 						},
 						{
 							"path": "/app",
@@ -29875,13 +30047,13 @@
 						},
 						{
 							"country": "US",
-							"pageViews": 10
+							"pageViews": 20
 						}
 					],
 					"topBrowsers": [
 						{
 							"browser": "ChromeHeadless",
-							"pageViews": 40
+							"pageViews": 50
 						},
 						{
 							"browser": "Edge",
@@ -29897,7 +30069,7 @@
 			"topPages": [
 				{
 					"path": "/",
-					"pageViews": 50
+					"pageViews": 60
 				},
 				{
 					"path": "/app",
@@ -29912,18 +30084,184 @@
 				},
 				{
 					"country": "US",
-					"pageViews": 10
+					"pageViews": 20
 				}
 			],
 			"topBrowsers": [
 				{
 					"browser": "ChromeHeadless",
-					"pageViews": 40
+					"pageViews": 50
 				},
 				{
 					"browser": "Edge",
 					"pageViews": 10
 				},
+				{
+					"browser": "Chrome",
+					"pageViews": 10
+				}
+			]
+		},
+		"fast.pathsim.org": {
+			"name": "fast.pathsim.org",
+			"color": "#D14129",
+			"timeseries": [
+				{
+					"datetime": "2026-05-14T12:00:00",
+					"pageViews": 10,
+					"visits": 10
+				}
+			],
+			"dailyAggregates": [
+				{
+					"date": "2026-05-14",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "milanrother.com",
+							"pageViews": 10
+						}
+					],
+					"topCountries": [
+						{
+							"country": "DE",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 10
+						}
+					]
+				}
+			],
+			"aggregates": {
+				"today": {
+					"periodStart": "2026-05-15T00:00:00.000Z",
+					"periodEnd": "2026-05-15T10:28:33.351Z",
+					"topPages": [],
+					"topReferrers": [],
+					"topCountries": [],
+					"topBrowsers": []
+				},
+				"4h": {
+					"periodStart": "2026-05-15T06:28:33.351Z",
+					"periodEnd": "2026-05-15T10:28:33.351Z",
+					"topPages": [],
+					"topReferrers": [],
+					"topCountries": [],
+					"topBrowsers": []
+				},
+				"24h": {
+					"periodStart": "2026-05-14T10:28:33.351Z",
+					"periodEnd": "2026-05-15T10:28:33.351Z",
+					"topPages": [],
+					"topReferrers": [],
+					"topCountries": [],
+					"topBrowsers": []
+				},
+				"7d": {
+					"periodStart": "2026-05-08T10:28:33.351Z",
+					"periodEnd": "2026-05-15T10:28:33.351Z",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 21
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "milanrother.com",
+							"pageViews": 4
+						},
+						{
+							"referrer": "localhost",
+							"pageViews": 1
+						}
+					],
+					"topCountries": [
+						{
+							"country": "US",
+							"pageViews": 10
+						},
+						{
+							"country": "DE",
+							"pageViews": 10
+						},
+						{
+							"country": "BR",
+							"pageViews": 1
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "ChromeHeadless",
+							"pageViews": 12
+						},
+						{
+							"browser": "Chrome",
+							"pageViews": 8
+						},
+						{
+							"browser": "ChromeMobile",
+							"pageViews": 1
+						}
+					]
+				},
+				"30d": {
+					"periodStart": "2026-04-15T10:28:33.351Z",
+					"periodEnd": "2026-05-15T10:28:33.351Z",
+					"topPages": [
+						{
+							"path": "/",
+							"pageViews": 10
+						}
+					],
+					"topReferrers": [
+						{
+							"referrer": "milanrother.com",
+							"pageViews": 10
+						}
+					],
+					"topCountries": [
+						{
+							"country": "DE",
+							"pageViews": 10
+						}
+					],
+					"topBrowsers": [
+						{
+							"browser": "Chrome",
+							"pageViews": 10
+						}
+					]
+				}
+			},
+			"topPages": [
+				{
+					"path": "/",
+					"pageViews": 10
+				}
+			],
+			"topReferrers": [
+				{
+					"referrer": "milanrother.com",
+					"pageViews": 10
+				}
+			],
+			"topCountries": [
+				{
+					"country": "DE",
+					"pageViews": 10
+				}
+			],
+			"topBrowsers": [
 				{
 					"browser": "Chrome",
 					"pageViews": 10
