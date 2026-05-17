@@ -10,7 +10,7 @@ export interface GitHubStats {
 	pysimhub: { projects: number; members?: number; cumulativeStars: number };
 }
 
-export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'footer-line' | 'content' | 'form-field';
+export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-thesisos' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-thesisos' | 'footer-line' | 'content' | 'form-field';
 
 export interface ContentRegion {
 	type: RegionType;
@@ -22,7 +22,7 @@ export interface ContentRegion {
 	tiles?: { id: string; label: string }[]; // individual framed tiles laid out side-by-side (or stacked on mobile)
 	url?: string; // for links within text
 	label?: string; // frame title for embedded blocks
-	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim'; // project color for frame
+	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos'; // project color for frame
 	align?: 'center' | 'left';
 }
 
@@ -92,6 +92,11 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		type: 'embedded', lines: [], frameColor: 'fastsim',
 		embeddedRows: 10, embeddedCols: 42, align: 'center',
 		tiles: [{ id: 'fastsim-org', label: 'FastSim' }]
+	},
+	thesisos: {
+		type: 'embedded', lines: [], frameColor: 'thesisos',
+		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		tiles: [{ id: 'thesisos-landing', label: 'Landing' }, { id: 'thesisos-library', label: 'Library' }]
 	}
 };
 
@@ -102,7 +107,8 @@ const LINK_LINE_TYPES: Record<string, RegionType> = {
 	rapidpassives: 'link-line-rapidpassives',
 	rapidfem: 'link-line-rapidpassives',
 	scidata: 'link-line-scidata',
-	fastsim: 'link-line-fastsim'
+	fastsim: 'link-line-fastsim',
+	thesisos: 'link-line-thesisos'
 };
 
 const HEADING_TYPES: Record<string, RegionType> = {
@@ -111,7 +117,8 @@ const HEADING_TYPES: Record<string, RegionType> = {
 	rapidpassives: 'heading-rapidpassives',
 	rapidfem: 'heading-rapidpassives',
 	scidata: 'heading-scidata',
-	fastsim: 'heading-fastsim'
+	fastsim: 'heading-fastsim',
+	thesisos: 'heading-thesisos'
 };
 
 // --- Section builders ---

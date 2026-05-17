@@ -24,7 +24,9 @@ const sites = [
 	{ id: 'rapidfem-editor', url: 'https://fem.rapidpassives.org/notebook?example=iris_filter', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 },
 	{ id: 'scidata-io', url: 'https://scidata.io', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 },
 	{ id: 'scidata-app', url: 'https://scidata.io/app?template=peak-detection', darkOnly: true, waitUntil: 'networkidle2', timeout: 120000, extraWaitMs: 15000 },
-	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000 }
+	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000 },
+	{ id: 'thesisos-landing', url: 'https://thesisos.io/?static=true', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 },
+	{ id: 'thesisos-library', url: 'https://thesisos.io/library', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 }
 ];
 
 const themes = ['dark', 'light'];

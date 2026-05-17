@@ -291,6 +291,19 @@
 	color: #D14129;
 }
 
+.code-grid-heading-thesisos {
+	color: #6b8afd;
+	font-weight: bold;
+}
+
+.code-grid-link-thesisos {
+	color: #6b8afd;
+}
+
+.code-grid-frame-thesisos {
+	color: #6b8afd;
+}
+
 /* Hovered word highlight: brightens the filler token under the cursor */
 .hovered-word {
 	position: absolute;

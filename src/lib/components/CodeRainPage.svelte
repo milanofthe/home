@@ -23,7 +23,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos';
 		themeParam?: boolean;
 	}
 
@@ -37,7 +37,9 @@
 		'rapidfem-editor': { name: 'Iris Filter', url: 'https://fem.rapidpassives.org/notebook?example=iris_filter', screenshot: '/screenshots/rapidfem-editor.png', color: 'rapidpassives', themeParam: false },
 		'scidata-io': { name: 'SciData', url: 'https://scidata.io', screenshot: '/screenshots/scidata-io.png', color: 'scidata', themeParam: false },
 		'scidata-app': { name: 'Canvas', url: 'https://scidata.io/app', screenshot: '/screenshots/scidata-app.png', color: 'scidata', themeParam: false },
-		'fastsim-org': { name: 'FastSim', url: 'https://fast.pathsim.org', screenshot: '/screenshots/fastsim-org.png', color: 'fastsim' }
+		'fastsim-org': { name: 'FastSim', url: 'https://fast.pathsim.org', screenshot: '/screenshots/fastsim-org.png', color: 'fastsim' },
+		'thesisos-landing': { name: 'Landing', url: 'https://thesisos.io', screenshot: '/screenshots/thesisos-landing.png', color: 'thesisos', themeParam: false },
+		'thesisos-library': { name: 'Library', url: 'https://thesisos.io/library', screenshot: '/screenshots/thesisos-library.png', color: 'thesisos', themeParam: false }
 	};
 
 	// Video tile data
@@ -111,6 +113,7 @@
 		{ text: 'pathsim.org', types: ['link-pathsim'], href: 'https://pathsim.org' },
 		{ text: 'view.pathsim.org', types: ['link-pathsim'], href: 'https://view.pathsim.org' },
 		{ text: 'pysimhub.io', types: ['link-pysimhub'], href: 'https://pysimhub.io' },
+		{ text: 'thesisos.io', types: ['link-thesisos'], href: 'https://thesisos.io' },
 	];
 
 	let clickOverlays = $derived.by((): ClickOverlay[] => {

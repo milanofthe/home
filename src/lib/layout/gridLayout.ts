@@ -5,7 +5,7 @@ import { FILLER_SOURCE } from '$lib/data/filler-source';
 import { contentSections, type ContentSection, type ContentRegion } from './contentRegions';
 export type { ContentSection };
 
-export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim';
+export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-thesisos' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'link-thesisos' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim' | 'frame-thesisos';
 
 export interface Cell {
 	char: string;
@@ -56,7 +56,7 @@ function wordWrap(text: string, maxWidth: number): string[] {
 
 // Types that should be word-wrapped when lines exceed available width
 const WRAPPABLE_TYPES: Set<string> = new Set([
-	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'link-line-rapidpassives', 'link-line-scidata', 'link-line-fastsim', 'footer-line'
+	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'link-line-rapidpassives', 'link-line-scidata', 'link-line-fastsim', 'link-line-thesisos', 'footer-line'
 ]);
 
 // Fill a line with filler source characters, cycling through the source
@@ -170,6 +170,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 			region.type === 'heading-rapidpassives' ? 'heading-rapidpassives' :
 			region.type === 'heading-scidata' ? 'heading-scidata' :
 			region.type === 'heading-fastsim' ? 'heading-fastsim' :
+			region.type === 'heading-thesisos' ? 'heading-thesisos' :
 			region.type === 'cta' ? 'cta' :
 			region.type === 'link-line' ? 'link' :
 			region.type === 'link-line-pathsim' ? 'link-pathsim' :
@@ -177,6 +178,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 			region.type === 'link-line-rapidpassives' ? 'link-rapidpassives' :
 			region.type === 'link-line-scidata' ? 'link-scidata' :
 			region.type === 'link-line-fastsim' ? 'link-fastsim' :
+			region.type === 'link-line-thesisos' ? 'link-thesisos' :
 			region.type === 'footer-line' ? 'footer' :
 			region.type === 'form-field' ? 'form-field' :
 			'content';
@@ -194,6 +196,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 				region.frameColor === 'rapidpassives' ? 'frame-rapidpassives' :
 				region.frameColor === 'scidata' ? 'frame-scidata' :
 				region.frameColor === 'fastsim' ? 'frame-fastsim' :
+				region.frameColor === 'thesisos' ? 'frame-thesisos' :
 				'frame';
 			const innerRows = region.embeddedRows || 10;
 

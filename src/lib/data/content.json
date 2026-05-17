@@ -87,6 +87,15 @@
 					"A node-based environment for scientific data analysis. Drop a CSV, chain pandas, scipy, statsmodels and plotly blocks; the pipeline is a declarative graph that compiles to plain Python."
 				],
 				"statsText": "scidata.io"
+			},
+			{
+				"id": "thesisos",
+				"heading": "ThesisOS",
+				"headingType": "thesisos",
+				"paragraphs": [
+					"A local-first literature manager for researchers. Ingest PDFs, search them semantically, and trace citations across your library."
+				],
+				"statsText": "thesisos.io"
 			}
 		]
 	},
