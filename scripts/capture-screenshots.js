@@ -14,19 +14,24 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SCREENSHOTS_DIR = join(__dirname, '..', 'static', 'screenshots');
 
+// Per-site capture config. `extraWaitMs` is the post-load settle time —
+// bump it for sites that boot WASM, Pyodide, or otherwise need time after
+// networkidle to actually render content (the GitHub-Pages 404 on SPA
+// routes still serves the SPA shell, so what matters is in-browser render
+// time, not the HTTP status).
 const sites = [
 	{ id: 'pathsim-org', url: 'https://pathsim.org' },
 	{ id: 'docs-pathsim-org', url: 'https://docs.pathsim.org' },
 	{ id: 'view-pathsim-org', url: 'https://view.pathsim.org' },
 	{ id: 'pysimhub-io', url: 'https://pysimhub.io' },
 	{ id: 'pysimhub-pathsim', url: 'https://pysimhub.io/projects/pathsim/' },
-	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000 },
-	{ id: 'rapidfem-editor', url: 'https://fem.rapidpassives.org/notebook?example=iris_filter', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 },
-	{ id: 'scidata-io', url: 'https://scidata.io', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 },
-	{ id: 'scidata-app', url: 'https://scidata.io/app?template=peak-detection', darkOnly: true, waitUntil: 'networkidle2', timeout: 120000, extraWaitMs: 15000 },
-	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000 },
-	{ id: 'thesisos-landing', url: 'https://thesisos.io/?static=true', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 },
-	{ id: 'thesisos-library', url: 'https://thesisos.io/library', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000 }
+	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000, extraWaitMs: 12000 },
+	{ id: 'rapidfem-editor', url: 'https://fem.rapidpassives.org/notebook?example=iris_filter', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 20000 },
+	{ id: 'scidata-io', url: 'https://scidata.io', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
+	{ id: 'scidata-app', url: 'https://scidata.io/app?template=peak-detection', darkOnly: true, waitUntil: 'networkidle2', timeout: 120000, extraWaitMs: 20000 },
+	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 12000 },
+	{ id: 'thesisos-landing', url: 'https://thesisos.io/?static=true', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
+	{ id: 'thesisos-library', url: 'https://thesisos.io/library', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 20000 }
 ];
 
 const themes = ['dark', 'light'];
@@ -42,9 +47,10 @@ async function captureScreenshot(browser, site, theme) {
 
 	try {
 		await page.goto(url, { waitUntil: site.waitUntil || 'networkidle2', timeout: site.timeout || 30000 });
-		// Default settle wait — most sites are done after 4 s. Per-site override
-		// for pages that need longer (e.g. Pyodide boot + template apply + plot render).
-		const settleMs = site.extraWaitMs ?? 4000;
+		// Default settle wait — even after networkidle most sites still have
+		// post-mount work to do (hydration, fonts, late images). Per-site
+		// extraWaitMs covers WASM boot, Pyodide, FEM solvers, lazy thumbnails.
+		const settleMs = site.extraWaitMs ?? 8000;
 		await new Promise((resolve) => setTimeout(resolve, settleMs));
 
 		const filename = `${site.id}-${theme}.png`;
