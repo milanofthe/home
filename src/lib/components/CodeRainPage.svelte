@@ -66,19 +66,32 @@
 		return map;
 	});
 
+	const FORMSPARK_FORM_ID = '6bMmIUb3i';
+	const FORMSPARK_ACTION = `https://submit-form.com/${FORMSPARK_FORM_ID}`;
+
 	async function handleFormSubmit() {
 		formStatus = 'submitting';
 		const form = document.getElementById('grid-contact-form') as HTMLFormElement;
 		if (!form) return;
 		const formData = new FormData(form);
+		// JSON, not multipart/form-data: Formspark currently rejects
+		// multipart bodies with `formspark-status: empty` and drops the
+		// submission, even though it answers 200.
+		const payload: Record<string, string> = {};
+		for (const [key, value] of formData.entries()) {
+			payload[key] = typeof value === 'string' ? value : '';
+		}
 		try {
-			const response = await fetch('https://api.web3forms.com/submit', {
+			const response = await fetch(FORMSPARK_ACTION, {
 				method: 'POST',
-				body: formData
+				body: JSON.stringify(payload),
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json'
+				}
 			});
-			const data = await response.json();
-			formStatus = data.success ? 'success' : 'error';
-			if (data.success) form.reset();
+			formStatus = response.ok ? 'success' : 'error';
+			if (response.ok) form.reset();
 		} catch {
 			formStatus = 'error';
 		}
@@ -486,9 +499,12 @@
 
 		<!-- Inline form inputs -->
 		<form id="grid-contact-form" class="form-inputs-layer">
-			<input type="hidden" name="access_key" value="6b5ed4bf-68a0-45cc-9b44-f89d78af8a94" />
-			<input type="hidden" name="subject" value="New contact from milanrother.com" />
-			<input type="hidden" name="from_name" value="Website Contact Form" />
+			<!-- Formspark reserved fields: `_email.subject` is the notification
+			     mail's subject line in my inbox; `_gotcha` is the honeypot
+			     (bots fill it, real users don't — non-empty drops the
+			     submission server-side). -->
+			<input type="hidden" name="_email.subject" value="New contact from milanrother.com" />
+			<input type="text" name="_gotcha" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;" />
 
 			{#if formFieldMap.has('field-name')}
 				{@const f = formFieldMap.get('field-name')!}

@@ -26,11 +26,22 @@
 		const form = event.target as HTMLFormElement;
 		const formData = new FormData(form);
 
+		// JSON, not multipart/form-data: Formspark currently rejects
+		// multipart bodies with `formspark-status: empty` and drops the
+		// submission, even though it answers 200.
+		const payload: Record<string, string> = {};
+		for (const [key, value] of formData.entries()) {
+			payload[key] = typeof value === 'string' ? value : '';
+		}
+
 		try {
 			const response = await fetch(FORMSPARK_ACTION, {
 				method: 'POST',
-				body: formData,
-				headers: { Accept: 'application/json' }
+				body: JSON.stringify(payload),
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json'
+				}
 			});
 			if (response.ok) {
 				formStatus = 'success';
