@@ -36,7 +36,7 @@ jobs:
           args: >-
             --verbose
             --no-progress
-            --base 'https://milanrother.com'
+            --root-dir ${{ github.workspace }}/build
             --accept 200,204,301,302,403,429
             --timeout 30
             --max-retries 3
