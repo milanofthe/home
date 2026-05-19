@@ -39,6 +39,7 @@ jobs:
           CF_SITE_TAG_CODEGEN: ${{ secrets.CF_SITE_TAG_CODEGEN }}
           CF_SITE_TAG_SCIDATA: ${{ secrets.CF_SITE_TAG_SCIDATA }}
           CF_SITE_TAG_FASTSIM: ${{ secrets.CF_SITE_TAG_FASTSIM }}
+          CF_SITE_TAG_RAPIDFEM: ${{ secrets.CF_SITE_TAG_RAPIDFEM }}
 
       - name: Fetch GitHub stats
         run: npm run fetch-stats
