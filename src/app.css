@@ -57,6 +57,12 @@
 		scroll-behavior: smooth;
 	}
 
+	/* Prevent horizontal scrollbar from full-bleed elements that use 100vw
+	   (100vw includes the vertical scrollbar width). */
+	body {
+		overflow-x: clip;
+	}
+
 	::selection {
 		background-color: rgba(0, 217, 192, 0.3);
 		color: #f0efe9;
