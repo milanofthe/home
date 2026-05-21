@@ -55,6 +55,7 @@
 
 	// Contact form state
 	let formStatus = $state<'idle' | 'submitting' | 'success' | 'error'>('idle');
+	let formMessage = $state('');
 
 	// Form field positions from layout
 	let formFieldMap = $derived.by(() => {
@@ -70,9 +71,31 @@
 	const FORMSPARK_ACTION = `https://submit-form.com/${FORMSPARK_FORM_ID}`;
 
 	async function handleFormSubmit() {
-		formStatus = 'submitting';
 		const form = document.getElementById('grid-contact-form') as HTMLFormElement;
 		if (!form) return;
+
+		// Validate inline, in the page's own style. The native browser
+		// validation popover is an OS-styled box that clashes with the grid,
+		// and the [ SEND MESSAGE ] button sits outside <form> anyway — so
+		// constraint checks run here and report through the status line.
+		const field = (name: string) => {
+			const el = form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | null;
+			return (el?.value ?? '').trim();
+		};
+		if (!field('name') || !field('email') || !field('subject') || !field('message')) {
+			formStatus = 'error';
+			formMessage = '> all fields are required';
+			return;
+		}
+		// type="email" still accepts "a@b" — insist on a domain with a dot.
+		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field('email'))) {
+			formStatus = 'error';
+			formMessage = '> that email address looks off';
+			return;
+		}
+
+		formStatus = 'submitting';
+		formMessage = '> sending message...';
 		const formData = new FormData(form);
 		// JSON, not multipart/form-data: Formspark currently rejects
 		// multipart bodies with `formspark-status: empty` and drops the
@@ -90,10 +113,25 @@
 					Accept: 'application/json'
 				}
 			});
-			formStatus = response.ok ? 'success' : 'error';
-			if (response.ok) form.reset();
+			if (response.ok) {
+				formStatus = 'success';
+				formMessage = '> message sent — talk soon';
+				form.reset();
+			} else {
+				formStatus = 'error';
+				formMessage = '> send failed — email info@milanrother.com';
+			}
 		} catch {
 			formStatus = 'error';
+			formMessage = '> send failed — email info@milanrother.com';
+		}
+	}
+
+	// Clears a stale status message as soon as the user edits a field.
+	function handleFormInput() {
+		if (formStatus === 'success' || formStatus === 'error') {
+			formStatus = 'idle';
+			formMessage = '';
 		}
 	}
 
@@ -154,6 +192,9 @@
 		}
 		return overlays;
 	});
+
+	// The SEND MESSAGE overlay — used to anchor the status line below it.
+	let submitOverlay = $derived(clickOverlays.find((o) => o.action === 'submit-form'));
 
 	function computeLayout() {
 		const vw = document.documentElement.clientWidth;
@@ -498,7 +539,7 @@
 		{/each}
 
 		<!-- Inline form inputs -->
-		<form id="grid-contact-form" class="form-inputs-layer">
+		<form id="grid-contact-form" class="form-inputs-layer" oninput={handleFormInput} onsubmit={(e) => e.preventDefault()} novalidate>
 			<!-- Formspark reserved fields: `_email.subject` is the notification
 			     mail's subject line in my inbox; `_gotcha` is the honeypot
 			     (bots fill it, real users don't — non-empty drops the
@@ -545,8 +586,21 @@
 			{/if}
 		</form>
 
-		{#if formStatus === 'error'}
-			<!-- Error shown near form area -->
+		<!-- Submission status: typed into the grid like a terminal response -->
+		{#if submitOverlay && formMessage}
+			{#key formMessage}
+				<div
+					class="form-status form-status-{formStatus}"
+					role="status"
+					aria-live="polite"
+					style="top: {(submitOverlay.row + 1) * lineHeight}px; font-size: {fontSize}px; line-height: {lineHeight}px; letter-spacing: {letterSpacingPx}px;"
+				>
+					<span
+						class="form-status-text"
+						style="animation-duration: {Math.max(formMessage.length * 16, 200)}ms; animation-timing-function: steps({formMessage.length});"
+					>{formMessage}</span><span class="form-status-cursor" aria-hidden="true">█</span>
+				</div>
+			{/key}
 		{/if}
 
 		<!-- Clickable overlays -->
@@ -660,6 +714,52 @@
 
 	.grid-textarea {
 		resize: none;
+	}
+
+	.form-status {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		white-space: pre;
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		z-index: 5;
+		pointer-events: none;
+	}
+
+	/* Reuse the grid's signature left-to-right typewriter wipe */
+	.form-status-text {
+		display: inline-block;
+		animation-name: type-reveal;
+		animation-fill-mode: both;
+	}
+
+	.form-status-cursor {
+		animation: status-blink 1.1s steps(1, end) infinite;
+	}
+
+	.form-status-submitting {
+		color: rgba(0, 217, 192, 0.6);
+	}
+
+	.form-status-success {
+		color: #00d9c0;
+	}
+
+	.form-status-error {
+		color: #f87171;
+	}
+
+	@keyframes status-blink {
+		0%, 100% { opacity: 1; }
+		50% { opacity: 0; }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.form-status-text,
+		.form-status-cursor {
+			animation: none;
+		}
 	}
 
 	.click-overlay {
