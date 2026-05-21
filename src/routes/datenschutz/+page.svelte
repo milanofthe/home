@@ -36,42 +36,32 @@
 			</p>
 		</section>
 
-		<!-- 3. Cloudflare Web Analytics -->
+		<!-- 3. Web-Analyse -->
 		<section class="mb-8">
-			<h2 class="text-lg font-bold text-cream mb-4">3. Cloudflare Web Analytics</h2>
+			<h2 class="text-lg font-bold text-cream mb-4">3. Web-Analyse</h2>
 			<p class="text-cream/60 mb-2">
-				Diese Website verwendet Cloudflare Web Analytics, einen datenschutzfreundlichen
-				Analysedienst der Cloudflare, Inc. Cloudflare Web Analytics setzt keine Cookies,
-				verwendet kein Fingerprinting und speichert keine IP-Adressen. Die IP-Adresse
-				wird am Edge-Server verworfen und nicht an Cloudflare weitergeleitet.
+				Diese Website verwendet whatsmytraffic, eine selbst gehostete, cookielose
+				Web-Analyse auf Basis von Umami. Die Analyse-Software läuft auf einem eigenen
+				Server (Strato, Deutschland); es werden keine Daten an Dritte weitergegeben.
+				Es werden keine Cookies gesetzt und kein Fingerprinting eingesetzt. Die
+				IP-Adresse wird ausschließlich serverseitig zur Ableitung des ungefähren
+				Herkunftslandes verwendet und nicht gespeichert.
 			</p>
-			<p class="text-cream/60 mb-2">
+			<p class="text-cream/60">
 				Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
 				statistischen Analyse der Websitenutzung zur Optimierung des Angebots).
 			</p>
-			<p class="text-cream/60">
-				Weitere Informationen:
-				<a href="https://www.cloudflare.com/web-analytics/" class="text-teal hover:text-teal-light" target="_blank" rel="noopener">
-					cloudflare.com/web-analytics
-				</a>
-			</p>
 		</section>
 
-		<!-- 4. Kontaktformular / Formspark -->
+		<!-- 4. Kontaktformular -->
 		<section class="mb-8">
-			<h2 class="text-lg font-bold text-cream mb-4">4. Kontaktformular (Formspark)</h2>
+			<h2 class="text-lg font-bold text-cream mb-4">4. Kontaktformular</h2>
 			<p class="text-cream/60 mb-2">
 				Wenn Sie das Kontaktformular auf dieser Website nutzen, werden die von Ihnen
 				eingegebenen Daten (Name, E-Mail-Adresse, Betreff und Nachricht) über den
-				Dienst Formspark (Formspark Ltd., Vereinigtes Königreich) verarbeitet und
-				per E-Mail an mich übermittelt. Formspark fungiert dabei ausschließlich als
-				Form-Endpoint und speichert die Anfragen nicht dauerhaft.
-			</p>
-			<p class="text-cream/60 mb-2">
-				Da Formspark seinen Sitz im Vereinigten Königreich hat, findet eine
-				Datenübermittlung in ein Drittland statt. Für das Vereinigte Königreich
-				besteht ein Angemessenheitsbeschluss der Europäischen Kommission gemäß
-				Art. 45 DSGVO.
+				selbst gehosteten Formular-Dienst whatsmytraffic verarbeitet. Der Dienst läuft
+				auf einem eigenen Server (Strato, Deutschland); es findet keine Übermittlung
+				an Dritte oder in ein Drittland statt.
 			</p>
 			<p class="text-cream/60 mb-2">
 				Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw.

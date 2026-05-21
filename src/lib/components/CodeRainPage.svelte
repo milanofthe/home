@@ -67,8 +67,7 @@
 		return map;
 	});
 
-	const FORMSPARK_FORM_ID = '6bMmIUb3i';
-	const FORMSPARK_ACTION = `https://submit-form.com/${FORMSPARK_FORM_ID}`;
+	const CONTACT_ACTION = 'https://whatsmytraffic.com/f/dekijnkgbvrk';
 
 	async function handleFormSubmit() {
 		const form = document.getElementById('grid-contact-form') as HTMLFormElement;
@@ -105,7 +104,7 @@
 			payload[key] = typeof value === 'string' ? value : '';
 		}
 		try {
-			const response = await fetch(FORMSPARK_ACTION, {
+			const response = await fetch(CONTACT_ACTION, {
 				method: 'POST',
 				body: JSON.stringify(payload),
 				headers: {
@@ -540,11 +539,8 @@
 
 		<!-- Inline form inputs -->
 		<form id="grid-contact-form" class="form-inputs-layer" oninput={handleFormInput} onsubmit={(e) => e.preventDefault()} novalidate>
-			<!-- Formspark reserved fields: `_email.subject` is the notification
-			     mail's subject line in my inbox; `_gotcha` is the honeypot
-			     (bots fill it, real users don't — non-empty drops the
-			     submission server-side). -->
-			<input type="hidden" name="_email.subject" value="New contact from milanrother.com" />
+			<!-- `_gotcha` is the honeypot: bots fill it, real users don't; a
+			     non-empty value flags the submission as spam server-side. -->
 			<input type="text" name="_gotcha" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;" />
 
 			{#if formFieldMap.has('field-name')}
