@@ -17,7 +17,6 @@ Personal website and portfolio for Milan Rother — research engineer and freela
 - 3D tilt effect on hover for tiles and photo
 - Tile reveal animation (random cell-by-cell canvas uncover)
 - Inline contact form integrated into the character grid
-- Analytics dashboard with Cloudflare Web Analytics data
 - GitHub stats tracking with historical data
 - Screenshot capture pipeline (Puppeteer)
 - Responsive design with dynamic column count
@@ -34,7 +33,6 @@ npm run dev
 ```bash
 npm run screenshots       # Capture project site screenshots
 npm run fetch-stats       # Fetch GitHub stats (PathSim, PySimHub)
-npm run fetch-analytics   # Fetch Cloudflare Web Analytics data
 npm run update-sitemap    # Update sitemap
 ```
 
