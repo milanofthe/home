@@ -1,7 +1,7 @@
 {
 	"current": {
 		"pathsim": {
-			"stars": 383,
+			"stars": 384,
 			"forks": 40,
 			"watchers": 9,
 			"openIssues": 12
@@ -2451,7 +2451,7 @@
 		{
 			"date": "2026-05-31",
 			"pathsim": {
-				"stars": 383,
+				"stars": 384,
 				"forks": 40,
 				"watchers": 9,
 				"openIssues": 12
@@ -2469,7 +2469,7 @@
 			}
 		}
 	],
-	"fetchedAt": "2026-05-31T17:11:11.044Z",
+	"fetchedAt": "2026-05-31T21:04:03.269Z",
 	"starHistory": {
 		"pathsim": [
 			{
@@ -3223,6 +3223,10 @@
 			{
 				"date": "2026-05-26",
 				"stars": 383
+			},
+			{
+				"date": "2026-05-31",
+				"stars": 384
 			}
 		],
 		"pathview": [
