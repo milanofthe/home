@@ -96,6 +96,15 @@
 					"A local-first literature manager for researchers. Ingest PDFs, search them semantically, and trace citations across your library."
 				],
 				"statsText": "thesisos.io"
+			},
+			{
+				"id": "whatsmytraffic",
+				"heading": "WhatsMyTraffic",
+				"headingType": "whatsmytraffic",
+				"paragraphs": [
+					"Self-hosted web analytics with a form backend and passwordless auth. A Docker stack (Umami, Postgres, a SvelteKit dashboard behind Caddy) on a VPS."
+				],
+				"statsText": "whatsmytraffic.com"
 			}
 		]
 	},

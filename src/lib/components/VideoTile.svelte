@@ -23,7 +23,8 @@
 
 	const glowColors = {
 		pathsim: 'rgba(0, 112, 192, 0.3)',
-		pysimhub: 'rgba(99, 102, 241, 0.3)'
+		pysimhub: 'rgba(99, 102, 241, 0.3)',
+		rapidpassives: 'rgba(217, 81, 60, 0.3)'
 	};
 </script>
 

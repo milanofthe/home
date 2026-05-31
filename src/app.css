@@ -310,6 +310,19 @@
 	color: #6b8afd;
 }
 
+.code-grid-heading-whatsmytraffic {
+	color: #6fdc8e;
+	font-weight: bold;
+}
+
+.code-grid-link-whatsmytraffic {
+	color: #6fdc8e;
+}
+
+.code-grid-frame-whatsmytraffic {
+	color: #6fdc8e;
+}
+
 /* Hovered word highlight: brightens the filler token under the cursor */
 .hovered-word {
 	position: absolute;

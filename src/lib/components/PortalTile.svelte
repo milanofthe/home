@@ -4,7 +4,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos' | 'whatsmytraffic';
 		themeParam?: boolean;
 	}
 
@@ -29,7 +29,8 @@
 		rapidpassives: 'rgba(217, 81, 60, 0.3)',
 		scidata: 'rgba(216, 53, 26, 0.3)',
 		fastsim: 'rgba(209, 65, 41, 0.3)',
-		thesisos: 'rgba(107, 138, 253, 0.3)'
+		thesisos: 'rgba(107, 138, 253, 0.3)',
+		whatsmytraffic: 'rgba(111, 220, 142, 0.3)'
 	};
 </script>
 

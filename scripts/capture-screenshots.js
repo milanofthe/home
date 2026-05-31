@@ -26,12 +26,14 @@ const sites = [
 	{ id: 'pysimhub-io', url: 'https://pysimhub.io' },
 	{ id: 'pysimhub-pathsim', url: 'https://pysimhub.io/projects/pathsim/' },
 	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000, extraWaitMs: 12000 },
-	{ id: 'rapidfem-editor', url: 'https://fem.rapidpassives.org/notebook?example=iris_filter', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 20000 },
+	{ id: 'rapidfem-editor', url: 'https://fem.rapidpassives.org/notebook?example=fd_iris_filter', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 20000 },
 	{ id: 'scidata-io', url: 'https://scidata.io', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
 	{ id: 'scidata-app', url: 'https://scidata.io/app?template=peak-detection', darkOnly: true, waitUntil: 'networkidle2', timeout: 120000, extraWaitMs: 20000 },
 	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 12000 },
 	{ id: 'thesisos-landing', url: 'https://thesisos.io/?static=true', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
-	{ id: 'thesisos-library', url: 'https://thesisos.io/library', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 20000 }
+	{ id: 'thesisos-library', url: 'https://thesisos.io/library', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 20000 },
+	{ id: 'whatsmytraffic-landing', url: 'https://whatsmytraffic.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
+	{ id: 'whatsmytraffic-dashboard', url: 'https://app.whatsmytraffic.com/share/ZHG6KiZSK2WBzuePAnhgy1jC', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 15000 }
 ];
 
 const themes = ['dark', 'light'];

@@ -23,7 +23,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos' | 'whatsmytraffic';
 		themeParam?: boolean;
 	}
 
@@ -34,12 +34,14 @@
 		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' },
 		'pysimhub-pathsim': { name: 'Project Page', url: 'https://pysimhub.io/projects/pathsim/', screenshot: '/screenshots/pysimhub-pathsim.png', color: 'pysimhub' },
 		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
-		'rapidfem-editor': { name: 'Iris Filter', url: 'https://fem.rapidpassives.org/notebook?example=iris_filter', screenshot: '/screenshots/rapidfem-editor.png', color: 'rapidpassives', themeParam: false },
+		'rapidfem-editor': { name: 'Iris Filter', url: 'https://fem.rapidpassives.org/notebook?example=fd_iris_filter', screenshot: '/screenshots/rapidfem-editor.png', color: 'rapidpassives', themeParam: false },
 		'scidata-io': { name: 'SciData', url: 'https://scidata.io', screenshot: '/screenshots/scidata-io.png', color: 'scidata', themeParam: false },
 		'scidata-app': { name: 'Canvas', url: 'https://scidata.io/app', screenshot: '/screenshots/scidata-app.png', color: 'scidata', themeParam: false },
 		'fastsim-org': { name: 'FastSim', url: 'https://fast.pathsim.org', screenshot: '/screenshots/fastsim-org.png', color: 'fastsim' },
 		'thesisos-landing': { name: 'Landing', url: 'https://thesisos.io', screenshot: '/screenshots/thesisos-landing.png', color: 'thesisos', themeParam: false },
-		'thesisos-library': { name: 'Library', url: 'https://thesisos.io/library', screenshot: '/screenshots/thesisos-library.png', color: 'thesisos', themeParam: false }
+		'thesisos-library': { name: 'Library', url: 'https://thesisos.io/library', screenshot: '/screenshots/thesisos-library.png', color: 'thesisos', themeParam: false },
+		'whatsmytraffic-landing': { name: 'WhatsMyTraffic', url: 'https://whatsmytraffic.com', screenshot: '/screenshots/whatsmytraffic-landing.png', color: 'whatsmytraffic', themeParam: false },
+		'whatsmytraffic-dashboard': { name: 'Dashboard', url: 'https://app.whatsmytraffic.com/share/ZHG6KiZSK2WBzuePAnhgy1jC', screenshot: '/screenshots/whatsmytraffic-dashboard.png', color: 'whatsmytraffic', themeParam: false }
 	};
 
 	// Video tile data
@@ -164,6 +166,7 @@
 		{ text: 'view.pathsim.org', types: ['link-pathsim'], href: 'https://view.pathsim.org' },
 		{ text: 'pysimhub.io', types: ['link-pysimhub'], href: 'https://pysimhub.io' },
 		{ text: 'thesisos.io', types: ['link-thesisos'], href: 'https://thesisos.io' },
+		{ text: 'whatsmytraffic.com', types: ['link-whatsmytraffic'], href: 'https://whatsmytraffic.com' },
 	];
 
 	let clickOverlays = $derived.by((): ClickOverlay[] => {
@@ -511,7 +514,7 @@
 				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
 					<div style="width: 100%; height: 100%; border-radius: 8px; overflow: hidden;">
 						<fem-viewer
-							src="https://fem.rapidpassives.org/demo/microstrip_line.json"
+							src="https://fem.rapidpassives.org/demo/fd_microstrip_line.json"
 							rotate
 							cycle
 							speed="0.6"
