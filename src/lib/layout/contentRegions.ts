@@ -96,7 +96,7 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 	thesisos: {
 		type: 'embedded', lines: [], frameColor: 'thesisos',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
-		tiles: [{ id: 'thesisos-landing', label: 'Landing' }, { id: 'thesisos-library', label: 'Library' }]
+		tiles: [{ id: 'thesisos-landing', label: 'Landing' }, { id: 'thesisos-graph', label: 'Graph' }]
 	},
 	whatsmytraffic: {
 		type: 'embedded', lines: [], frameColor: 'whatsmytraffic',

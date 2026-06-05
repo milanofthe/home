@@ -382,8 +382,8 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 			}
 			lines = expanded;
 		} else if (region.type === 'paragraph') {
-			// Always re-wrap paragraphs to fill available width, capped at 70 chars
-			const wrapWidth = Math.min(maxWidth, 70);
+			// Always re-wrap paragraphs to fill available width, capped at 80 chars
+			const wrapWidth = Math.min(maxWidth, 80);
 			const joined = lines.join(' ');
 			lines = wordWrap(joined, wrapWidth);
 		} else if (WRAPPABLE_TYPES.has(region.type)) {

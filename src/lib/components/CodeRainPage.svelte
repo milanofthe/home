@@ -39,7 +39,7 @@
 		'scidata-app': { name: 'Canvas', url: 'https://scidata.io/app', screenshot: '/screenshots/scidata-app.png', color: 'scidata', themeParam: false },
 		'fastsim-org': { name: 'FastSim', url: 'https://fast.pathsim.org', screenshot: '/screenshots/fastsim-org.png', color: 'fastsim' },
 		'thesisos-landing': { name: 'Landing', url: 'https://thesisos.io', screenshot: '/screenshots/thesisos-landing.png', color: 'thesisos', themeParam: false },
-		'thesisos-library': { name: 'Library', url: 'https://thesisos.io/library', screenshot: '/screenshots/thesisos-library.png', color: 'thesisos', themeParam: false },
+		'thesisos-graph': { name: 'Citation Graph', url: 'https://thesisos.io/graph?root=cb35ff8e-d0f5-437c-9528-89307638622a', screenshot: '/screenshots/thesisos-graph.png', color: 'thesisos', themeParam: false },
 		'whatsmytraffic-landing': { name: 'WhatsMyTraffic', url: 'https://whatsmytraffic.com', screenshot: '/screenshots/whatsmytraffic-landing.png', color: 'whatsmytraffic', themeParam: false },
 		'whatsmytraffic-dashboard': { name: 'Dashboard', url: 'https://app.whatsmytraffic.com/share/ZHG6KiZSK2WBzuePAnhgy1jC', screenshot: '/screenshots/whatsmytraffic-dashboard.png', color: 'whatsmytraffic', themeParam: false }
 	};

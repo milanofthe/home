@@ -31,28 +31,42 @@ const sites = [
 	{ id: 'scidata-app', url: 'https://scidata.io/app?template=peak-detection', darkOnly: true, waitUntil: 'networkidle2', timeout: 120000, extraWaitMs: 20000 },
 	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 12000 },
 	{ id: 'thesisos-landing', url: 'https://thesisos.io/?static=true', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
-	{ id: 'thesisos-library', url: 'https://thesisos.io/library', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 20000 },
+	{ id: 'thesisos-graph', url: 'https://thesisos.io/graph?root=cb35ff8e-d0f5-437c-9528-89307638622a', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 20000 },
 	{ id: 'whatsmytraffic-landing', url: 'https://whatsmytraffic.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
 	{ id: 'whatsmytraffic-dashboard', url: 'https://app.whatsmytraffic.com/share/ZHG6KiZSK2WBzuePAnhgy1jC', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 15000 }
 ];
 
 const themes = ['dark', 'light'];
 
-const viewport = { width: 1440, height: 900 };
+// Capture viewport aspect ratio is matched to the homepage tiles so the
+// screenshot fills the tile (object-fit: cover) with no awkward cropping. The
+// grid tiles are 54 cols x 14 rows of JetBrains Mono (~0.6em advance width,
+// 1.5 line-height):  AR = (54 * 0.6) / (14 * 1.5) ≈ 1.54.
+const TILE_AR = 1.54;
+const BASE_WIDTH = 1440;
 
-// Browser zoom applied to the page before capture. Zooms the content in so
-// thumbnails read clearer at tile size. Applied via CSS `zoom` on the root
-// element, which scales rendered size WITHOUT shifting media-query breakpoints
-// (the layout viewport stays 1440px), so responsive layouts don't reflow.
-// Per-site `zoom` overrides this default.
-const ZOOM = 1.3;
+// "Zoom" makes the site content render larger relative to the frame. A CSS zoom
+// transform anchors at the top-left and crops the right/bottom edges, which
+// looked broken — instead we shrink the captured CSS region while keeping
+// TILE_AR, so content scales up with no cropping. Per-site `zoom` overrides
+// this; set 1 to capture the full-width layout.
+const ZOOM = 1.15;
+
+// Device scale factor. The tile shows the screenshot at only ~455 CSS px wide,
+// so an oversized capture gets downscaled hard at render time — and heavy
+// browser downscaling is exactly what aliases. Capturing nearer the display
+// size (~2x for retina) keeps it crisp AND keeps the files light.
+const DPR = 1.5;
 
 async function captureScreenshot(browser, site, theme) {
 	const url = site.darkOnly ? site.url : `${site.url}${site.url.includes('?') ? '&' : '?'}theme=${theme}`;
 	console.log(`  ${site.id} ${theme}...`);
 
 	const page = await browser.newPage();
-	await page.setViewport({ width: viewport.width, height: viewport.height, deviceScaleFactor: 2 });
+	const zoom = site.zoom ?? ZOOM;
+	const width = Math.round(BASE_WIDTH / zoom);
+	const height = Math.round(width / TILE_AR);
+	await page.setViewport({ width, height, deviceScaleFactor: DPR });
 
 	try {
 		await page.goto(url, { waitUntil: site.waitUntil || 'networkidle2', timeout: site.timeout || 30000 });
@@ -61,15 +75,6 @@ async function captureScreenshot(browser, site, theme) {
 		// extraWaitMs covers WASM boot, Pyodide, FEM solvers, lazy thumbnails.
 		const settleMs = site.extraWaitMs ?? 8000;
 		await new Promise((resolve) => setTimeout(resolve, settleMs));
-
-		// Zoom the content in just before capture, then let it reflow/settle.
-		const zoom = site.zoom ?? ZOOM;
-		if (zoom && zoom !== 1) {
-			await page.evaluate((z) => {
-				document.documentElement.style.zoom = String(z);
-			}, zoom);
-			await new Promise((resolve) => setTimeout(resolve, 800));
-		}
 
 		const filename = `${site.id}-${theme}.png`;
 		const outputPath = join(SCREENSHOTS_DIR, filename);
