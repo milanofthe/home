@@ -40,6 +40,13 @@ const themes = ['dark', 'light'];
 
 const viewport = { width: 1440, height: 900 };
 
+// Browser zoom applied to the page before capture. Zooms the content in so
+// thumbnails read clearer at tile size. Applied via CSS `zoom` on the root
+// element, which scales rendered size WITHOUT shifting media-query breakpoints
+// (the layout viewport stays 1440px), so responsive layouts don't reflow.
+// Per-site `zoom` overrides this default.
+const ZOOM = 1.3;
+
 async function captureScreenshot(browser, site, theme) {
 	const url = site.darkOnly ? site.url : `${site.url}${site.url.includes('?') ? '&' : '?'}theme=${theme}`;
 	console.log(`  ${site.id} ${theme}...`);
@@ -54,6 +61,15 @@ async function captureScreenshot(browser, site, theme) {
 		// extraWaitMs covers WASM boot, Pyodide, FEM solvers, lazy thumbnails.
 		const settleMs = site.extraWaitMs ?? 8000;
 		await new Promise((resolve) => setTimeout(resolve, settleMs));
+
+		// Zoom the content in just before capture, then let it reflow/settle.
+		const zoom = site.zoom ?? ZOOM;
+		if (zoom && zoom !== 1) {
+			await page.evaluate((z) => {
+				document.documentElement.style.zoom = String(z);
+			}, zoom);
+			await new Promise((resolve) => setTimeout(resolve, 800));
+		}
 
 		const filename = `${site.id}-${theme}.png`;
 		const outputPath = join(SCREENSHOTS_DIR, filename);

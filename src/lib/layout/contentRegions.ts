@@ -59,48 +59,48 @@ function resolveStats(template: string, stats: Record<string, number | undefined
 const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 	pathsim: {
 		type: 'embedded', lines: [], frameColor: 'pathsim',
-		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'pathsim-org', label: 'PathSim' }, { id: 'docs-pathsim-org', label: 'Docs' }]
 	},
 	pathview: {
 		type: 'embedded', lines: [], frameColor: 'pathsim',
-		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'pathview-trailer', label: 'Demo' }, { id: 'view-pathsim-org', label: 'PathView' }]
 	},
 	pysimhub: {
 		type: 'embedded', lines: [], frameColor: 'pysimhub',
-		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'pysimhub-io', label: 'PySimHub' }, { id: 'pysimhub-pathsim', label: 'Project Page' }]
 	},
 	rapidpassives: {
 		type: 'embedded', lines: [], frameColor: 'rapidpassives',
-		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'rapidpassives-org', label: 'RapidPassives' }, { id: 'rapidpassives-transformer', label: 'Transformer' }]
 	},
 	rapidfem: {
 		// Shares the rapidpassives brand color.
 		type: 'embedded', lines: [], frameColor: 'rapidpassives',
-		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'rapidfem-editor', label: 'Notebook' }, { id: 'rapidfem-microstrip', label: 'Microstrip' }]
 	},
 	scidata: {
 		type: 'embedded', lines: [], frameColor: 'scidata',
-		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'scidata-io', label: 'SciData' }, { id: 'scidata-app', label: 'Canvas' }]
 	},
 	fastsim: {
 		type: 'embedded', lines: [], frameColor: 'fastsim',
-		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'fastsim-org', label: 'FastSim' }]
 	},
 	thesisos: {
 		type: 'embedded', lines: [], frameColor: 'thesisos',
-		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'thesisos-landing', label: 'Landing' }, { id: 'thesisos-library', label: 'Library' }]
 	},
 	whatsmytraffic: {
 		type: 'embedded', lines: [], frameColor: 'whatsmytraffic',
-		embeddedRows: 10, embeddedCols: 42, align: 'center',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'whatsmytraffic-landing', label: 'Landing' }, { id: 'whatsmytraffic-dashboard', label: 'Dashboard' }]
 	}
 };
