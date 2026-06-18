@@ -54,6 +54,41 @@ function wordWrap(text: string, maxWidth: number): string[] {
 	return lines;
 }
 
+// Project key -> inline link cell type, used to color clickable phrases inside paragraphs
+const PROJECT_LINK_CELL: Record<string, CellType> = {
+	pathsim: 'link-pathsim',
+	pysimhub: 'link-pysimhub',
+	rapidpassives: 'link-rapidpassives',
+	scidata: 'link-scidata',
+	fastsim: 'link-fastsim',
+	thesisos: 'link-thesisos',
+	whatsmytraffic: 'link-whatsmytraffic'
+};
+
+// Re-type the cells covering each inline-link phrase so they render in the project color.
+// Phrases never contain spaces, so wordWrap keeps them on a single line — a per-line substring match suffices.
+function applyInlineLinks(
+	row: Cell[],
+	line: string,
+	cols: number,
+	links: { phrase: string; project: string }[]
+) {
+	const contentWidth = Math.min(line.length, cols - 4);
+	const startCol = Math.floor((cols - contentWidth) / 2); // mirrors contentLine() centering
+	for (const { phrase, project } of links) {
+		const cellType = PROJECT_LINK_CELL[project];
+		if (!cellType) continue;
+		let at = line.indexOf(phrase);
+		while (at >= 0) {
+			for (let k = 0; k < phrase.length; k++) {
+				const cell = row[startCol + at + k];
+				if (cell) cell.type = cellType;
+			}
+			at = line.indexOf(phrase, at + phrase.length);
+		}
+	}
+}
+
 // Types that should be word-wrapped when lines exceed available width
 const WRAPPABLE_TYPES: Set<string> = new Set([
 	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'link-line-rapidpassives', 'link-line-scidata', 'link-line-fastsim', 'link-line-thesisos', 'link-line-whatsmytraffic', 'footer-line'
@@ -394,7 +429,11 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 		}
 
 		for (const line of lines) {
-			cells.push(contentLine(line, cols, fillerOffset, type, region.align));
+			const row = contentLine(line, cols, fillerOffset, type, region.align);
+			if (region.inlineLinks?.length && (region.align ?? 'center') === 'center') {
+				applyInlineLinks(row, line, cols, region.inlineLinks);
+			}
+			cells.push(row);
 			advanceOffset(cols);
 		}
 	}
@@ -407,6 +446,10 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 		addFillerLines(section.fillerLinesBefore);
 
 		for (const region of section.regions) {
+			// Per-project (and any id'd heading) scroll anchors
+			if (region.id && region.type.startsWith('heading')) {
+				sectionAnchors.push({ id: region.id, row: cells.length });
+			}
 			addContentRegion(region);
 		}
 	}

@@ -21,6 +21,7 @@ export interface ContentRegion {
 	embeddedCols?: number; // how many cols the embedded block takes
 	tiles?: { id: string; label: string }[]; // individual framed tiles laid out side-by-side (or stacked on mobile)
 	url?: string; // for links within text
+	inlineLinks?: { phrase: string; project: string }[]; // colored, clickable phrases embedded in paragraph text
 	label?: string; // frame title for embedded blocks
 	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos' | 'whatsmytraffic'; // project color for frame
 	align?: 'center' | 'left';
@@ -40,8 +41,8 @@ const heading = (text: string, type: RegionType = 'heading'): ContentRegion => (
 	type, lines: [text], align: 'center'
 });
 
-const paragraph = (text: string): ContentRegion => ({
-	type: 'paragraph', lines: [text], align: 'center'
+const paragraph = (text: string, inlineLinks?: { phrase: string; project: string }[]): ContentRegion => ({
+	type: 'paragraph', lines: [text], align: 'center', ...(inlineLinks ? { inlineLinks } : {})
 });
 
 const linkLine = (text: string, type: RegionType = 'link-line'): ContentRegion => ({
@@ -156,7 +157,12 @@ function buildAboutSection(): ContentSection {
 		spacer()
 	];
 	for (const p of c.paragraphs) {
-		regions.push(paragraph(p), spacer());
+		if (typeof p === 'string') {
+			regions.push(paragraph(p), spacer());
+		} else {
+			// Paragraph with inline, colored, clickable project links (see clickTargets in CodeRainPage)
+			regions.push(paragraph(p.text, p.links), spacer());
+		}
 	}
 	regions.push(linkLine(c.links));
 	return { id: 'about', fillerLinesBefore: 5, regions };
@@ -179,7 +185,7 @@ function buildProjectsSection(stats: GitHubStats): ContentSection {
 
 	for (const item of c.items) {
 		regions.push(spacer());
-		regions.push(heading(item.heading, HEADING_TYPES[item.headingType] ?? 'heading'));
+		regions.push({ ...heading(item.heading, HEADING_TYPES[item.headingType] ?? 'heading'), id: item.id });
 		regions.push(spacer());
 
 		for (const p of item.paragraphs) {

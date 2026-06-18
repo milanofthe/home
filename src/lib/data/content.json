@@ -7,10 +7,19 @@
 	"about": {
 		"heading": "WHO AM I",
 		"paragraphs": [
-			"I build simulation infrastructure and the tools to use it. The numerics, the methods, the implementation, and the UI.",
-			"Currently consulting for MIT Plasma Science & Fusion Center, building the simulation stack for nuclear fusion fuel-cycle modeling.",
-			"M.Sc. Electrical Engineering. Deep background in numerical methods, dynamical systems, and scientific computing. My work spans from ODE solvers and EM methods in C and Rust to full browser-based engineering tools in SvelteKit.",
-			"PathSim is my open platform for dynamical system modeling. Collaborating with JSBSim, scikit-rf, python-control, and MIT PSFC. Check LinkedIn to see what I'm up to."
+			"I build simulation tools and infrastructure and solve numerical modeling problems for engineering teams.",
+			"Long ago during my studies I was already building small numerical side projects. A symbolic circuit analysis tool, an eigenmode solver for the Schrödinger equation, a CUDA-accelerated 2D FDTD solver, a MIMO vector fitting implementation, and so on. I even wrote a 120-page LaTeX manuscript on linear system theory during the summer of 2021 to help out a friend.",
+			{
+				"text": "During my master's I dipped my toes into the RFIC EDA world and worked on compact modeling and layout generation of RFIC passives (inductors, transformers, baluns...). This has now become RapidPassives, an open-source library.",
+				"links": [{ "phrase": "RapidPassives", "project": "rapidpassives" }]
+			},
+			{
+				"text": "At the beginning of my PhD (early 2023) I diverged from the circuit path to the more general system level, where you have signal flow diagrams and ODEs instead of Maxwell and KVL/KCL. During that time PathSim started as a side project. Initially just an analog computer emulator, it evolved into a fully fledged continuous and discrete (hybrid, we have events!) system modeling and simulation framework. I open sourced it in early 2025 as an open alternative to Simulink, and a modern take on system modeling in general. Clean API, mutability from the get-go, robust solvers (stiffness, algebraic loops, no problem). And of course some nice abstractions for integration with other modeling packages. Today (mid 2026) we are at roughly 400 stars on GitHub and have many users and collaborators worldwide, some of them prominent figures such as the MIT Plasma Science and Fusion Center, scikit-rf, and JSBSim developers.",
+				"links": [{ "phrase": "PathSim", "project": "pathsim" }]
+			},
+			"I'm now making a full roundtrip back to circuits, trying to bring it all together. Custom EM solvers, compact models, graph-native circuit representations, and system-level simulation.",
+			"Those who have talked to me know that I can't stop talking about numerics, modeling, and simulation principles and ideas.",
+			"I work as a freelancer. If you have something you want my take on, or need some ideas and even implementation, don't hesitate to reach out."
 		],
 		"links": "GitHub   LinkedIn   X"
 	},

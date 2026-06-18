@@ -158,6 +158,8 @@
 		{ text: 'GitHub', types: ['link', 'footer'], href: 'https://github.com/milanofthe' },
 		{ text: 'LinkedIn', types: ['link', 'footer', 'content'], href: 'https://linkedin.com/in/milan-rother-648474183' },
 		{ text: 'X', types: ['link', 'footer'], href: 'https://x.com/Milan1115268' },
+		{ text: 'RapidPassives', types: ['link-rapidpassives'], scrollTo: 'rapidpassives' },
+		{ text: 'PathSim', types: ['link-pathsim'], scrollTo: 'pathsim' },
 		{ text: 'rapidpassives.org', types: ['link-rapidpassives'], href: 'https://rapidpassives.org' },
 		{ text: 'fem.rapidpassives.org', types: ['link-rapidpassives'], href: 'https://fem.rapidpassives.org' },
 		{ text: 'scidata.io', types: ['link-scidata'], href: 'https://scidata.io' },
