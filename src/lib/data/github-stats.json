@@ -15,7 +15,7 @@
 		"pysimhub": {
 			"projects": 30,
 			"members": 3,
-			"cumulativeStars": 15602
+			"cumulativeStars": 15601
 		}
 	},
 	"history": [
@@ -2985,11 +2985,11 @@
 			"pysimhub": {
 				"projects": 30,
 				"members": 3,
-				"cumulativeStars": 15602
+				"cumulativeStars": 15601
 			}
 		}
 	],
-	"fetchedAt": "2026-06-26T14:33:08.381Z",
+	"fetchedAt": "2026-06-26T17:52:15.456Z",
 	"starHistory": {
 		"pathsim": [
 			{
