@@ -137,12 +137,13 @@
 						"paragraphs": [
 							"A sparse direct solver for real and complex matrices in pure Rust — a PARDISO-style embeddable backend with no BLAS, LAPACK, or MKL dependency. Symmetric LDLT and unsymmetric LU, iterative solvers, a learned meta-tuner, and deterministic a-priori estimates for peak memory and runtime."
 						],
-						"metrics": "bit-identical results across thread counts · learned auto-tuning · crates.io + PyPI",
+						"metrics": "bit-identical results across thread counts · learned auto-tuning · PyPI",
 						"statsText": "github.com/milanofthe/rslab"
 					},
 					{
 						"id": "rapidmesh",
 						"heading": "RapidMesh",
+						"headingType": "rapidpassives",
 						"paragraphs": [
 							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact-arithmetic CSG booleans, watertight by construction, count-based meshing with exact element budgets, and an API whose mesh representations serve the solver as an oracle. Replaces gmsh inside the stack."
 						],

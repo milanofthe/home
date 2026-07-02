@@ -166,7 +166,7 @@
 		{ text: 'FastSim', types: ['link-fastsim'], scrollTo: 'fastsim' },
 		{ text: 'PathSim', types: ['link-pathsim'], scrollTo: 'pathsim' },
 		{ text: 'github.com/milanofthe/rslab', types: ['link'], href: 'https://github.com/milanofthe/rslab' },
-		{ text: 'github.com/milanofthe/rapidmesh', types: ['link'], href: 'https://github.com/milanofthe/rapidmesh' },
+		{ text: 'github.com/milanofthe/rapidmesh', types: ['link-rapidpassives'], href: 'https://github.com/milanofthe/rapidmesh' },
 		{ text: 'github.com/milanofthe/sane', types: ['link-sane'], href: 'https://github.com/milanofthe/sane' },
 		{ text: 'github.com/milanofthe/rapidmom', types: ['link-rapidpassives'], href: 'https://github.com/milanofthe/rapidmom' },
 		{ text: 'rapidpassives.org', types: ['link-rapidpassives'], href: 'https://rapidpassives.org' },

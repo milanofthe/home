@@ -113,6 +113,7 @@ const LINK_LINE_TYPES: Record<string, RegionType> = {
 	rapidpassives: 'link-line-rapidpassives',
 	rapidfem: 'link-line-rapidpassives',
 	rapidmom: 'link-line-rapidpassives',
+	rapidmesh: 'link-line-rapidpassives',
 	scidata: 'link-line-scidata',
 	fastsim: 'link-line-fastsim',
 	sane: 'link-line-sane',
