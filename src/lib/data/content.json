@@ -87,7 +87,7 @@
 							"SPICE and native Verilog-A frontends: compact models (BSIM, PSP, HICUM, ...) are lowered fully into the graph — every parameter stays exposed to the autodiff, even in harmonic balance. Rust core, threaded sparse LU, optional JIT. Python API."
 						],
 						"metrics": "validated against ngspice & Xyce / scales past 100k parameters (IBM power-grid benchmarks)",
-						"statsText": "github.com/milanofthe/sane / licensing: info@milanrother.com"
+						"statsText": "early access / licensing: info@milanrother.com"
 					}
 				]
 			},
@@ -103,7 +103,7 @@
 							"Zero-external-dependency pure Rust with a Python API — lightweight, installs in seconds, built for massive cloud parameter sweeps. EMX-class performance on production RFIC benchmarks."
 						],
 						"metrics": "broadband S-parameters of an SG13G2 spiral via ROM sweep in ~5 s / ~600 MB / benchmarked head-to-head against Cadence EMX on the real IHP SG13G2 stack",
-						"statsText": "github.com/milanofthe/rapidmom / licensing: rapidmom@milanrother.com"
+						"statsText": "early access / licensing: rapidmom@milanrother.com"
 					},
 					{
 						"id": "rapidfem",

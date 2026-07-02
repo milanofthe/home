@@ -168,8 +168,6 @@
 		{ text: 'PathSim', types: ['link-pathsim'], scrollTo: 'pathsim' },
 		{ text: 'github.com/milanofthe/rslab', types: ['link-rslab'], href: 'https://github.com/milanofthe/rslab' },
 		{ text: 'github.com/milanofthe/rapidmesh', types: ['link-rapidpassives'], href: 'https://github.com/milanofthe/rapidmesh' },
-		{ text: 'github.com/milanofthe/sane', types: ['link-sane'], href: 'https://github.com/milanofthe/sane' },
-		{ text: 'github.com/milanofthe/rapidmom', types: ['link-rapidpassives'], href: 'https://github.com/milanofthe/rapidmom' },
 		{ text: 'rapidpassives.org', types: ['link-rapidpassives'], href: 'https://rapidpassives.org' },
 		{ text: 'fem.rapidpassives.org', types: ['link-rapidpassives'], href: 'https://fem.rapidpassives.org' },
 		{ text: 'scidata.io', types: ['link-scidata'], href: 'https://scidata.io' },
