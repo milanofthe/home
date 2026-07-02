@@ -20,6 +20,7 @@
 		'heading-scidata': 'code-grid-heading-scidata',
 		'heading-fastsim': 'code-grid-heading-fastsim',
 		'heading-sane': 'code-grid-heading-sane',
+		'heading-rslab': 'code-grid-heading-rslab',
 		'heading-thesisos': 'code-grid-heading-thesisos',
 		'heading-whatsmytraffic': 'code-grid-heading-whatsmytraffic',
 		cta: 'code-grid-cta',
@@ -30,6 +31,7 @@
 		'link-scidata': 'code-grid-link-scidata',
 		'link-fastsim': 'code-grid-link-fastsim',
 		'link-sane': 'code-grid-link-sane',
+		'link-rslab': 'code-grid-link-rslab',
 		'link-thesisos': 'code-grid-link-thesisos',
 		'link-whatsmytraffic': 'code-grid-link-whatsmytraffic',
 		footer: 'code-grid-footer',
@@ -42,6 +44,7 @@
 		'frame-scidata': 'code-grid-frame-scidata',
 		'frame-fastsim': 'code-grid-frame-fastsim',
 		'frame-sane': 'code-grid-frame-sane',
+		'frame-rslab': 'code-grid-frame-rslab',
 		'frame-thesisos': 'code-grid-frame-thesisos',
 		'frame-whatsmytraffic': 'code-grid-frame-whatsmytraffic'
 	};
@@ -91,7 +94,7 @@
 
 		// For each content span inside a line: keep filler-colored base, add real-colored overlay
 		for (const line of contentLines) {
-			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-frame-rapidpassives):not(.code-grid-frame-scidata):not(.code-grid-frame-fastsim):not(.code-grid-frame-sane):not(.code-grid-frame-thesisos):not(.code-grid-frame-whatsmytraffic):not(.code-grid-empty)'));
+			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-frame-rapidpassives):not(.code-grid-frame-scidata):not(.code-grid-frame-fastsim):not(.code-grid-frame-sane):not(.code-grid-frame-rslab):not(.code-grid-frame-thesisos):not(.code-grid-frame-whatsmytraffic):not(.code-grid-empty)'));
 			for (const span of spans) {
 				const text = span.textContent || '';
 				if (!text.trim()) continue;

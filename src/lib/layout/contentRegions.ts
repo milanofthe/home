@@ -10,7 +10,7 @@ export interface GitHubStats {
 	pysimhub: { projects: number; members?: number; cumulativeStars: number };
 }
 
-export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-sane' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'footer-line' | 'content' | 'form-field';
+export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-sane' | 'link-line-rslab' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'footer-line' | 'content' | 'form-field';
 
 export interface ContentRegion {
 	type: RegionType;
@@ -129,6 +129,7 @@ const LINK_LINE_TYPES: Record<string, RegionType> = {
 	scidata: 'link-line-scidata',
 	fastsim: 'link-line-fastsim',
 	sane: 'link-line-sane',
+	rslab: 'link-line-rslab',
 	thesisos: 'link-line-thesisos',
 	whatsmytraffic: 'link-line-whatsmytraffic'
 };
@@ -142,6 +143,7 @@ const HEADING_TYPES: Record<string, RegionType> = {
 	scidata: 'heading-scidata',
 	fastsim: 'heading-fastsim',
 	sane: 'heading-sane',
+	rslab: 'heading-rslab',
 	thesisos: 'heading-thesisos',
 	whatsmytraffic: 'heading-whatsmytraffic'
 };

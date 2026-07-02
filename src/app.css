@@ -310,6 +310,19 @@
 	color: #2988ac;
 }
 
+.code-grid-heading-rslab {
+	color: #3b82f6;
+	font-weight: bold;
+}
+
+.code-grid-link-rslab {
+	color: #3b82f6;
+}
+
+.code-grid-frame-rslab {
+	color: #3b82f6;
+}
+
 .code-grid-heading-thesisos {
 	color: #6b8afd;
 	font-weight: bold;

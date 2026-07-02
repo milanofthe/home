@@ -134,6 +134,7 @@
 					{
 						"id": "rslab",
 						"heading": "RSLAB",
+						"headingType": "rslab",
 						"paragraphs": [
 							"A sparse direct solver for real and complex matrices in pure Rust — a PARDISO-style embeddable backend with no BLAS, LAPACK, or MKL dependency. Symmetric LDLT and unsymmetric LU, iterative solvers, a learned meta-tuner, and deterministic a-priori estimates for peak memory and runtime."
 						],

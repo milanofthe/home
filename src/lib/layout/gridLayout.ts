@@ -5,7 +5,7 @@ import { FILLER_SOURCE } from '$lib/data/filler-source';
 import { contentSections, type ContentSection, type ContentRegion } from './contentRegions';
 export type { ContentSection };
 
-export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'link-sane' | 'link-thesisos' | 'link-whatsmytraffic' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim' | 'frame-sane' | 'frame-thesisos' | 'frame-whatsmytraffic';
+export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'link-sane' | 'link-rslab' | 'link-thesisos' | 'link-whatsmytraffic' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim' | 'frame-sane' | 'frame-rslab' | 'frame-thesisos' | 'frame-whatsmytraffic';
 
 export interface Cell {
 	char: string;
@@ -64,6 +64,7 @@ const PROJECT_LINK_CELL: Record<string, CellType> = {
 	scidata: 'link-scidata',
 	fastsim: 'link-fastsim',
 	sane: 'link-sane',
+	rslab: 'link-rslab',
 	thesisos: 'link-thesisos',
 	whatsmytraffic: 'link-whatsmytraffic'
 };
@@ -209,6 +210,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 			region.type === 'heading-scidata' ? 'heading-scidata' :
 			region.type === 'heading-fastsim' ? 'heading-fastsim' :
 			region.type === 'heading-sane' ? 'heading-sane' :
+			region.type === 'heading-rslab' ? 'heading-rslab' :
 			region.type === 'heading-thesisos' ? 'heading-thesisos' :
 			region.type === 'heading-whatsmytraffic' ? 'heading-whatsmytraffic' :
 			region.type === 'cta' ? 'cta' :
@@ -219,6 +221,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 			region.type === 'link-line-scidata' ? 'link-scidata' :
 			region.type === 'link-line-fastsim' ? 'link-fastsim' :
 			region.type === 'link-line-sane' ? 'link-sane' :
+			region.type === 'link-line-rslab' ? 'link-rslab' :
 			region.type === 'link-line-thesisos' ? 'link-thesisos' :
 			region.type === 'link-line-whatsmytraffic' ? 'link-whatsmytraffic' :
 			region.type === 'footer-line' ? 'footer' :
@@ -239,6 +242,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 				region.frameColor === 'scidata' ? 'frame-scidata' :
 				region.frameColor === 'fastsim' ? 'frame-fastsim' :
 				region.frameColor === 'sane' ? 'frame-sane' :
+				region.frameColor === 'rslab' ? 'frame-rslab' :
 				region.frameColor === 'thesisos' ? 'frame-thesisos' :
 				region.frameColor === 'whatsmytraffic' ? 'frame-whatsmytraffic' :
 				'frame';
