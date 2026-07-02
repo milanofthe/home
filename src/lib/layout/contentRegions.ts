@@ -23,7 +23,7 @@ export interface ContentRegion {
 	url?: string; // for links within text
 	inlineLinks?: { phrase: string; project: string }[]; // colored, clickable phrases embedded in paragraph text
 	label?: string; // frame title for embedded blocks
-	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'thesisos' | 'whatsmytraffic'; // project color for frame
+	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic'; // project color for frame
 	align?: 'center' | 'left';
 	fill?: boolean; // pad heading up to the tile-row width
 	fillChar?: string; // padding character, defaults to '-'
