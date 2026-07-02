@@ -2,7 +2,6 @@
 	"hero": {
 		"heading": "MILAN ROTHER",
 		"tagline": "I build the simulation stack for electronics — fields, circuits, systems. State-of-the-art numerics, fast engines, and the interfaces to use them.",
-		"proof": "Creator of PathSim. JOSS-published, ~400 stars on GitHub, built with collaborators from MIT PSFC, CEA, scikit-rf, and JSBSim.",
 		"cta": "[ Get in Touch -> ]   [ View the Stack ]"
 	},
 	"about": {
@@ -24,6 +23,7 @@
 					{ "phrase": "RapidFEM", "project": "rapidfem" },
 					{ "phrase": "RapidMoM", "project": "rapidmom" },
 					{ "phrase": "SANE", "project": "sane" },
+					{ "phrase": "PathSim", "project": "pathsim" },
 					{ "phrase": "FastSim", "project": "fastsim" }
 				]
 			},
@@ -86,7 +86,7 @@
 							"Symbolic Analog Network Engine — symbolic and numeric analog circuit analysis. One hash-consed symbolic DAG with automatic differentiation yields DC, transient, AC, poles/zeros, noise, harmonic balance, and exact parameter sensitivities. SPICE and native Verilog-A frontends. Rust core, Python API."
 						],
 						"metrics": "validated against ngspice & Xyce · 12/12 SKY130 BSIM4 op-amps · harmonic balance matches Xyce to ~1e-5 % · 19/20 OpenVAF Verilog-A corpus",
-						"statsText": "early access: info@milanrother.com"
+						"statsText": "github.com/milanofthe/sane · early access: info@milanrother.com"
 					}
 				]
 			},
@@ -101,7 +101,7 @@
 							"A 2.5D Method-of-Moments solver for planar RF passives on layered substrates (PCB, RFIC) — a Momentum-class engine rebuilt from first principles in Rust. Mixed-potential formulation, stable down to DC, layered-media Green's functions, and a fast ACA solver."
 						],
 						"metrics": "O(N log N) matrix compression · low-frequency stable (A-EFIE) · Rust core, Python API",
-						"statsText": "licensing: rapidmom@milanrother.com"
+						"statsText": "github.com/milanofthe/rapidmom · licensing: rapidmom@milanrother.com"
 					},
 					{
 						"id": "rapidfem",

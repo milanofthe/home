@@ -149,8 +149,6 @@ function buildHeroSection(): ContentSection {
 			spacer(),
 			paragraph(c.tagline),
 			spacer(),
-			{ type: 'content', lines: [c.proof], align: 'center' },
-			spacer(),
 			{ type: 'cta', lines: [c.cta], align: 'center' }
 		]
 	};
