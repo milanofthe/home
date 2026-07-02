@@ -155,6 +155,7 @@
 		{ text: 'Datenschutz', types: ['footer'], href: '/datenschutz/' },
 		{ text: 'info@milanrother.com', types: ['link', 'link-sane'], href: 'mailto:info@milanrother.com' },
 		{ text: 'rapidmom@milanrother.com', types: ['link-rapidpassives'], href: 'mailto:rapidmom@milanrother.com' },
+		{ text: 'info@pathsim.org', types: ['link-fastsim'], href: 'mailto:info@pathsim.org' },
 		{ text: 'Email', types: ['footer'], href: 'mailto:info@milanrother.com' },
 		{ text: 'GitHub', types: ['link', 'footer'], href: 'https://github.com/milanofthe' },
 		{ text: 'LinkedIn', types: ['link', 'footer', 'content'], href: 'https://linkedin.com/in/milan-rother-648474183' },

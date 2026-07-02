@@ -412,14 +412,15 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 		let lines = region.lines;
 		const maxWidth = cols - 4;
 		if (region.fill && region.type.startsWith('heading')) {
-			// Pad section titles with dashes on both sides, matching the width of a
-			// side-by-side tile row (2 frames of embeddedCols 54 + 2 gap = 114 cols).
+			// Pad titles on both sides, matching the width of a side-by-side
+			// tile row (2 frames of embeddedCols 54 + 2 gap = 114 cols).
 			const target = Math.min(maxWidth, 114);
+			const ch = region.fillChar || '-';
 			lines = lines.map(l => {
 				if (l.length >= target - 4) return l;
 				const total = target - l.length - 2; // minus the spaces around the title
 				const left = Math.floor(total / 2);
-				return '-'.repeat(left) + ' ' + l + ' ' + '-'.repeat(total - left);
+				return ch.repeat(left) + ' ' + l + ' ' + ch.repeat(total - left);
 			});
 		}
 		if (region.type === 'cta') {

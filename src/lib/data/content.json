@@ -37,7 +37,7 @@
 		"intro": "One vertically integrated simulation stack for electronics — from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.",
 		"groups": [
 			{
-				"heading": "// systems",
+				"heading": "systems",
 				"items": [
 					{
 						"id": "pathsim",
@@ -47,7 +47,7 @@
 							"A pure-Python framework for modeling and simulating dynamical systems. Built from first principles with custom solvers, an event system, and a modular block-diagram API.",
 							"Published in JOSS. Adopted by JSBSim for flight dynamics and used at MIT PSFC for nuclear fusion fuel-cycle modeling. Domain toolboxes for chemical engineering, batteries, vehicles, flight dynamics, RF, and FMI co-simulation — several of them community-contributed."
 						],
-						"metrics": "MIT open source · 30+ solvers · 9 contributors · PyPI + conda-forge",
+						"metrics": "MIT open source / 30+ solvers / 9 contributors / PyPI + conda-forge",
 						"statsTemplate": "{stars} stars / {forks} forks",
 						"statsSource": "pathsim",
 						"domain": "pathsim.org"
@@ -59,8 +59,8 @@
 						"paragraphs": [
 							"A drop-in Rust replacement for PathSim. Same Python API — swap the import and go. Python callbacks are traced into an SSA graph, symbolically differentiated, and compiled to native code at runtime."
 						],
-						"metrics": "50-100x faster · 21 ODE solvers · JIT + autodiff · FMI 3.0 · C99 code generation for embedded targets",
-						"statsText": "fast.pathsim.org"
+						"metrics": "50-100x faster / 21 ODE solvers / JIT + autodiff / FMI 3.0 / C99 code generation for embedded targets",
+						"statsText": "fast.pathsim.org / licensing: info@pathsim.org"
 					},
 					{
 						"id": "pathview",
@@ -76,7 +76,7 @@
 				]
 			},
 			{
-				"heading": "// circuits",
+				"heading": "circuits",
 				"items": [
 					{
 						"id": "sane",
@@ -86,13 +86,13 @@
 							"Symbolic Analog Network Engine — symbolic and numeric analog circuit analysis. One hash-consed symbolic DAG with automatic differentiation yields DC, transient, AC, poles/zeros, noise, harmonic balance, and exact first- and second-order parameter sensitivities. The graph preserves the circuit's symbolic structure and hierarchy and exploits it throughout.",
 							"SPICE and native Verilog-A frontends: compact models (BSIM, PSP, HICUM, ...) are lowered fully into the graph — every parameter stays exposed to the autodiff, even in harmonic balance. Rust core, threaded sparse LU, optional JIT. Python API."
 						],
-						"metrics": "validated against ngspice & Xyce · scales past 100k parameters (IBM power-grid benchmarks)",
-						"statsText": "github.com/milanofthe/sane · early access: info@milanrother.com"
+						"metrics": "validated against ngspice & Xyce / scales past 100k parameters (IBM power-grid benchmarks)",
+						"statsText": "github.com/milanofthe/sane / licensing: info@milanrother.com"
 					}
 				]
 			},
 			{
-				"heading": "// fields",
+				"heading": "fields",
 				"items": [
 					{
 						"id": "rapidmom",
@@ -102,8 +102,8 @@
 							"A 2.5D Method-of-Moments solver for planar RF passives on layered substrates (PCB, RFIC). Mixed-potential formulation, stable down to DC, layered-media Green's functions, and a fast ACA solver in O(N log N).",
 							"Zero-external-dependency pure Rust with a Python API — lightweight, installs in seconds, built for massive cloud parameter sweeps. EMX-class performance on production RFIC benchmarks."
 						],
-						"metrics": "broadband S-parameters of an SG13G2 spiral via ROM sweep in ~5 s / ~600 MB · benchmarked head-to-head against Cadence EMX on the real IHP SG13G2 stack",
-						"statsText": "github.com/milanofthe/rapidmom · licensing: rapidmom@milanrother.com"
+						"metrics": "broadband S-parameters of an SG13G2 spiral via ROM sweep in ~5 s / ~600 MB / benchmarked head-to-head against Cadence EMX on the real IHP SG13G2 stack",
+						"statsText": "github.com/milanofthe/rapidmom / licensing: rapidmom@milanrother.com"
 					},
 					{
 						"id": "rapidfem",
@@ -112,7 +112,7 @@
 						"paragraphs": [
 							"Open-source Maxwell FEM solver in Rust with two backends behind one Python API: frequency-domain edge elements and time-domain discontinuous Galerkin. Scale-invariant from sub-micron RFIC to metre-scale antennas. Local notebook UI with interactive geometry, mesh, and field renderers."
 						],
-						"metrics": "pip install rapidfem · wheels for Windows, Linux, macOS · validated examples from microstrips to horn antennas",
+						"metrics": "pip install rapidfem / wheels for Windows, Linux, macOS / validated examples from microstrips to horn antennas",
 						"statsText": "fem.rapidpassives.org"
 					},
 					{
@@ -122,13 +122,13 @@
 						"paragraphs": [
 							"RFIC passive design tool. Browser-based layout generation with real-time preview, GDS export, and a custom instanced-WebGL viewer that renders million-polygon external GDS files at 60 fps."
 						],
-						"metrics": "SKY130, SG13G2, GF180MCU, ASAP7, FreePDK45 presets · fully client-side",
+						"metrics": "SKY130, SG13G2, GF180MCU, ASAP7, FreePDK45 presets / fully client-side",
 						"statsText": "rapidpassives.org"
 					}
 				]
 			},
 			{
-				"heading": "// foundations",
+				"heading": "foundations",
 				"intro": "The stack rests on its own numerical infrastructure — no black-box dependencies. Both are built for solver-in-the-loop operation: deterministic, budgetable, embeddable.",
 				"items": [
 					{
@@ -137,7 +137,7 @@
 						"paragraphs": [
 							"A sparse direct solver for real and complex matrices in pure Rust — a PARDISO-style embeddable backend with no BLAS, LAPACK, or MKL dependency. Symmetric LDLT and unsymmetric LU, iterative solvers, a learned meta-tuner, and deterministic a-priori estimates for peak memory and runtime."
 						],
-						"metrics": "bit-identical results across thread counts · learned auto-tuning · PyPI",
+						"metrics": "bit-identical results across thread counts / learned auto-tuning / PyPI",
 						"statsText": "github.com/milanofthe/rslab"
 					},
 					{
@@ -147,7 +147,7 @@
 						"paragraphs": [
 							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact-arithmetic CSG booleans, watertight by construction, count-based meshing with exact element budgets, and an API whose mesh representations serve the solver as an oracle. Replaces gmsh inside the stack."
 						],
-						"metrics": "exact CSG · dihedral-angle quality optimization · planar + tetrahedral",
+						"metrics": "exact CSG / dihedral-angle quality optimization / planar + tetrahedral",
 						"statsText": "github.com/milanofthe/rapidmesh"
 					}
 				]

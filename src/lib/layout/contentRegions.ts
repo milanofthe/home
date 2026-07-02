@@ -25,7 +25,8 @@ export interface ContentRegion {
 	label?: string; // frame title for embedded blocks
 	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'thesisos' | 'whatsmytraffic'; // project color for frame
 	align?: 'center' | 'left';
-	fill?: boolean; // pad heading with dashes up to the content width
+	fill?: boolean; // pad heading up to the tile-row width
+	fillChar?: string; // padding character, defaults to '-'
 }
 
 export interface ContentSection {
@@ -42,9 +43,14 @@ const heading = (text: string, type: RegionType = 'heading'): ContentRegion => (
 	type, lines: [text], align: 'center'
 });
 
-// Section title padded with dashes up to the content width (divider look)
+// Section title padded with '=' up to the tile-row width (divider look)
 const sectionHeading = (text: string): ContentRegion => ({
-	...heading(text), fill: true
+	...heading(text), fill: true, fillChar: '='
+});
+
+// Subsection title (e.g. stack groups) padded with '-'
+const subsectionHeading = (text: string): ContentRegion => ({
+	...heading(text), fill: true, fillChar: '-'
 });
 
 const paragraph = (text: string, inlineLinks?: { phrase: string; project: string }[]): ContentRegion => ({
@@ -256,7 +262,7 @@ function buildProjectsSection(stats: GitHubStats): ContentSection {
 
 	for (const group of c.groups) {
 		regions.push(spacer(), spacer());
-		regions.push(heading(group.heading));
+		regions.push(subsectionHeading(group.heading));
 		if ('intro' in group && group.intro) {
 			regions.push(spacer(), paragraph(group.intro as string));
 		}

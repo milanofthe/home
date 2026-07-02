@@ -164,7 +164,25 @@
 		});
 	});
 
-	onMount(() => () => { typewriterObserver?.disconnect(); });
+	onMount(() => {
+		// Chrome sometimes leaves composited steps() clip-path animations one step
+		// short of the final keyframe (last char stays filler-dark) — pin the end
+		// state explicitly when each reveal finishes.
+		const pinFinalClip = (e: AnimationEvent) => {
+			const t = e.target as HTMLElement;
+			if (e.animationName === 'type-reveal' && t.classList.contains('tw-overlay')) {
+				// Inline style loses against the animation's fill state in the
+				// cascade, so drop the animation before pinning the final clip.
+				t.style.clipPath = 'inset(0 0% 0 0)';
+				t.style.animationName = 'none';
+			}
+		};
+		gridEl.addEventListener('animationend', pinFinalClip);
+		return () => {
+			gridEl.removeEventListener('animationend', pinFinalClip);
+			typewriterObserver?.disconnect();
+		};
+	});
 </script>
 
 <div
