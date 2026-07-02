@@ -1,8 +1,9 @@
 {
 	"hero": {
 		"heading": "MILAN ROTHER",
-		"tagline": "I build simulation tools end-to-end. Numerical methods, infrastructure, and the interfaces to use them.",
-		"cta": "[ Get in Touch -> ]   [ View Projects ]"
+		"tagline": "I build the simulation stack for electronics — fields, circuits, systems. State-of-the-art numerics, fast engines, and the interfaces to use them.",
+		"proof": "Creator of PathSim. JOSS-published, ~400 stars on GitHub, built with collaborators from MIT PSFC, CEA, scikit-rf, and JSBSim.",
+		"cta": "[ Get in Touch -> ]   [ View the Stack ]"
 	},
 	"about": {
 		"heading": "WHO AM I",
@@ -14,42 +15,146 @@
 				"links": [{ "phrase": "RapidPassives", "project": "rapidpassives" }]
 			},
 			{
-				"text": "At the beginning of my PhD (early 2023) I diverged from the circuit path to the more general system level, where you have signal flow diagrams and ODEs instead of Maxwell and KVL/KCL. During that time PathSim started as a side project. Initially just an analog computer emulator, it evolved into a fully fledged continuous and discrete (hybrid, we have events!) system modeling and simulation framework. I open sourced it in early 2025 as an open alternative to Simulink, and a modern take on system modeling in general. Clean API, mutability from the get-go, robust solvers (stiffness, algebraic loops, no problem). And of course some nice abstractions for integration with other modeling packages. Today (mid 2026) we are at roughly 400 stars on GitHub and have many users and collaborators worldwide, some of them prominent figures such as the MIT Plasma Science and Fusion Center, scikit-rf, and JSBSim developers.",
+				"text": "At the beginning of my PhD (early 2023) I diverged from the circuit path to the more general system level, where you have signal flow diagrams and ODEs instead of Maxwell and KVL/KCL. During that time PathSim started as a side project. Initially just an analog computer emulator, it evolved into a fully fledged continuous and discrete (hybrid, we have events!) system modeling and simulation framework. I open sourced it in early 2025 as an open alternative to Simulink, and a modern take on system modeling in general. Clean API, mutability from the get-go, robust solvers (stiffness, algebraic loops, no problem). Today (mid 2026) we are at roughly 400 stars on GitHub and have many users and collaborators worldwide, some of them prominent figures such as the MIT Plasma Science and Fusion Center, scikit-rf, and JSBSim developers.",
 				"links": [{ "phrase": "PathSim", "project": "pathsim" }]
 			},
-			"I'm now making a full roundtrip back to circuits, trying to bring it all together. Custom EM solvers, compact models, graph-native circuit representations, and system-level simulation.",
+			{
+				"text": "Now I'm making the full roundtrip back through circuits and fields, bringing it all together into one vertically integrated stack: EM solvers (RapidFEM, RapidMoM), a symbolic circuit engine (SANE), and system-level simulation (PathSim, FastSim). One architecture — SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy. I think one coherent, modern stack can do better.",
+				"links": [
+					{ "phrase": "RapidFEM", "project": "rapidfem" },
+					{ "phrase": "RapidMoM", "project": "rapidmom" },
+					{ "phrase": "SANE", "project": "sane" },
+					{ "phrase": "FastSim", "project": "fastsim" }
+				]
+			},
 			"Those who have talked to me know that I can't stop talking about numerics, modeling, and simulation principles and ideas.",
-			"I work as a freelancer. If you have something you want my take on, or need some ideas and even implementation, don't hesitate to reach out."
+			"I work as a freelancer and license my tools commercially — free for academia. If you have something you want my take on, or need some ideas and even implementation, don't hesitate to reach out."
 		],
 		"links": "GitHub   LinkedIn   X"
 	},
 	"projects": {
-		"heading": "PROJECTS",
-		"intro": "Building open-source infrastructure for system modeling and simulation.",
+		"heading": "THE STACK",
+		"intro": "One vertically integrated simulation stack for electronics — from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.",
+		"groups": [
+			{
+				"heading": "// systems",
+				"items": [
+					{
+						"id": "pathsim",
+						"heading": "PathSim",
+						"headingType": "pathsim",
+						"paragraphs": [
+							"A pure-Python framework for modeling and simulating dynamical systems. Built from first principles with custom solvers, an event system, and a modular block-diagram API.",
+							"Published in JOSS. Adopted by JSBSim for flight dynamics and used at MIT PSFC for nuclear fusion fuel-cycle modeling. Domain toolboxes for chemical engineering, batteries, vehicles, flight dynamics, RF, and FMI co-simulation — several of them community-contributed."
+						],
+						"metrics": "MIT open source · 30+ solvers · 9 contributors · PyPI + conda-forge",
+						"statsTemplate": "{stars} stars / {forks} forks",
+						"statsSource": "pathsim",
+						"domain": "pathsim.org"
+					},
+					{
+						"id": "fastsim",
+						"heading": "FastSim",
+						"headingType": "fastsim",
+						"paragraphs": [
+							"A drop-in Rust replacement for PathSim. Same Python API — swap the import and go. Python callbacks are traced into an SSA graph, symbolically differentiated, and compiled to native code at runtime."
+						],
+						"metrics": "50-100x faster · 21 ODE solvers · JIT + autodiff · FMI 3.0 · C99 code generation for embedded targets",
+						"statsText": "fast.pathsim.org"
+					},
+					{
+						"id": "pathview",
+						"heading": "PathView",
+						"headingType": "pathsim",
+						"paragraphs": [
+							"A browser-based visual editor for PathSim and FastSim models. Drag-and-drop block diagrams, live simulation preview, and instant sharing. Runs entirely in the browser via Pyodide — nothing to install."
+						],
+						"statsTemplate": "{stars} stars / {forks} forks",
+						"statsSource": "pathview",
+						"domain": "view.pathsim.org"
+					}
+				]
+			},
+			{
+				"heading": "// circuits",
+				"items": [
+					{
+						"id": "sane",
+						"heading": "SANE",
+						"headingType": "sane",
+						"paragraphs": [
+							"Symbolic Analog Network Engine — symbolic and numeric analog circuit analysis. One hash-consed symbolic DAG with automatic differentiation yields DC, transient, AC, poles/zeros, noise, harmonic balance, and exact parameter sensitivities. SPICE and native Verilog-A frontends. Rust core, Python API."
+						],
+						"metrics": "validated against ngspice & Xyce · 12/12 SKY130 BSIM4 op-amps · harmonic balance matches Xyce to ~1e-5 % · 19/20 OpenVAF Verilog-A corpus",
+						"statsText": "early access: info@milanrother.com"
+					}
+				]
+			},
+			{
+				"heading": "// fields",
+				"items": [
+					{
+						"id": "rapidmom",
+						"heading": "RapidMoM",
+						"headingType": "rapidmom",
+						"paragraphs": [
+							"A 2.5D Method-of-Moments solver for planar RF passives on layered substrates (PCB, RFIC) — a Momentum-class engine rebuilt from first principles in Rust. Mixed-potential formulation, stable down to DC, layered-media Green's functions, and a fast ACA solver."
+						],
+						"metrics": "O(N log N) matrix compression · low-frequency stable (A-EFIE) · Rust core, Python API",
+						"statsText": "licensing: rapidmom@milanrother.com"
+					},
+					{
+						"id": "rapidfem",
+						"heading": "RapidFEM",
+						"headingType": "rapidfem",
+						"paragraphs": [
+							"Open-source Maxwell FEM solver in Rust with two backends behind one Python API: frequency-domain edge elements and time-domain discontinuous Galerkin. Scale-invariant from sub-micron RFIC to metre-scale antennas. Local notebook UI with interactive geometry, mesh, and field renderers."
+						],
+						"metrics": "pip install rapidfem · wheels for Windows, Linux, macOS · validated examples from microstrips to horn antennas",
+						"statsText": "fem.rapidpassives.org"
+					},
+					{
+						"id": "rapidpassives",
+						"heading": "RapidPassives",
+						"headingType": "rapidpassives",
+						"paragraphs": [
+							"RFIC passive design tool. Browser-based layout generation with real-time preview, GDS export, and a custom instanced-WebGL viewer that renders million-polygon external GDS files at 60 fps."
+						],
+						"metrics": "SKY130, SG13G2, GF180MCU, ASAP7, FreePDK45 presets · fully client-side",
+						"statsText": "rapidpassives.org"
+					}
+				]
+			},
+			{
+				"heading": "// foundations",
+				"intro": "The stack rests on its own numerical infrastructure — no black-box dependencies. Both are built for solver-in-the-loop operation: deterministic, budgetable, embeddable.",
+				"items": [
+					{
+						"id": "rslab",
+						"heading": "RSLAB",
+						"paragraphs": [
+							"A sparse direct solver for real and complex matrices in pure Rust — a PARDISO-style embeddable backend with no BLAS, LAPACK, or MKL dependency. Symmetric LDLT and unsymmetric LU, iterative solvers, a learned meta-tuner, and deterministic a-priori estimates for peak memory and runtime."
+						],
+						"metrics": "bit-identical results across thread counts · learned auto-tuning · crates.io + PyPI",
+						"statsText": "github.com/milanofthe/rslab"
+					},
+					{
+						"id": "rapidmesh",
+						"heading": "RapidMesh",
+						"paragraphs": [
+							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact-arithmetic CSG booleans, watertight by construction, count-based meshing with exact element budgets, and an API whose mesh representations serve the solver as an oracle. Replaces gmsh inside the stack."
+						],
+						"metrics": "exact CSG · dihedral-angle quality optimization · planar + tetrahedral",
+						"statsText": "github.com/milanofthe/rapidmesh"
+					}
+				]
+			}
+		]
+	},
+	"other": {
+		"heading": "OTHER PROJECTS",
+		"intro": "Side quests — tools I built because I wanted them to exist.",
 		"items": [
-			{
-				"id": "pathsim",
-				"heading": "PathSim",
-				"headingType": "pathsim",
-				"paragraphs": [
-					"A pure-Python framework for modeling and simulating dynamical systems. Built from first principles with custom solvers, an event system, and a modular block-diagram API.",
-					"Published in JOSS. Adopted by JSBSim for flight dynamics and used at MIT PSFC for nuclear fusion fuel-cycle modeling."
-				],
-				"statsTemplate": "{stars} stars / {forks} forks",
-				"statsSource": "pathsim",
-				"domain": "pathsim.org"
-			},
-			{
-				"id": "pathview",
-				"heading": "PathView",
-				"headingType": "pathsim",
-				"paragraphs": [
-					"A browser-based visual editor for PathSim models. Drag-and-drop block diagrams, live simulation preview, and instant sharing. Built with SvelteKit, SvelteFlow, and Pyodide."
-				],
-				"statsTemplate": "{stars} stars / {forks} forks",
-				"statsSource": "pathview",
-				"domain": "view.pathsim.org"
-			},
 			{
 				"id": "pysimhub",
 				"heading": "PySimHub",
@@ -60,33 +165,6 @@
 				"statsTemplate": "{projects} projects / {cumulativeStars} cumulative stars",
 				"statsSource": "pysimhub",
 				"domain": "pysimhub.io"
-			},
-			{
-				"id": "rapidpassives",
-				"heading": "RapidPassives",
-				"headingType": "rapidpassives",
-				"paragraphs": [
-					"RFIC passive design tool. Browser-based layout generation with real-time preview, GDS export, and a custom instanced-WebGL viewer that renders million-polygon external GDS files at 60 fps."
-				],
-				"statsText": "rapidpassives.org"
-			},
-			{
-				"id": "rapidfem",
-				"heading": "RapidFEM",
-				"headingType": "rapidfem",
-				"paragraphs": [
-					"Open-source frequency-domain Maxwell FEM solver in Rust. Python API and a local notebook UI with interactive geometry, mesh, and field renderers."
-				],
-				"statsText": "fem.rapidpassives.org"
-			},
-			{
-				"id": "fastsim",
-				"heading": "FastSim",
-				"headingType": "fastsim",
-				"paragraphs": [
-					"A drop-in Rust port of PathSim. Same Python API, 50-100x faster solvers reaching μs-scale timesteps, and a JIT that compiles user-supplied Python callbacks to native code at runtime."
-				],
-				"statsText": "fast.pathsim.org"
 			},
 			{
 				"id": "scidata",
@@ -132,6 +210,10 @@
 			{
 				"heading": "// PathSim integration & support",
 				"text": "Adopt PathSim for your domain. Custom blocks, solver tuning, toolbox development. Ongoing support contracts available."
+			},
+			{
+				"heading": "// commercial licensing",
+				"text": "FastSim, RapidMoM, and SANE are source-available and free for noncommercial use. Commercial licenses with support and integration available. Free for academia."
 			},
 			{
 				"heading": "// digital twin & co-simulation",

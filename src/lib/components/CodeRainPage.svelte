@@ -149,17 +149,24 @@
 
 	const clickTargets: { text: string; types: CellType[]; href?: string; scrollTo?: string; action?: string }[] = [
 		{ text: '[ Get in Touch -> ]', types: ['cta'], scrollTo: 'contact' },
-		{ text: '[ View Projects ]', types: ['cta'], scrollTo: 'projects' },
+		{ text: '[ View the Stack ]', types: ['cta'], scrollTo: 'projects' },
 		{ text: '[ SEND MESSAGE -> ]', types: ['cta'], action: 'submit-form' },
 		{ text: 'Impressum', types: ['footer'], href: '/impressum/' },
 		{ text: 'Datenschutz', types: ['footer'], href: '/datenschutz/' },
-		{ text: 'info@milanrother.com', types: ['link'], href: 'mailto:info@milanrother.com' },
+		{ text: 'info@milanrother.com', types: ['link', 'link-sane'], href: 'mailto:info@milanrother.com' },
+		{ text: 'rapidmom@milanrother.com', types: ['link-rapidpassives'], href: 'mailto:rapidmom@milanrother.com' },
 		{ text: 'Email', types: ['footer'], href: 'mailto:info@milanrother.com' },
 		{ text: 'GitHub', types: ['link', 'footer'], href: 'https://github.com/milanofthe' },
 		{ text: 'LinkedIn', types: ['link', 'footer', 'content'], href: 'https://linkedin.com/in/milan-rother-648474183' },
 		{ text: 'X', types: ['link', 'footer'], href: 'https://x.com/Milan1115268' },
 		{ text: 'RapidPassives', types: ['link-rapidpassives'], scrollTo: 'rapidpassives' },
+		{ text: 'RapidFEM', types: ['link-rapidpassives'], scrollTo: 'rapidfem' },
+		{ text: 'RapidMoM', types: ['link-rapidpassives'], scrollTo: 'rapidmom' },
+		{ text: 'SANE', types: ['link-sane'], scrollTo: 'sane' },
+		{ text: 'FastSim', types: ['link-fastsim'], scrollTo: 'fastsim' },
 		{ text: 'PathSim', types: ['link-pathsim'], scrollTo: 'pathsim' },
+		{ text: 'github.com/milanofthe/rslab', types: ['link'], href: 'https://github.com/milanofthe/rslab' },
+		{ text: 'github.com/milanofthe/rapidmesh', types: ['link'], href: 'https://github.com/milanofthe/rapidmesh' },
 		{ text: 'rapidpassives.org', types: ['link-rapidpassives'], href: 'https://rapidpassives.org' },
 		{ text: 'fem.rapidpassives.org', types: ['link-rapidpassives'], href: 'https://fem.rapidpassives.org' },
 		{ text: 'scidata.io', types: ['link-scidata'], href: 'https://scidata.io' },
@@ -245,46 +252,6 @@
 			const y = anchor.row * lineHeight;
 			window.scrollTo({ top: y - 60, behavior: 'smooth' });
 		}
-	}
-
-	// Hovered word highlight
-	let hoveredWord = $state<{ row: number; col: number; length: number; text: string } | null>(null);
-
-	function handleMouseMove(e: MouseEvent) {
-		if (!containerEl || !gridLayout) { hoveredWord = null; return; }
-		const rect = containerEl.getBoundingClientRect();
-		const row = Math.floor((e.clientY - rect.top) / lineHeight);
-		const col = Math.floor((e.clientX - rect.left) / charWidth);
-
-		const cells = gridLayout.cells;
-		if (row < 0 || row >= cells.length || col < 0 || col >= cells[0].length) {
-			hoveredWord = null;
-			return;
-		}
-
-		const cell = cells[row][col];
-		if (cell.type !== 'filler' || cell.char === ' ') {
-			hoveredWord = null;
-			return;
-		}
-
-		// Find whitespace-separated token boundaries
-		const rowCells = cells[row];
-		let start = col;
-		while (start > 0 && rowCells[start - 1].type === 'filler' && rowCells[start - 1].char !== ' ') start--;
-		let end = col;
-		while (end < rowCells.length - 1 && rowCells[end + 1].type === 'filler' && rowCells[end + 1].char !== ' ') end++;
-
-		// Skip update if same word
-		if (hoveredWord && hoveredWord.row === row && hoveredWord.col === start) return;
-
-		let text = '';
-		for (let i = start; i <= end; i++) text += rowCells[i].char;
-		hoveredWord = { row, col: start, length: end - start + 1, text };
-	}
-
-	function handleMouseLeave() {
-		hoveredWord = null;
 	}
 
 	function tileReveal(node: HTMLElement) {
@@ -438,21 +405,33 @@
 <!-- Semantic content for SEO / screen readers -->
 <main class="sr-only">
 	<h1>Milan Rother</h1>
-	<p>I build simulation tools end-to-end — numerical methods, infrastructure, and the interfaces to use them.</p>
+	<p>I build the simulation stack for electronics — fields, circuits, systems. State-of-the-art numerics, fast engines, and the interfaces to use them.</p>
 	<section id="about">
 		<h2>Who am I</h2>
 		<p>Simulation engineer. I build numerical software and solve modeling problems for teams working on complex physical systems.</p>
-		<p>Currently consulting for MIT Plasma Science & Fusion Center on nuclear fusion fuel-cycle modeling.</p>
-		<p>M.Sc. Electrical Engineering. Background in numerical methods, system modeling, sensitivity and failure mode analysis, and compact modeling for physical systems.</p>
-		<p>I built <a href="https://pathsim.org">PathSim</a> because modeling software has a long history of vendor lock-in and clunky UX. Pure Python, open source, designed from first principles.</p>
+		<p>M.Sc. Electrical Engineering. Background in numerical methods, system modeling, electromagnetics, and compact modeling for physical systems.</p>
+		<p>I built <a href="https://pathsim.org">PathSim</a> because modeling software has a long history of vendor lock-in and clunky UX. Pure Python, open source, designed from first principles. JOSS-published, with collaborators from MIT Plasma Science &amp; Fusion Center, CEA, scikit-rf, and JSBSim.</p>
+		<p>Now I'm bringing it all together into one vertically integrated stack: EM field solvers (RapidFEM, RapidMoM), a symbolic analog circuit engine (SANE), and system-level simulation (PathSim, FastSim). One architecture — SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces.</p>
 	</section>
 	<section id="projects">
-		<h2>Projects</h2>
-		<p>Building open-source infrastructure for system modeling and simulation.</p>
+		<h2>The Stack</h2>
+		<p>One vertically integrated simulation stack for electronics — from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.</p>
+		<h3>Systems</h3>
+		<p><a href="https://pathsim.org">PathSim</a> — pure-Python system simulation framework, MIT open source, JOSS-published. <a href="https://fast.pathsim.org">FastSim</a> — drop-in Rust replacement, 50-100x faster, JIT, autodiff, FMI 3.0, C99 code generation. <a href="https://view.pathsim.org">PathView</a> — browser-based visual model editor.</p>
+		<h3>Circuits</h3>
+		<p>SANE — Symbolic Analog Network Engine. Symbolic and numeric circuit analysis: DC, transient, AC, poles/zeros, noise, harmonic balance, exact sensitivities. SPICE and Verilog-A frontends. Validated against ngspice and Xyce.</p>
+		<h3>Fields</h3>
+		<p>RapidMoM — 2.5D Method-of-Moments solver for planar RF passives on layered substrates. <a href="https://fem.rapidpassives.org">RapidFEM</a> — Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="https://rapidpassives.org">RapidPassives</a> — browser-based RFIC passive layout generation.</p>
+		<h3>Foundations</h3>
+		<p><a href="https://github.com/milanofthe/rslab">RSLAB</a> — sparse direct solver in pure Rust. <a href="https://github.com/milanofthe/rapidmesh">RapidMesh</a> — tetrahedral mesh generator for 3D electromagnetic FEM.</p>
+	</section>
+	<section id="other">
+		<h2>Other Projects</h2>
+		<p><a href="https://pysimhub.io">PySimHub</a>, <a href="https://scidata.io">SciData</a>, <a href="https://thesisos.io">ThesisOS</a>, <a href="https://whatsmytraffic.com">WhatsMyTraffic</a>.</p>
 	</section>
 	<section id="services">
 		<h2>Services</h2>
-		<p>I help engineering teams build and scale simulation infrastructure. Available for consulting, development, and training.</p>
+		<p>I help engineering teams build and scale simulation infrastructure. Available for consulting, development, commercial licensing, and training.</p>
 		<p>Simulink migration, custom simulation development, digital twin and co-simulation architecture, simulation audit, training and workshops.</p>
 	</section>
 	<section id="contact">
@@ -464,8 +443,7 @@
 
 <!-- Character grid + overlays -->
 <div bind:this={containerEl} class="code-rain-container" class:opacity-0={!mounted}
-	style="font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: {fontSize}px; line-height: {lineHeight}px; letter-spacing: {letterSpacingPx}px;"
-	onmousemove={handleMouseMove} onmouseleave={handleMouseLeave}>
+	style="font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: {fontSize}px; line-height: {lineHeight}px; letter-spacing: {letterSpacingPx}px;">
 	{#if gridLayout}
 		<CharacterGrid cells={gridLayout.cells} />
 
@@ -634,13 +612,6 @@
 		{/each}
 	{/if}
 
-	{#if hoveredWord}
-		<span
-			class="hovered-word"
-			aria-hidden="true"
-			style="top: {hoveredWord.row * lineHeight}px; left: {hoveredWord.col * charWidth}px; font-size: {fontSize}px; line-height: {lineHeight}px;"
-		>{hoveredWord.text}</span>
-	{/if}
 </div>
 
 

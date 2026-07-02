@@ -10,7 +10,7 @@ export interface GitHubStats {
 	pysimhub: { projects: number; members?: number; cumulativeStars: number };
 }
 
-export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'footer-line' | 'content' | 'form-field';
+export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-sane' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'footer-line' | 'content' | 'form-field';
 
 export interface ContentRegion {
 	type: RegionType;
@@ -23,7 +23,7 @@ export interface ContentRegion {
 	url?: string; // for links within text
 	inlineLinks?: { phrase: string; project: string }[]; // colored, clickable phrases embedded in paragraph text
 	label?: string; // frame title for embedded blocks
-	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos' | 'whatsmytraffic'; // project color for frame
+	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'thesisos' | 'whatsmytraffic'; // project color for frame
 	align?: 'center' | 'left';
 }
 
@@ -112,8 +112,10 @@ const LINK_LINE_TYPES: Record<string, RegionType> = {
 	pysimhub: 'link-line-pysimhub',
 	rapidpassives: 'link-line-rapidpassives',
 	rapidfem: 'link-line-rapidpassives',
+	rapidmom: 'link-line-rapidpassives',
 	scidata: 'link-line-scidata',
 	fastsim: 'link-line-fastsim',
+	sane: 'link-line-sane',
 	thesisos: 'link-line-thesisos',
 	whatsmytraffic: 'link-line-whatsmytraffic'
 };
@@ -123,8 +125,10 @@ const HEADING_TYPES: Record<string, RegionType> = {
 	pysimhub: 'heading-pysimhub',
 	rapidpassives: 'heading-rapidpassives',
 	rapidfem: 'heading-rapidpassives',
+	rapidmom: 'heading-rapidpassives',
 	scidata: 'heading-scidata',
 	fastsim: 'heading-fastsim',
+	sane: 'heading-sane',
 	thesisos: 'heading-thesisos',
 	whatsmytraffic: 'heading-whatsmytraffic'
 };
@@ -144,6 +148,8 @@ function buildHeroSection(): ContentSection {
 			heading(c.heading),
 			spacer(),
 			paragraph(c.tagline),
+			spacer(),
+			{ type: 'content', lines: [c.proof], align: 'center' },
 			spacer(),
 			{ type: 'cta', lines: [c.cta], align: 'center' }
 		]
@@ -168,6 +174,70 @@ function buildAboutSection(): ContentSection {
 	return { id: 'about', fillerLinesBefore: 5, regions };
 }
 
+interface ProjectItem {
+	id: string;
+	heading: string;
+	headingType?: string;
+	paragraphs: string[];
+	metrics?: string;
+	statsTemplate?: string;
+	statsSource?: string;
+	statsText?: string;
+	domain?: string;
+}
+
+function buildStatsMap(stats: GitHubStats): Record<string, Record<string, number | undefined>> {
+	return {
+		pathsim: stats.pathsim as unknown as Record<string, number | undefined>,
+		pathview: stats.pathview as unknown as Record<string, number | undefined>,
+		pysimhub: stats.pysimhub as unknown as Record<string, number | undefined>
+	};
+}
+
+function renderProjectItem(
+	item: ProjectItem,
+	statsMap: Record<string, Record<string, number | undefined>>,
+	regions: ContentRegion[]
+) {
+	regions.push(spacer());
+	regions.push({ ...heading(item.heading, HEADING_TYPES[item.headingType ?? ''] ?? 'heading'), id: item.id });
+	regions.push(spacer());
+
+	for (const p of item.paragraphs) {
+		regions.push(paragraph(p), spacer());
+	}
+
+	// Metrics line: hard capability/performance numbers
+	if (item.metrics) {
+		regions.push(paragraph(item.metrics), spacer());
+	}
+
+	// Stats line
+	if (item.statsTemplate && item.statsSource) {
+		const resolved = resolveStats(item.statsTemplate, statsMap[item.statsSource] ?? {});
+		regions.push(linkLine(resolved, LINK_LINE_TYPES[item.id] ?? 'link-line'));
+	} else if (item.statsText) {
+		regions.push(linkLine(item.statsText, LINK_LINE_TYPES[item.id] ?? 'link-line'));
+	}
+
+	// Domain line (rendered when domain is set alongside a stats line —
+	// projects using statsText already encode the domain there, so we
+	// only emit this extra line when it would not be redundant).
+	if (item.domain && item.statsTemplate) {
+		regions.push(linkLine(item.domain, LINK_LINE_TYPES[item.id] ?? 'link-line'));
+	}
+
+	regions.push(spacer());
+
+	// Embedded tiles
+	if (PROJECT_EMBEDS[item.id]) {
+		regions.push(PROJECT_EMBEDS[item.id]);
+	}
+
+	// Extra spacing between projects
+	regions.push(spacer(), spacer());
+}
+
 function buildProjectsSection(stats: GitHubStats): ContentSection {
 	const c = contentData.projects;
 	const regions: ContentRegion[] = [
@@ -177,48 +247,40 @@ function buildProjectsSection(stats: GitHubStats): ContentSection {
 		spacer()
 	];
 
-	const statsMap: Record<string, Record<string, number | undefined>> = {
-		pathsim: stats.pathsim as unknown as Record<string, number | undefined>,
-		pathview: stats.pathview as unknown as Record<string, number | undefined>,
-		pysimhub: stats.pysimhub as unknown as Record<string, number | undefined>
-	};
+	const statsMap = buildStatsMap(stats);
 
-	for (const item of c.items) {
-		regions.push(spacer());
-		regions.push({ ...heading(item.heading, HEADING_TYPES[item.headingType] ?? 'heading'), id: item.id });
-		regions.push(spacer());
-
-		for (const p of item.paragraphs) {
-			regions.push(paragraph(p), spacer());
-		}
-
-		// Stats line
-		if (item.statsTemplate && item.statsSource) {
-			const resolved = resolveStats(item.statsTemplate, statsMap[item.statsSource] ?? {});
-			regions.push(linkLine(resolved, LINK_LINE_TYPES[item.id] ?? 'link-line'));
-		} else if (item.statsText) {
-			regions.push(linkLine(item.statsText, LINK_LINE_TYPES[item.id] ?? 'link-line'));
-		}
-
-		// Domain line (rendered when domain is set alongside a stats line —
-		// projects using statsText already encode the domain there, so we
-		// only emit this extra line when it would not be redundant).
-		if (item.domain && item.statsTemplate) {
-			regions.push(linkLine(item.domain, LINK_LINE_TYPES[item.id] ?? 'link-line'));
-		}
-
-		regions.push(spacer());
-
-		// Embedded tiles
-		if (PROJECT_EMBEDS[item.id]) {
-			regions.push(PROJECT_EMBEDS[item.id]);
-		}
-
-		// Extra spacing between projects
+	for (const group of c.groups) {
 		regions.push(spacer(), spacer());
+		regions.push(heading(group.heading));
+		if ('intro' in group && group.intro) {
+			regions.push(spacer(), paragraph(group.intro as string));
+		}
+		regions.push(spacer());
+
+		for (const item of group.items as ProjectItem[]) {
+			renderProjectItem(item, statsMap, regions);
+		}
 	}
 
 	return { id: 'projects', fillerLinesBefore: 5, regions };
+}
+
+function buildOtherSection(stats: GitHubStats): ContentSection {
+	const c = contentData.other;
+	const regions: ContentRegion[] = [
+		heading(c.heading),
+		spacer(),
+		paragraph(c.intro),
+		spacer()
+	];
+
+	const statsMap = buildStatsMap(stats);
+
+	for (const item of c.items as ProjectItem[]) {
+		renderProjectItem(item, statsMap, regions);
+	}
+
+	return { id: 'other', fillerLinesBefore: 5, regions };
 }
 
 function buildServicesSection(): ContentSection {
@@ -300,6 +362,7 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 		buildHeroSection(),
 		buildAboutSection(),
 		buildProjectsSection(resolvedStats),
+		buildOtherSection(resolvedStats),
 		buildServicesSection(),
 		buildContactSection(),
 		buildFooterSection()
