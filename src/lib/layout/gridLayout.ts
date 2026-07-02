@@ -411,6 +411,17 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 		// Word-wrap: paragraphs always re-wrap to fill available width (capped for readability)
 		let lines = region.lines;
 		const maxWidth = cols - 4;
+		if (region.fill && region.type.startsWith('heading')) {
+			// Pad section titles with dashes on both sides, matching the width of a
+			// side-by-side tile row (2 frames of embeddedCols 54 + 2 gap = 114 cols).
+			const target = Math.min(maxWidth, 114);
+			lines = lines.map(l => {
+				if (l.length >= target - 4) return l;
+				const total = target - l.length - 2; // minus the spaces around the title
+				const left = Math.floor(total / 2);
+				return '-'.repeat(left) + ' ' + l + ' ' + '-'.repeat(total - left);
+			});
+		}
 		if (region.type === 'cta') {
 			// Split CTA buttons onto separate lines when they don't fit
 			const expanded: string[] = [];

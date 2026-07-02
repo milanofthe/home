@@ -25,6 +25,7 @@ export interface ContentRegion {
 	label?: string; // frame title for embedded blocks
 	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'thesisos' | 'whatsmytraffic'; // project color for frame
 	align?: 'center' | 'left';
+	fill?: boolean; // pad heading with dashes up to the content width
 }
 
 export interface ContentSection {
@@ -39,6 +40,11 @@ const spacer = (): ContentRegion => ({ type: 'spacer', lines: [''] });
 
 const heading = (text: string, type: RegionType = 'heading'): ContentRegion => ({
 	type, lines: [text], align: 'center'
+});
+
+// Section title padded with dashes up to the content width (divider look)
+const sectionHeading = (text: string): ContentRegion => ({
+	...heading(text), fill: true
 });
 
 const paragraph = (text: string, inlineLinks?: { phrase: string; project: string }[]): ContentRegion => ({
@@ -158,7 +164,7 @@ function buildHeroSection(): ContentSection {
 function buildAboutSection(): ContentSection {
 	const c = contentData.about;
 	const regions: ContentRegion[] = [
-		heading(c.heading),
+		sectionHeading(c.heading),
 		spacer()
 	];
 	for (const p of c.paragraphs) {
@@ -240,7 +246,7 @@ function renderProjectItem(
 function buildProjectsSection(stats: GitHubStats): ContentSection {
 	const c = contentData.projects;
 	const regions: ContentRegion[] = [
-		heading(c.heading),
+		sectionHeading(c.heading),
 		spacer(),
 		paragraph(c.intro),
 		spacer()
@@ -267,7 +273,7 @@ function buildProjectsSection(stats: GitHubStats): ContentSection {
 function buildOtherSection(stats: GitHubStats): ContentSection {
 	const c = contentData.other;
 	const regions: ContentRegion[] = [
-		heading(c.heading),
+		sectionHeading(c.heading),
 		spacer(),
 		paragraph(c.intro),
 		spacer()
@@ -285,7 +291,7 @@ function buildOtherSection(stats: GitHubStats): ContentSection {
 function buildServicesSection(): ContentSection {
 	const c = contentData.services;
 	const regions: ContentRegion[] = [
-		heading(c.heading),
+		sectionHeading(c.heading),
 		spacer(),
 		paragraph(c.intro),
 		spacer(),
@@ -309,7 +315,7 @@ function buildContactSection(): ContentSection {
 		id: 'contact',
 		fillerLinesBefore: 5,
 		regions: [
-			heading(c.heading),
+			sectionHeading(c.heading),
 			spacer(),
 			paragraph(c.intro),
 			spacer(),

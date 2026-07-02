@@ -119,20 +119,26 @@
 				.filter(e => e.isIntersecting)
 				.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
 
-			for (let i = 0; i < newlyVisible.length; i++) {
-				typewriterObserver!.unobserve(newlyVisible[i].target);
-				const overlays = newlyVisible[i].target.querySelectorAll<HTMLSpanElement>('.tw-overlay');
+			// Sequential stream: each line starts when the previous one finishes,
+			// spans within a line continue left-to-right without a gap.
+			let chain = 0;
+			for (const entry of newlyVisible) {
+				typewriterObserver!.unobserve(entry.target);
+				const overlays = entry.target.querySelectorAll<HTMLSpanElement>('.tw-overlay');
+				let lineDuration = 0;
 				for (const overlay of overlays) {
 					const chars = (overlay.textContent || '').length;
 					if (chars === 0) continue;
 					const isHeading = overlay.className.includes('heading');
-					const msPerChar = isHeading ? 30 : 15;
+					const msPerChar = isHeading ? 5 : 2;
 					overlay.style.animationName = 'type-reveal';
-					overlay.style.animationDuration = `${Math.max(chars * msPerChar, 200)}ms`;
+					overlay.style.animationDuration = `${chars * msPerChar}ms`;
 					overlay.style.animationTimingFunction = `steps(${chars})`;
-					overlay.style.animationDelay = `${i * 60}ms`;
+					overlay.style.animationDelay = `${chain + lineDuration}ms`;
 					overlay.style.animationFillMode = 'both';
+					lineDuration += chars * msPerChar;
 				}
+				chain += lineDuration;
 			}
 		}, { threshold: 0.1 });
 
