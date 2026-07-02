@@ -83,9 +83,10 @@
 						"heading": "SANE",
 						"headingType": "sane",
 						"paragraphs": [
-							"Symbolic Analog Network Engine — symbolic and numeric analog circuit analysis. One hash-consed symbolic DAG with automatic differentiation yields DC, transient, AC, poles/zeros, noise, harmonic balance, and exact parameter sensitivities. SPICE and native Verilog-A frontends. Rust core, Python API."
+							"Symbolic Analog Network Engine — symbolic and numeric analog circuit analysis. One hash-consed symbolic DAG with automatic differentiation yields DC, transient, AC, poles/zeros, noise, harmonic balance, and exact first- and second-order parameter sensitivities. The graph preserves the circuit's symbolic structure and hierarchy and exploits it throughout.",
+							"SPICE and native Verilog-A frontends: compact models (BSIM, PSP, HICUM, ...) are lowered fully into the graph — every parameter stays exposed to the autodiff, even in harmonic balance. Rust core, threaded sparse LU, optional JIT. Python API."
 						],
-						"metrics": "validated against ngspice & Xyce · 12/12 SKY130 BSIM4 op-amps · harmonic balance matches Xyce to ~1e-5 % · 19/20 OpenVAF Verilog-A corpus",
+						"metrics": "validated against ngspice & Xyce · scales past 100k parameters (IBM power-grid benchmarks)",
 						"statsText": "github.com/milanofthe/sane · early access: info@milanrother.com"
 					}
 				]
@@ -98,9 +99,10 @@
 						"heading": "RapidMoM",
 						"headingType": "rapidmom",
 						"paragraphs": [
-							"A 2.5D Method-of-Moments solver for planar RF passives on layered substrates (PCB, RFIC) — a Momentum-class engine rebuilt from first principles in Rust. Mixed-potential formulation, stable down to DC, layered-media Green's functions, and a fast ACA solver."
+							"A 2.5D Method-of-Moments solver for planar RF passives on layered substrates (PCB, RFIC). Mixed-potential formulation, stable down to DC, layered-media Green's functions, and a fast ACA solver in O(N log N).",
+							"Zero-external-dependency pure Rust with a Python API — lightweight, installs in seconds, built for massive cloud parameter sweeps. EMX-class performance on production RFIC benchmarks."
 						],
-						"metrics": "O(N log N) matrix compression · low-frequency stable (A-EFIE) · Rust core, Python API",
+						"metrics": "broadband S-parameters of an SG13G2 spiral via ROM sweep in ~5 s / ~600 MB · benchmarked head-to-head against Cadence EMX on the real IHP SG13G2 stack",
 						"statsText": "github.com/milanofthe/rapidmom · licensing: rapidmom@milanrother.com"
 					},
 					{
