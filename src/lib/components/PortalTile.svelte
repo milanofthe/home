@@ -80,14 +80,12 @@
 	}
 
 	/* Contain variant: scale the (transparent) image into the tile on a
-	   charcoal backdrop, centered with a little breathing room. */
+	   charcoal backdrop. Images already carry their own margins. */
 	.tile-img-contain {
 		object-fit: contain;
 		object-position: center;
 		/* Matches the RapidMesh site background (--bg: #131316) so the
 		   letterboxed render reads as an extension of the site. */
 		background: #131316;
-		padding: 3%;
-		box-sizing: border-box;
 	}
 </style>
