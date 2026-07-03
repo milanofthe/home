@@ -87,7 +87,7 @@
 		/* Matches the RapidMesh site background (--bg: #131316) so the
 		   letterboxed render reads as an extension of the site. */
 		background: #131316;
-		padding: 8%;
+		padding: 3%;
 		box-sizing: border-box;
 	}
 </style>
