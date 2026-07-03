@@ -27,7 +27,7 @@ const sites = [
 	{ id: 'pysimhub-pathsim', url: 'https://pysimhub.io/projects/pathsim/' },
 	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000, extraWaitMs: 12000 },
 	{ id: 'rapidfem-editor', url: 'https://fem.rapidpassives.org/notebook?example=fd_iris_filter', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 20000 },
-	{ id: 'rapidmesh-site', url: 'https://mesh.rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000, extraWaitMs: 12000 },
+	{ id: 'rapidmesh-site', url: 'https://mesh.rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000, extraWaitMs: 12000, zoom: 1.7 },
 	{ id: 'scidata-io', url: 'https://scidata.io', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
 	{ id: 'scidata-app', url: 'https://scidata.io/app?template=paper-ryegrass-drc', darkOnly: true, waitUntil: 'networkidle2', timeout: 120000, extraWaitMs: 20000 },
 	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 12000 },

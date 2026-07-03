@@ -84,7 +84,9 @@
 	.tile-img-contain {
 		object-fit: contain;
 		object-position: center;
-		background: #1a1a18;
+		/* Matches the RapidMesh site background (--bg: #131316) so the
+		   letterboxed render reads as an extension of the site. */
+		background: #131316;
 		padding: 8%;
 		box-sizing: border-box;
 	}
