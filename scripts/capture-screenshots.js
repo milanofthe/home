@@ -27,13 +27,13 @@ const sites = [
 	{ id: 'pysimhub-pathsim', url: 'https://pysimhub.io/projects/pathsim/' },
 	{ id: 'rapidpassives-org', url: 'https://rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000, extraWaitMs: 12000 },
 	{ id: 'rapidfem-editor', url: 'https://fem.rapidpassives.org/notebook?example=fd_iris_filter', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 20000 },
+	{ id: 'rapidmesh-site', url: 'https://mesh.rapidpassives.org', darkOnly: true, waitUntil: 'domcontentloaded', timeout: 60000, extraWaitMs: 12000 },
 	{ id: 'scidata-io', url: 'https://scidata.io', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
 	{ id: 'scidata-app', url: 'https://scidata.io/app?template=paper-ryegrass-drc', darkOnly: true, waitUntil: 'networkidle2', timeout: 120000, extraWaitMs: 20000 },
 	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 12000 },
 	{ id: 'thesisos-landing', url: 'https://thesisos.io/?static=true', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
 	{ id: 'thesisos-graph', url: 'https://thesisos.io/graph?root=cb35ff8e-d0f5-437c-9528-89307638622a', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 20000 },
-	{ id: 'whatsmytraffic-landing', url: 'https://whatsmytraffic.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
-	{ id: 'whatsmytraffic-dashboard', url: 'https://app.whatsmytraffic.com/share/ZHG6KiZSK2WBzuePAnhgy1jC', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 15000 }
+	{ id: 'whatsmytraffic-landing', url: 'https://whatsmytraffic.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 }
 ];
 
 const themes = ['dark', 'light'];

@@ -25,6 +25,7 @@
 		screenshot: string;
 		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos' | 'whatsmytraffic';
 		themeParam?: boolean;
+		fit?: 'cover' | 'contain';
 	}
 
 	const tileInfo: Record<string, TileInfo> = {
@@ -35,13 +36,14 @@
 		'pysimhub-pathsim': { name: 'Project Page', url: 'https://pysimhub.io/projects/pathsim/', screenshot: '/screenshots/pysimhub-pathsim.png', color: 'pysimhub' },
 		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
 		'rapidfem-editor': { name: 'Iris Filter', url: 'https://fem.rapidpassives.org/notebook?example=fd_iris_filter', screenshot: '/screenshots/rapidfem-editor.png', color: 'rapidpassives', themeParam: false },
+		'rapidmesh-site': { name: 'RapidMesh', url: 'https://mesh.rapidpassives.org', screenshot: '/screenshots/rapidmesh-site.png', color: 'rapidpassives', themeParam: false },
+		'rapidmesh-resonator': { name: 'Dielectric Resonator', url: 'https://mesh.rapidpassives.org', screenshot: '/images/rapidmesh-resonator.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
 		'scidata-io': { name: 'SciData', url: 'https://scidata.io', screenshot: '/screenshots/scidata-io.png', color: 'scidata', themeParam: false },
 		'scidata-app': { name: 'Canvas', url: 'https://scidata.io/app?template=paper-ryegrass-drc', screenshot: '/screenshots/scidata-app.png', color: 'scidata', themeParam: false },
 		'fastsim-org': { name: 'FastSim', url: 'https://fast.pathsim.org', screenshot: '/screenshots/fastsim-org.png', color: 'fastsim' },
 		'thesisos-landing': { name: 'Landing', url: 'https://thesisos.io', screenshot: '/screenshots/thesisos-landing.png', color: 'thesisos', themeParam: false },
 		'thesisos-graph': { name: 'Citation Graph', url: 'https://thesisos.io/graph?root=cb35ff8e-d0f5-437c-9528-89307638622a', screenshot: '/screenshots/thesisos-graph.png', color: 'thesisos', themeParam: false },
-		'whatsmytraffic-landing': { name: 'WhatsMyTraffic', url: 'https://whatsmytraffic.com', screenshot: '/screenshots/whatsmytraffic-landing.png', color: 'whatsmytraffic', themeParam: false },
-		'whatsmytraffic-dashboard': { name: 'Dashboard', url: 'https://app.whatsmytraffic.com/share/ZHG6KiZSK2WBzuePAnhgy1jC', screenshot: '/screenshots/whatsmytraffic-dashboard.png', color: 'whatsmytraffic', themeParam: false }
+		'whatsmytraffic-landing': { name: 'WhatsMyTraffic', url: 'https://whatsmytraffic.com', screenshot: '/screenshots/whatsmytraffic-landing.png', color: 'whatsmytraffic', themeParam: false }
 	};
 
 	// Video tile data
@@ -170,6 +172,7 @@
 		{ text: 'github.com/milanofthe/rapidmesh', types: ['link-rapidpassives'], href: 'https://github.com/milanofthe/rapidmesh' },
 		{ text: 'rapidpassives.org', types: ['link-rapidpassives'], href: 'https://rapidpassives.org' },
 		{ text: 'fem.rapidpassives.org', types: ['link-rapidpassives'], href: 'https://fem.rapidpassives.org' },
+		{ text: 'mesh.rapidpassives.org', types: ['link-rapidpassives'], href: 'https://mesh.rapidpassives.org' },
 		{ text: 'scidata.io', types: ['link-scidata'], href: 'https://scidata.io' },
 		{ text: 'fast.pathsim.org', types: ['link-fastsim'], href: 'https://fast.pathsim.org' },
 		{ text: 'pathsim.org', types: ['link-pathsim'], href: 'https://pathsim.org' },
@@ -516,6 +519,7 @@
 						screenshot={info.screenshot}
 						color={info.color}
 						themeParam={info.themeParam}
+						fit={info.fit}
 					/>
 				</div>
 			{/if}

@@ -96,6 +96,12 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'rapidfem-editor', label: 'Notebook' }, { id: 'rapidfem-microstrip', label: 'Microstrip' }]
 	},
+	rapidmesh: {
+		// Shares the rapidpassives brand color.
+		type: 'embedded', lines: [], frameColor: 'rapidpassives',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
+		tiles: [{ id: 'rapidmesh-site', label: 'RapidMesh' }, { id: 'rapidmesh-resonator', label: 'Dielectric Resonator' }]
+	},
 	scidata: {
 		type: 'embedded', lines: [], frameColor: 'scidata',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
@@ -114,7 +120,7 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 	whatsmytraffic: {
 		type: 'embedded', lines: [], frameColor: 'whatsmytraffic',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
-		tiles: [{ id: 'whatsmytraffic-landing', label: 'Landing' }, { id: 'whatsmytraffic-dashboard', label: 'Dashboard' }]
+		tiles: [{ id: 'whatsmytraffic-landing', label: 'WhatsMyTraffic' }]
 	}
 };
 

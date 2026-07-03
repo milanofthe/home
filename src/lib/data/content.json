@@ -149,7 +149,7 @@
 							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact-arithmetic CSG booleans, watertight by construction, count-based meshing with exact element budgets, and an API whose mesh representations serve the solver as an oracle. Replaces gmsh inside the stack."
 						],
 						"metrics": "exact CSG / dihedral-angle quality optimization / planar + tetrahedral",
-						"statsText": "github.com/milanofthe/rapidmesh"
+						"statsText": "mesh.rapidpassives.org / github.com/milanofthe/rapidmesh"
 					}
 				]
 			}

@@ -6,9 +6,12 @@
 		screenshot: string;
 		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos' | 'whatsmytraffic';
 		themeParam?: boolean;
+		// 'cover' (default) fills the tile edge-to-edge; 'contain' scales the
+		// image into the tile bounding box on a charcoal backdrop (letterboxed).
+		fit?: 'cover' | 'contain';
 	}
 
-	let { id, name, url, screenshot, color, themeParam = true }: Props = $props();
+	let { id, name, url, screenshot, color, themeParam = true, fit = 'cover' }: Props = $props();
 
 	let tileElement: HTMLAnchorElement;
 
@@ -49,6 +52,7 @@
 		src={screenshot}
 		alt="{name} preview"
 		class="tile-img"
+		class:tile-img-contain={fit === 'contain'}
 	/>
 </a>
 
@@ -73,5 +77,15 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: top;
+	}
+
+	/* Contain variant: scale the (transparent) image into the tile on a
+	   charcoal backdrop, centered with a little breathing room. */
+	.tile-img-contain {
+		object-fit: contain;
+		object-position: center;
+		background: #1a1a18;
+		padding: 8%;
+		box-sizing: border-box;
 	}
 </style>
