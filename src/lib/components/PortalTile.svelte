@@ -53,6 +53,8 @@
 		alt="{name} preview"
 		class="tile-img"
 		class:tile-img-contain={fit === 'contain'}
+		loading="lazy"
+		decoding="async"
 	/>
 </a>
 

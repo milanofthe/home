@@ -16,6 +16,8 @@
 	let letterSpacingPx = $state(0);
 	let gridLayout = $state.raw<GridLayout | null>(null);
 	let mounted = $state(false);
+	// Gate the grid reveal on the web font so the first paint uses real metrics.
+	let fontsReady = false;
 	let dynamicSections = $state<ContentSection[] | undefined>(undefined);
 
 	// Tile data for individual embedded blocks
@@ -242,12 +244,24 @@
 
 		lineHeight = Math.ceil(fontSize * 1.5);
 
+		// Publish the exact width of the centered content column so the nav bar's
+		// inner content container can align its edges to the grid content.
+		// Mirrors the caps in computeGridLayout: paragraphs wrap to <=80, headings
+		// and side-by-side tile rows span up to 114, everything capped by cols-4.
+		const contentCols = Math.min(cols - 4, 114);
+		document.documentElement.style.setProperty('--grid-content-width', `${contentCols * charWidth}px`);
+
 		if (!gridLayout || gridLayout.cols !== cols) {
 			gridLayout = computeGridLayout(cols, dynamicSections);
 		}
 
+		// Hold the reveal until the web font is ready. Revealing on fallback
+		// metrics and then swapping to JetBrains Mono relayouts the whole grid —
+		// the single biggest source of first-load jank. Once fonts.ready fires
+		// (fast, because the primary subset is preloaded) the grid is measured
+		// with real metrics and revealed without a reflow.
 		tick().then(() => {
-			if (!mounted) mounted = true;
+			if (!mounted && fontsReady) mounted = true;
 		});
 	}
 
@@ -366,8 +380,17 @@
 		}
 		computeLayout();
 
-		// Re-measure once fonts are ready (corrects char ratio if fallback was used)
-		document.fonts.ready.then(() => computeLayout());
+		// Reveal + re-measure once the web font is ready (corrects char ratio if a
+		// fallback was measured). The timeout is a safety net so the grid still
+		// appears even if fonts.ready never resolves.
+		const markFontsReady = () => {
+			if (fontsReady) return;
+			fontsReady = true;
+			computeLayout();
+			if (!mounted) mounted = true;
+		};
+		document.fonts.ready.then(markFontsReady);
+		setTimeout(markFontsReady, 1200);
 
 		// Fetch latest GitHub stats and rebuild grid with fresh data
 		fetch(STATS_URL, { cache: 'no-store' })
@@ -468,7 +491,7 @@
 						}}
 						onmouseleave={(e) => { e.currentTarget.style.transform = ''; }}
 					>
-						<img src="/images/headshot_milan.webp" alt="Milan Rother" class="photo-img" />
+						<img src="/images/headshot_milan.webp" alt="Milan Rother" class="photo-img" decoding="async" />
 					</div>
 				</div>
 			{:else if videoInfo[block.id]}
@@ -654,7 +677,7 @@
 	}
 
 	.photo-tile:hover {
-		box-shadow: 0 8px 30px rgba(0, 217, 192, 0.2);
+		box-shadow: 0 8px 30px rgba(150, 149, 145, 0.2);
 	}
 
 	.photo-img {
@@ -679,7 +702,7 @@
 		color: #f0efe9;
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
 		padding: 0;
-		caret-color: #00d9c0;
+		caret-color: #969591;
 		z-index: 5;
 	}
 
@@ -688,7 +711,7 @@
 	}
 
 	.grid-input:focus {
-		background: rgba(0, 217, 192, 0.05);
+		background: rgba(150, 149, 145, 0.08);
 	}
 
 	.grid-textarea {
@@ -718,11 +741,11 @@
 	}
 
 	.form-status-submitting {
-		color: rgba(0, 217, 192, 0.6);
+		color: #969591;
 	}
 
 	.form-status-success {
-		color: #00d9c0;
+		color: #969591;
 	}
 
 	.form-status-error {

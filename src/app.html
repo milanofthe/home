@@ -6,6 +6,16 @@
 		<link rel="apple-touch-icon" href="%sveltekit.assets%/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+		<!-- Preload the character-grid font so the first grid measurement uses real
+		     metrics — avoids the fallback->JetBrains Mono swap relayout on first load. -->
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/jetbrains-mono-latin.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+
 		<!-- Primary Meta Tags -->
 		<title>Milan Rother — Simulation Tools for Electronics: Fields, Circuits, Systems</title>
 		<meta name="title" content="Milan Rother - Simulation Tools for Electronics: Fields, Circuits, Systems" />
