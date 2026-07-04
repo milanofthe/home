@@ -30,10 +30,10 @@
 <nav
 	class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-mono {showBackground ? 'bg-charcoal/95 backdrop-blur-sm border-b border-cream/10' : ''}"
 >
-	<div class="max-w-6xl mx-auto px-6 py-4">
+	<div class="nav-content py-4">
 		<div class="flex items-center justify-between">
 			<!-- Name -->
-			<a href="/" class="font-mono font-medium text-sm text-cream hover:text-teal transition-colors">
+			<a href="/" class="font-mono font-medium text-sm text-cream hover:text-cream-light transition-colors">
 				Milan Rother
 			</a>
 
@@ -42,7 +42,7 @@
 				{#each navLinks as link}
 					<a
 						href={link.href}
-						class="text-sm transition-colors duration-200 {link.href === '/#contact' ? 'text-teal hover:text-teal-light font-medium' : 'text-cream/60 hover:text-teal'}"
+						class="text-sm transition-colors duration-200 {link.href === '/#contact' ? 'text-cream hover:text-cream-light font-medium' : 'text-cream/60 hover:text-cream'}"
 					>
 						{link.label}
 					</a>
@@ -51,7 +51,7 @@
 
 			<!-- Mobile Menu Button -->
 			<button
-				class="md:hidden p-2 text-cream/60 hover:text-teal transition-colors"
+				class="md:hidden p-2 text-cream/60 hover:text-cream transition-colors"
 				onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
 				aria-label="Toggle menu"
 			>
@@ -72,7 +72,7 @@
 					{#each navLinks as link}
 						<a
 							href={link.href}
-							class="text-sm transition-colors {link.href === '/#contact' ? 'text-teal font-medium' : 'text-cream/60 hover:text-teal'}"
+							class="text-sm transition-colors {link.href === '/#contact' ? 'text-cream font-medium' : 'text-cream/60 hover:text-cream'}"
 							onclick={closeMenu}
 						>
 							{link.label}
@@ -83,3 +83,18 @@
 		{/if}
 	</div>
 </nav>
+
+<style>
+	/* The nav BAR spans the full viewport (background/border stay edge-to-edge);
+	   only this inner content container is constrained to the character-grid
+	   content column so the nav items line up with the content edges.
+	   CodeRainPage sets --grid-content-width to the exact pixel width of the
+	   grid's content column; the 114ch fallback (JetBrains Mono at 14px) matches
+	   it closely for the first paint and for pages without the grid. */
+	.nav-content {
+		width: var(--grid-content-width, 114ch);
+		max-width: calc(100% - 1.5rem);
+		margin-inline: auto;
+		font-size: 14px;
+	}
+</style>
