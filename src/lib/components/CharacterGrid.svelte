@@ -51,6 +51,69 @@
 
 	let typewriterObserver: IntersectionObserver | null = null;
 
+	// Stream-in scheduler state. Lines are revealed strictly one at a time
+	// (previous line finishes -> next line arms), so at most a single line's
+	// clip-path animations are live at once. clip-path reveals repaint on the
+	// main thread, so capping concurrency this way is what keeps the stream
+	// smooth even when a whole section scrolls into view together.
+	let twQueue: HTMLElement[] = [];
+	let twAnimating = false;
+	let twScheduled = false;
+
+	function armLine(line: HTMLElement): number {
+		const overlays = line.querySelectorAll<HTMLSpanElement>('.tw-overlay');
+		let lineDuration = 0;
+		for (const overlay of overlays) {
+			const chars = (overlay.textContent || '').length;
+			if (chars === 0) continue;
+			const isHeading = overlay.className.includes('heading');
+			const msPerChar = isHeading ? 5 : 2;
+			// Promote only the line that is currently typing; dropped on finish.
+			overlay.style.willChange = 'clip-path';
+			overlay.style.animationName = 'type-reveal';
+			overlay.style.animationDuration = `${chars * msPerChar}ms`;
+			overlay.style.animationTimingFunction = `steps(${chars})`;
+			overlay.style.animationDelay = `${lineDuration}ms`;
+			overlay.style.animationFillMode = 'both';
+			lineDuration += chars * msPerChar;
+		}
+		return lineDuration;
+	}
+
+	function snapLine(line: HTMLElement) {
+		const overlays = line.querySelectorAll<HTMLSpanElement>('.tw-overlay');
+		for (const overlay of overlays) {
+			overlay.style.animationName = 'none';
+			overlay.style.clipPath = 'inset(0 0% 0 0)';
+			overlay.style.willChange = '';
+		}
+	}
+
+	function processTypewriterQueue() {
+		twScheduled = false;
+		if (twAnimating) return;
+		let line = twQueue.shift();
+		// Reveal instantly any queued line that has already scrolled above the
+		// viewport — keeps the stream from lagging far behind a fast scroll.
+		while (line && line.getBoundingClientRect().bottom < 0) {
+			snapLine(line);
+			line = twQueue.shift();
+		}
+		if (!line) return;
+		twAnimating = true;
+		const duration = armLine(line);
+		window.setTimeout(() => {
+			twAnimating = false;
+			processTypewriterQueue();
+		}, duration + 16);
+	}
+
+	function scheduleTypewriter() {
+		if (twScheduled || twAnimating) return;
+		twScheduled = true;
+		requestAnimationFrame(processTypewriterQueue);
+	}
+
 	function esc(s: string): string {
 		return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 	}
@@ -117,32 +180,24 @@
 			}
 		}
 
+		twQueue = [];
+		twAnimating = false;
+		twScheduled = false;
+
+		// Observer only enqueues newly-visible lines (top-to-bottom) and hands
+		// scheduling to an rAF-driven processor. Nothing writes animation styles
+		// inside the observer callback, so a large section arming at once no
+		// longer forces one big synchronous style batch.
 		typewriterObserver = new IntersectionObserver((entries) => {
 			const newlyVisible = entries
 				.filter(e => e.isIntersecting)
 				.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-
-			// Sequential stream: each line starts when the previous one finishes,
-			// spans within a line continue left-to-right without a gap.
-			let chain = 0;
+			if (newlyVisible.length === 0) return;
 			for (const entry of newlyVisible) {
 				typewriterObserver!.unobserve(entry.target);
-				const overlays = entry.target.querySelectorAll<HTMLSpanElement>('.tw-overlay');
-				let lineDuration = 0;
-				for (const overlay of overlays) {
-					const chars = (overlay.textContent || '').length;
-					if (chars === 0) continue;
-					const isHeading = overlay.className.includes('heading');
-					const msPerChar = isHeading ? 5 : 2;
-					overlay.style.animationName = 'type-reveal';
-					overlay.style.animationDuration = `${chars * msPerChar}ms`;
-					overlay.style.animationTimingFunction = `steps(${chars})`;
-					overlay.style.animationDelay = `${chain + lineDuration}ms`;
-					overlay.style.animationFillMode = 'both';
-					lineDuration += chars * msPerChar;
-				}
-				chain += lineDuration;
+				twQueue.push(entry.target as HTMLElement);
 			}
+			scheduleTypewriter();
 		}, { threshold: 0.1 });
 
 		for (const line of contentLines) {
@@ -178,6 +233,8 @@
 				// cascade, so drop the animation before pinning the final clip.
 				t.style.clipPath = 'inset(0 0% 0 0)';
 				t.style.animationName = 'none';
+				// Release the compositor hint now that this span is done.
+				t.style.willChange = '';
 			}
 		};
 		gridEl.addEventListener('animationend', pinFinalClip);
