@@ -27,6 +27,12 @@ export default {
 					dark: '#d4d3cd',
 					light: '#f7f6f2'
 				},
+				// Accent — single flat warm gray, matching how the nav idle state
+				// (cream/60) reads composited on the charcoal background.
+				accent: {
+					DEFAULT: '#969591',
+					light: '#b3b2ae'
+				},
 				// PathSim brand
 				pathsim: {
 					DEFAULT: '#0070c0',

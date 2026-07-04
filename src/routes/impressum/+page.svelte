@@ -11,9 +11,9 @@
 
 <div class="min-h-screen bg-charcoal text-cream font-mono pt-24 pb-16 px-6">
 	<div class="max-w-2xl mx-auto">
-		<a href="/" class="text-teal text-sm hover:text-teal-light transition-colors">&larr; Back</a>
+		<a href="/" class="text-accent text-sm hover:text-accent-light transition-colors">&larr; Back</a>
 
-		<h1 class="text-2xl font-bold text-teal mt-8 mb-8">Impressum</h1>
+		<h1 class="text-2xl font-bold text-accent mt-8 mb-8">Impressum</h1>
 
 		<section class="mb-8">
 			<h2 class="text-lg font-bold text-cream mb-4">Angaben gemäß § 5 DDG</h2>
@@ -25,7 +25,7 @@
 
 		<section class="mb-8">
 			<h2 class="text-lg font-bold text-cream mb-4">Kontakt</h2>
-			<p>E-Mail: <a href="mailto:info@milanrother.com" class="text-teal hover:text-teal-light">info@milanrother.com</a></p>
+			<p>E-Mail: <a href="mailto:info@milanrother.com" class="text-accent hover:text-accent-light">info@milanrother.com</a></p>
 		</section>
 
 		<section class="mb-8">

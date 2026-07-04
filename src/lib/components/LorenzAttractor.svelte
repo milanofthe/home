@@ -130,9 +130,9 @@
 	>
 		<defs>
 			<linearGradient id="lorenzGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-				<stop offset="0%" stop-color="#00d9c0" stop-opacity="0.8" />
-				<stop offset="50%" stop-color="#00b3a0" stop-opacity="0.6" />
-				<stop offset="100%" stop-color="#f5a623" stop-opacity="0.4" />
+				<stop offset="0%" stop-color="#b3b2ae" stop-opacity="0.55" />
+				<stop offset="50%" stop-color="#969591" stop-opacity="0.45" />
+				<stop offset="100%" stop-color="#6f6e6a" stop-opacity="0.3" />
 			</linearGradient>
 			<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
 				<feGaussianBlur stdDeviation="3" result="coloredBlur" />
@@ -160,7 +160,7 @@
 		<path
 			d={pathData}
 			fill="none"
-			stroke="#00d9c0"
+			stroke="#969591"
 			stroke-width="0.25"
 			stroke-linecap="round"
 			stroke-linejoin="round"
