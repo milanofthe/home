@@ -9,9 +9,12 @@
 		// 'cover' (default) fills the tile edge-to-edge; 'contain' scales the
 		// image into the tile bounding box on a charcoal backdrop (letterboxed).
 		fit?: 'cover' | 'contain';
+		// Overrides the 'contain' backdrop (defaults to charcoal #131316) so a
+		// transparent render can sit on its own project surface colour.
+		background?: string;
 	}
 
-	let { id, name, url, screenshot, color, themeParam = true, fit = 'cover' }: Props = $props();
+	let { id, name, url, screenshot, color, themeParam = true, fit = 'cover', background }: Props = $props();
 
 	let tileElement: HTMLAnchorElement;
 
@@ -53,6 +56,7 @@
 		alt="{name} preview"
 		class="tile-img"
 		class:tile-img-contain={fit === 'contain'}
+		style={fit === 'contain' && background ? `background: ${background}` : ''}
 		loading="lazy"
 		decoding="async"
 	/>

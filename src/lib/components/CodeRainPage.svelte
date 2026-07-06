@@ -28,6 +28,7 @@
 		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos' | 'whatsmytraffic';
 		themeParam?: boolean;
 		fit?: 'cover' | 'contain';
+		background?: string;
 	}
 
 	const tileInfo: Record<string, TileInfo> = {
@@ -45,6 +46,7 @@
 		'scidata-io': { name: 'SciData', url: 'https://scidata.io', screenshot: '/screenshots/scidata-io.png', color: 'scidata', themeParam: false },
 		'scidata-app': { name: 'Canvas', url: 'https://scidata.io/app?template=paper-ryegrass-drc', screenshot: '/screenshots/scidata-app.png', color: 'scidata', themeParam: false },
 		'fastsim-org': { name: 'FastSim', url: 'https://fast.pathsim.org', screenshot: '/screenshots/fastsim-org.png', color: 'fastsim' },
+		'fastsim-casadi': { name: 'Performance Comparison', url: 'https://fast.pathsim.org', screenshot: '/images/fastsim-casadi-cold.png', color: 'fastsim', fit: 'contain', background: '#08080c' },
 		'thesisos-landing': { name: 'Landing', url: 'https://thesisos.io', screenshot: '/screenshots/thesisos-landing.png', color: 'thesisos', themeParam: false },
 		'thesisos-graph': { name: 'Citation Graph', url: 'https://thesisos.io/graph?root=cb35ff8e-d0f5-437c-9528-89307638622a', screenshot: '/screenshots/thesisos-graph.png', color: 'thesisos', themeParam: false },
 		'whatsmytraffic-landing': { name: 'WhatsMyTraffic', url: 'https://whatsmytraffic.com', screenshot: '/screenshots/whatsmytraffic-landing.png', color: 'whatsmytraffic', themeParam: false }
@@ -545,6 +547,7 @@
 						color={info.color}
 						themeParam={info.themeParam}
 						fit={info.fit}
+						background={info.background}
 					/>
 				</div>
 			{/if}

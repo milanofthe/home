@@ -116,7 +116,7 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 	fastsim: {
 		type: 'embedded', lines: [], frameColor: 'fastsim',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
-		tiles: [{ id: 'fastsim-org', label: 'FastSim' }]
+		tiles: [{ id: 'fastsim-org', label: 'FastSim' }, { id: 'fastsim-casadi', label: 'Performance Comparison' }]
 	},
 	thesisos: {
 		type: 'embedded', lines: [], frameColor: 'thesisos',
