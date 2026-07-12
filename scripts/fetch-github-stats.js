@@ -12,6 +12,15 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const STATS_PATH = join(__dirname, '..', 'src', 'lib', 'data', 'github-stats.json');
 
+// GitHub API auth: unauthenticated calls share a 60 req/h per-IP budget,
+// which is permanently exhausted on GitHub-hosted runners (shared IPs) -
+// the scheduled workflow 403'd on every run. The workflow passes the
+// automatic GITHUB_TOKEN (1000 req/h, public read); locally the header
+// is simply omitted.
+const AUTH_HEADERS = process.env.GITHUB_TOKEN
+	? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
+	: {};
+
 function loadExistingData() {
 	try {
 		const content = readFileSync(STATS_PATH, 'utf-8');
@@ -48,7 +57,8 @@ async function fetchGitHubRepo(owner, repo) {
 	const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
 		headers: {
 			'Accept': 'application/vnd.github.v3+json',
-			'User-Agent': 'milanrother-website'
+			'User-Agent': 'milanrother-website',
+			...AUTH_HEADERS
 		}
 	});
 
@@ -63,7 +73,8 @@ async function fetchOrgMembers(org) {
 	const response = await fetch(`https://api.github.com/orgs/${org}/members?per_page=100`, {
 		headers: {
 			'Accept': 'application/vnd.github.v3+json',
-			'User-Agent': 'milanrother-website'
+			'User-Agent': 'milanrother-website',
+			...AUTH_HEADERS
 		}
 	});
 
@@ -77,7 +88,8 @@ async function fetchOrgMembers(org) {
 async function fetchPySimHubProjects() {
 	const response = await fetch('https://pysimhub.io/data/projects.json', {
 		headers: {
-			'User-Agent': 'milanrother-website'
+			'User-Agent': 'milanrother-website',
+			...AUTH_HEADERS
 		}
 	});
 

@@ -12,6 +12,15 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const STATS_PATH = join(__dirname, '..', 'src', 'lib', 'data', 'github-stats.json');
 
+// GitHub API auth: unauthenticated calls share a 60 req/h per-IP budget,
+// which is permanently exhausted on GitHub-hosted runners (shared IPs) -
+// the scheduled workflow 403'd on every run. The workflow passes the
+// automatic GITHUB_TOKEN (1000 req/h, public read); locally the header
+// is simply omitted.
+const AUTH_HEADERS = process.env.GITHUB_TOKEN
+	? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
+	: {};
+
 const REPOS = [
 	{ key: 'pathsim', owner: 'pathsim', repo: 'pathsim' },
 	{ key: 'pathview', owner: 'pathsim', repo: 'pathview' },
@@ -23,6 +32,7 @@ async function fetchStargazersPage(owner, repo, page) {
 		headers: {
 			'Accept': 'application/vnd.github.v3.star+json',
 			'User-Agent': 'milanrother-website',
+			...AUTH_HEADERS
 		}
 	});
 

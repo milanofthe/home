@@ -27,9 +27,15 @@ jobs:
 
       - name: Fetch GitHub stats
         run: npm run fetch-stats
+        env:
+          # Unauthenticated GitHub API calls 403 on shared runner IPs; the
+          # automatic token has ample rate for public reads.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Fetch star history
         run: npm run fetch-star-history
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit if changed
         id: commit
