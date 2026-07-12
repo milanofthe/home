@@ -37,12 +37,20 @@ async function fetchStargazersPage(owner, repo, page) {
 	});
 
 	if (!response.ok) {
+		// Distinguish a real rate limit from a token-permission 403 (the
+		// Actions GITHUB_TOKEN is an installation token; some endpoints on
+		// foreign repos answer it with "Resource not accessible by
+		// integration"). Surface the body so the log says which it was.
+		const body = await response.text().catch(() => '');
+		const remaining = response.headers.get('x-ratelimit-remaining');
 		if (response.status === 403 || response.status === 429) {
 			const reset = response.headers.get('x-ratelimit-reset');
 			const resetDate = reset ? new Date(parseInt(reset) * 1000) : null;
-			throw new Error(`Rate limited. Resets at: ${resetDate?.toISOString() || 'unknown'}`);
+			throw new Error(
+				`403/429 (ratelimit-remaining=${remaining}, resets ${resetDate?.toISOString() || 'unknown'}): ${body.slice(0, 200)}`
+			);
 		}
-		throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+		throw new Error(`GitHub API error: ${response.status} ${response.statusText}: ${body.slice(0, 200)}`);
 	}
 
 	return response.json();
