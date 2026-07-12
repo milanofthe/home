@@ -118,6 +118,11 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'fastsim-org', label: 'FastSim' }, { id: 'fastsim-casadi', label: 'Performance Comparison' }]
 	},
+	rslab: {
+		type: 'embedded', lines: [], frameColor: 'rslab',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
+		tiles: [{ id: 'rslab-h2h', label: 'vs faer & PARDISO' }, { id: 'rslab-memory', label: 'Memory Estimate' }]
+	},
 	thesisos: {
 		type: 'embedded', lines: [], frameColor: 'thesisos',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',

@@ -136,9 +136,9 @@
 						"heading": "RSLAB",
 						"headingType": "rslab",
 						"paragraphs": [
-							"A sparse direct solver for real and complex matrices in pure Rust — a PARDISO-style embeddable backend with no BLAS, LAPACK, or MKL dependency. Symmetric LDLT and unsymmetric LU, iterative solvers, a learned meta-tuner, and deterministic a-priori estimates for peak memory and runtime."
+							"A sparse direct solver for real and complex matrices in pure Rust — a PARDISO-style embeddable backend with no BLAS, LAPACK, or MKL dependency. Symmetric LDLT, unsymmetric LU, and a KLU path for circuit matrices, plus iterative solvers and preconditioners. Settings pick themselves: a deterministic heuristic (nested-dissection bakeoff, one-time hardware calibration) — no ML in the default path. Mixed-precision solves come with an honest backward-error certificate, and peak memory and runtime are predicted exactly from the symbolic structure before any numeric work."
 						],
-						"metrics": "bit-identical results across thread counts / learned auto-tuning / PyPI",
+						"metrics": "bit-identical across thread counts / faster than faer, ~5x to MKL PARDISO / PyPI",
 						"statsText": "github.com/milanofthe/rslab"
 					},
 					{

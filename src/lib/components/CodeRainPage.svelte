@@ -25,7 +25,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos' | 'whatsmytraffic';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'rslab' | 'thesisos' | 'whatsmytraffic';
 		themeParam?: boolean;
 		fit?: 'cover' | 'contain';
 		background?: string;
@@ -47,6 +47,8 @@
 		'scidata-app': { name: 'Canvas', url: 'https://scidata.io/app?template=paper-ryegrass-drc', screenshot: '/screenshots/scidata-app.png', color: 'scidata', themeParam: false },
 		'fastsim-org': { name: 'FastSim', url: 'https://fast.pathsim.org', screenshot: '/screenshots/fastsim-org.png', color: 'fastsim' },
 		'fastsim-casadi': { name: 'Performance Comparison', url: 'https://fast.pathsim.org', screenshot: '/images/fastsim-casadi-cold.png', color: 'fastsim', fit: 'contain', background: '#08080c' },
+		'rslab-h2h': { name: 'vs faer & MKL PARDISO', url: 'https://github.com/milanofthe/rslab', screenshot: '/images/rslab-h2h-ldlt.png', color: 'rslab', themeParam: false, fit: 'contain', background: '#08080c' },
+		'rslab-memory': { name: 'A-priori Memory Estimate', url: 'https://github.com/milanofthe/rslab', screenshot: '/images/rslab-memory-estimate.png', color: 'rslab', themeParam: false, fit: 'contain', background: '#08080c' },
 		'thesisos-landing': { name: 'Landing', url: 'https://thesisos.io', screenshot: '/screenshots/thesisos-landing.png', color: 'thesisos', themeParam: false },
 		'thesisos-graph': { name: 'Citation Graph', url: 'https://thesisos.io/graph?root=cb35ff8e-d0f5-437c-9528-89307638622a', screenshot: '/screenshots/thesisos-graph.png', color: 'thesisos', themeParam: false },
 		'whatsmytraffic-landing': { name: 'WhatsMyTraffic', url: 'https://whatsmytraffic.com', screenshot: '/screenshots/whatsmytraffic-landing.png', color: 'whatsmytraffic', themeParam: false }

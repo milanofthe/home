@@ -4,7 +4,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'thesisos' | 'whatsmytraffic';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'rslab' | 'thesisos' | 'whatsmytraffic';
 		themeParam?: boolean;
 		// 'cover' (default) fills the tile edge-to-edge; 'contain' scales the
 		// image into the tile bounding box on a charcoal backdrop (letterboxed).
@@ -35,6 +35,7 @@
 		rapidpassives: 'rgba(217, 81, 60, 0.3)',
 		scidata: 'rgba(216, 53, 26, 0.3)',
 		fastsim: 'rgba(209, 65, 41, 0.3)',
+		rslab: 'rgba(59, 130, 246, 0.3)',
 		thesisos: 'rgba(107, 138, 253, 0.3)',
 		whatsmytraffic: 'rgba(111, 220, 142, 0.3)'
 	};
