@@ -43,6 +43,15 @@ async function fetchStargazersPage(owner, repo, page) {
 		// integration"). Surface the body so the log says which it was.
 		const body = await response.text().catch(() => '');
 		const remaining = response.headers.get('x-ratelimit-remaining');
+		if (response.status === 403 && body.includes('Resource not accessible by integration')) {
+			// The Actions installation token cannot read foreign repos'
+			// stargazer timelines. Keep the existing history and succeed:
+			// the star COUNTS still update via fetch-stats; only the
+			// timeline stays frozen until a STARS_TOKEN PAT is configured.
+			const err = new Error('TOKEN_LACKS_PERMISSION');
+			err.tokenLacksPermission = true;
+			throw err;
+		}
 		if (response.status === 403 || response.status === 429) {
 			const reset = response.headers.get('x-ratelimit-reset');
 			const resetDate = reset ? new Date(parseInt(reset) * 1000) : null;
@@ -127,6 +136,16 @@ async function main() {
 }
 
 main().catch((error) => {
+	if (error.tokenLacksPermission) {
+		console.warn(
+			'Star history skipped: the Actions GITHUB_TOKEN (installation token) cannot ' +
+			'read stargazer timelines of other repositories ("Resource not accessible ' +
+			'by integration"). Star COUNTS still update via fetch-stats; to resume the ' +
+			'timeline, add a fine-grained PAT with public read access as the ' +
+			'STARS_TOKEN repo secret (the workflow prefers it automatically).'
+		);
+		process.exit(0);
+	}
 	console.error('Fatal error:', error);
 	process.exit(1);
 });

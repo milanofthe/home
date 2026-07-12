@@ -35,7 +35,11 @@ jobs:
       - name: Fetch star history
         run: npm run fetch-star-history
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # The automatic installation token cannot read foreign repos'
+          # stargazer timelines ("Resource not accessible by integration").
+          # Prefer a fine-grained PAT (STARS_TOKEN, public read) when set;
+          # without it the script skips the timeline gracefully.
+          GITHUB_TOKEN: ${{ secrets.STARS_TOKEN != '' && secrets.STARS_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Commit if changed
         id: commit
