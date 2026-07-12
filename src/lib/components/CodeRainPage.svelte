@@ -38,7 +38,7 @@
 		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' },
 		'pysimhub-pathsim': { name: 'Project Page', url: 'https://pysimhub.io/projects/pathsim/', screenshot: '/screenshots/pysimhub-pathsim.png', color: 'pysimhub' },
 		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
-		'rapidmom-mesh': { name: 'Inductor Mesh', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-mesh.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
+		'rapidmom-mesh': { name: 'Transformer Mesh', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-mesh.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
 		'rapidmom-current': { name: 'Current Density', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-current.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
 		'rapidfem-editor': { name: 'Iris Filter', url: 'https://fem.rapidpassives.org/notebook?example=fd_iris_filter', screenshot: '/screenshots/rapidfem-editor.png', color: 'rapidpassives', themeParam: false },
 		'rapidmesh-site': { name: 'RapidMesh', url: 'https://mesh.rapidpassives.org', screenshot: '/screenshots/rapidmesh-site.png', color: 'rapidpassives', themeParam: false },
