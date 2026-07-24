@@ -176,6 +176,7 @@
 		{ text: 'RapidFEM', types: ['link-rapidpassives'], scrollTo: 'rapidfem' },
 		{ text: 'RapidMoM', types: ['link-rapidpassives'], scrollTo: 'rapidmom' },
 		{ text: 'SANE', types: ['link-sane'], scrollTo: 'sane' },
+		{ text: 'sane.milanrother.com', types: ['link-sane'], href: 'https://sane.milanrother.com' },
 		{ text: 'FastSim', types: ['link-fastsim'], scrollTo: 'fastsim' },
 		{ text: 'PathSim', types: ['link-pathsim'], scrollTo: 'pathsim' },
 		{ text: 'github.com/milanofthe/rslab', types: ['link-rslab'], href: 'https://github.com/milanofthe/rslab' },
@@ -454,7 +455,7 @@
 		<h3>Systems</h3>
 		<p><a href="https://pathsim.org">PathSim</a> — pure-Python system simulation framework, MIT open source, JOSS-published. <a href="https://fast.pathsim.org">FastSim</a> — drop-in Rust replacement, 50-100x faster, JIT, autodiff, FMI 3.0, C99 code generation. <a href="https://view.pathsim.org">PathView</a> — browser-based visual model editor.</p>
 		<h3>Circuits</h3>
-		<p>SANE — Symbolic Analog Network Engine. Symbolic and numeric circuit analysis: DC, transient, AC, poles/zeros, noise, harmonic balance, exact sensitivities. SPICE and Verilog-A frontends. Validated against ngspice and Xyce.</p>
+		<p>SANE — Symbolic Analog Network Engine. Symbolic and numeric circuit analysis: DC, transient, AC, poles/zeros, noise, harmonic balance, exact sensitivities. SPICE and Verilog-A frontends. Validated against ngspice and Xyce. Try it live at <a href="https://sane.milanrother.com">sane.milanrother.com</a>; the core engine is in early access.</p>
 		<h3>Fields</h3>
 		<p>RapidMoM — 2.5D Method-of-Moments solver for planar RF passives on layered substrates. <a href="https://fem.rapidpassives.org">RapidFEM</a> — Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="https://rapidpassives.org">RapidPassives</a> — browser-based RFIC passive layout generation.</p>
 		<h3>Foundations</h3>
