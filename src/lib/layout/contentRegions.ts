@@ -108,6 +108,11 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'rapidmesh-site', label: 'RapidMesh' }, { id: 'rapidmesh-resonator', label: 'Dielectric Resonator' }]
 	},
+	sane: {
+		type: 'embedded', lines: [], frameColor: 'sane',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
+		tiles: [{ id: 'sane-app', label: 'SANE' }, { id: 'sane-graph', label: 'Symbolic Graph' }]
+	},
 	scidata: {
 		type: 'embedded', lines: [], frameColor: 'scidata',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',

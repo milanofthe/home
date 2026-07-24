@@ -523,6 +523,17 @@
 						></gds-viewer>
 					</div>
 				</div>
+			{:else if block.id === 'sane-app' || block.id === 'sane-graph'}
+				{@const saneUrl = block.id === 'sane-app'
+					? 'https://sane.milanrother.com/?theme=dark'
+					: 'https://sane.milanrother.com/#graph?theme=dark'}
+				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
+					<!-- live app, rendered at 2x and scaled down for an overview look;
+					     the iframe is inert (pointer-events none) — the tile is a link -->
+					<a class="sane-tile" href={saneUrl} target="_blank" rel="noopener" aria-label="Open SANE">
+						<iframe class="sane-frame" src={saneUrl} title="SANE — live" loading="lazy" tabindex="-1"></iframe>
+					</a>
+				</div>
 			{:else if block.id === 'rapidfem-microstrip'}
 				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
 					<div style="width: 100%; height: 100%; border-radius: 8px; overflow: hidden;">
@@ -689,6 +700,34 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+	}
+
+	/* SANE portal tiles: the live app in an inert iframe behind a link.
+	   Backdrop matches the app's dark theme --bg so loading reads seamless. */
+	.sane-tile {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background: #16181c;
+		transition: box-shadow 0.3s;
+	}
+
+	.sane-tile:hover {
+		box-shadow: 0 8px 30px rgba(78, 149, 217, 0.3);
+	}
+
+	.sane-frame {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 200%;
+		height: 200%;
+		transform: scale(0.5);
+		transform-origin: top left;
+		border: 0;
+		pointer-events: none;
 	}
 
 	.form-inputs-layer {
