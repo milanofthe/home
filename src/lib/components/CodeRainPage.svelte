@@ -25,7 +25,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'rslab' | 'thesisos' | 'whatsmytraffic';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic';
 		themeParam?: boolean;
 		fit?: 'cover' | 'contain';
 		background?: string;
@@ -43,6 +43,8 @@
 		'rapidfem-editor': { name: 'Iris Filter', url: 'https://fem.rapidpassives.org/notebook?example=fd_iris_filter', screenshot: '/screenshots/rapidfem-editor.png', color: 'rapidpassives', themeParam: false },
 		'rapidmesh-site': { name: 'RapidMesh', url: 'https://mesh.rapidpassives.org', screenshot: '/screenshots/rapidmesh-site.png', color: 'rapidpassives', themeParam: false },
 		'rapidmesh-resonator': { name: 'Dielectric Resonator', url: 'https://mesh.rapidpassives.org', screenshot: '/images/rapidmesh-resonator.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
+		'sane-app': { name: 'SANE', url: 'https://sane.milanrother.com', screenshot: '/screenshots/sane-app.png', color: 'sane' },
+		'sane-graph': { name: 'Symbolic Graph', url: 'https://sane.milanrother.com/#graph', screenshot: '/screenshots/sane-graph.png', color: 'sane' },
 		'scidata-io': { name: 'SciData', url: 'https://scidata.io', screenshot: '/screenshots/scidata-io.png', color: 'scidata', themeParam: false },
 		'scidata-app': { name: 'Canvas', url: 'https://scidata.io/app?template=paper-ryegrass-drc', screenshot: '/screenshots/scidata-app.png', color: 'scidata', themeParam: false },
 		'fastsim-org': { name: 'FastSim', url: 'https://fast.pathsim.org', screenshot: '/screenshots/fastsim-org.png', color: 'fastsim' },
@@ -523,17 +525,6 @@
 						></gds-viewer>
 					</div>
 				</div>
-			{:else if block.id === 'sane-app' || block.id === 'sane-graph'}
-				{@const saneUrl = block.id === 'sane-app'
-					? 'https://sane.milanrother.com/?theme=dark'
-					: 'https://sane.milanrother.com/#graph?theme=dark'}
-				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
-					<!-- live app, rendered at 2x and scaled down for an overview look;
-					     the iframe is inert (pointer-events none) — the tile is a link -->
-					<a class="sane-tile" href={saneUrl} target="_blank" rel="noopener" aria-label="Open SANE">
-						<iframe class="sane-frame" src={saneUrl} title="SANE — live" loading="lazy" tabindex="-1"></iframe>
-					</a>
-				</div>
 			{:else if block.id === 'rapidfem-microstrip'}
 				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">
 					<div style="width: 100%; height: 100%; border-radius: 8px; overflow: hidden;">
@@ -700,34 +691,6 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-	}
-
-	/* SANE portal tiles: the live app in an inert iframe behind a link.
-	   Backdrop matches the app's dark theme --bg so loading reads seamless. */
-	.sane-tile {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		background: #16181c;
-		transition: box-shadow 0.3s;
-	}
-
-	.sane-tile:hover {
-		box-shadow: 0 8px 30px rgba(78, 149, 217, 0.3);
-	}
-
-	.sane-frame {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 200%;
-		height: 200%;
-		transform: scale(0.5);
-		transform-origin: top left;
-		border: 0;
-		pointer-events: none;
 	}
 
 	.form-inputs-layer {
