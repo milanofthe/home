@@ -43,9 +43,12 @@ precision and refine against the double-precision original, returning an
 honest normwise backward-error certificate. Where a matrix is outside its
 target class, RSLAB declines rather than returning a degraded solution.
 
-## In the stack
+## History
 
-RSLAB is the numerical foundation under [SANE](/stack/sane/),
-[RapidFEM](/stack/rapidfem/), and [RapidMoM](/stack/rapidmom/). No black-box
-dependencies anywhere in the stack. The full benchmark story is in
-[the RSLAB benchmark note](/notes/rslab-vs-faer-mkl-pardiso/).
+RSLAB started in late June 2026 as a fork of the feral project and was
+rebuilt into a full sparse direct solver: over 370 commits to v0.9.0 within
+weeks, driven directly by what [SANE](/stack/sane/),
+[RapidFEM](/stack/rapidfem/), and [RapidMoM](/stack/rapidmom/) need from
+their linear algebra. The repository ships a technical report that derives
+the algorithms and carries the full evaluation; the headline numbers are
+summarized in [the RSLAB benchmark note](/notes/rslab-vs-faer-mkl-pardiso/).

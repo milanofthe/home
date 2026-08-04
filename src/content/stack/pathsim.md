@@ -65,8 +65,15 @@ Install with pip install pathsim or conda install conda-forge::pathsim. The
 documentation at docs.pathsim.org has tutorials, end-to-end examples, and the
 full API reference.
 
-## In the stack
+## History
 
-PathSim is the system level of the stack and its open foundation: the API that
-[FastSim](/stack/fastsim/) accelerates as a drop-in Rust engine and that
-[PathView](/stack/pathview/) edits visually in the browser.
+PathSim started in early 2023, at the beginning of my PhD, as an analog
+computer emulator side project. It grew into a full hybrid system simulation
+framework, went public on GitHub in August 2024, and was released in early
+2025 as an open alternative to Simulink. Since then: a JOSS publication,
+roughly 400 GitHub stars, nine contributors, adoption by JSBSim and the MIT
+Plasma Science and Fusion Center, and community-contributed domain toolboxes.
+Development is active, over 1200 commits, currently at v0.9 on PyPI and
+conda-forge. [FastSim](/stack/fastsim/) accelerates the same API as a drop-in
+Rust engine, and [PathView](/stack/pathview/) edits PathSim models visually in
+the browser.

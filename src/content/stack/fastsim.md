@@ -43,9 +43,10 @@ co-simulation, and C99 code generation for embedded targets. The generated C
 is verified software-in-the-loop: sim.verify_c() compiles it locally and pins
 it against the reference engine, sample by sample.
 
-## In the stack
+## History
 
-FastSim shares the SSA-compute-graph architecture with the rest of the stack
-and is the commercial engine that funds the open system level. Models built on
-open-source PathSim carry over unchanged, and [PathView](/stack/pathview/)
-edits both.
+FastSim development started in April 2026, after the PathSim API had
+stabilized and the SSA compute-graph architecture had proven itself across
+the stack. Over 1000 commits in four months took it to v0.9.0: engine, JIT,
+autodiff, FMI export, and C code generation, tracking the PathSim API
+throughout. Commercial licensing funds the open system level.

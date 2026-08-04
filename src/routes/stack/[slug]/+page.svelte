@@ -20,8 +20,8 @@
 		return href ? { label: label.trim(), href: href.trim() } : null;
 	}
 
-	let build = $derived((cols: number): ArticleResult => {
-		const g = new ArticleGrid(cols, page.accent, 6);
+	let build = $derived((cols: number, cellRatio: number): ArticleResult => {
+		const g = new ArticleGrid(cols, page.accent, 6, cellRatio);
 		const fm = page.doc.frontmatter;
 
 		g.linkLine('[ <- the stack ]', '/stack/', 'link');

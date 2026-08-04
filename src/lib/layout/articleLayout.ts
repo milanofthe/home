@@ -4,7 +4,10 @@
 // code blocks. Used by /stack/<project>, /notes/<slug> and the other subpages.
 
 import { FILLER_SOURCE } from '$lib/data/filler-source';
+import imageDims from '$lib/data/image-dims.json';
 import type { Cell, CellType } from './gridLayout';
+
+const IMAGE_DIMS = imageDims as unknown as Record<string, [number, number]>;
 
 // Project accent — maps to the existing code-grid-* color classes.
 export type AccentKey =
@@ -96,6 +99,7 @@ export class ArticleGrid {
 	readonly contentWidth: number;
 	readonly startCol: number;
 	readonly twoCol: boolean;
+	readonly cellRatio: number; // charWidth / lineHeight of a grid cell
 
 	private accent: AccentTypes;
 	private grid: Cell[][] = [];
@@ -106,13 +110,25 @@ export class ArticleGrid {
 	private anchors: ArticleAnchor[] = [];
 	private row: number;
 
-	constructor(cols: number, accent: AccentKey = 'neutral', topRows = 3) {
+	constructor(cols: number, accent: AccentKey = 'neutral', topRows = 3, cellRatio = 0.4) {
 		this.cols = cols;
 		this.accent = accentTypes(accent);
 		this.contentWidth = Math.min(cols - 8, 104);
 		this.startCol = Math.floor((cols - this.contentWidth) / 2);
 		this.twoCol = this.contentWidth >= 78;
+		this.cellRatio = cellRatio;
 		this.row = topRows;
+	}
+
+	// Frame height (inner rows) for an image at its real aspect ratio, given
+	// the inner frame width in cells. Falls back to the declared height when
+	// the image is not in the dimensions map.
+	private imageRows(src: string, innerCols: number, fallback: number): number {
+		const dims = IMAGE_DIMS[src];
+		if (!dims) return fallback;
+		const [iw, ih] = dims;
+		const rows = Math.round((innerCols * this.cellRatio * ih) / iw);
+		return Math.max(4, Math.min(rows, 36));
 	}
 
 	setAccent(accent: AccentKey) {
@@ -370,11 +386,12 @@ export class ArticleGrid {
 		return h + 2;
 	}
 
-	// Centered standalone framed image.
+	// Centered standalone framed image, height from the real aspect ratio.
 	image(src: string, label: string, w: number, h: number, opts?: { href?: string; fit?: 'cover' | 'contain'; background?: string }) {
 		const fw = Math.min(w, this.contentWidth);
+		const rows = this.imageRows(src, fw - 2, Math.min(h, 24));
 		const col = this.startCol + Math.floor((this.contentWidth - fw) / 2);
-		const consumed = this.drawFrame(this.row, col, fw, Math.min(h, 24), label, src, opts);
+		const consumed = this.drawFrame(this.row, col, fw, rows, label, src, opts);
 		this.row += consumed + 1;
 	}
 
@@ -385,19 +402,21 @@ export class ArticleGrid {
 		segments: string | TextSegment[], opts?: { href?: string; fit?: 'cover' | 'contain'; background?: string }
 	) {
 		if (!this.twoCol) {
-			const consumed = this.drawFrame(this.row, this.startCol, this.contentWidth, Math.min(imgH, 12), label, src, opts);
+			const stackedRows = this.imageRows(src, this.contentWidth - 2, Math.min(imgH, 12));
+			const consumed = this.drawFrame(this.row, this.startCol, this.contentWidth, stackedRows, label, src, opts);
 			this.row += consumed + 1;
 			this.paragraph(segments);
 			return;
 		}
 		const w = Math.min(imgW, this.contentWidth - 24);
-		const imgTotalH = imgH + 2;
+		const rows = this.imageRows(src, w - 2, imgH);
+		const imgTotalH = rows + 2;
 		const gap = 2;
 		const narrowWidth = this.contentWidth - w - gap;
 		const imgCol = side === 'right' ? this.startCol + this.contentWidth - w : this.startCol;
 		const textCol = side === 'right' ? this.startCol : this.startCol + w + gap;
 		const r0 = this.row;
-		this.drawFrame(r0, imgCol, w, imgH, label, src, opts);
+		this.drawFrame(r0, imgCol, w, rows, label, src, opts);
 
 		// Wrap at the narrow width beside the image; remainder flows full width.
 		const segs: TextSegment[] = typeof segments === 'string' ? [{ text: segments }] : segments;

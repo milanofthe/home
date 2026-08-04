@@ -33,6 +33,9 @@ jobs:
       - name: Capture screenshots
         run: npm run screenshots
 
+      - name: Generate image dimensions
+        run: npm run image-dims
+
       - name: Build
         run: npm run build
 

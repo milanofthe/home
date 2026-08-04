@@ -48,9 +48,11 @@ A local notebook UI provides a code editor with interactive geometry, mesh,
 and field renderers, so a simulation setup is inspectable at every stage
 instead of a black box behind a job queue.
 
-## In the stack
+## History
 
-RapidFEM is the general field level, complementing the planar-specialized
-[RapidMoM](/stack/rapidmom/). [RapidMesh](/stack/rapidmesh/) replaces its
-external meshing dependency inside the stack, and [RSLAB](/stack/rslab/)
-provides the sparse linear algebra.
+RapidFEM development started in April 2026. Roughly 800 commits took it to
+v0.9.0: the frequency-domain backend first, then the DGTD time-domain solver,
+the notebook UI, and the RFIC path. It is open source from the start and
+shares its numerical foundations with the rest of the stack:
+[RapidMesh](/stack/rapidmesh/) for meshing, [RSLAB](/stack/rslab/) for the
+sparse linear algebra.

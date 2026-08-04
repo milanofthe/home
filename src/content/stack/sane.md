@@ -63,7 +63,11 @@ embed the whole engine in Rust with no Python at all. Validated against
 ngspice and Xyce; scales past 100k parameters on the IBM power-grid
 benchmarks.
 
-## In the stack
+## History
 
-SANE is the circuit level: below it, the field solvers extract the models it
-consumes; above it, exact sensitivities flow into system-level optimization.
+SANE is the newest engine in the stack and the return to my RFIC EDA roots.
+Development started in June 2026, inspired by Analog Insydes from Fraunhofer
+ITWM. The first two months produced nearly 1000 commits and v0.2.0: SPICE
+parser, symbolic DAG engine, the full set of analyses, and the Verilog-A
+frontend. The web app at sane.milanrother.com is public; the core engine is
+in early access.

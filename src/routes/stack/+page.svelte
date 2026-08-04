@@ -11,8 +11,8 @@
 	const INTRO =
 		'One vertically integrated simulation stack for electronics: from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.';
 
-	function build(cols: number): ArticleResult {
-		const g = new ArticleGrid(cols, 'neutral', 6);
+	function build(cols: number, cellRatio: number): ArticleResult {
+		const g = new ArticleGrid(cols, 'neutral', 6, cellRatio);
 		g.title('THE STACK');
 		g.paragraph(INTRO);
 		g.spacer();

@@ -44,9 +44,10 @@ embedding needs no environment variables. Broadband S-parameters of an SG13G2
 spiral come out of a ROM sweep in about 5 seconds within roughly 600 MB,
 validated on the real IHP SG13G2 stack.
 
-## In the stack
+## History
 
-RapidMoM is the planar field level: it turns layout into models that
-[SANE](/stack/sane/) and the system level consume, meshed by
-[RapidMesh](/stack/rapidmesh/) and solved on [RSLAB](/stack/rslab/)
-infrastructure.
+RapidMoM development started in June 2026, in the same push that produced
+[RapidMesh](/stack/rapidmesh/) and [RSLAB](/stack/rslab/): the planar solver,
+its mesher, and its linear algebra grew together as one vertically integrated
+unit. Nearly 800 commits took it to v0.4.0. The solver is in early access for
+evaluation.

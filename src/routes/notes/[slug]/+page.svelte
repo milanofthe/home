@@ -13,8 +13,8 @@
 	let note = $derived(getNote(data.slug)!);
 	let projectPage = $derived(getStackPage(note.project));
 
-	let build = $derived((cols: number): ArticleResult => {
-		const g = new ArticleGrid(cols, note.accent, 6);
+	let build = $derived((cols: number, cellRatio: number): ArticleResult => {
+		const g = new ArticleGrid(cols, note.accent, 6, cellRatio);
 		g.linkLine('[ <- notes ]', '/notes/', 'link');
 		g.spacer();
 		g.title(note.title);

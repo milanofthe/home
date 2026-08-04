@@ -21,8 +21,8 @@
 		return () => window.removeEventListener('hashchange', readHash);
 	});
 
-	let build = $derived((cols: number): ArticleResult => {
-		const g = new ArticleGrid(cols, 'neutral', 6);
+	let build = $derived((cols: number, cellRatio: number): ArticleResult => {
+		const g = new ArticleGrid(cols, 'neutral', 6, cellRatio);
 		g.title('NOTES', 'Engineering notes on numerics, solvers, and scientific UI.');
 		g.spacer();
 

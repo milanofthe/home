@@ -37,9 +37,10 @@ The 3D GDS viewer ships as a web component, one script tag on any website:
 Layer colors, z-positions, and thickness are configurable per GDS layer; the
 tiles on this site use exactly this component.
 
-## In the stack
+## History
 
-RapidPassives is the design frontend of the fields level: the layouts it
-generates are what [RapidMoM](/stack/rapidmom/) simulates. The project started
-during my master's work on compact modeling and layout generation of RFIC
-passives and became the seed of the whole fields level.
+RapidPassives grew out of my master's work on compact modeling and layout
+generation of RFIC passives (inductors, transformers, baluns) and became the
+seed of the whole fields level of the stack: the layouts it generates are
+what [RapidMoM](/stack/rapidmom/) simulates. The public repository dates to
+October 2024.

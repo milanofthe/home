@@ -62,7 +62,7 @@
 					href={BOOKING_URL}
 					target="_blank"
 					rel="noopener"
-					class="text-sm text-cream font-medium border border-cream/30 px-3 py-1 hover:border-cream/70 hover:text-cream-light transition-colors"
+					class="text-sm text-cream font-medium hover:text-cream-light transition-colors"
 				>
 					[ Book a call ]
 				</a>

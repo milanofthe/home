@@ -23,8 +23,8 @@
 		}
 	];
 
-	function build(cols: number): ArticleResult {
-		const g = new ArticleGrid(cols, 'neutral', 6);
+	function build(cols: number, cellRatio: number): ArticleResult {
+		const g = new ArticleGrid(cols, 'neutral', 6, cellRatio);
 		g.title('CONSULTING');
 		g.paragraph(INTRO);
 		g.spacer();

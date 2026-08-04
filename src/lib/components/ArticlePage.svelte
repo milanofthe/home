@@ -5,9 +5,10 @@
 	import CharacterGrid from './CharacterGrid.svelte';
 
 	interface Props {
-		// Builds the article grid for a given column count. Re-invoked on
+		// Builds the article grid for a given column count and cell aspect
+		// ratio (charWidth / lineHeight, for image sizing). Re-invoked on
 		// resize, so content can adapt (two-column vs stacked floats).
-		build: (cols: number) => ArticleResult;
+		build: (cols: number, cellRatio: number) => ArticleResult;
 		// Semantic HTML for SEO / screen readers (the grid is aria-hidden).
 		semantic?: import('svelte').Snippet;
 	}
@@ -76,7 +77,7 @@
 		const contentCols = Math.min(cols - 4, 114);
 		document.documentElement.style.setProperty('--grid-content-width', `${contentCols * charWidth}px`);
 
-		article = build(cols);
+		article = build(cols, charWidth / lineHeight);
 
 		tick().then(() => {
 			if (!mounted && fontsReady) mounted = true;

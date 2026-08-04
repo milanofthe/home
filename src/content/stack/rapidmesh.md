@@ -49,8 +49,10 @@ full run. The API serves the solver as an oracle: mesh representations carry
 exactly what FEM assembly and refinement need. Inside the stack it replaces
 gmsh: one less external dependency, one more deterministic component.
 
-## In the stack
+## History
 
-RapidMesh feeds [RapidFEM](/stack/rapidfem/) (3D) and
-[RapidMoM](/stack/rapidmom/) (2D) and completes the no-black-box foundations
-together with [RSLAB](/stack/rslab/).
+RapidMesh started in June 2026 with one goal: replace gmsh inside the stack
+with a deterministic, embeddable mesher. Around 500 commits took it to v0.3,
+at which point the 2D path became the mesher inside
+[RapidMoM](/stack/rapidmom/) and the 3D path the replacement for
+[RapidFEM](/stack/rapidfem/)'s external meshing dependency.
