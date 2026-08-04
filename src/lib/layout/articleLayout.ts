@@ -186,12 +186,17 @@ export class ArticleGrid {
 		const c = col ?? this.startCol;
 		const r0 = startRow ?? this.row;
 
-		interface Tok { word: string; href?: string; label?: string; accent?: AccentKey }
+		interface Tok { word: string; href?: string; label?: string; accent?: AccentKey; glue?: boolean }
 		const toks: Tok[] = [];
 		for (const seg of segs) {
+			let first = true;
 			for (const word of seg.text.split(' ')) {
 				if (word.length === 0) continue;
-				toks.push({ word, href: seg.href, label: seg.text, accent: seg.accent });
+				// Punctuation opening a segment attaches to the previous token
+				// (no space before ", an open-source library" after a link).
+				const glue = first && /^[,.;:!?)]/.test(word);
+				toks.push({ word, href: seg.href, label: seg.text, accent: seg.accent, glue });
+				first = false;
 			}
 		}
 
@@ -200,10 +205,11 @@ export class ArticleGrid {
 		let cur: Tok[] = [];
 		let curLen = 0;
 		for (const t of toks) {
-			const extra = cur.length === 0 ? t.word.length : t.word.length + 1;
+			const sep = cur.length === 0 || t.glue ? 0 : 1;
+			const extra = t.word.length + sep;
 			if (cur.length > 0 && curLen + extra > w) {
 				lines.push(cur);
-				cur = [t];
+				cur = [{ ...t, glue: false }];
 				curLen = t.word.length;
 			} else {
 				cur.push(t);
@@ -227,12 +233,14 @@ export class ArticleGrid {
 				runHref = undefined;
 			};
 			line.forEach((t, j) => {
-				if (j > 0) {
+				if (j > 0 && !t.glue) {
 					// space between tokens: joins a link run if both sides share the href
 					const sameRun = runHref && t.href === runHref;
 					this.setCell(r, cc, ' ', sameRun ? this.linkCellType(t.accent) : 'content');
 					if (!sameRun) flushRun(cc);
 					cc += 1;
+				} else if (j > 0 && t.glue && runHref && t.href !== runHref) {
+					flushRun(cc);
 				}
 				if (t.href) {
 					if (t.href !== runHref) {
