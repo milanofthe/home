@@ -47,6 +47,5 @@ it against the reference engine, sample by sample.
 
 FastSim development started in April 2026, after the PathSim API had
 stabilized and the SSA compute-graph architecture had proven itself across
-the stack. Over 1000 commits in four months took it to v0.9.0: engine, JIT,
-autodiff, FMI export, and C code generation, tracking the PathSim API
-throughout. Commercial licensing funds the open system level.
+the stack. Four months of development produced the engine, JIT, autodiff, FMI
+export, and C code generation, tracking the PathSim API throughout. Commercial licensing funds the open system level.

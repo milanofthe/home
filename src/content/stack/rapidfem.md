@@ -50,9 +50,9 @@ instead of a black box behind a job queue.
 
 ## History
 
-RapidFEM development started in April 2026. Roughly 800 commits took it to
-v0.9.0: the frequency-domain backend first, then the DGTD time-domain solver,
-the notebook UI, and the RFIC path. It is open source from the start and
+RapidFEM development started in April 2026. The frequency-domain backend
+came first, then the DGTD time-domain solver, the notebook UI, and the RFIC
+path. It is open source from the start and
 shares its numerical foundations with the rest of the stack:
 [RapidMesh](/stack/rapidmesh/) for meshing, [RSLAB](/stack/rslab/) for the
 sparse linear algebra.

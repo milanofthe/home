@@ -67,7 +67,6 @@ benchmarks.
 
 SANE is the newest engine in the stack and the return to my RFIC EDA roots.
 Development started in June 2026, inspired by Analog Insydes from Fraunhofer
-ITWM. The first two months produced nearly 1000 commits and v0.2.0: SPICE
-parser, symbolic DAG engine, the full set of analyses, and the Verilog-A
-frontend. The web app at sane.milanrother.com is public; the core engine is
+ITWM. The first two months produced the SPICE parser, the symbolic DAG
+engine, the full set of analyses, and the Verilog-A frontend. The web app at sane.milanrother.com is public; the core engine is
 in early access.

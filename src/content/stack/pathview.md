@@ -37,6 +37,6 @@ and Plotly for interactive results.
 ## History
 
 PathView started in June 2025 to make PathSim usable without installing
-anything. Around 1400 commits later it is at v0.9, hosted free for everyone
-at view.pathsim.org, with the pip-installable local server for models that
-need packages beyond what Pyodide can load.
+anything. Today it is hosted free for everyone at view.pathsim.org, with the
+pip-installable local server for models that need packages beyond what
+Pyodide can load.

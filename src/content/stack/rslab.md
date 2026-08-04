@@ -46,8 +46,8 @@ target class, RSLAB declines rather than returning a degraded solution.
 ## History
 
 RSLAB started in late June 2026 as a fork of the feral project and was
-rebuilt into a full sparse direct solver: over 370 commits to v0.9.0 within
-weeks, driven directly by what [SANE](/stack/sane/),
+rebuilt into a full sparse direct solver, driven directly by what
+[SANE](/stack/sane/),
 [RapidFEM](/stack/rapidfem/), and [RapidMoM](/stack/rapidmom/) need from
 their linear algebra. The repository ships a technical report that derives
 the algorithms and carries the full evaluation; the headline numbers are

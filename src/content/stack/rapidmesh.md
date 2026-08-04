@@ -52,7 +52,6 @@ gmsh: one less external dependency, one more deterministic component.
 ## History
 
 RapidMesh started in June 2026 with one goal: replace gmsh inside the stack
-with a deterministic, embeddable mesher. Around 500 commits took it to v0.3,
-at which point the 2D path became the mesher inside
-[RapidMoM](/stack/rapidmom/) and the 3D path the replacement for
+with a deterministic, embeddable mesher. The 2D path is now the mesher inside
+[RapidMoM](/stack/rapidmom/), and the 3D path replaces
 [RapidFEM](/stack/rapidfem/)'s external meshing dependency.
