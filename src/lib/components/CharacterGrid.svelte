@@ -46,7 +46,11 @@
 		'frame-sane': 'code-grid-frame-sane',
 		'frame-rslab': 'code-grid-frame-rslab',
 		'frame-thesisos': 'code-grid-frame-thesisos',
-		'frame-whatsmytraffic': 'code-grid-frame-whatsmytraffic'
+		'frame-whatsmytraffic': 'code-grid-frame-whatsmytraffic',
+		'code-kw': 'code-grid-code-kw',
+		'code-str': 'code-grid-code-str',
+		'code-com': 'code-grid-code-com',
+		'code-num': 'code-grid-code-num'
 	};
 
 	let typewriterObserver: IntersectionObserver | null = null;

@@ -5,7 +5,7 @@ import { FILLER_SOURCE } from '$lib/data/filler-source';
 import { contentSections, type ContentSection, type ContentRegion } from './contentRegions';
 export type { ContentSection };
 
-export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'link-sane' | 'link-rslab' | 'link-thesisos' | 'link-whatsmytraffic' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim' | 'frame-sane' | 'frame-rslab' | 'frame-thesisos' | 'frame-whatsmytraffic';
+export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'link-sane' | 'link-rslab' | 'link-thesisos' | 'link-whatsmytraffic' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim' | 'frame-sane' | 'frame-rslab' | 'frame-thesisos' | 'frame-whatsmytraffic' | 'code-kw' | 'code-str' | 'code-com' | 'code-num';
 
 export interface Cell {
 	char: string;

@@ -1,0 +1,60 @@
+---
+title: RSLAB
+accent: rslab
+tagline: A sparse direct solver in pure Rust. PARDISO-style, embeddable, deterministic.
+group: foundations
+order: 8
+repo: github.com/milanofthe/rslab|https://github.com/milanofthe/rslab
+license: MIT open source / PyPI
+cta1: [ View on GitHub -> ]|https://github.com/milanofthe/rslab
+---
+
+RSLAB is a sparse direct solver for real and complex matrices in pure Rust
+with no BLAS, LAPACK, or MKL dependency. It started from the feral project,
+made generic over the scalar type (f64, f32, and their complex counterparts),
+and grew into three factorization paths matched to their operator classes:
+symmetric LDLT with Bunch-Kaufman pivoting, threshold-pivoted unsymmetric LU,
+and a KLU path for circuit-shaped matrices (BTF block structure, per-block
+AMD, Gilbert-Peierls LU).
+
+## Built for solver-in-the-loop
+
+![vs faer and MKL PARDISO|right|46x14|contain](/images/rslab-h2h-ldlt.png)
+
+The design target is a solver that sits inside an engine, not on a cluster
+queue. The numeric factor is bit-identical across thread counts. Peak memory
+and runtime are predicted exactly from the symbolic structure before any
+numeric work. Fixed-pattern sequences (frequency sweeps, Newton steps)
+refactor numeric-only on frozen pivots, and solve_transpose reuses the same
+factors for adjoint and sensitivity solves. Mixed-precision solves factor in
+single precision, refine against the double-precision original, and return a
+backward-error certificate. Where a matrix is outside the target class, RSLAB
+declines rather than returning a degraded solution.
+
+Configuration is a deterministic heuristic: adaptive ordering, an exact
+nested-dissection bakeoff on large systems, and a worker count from a
+one-time cached hardware calibration. The solvers never measure implicitly.
+
+## Benchmarks
+
+![A-priori memory estimate|left|46x14|contain](/images/rslab-memory-estimate.png)
+
+All cross-solver figures come from one benchmark engine over a
+complete-distribution corpus: structured-grid generators (curl-curl Maxwell,
+shifted Helmholtz, Stokes/KKT, convection-diffusion, BEM/MoM kernels) plus
+the complex SuiteSparse matrices, measured in a single run. Geomean over 63
+sizes per path: 6.7x faster factor than faer on the symmetric class, 2.7x on
+the unsymmetric class, within 5.1-5.6x of MKL PARDISO. On the circuit class
+the KLU path factors 5-12x faster than the general LU, and same-pattern
+sweeps run 10-40x faster end to end. Accuracy: 24 of 31 complex SuiteSparse
+matrices below 1e-8 relative residual, matching PARDISO and ahead of faer.
+
+## History
+
+RSLAB started in late June 2026 from feral, driven directly by what
+[SANE](/stack/sane/) and [RapidMoM](/stack/rapidmom/) need from their linear
+algebra. Along the way I experimented with an MLP cost-model auto-tuner for
+picking solver configurations and discarded it: the deterministic heuristic
+is simpler, reproducible, and holds up. The repository ships a technical
+report that derives the algorithms and carries the full evaluation; every
+benchmark reruns with one command.

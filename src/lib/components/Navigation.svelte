@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { page } from '$app/state';
+	import { BOOKING_URL } from '$lib/config';
 
 	let scrolled = $state(false);
 	let mobileMenuOpen = $state(false);
@@ -18,11 +20,18 @@
 	}
 
 	const navLinks = [
-		{ href: '/#about', label: 'About' },
-		{ href: '/#projects', label: 'Projects' },
-		{ href: '/#services', label: 'Services' },
-		{ href: '/#contact', label: 'Contact' }
+		{ href: '/consulting/', label: 'Consulting' },
+		{ href: '/about/', label: 'About' },
+		// Every page renders the contact block at the bottom with a #contact
+		// anchor, so a plain hash link works everywhere.
+		{ href: '#contact', label: 'Contact' }
 	];
+
+	// Active state: hash links are never "active"; page links match by prefix.
+	function isActive(href: string): boolean {
+		if (href.startsWith('#')) return false;
+		return page.url.pathname.startsWith(href);
+	}
 
 	let showBackground = $derived(scrolled || mobileMenuOpen);
 </script>
@@ -42,11 +51,19 @@
 				{#each navLinks as link}
 					<a
 						href={link.href}
-						class="text-sm transition-colors duration-200 {link.href === '/#contact' ? 'text-cream hover:text-cream-light font-medium' : 'text-cream/60 hover:text-cream'}"
+						class="text-sm transition-colors duration-200 {isActive(link.href) ? 'text-cream' : 'text-cream/60 hover:text-cream'}"
 					>
 						{link.label}
 					</a>
 				{/each}
+				<a
+					href={BOOKING_URL}
+					target="_blank"
+					rel="noopener"
+					class="text-sm text-cream font-medium hover:text-cream-light transition-colors"
+				>
+					[ Book a call ]
+				</a>
 			</div>
 
 			<!-- Mobile Menu Button -->
@@ -72,12 +89,21 @@
 					{#each navLinks as link}
 						<a
 							href={link.href}
-							class="text-sm transition-colors {link.href === '/#contact' ? 'text-cream font-medium' : 'text-cream/60 hover:text-cream'}"
+							class="text-sm transition-colors {isActive(link.href) ? 'text-cream' : 'text-cream/60 hover:text-cream'}"
 							onclick={closeMenu}
 						>
 							{link.label}
 						</a>
 					{/each}
+					<a
+						href={BOOKING_URL}
+						target="_blank"
+						rel="noopener"
+						class="text-sm text-cream font-medium"
+						onclick={closeMenu}
+					>
+						[ Book a call ]
+					</a>
 				</div>
 			</div>
 		{/if}

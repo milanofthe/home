@@ -1,11 +1,9 @@
 <script lang="ts">
 	import Navigation from '$lib/components/Navigation.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<svelte:head>
-	<title>Impressum — Milan Rother</title>
-	<link rel="canonical" href="https://milanrother.com/impressum" />
-</svelte:head>
+<Seo title="Impressum — Milan Rother" description="Impressum — Milan Rother" path="/impressum/" />
 
 <Navigation />
 

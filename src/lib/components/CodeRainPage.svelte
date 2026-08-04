@@ -5,6 +5,9 @@
 	import CharacterGrid from './CharacterGrid.svelte';
 	import PortalTile from './PortalTile.svelte';
 	import VideoTile from './VideoTile.svelte';
+	import { BOOKING_URL } from '$lib/config';
+	import { submitContactForm } from '$lib/contactForm';
+	import { tileReveal as sharedTileReveal } from '$lib/tileReveal';
 
 	const STATS_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/github-stats.json';
 
@@ -81,63 +84,15 @@
 		return map;
 	});
 
-	const CONTACT_ACTION = 'https://whatsmytraffic.com/f/dekijnkgbvrk';
-
 	async function handleFormSubmit() {
 		const form = document.getElementById('grid-contact-form') as HTMLFormElement;
-		if (!form) return;
-
-		// Validate inline, in the page's own style. The native browser
-		// validation popover is an OS-styled box that clashes with the grid,
-		// and the [ SEND MESSAGE ] button sits outside <form> anyway — so
-		// constraint checks run here and report through the status line.
-		const field = (name: string) => {
-			const el = form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | null;
-			return (el?.value ?? '').trim();
-		};
-		if (!field('name') || !field('email') || !field('subject') || !field('message')) {
-			formStatus = 'error';
-			formMessage = '> all fields are required';
-			return;
-		}
-		// type="email" still accepts "a@b" — insist on a domain with a dot.
-		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field('email'))) {
-			formStatus = 'error';
-			formMessage = '> that email address looks off';
-			return;
-		}
-
+		if (!form || formStatus === 'submitting') return;
 		formStatus = 'submitting';
 		formMessage = '> sending message...';
-		const formData = new FormData(form);
-		// JSON, not multipart/form-data: Formspark currently rejects
-		// multipart bodies with `formspark-status: empty` and drops the
-		// submission, even though it answers 200.
-		const payload: Record<string, string> = {};
-		for (const [key, value] of formData.entries()) {
-			payload[key] = typeof value === 'string' ? value : '';
-		}
-		try {
-			const response = await fetch(CONTACT_ACTION, {
-				method: 'POST',
-				body: JSON.stringify(payload),
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json'
-				}
-			});
-			if (response.ok) {
-				formStatus = 'success';
-				formMessage = '> message sent — talk soon';
-				form.reset();
-			} else {
-				formStatus = 'error';
-				formMessage = '> send failed — email info@milanrother.com';
-			}
-		} catch {
-			formStatus = 'error';
-			formMessage = '> send failed — email info@milanrother.com';
-		}
+		const result = await submitContactForm(form);
+		formStatus = result.status;
+		formMessage = result.message;
+		if (result.status === 'success') form.reset();
 	}
 
 	// Clears a stale status message as soon as the user edits a field.
@@ -159,10 +114,25 @@
 		action?: string;
 	}
 
+	// Read-more targets: one per stack project (unique text -> unique href).
+	const readMoreTargets = [
+		'PathSim', 'FastSim', 'PathView', 'SANE', 'RapidMoM', 'RapidFEM',
+		'RapidPassives', 'RSLAB', 'RapidMesh'
+	].map((name) => ({
+		text: `[ more on ${name} -> ]`,
+		types: ['cta'] as CellType[],
+		href: `/stack/${name.toLowerCase()}/`
+	}));
+
 	const clickTargets: { text: string; types: CellType[]; href?: string; scrollTo?: string; action?: string }[] = [
-		{ text: '[ Get in Touch -> ]', types: ['cta'], scrollTo: 'contact' },
+		{ text: '[ Book an intro call -> ]', types: ['cta'], href: BOOKING_URL },
+		{ text: '[ Consulting ]', types: ['cta'], href: '/consulting/' },
 		{ text: '[ View the Stack ]', types: ['cta'], scrollTo: 'projects' },
+		{ text: '[ more about consulting -> ]', types: ['cta'], href: '/consulting/' },
+		{ text: '[ explore the stack -> ]', types: ['cta'], scrollTo: 'projects' },
+		{ text: '[ full story -> ]', types: ['cta'], href: '/about/' },
 		{ text: '[ SEND MESSAGE -> ]', types: ['cta'], action: 'submit-form' },
+		...readMoreTargets,
 		{ text: 'Impressum', types: ['footer'], href: '/impressum/' },
 		{ text: 'Datenschutz', types: ['footer'], href: '/datenschutz/' },
 		{ text: 'info@milanrother.com', types: ['link', 'link-sane'], href: 'mailto:info@milanrother.com' },
@@ -281,95 +251,9 @@
 		}
 	}
 
+	// Shared random-patch reveal (also used by the article pages)
 	function tileReveal(node: HTMLElement) {
-		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-			return { destroy() {} };
-		}
-
-		const w = node.offsetWidth;
-		const h = node.offsetHeight;
-		const cols = Math.round(w / charWidth);
-		const rows = Math.round(h / lineHeight);
-		const total = cols * rows;
-
-		// Lazy load: strip video src, preload early, play on reveal
-		const videoEls = node.querySelectorAll<HTMLVideoElement>('video');
-		for (const el of videoEls) {
-			el.dataset.lazySrc = el.src;
-			el.removeAttribute('src');
-			el.pause();
-		}
-
-		// Canvas overlay filled with page background, hides the content
-		const canvas = document.createElement('canvas');
-		const dpr = window.devicePixelRatio || 1;
-		canvas.width = w * dpr;
-		canvas.height = h * dpr;
-		canvas.style.cssText = `position:absolute;top:0;left:0;width:${w}px;height:${h}px;z-index:1;pointer-events:none`;
-		const ctx = canvas.getContext('2d')!;
-		ctx.scale(dpr, dpr);
-		ctx.fillStyle = '#0f0f0f';
-		ctx.fillRect(0, 0, w, h);
-		node.appendChild(canvas);
-
-		// Shuffled cell indices for random patch reveal
-		const order = Array.from({ length: total }, (_, i) => i);
-		for (let i = total - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1));
-			[order[i], order[j]] = [order[j], order[i]];
-		}
-
-		// Preload observer: start fetching videos when tile is ~800px from viewport
-		const preloadObserver = new IntersectionObserver((entries) => {
-			for (const entry of entries) {
-				if (entry.isIntersecting) {
-					preloadObserver.unobserve(entry.target);
-					for (const el of videoEls) {
-						if (el.dataset.lazySrc) {
-							el.src = el.dataset.lazySrc;
-							el.preload = 'auto';
-							el.load();
-							delete el.dataset.lazySrc;
-						}
-					}
-				}
-			}
-		}, { rootMargin: '800px' });
-		preloadObserver.observe(node);
-
-		// Reveal observer: start animation and play video when tile is visible
-		const revealObserver = new IntersectionObserver((entries) => {
-			for (const entry of entries) {
-				if (entry.isIntersecting) {
-					revealObserver.unobserve(entry.target);
-
-					for (const el of videoEls) {
-						el.play();
-					}
-
-					let i = 0;
-					const perFrame = Math.max(1, Math.ceil(total / 80));
-					(function step() {
-						for (let n = 0; n < perFrame && i < total; n++, i++) {
-							const c = order[i] % cols;
-							const r = (order[i] / cols) | 0;
-							ctx.clearRect(c * charWidth, r * lineHeight, charWidth + 1, lineHeight + 1);
-						}
-						if (i < total) requestAnimationFrame(step);
-						else canvas.remove();
-					})();
-				}
-			}
-		}, { threshold: 0.1 });
-		revealObserver.observe(node);
-
-		return {
-			destroy() {
-				preloadObserver.disconnect();
-				revealObserver.disconnect();
-				canvas.remove();
-			}
-		};
+		return sharedTileReveal(node, { charWidth, lineHeight });
 	}
 
 	onMount(() => {
@@ -423,10 +307,20 @@
 			}
 		}
 
-		// Handle initial hash on load
+		// Handle initial hash on load. Sections that moved to their own pages
+		// redirect so old /#about-style links keep working.
+		const MOVED_SECTIONS: Record<string, string> = {
+			about: '/about/',
+			services: '/consulting/',
+			other: '/about/'
+		};
 		if (window.location.hash) {
 			const id = window.location.hash.replace('#', '');
-			setTimeout(() => scrollToSection(id), 100);
+			if (MOVED_SECTIONS[id]) {
+				window.location.replace(MOVED_SECTIONS[id]);
+			} else {
+				setTimeout(() => scrollToSection(id), 100);
+			}
 		}
 
 		window.addEventListener('resize', computeLayout);
@@ -441,34 +335,24 @@
 <!-- Semantic content for SEO / screen readers -->
 <main class="sr-only">
 	<h1>Milan Rother</h1>
-	<p>I build the simulation stack for electronics — fields, circuits, systems. State-of-the-art numerics, fast engines, and the interfaces to use them.</p>
-	<section id="about">
-		<h2>Who am I</h2>
-		<p>Simulation engineer. I build numerical software and solve modeling problems for teams working on complex physical systems.</p>
-		<p>M.Sc. Electrical Engineering. Background in numerical methods, system modeling, electromagnetics, and compact modeling for physical systems.</p>
-		<p>I built <a href="https://pathsim.org">PathSim</a> because modeling software has a long history of vendor lock-in and clunky UX. Pure Python, open source, designed from first principles. JOSS-published, with collaborators from MIT Plasma Science &amp; Fusion Center, CEA, scikit-rf, and JSBSim.</p>
-		<p>Now I'm bringing it all together into one vertically integrated stack: EM field solvers (RapidFEM, RapidMoM), a symbolic analog circuit engine (SANE), and system-level simulation (PathSim, FastSim). One architecture — SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces.</p>
+	<p>I build the simulation stack for electronics: fields, circuits, systems. Custom solvers and engineering tools for client teams, built and integrated end to end.</p>
+	<section id="paths">
+		<h2>What I do</h2>
+		<p><a href="/consulting/">Consulting</a>: custom solvers and engineering tools, built and integrated end to end. Scoped into weekly sprints and multi-week projects.</p>
+		<p><a href="/#projects">Products &amp; licensing</a>: FastSim, SANE, and RapidMoM are source-available, free for academia, and commercially licensed with support and integration.</p>
+		<p><a href="/about/">About</a>: simulation engineer, open-source author of PathSim.</p>
 	</section>
 	<section id="projects">
 		<h2>The Stack</h2>
-		<p>One vertically integrated simulation stack for electronics — from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.</p>
+		<p>One vertically integrated simulation stack for electronics: from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.</p>
 		<h3>Systems</h3>
-		<p><a href="https://pathsim.org">PathSim</a> — pure-Python system simulation framework, MIT open source, JOSS-published. <a href="https://fast.pathsim.org">FastSim</a> — drop-in Rust replacement, 50-100x faster, JIT, autodiff, FMI 3.0, C99 code generation. <a href="https://view.pathsim.org">PathView</a> — browser-based visual model editor.</p>
+		<p><a href="/stack/pathsim/">PathSim</a>: pure-Python system simulation framework, MIT open source, JOSS-published. <a href="/stack/fastsim/">FastSim</a>: drop-in Rust replacement with 191x median per-step speedup, JIT, autodiff, FMI 3.0, C99 code generation. <a href="/stack/pathview/">PathView</a>: browser-based visual model editor.</p>
 		<h3>Circuits</h3>
-		<p>SANE — Symbolic Analog Network Engine. Symbolic and numeric circuit analysis: DC, transient, AC, poles/zeros, noise, harmonic balance, exact sensitivities. SPICE and Verilog-A frontends. Validated against ngspice and Xyce. Try it live at <a href="https://sane.milanrother.com">sane.milanrother.com</a>; the core engine is in early access.</p>
+		<p><a href="/stack/sane/">SANE</a>: Symbolic Analog Network Engine. Symbolic and numeric circuit analysis: DC, transient, AC, poles/zeros, noise, harmonic balance, exact sensitivities. SPICE and Verilog-A frontends. Validated against ngspice and Xyce.</p>
 		<h3>Fields</h3>
-		<p>RapidMoM — 2.5D Method-of-Moments solver for planar RF passives on layered substrates. <a href="https://fem.rapidpassives.org">RapidFEM</a> — Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="https://rapidpassives.org">RapidPassives</a> — browser-based RFIC passive layout generation.</p>
+		<p><a href="/stack/rapidmom/">RapidMoM</a>: 2.5D Method-of-Moments solver for planar RF passives on layered substrates. <a href="/stack/rapidfem/">RapidFEM</a>: Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="/stack/rapidpassives/">RapidPassives</a>: browser-based RFIC passive layout generation.</p>
 		<h3>Foundations</h3>
-		<p><a href="https://github.com/milanofthe/rslab">RSLAB</a> — sparse direct solver in pure Rust. <a href="https://github.com/milanofthe/rapidmesh">RapidMesh</a> — tetrahedral mesh generator for 3D electromagnetic FEM.</p>
-	</section>
-	<section id="other">
-		<h2>Other Projects</h2>
-		<p><a href="https://pysimhub.io">PySimHub</a>, <a href="https://scidata.io">SciData</a>, <a href="https://thesisos.io">ThesisOS</a>, <a href="https://whatsmytraffic.com">WhatsMyTraffic</a>.</p>
-	</section>
-	<section id="services">
-		<h2>Services</h2>
-		<p>I help engineering teams build and scale simulation infrastructure. Available for consulting, development, commercial licensing, and training.</p>
-		<p>Simulink migration, custom simulation development, digital twin and co-simulation architecture, simulation audit, training and workshops.</p>
+		<p><a href="/stack/rslab/">RSLAB</a>: sparse direct solver in pure Rust. <a href="/stack/rapidmesh/">RapidMesh</a>: mesh generator for electromagnetic FEM and MoM.</p>
 	</section>
 	<section id="contact">
 		<h2>Get in Touch</h2>
@@ -482,6 +366,11 @@
 	style="font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: {fontSize}px; line-height: {lineHeight}px; letter-spacing: {letterSpacingPx}px;">
 	{#if gridLayout}
 		<CharacterGrid cells={gridLayout.cells} />
+
+		<!-- Native scroll anchors so plain #hash links work (nav Contact etc.) -->
+		{#each gridLayout.sectionAnchors as anchor}
+			<div id={anchor.id} style="position: absolute; width: 1px; height: 1px; pointer-events: none; top: {(anchor.row - 4) * lineHeight}px;"></div>
+		{/each}
 
 		<!-- Embedded block overlays — absolutely positioned to match frame -->
 		{#each gridLayout.embeddedBlocks as block}
