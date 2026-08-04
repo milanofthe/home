@@ -17,6 +17,8 @@ tagged complex; exact-arithmetic CSG booleans (exact predicates, no float
 snapping) produce a non-manifold B-rep with exactly conforming material
 interfaces.
 
+![Dielectric resonator|right|46x14](/images/rapidmesh-resonator.png)
+
 Meshing is dimensionally hierarchical: corners, then edges, then faces, then
 the volume, freezing each level before the next consumes it. Within every
 dimension, error-driven adaptive sampling combines with variational point
@@ -29,8 +31,6 @@ for every curve and surface modality are derived with a computer-algebra
 system, not approximated ad hoc.
 
 ## The 2D path
-
-![Dielectric resonator|right|46x14](/images/rapidmesh-resonator.png)
 
 The same core that meshes each 3D surface patch is the standalone planar
 mesher for MoM: graded, sliver-free constrained Delaunay triangulation of
