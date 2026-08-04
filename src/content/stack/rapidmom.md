@@ -49,8 +49,8 @@ engineers actually design against: L, Q, coupling.
 Validation runs against closed-form analytics, physical invariants (Lorentz
 reciprocity, mutual-sign checks, skin-effect rise), and an independent
 reference solver on controlled cases before any device claim is made. The
-evaluation report is fully auto-generated from the same pipeline, so every
-number is reproducible.
+evaluation report is auto-generated from the same pipeline and available on
+request.
 
 ## Built for sweeps
 

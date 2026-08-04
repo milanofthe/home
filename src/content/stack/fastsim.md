@@ -72,11 +72,12 @@ generation for embedded targets. The generated C is verified
 software-in-the-loop: sim.verify_c() compiles it locally and pins it against
 the reference engine, sample by sample.
 
-The engine ships with a technical report that states the theory and the
-implementation together, and a benchmark suite that reruns every claim with
-one command per study: fixed-order integrators are verified to converge at
-their theoretical orders, accuracy is measured against reference solutions,
-and comparisons cover SciPy, CasADi, and DifferentialEquations.jl.
+Every claim is measured, not asserted: a benchmark suite reruns each study
+with one command, fixed-order integrators are verified to converge at their
+theoretical orders, accuracy is measured against reference solutions, and
+comparisons cover SciPy, CasADi, and DifferentialEquations.jl. A technical
+report that states the theory and the implementation together is available
+on request.
 
 ## History
 
