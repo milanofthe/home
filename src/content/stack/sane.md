@@ -38,14 +38,17 @@ Results are labeled by node and parameter name, not positional vectors. A
 result object keeps its solved state, so derived analyses need no re-solve,
 and parameters read and write hierarchically: model.X1.R2 = 1e3.
 
-![SANE|right|46x14](/screenshots/sane-app.png)
-
 ## Frontends and devices
+
+![SANE|right|46x14](/screenshots/sane-app.png)
 
 The SPICE frontend parses .param expressions, .subckt hierarchy, .model cards,
 and the standard source waveforms (SIN, PULSE, EXP, PWL). Devices cover the
 classic set: diodes, MOSFETs, BJTs (Gummel-Poon), JFETs, MESFETs, controlled
-sources and switches, behavioral sources, and transmission lines.
+sources and switches, behavioral sources, and transmission lines. The web app
+at sane.milanrother.com runs the full engine in the browser.
+
+![Symbolic graph|left|46x14](/screenshots/sane-graph.png)
 
 Compact models are the differentiator: a native Verilog-A frontend lowers
 BSIM4, PSP, HICUM, VBIC, and EKV onto the same DAG, with no OSDI binary and
@@ -53,8 +56,6 @@ no generated code. Every parameter stays exposed to the autodiff, even in
 harmonic balance. Temperature is a first-class symbolic global, so .temp
 sweeps are physical and d(metric)/dT is exact. Noise sources (thermal, shot,
 flicker, Verilog-A noise) are summed in one registry.
-
-![Symbolic graph|left|46x14](/screenshots/sane-graph.png)
 
 ## The engine
 
@@ -74,8 +75,10 @@ the raw engine call.
 
 ## History
 
-SANE is the newest engine in the stack and the return to my RFIC EDA roots.
-Development started in June 2026, inspired by Analog Insydes from Fraunhofer
-ITWM. The first two months produced the SPICE parser, the symbolic DAG
-engine, the full set of analyses, and the Verilog-A frontend. The web app at sane.milanrother.com is public; the core engine is
-in early access.
+SANE is the return to my RFIC EDA roots. It builds on work I did together
+with Ralf Sommer, the inventor of Analog Insydes, on reviving that tool from
+December 2024 on. In June 2026 I picked the ideas up again on my own stack,
+with SSA-style compute graphs at the core of the engine. The first two months
+produced the SPICE parser, the symbolic DAG engine, the full set of analyses,
+and the Verilog-A frontend. The web app at sane.milanrother.com is public;
+the core engine is in early access.

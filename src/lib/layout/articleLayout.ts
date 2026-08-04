@@ -440,10 +440,11 @@ export class ArticleGrid {
 	// wrap hard at the inner width. The fence label doubles as the language.
 	codeBlock(code: string, label = '') {
 		const rawLines = code.replace(/\t/g, '    ').split('\n');
+		const lineTypes = highlightCode(rawLines, label);
 		const innerW = this.contentWidth - 4;
 		const lines: { text: string; types: CellType[] }[] = [];
-		for (const l of rawLines) {
-			const types = highlightLine(l, label);
+		rawLines.forEach((l, li) => {
+			const types = lineTypes[li];
 			if (l.length <= innerW) {
 				lines.push({ text: l, types });
 			} else {
@@ -451,7 +452,7 @@ export class ArticleGrid {
 					lines.push({ text: l.slice(i, i + innerW), types: types.slice(i, i + innerW) });
 				}
 			}
-		}
+		});
 		const w = this.contentWidth;
 		const r0 = this.row;
 		this.placeLine(r0, this.startCol, this.buildFrameTop(w, label), this.accent.frame);
@@ -593,70 +594,106 @@ const COMMENT_PREFIX: Record<string, string> = {
 	rust: '//', javascript: '//', ts: '//', js: '//', c: '//', cpp: '//'
 };
 
-function highlightLine(line: string, lang: string): CellType[] {
-	const types: CellType[] = new Array(line.length).fill('content');
+// Highlight a whole code block. Stateful across lines so python
+// triple-quoted strings keep their color after a line break.
+function highlightCode(lines: string[], lang: string): CellType[][] {
 	const keywords = CODE_KEYWORDS[lang];
 	const commentPrefix = COMMENT_PREFIX[lang];
+	const supportsTriple = lang === 'python' || lang === 'py';
+	const out: CellType[][] = [];
+	let triple: string | null = null; // open '"""' or "'''" from a prior line
 
-	let i = 0;
-	let commentStart = -1;
-	while (i < line.length) {
-		const ch = line[i];
-		// string literal (single line, naive)
-		if (ch === '"' || ch === "'" || ch === '`') {
-			const quote = ch;
-			let j = i + 1;
-			while (j < line.length && line[j] !== quote) {
-				if (line[j] === '\\') j++;
-				j++;
+	for (const line of lines) {
+		const types: CellType[] = new Array(line.length).fill('content');
+		let i = 0;
+
+		// continue an open triple-quoted string
+		if (triple) {
+			const close = line.indexOf(triple);
+			if (close === -1) {
+				types.fill('code-str');
+				out.push(types);
+				continue;
 			}
-			for (let k = i; k <= Math.min(j, line.length - 1); k++) types[k] = 'code-str';
-			i = j + 1;
-			continue;
+			for (let k = 0; k < close + 3; k++) types[k] = 'code-str';
+			i = close + 3;
+			triple = null;
 		}
-		if (commentPrefix && line.startsWith(commentPrefix, i)) {
-			commentStart = i;
-			break;
+
+		let commentStart = -1;
+		while (i < line.length) {
+			const ch = line[i];
+			// triple-quoted string opening
+			if (supportsTriple && (line.startsWith('"""', i) || line.startsWith("'''", i))) {
+				const q = line.slice(i, i + 3);
+				const close = line.indexOf(q, i + 3);
+				if (close === -1) {
+					for (let k = i; k < line.length; k++) types[k] = 'code-str';
+					triple = q;
+					i = line.length;
+				} else {
+					for (let k = i; k < close + 3; k++) types[k] = 'code-str';
+					i = close + 3;
+				}
+				continue;
+			}
+			// single-line string literal
+			if (ch === '"' || ch === "'" || ch === '`') {
+				const quote = ch;
+				let j = i + 1;
+				while (j < line.length && line[j] !== quote) {
+					if (line[j] === '\\') j++;
+					j++;
+				}
+				for (let k = i; k <= Math.min(j, line.length - 1); k++) types[k] = 'code-str';
+				i = j + 1;
+				continue;
+			}
+			if (commentPrefix && line.startsWith(commentPrefix, i)) {
+				commentStart = i;
+				break;
+			}
+			// html comments regardless of prefix table
+			if (lang === 'html' && line.startsWith('<!--', i)) {
+				commentStart = i;
+				break;
+			}
+			i++;
 		}
-		// html comments regardless of prefix table
-		if (lang === 'html' && line.startsWith('<!--', i)) {
-			commentStart = i;
-			break;
+		if (commentStart >= 0) {
+			for (let k = commentStart; k < line.length; k++) types[k] = 'code-com';
 		}
-		i++;
-	}
-	if (commentStart >= 0) {
-		for (let k = commentStart; k < line.length; k++) types[k] = 'code-com';
-	}
 
-	const codeEnd = commentStart >= 0 ? commentStart : line.length;
-	const segment = line.slice(0, codeEnd);
+		const codeEnd = commentStart >= 0 ? commentStart : line.length;
+		const segment = line.slice(0, codeEnd);
 
-	// numbers
-	for (const m of segment.matchAll(/\b\d+(\.\d+)?([eE][+-]?\d+)?\b/g)) {
-		if (types[m.index!] !== 'content') continue;
-		for (let k = m.index!; k < m.index! + m[0].length; k++) types[k] = 'code-num';
-	}
-
-	// keywords
-	if (keywords) {
-		for (const m of segment.matchAll(/[A-Za-z_][A-Za-z0-9_]*/g)) {
-			if (!keywords.has(m[0])) continue;
+		// numbers
+		for (const m of segment.matchAll(/\b\d+(\.\d+)?([eE][+-]?\d+)?\b/g)) {
 			if (types[m.index!] !== 'content') continue;
-			for (let k = m.index!; k < m.index! + m[0].length; k++) types[k] = 'code-kw';
+			for (let k = m.index!; k < m.index! + m[0].length; k++) types[k] = 'code-num';
 		}
-	}
 
-	// html tags: color tag names as keywords
-	if (lang === 'html') {
-		for (const m of segment.matchAll(/<\/?([A-Za-z][A-Za-z0-9-]*)/g)) {
-			for (let k = m.index!; k < m.index! + m[0].length; k++) {
-				if (types[k] === 'content') types[k] = 'code-kw';
+		// keywords
+		if (keywords) {
+			for (const m of segment.matchAll(/[A-Za-z_][A-Za-z0-9_]*/g)) {
+				if (!keywords.has(m[0])) continue;
+				if (types[m.index!] !== 'content') continue;
+				for (let k = m.index!; k < m.index! + m[0].length; k++) types[k] = 'code-kw';
 			}
 		}
-	}
 
-	return types;
+		// html tags: color tag names as keywords
+		if (lang === 'html') {
+			for (const m of segment.matchAll(/<\/?([A-Za-z][A-Za-z0-9-]*)/g)) {
+				for (let k = m.index!; k < m.index! + m[0].length; k++) {
+					if (types[k] === 'content') types[k] = 'code-kw';
+				}
+			}
+		}
+
+		out.push(types);
+	}
+	return out;
 }
 
 // Split a segment list into two lists at a character offset of the joined
