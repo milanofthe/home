@@ -8,8 +8,6 @@ license: early access / free for academia / commercial licenses
 cta1: [ Request evaluation -> ]|mailto:rapidmom@milanrother.com?subject=RapidMoM%20evaluation
 ---
 
-![Current density on a full op-amp layout|right|46x14](/images/rapidmom-opamp-current.png)
-
 RapidMoM is a 2.5D Method-of-Moments solver for planar RF passives on layered
 substrates: PCB and RFIC, from single inductors and transformers to full
 metal layouts on a real process stack. The formulation is a mixed-potential surface
