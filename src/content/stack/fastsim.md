@@ -16,13 +16,34 @@ measured per-step speedup over PathSim is 191x, and your existing model gets
 it by changing one line:
 
 ```python
+# drop-in: swap the import and your PathSim model runs in Rust
 # from pathsim import Simulation, Connection
 from fastsim import Simulation, Connection
+
+# all 21 solvers also work standalone, with automatic JIT
+from fastsim.solvers import RKDP54, ESDIRK43
+
+def lorenz(x, t):
+    sigma, rho, beta = 10.0, 28.0, 8.0/3.0
+    return [sigma*(x[1]-x[0]), x[0]*(rho-x[2])-x[1], x[0]*x[1]-beta*x[2]]
+
+t, x = RKDP54.integrate(lorenz, [1, 1, 1], time_end=50.0)
+
+# implicit solver for stiff systems, Jacobian generated via AD
+t, x = ESDIRK43.integrate(robertson, [1, 0, 0], time_end=1.0)
+
+# JIT and autodiff exposed as JAX-style transformations
+from fastsim.jit import jit, jacobian
+
+f = jit(lorenz)                              # traced to SSA, run in Rust
+J = jacobian(lorenz)([1.0, 1.0, 1.0], 0.0)   # exact 3x3 Jacobian
 ```
 
 Python callbacks are automatically traced into an optimized SSA graph,
 symbolically differentiated, and evaluated in Rust. No code generation step,
-no toolchain on the user's machine, no model rewrite.
+no toolchain on the user's machine, no model rewrite. Supported operations
+cover arithmetic, numpy transcendentals, dot products, matrix multiply,
+clipping, branching, and more; unsupported patterns fall back to Python.
 
 ## The engine
 
