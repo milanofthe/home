@@ -35,9 +35,9 @@ result = prob.sweep(np.linspace(8e9, 12e9, 21))
 # the same Problem also drives eigenmode solves and far-field patterns
 ```
 
-![Iris filter notebook|right|46x14](/screenshots/rapidfem-editor.png)
-
 ## Practical by default
+
+![Iris filter notebook|right|46x14](/screenshots/rapidfem-editor.png)
 
 Distribution is deliberately boring: pip install rapidfem ships
 ahead-of-time compiled wheels for Windows, Linux, and macOS. No Rust
@@ -56,9 +56,10 @@ instead of a black box behind a job queue.
 
 ## History
 
-RapidFEM development started in April 2026. The frequency-domain backend
-came first, then the DGTD time-domain solver, the notebook UI, and the RFIC
-path. It is open source from the start and
-shares its numerical foundations with the rest of the stack:
-[RapidMesh](/stack/rapidmesh/) for meshing, [RSLAB](/stack/rslab/) for the
-sparse linear algebra.
+RapidFEM began in April 2026 as a port of Robert Fennis' emerge project and
+has since been completely reimplemented: a fresh solver core, first-order
+elements, and the DGTD time-domain backend built next to the frequency-domain
+solver, plus the notebook UI and the RFIC path. Meshing and linear algebra
+currently come from gmsh and PARDISO; moving onto
+[RapidMesh](/stack/rapidmesh/) and [RSLAB](/stack/rslab/) is where the stack
+is heading.

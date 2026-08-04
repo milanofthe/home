@@ -17,9 +17,9 @@ path for circuit-shaped matrices (BTF block structure, per-block AMD,
 Gilbert-Peierls LU). Iterative solvers (GMRES, COCG, COCR) with Krylov
 subspace recycling and preconditioner mode round out the toolbox.
 
-![vs faer and MKL PARDISO|right|46x14|contain](/images/rslab-h2h-ldlt.png)
-
 ## Settings pick themselves
+
+![vs faer and MKL PARDISO|right|46x14|contain](/images/rslab-h2h-ldlt.png)
 
 factor() chooses its configuration from exact a-priori quantities: an adaptive
 ordering heuristic, proven kernel defaults, and an exact nested-dissection
@@ -48,9 +48,9 @@ land below 1e-8 relative residual, matching PARDISO and ahead of faer. The
 never-fail static-pivot factor used as a GMRES preconditioner covers most of
 the remaining gap.
 
-![A-priori memory estimate|left|46x14|contain](/images/rslab-memory-estimate.png)
-
 ## Deterministic and budgetable
+
+![A-priori memory estimate|left|46x14|contain](/images/rslab-memory-estimate.png)
 
 The numeric factor is bit-identical across thread counts, validated over 180
 SuiteSparse matrices across schedules, emit modes, and the 32-bit compressed
@@ -64,8 +64,7 @@ target class, RSLAB declines rather than returning a degraded solution.
 
 RSLAB started in late June 2026 as a fork of the feral project and was
 rebuilt into a full sparse direct solver, driven directly by what
-[SANE](/stack/sane/),
-[RapidFEM](/stack/rapidfem/), and [RapidMoM](/stack/rapidmom/) need from
-their linear algebra. The repository ships a technical report that derives
+[SANE](/stack/sane/) and [RapidMoM](/stack/rapidmom/) need from their linear
+algebra. The repository ships a technical report that derives
 the algorithms and carries the full evaluation; every benchmark reruns from
 the repository with one command.

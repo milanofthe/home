@@ -15,9 +15,9 @@ and 3D rendering, and export production-ready GDS-II directly from the
 browser. Everything runs client-side: no upload, no account, no data leaving
 the machine.
 
-![rapidpassives.org|right|46x14](/screenshots/rapidpassives-org.png)
-
 ## Generators and viewer
+
+![rapidpassives.org|right|46x14](/screenshots/rapidpassives-org.png)
 
 Geometry generators cover spiral and symmetric inductors, interleaved and
 stacked transformers, MOM capacitors, patch antennas, and rat-race couplers,

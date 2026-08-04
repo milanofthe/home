@@ -28,9 +28,9 @@ makes the boundary watertight by construction. The sizing and chart formulae
 for every curve and surface modality are derived with a computer-algebra
 system, not approximated ad hoc.
 
-![Dielectric resonator|right|46x14](/images/rapidmesh-resonator.png)
-
 ## The 2D path
+
+![Dielectric resonator|right|46x14](/images/rapidmesh-resonator.png)
 
 The same core that meshes each 3D surface patch is the standalone planar
 mesher for MoM: graded, sliver-free constrained Delaunay triangulation of
@@ -48,19 +48,20 @@ layers = rm.mesh_layers(groups, sizing, target_count=20_000)
 Overlapping regions within a group weld into one electrically continuous
 component; separate metal layers never merge.
 
-![mesh.rapidpassives.org|left|46x14](/screenshots/rapidmesh-site.png)
-
 ## Validated, not assumed
+
+![mesh.rapidpassives.org|left|46x14](/screenshots/rapidmesh-site.png)
 
 A validation corpus of 101 geometries (primitives, booleans, multi-region
 assemblies, RF passives, STL/OBJ imports) is re-run and re-rendered on every
 full run. The API serves the solver as an oracle: mesh representations carry
-exactly what FEM assembly and refinement need. Inside the stack it replaces
-gmsh: one less external dependency, one more deterministic component.
+exactly what FEM assembly and refinement need. It is built to replace gmsh
+inside the stack: one less external dependency, one more deterministic
+component.
 
 ## History
 
 RapidMesh started in June 2026 with one goal: replace gmsh inside the stack
 with a deterministic, embeddable mesher. The 2D path is now the mesher inside
-[RapidMoM](/stack/rapidmom/), and the 3D path replaces
-[RapidFEM](/stack/rapidfem/)'s external meshing dependency.
+[RapidMoM](/stack/rapidmom/); the 3D path is built to take over
+[RapidFEM](/stack/rapidfem/)'s meshing, which still runs on gmsh today.

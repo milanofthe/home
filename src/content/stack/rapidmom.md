@@ -15,9 +15,9 @@ low-frequency breakdown (stable down to DC), layered-media Green's functions
 in the Michalski-Mosig formulation, and a kernel-independent ACA / H-matrix
 fast solver with block-GMRES in O(N log N).
 
-![Transformer mesh|right|46x14](/images/rapidmom-mesh.png)
-
 ## Converging the network, not the residual
+
+![Transformer mesh|right|46x14](/images/rapidmom-mesh.png)
 
 A GMRES residual bounds the algebraic error, but a port observable can be a
 small difference of large quantities (that is exactly what a quality factor
@@ -33,9 +33,9 @@ the gap, never an imposed current profile, so edge singularity and skin
 crowding come out of the solve. Ambiguous port placements are rejected in a
 preflight instead of guessed.
 
-![Current density|left|46x14](/images/rapidmom-current.png)
-
 ## Conductor models and outputs
+
+![Current density|left|46x14](/images/rapidmom-current.png)
 
 Two production conductor models are available per layer. The sheet model is
 the classical 2.5D treatment: one RWG current sheet per metal with the
