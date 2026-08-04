@@ -10,6 +10,8 @@ license: open source
 cta1: [ Open RapidMesh -> ]|https://mesh.rapidpassives.org
 ---
 
+![Boolean difference, cutaway|right|40x12](/images/rapidmesh-drilled-block.png)
+
 RapidMesh is a tetrahedral mesh generator for 3D electromagnetic FEM with a
 first-class 2D path for 2.5D MoM solvers, in pure Rust. Solid primitives
 (box, cylinder, sphere, cone, torus, prism, sweep, loft) assemble into a
@@ -17,7 +19,7 @@ tagged complex; exact-arithmetic CSG booleans (exact predicates, no float
 snapping) produce a non-manifold B-rep with exactly conforming material
 interfaces.
 
-![Dielectric resonator|right|46x14](/images/rapidmesh-resonator.png)
+![Dielectric resonator, cutaway|left|40x14](/images/rapidmesh-resonator.png)
 
 Meshing is dimensionally hierarchical: corners, then edges, then faces, then
 the volume, freezing each level before the next consumes it. Within every
@@ -29,6 +31,8 @@ triangulation is a hard constraint on the volume Delaunay, which is what
 makes the boundary watertight by construction. The sizing and chart formulae
 for every curve and surface modality are derived with a computer-algebra
 system, not approximated ad hoc.
+
+![Two-region via, cutaway|right|40x12](/images/rapidmesh-via.png)
 
 Meshing is budgeted: mesh(target_elements=N) retunes the global size scale
 over a few remeshes, since the element count scales with the third power of

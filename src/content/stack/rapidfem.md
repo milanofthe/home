@@ -50,6 +50,8 @@ examples ship with the package, from microstrips and coupled lines through
 iris and stepped-impedance filters to patch, Vivaldi, and inverted-F
 antennas, pyramidal horns, dielectric resonators, and on-chip passives.
 
+![fem.rapidpassives.org|left|46x14](/screenshots/rapidfem-home.png)
+
 A local notebook UI provides a code editor with interactive geometry, mesh,
 and field renderers, so a simulation setup is inspectable at every stage
 instead of a black box behind a job queue.

@@ -23,9 +23,17 @@
 		1274,
 		301
 	],
+	"/images/rapidmesh-drilled-block.png": [
+		1000,
+		820
+	],
 	"/images/rapidmesh-resonator.png": [
 		899,
 		992
+	],
+	"/images/rapidmesh-via.png": [
+		1000,
+		820
 	],
 	"/images/rapidmom-current.png": [
 		1100,
@@ -34,6 +42,10 @@
 	"/images/rapidmom-mesh.png": [
 		1100,
 		850
+	],
+	"/images/rapidmom-opamp-current.png": [
+		1378,
+		1141
 	],
 	"/images/rslab-h2h-ldlt.png": [
 		1627,
@@ -120,6 +132,10 @@
 		1800
 	],
 	"/screenshots/rapidfem-editor.png": [
+		2880,
+		1800
+	],
+	"/screenshots/rapidfem-home.png": [
 		2880,
 		1800
 	],

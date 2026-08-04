@@ -37,8 +37,11 @@ The 3D GDS viewer ships as a web component, one script tag on any website:
 <gds-viewer src="layout.gds" rotate explode></gds-viewer>
 ```
 
+![Instanced-WebGL 3D view|left|46x14](/screenshots/rapidpassives-transformer.png)
+
 Layer colors, z-positions, and thickness are configurable per GDS layer; the
-tiles on this site use exactly this component.
+tiles on this site use exactly this component: the rotating transformer on
+the front page is a live gds-viewer instance.
 
 ## History
 
