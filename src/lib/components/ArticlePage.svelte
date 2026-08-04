@@ -3,6 +3,7 @@
 	import { afterNavigate } from '$app/navigation';
 	import type { ArticleResult } from '$lib/layout/articleLayout';
 	import { submitContactForm } from '$lib/contactForm';
+	import { tileReveal } from '$lib/tileReveal';
 	import CharacterGrid from './CharacterGrid.svelte';
 
 	interface Props {
@@ -122,7 +123,7 @@
 	{#if article}
 		<CharacterGrid cells={article.cells} />
 
-		{#each article.images as img}
+		{#each article.images as img (`${img.src}:${img.row}:${img.col}`)}
 			{#if img.href}
 				<a
 					class="article-img"
@@ -130,16 +131,18 @@
 					target={img.href.startsWith('/') ? undefined : '_blank'}
 					rel={img.href.startsWith('/') ? undefined : 'noopener'}
 					aria-label={img.label}
+					use:tileReveal={{ charWidth, lineHeight }}
 					style="top: {img.row * lineHeight}px; left: {img.col * charWidth}px; width: {img.cols * charWidth}px; height: {img.rows * lineHeight}px; {img.background ? `background:${img.background};` : ''}"
 				>
-					<img src={img.src} alt={img.label} class:fit-contain={img.fit === 'contain'} loading="lazy" decoding="async" />
+					<img src={img.src} alt={img.label} class:fit-contain={img.fit === 'contain'} decoding="async" />
 				</a>
 			{:else}
 				<div
 					class="article-img"
+					use:tileReveal={{ charWidth, lineHeight }}
 					style="top: {img.row * lineHeight}px; left: {img.col * charWidth}px; width: {img.cols * charWidth}px; height: {img.rows * lineHeight}px; {img.background ? `background:${img.background};` : ''}"
 				>
-					<img src={img.src} alt={img.label} class:fit-contain={img.fit === 'contain'} loading="lazy" decoding="async" />
+					<img src={img.src} alt={img.label} class:fit-contain={img.fit === 'contain'} decoding="async" />
 				</div>
 			{/if}
 		{/each}
