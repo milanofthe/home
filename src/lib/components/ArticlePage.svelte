@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
 	import type { ArticleResult } from '$lib/layout/articleLayout';
 	import { submitContactForm } from '$lib/contactForm';
 	import CharacterGrid from './CharacterGrid.svelte';
@@ -84,12 +85,11 @@
 		});
 	}
 
-	// Rebuild when the build callback changes.
-	let lastBuild: typeof build | null = null;
-	$effect(() => {
-		const b = build;
-		if (lastBuild && lastBuild !== b && containerEl) computeLayout();
-		lastBuild = b;
+	// Rebuild on every client-side navigation. Same-route param changes
+	// (/stack/a -> /stack/b) reuse this component instance, and the build
+	// callback's identity does not change, so navigation is the signal.
+	afterNavigate(() => {
+		if (containerEl) computeLayout();
 	});
 
 	onMount(() => {

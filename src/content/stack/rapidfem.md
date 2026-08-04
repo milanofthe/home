@@ -39,10 +39,16 @@ result = prob.sweep(np.linspace(8e9, 12e9, 21))
 
 ## Practical by default
 
-- pip install rapidfem: wheels for Windows, Linux, and macOS, compiled ahead of time. No Rust toolchain, no vendor install, no license server.
-- CAD import: STEP, IGES, and BREP land in the same geometry kernel as the primitives, so imported parts take booleans, transforms, and physics like a g.box(). STL is healed into a meshable solid.
-- RFIC path: process stacks and GDS layouts become 3D geometry via rapidfem.rfic.
-- Validated end-to-end examples ship with the package: microstrips, coupled lines, iris and stepped-impedance filters, patch / Vivaldi / inverted-F antennas, pyramidal horns, dielectric resonators, and on-chip passives.
+Distribution is deliberately boring: pip install rapidfem ships
+ahead-of-time compiled wheels for Windows, Linux, and macOS. No Rust
+toolchain, no vendor install, no license server. External CAD comes in as
+STEP, IGES, or BREP and lands in the same geometry kernel as the primitives,
+so imported parts take booleans, transforms, and physics exactly like a
+g.box(); STL is healed into a meshable solid. For RFIC work, process stacks
+and GDS layouts become 3D geometry via rapidfem.rfic. Validated end-to-end
+examples ship with the package, from microstrips and coupled lines through
+iris and stepped-impedance filters to patch, Vivaldi, and inverted-F
+antennas, pyramidal horns, dielectric resonators, and on-chip passives.
 
 A local notebook UI provides a code editor with interactive geometry, mesh,
 and field renderers, so a simulation setup is inspectable at every stage

@@ -24,19 +24,24 @@ Python callbacks are automatically traced into an optimized SSA graph,
 symbolically differentiated, and evaluated in Rust. No code generation step,
 no toolchain on the user's machine, no model rewrite.
 
-![Performance comparison|right|46x14](/images/fastsim-casadi-cold.png)
-
 ## The engine
 
-- JIT compiler: Python functions traced into a flat-tape IR with common subexpression elimination, constant folding, strength reduction, and FMA detection
-- Symbolic forward-mode automatic differentiation for analytical Jacobians
-- 21 ODE solvers, explicit and implicit, adaptive and fixed-step, with a preconditioned-Anderson implicit solve, periodic steady state, and collocation boundary-value problems
-- Standalone solver use: RKDP54.integrate(func, x0, time_end=50) with automatic JIT
-- jit(func) and jacobian(func) exposed as standalone JAX-style transformations
-- Zero-copy data paths, flat DAG evaluation, dynamic block sizing
-- Event handling, hierarchical subsystems, and mutable parameters, exactly like PathSim
+![Performance comparison|right|46x14|contain](/images/fastsim-casadi-cold.png)
+
+The trace-to-SSA compiler turns Python callbacks into a flat-tape IR with
+common subexpression elimination, constant folding, strength reduction, and
+FMA detection. Symbolic forward-mode automatic differentiation supplies
+analytical Jacobians to the twenty-one explicit and implicit integrators,
+which include a preconditioned-Anderson implicit solve, periodic steady
+state, and collocation boundary-value problems. Underneath: zero-copy data
+paths, flat DAG evaluation, dynamic block sizing.
 
 ![fast.pathsim.org|left|46x14](/screenshots/fastsim-org.png)
+
+The compiler is also useful on its own. Solvers run standalone with
+automatic JIT, RKDP54.integrate(func, x0, time_end=50), and jit(func) and
+jacobian(func) are exposed as JAX-style transformations. Event handling,
+hierarchical subsystems, and mutable parameters work exactly like PathSim.
 
 ## Beyond speed
 

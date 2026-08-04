@@ -31,11 +31,12 @@ export function renderBlocks(g: ArticleGrid, blocks: Block[], opts?: { skipTitle
 				break;
 			case 'image': {
 				const next = blocks[i + 1];
+				const opts = b.fit ? { fit: b.fit } : undefined;
 				if (b.side !== 'center' && next?.kind === 'paragraph') {
-					g.imageWithText(b.side, b.src, b.label, b.w, b.h, next.segments);
+					g.imageWithText(b.side, b.src, b.label, b.w, b.h, next.segments, opts);
 					i++; // paragraph consumed by the float
 				} else {
-					g.image(b.src, b.label, b.w, b.h);
+					g.image(b.src, b.label, b.w, b.h, opts);
 				}
 				break;
 			}

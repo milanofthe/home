@@ -20,7 +20,7 @@ export type Block =
 	| { kind: 'heading'; text: string }
 	| { kind: 'subheading'; text: string }
 	| { kind: 'paragraph'; segments: TextSegment[] }
-	| { kind: 'image'; src: string; label: string; side: 'left' | 'right' | 'center'; w: number; h: number }
+	| { kind: 'image'; src: string; label: string; side: 'left' | 'right' | 'center'; w: number; h: number; fit?: 'contain' }
 	| { kind: 'code'; code: string; label: string }
 	| { kind: 'list'; items: TextSegment[][] };
 
@@ -66,20 +66,22 @@ export function parseSegments(text: string): TextSegment[] {
 	return segments.filter(s => s.text.length > 0);
 }
 
-function parseImageLabel(raw: string): { label: string; side: 'left' | 'right' | 'center'; w: number; h: number } {
+function parseImageLabel(raw: string): { label: string; side: 'left' | 'right' | 'center'; w: number; h: number; fit?: 'contain' } {
 	const parts = raw.split('|').map(p => p.trim());
 	let label = parts[0] || '';
 	let side: 'left' | 'right' | 'center' = 'center';
 	let w = 46;
 	let h = 14;
+	let fit: 'contain' | undefined;
 	for (const p of parts.slice(1)) {
 		if (p === 'left' || p === 'right' || p === 'center') side = p;
+		else if (p === 'contain') fit = 'contain';
 		else {
 			const m = p.match(/^(\d+)x(\d+)$/);
 			if (m) { w = parseInt(m[1]); h = parseInt(m[2]); }
 		}
 	}
-	return { label, side, w, h };
+	return { label, side, w, h, fit };
 }
 
 export function parseMarkdown(raw: string): ArticleDoc {
@@ -144,8 +146,8 @@ export function parseMarkdown(raw: string): ArticleDoc {
 		if (img) {
 			flushParagraph();
 			flushList();
-			const { label, side, w, h } = parseImageLabel(img[1]);
-			blocks.push({ kind: 'image', src: img[2], label, side, w, h });
+			const { label, side, w, h, fit } = parseImageLabel(img[1]);
+			blocks.push({ kind: 'image', src: img[2], label, side, w, h, fit });
 			continue;
 		}
 

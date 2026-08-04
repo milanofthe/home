@@ -45,13 +45,15 @@ scp.plot()
 
 ## What sets it apart
 
-- Hot-swappable: modify blocks, parameters, and solvers during a running simulation
-- Stiff solvers: implicit methods (BDF, ESDIRK) among 30+ explicit and implicit, adaptive and fixed-step integrators
-- Hybrid by design: zero-crossing detection, scheduled events, and conditions make discrete events first-class citizens next to continuous dynamics
-- Hierarchical: nest subsystems for modular designs; algebraic loops are handled robustly
-- Extensible: subclass Block to create custom components in plain Python
-
 ![pathsim.org|right|46x14](/screenshots/pathsim-org.png)
+
+PathSim is hot-swappable: blocks, parameters, and solvers can be modified
+during a running simulation. The solver suite spans more than thirty explicit
+and implicit integrators, adaptive and fixed-step, including stiff methods
+like BDF and ESDIRK. Hybrid systems are first-class: zero-crossing detection,
+scheduled events, and conditions put discrete events right next to continuous
+dynamics. Subsystems nest hierarchically, algebraic loops are handled
+robustly, and custom components are plain Python subclasses of Block.
 
 PathSim is published in JOSS, adopted by JSBSim for flight dynamics, and used
 at the MIT Plasma Science and Fusion Center for nuclear fusion fuel-cycle

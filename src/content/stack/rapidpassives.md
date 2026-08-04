@@ -19,11 +19,14 @@ the machine.
 
 ## Generators and viewer
 
-- Geometry generators for spiral inductors, symmetric inductors, interleaved and stacked transformers, MOM capacitors, patch antennas, and rat-race couplers
-- Frequency-driven auto-design: input GHz and substrate, get computed dimensions for antennas and couplers
-- Aspect ratio control for non-square inductors that preserves corner geometry
-- GDS-II viewer with drag-and-drop import; parsing runs in a Web Worker, and the instanced-WebGL renderer holds 60 fps on million-polygon files
-- Five PDK presets, unified across generators, viewer, and embed: SKY130, SG13G2, GF180MCU, ASAP7, FreePDK45
+Geometry generators cover spiral and symmetric inductors, interleaved and
+stacked transformers, MOM capacitors, patch antennas, and rat-race couplers,
+with aspect ratio control that preserves corner geometry. Antennas and
+couplers auto-design from frequency: input GHz and substrate, get computed
+dimensions. The GDS-II viewer imports files by drag-and-drop, parses them in
+a Web Worker, and holds 60 fps on million-polygon files in the
+instanced-WebGL renderer. Five PDK presets are unified across generators,
+viewer, and embed: SKY130, SG13G2, GF180MCU, ASAP7, FreePDK45.
 
 ## Embeddable viewer
 

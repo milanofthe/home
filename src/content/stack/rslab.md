@@ -17,7 +17,7 @@ path for circuit-shaped matrices (BTF block structure, per-block AMD,
 Gilbert-Peierls LU). Iterative solvers (GMRES, COCG, COCR) with Krylov
 subspace recycling and preconditioner mode round out the toolbox.
 
-![vs faer and MKL PARDISO|right|46x14](/images/rslab-h2h-ldlt.png)
+![vs faer and MKL PARDISO|right|46x14|contain](/images/rslab-h2h-ldlt.png)
 
 ## Settings pick themselves
 
@@ -48,7 +48,7 @@ land below 1e-8 relative residual, matching PARDISO and ahead of faer. The
 never-fail static-pivot factor used as a GMRES preconditioner covers most of
 the remaining gap.
 
-![A-priori memory estimate|left|46x14](/images/rslab-memory-estimate.png)
+![A-priori memory estimate|left|46x14|contain](/images/rslab-memory-estimate.png)
 
 ## Deterministic and budgetable
 
