@@ -6,7 +6,7 @@
 
 <Seo
 	title="Milan Rother | Numerics and UX for Circuits and Systems"
-	description="I build the simulation stack for electronics: EM field solvers, a symbolic circuit engine, and system-level simulation. Custom solvers, custom tools, and integration for engineering teams. Commercial licensing, free for academia."
+	description="I build the simulation stack for electronics: EM field solvers, a symbolic circuit engine, and system-level simulation. Custom solvers and engineering tools for client teams, built and integrated end to end. Commercial licensing, free for academia."
 	path="/"
 />
 

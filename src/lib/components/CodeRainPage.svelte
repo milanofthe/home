@@ -468,11 +468,10 @@
 <!-- Semantic content for SEO / screen readers -->
 <main class="sr-only">
 	<h1>Milan Rother</h1>
-	<p>I build the simulation stack for electronics: fields, circuits, systems. For engineering teams I build custom solvers and custom tools, and I help with integration.</p>
-	<p>JOSS-published, used at MIT Plasma Science &amp; Fusion Center, adopted by JSBSim, benchmarked head-to-head against Cadence EMX.</p>
+	<p>I build the simulation stack for electronics: fields, circuits, systems. Custom solvers and engineering tools for client teams, built and integrated end to end.</p>
 	<section id="paths">
 		<h2>What I do</h2>
-		<p><a href="/consulting/">Consulting</a>: custom solvers, custom tools, and integration for engineering teams. Scoped into weekly sprints and multi-week projects.</p>
+		<p><a href="/consulting/">Consulting</a>: custom solvers and engineering tools, built and integrated end to end. Scoped into weekly sprints and multi-week projects.</p>
 		<p><a href="/stack/">Products &amp; licensing</a>: FastSim, SANE, and RapidMoM are source-available, free for academia, and commercially licensed with support and integration.</p>
 		<p><a href="/about/">About</a>: simulation engineer, open-source author of PathSim.</p>
 	</section>

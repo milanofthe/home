@@ -6,7 +6,7 @@
 	import { BOOKING_URL, CONTACT_EMAIL } from '$lib/config';
 
 	const INTRO =
-		'I build custom solvers and custom tools for engineering teams, and I help with integration. Numerics and UX for circuits and systems.';
+		'Custom solvers and engineering tools for client teams, built and integrated end to end. Numerics and UX for circuits and systems.';
 
 	const OFFERS = [
 		{
@@ -23,14 +23,10 @@
 		}
 	];
 
-	const PROOF =
-		'JOSS-published / used at MIT PSFC / adopted by JSBSim / benchmarked head-to-head against Cadence EMX';
-
 	function build(cols: number): ArticleResult {
 		const g = new ArticleGrid(cols, 'neutral', 6);
 		g.title('CONSULTING');
 		g.paragraph(INTRO);
-		g.metaLine(PROOF);
 		g.spacer();
 		g.cta([{ text: '[ Book an intro call -> ]', href: BOOKING_URL }]);
 		g.spacer();
@@ -67,7 +63,7 @@
 
 <Seo
 	title="Consulting — Milan Rother"
-	description="Custom solvers, custom tools, and integration for engineering teams. Numerics and UX for circuits and systems."
+	description="Custom solvers and engineering tools for client teams, built and integrated end to end. Numerics and UX for circuits and systems."
 	path="/consulting/"
 />
 
@@ -76,7 +72,6 @@
 	{#snippet semantic()}
 		<h1>Consulting</h1>
 		<p>{INTRO}</p>
-		<p>{PROOF}</p>
 		{#each OFFERS as offer}
 			<h2>{offer.heading}</h2>
 			<p>{offer.text}</p>

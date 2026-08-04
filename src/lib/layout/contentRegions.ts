@@ -186,9 +186,6 @@ function buildHeroSection(): ContentSection {
 			spacer(),
 			paragraph(c.tagline),
 			spacer(),
-			// Proof strip: the trust signals, right where a first-time visitor looks.
-			linkLine(c.proof),
-			spacer(),
 			{ type: 'cta', lines: [c.cta], align: 'center' }
 		]
 	};

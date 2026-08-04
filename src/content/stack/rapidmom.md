@@ -16,11 +16,9 @@ O(N log N).
 ![Transformer mesh|right|46x14](/images/rapidmom-mesh.png)
 
 It is zero-external-dependency pure Rust with a Python API: lightweight,
-installs in seconds, and built for massive cloud parameter sweeps. On
-production RFIC benchmarks it delivers EMX-class performance, benchmarked
-head-to-head against Cadence EMX on the real IHP SG13G2 stack. Broadband
+installs in seconds, and built for massive cloud parameter sweeps. Broadband
 S-parameters of an SG13G2 spiral come out of a ROM sweep in about 5 seconds
-within roughly 600 MB.
+within roughly 600 MB, validated on the real IHP SG13G2 stack.
 
 ![Current density|left|46x14](/images/rapidmom-current.png)
 

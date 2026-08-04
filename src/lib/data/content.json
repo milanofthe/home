@@ -1,8 +1,7 @@
 {
 	"hero": {
 		"heading": "MILAN ROTHER",
-		"tagline": "I build the simulation stack for electronics: fields, circuits, systems. For engineering teams I build custom solvers and custom tools, and I help with integration.",
-		"proof": "JOSS-published  /  used at MIT PSFC  /  adopted by JSBSim  /  benchmarked vs Cadence EMX",
+		"tagline": "I build the simulation stack for electronics: fields, circuits, systems. Custom solvers and engineering tools for client teams, built and integrated end to end.",
 		"cta": "[ Book an intro call -> ]   [ Consulting ]   [ View the Stack ]"
 	},
 	"paths": {
@@ -10,7 +9,7 @@
 		"items": [
 			{
 				"heading": "// consulting",
-				"text": "Custom solvers, custom tools, and integration for engineering teams. Scoped into weekly sprints and multi-week projects.",
+				"text": "Custom solvers and engineering tools, built and integrated end to end. Scoped into weekly sprints and multi-week projects.",
 				"link": "[ more about consulting -> ]"
 			},
 			{
@@ -93,9 +92,9 @@
 						"headingType": "rapidmom",
 						"paragraphs": [
 							"A 2.5D Method-of-Moments solver for planar RF passives on layered substrates (PCB, RFIC). Mixed-potential formulation, stable down to DC, layered-media Green's functions, and a fast ACA solver in O(N log N).",
-							"Zero-external-dependency pure Rust with a Python API: lightweight, installs in seconds, built for massive cloud parameter sweeps. EMX-class performance on production RFIC benchmarks."
+							"Zero-external-dependency pure Rust with a Python API: lightweight, installs in seconds, built for massive cloud parameter sweeps."
 						],
-						"metrics": "broadband S-parameters of an SG13G2 spiral via ROM sweep in ~5 s / ~600 MB / benchmarked head-to-head against Cadence EMX on the real IHP SG13G2 stack",
+						"metrics": "broadband S-parameters of an SG13G2 spiral via ROM sweep in ~5 s / ~600 MB / validated on the real IHP SG13G2 stack",
 						"statsText": "early access / licensing: rapidmom@milanrother.com"
 					},
 					{

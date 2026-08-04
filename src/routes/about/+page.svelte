@@ -106,7 +106,7 @@
 
 <Seo
 	title="About — Milan Rother"
-	description="I build the simulation stack for electronics: fields, circuits, systems. Custom solvers, custom tools, and integration for engineering teams."
+	description="I build the simulation stack for electronics: fields, circuits, systems. Custom solvers and engineering tools for client teams, built and integrated end to end."
 	path="/about/"
 />
 
