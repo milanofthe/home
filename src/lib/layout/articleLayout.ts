@@ -474,28 +474,53 @@ export class ArticleGrid {
 		this.anchors.push({ id, row: this.row });
 	}
 
+	// Column where a line of the given length starts when centered in the
+	// article's content column.
+	private centerCol(length: number): number {
+		return this.startCol + Math.max(0, Math.floor((this.contentWidth - length) / 2));
+	}
+
 	// The site-wide contact block: booking CTA, email, and the inline grid
-	// form (same look as the landing page form, left-aligned to the article
-	// column). ArticlePage renders the actual inputs over the field rows.
+	// form, centered like the landing page contact section. ArticlePage
+	// renders the actual inputs over the field rows.
 	contactSection(opts: { bookingUrl: string; email: string; privacy?: string }) {
 		this.anchor('contact');
 		this.sectionHeading('GET IN TOUCH', '=');
-		this.paragraph('Book a call directly, write me, or use the form below.');
-		this.cta([{ text: '[ Book an intro call -> ]', href: opts.bookingUrl }]);
-		this.linkLine(opts.email, `mailto:${opts.email}`, 'link');
+
+		const centered = (text: string, type: CellType) => {
+			for (const line of ArticleGrid.wordWrap(text, this.contentWidth)) {
+				this.placeLine(this.row, this.centerCol(line.length), line, type);
+				this.row += 1;
+			}
+		};
+
+		centered('Book a call directly, write me, or use the form below.', 'content');
 		this.spacer();
 
-		const fieldWidth = Math.min(this.contentWidth - 2, 40);
+		const booking = '[ Book an intro call -> ]';
+		const bookingCol = this.centerCol(booking.length);
+		this.placeLine(this.row, bookingCol, booking, 'cta');
+		this.overlays.push({ row: this.row, col: bookingCol, length: booking.length, label: booking, href: opts.bookingUrl });
+		this.row += 2;
+
+		const emailCol = this.centerCol(opts.email.length);
+		this.placeLine(this.row, emailCol, opts.email, 'link');
+		this.overlays.push({ row: this.row, col: emailCol, length: opts.email.length, label: opts.email, href: `mailto:${opts.email}` });
+		this.row += 2;
+
+		const fieldWidth = Math.min(this.contentWidth - 4, 56);
 		const fieldLine = '> ' + '_'.repeat(fieldWidth);
+		const fieldCol = this.centerCol(fieldLine.length);
 		const addField = (id: string, label: string, rows = 1) => {
-			this.placeLine(this.row, this.startCol, '// ' + label, 'content');
+			const labelText = '// ' + label;
+			this.placeLine(this.row, this.centerCol(labelText.length), labelText, 'content');
 			this.row += 1;
 			for (let r = 0; r < rows; r++) {
-				this.placeLine(this.row, this.startCol, fieldLine, 'form-field');
+				this.placeLine(this.row, fieldCol, fieldLine, 'form-field');
 				this.formFields.push({
 					id: rows > 1 ? `${id}-${r + 1}` : id,
 					row: this.row,
-					col: this.startCol + 2,
+					col: fieldCol + 2,
 					width: fieldWidth
 				});
 				this.row += 1;
@@ -508,18 +533,15 @@ export class ArticleGrid {
 		addField('field-message', 'message', 3);
 
 		const submit = '[ SEND MESSAGE -> ]';
-		this.placeLine(this.row, this.startCol, submit, 'cta');
+		const submitCol = this.centerCol(submit.length);
+		this.placeLine(this.row, submitCol, submit, 'cta');
 		this.actions.push({
-			row: this.row, col: this.startCol, length: submit.length,
+			row: this.row, col: submitCol, length: submit.length,
 			label: submit, action: 'submit-form'
 		});
 		this.row += 2;
 		if (opts.privacy !== '') {
-			const privacy = opts.privacy ?? 'Your data is processed per our privacy policy.';
-			for (const line of ArticleGrid.wordWrap(privacy, this.contentWidth)) {
-				this.placeLine(this.row, this.startCol, line, 'content');
-				this.row += 1;
-			}
+			centered(opts.privacy ?? 'Your data is processed per our privacy policy.', 'content');
 			this.row += 1;
 		}
 	}
