@@ -30,6 +30,15 @@ makes the boundary watertight by construction. The sizing and chart formulae
 for every curve and surface modality are derived with a computer-algebra
 system, not approximated ad hoc.
 
+Meshing is budgeted: mesh(target_elements=N) retunes the global size scale
+over a few remeshes, since the element count scales with the third power of
+the scale, and lands within a few percent of N while the relative refinement
+from curvature and sizing keeps its shape. Surface budgets act as a cap
+instead: the count-driven refinement resolves the sizing field but stops at
+the triangle budget, split across patches by area, spending its last splits
+on the worst-quality triangles. Solvers can plan a mesh the way RSLAB plans
+a factorization: the cost is decided before the run, not discovered after.
+
 ## The 2D path
 
 The same core that meshes each 3D surface patch is the standalone planar
