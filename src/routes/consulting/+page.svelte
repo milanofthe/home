@@ -45,10 +45,13 @@
 
 		g.sectionHeading('how we work');
 		g.paragraph(
-			'Work is scoped into weekly sprints and multi-week projects. It starts with a 30-minute intro call: you describe the problem, I tell you whether and how I can help, and you get a scoped proposal.'
+			'It starts with a 30-minute intro call: you describe the problem, I tell you whether and how I can help. NDA first if needed.'
 		);
 		g.paragraph(
-			'Every engine, solver, and interface on this site is built and maintained by me. That is the reference for what you get.'
+			'You get a written proposal with a fixed structure: milestones, feature coverage, timeline, assumptions and client dependencies, commercial terms. Work runs in weekly sprints against those milestones.'
+		);
+		g.paragraph(
+			'Deliverables are engineering artifacts, not slide decks: source in your repository, a reproducible benchmark pipeline, notebooks your team can run, and a technical report with figures generated from the pipeline.'
 		);
 		g.spacer();
 
@@ -78,6 +81,8 @@
 			<h2>{offer.heading}</h2>
 			<p>{offer.text}</p>
 		{/each}
+		<h2>How we work</h2>
+		<p>A 30-minute intro call, NDA if needed, then a written proposal with milestones, feature coverage, timeline, assumptions, and commercial terms. Work runs in weekly sprints. Deliverables: source in your repository, a reproducible benchmark pipeline, notebooks, and a technical report.</p>
 		<p>Book an intro call: <a href={BOOKING_URL}>{BOOKING_URL}</a> or write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
 	{/snippet}
 </ArticlePage>
