@@ -140,21 +140,28 @@ export class ArticleGrid {
 		this.row += n;
 	}
 
-	// Page title in the accent color, with an optional plain subtitle line.
+	// Page title in the accent color, with an optional plain subtitle.
 	title(text: string, subtitle?: string) {
-		this.placeLine(this.row, this.startCol, text, this.accent.heading);
-		this.row += 1;
-		if (subtitle) {
-			this.placeLine(this.row, this.startCol, subtitle, 'content');
+		for (const line of ArticleGrid.wordWrap(text, this.contentWidth)) {
+			this.placeLine(this.row, this.startCol, line, this.accent.heading);
 			this.row += 1;
+		}
+		if (subtitle) {
+			for (const line of ArticleGrid.wordWrap(subtitle, this.contentWidth)) {
+				this.placeLine(this.row, this.startCol, line, 'content');
+				this.row += 1;
+			}
 		}
 		this.row += 1;
 	}
 
-	// Meta line under the title (date / tags / reading time) — muted link style.
+	// Meta line under the title (date / tags / reading time), muted link style.
 	metaLine(text: string) {
-		this.placeLine(this.row, this.startCol, text, 'link');
-		this.row += 2;
+		for (const line of ArticleGrid.wordWrap(text, this.contentWidth)) {
+			this.placeLine(this.row, this.startCol, line, 'link');
+			this.row += 1;
+		}
+		this.row += 1;
 	}
 
 	// Section heading inside the article, padded with the fill char to the
