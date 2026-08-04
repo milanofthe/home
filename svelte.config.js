@@ -14,6 +14,15 @@ const config = {
 		}),
 		paths: {
 			base: ''
+		},
+		prerender: {
+			// The character grid renders client-side, so its scroll anchors
+			// (e.g. #contact at the bottom of every page) don't exist in the
+			// prerendered HTML. They do exist at runtime.
+			handleMissingId: ({ id, message }) => {
+				if (id === 'contact') return;
+				throw new Error(message);
+			}
 		}
 	}
 };

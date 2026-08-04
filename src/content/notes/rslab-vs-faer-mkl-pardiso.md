@@ -44,6 +44,35 @@ runs out of memory on the largest matrices, which makes the head-to-head a
 conservative floor. On factor time the LU heuristic pick scales flatter than
 PARDISO (fitted exponent 1.01 vs 1.25), so the gap narrows with size.
 
+## The circuit path
+
+The KLU path is its own story. Circuit-shaped (MNA-like) matrices get a BTF
+block factorization with per-block AMD ordering and left-looking
+Gilbert-Peierls LU: 5-12x faster factor than the general multifrontal LU with
+1.7-5.7x less fill, widening with size. A 20-point same-pattern frequency
+sweep runs 10-40x faster end to end via numeric-only refactorization, and
+solve_transpose reuses the same factors for adjoint and sensitivity solves.
+Against SuiteSparse KLU, the parallel factor and refactor come out 1.6-2.7x
+and 2.1-3.4x ahead, while staying bit-deterministic.
+
+## Mixed precision with a certificate
+
+MixedLdltSolver and MixedLuSolver factor in single precision (half the
+memory, measurably faster) and solve through an explicit refinement ladder,
+plain iterative refinement escalating to GMRES-IR against the
+double-precision original. The result carries an honest normwise
+backward-error certificate. On the reference class the complex-single factor
+runs 1.64x faster at eps-level certified accuracy after two refinement steps.
+
+## Apple Silicon
+
+The same engine and corpus, re-measured on an Apple M3 against Apple
+Accelerate's sparse direct solvers (including the sparse LU Accelerate gained
+in macOS 15.5): Accelerate runs its vendor-recommended best configuration per
+matrix class, RSLAB its shipped default. Notable structural point: like faer,
+Accelerate's complex LDLT is Hermitian-only, so it cannot exploit the
+complex-symmetric structure of EM/FEM matrices and factors them as LU.
+
 ## Determinism and a-priori estimates
 
 Speed is only half of what a solver-in-the-loop backend needs. The numeric

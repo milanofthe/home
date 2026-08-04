@@ -7,32 +7,45 @@ order: 2
 site: fast.pathsim.org|https://fast.pathsim.org
 license: source-available / free for academia / commercial licenses
 cta1: [ Request a license -> ]|mailto:info@pathsim.org?subject=FastSim%20licensing
-cta2: [ Try the docs -> ]|https://fast.pathsim.org
+cta2: [ Read the docs -> ]|https://fast.pathsim.org
 ---
 
 FastSim is a Rust reimplementation of [PathSim](/stack/pathsim/) with an
-identical Python API: swap the import and your existing model runs 50-100x
-faster. Python callbacks are automatically traced into an optimized SSA graph,
-symbolically differentiated, and compiled to native code at runtime.
+identical Python API. Your existing model runs 50-100x faster by changing one
+line:
+
+```python
+# from pathsim import Simulation, Connection
+from fastsim import Simulation, Connection
+```
+
+Python callbacks are automatically traced into an optimized SSA graph,
+symbolically differentiated, and evaluated in Rust. No code generation step,
+no toolchain on the user's machine, no model rewrite.
 
 ![Performance comparison|right|46x14](/images/fastsim-casadi-cold.png)
 
-The JIT compiler traces Python functions into a flat-tape IR with common
-subexpression elimination, constant folding, strength reduction, and FMA
-detection. Symbolic forward-mode automatic differentiation delivers analytical
-Jacobians to the 21 implicit and explicit ODE solvers. The JIT and autodiff are
-also exposed standalone as JAX-style transformations: jit(func) and
-jacobian(func).
+## The engine
+
+- JIT compiler: Python functions traced into a flat-tape IR with common subexpression elimination, constant folding, strength reduction, and FMA detection
+- Symbolic forward-mode automatic differentiation for analytical Jacobians
+- 21 ODE solvers, explicit and implicit, adaptive and fixed-step, plus standalone use: RKDP54.integrate(func, x0, time_end=50) with automatic JIT
+- jit(func) and jacobian(func) exposed as standalone JAX-style transformations
+- Zero-copy data paths, flat DAG evaluation, dynamic block sizing
+- Event handling, hierarchical subsystems, and mutable parameters, exactly like PathSim
 
 ![fast.pathsim.org|left|46x14](/screenshots/fastsim-org.png)
 
-Beyond speed, FastSim reaches where a Python engine cannot: FMI 3.0 export for
-co-simulation, C99 code generation for embedded targets, and
-software-in-the-loop verification that compiles the generated C locally and
-pins it against the reference engine, sample by sample.
+## Beyond speed
+
+FastSim reaches where a Python engine cannot: FMI 3.0 export for
+co-simulation, and C99 code generation for embedded targets. The generated C
+is verified software-in-the-loop: sim.verify_c() compiles it locally and pins
+it against the reference engine, sample by sample.
 
 ## In the stack
 
 FastSim shares the SSA-compute-graph architecture with the rest of the stack
 and is the commercial engine that funds the open system level. Models built on
-open-source PathSim carry over unchanged.
+open-source PathSim carry over unchanged, and [PathView](/stack/pathview/)
+edits both.

@@ -9,20 +9,37 @@ license: open source / fully client-side
 cta1: [ Open RapidPassives -> ]|https://rapidpassives.org
 ---
 
-RapidPassives is a browser-based design tool for RFIC passives: inductors,
-transformers, baluns. Layout generation with real-time preview, GDS export,
-and a custom instanced-WebGL viewer that renders million-polygon external GDS
-files at 60 fps. Everything runs fully client-side: no upload, no account, no
-data leaving the machine.
+RapidPassives is a browser-based layout generator and viewer for RFIC passive
+components. Configure geometry, preview in real time with GPU-accelerated 2D
+and 3D rendering, and export production-ready GDS-II directly from the
+browser. Everything runs client-side: no upload, no account, no data leaving
+the machine.
 
 ![rapidpassives.org|right|46x14](/screenshots/rapidpassives-org.png)
 
-Technology presets cover SKY130, SG13G2, GF180MCU, ASAP7, and FreePDK45. The
-project started during my master's work on compact modeling and layout
-generation of RFIC passives and became the seed of the whole fields level of
-the stack.
+## Generators and viewer
+
+- Geometry generators for spiral inductors, symmetric inductors, interleaved and stacked transformers, MOM capacitors, patch antennas, and rat-race couplers
+- Frequency-driven auto-design: input GHz and substrate, get computed dimensions for antennas and couplers
+- Aspect ratio control for non-square inductors that preserves corner geometry
+- GDS-II viewer with drag-and-drop import; parsing runs in a Web Worker, and the instanced-WebGL renderer holds 60 fps on million-polygon files
+- Five PDK presets, unified across generators, viewer, and embed: SKY130, SG13G2, GF180MCU, ASAP7, FreePDK45
+
+## Embeddable viewer
+
+The 3D GDS viewer ships as a web component, one script tag on any website:
+
+```html
+<script src="https://rapidpassives.org/embed/gds-viewer.js"></script>
+<gds-viewer src="layout.gds" rotate explode></gds-viewer>
+```
+
+Layer colors, z-positions, and thickness are configurable per GDS layer; the
+tiles on this site use exactly this component.
 
 ## In the stack
 
 RapidPassives is the design frontend of the fields level: the layouts it
-generates are exactly what [RapidMoM](/stack/rapidmom/) simulates.
+generates are what [RapidMoM](/stack/rapidmom/) simulates. The project started
+during my master's work on compact modeling and layout generation of RFIC
+passives and became the seed of the whole fields level.

@@ -9,22 +9,48 @@ license: open source / pip install rapidfem
 cta1: [ Open the notebook -> ]|https://fem.rapidpassives.org/notebook?example=fd_iris_filter
 ---
 
-RapidFEM is an open-source Maxwell FEM solver in Rust with two backends behind
-one Python API: frequency-domain edge elements and time-domain discontinuous
-Galerkin. It is scale-invariant from sub-micron RFIC structures to metre-scale
-antennas, with validated examples from microstrips to horn antennas.
+RapidFEM is an electromagnetic FEM solver written in Rust, distributed as a
+Python package. Two backends sit behind one geometry / material / physics API:
+a frequency-domain solver (Nedelec curl-conforming edge elements,
+complex-symmetric sparse linear algebra) and a time-domain DGTD solver (nodal
+discontinuous Galerkin with Krylov/ETD exponential time integration and model
+order reduction). Geometry is non-dimensionalized before assembly, so
+sub-micron RFIC passives and metre-scale antennas use the same numerical path.
+
+```python
+import numpy as np
+import rapidfem as rf
+
+g = rf.Geometry(maxh=rf.lambda_maxh(f_max=12e9))
+air = g.box(22.86e-3, 10.16e-3, 30e-3,
+            position=(-11.43e-3, -5.08e-3, 0), material=rf.Air())
+
+rf.RectWaveguidePort(air.faces.min(axis="z"))
+rf.RectWaveguidePort(air.faces.max(axis="z"))
+rf.PEC(*air.faces.unassigned)
+g.mesh()
+
+prob = rf.Problem(g)
+result = prob.sweep(np.linspace(8e9, 12e9, 21))
+# the same Problem also drives eigenmode solves and far-field patterns
+```
 
 ![Iris filter notebook|right|46x14](/screenshots/rapidfem-editor.png)
 
-Wheels ship for Windows, Linux, and macOS: pip install rapidfem and you have
-a full-wave solver, no vendor install, no license server. A local notebook UI
-provides interactive geometry, mesh, and field renderers, so a simulation
-setup is inspectable at every stage instead of a black box behind a job
-queue.
+## Practical by default
+
+- pip install rapidfem: wheels for Windows, Linux, and macOS, compiled ahead of time. No Rust toolchain, no vendor install, no license server.
+- CAD import: STEP, IGES, and BREP land in the same geometry kernel as the primitives, so imported parts take booleans, transforms, and physics like a g.box(). STL is healed into a meshable solid.
+- RFIC path: process stacks and GDS layouts become 3D geometry via rapidfem.rfic.
+- Validated end-to-end examples ship with the package: microstrips, coupled lines, iris and stepped-impedance filters, patch / Vivaldi / inverted-F antennas, pyramidal horns, dielectric resonators, and on-chip passives.
+
+A local notebook UI provides a code editor with interactive geometry, mesh,
+and field renderers, so a simulation setup is inspectable at every stage
+instead of a black box behind a job queue.
 
 ## In the stack
 
 RapidFEM is the general field level, complementing the planar-specialized
-[RapidMoM](/stack/rapidmom/). It meshes with [RapidMesh](/stack/rapidmesh/)
-and solves on [RSLAB](/stack/rslab/), the same deterministic numerical
-foundations as the rest of the stack.
+[RapidMoM](/stack/rapidmom/). [RapidMesh](/stack/rapidmesh/) replaces its
+external meshing dependency inside the stack, and [RSLAB](/stack/rslab/)
+provides the sparse linear algebra.

@@ -5,7 +5,7 @@
 	import ArticlePage from '$lib/components/ArticlePage.svelte';
 	import { ArticleGrid, type ArticleResult } from '$lib/layout/articleLayout';
 	import { notes } from '$lib/content';
-	import { BOOKING_URL } from '$lib/config';
+	import { BOOKING_URL, CONTACT_EMAIL } from '$lib/config';
 
 	let filter = $state<string | null>(null);
 
@@ -47,7 +47,7 @@
 		}
 
 		g.spacer(2);
-		g.cta([{ text: '[ Book an intro call -> ]', href: BOOKING_URL }]);
+		g.contactSection({ bookingUrl: BOOKING_URL, email: CONTACT_EMAIL });
 		return g.finish();
 	});
 </script>

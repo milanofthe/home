@@ -25,10 +25,8 @@
 		if (projectPage) {
 			g.linkLine(`[ more on ${projectPage.title} -> ]`, `/stack/${projectPage.slug}/`);
 		}
-		g.cta([
-			{ text: '[ Book an intro call -> ]', href: BOOKING_URL },
-			{ text: '[ Email ]', href: `mailto:${CONTACT_EMAIL}` }
-		]);
+		g.spacer();
+		g.contactSection({ bookingUrl: BOOKING_URL, email: CONTACT_EMAIL });
 		return g.finish();
 	});
 </script>

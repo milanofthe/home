@@ -33,10 +33,8 @@
 		g.paragraph(
 			'FastSim, RapidMoM, and SANE are source-available and free for noncommercial use. Commercial licenses with support and integration are available. Evaluation licenses on request.'
 		);
-		g.cta([
-			{ text: '[ Book an intro call -> ]', href: BOOKING_URL },
-			{ text: '[ Email ]', href: `mailto:${CONTACT_EMAIL}` }
-		]);
+		g.spacer();
+		g.contactSection({ bookingUrl: BOOKING_URL, email: CONTACT_EMAIL });
 		return g.finish();
 	}
 </script>

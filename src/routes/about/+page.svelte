@@ -96,10 +96,7 @@
 			{ text: '[ X ]', href: X_URL }
 		]);
 		g.spacer();
-		g.cta([
-			{ text: '[ Book an intro call -> ]', href: BOOKING_URL },
-			{ text: '[ Email ]', href: `mailto:${CONTACT_EMAIL}` }
-		]);
+		g.contactSection({ bookingUrl: BOOKING_URL, email: CONTACT_EMAIL });
 		return g.finish();
 	}
 </script>

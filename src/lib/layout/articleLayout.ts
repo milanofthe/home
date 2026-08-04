@@ -53,10 +53,33 @@ export interface ArticleOverlay {
 	href: string;
 }
 
+export interface ArticleFormField {
+	id: string;
+	row: number;
+	col: number; // where the input starts (after "> ")
+	width: number;
+}
+
+export interface ArticleAction {
+	row: number;
+	col: number;
+	length: number;
+	label: string;
+	action: string; // e.g. 'submit-form'
+}
+
+export interface ArticleAnchor {
+	id: string;
+	row: number;
+}
+
 export interface ArticleResult {
 	cells: Cell[][];
 	images: ArticleImage[];
 	overlays: ArticleOverlay[];
+	formFields: ArticleFormField[];
+	actions: ArticleAction[];
+	anchors: ArticleAnchor[];
 	rows: number;
 }
 
@@ -78,6 +101,9 @@ export class ArticleGrid {
 	private grid: Cell[][] = [];
 	private images: ArticleImage[] = [];
 	private overlays: ArticleOverlay[] = [];
+	private formFields: ArticleFormField[] = [];
+	private actions: ArticleAction[] = [];
+	private anchors: ArticleAnchor[] = [];
 	private row: number;
 
 	constructor(cols: number, accent: AccentKey = 'neutral', topRows = 3) {
@@ -417,9 +443,72 @@ export class ArticleGrid {
 		this.row = r0 + lines.length + 2 + 1;
 	}
 
+	// Named scroll target at the current row (rendered as a DOM anchor).
+	anchor(id: string) {
+		this.anchors.push({ id, row: this.row });
+	}
+
+	// The site-wide contact block: booking CTA, email, and the inline grid
+	// form (same look as the landing page form, left-aligned to the article
+	// column). ArticlePage renders the actual inputs over the field rows.
+	contactSection(opts: { bookingUrl: string; email: string; privacy?: string }) {
+		this.anchor('contact');
+		this.sectionHeading('GET IN TOUCH', '=');
+		this.paragraph('Book a call directly, write me, or use the form below.');
+		this.cta([{ text: '[ Book an intro call -> ]', href: opts.bookingUrl }]);
+		this.linkLine(opts.email, `mailto:${opts.email}`, 'link');
+		this.spacer();
+
+		const fieldWidth = Math.min(this.contentWidth - 2, 40);
+		const fieldLine = '> ' + '_'.repeat(fieldWidth);
+		const addField = (id: string, label: string, rows = 1) => {
+			this.placeLine(this.row, this.startCol, '// ' + label, 'content');
+			this.row += 1;
+			for (let r = 0; r < rows; r++) {
+				this.placeLine(this.row, this.startCol, fieldLine, 'form-field');
+				this.formFields.push({
+					id: rows > 1 ? `${id}-${r + 1}` : id,
+					row: this.row,
+					col: this.startCol + 2,
+					width: fieldWidth
+				});
+				this.row += 1;
+			}
+			this.row += 1;
+		};
+		addField('field-name', 'name');
+		addField('field-email', 'email');
+		addField('field-subject', 'subject');
+		addField('field-message', 'message', 3);
+
+		const submit = '[ SEND MESSAGE -> ]';
+		this.placeLine(this.row, this.startCol, submit, 'cta');
+		this.actions.push({
+			row: this.row, col: this.startCol, length: submit.length,
+			label: submit, action: 'submit-form'
+		});
+		this.row += 2;
+		if (opts.privacy !== '') {
+			const privacy = opts.privacy ?? 'Your data is processed per our privacy policy.';
+			for (const line of ArticleGrid.wordWrap(privacy, this.contentWidth)) {
+				this.placeLine(this.row, this.startCol, line, 'content');
+				this.row += 1;
+			}
+			this.row += 1;
+		}
+	}
+
 	finish(trailingRows = 3): ArticleResult {
 		this.ensureRow(this.row + trailingRows);
-		return { cells: this.grid, images: this.images, overlays: this.overlays, rows: this.grid.length };
+		return {
+			cells: this.grid,
+			images: this.images,
+			overlays: this.overlays,
+			formFields: this.formFields,
+			actions: this.actions,
+			anchors: this.anchors,
+			rows: this.grid.length
+		};
 	}
 }
 

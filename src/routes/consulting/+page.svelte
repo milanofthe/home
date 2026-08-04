@@ -51,12 +51,7 @@
 		);
 		g.spacer();
 
-		g.sectionHeading('get in touch');
-		g.cta([
-			{ text: '[ Book an intro call -> ]', href: BOOKING_URL },
-			{ text: '[ Email ]', href: `mailto:${CONTACT_EMAIL}` }
-		]);
-		g.paragraph(`Prefer writing first? ${CONTACT_EMAIL}`);
+		g.contactSection({ bookingUrl: BOOKING_URL, email: CONTACT_EMAIL });
 		return g.finish();
 	}
 </script>

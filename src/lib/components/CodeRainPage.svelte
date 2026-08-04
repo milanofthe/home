@@ -6,6 +6,7 @@
 	import PortalTile from './PortalTile.svelte';
 	import VideoTile from './VideoTile.svelte';
 	import { BOOKING_URL } from '$lib/config';
+	import { submitContactForm } from '$lib/contactForm';
 
 	const STATS_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/github-stats.json';
 
@@ -82,63 +83,15 @@
 		return map;
 	});
 
-	const CONTACT_ACTION = 'https://whatsmytraffic.com/f/dekijnkgbvrk';
-
 	async function handleFormSubmit() {
 		const form = document.getElementById('grid-contact-form') as HTMLFormElement;
-		if (!form) return;
-
-		// Validate inline, in the page's own style. The native browser
-		// validation popover is an OS-styled box that clashes with the grid,
-		// and the [ SEND MESSAGE ] button sits outside <form> anyway — so
-		// constraint checks run here and report through the status line.
-		const field = (name: string) => {
-			const el = form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | null;
-			return (el?.value ?? '').trim();
-		};
-		if (!field('name') || !field('email') || !field('subject') || !field('message')) {
-			formStatus = 'error';
-			formMessage = '> all fields are required';
-			return;
-		}
-		// type="email" still accepts "a@b" — insist on a domain with a dot.
-		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field('email'))) {
-			formStatus = 'error';
-			formMessage = '> that email address looks off';
-			return;
-		}
-
+		if (!form || formStatus === 'submitting') return;
 		formStatus = 'submitting';
 		formMessage = '> sending message...';
-		const formData = new FormData(form);
-		// JSON, not multipart/form-data: Formspark currently rejects
-		// multipart bodies with `formspark-status: empty` and drops the
-		// submission, even though it answers 200.
-		const payload: Record<string, string> = {};
-		for (const [key, value] of formData.entries()) {
-			payload[key] = typeof value === 'string' ? value : '';
-		}
-		try {
-			const response = await fetch(CONTACT_ACTION, {
-				method: 'POST',
-				body: JSON.stringify(payload),
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json'
-				}
-			});
-			if (response.ok) {
-				formStatus = 'success';
-				formMessage = '> message sent. talk soon';
-				form.reset();
-			} else {
-				formStatus = 'error';
-				formMessage = '> send failed. email info@milanrother.com';
-			}
-		} catch {
-			formStatus = 'error';
-			formMessage = '> send failed. email info@milanrother.com';
-		}
+		const result = await submitContactForm(form);
+		formStatus = result.status;
+		formMessage = result.message;
+		if (result.status === 'success') form.reset();
 	}
 
 	// Clears a stale status message as soon as the user edits a field.
@@ -503,6 +456,11 @@
 	style="font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: {fontSize}px; line-height: {lineHeight}px; letter-spacing: {letterSpacingPx}px;">
 	{#if gridLayout}
 		<CharacterGrid cells={gridLayout.cells} />
+
+		<!-- Native scroll anchors so plain #hash links work (nav Contact etc.) -->
+		{#each gridLayout.sectionAnchors as anchor}
+			<div id={anchor.id} style="position: absolute; width: 1px; height: 1px; pointer-events: none; top: {(anchor.row - 4) * lineHeight}px;"></div>
+		{/each}
 
 		<!-- Embedded block overlays — absolutely positioned to match frame -->
 		{#each gridLayout.embeddedBlocks as block}

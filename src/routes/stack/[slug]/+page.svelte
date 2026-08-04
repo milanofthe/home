@@ -49,14 +49,14 @@
 			}
 		}
 
-		// CTA block
+		// Project CTAs, then the site-wide contact block
 		g.spacer();
 		const ctas = [fmLink(fm.cta1), fmLink(fm.cta2)].filter(Boolean) as { label: string; href: string }[];
-		g.cta([
-			...ctas.map(c => ({ text: c.label, href: c.href })),
-			{ text: '[ Book an intro call -> ]', href: BOOKING_URL }
-		]);
-		g.paragraph(`Licensing and evaluation: ${CONTACT_EMAIL}`);
+		if (ctas.length > 0) {
+			g.cta(ctas.map(c => ({ text: c.label, href: c.href })));
+		}
+		g.spacer();
+		g.contactSection({ bookingUrl: BOOKING_URL, email: CONTACT_EMAIL });
 		return g.finish();
 	});
 </script>

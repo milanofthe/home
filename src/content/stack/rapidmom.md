@@ -9,24 +9,40 @@ cta1: [ Request evaluation -> ]|mailto:rapidmom@milanrother.com?subject=RapidMoM
 ---
 
 RapidMoM is a 2.5D Method-of-Moments solver for planar RF passives on layered
-substrates: PCB and RFIC. Mixed-potential formulation, stable down to DC,
-layered-media Green's functions, and a fast ACA / H-matrix solver in
-O(N log N).
+substrates: PCB and RFIC. The formulation is a mixed-potential surface
+integral equation with an RWG basis, an A-EFIE saddle-point system against the
+low-frequency breakdown (stable down to DC), layered-media Green's functions
+in the Michalski-Mosig formulation, and a kernel-independent ACA / H-matrix
+fast solver with block-GMRES in O(N log N).
 
 ![Transformer mesh|right|46x14](/images/rapidmom-mesh.png)
 
-It is zero-external-dependency pure Rust with a Python API: lightweight,
-installs in seconds, and built for massive cloud parameter sweeps. Broadband
-S-parameters of an SG13G2 spiral come out of a ROM sweep in about 5 seconds
-within roughly 600 MB, validated on the real IHP SG13G2 stack.
+## Converging the network, not the residual
+
+A GMRES residual bounds the algebraic error, but a port observable can be a
+small difference of large quantities (that is exactly what a quality factor
+is) or live in a different block of the saddle system entirely. RapidMoM
+therefore continues the solve down a tolerance ladder, warm-started, until the
+port-space network itself stops moving, including a dedicated criterion for
+the real part. Every port configuration lands on the dense-operator answer
+instead of drifting with the iterative tolerance.
+
+Ports are one primitive: a current driven between two contacts, each an
+oriented segment on a metal layer. The excitation is a voltage source across
+the gap, never an imposed current profile, so edge singularity and skin
+crowding come out of the solve. Ambiguous port placements are rejected in a
+preflight instead of guessed.
 
 ![Current density|left|46x14](/images/rapidmom-current.png)
 
-The solver converges the network, not just the algebraic residual: a
-network-refinement ladder continues the solve, warm-started, until the
-port-space network stops moving, so quality factors and grounded-port
-readings land on the dense-operator answer instead of drifting with the
-iterative tolerance.
+## Built for sweeps
+
+Zero-external-dependency pure Rust with a Python API: lightweight, installs in
+seconds, built for massive cloud parameter sweeps. Solver controls are
+first-class API (tolerances, warm-started sweeps, feed de-embedding), so
+embedding needs no environment variables. Broadband S-parameters of an SG13G2
+spiral come out of a ROM sweep in about 5 seconds within roughly 600 MB,
+validated on the real IHP SG13G2 stack.
 
 ## In the stack
 
