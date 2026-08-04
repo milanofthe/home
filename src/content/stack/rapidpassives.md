@@ -43,7 +43,8 @@ tiles on this site use exactly this component.
 ## History
 
 RapidPassives grew out of my master's work on compact modeling and layout
-generation of RFIC passives (inductors, transformers, baluns) and became the
-seed of the whole fields level of the stack: the layouts it generates are
-what [RapidMoM](/stack/rapidmom/) simulates. The public repository dates to
-October 2024.
+generation of RFIC passives (inductors, transformers, baluns). It started as
+a small Python package with a tkinter GUI, was rebuilt into the fully
+client-side browser tool it is today, and became the seed of the whole
+fields level of the stack: the layouts it generates are what
+[RapidMoM](/stack/rapidmom/) simulates.
