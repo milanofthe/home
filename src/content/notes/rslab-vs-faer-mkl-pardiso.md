@@ -7,7 +7,7 @@ description: Head-to-head factor time and peak memory of a pure-Rust sparse dire
 
 RSLAB is the sparse direct solver underneath the stack: symmetric LDLT
 (Bunch-Kaufman), unsymmetric LU, and a KLU-style path for circuit-shaped
-matrices — a PARDISO-style embeddable backend in pure Rust, with no BLAS,
+matrices, a PARDISO-style embeddable backend in pure Rust with no BLAS,
 LAPACK, or MKL dependency. This post summarizes how its shipped default
 configuration measures up against the two obvious reference points: faer, the
 strongest pure-Rust linear algebra library, and Intel's MKL PARDISO.
@@ -18,7 +18,7 @@ All cross-solver figures come from one benchmark engine over a
 complete-distribution corpus: structured-grid generators (curl-curl Maxwell,
 shifted Helmholtz, Stokes/KKT saddle-point, convection-diffusion across the
 grid-Peclet range, BEM/MoM near-field kernels) plus the complex SuiteSparse
-matrices — 8k to 125k DOFs, all complex double precision, measured in a single
+matrices: 8k to 125k DOFs, all complex double precision, measured in a single
 run on a quiet 12-core machine so the cross-solver ratios carry no run-to-run
 drift. RSLAB runs its shipped default: the deterministic heuristic pick
 (adaptive ordering, exact nested-dissection bakeoff, calibrated worker count).
@@ -53,8 +53,8 @@ exactly from the symbolic structure before any numeric work:
 
 ![A-priori memory estimate vs measured peak|center|72x22](/images/rslab-memory-estimate.png)
 
-That combination — deterministic, budgetable, embeddable, no native
-dependencies — is why RSLAB is the backend inside SANE, RapidFEM, and
+That combination (deterministic, budgetable, embeddable, no native
+dependencies) is why RSLAB is the backend inside SANE, RapidFEM, and
 RapidMoM rather than an external BLAS-backed solver.
 
 ## Accuracy

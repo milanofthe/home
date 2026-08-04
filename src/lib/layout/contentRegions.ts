@@ -186,27 +186,29 @@ function buildHeroSection(): ContentSection {
 			spacer(),
 			paragraph(c.tagline),
 			spacer(),
+			// Proof strip: the trust signals, right where a first-time visitor looks.
+			linkLine(c.proof),
+			spacer(),
 			{ type: 'cta', lines: [c.cta], align: 'center' }
 		]
 	};
 }
 
-function buildAboutSection(): ContentSection {
-	const c = contentData.about;
+// The two-path fork (consulting / products) plus the about teaser — the
+// visitor picks a funnel here instead of scrolling through everything.
+function buildPathsSection(): ContentSection {
+	const c = contentData.paths;
 	const regions: ContentRegion[] = [
 		sectionHeading(c.heading),
 		spacer()
 	];
-	for (const p of c.paragraphs) {
-		if (typeof p === 'string') {
-			regions.push(paragraph(p), spacer());
-		} else {
-			// Paragraph with inline, colored, clickable project links (see clickTargets in CodeRainPage)
-			regions.push(paragraph(p.text, p.links), spacer());
-		}
+	for (const item of c.items) {
+		regions.push(heading(item.heading));
+		regions.push(paragraph(item.text));
+		regions.push({ type: 'cta', lines: [item.link], align: 'center' });
+		regions.push(spacer());
 	}
-	regions.push(linkLine(c.links));
-	return { id: 'about', fillerLinesBefore: 5, regions };
+	return { id: 'paths', fillerLinesBefore: 5, regions };
 }
 
 interface ProjectItem {
@@ -269,6 +271,11 @@ function renderProjectItem(
 		regions.push(PROJECT_EMBEDS[item.id]);
 	}
 
+	// Read-more link to the project detail page (unique text per project so
+	// the overlay matcher can map it to its href).
+	regions.push(spacer());
+	regions.push({ type: 'cta', lines: [`[ more on ${item.heading} -> ]`], align: 'center' });
+
 	// Extra spacing between projects
 	regions.push(spacer(), spacer());
 }
@@ -300,43 +307,23 @@ function buildProjectsSection(stats: GitHubStats): ContentSection {
 	return { id: 'projects', fillerLinesBefore: 5, regions };
 }
 
-function buildOtherSection(stats: GitHubStats): ContentSection {
-	const c = contentData.other;
+// Latest notes teaser: freshness signal on the landing page, one strong link
+// to /notes (titles are plain text — the single CTA is the click target).
+function buildNotesSection(latest: { date: string; title: string }[]): ContentSection {
+	const c = contentData.notes;
 	const regions: ContentRegion[] = [
 		sectionHeading(c.heading),
 		spacer(),
 		paragraph(c.intro),
 		spacer()
 	];
-
-	const statsMap = buildStatsMap(stats);
-
-	for (const item of c.items as ProjectItem[]) {
-		renderProjectItem(item, statsMap, regions);
-	}
-
-	return { id: 'other', fillerLinesBefore: 5, regions };
-}
-
-function buildServicesSection(): ContentSection {
-	const c = contentData.services;
-	const regions: ContentRegion[] = [
-		sectionHeading(c.heading),
-		spacer(),
-		paragraph(c.intro),
-		spacer(),
-		spacer()
-	];
-
-	for (const cat of c.categories) {
-		regions.push(heading(cat.heading));
-		regions.push(paragraph(cat.text));
+	for (const n of latest) {
+		regions.push(linkLine(n.date));
+		regions.push(paragraph(n.title));
 		regions.push(spacer());
 	}
-
-	regions.push(paragraph(c.closing));
-
-	return { id: 'services', fillerLinesBefore: 5, regions };
+	regions.push({ type: 'cta', lines: ['[ all notes -> ]'], align: 'center' });
+	return { id: 'notes', fillerLinesBefore: 5, regions };
 }
 
 function buildContactSection(): ContentSection {
@@ -348,6 +335,8 @@ function buildContactSection(): ContentSection {
 			sectionHeading(c.heading),
 			spacer(),
 			paragraph(c.intro),
+			spacer(),
+			{ type: 'cta', lines: [c.cta], align: 'center' },
 			spacer(),
 			linkLine(c.email),
 			spacer(),
@@ -386,6 +375,8 @@ function buildFooterSection(): ContentSection {
 
 // --- Main builder ---
 
+import { notes as allNotes } from '$lib/content';
+
 export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 	const ps = stats?.pathsim ?? defaultStats.current.pathsim;
 	const pv = stats?.pathview ?? defaultStats.current.pathview ?? { stars: 0, forks: 0 };
@@ -395,10 +386,9 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 
 	return [
 		buildHeroSection(),
-		buildAboutSection(),
+		buildPathsSection(),
 		buildProjectsSection(resolvedStats),
-		buildOtherSection(resolvedStats),
-		buildServicesSection(),
+		buildNotesSection(allNotes.slice(0, 3)),
 		buildContactSection(),
 		buildFooterSection()
 	];

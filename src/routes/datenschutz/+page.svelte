@@ -1,11 +1,9 @@
 <script lang="ts">
 	import Navigation from '$lib/components/Navigation.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<svelte:head>
-	<title>Datenschutz — Milan Rother</title>
-	<link rel="canonical" href="https://milanrother.com/datenschutz" />
-</svelte:head>
+<Seo title="Datenschutz — Milan Rother" description="Datenschutz — Milan Rother" path="/datenschutz/" />
 
 <Navigation />
 

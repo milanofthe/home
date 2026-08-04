@@ -8,8 +8,8 @@ description: Why I am building one vertically integrated simulation stack for el
 Electronics simulation is split across abstraction levels: electromagnetic
 fields, circuits, and systems. The commercial EDA world splits these levels
 across vendors, file formats, and decades of legacy code. Every handoff
-between levels — extracting a model from a field solve, embedding a circuit
-in a system simulation — crosses a tool boundary, and every boundary costs
+between levels (extracting a model from a field solve, embedding a circuit
+in a system simulation) crosses a tool boundary, and every boundary costs
 accuracy, money, and engineering time.
 
 I am building the alternative as one vertically integrated stack, one level at
@@ -22,11 +22,11 @@ a time:
 
 ## One architecture
 
-The layers share one architecture instead of one marketing slide: SSA-style
+The layers share one architecture: SSA-style
 compute graphs at the heart of the engines, Rust cores with no black-box
 native dependencies, Python APIs on top, and browser interfaces where a UI
 earns its keep. The solvers underneath are built for solver-in-the-loop
-operation — deterministic, budgetable, embeddable — because optimization
+operation (deterministic, budgetable, embeddable) because optimization
 loops, parameter sweeps, and co-simulation are the normal case in real
 engineering work, not the exception.
 
@@ -38,12 +38,12 @@ one autodiff story from Maxwell to block diagram.
 
 ## Open where it builds trust, licensed where it creates value
 
-PathSim is MIT open source and stays that way — it is JOSS-published, used at
+PathSim is MIT open source and stays that way. It is JOSS-published, used at
 the MIT Plasma Science and Fusion Center and by JSBSim developers, and the
 community around it is the best code review I could ask for. The commercial
 engines (FastSim, SANE, RapidMoM) are source-available, free for academia,
-and commercially licensed — that split funds the open layers.
+and commercially licensed. That split funds the open layers.
 
-If your team is fighting the tool-boundary problem — Simulink migration,
-solver development, co-simulation architecture, or licensing one of the
-engines — [that is exactly the work I take on](/consulting/).
+If your team is fighting the tool-boundary problem (Simulink migration,
+solver development, co-simulation architecture, licensing one of the
+engines), [that is exactly the work I take on](/consulting/).

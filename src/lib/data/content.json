@@ -1,40 +1,33 @@
 {
 	"hero": {
 		"heading": "MILAN ROTHER",
-		"tagline": "I build the simulation stack for electronics — fields, circuits, systems. State-of-the-art numerics, fast engines, and the interfaces to use them.",
-		"cta": "[ Get in Touch -> ]   [ View the Stack ]"
+		"tagline": "I build the simulation stack for electronics: fields, circuits, systems. For engineering teams I build custom solvers and custom tools, and I help with integration.",
+		"proof": "JOSS-published  /  used at MIT PSFC  /  adopted by JSBSim  /  benchmarked vs Cadence EMX",
+		"cta": "[ Book an intro call -> ]   [ Consulting ]   [ View the Stack ]"
 	},
-	"about": {
-		"heading": "WHO AM I",
-		"paragraphs": [
-			"I build simulation tools and infrastructure and solve numerical modeling problems for engineering teams.",
-			"Long ago during my studies I was already building small numerical side projects. A symbolic circuit analysis tool, an eigenmode solver for the Schrödinger equation, a CUDA-accelerated 2D FDTD solver, a MIMO vector fitting implementation, and so on. I even wrote a 120-page LaTeX manuscript on linear system theory during the summer of 2021 to help out a friend.",
+	"paths": {
+		"heading": "WHAT I DO",
+		"items": [
 			{
-				"text": "During my master's I dipped my toes into the RFIC EDA world and worked on compact modeling and layout generation of RFIC passives (inductors, transformers, baluns...). This has now become RapidPassives, an open-source library.",
-				"links": [{ "phrase": "RapidPassives", "project": "rapidpassives" }]
+				"heading": "// consulting",
+				"text": "Custom solvers, custom tools, and integration for engineering teams. Scoped into weekly sprints and multi-week projects.",
+				"link": "[ more about consulting -> ]"
 			},
 			{
-				"text": "At the beginning of my PhD (early 2023) I diverged from the circuit path to the more general system level, where you have signal flow diagrams and ODEs instead of Maxwell and KVL/KCL. During that time PathSim started as a side project. Initially just an analog computer emulator, it evolved into a fully fledged continuous and discrete (hybrid, we have events!) system modeling and simulation framework. I open sourced it in early 2025 as an open alternative to Simulink, and a modern take on system modeling in general. Clean API, mutability from the get-go, robust solvers (stiffness, algebraic loops, no problem). Today (mid 2026) we are at roughly 400 stars on GitHub and have many users and collaborators worldwide, some of them prominent figures such as the MIT Plasma Science and Fusion Center, scikit-rf, and JSBSim developers.",
-				"links": [{ "phrase": "PathSim", "project": "pathsim" }]
+				"heading": "// products & licensing",
+				"text": "FastSim, SANE, and RapidMoM are source-available, free for academia, and commercially licensed with support and integration. Evaluation licenses on request.",
+				"link": "[ explore the stack -> ]"
 			},
 			{
-				"text": "Now I'm making the full roundtrip back through circuits and fields, bringing it all together into one vertically integrated stack: EM solvers (RapidFEM, RapidMoM), a symbolic circuit engine (SANE), and system-level simulation (PathSim, FastSim). One architecture — SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy. I think one coherent, modern stack can do better.",
-				"links": [
-					{ "phrase": "RapidFEM", "project": "rapidfem" },
-					{ "phrase": "RapidMoM", "project": "rapidmom" },
-					{ "phrase": "SANE", "project": "sane" },
-					{ "phrase": "PathSim", "project": "pathsim" },
-					{ "phrase": "FastSim", "project": "fastsim" }
-				]
-			},
-			"Those who have talked to me know that I can't stop talking about numerics, modeling, and simulation principles and ideas.",
-			"I work as a freelancer and license my tools commercially — free for academia. If you have something you want my take on, or need some ideas and even implementation, don't hesitate to reach out."
-		],
-		"links": "GitHub   LinkedIn   X"
+				"heading": "// who am I",
+				"text": "Author of PathSim and the rest of the stack. Numerics, modeling, and simulation tooling from first principles.",
+				"link": "[ full story -> ]"
+			}
+		]
 	},
 	"projects": {
 		"heading": "THE STACK",
-		"intro": "One vertically integrated simulation stack for electronics — from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.",
+		"intro": "One vertically integrated simulation stack for electronics: from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.",
 		"groups": [
 			{
 				"heading": "systems",
@@ -45,7 +38,7 @@
 						"headingType": "pathsim",
 						"paragraphs": [
 							"A pure-Python framework for modeling and simulating dynamical systems. Built from first principles with custom solvers, an event system, and a modular block-diagram API.",
-							"Published in JOSS. Adopted by JSBSim for flight dynamics and used at MIT PSFC for nuclear fusion fuel-cycle modeling. Domain toolboxes for chemical engineering, batteries, vehicles, flight dynamics, RF, and FMI co-simulation — several of them community-contributed."
+							"Published in JOSS. Adopted by JSBSim for flight dynamics and used at MIT PSFC for nuclear fusion fuel-cycle modeling. Domain toolboxes for chemical engineering, batteries, vehicles, flight dynamics, RF, and FMI co-simulation, several of them community-contributed."
 						],
 						"metrics": "MIT open source / 30+ solvers / 9 contributors / PyPI + conda-forge",
 						"statsTemplate": "{stars} stars / {forks} forks",
@@ -57,7 +50,7 @@
 						"heading": "FastSim",
 						"headingType": "fastsim",
 						"paragraphs": [
-							"A drop-in Rust replacement for PathSim. Same Python API — swap the import and go. Python callbacks are traced into an SSA graph, symbolically differentiated, and compiled to native code at runtime."
+							"A drop-in Rust replacement for PathSim. Same Python API: swap the import and go. Python callbacks are traced into an SSA graph, symbolically differentiated, and compiled to native code at runtime."
 						],
 						"metrics": "50-100x faster / 21 ODE solvers / JIT + autodiff / FMI 3.0 / C99 code generation for embedded targets",
 						"statsText": "fast.pathsim.org / licensing: info@pathsim.org"
@@ -67,7 +60,7 @@
 						"heading": "PathView",
 						"headingType": "pathsim",
 						"paragraphs": [
-							"A browser-based visual editor for PathSim and FastSim models. Drag-and-drop block diagrams, live simulation preview, and instant sharing. Runs entirely in the browser via Pyodide — nothing to install."
+							"A browser-based visual editor for PathSim and FastSim models. Drag-and-drop block diagrams, live simulation preview, and instant sharing. Runs entirely in the browser via Pyodide, nothing to install."
 						],
 						"statsTemplate": "{stars} stars / {forks} forks",
 						"statsSource": "pathview",
@@ -83,8 +76,8 @@
 						"heading": "SANE",
 						"headingType": "sane",
 						"paragraphs": [
-							"Symbolic Analog Network Engine — symbolic and numeric analog circuit analysis. One hash-consed symbolic DAG with automatic differentiation yields DC, transient, AC, poles/zeros, noise, harmonic balance, and exact first- and second-order parameter sensitivities. The graph preserves the circuit's symbolic structure and hierarchy and exploits it throughout.",
-							"SPICE and native Verilog-A frontends: compact models (BSIM, PSP, HICUM, ...) are lowered fully into the graph — every parameter stays exposed to the autodiff, even in harmonic balance. Rust core, threaded sparse LU, optional JIT. Python API."
+							"Symbolic Analog Network Engine: symbolic and numeric analog circuit analysis. One hash-consed symbolic DAG with automatic differentiation yields DC, transient, AC, poles/zeros, noise, harmonic balance, and exact first- and second-order parameter sensitivities. The graph preserves the circuit's symbolic structure and hierarchy and exploits it throughout.",
+							"SPICE and native Verilog-A frontends: compact models (BSIM, PSP, HICUM, ...) are lowered fully into the graph. Every parameter stays exposed to the autodiff, even in harmonic balance. Rust core, threaded sparse LU, optional JIT. Python API."
 						],
 						"metrics": "validated against ngspice & Xyce / scales past 100k parameters (IBM power-grid benchmarks)",
 						"statsText": "try it live: sane.milanrother.com / core engine early access: info@milanrother.com"
@@ -100,7 +93,7 @@
 						"headingType": "rapidmom",
 						"paragraphs": [
 							"A 2.5D Method-of-Moments solver for planar RF passives on layered substrates (PCB, RFIC). Mixed-potential formulation, stable down to DC, layered-media Green's functions, and a fast ACA solver in O(N log N).",
-							"Zero-external-dependency pure Rust with a Python API — lightweight, installs in seconds, built for massive cloud parameter sweeps. EMX-class performance on production RFIC benchmarks."
+							"Zero-external-dependency pure Rust with a Python API: lightweight, installs in seconds, built for massive cloud parameter sweeps. EMX-class performance on production RFIC benchmarks."
 						],
 						"metrics": "broadband S-parameters of an SG13G2 spiral via ROM sweep in ~5 s / ~600 MB / benchmarked head-to-head against Cadence EMX on the real IHP SG13G2 stack",
 						"statsText": "early access / licensing: rapidmom@milanrother.com"
@@ -129,14 +122,14 @@
 			},
 			{
 				"heading": "foundations",
-				"intro": "The stack rests on its own numerical infrastructure — no black-box dependencies. Both are built for solver-in-the-loop operation: deterministic, budgetable, embeddable.",
+				"intro": "The stack rests on its own numerical infrastructure. No black-box dependencies. Both are built for solver-in-the-loop operation: deterministic, budgetable, embeddable.",
 				"items": [
 					{
 						"id": "rslab",
 						"heading": "RSLAB",
 						"headingType": "rslab",
 						"paragraphs": [
-							"A sparse direct solver for real and complex matrices in pure Rust — a PARDISO-style embeddable backend with no BLAS, LAPACK, or MKL dependency. Symmetric LDLT, unsymmetric LU, and a KLU path for circuit matrices, plus iterative solvers and preconditioners. Settings pick themselves: a deterministic heuristic (nested-dissection bakeoff, one-time hardware calibration) — no ML in the default path. Mixed-precision solves come with an honest backward-error certificate, and peak memory and runtime are predicted exactly from the symbolic structure before any numeric work."
+							"A sparse direct solver for real and complex matrices, a PARDISO-style embeddable backend in pure Rust with no BLAS, LAPACK, or MKL dependency. Symmetric LDLT, unsymmetric LU, and a KLU path for circuit matrices, plus iterative solvers and preconditioners. Settings pick themselves: a deterministic heuristic (nested-dissection bakeoff, one-time hardware calibration), no ML in the default path. Mixed-precision solves come with an honest backward-error certificate, and peak memory and runtime are predicted exactly from the symbolic structure before any numeric work."
 						],
 						"metrics": "bit-identical across thread counts / faster than faer, ~5x to MKL PARDISO / PyPI",
 						"statsText": "github.com/milanofthe/rslab"
@@ -155,84 +148,14 @@
 			}
 		]
 	},
-	"other": {
-		"heading": "OTHER PROJECTS",
-		"intro": "Side quests — tools I built because I wanted them to exist.",
-		"items": [
-			{
-				"id": "pysimhub",
-				"heading": "PySimHub",
-				"headingType": "pysimhub",
-				"paragraphs": [
-					"An open community catalog bridging Python's scattered simulation communities. An awesome list that's also awesome to use."
-				],
-				"statsTemplate": "{projects} projects / {cumulativeStars} cumulative stars",
-				"statsSource": "pysimhub",
-				"domain": "pysimhub.io"
-			},
-			{
-				"id": "scidata",
-				"heading": "SciData",
-				"headingType": "scidata",
-				"paragraphs": [
-					"A node-based environment for scientific data analysis. Drop a CSV, chain pandas, scipy, statsmodels and plotly blocks; the pipeline is a declarative graph that compiles to plain Python."
-				],
-				"statsText": "scidata.io"
-			},
-			{
-				"id": "thesisos",
-				"heading": "ThesisOS",
-				"headingType": "thesisos",
-				"paragraphs": [
-					"A local-first literature manager for researchers. Ingest PDFs, search them semantically, and trace citations across your library."
-				],
-				"statsText": "thesisos.io"
-			},
-			{
-				"id": "whatsmytraffic",
-				"heading": "WhatsMyTraffic",
-				"headingType": "whatsmytraffic",
-				"paragraphs": [
-					"Self-hosted web analytics with a form backend and passwordless auth. A Docker stack (Umami, Postgres, a SvelteKit dashboard behind Caddy) on a VPS."
-				],
-				"statsText": "whatsmytraffic.com"
-			}
-		]
-	},
-	"services": {
-		"heading": "SERVICES",
-		"intro": "I help engineering teams answer strategic questions and build features in the simulation modeling and scientific UI/UX domain.",
-		"categories": [
-			{
-				"heading": "// simulation infrastructure",
-				"text": "Custom solvers, model architectures, and simulation pipelines. From numerical methods to deployment. Python, C, Rust, WASM. Including Simulink migration to open-source."
-			},
-			{
-				"heading": "// scientific UI/UX",
-				"text": "Browser-based tools for engineering workflows. Interactive visualization, model editors, and dashboards. SvelteKit, TypeScript, Pyodide."
-			},
-			{
-				"heading": "// PathSim integration & support",
-				"text": "Adopt PathSim for your domain. Custom blocks, solver tuning, toolbox development. Ongoing support contracts available."
-			},
-			{
-				"heading": "// commercial licensing",
-				"text": "FastSim, RapidMoM, and SANE are source-available and free for noncommercial use. Commercial licenses with support and integration available. Free for academia."
-			},
-			{
-				"heading": "// digital twin & co-simulation",
-				"text": "FMU/FMI-compliant architectures connecting simulation models to real-time sensor data and control systems. Standards-based interoperability across platforms."
-			},
-			{
-				"heading": "// training & workshops",
-				"text": "Hands-on Python simulation workshops for your team. From basics to advanced system modeling. 1-2 days, remote or on-site."
-			}
-		],
-		"closing": "I scope work to weekly sprints and multi-week projects. Let's talk about what you need."
+	"notes": {
+		"heading": "NOTES",
+		"intro": "Engineering notes on numerics, solvers, and scientific UI."
 	},
 	"contact": {
 		"heading": "GET IN TOUCH",
-		"intro": "Have a project in mind or want to discuss your simulation challenges? Write me or use the form below.",
+		"intro": "Book a call directly, write me, or use the form below.",
+		"cta": "[ Book an intro call -> ]",
 		"email": "info@milanrother.com",
 		"privacy": "Your data is processed per our privacy policy."
 	},

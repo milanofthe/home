@@ -5,6 +5,7 @@
 	import CharacterGrid from './CharacterGrid.svelte';
 	import PortalTile from './PortalTile.svelte';
 	import VideoTile from './VideoTile.svelte';
+	import { BOOKING_URL } from '$lib/config';
 
 	const STATS_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/github-stats.json';
 
@@ -128,15 +129,15 @@
 			});
 			if (response.ok) {
 				formStatus = 'success';
-				formMessage = '> message sent — talk soon';
+				formMessage = '> message sent. talk soon';
 				form.reset();
 			} else {
 				formStatus = 'error';
-				formMessage = '> send failed — email info@milanrother.com';
+				formMessage = '> send failed. email info@milanrother.com';
 			}
 		} catch {
 			formStatus = 'error';
-			formMessage = '> send failed — email info@milanrother.com';
+			formMessage = '> send failed. email info@milanrother.com';
 		}
 	}
 
@@ -159,10 +160,26 @@
 		action?: string;
 	}
 
+	// Read-more targets: one per stack project (unique text -> unique href).
+	const readMoreTargets = [
+		'PathSim', 'FastSim', 'PathView', 'SANE', 'RapidMoM', 'RapidFEM',
+		'RapidPassives', 'RSLAB', 'RapidMesh'
+	].map((name) => ({
+		text: `[ more on ${name} -> ]`,
+		types: ['cta'] as CellType[],
+		href: `/stack/${name.toLowerCase()}/`
+	}));
+
 	const clickTargets: { text: string; types: CellType[]; href?: string; scrollTo?: string; action?: string }[] = [
-		{ text: '[ Get in Touch -> ]', types: ['cta'], scrollTo: 'contact' },
+		{ text: '[ Book an intro call -> ]', types: ['cta'], href: BOOKING_URL },
+		{ text: '[ Consulting ]', types: ['cta'], href: '/consulting/' },
 		{ text: '[ View the Stack ]', types: ['cta'], scrollTo: 'projects' },
+		{ text: '[ more about consulting -> ]', types: ['cta'], href: '/consulting/' },
+		{ text: '[ explore the stack -> ]', types: ['cta'], href: '/stack/' },
+		{ text: '[ full story -> ]', types: ['cta'], href: '/about/' },
+		{ text: '[ all notes -> ]', types: ['cta'], href: '/notes/' },
 		{ text: '[ SEND MESSAGE -> ]', types: ['cta'], action: 'submit-form' },
+		...readMoreTargets,
 		{ text: 'Impressum', types: ['footer'], href: '/impressum/' },
 		{ text: 'Datenschutz', types: ['footer'], href: '/datenschutz/' },
 		{ text: 'info@milanrother.com', types: ['link', 'link-sane'], href: 'mailto:info@milanrother.com' },
@@ -423,10 +440,20 @@
 			}
 		}
 
-		// Handle initial hash on load
+		// Handle initial hash on load. Sections that moved to their own pages
+		// redirect so old /#about-style links keep working.
+		const MOVED_SECTIONS: Record<string, string> = {
+			about: '/about/',
+			services: '/consulting/',
+			other: '/about/'
+		};
 		if (window.location.hash) {
 			const id = window.location.hash.replace('#', '');
-			setTimeout(() => scrollToSection(id), 100);
+			if (MOVED_SECTIONS[id]) {
+				window.location.replace(MOVED_SECTIONS[id]);
+			} else {
+				setTimeout(() => scrollToSection(id), 100);
+			}
 		}
 
 		window.addEventListener('resize', computeLayout);
@@ -441,34 +468,29 @@
 <!-- Semantic content for SEO / screen readers -->
 <main class="sr-only">
 	<h1>Milan Rother</h1>
-	<p>I build the simulation stack for electronics — fields, circuits, systems. State-of-the-art numerics, fast engines, and the interfaces to use them.</p>
-	<section id="about">
-		<h2>Who am I</h2>
-		<p>Simulation engineer. I build numerical software and solve modeling problems for teams working on complex physical systems.</p>
-		<p>M.Sc. Electrical Engineering. Background in numerical methods, system modeling, electromagnetics, and compact modeling for physical systems.</p>
-		<p>I built <a href="https://pathsim.org">PathSim</a> because modeling software has a long history of vendor lock-in and clunky UX. Pure Python, open source, designed from first principles. JOSS-published, with collaborators from MIT Plasma Science &amp; Fusion Center, CEA, scikit-rf, and JSBSim.</p>
-		<p>Now I'm bringing it all together into one vertically integrated stack: EM field solvers (RapidFEM, RapidMoM), a symbolic analog circuit engine (SANE), and system-level simulation (PathSim, FastSim). One architecture — SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces.</p>
+	<p>I build the simulation stack for electronics: fields, circuits, systems. For engineering teams I build custom solvers and custom tools, and I help with integration.</p>
+	<p>JOSS-published, used at MIT Plasma Science &amp; Fusion Center, adopted by JSBSim, benchmarked head-to-head against Cadence EMX.</p>
+	<section id="paths">
+		<h2>What I do</h2>
+		<p><a href="/consulting/">Consulting</a>: custom solvers, custom tools, and integration for engineering teams. Scoped into weekly sprints and multi-week projects.</p>
+		<p><a href="/stack/">Products &amp; licensing</a>: FastSim, SANE, and RapidMoM are source-available, free for academia, and commercially licensed with support and integration.</p>
+		<p><a href="/about/">About</a>: simulation engineer, open-source author of PathSim.</p>
 	</section>
 	<section id="projects">
 		<h2>The Stack</h2>
-		<p>One vertically integrated simulation stack for electronics — from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.</p>
+		<p>One vertically integrated simulation stack for electronics: from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.</p>
 		<h3>Systems</h3>
-		<p><a href="https://pathsim.org">PathSim</a> — pure-Python system simulation framework, MIT open source, JOSS-published. <a href="https://fast.pathsim.org">FastSim</a> — drop-in Rust replacement, 50-100x faster, JIT, autodiff, FMI 3.0, C99 code generation. <a href="https://view.pathsim.org">PathView</a> — browser-based visual model editor.</p>
+		<p><a href="/stack/pathsim/">PathSim</a>: pure-Python system simulation framework, MIT open source, JOSS-published. <a href="/stack/fastsim/">FastSim</a>: drop-in Rust replacement, 50-100x faster, JIT, autodiff, FMI 3.0, C99 code generation. <a href="/stack/pathview/">PathView</a>: browser-based visual model editor.</p>
 		<h3>Circuits</h3>
-		<p>SANE — Symbolic Analog Network Engine. Symbolic and numeric circuit analysis: DC, transient, AC, poles/zeros, noise, harmonic balance, exact sensitivities. SPICE and Verilog-A frontends. Validated against ngspice and Xyce. Try it live at <a href="https://sane.milanrother.com">sane.milanrother.com</a>; the core engine is in early access.</p>
+		<p><a href="/stack/sane/">SANE</a>: Symbolic Analog Network Engine. Symbolic and numeric circuit analysis: DC, transient, AC, poles/zeros, noise, harmonic balance, exact sensitivities. SPICE and Verilog-A frontends. Validated against ngspice and Xyce.</p>
 		<h3>Fields</h3>
-		<p>RapidMoM — 2.5D Method-of-Moments solver for planar RF passives on layered substrates. <a href="https://fem.rapidpassives.org">RapidFEM</a> — Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="https://rapidpassives.org">RapidPassives</a> — browser-based RFIC passive layout generation.</p>
+		<p><a href="/stack/rapidmom/">RapidMoM</a>: 2.5D Method-of-Moments solver for planar RF passives on layered substrates. <a href="/stack/rapidfem/">RapidFEM</a>: Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="/stack/rapidpassives/">RapidPassives</a>: browser-based RFIC passive layout generation.</p>
 		<h3>Foundations</h3>
-		<p><a href="https://github.com/milanofthe/rslab">RSLAB</a> — sparse direct solver in pure Rust. <a href="https://github.com/milanofthe/rapidmesh">RapidMesh</a> — tetrahedral mesh generator for 3D electromagnetic FEM.</p>
+		<p><a href="/stack/rslab/">RSLAB</a>: sparse direct solver in pure Rust. <a href="/stack/rapidmesh/">RapidMesh</a>: mesh generator for electromagnetic FEM and MoM.</p>
 	</section>
-	<section id="other">
-		<h2>Other Projects</h2>
-		<p><a href="https://pysimhub.io">PySimHub</a>, <a href="https://scidata.io">SciData</a>, <a href="https://thesisos.io">ThesisOS</a>, <a href="https://whatsmytraffic.com">WhatsMyTraffic</a>.</p>
-	</section>
-	<section id="services">
-		<h2>Services</h2>
-		<p>I help engineering teams build and scale simulation infrastructure. Available for consulting, development, commercial licensing, and training.</p>
-		<p>Simulink migration, custom simulation development, digital twin and co-simulation architecture, simulation audit, training and workshops.</p>
+	<section id="notes">
+		<h2>Notes</h2>
+		<p><a href="/notes/">Engineering notes</a> on numerics, solvers, and scientific UI.</p>
 	</section>
 	<section id="contact">
 		<h2>Get in Touch</h2>

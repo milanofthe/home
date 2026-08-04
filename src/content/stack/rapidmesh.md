@@ -19,7 +19,7 @@ dihedral-angle quality optimization keeps tetrahedra solver-friendly.
 
 The API is designed for the solver, not for a GUI: mesh representations serve
 the solver as an oracle, and planar and tetrahedral meshing share one
-interface. Inside the stack it replaces gmsh — one less external dependency,
+interface. Inside the stack it replaces gmsh: one less external dependency,
 one more component with deterministic, budgetable behavior.
 
 ![mesh.rapidpassives.org|left|46x14](/screenshots/rapidmesh-site.png)

@@ -1,7 +1,7 @@
 ---
 title: SANE
 accent: sane
-tagline: Symbolic Analog Network Engine — symbolic and numeric circuit analysis.
+tagline: Symbolic Analog Network Engine, symbolic and numeric circuit analysis.
 group: circuits
 order: 4
 site: sane.milanrother.com|https://sane.milanrother.com
@@ -12,7 +12,7 @@ cta2: [ Request early access -> ]|mailto:info@milanrother.com?subject=SANE%20ear
 
 SANE extracts the differential-algebraic system F(x, x', t) = 0 from a circuit
 and analyzes it symbolically and numerically: DC operating point, transient,
-small-signal AC, poles/zeros, noise, harmonic balance — and exact first- and
+small-signal AC, poles/zeros, noise, harmonic balance, and exact first- and
 second-order parameter sensitivities for each of those, all by automatic
 differentiation of one hash-consed symbolic DAG.
 
@@ -21,7 +21,7 @@ differentiation of one hash-consed symbolic DAG.
 The graph preserves the circuit's symbolic structure and hierarchy and
 exploits it throughout. SPICE and native Verilog-A frontends lower compact
 models (BSIM, PSP, HICUM, ...) fully into the graph, so every parameter stays
-exposed to the autodiff — even in harmonic balance. That makes sweeps,
+exposed to the autodiff, even in harmonic balance. That makes sweeps,
 optimization, and yield analysis first-class citizens instead of finite-difference
 afterthoughts.
 

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Navigation from '$lib/components/Navigation.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import ArticlePage from '$lib/components/ArticlePage.svelte';
 	import { ArticleGrid, type ArticleResult } from '$lib/layout/articleLayout';
 	import { getNote, getStackPage } from '$lib/content';
@@ -32,19 +33,18 @@
 	});
 </script>
 
-<svelte:head>
-	<title>{note.title} — Milan Rother</title>
-	<meta name="description" content={note.description} />
-	<meta property="og:title" content={note.title} />
-	<meta property="og:description" content={note.description} />
-	<meta property="og:type" content="article" />
-</svelte:head>
+<Seo
+	title="{note.title} — Milan Rother"
+	description={note.description}
+	path="/notes/{note.slug}/"
+	ogType="article"
+/>
 
 <Navigation />
 <ArticlePage {build}>
 	{#snippet semantic()}
 		<h1>{note.title}</h1>
-		<p>{note.date} — {note.description}</p>
+		<p>{note.date}: {note.description}</p>
 		<!-- eslint-disable-next-line svelte/no-at-html-tags — own build-time content -->
 		{@html blocksToHtml(note.doc.blocks)}
 	{/snippet}

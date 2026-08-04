@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import ArticlePage from '$lib/components/ArticlePage.svelte';
 	import { ArticleGrid, type ArticleResult } from '$lib/layout/articleLayout';
 	import { notes } from '$lib/content';
@@ -51,10 +52,11 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Notes — Milan Rother</title>
-	<meta name="description" content="Engineering notes on numerics, simulation, solvers, and scientific UI/UX — from the simulation stack for electronics." />
-</svelte:head>
+<Seo
+	title="Notes — Milan Rother"
+	description="Engineering notes on numerics, simulation, solvers, and scientific UI/UX from the simulation stack for electronics."
+	path="/notes/"
+/>
 
 <Navigation />
 <ArticlePage {build}>
@@ -64,7 +66,7 @@
 		<ul>
 			{#each notes as n}
 				<li>
-					<a href={`/notes/${n.slug}/`}>{n.title}</a> — {n.date} — {n.description}
+					<a href={`/notes/${n.slug}/`}>{n.title}</a> ({n.date}): {n.description}
 				</li>
 			{/each}
 		</ul>

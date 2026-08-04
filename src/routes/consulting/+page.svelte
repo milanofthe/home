@@ -1,28 +1,25 @@
 <script lang="ts">
 	import Navigation from '$lib/components/Navigation.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import ArticlePage from '$lib/components/ArticlePage.svelte';
 	import { ArticleGrid, type ArticleResult } from '$lib/layout/articleLayout';
 	import { BOOKING_URL, CONTACT_EMAIL } from '$lib/config';
 
 	const INTRO =
-		'I help engineering teams with numerics and UX for circuits and systems: custom solvers, simulation infrastructure, and the browser-based tools to use them. From strategic questions to shipped implementation.';
+		'I build custom solvers and custom tools for engineering teams, and I help with integration. Numerics and UX for circuits and systems.';
 
 	const OFFERS = [
 		{
-			heading: 'simulation infrastructure & numerics',
-			text: 'Custom solvers, model architectures, and simulation pipelines — from numerical methods to deployment. Python, C, Rust, WASM. Including Simulink migration to open source.'
+			heading: 'custom solvers',
+			text: 'Numerical engines built for your problem: formulation, solver architecture, performance. Rust, C, Python, WASM. Deterministic, tested, benchmarked against references.'
 		},
 		{
-			heading: 'scientific UI/UX & engineering tools',
-			text: 'Browser-based tools for engineering workflows: interactive visualization, model editors, dashboards. SvelteKit, TypeScript, Pyodide — tools that run where your engineers already are.'
+			heading: 'custom tools',
+			text: 'Browser-based engineering tools on top of your workflows: model editors, interactive visualization, parameter studies. SvelteKit, TypeScript, Pyodide, WebGL. No install for your users.'
 		},
 		{
-			heading: 'stack integration & licensing',
-			text: 'Adopt PathSim or license FastSim, SANE, and RapidMoM for your domain. Custom blocks, solver tuning, toolbox development, FMI co-simulation and digital twin architectures. Ongoing support contracts available.'
-		},
-		{
-			heading: 'training & workshops',
-			text: 'Hands-on Python simulation workshops for your team, from basics to advanced system modeling. One to two days, remote or on-site.'
+			heading: 'integration',
+			text: 'PathSim and FastSim in your environment: custom blocks, domain toolboxes, FMI co-simulation, migration from closed tools. Licensing of FastSim, SANE, and RapidMoM with support.'
 		}
 	];
 
@@ -48,10 +45,10 @@
 
 		g.sectionHeading('how we work');
 		g.paragraph(
-			'Work is scoped into weekly sprints and multi-week projects — no open-ended retainers, no surprises. We start with a 30-minute intro call: you describe the problem, I tell you honestly whether and how I can help, and you get a concrete scoped proposal.'
+			'Work is scoped into weekly sprints and multi-week projects. It starts with a 30-minute intro call: you describe the problem, I tell you whether and how I can help, and you get a scoped proposal.'
 		);
 		g.paragraph(
-			'The stack is my proof of work: every engine, solver, and interface on this site is built and maintained by me. If your problem lives anywhere between Maxwell and a block diagram, it is in scope.'
+			'Every engine, solver, and interface on this site is built and maintained by me. That is the reference for what you get.'
 		);
 		g.spacer();
 
@@ -60,15 +57,16 @@
 			{ text: '[ Book an intro call -> ]', href: BOOKING_URL },
 			{ text: '[ Email ]', href: `mailto:${CONTACT_EMAIL}` }
 		]);
-		g.paragraph(`Prefer writing first? ${CONTACT_EMAIL} — or use the contact form on the front page.`);
+		g.paragraph(`Prefer writing first? ${CONTACT_EMAIL}`);
 		return g.finish();
 	}
 </script>
 
-<svelte:head>
-	<title>Consulting — Milan Rother</title>
-	<meta name="description" content="Consulting for engineering teams: numerics and UX for circuits and systems. Custom solvers, simulation infrastructure, Simulink migration, scientific UI/UX, training." />
-</svelte:head>
+<Seo
+	title="Consulting — Milan Rother"
+	description="Custom solvers, custom tools, and integration for engineering teams. Numerics and UX for circuits and systems."
+	path="/consulting/"
+/>
 
 <Navigation />
 <ArticlePage {build}>

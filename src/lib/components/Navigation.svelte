@@ -18,9 +18,10 @@
 	}
 
 	const navLinks = [
-		{ href: '/#about', label: 'About' },
-		{ href: '/#projects', label: 'Projects' },
-		{ href: '/#services', label: 'Services' },
+		{ href: '/stack/', label: 'Stack' },
+		{ href: '/notes/', label: 'Notes' },
+		{ href: '/consulting/', label: 'Consulting' },
+		{ href: '/about/', label: 'About' },
 		{ href: '/#contact', label: 'Contact' }
 	];
 

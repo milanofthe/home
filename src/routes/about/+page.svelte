@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Navigation from '$lib/components/Navigation.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import ArticlePage from '$lib/components/ArticlePage.svelte';
 	import { ArticleGrid, type ArticleResult, type TextSegment } from '$lib/layout/articleLayout';
 	import { BOOKING_URL, CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, X_URL } from '$lib/config';
@@ -31,11 +32,11 @@
 			{ text: 'PathSim', href: '/stack/pathsim/', accent: 'pathsim' },
 			{ text: ',' },
 			{ text: 'FastSim', href: '/stack/fastsim/', accent: 'fastsim' },
-			{ text: '). One architecture — SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy. I think one coherent, modern stack can do better.' }
+			{ text: '). One architecture: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy. I think one coherent, modern stack can do better.' }
 		],
 		[{ text: "Those who have talked to me know that I can't stop talking about numerics, modeling, and simulation principles and ideas." }],
 		[
-			{ text: 'I work as a freelancer and license my tools commercially — free for academia. If you have something you want my take on, or need some ideas and even implementation,' },
+			{ text: 'I work as a freelancer and license my tools commercially, free for academia. If you have something you want my take on, or need some ideas and even implementation,' },
 			{ text: "don't hesitate to reach out", href: '/consulting/' },
 			{ text: '.' }
 		]
@@ -103,10 +104,11 @@
 	}
 </script>
 
-<svelte:head>
-	<title>About — Milan Rother</title>
-	<meta name="description" content="Simulation engineer. I build the simulation stack for electronics — fields, circuits, systems — and help engineering teams with numerics and scientific UI/UX." />
-</svelte:head>
+<Seo
+	title="About — Milan Rother"
+	description="I build the simulation stack for electronics: fields, circuits, systems. Custom solvers, custom tools, and integration for engineering teams."
+	path="/about/"
+/>
 
 <Navigation />
 <ArticlePage {build}>
@@ -118,7 +120,7 @@
 		<h2>Side projects</h2>
 		<ul>
 			{#each SIDE_PROJECTS as sp}
-				<li><a href={sp.href}>{sp.name}</a> — {sp.text}</li>
+				<li><a href={sp.href}>{sp.name}</a>: {sp.text}</li>
 			{/each}
 		</ul>
 	{/snippet}

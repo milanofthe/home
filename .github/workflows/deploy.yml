@@ -33,9 +33,6 @@ jobs:
       - name: Capture screenshots
         run: npm run screenshots
 
-      - name: Update sitemap
-        run: npm run update-sitemap
-
       - name: Build
         run: npm run build
 

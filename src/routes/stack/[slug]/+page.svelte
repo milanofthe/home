@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Navigation from '$lib/components/Navigation.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import ArticlePage from '$lib/components/ArticlePage.svelte';
 	import { ArticleGrid, type ArticleResult } from '$lib/layout/articleLayout';
 	import { getStackPage, notesFor } from '$lib/content';
@@ -60,12 +61,11 @@
 	});
 </script>
 
-<svelte:head>
-	<title>{page.title} — Milan Rother</title>
-	<meta name="description" content={page.tagline} />
-	<meta property="og:title" content={page.title} />
-	<meta property="og:description" content={page.tagline} />
-</svelte:head>
+<Seo
+	title="{page.title} — Milan Rother"
+	description={page.tagline}
+	path="/stack/{page.slug}/"
+/>
 
 <Navigation />
 <ArticlePage {build}>

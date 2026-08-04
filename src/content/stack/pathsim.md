@@ -13,7 +13,7 @@ cta2: [ PathSim integration & support -> ]|/consulting/
 
 PathSim is a pure-Python framework for modeling and simulating dynamical
 systems. Built from first principles with custom solvers, an event system, and
-a modular block-diagram API — a modern, open alternative to Simulink, with
+a modular block-diagram API. A modern, open alternative to Simulink, with
 mutability from the get-go and robust solvers that handle stiffness and
 algebraic loops without ceremony.
 
@@ -30,8 +30,8 @@ kinetics.
 PathSim is published in JOSS, adopted by JSBSim for flight dynamics, and used
 at the MIT Plasma Science and Fusion Center for nuclear fusion fuel-cycle
 modeling. Domain toolboxes cover chemical engineering, batteries, vehicles,
-flight dynamics, RF, and FMI co-simulation — several of them
-community-contributed by the project's nine contributors.
+flight dynamics, RF, and FMI co-simulation, several of them
+community-contributed.
 
 ## In the stack
 

@@ -9,7 +9,7 @@ cta1: [ Request evaluation -> ]|mailto:rapidmom@milanrother.com?subject=RapidMoM
 ---
 
 RapidMoM is a 2.5D Method-of-Moments solver for planar RF passives on layered
-substrates — PCB and RFIC. Mixed-potential formulation, stable down to DC,
+substrates: PCB and RFIC. Mixed-potential formulation, stable down to DC,
 layered-media Green's functions, and a fast ACA / H-matrix solver in
 O(N log N).
 
@@ -17,7 +17,7 @@ O(N log N).
 
 It is zero-external-dependency pure Rust with a Python API: lightweight,
 installs in seconds, and built for massive cloud parameter sweeps. On
-production RFIC benchmarks it delivers EMX-class performance — benchmarked
+production RFIC benchmarks it delivers EMX-class performance, benchmarked
 head-to-head against Cadence EMX on the real IHP SG13G2 stack. Broadband
 S-parameters of an SG13G2 spiral come out of a ROM sweep in about 5 seconds
 within roughly 600 MB.
@@ -26,7 +26,7 @@ within roughly 600 MB.
 
 The solver converges the network, not just the algebraic residual: a
 network-refinement ladder continues the solve, warm-started, until the
-port-space network stops moving — so quality factors and grounded-port
+port-space network stops moving, so quality factors and grounded-port
 readings land on the dense-operator answer instead of drifting with the
 iterative tolerance.
 
