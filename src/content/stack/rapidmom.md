@@ -35,6 +35,22 @@ preflight instead of guessed.
 
 ![Current density|left|46x14](/images/rapidmom-current.png)
 
+## Conductor models and outputs
+
+Two production conductor models are available per layer. The sheet model is
+the classical 2.5D treatment: one RWG current sheet per metal with the
+two-sided skin-effect surface impedance, the right default for thin metals.
+The boxed model treats each conductor as a closed thick box with the
+conductor interior entering through the slab internal-impedance two-port.
+Output is standard Touchstone (S, Y, Z) plus the extracted device metrics
+engineers actually design against: L, Q, coupling.
+
+Validation runs against closed-form analytics, physical invariants (Lorentz
+reciprocity, mutual-sign checks, skin-effect rise), and an independent
+reference solver on controlled cases before any device claim is made. The
+evaluation report is fully auto-generated from the same pipeline, so every
+number is reproducible.
+
 ## Built for sweeps
 
 Zero-external-dependency pure Rust with a Python API: lightweight, installs in

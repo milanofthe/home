@@ -11,13 +11,22 @@ cta1: [ Open RapidMesh -> ]|https://mesh.rapidpassives.org
 ---
 
 RapidMesh is a tetrahedral mesh generator for 3D electromagnetic FEM with a
-first-class 2D path for 2.5D MoM solvers, in pure Rust. The pipeline: solid
-primitives (box, cylinder, sphere, cone, torus, prism, sweep, loft) assemble
-into a tagged complex; exact-arithmetic CSG booleans (exact predicates, no
-float snapping) produce a non-manifold B-rep with exactly conforming material
-interfaces; restricted-Delaunay refinement meshes the volume; sliver
-exudation, edge removal, and ODT smoothing optimize the minimal dihedral
-angle. No tet straddles a material interface, watertight by construction.
+first-class 2D path for 2.5D MoM solvers, in pure Rust. Solid primitives
+(box, cylinder, sphere, cone, torus, prism, sweep, loft) assemble into a
+tagged complex; exact-arithmetic CSG booleans (exact predicates, no float
+snapping) produce a non-manifold B-rep with exactly conforming material
+interfaces.
+
+Meshing is dimensionally hierarchical: corners, then edges, then faces, then
+the volume, freezing each level before the next consumes it. Within every
+dimension, error-driven adaptive sampling combines with variational point
+relaxation for quality: sizing-weighted Lloyd relaxation on edges and faces,
+optimal-Delaunay relaxation in the volume, plus sliver exudation and edge
+removal targeting the minimal dihedral angle. The frozen surface
+triangulation is a hard constraint on the volume Delaunay, which is what
+makes the boundary watertight by construction. The sizing and chart formulae
+for every curve and surface modality are derived with a computer-algebra
+system, not approximated ad hoc.
 
 ![Dielectric resonator|right|46x14](/images/rapidmesh-resonator.png)
 

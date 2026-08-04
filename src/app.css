@@ -311,6 +311,23 @@
 	color: #6b8afd;
 }
 
+/* Code block syntax highlighting (colors reused from the project palette) */
+.code-grid-code-kw {
+	color: #4e95d9;
+}
+
+.code-grid-code-str {
+	color: #6fdc8e;
+}
+
+.code-grid-code-com {
+	color: rgba(240, 239, 233, 0.35);
+}
+
+.code-grid-code-num {
+	color: #6b8afd;
+}
+
 .code-grid-heading-whatsmytraffic {
 	color: #6fdc8e;
 	font-weight: bold;

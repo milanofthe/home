@@ -304,25 +304,6 @@ function buildProjectsSection(stats: GitHubStats): ContentSection {
 	return { id: 'projects', fillerLinesBefore: 5, regions };
 }
 
-// Latest notes teaser: freshness signal on the landing page, one strong link
-// to /notes (titles are plain text — the single CTA is the click target).
-function buildNotesSection(latest: { date: string; title: string }[]): ContentSection {
-	const c = contentData.notes;
-	const regions: ContentRegion[] = [
-		sectionHeading(c.heading),
-		spacer(),
-		paragraph(c.intro),
-		spacer()
-	];
-	for (const n of latest) {
-		regions.push(linkLine(n.date));
-		regions.push(paragraph(n.title));
-		regions.push(spacer());
-	}
-	regions.push({ type: 'cta', lines: ['[ all notes -> ]'], align: 'center' });
-	return { id: 'notes', fillerLinesBefore: 5, regions };
-}
-
 function buildContactSection(): ContentSection {
 	const c = contentData.contact;
 	return {
@@ -372,8 +353,6 @@ function buildFooterSection(): ContentSection {
 
 // --- Main builder ---
 
-import { notes as allNotes } from '$lib/content';
-
 export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 	const ps = stats?.pathsim ?? defaultStats.current.pathsim;
 	const pv = stats?.pathview ?? defaultStats.current.pathview ?? { stars: 0, forks: 0 };
@@ -385,7 +364,6 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 		buildHeroSection(),
 		buildPathsSection(),
 		buildProjectsSection(resolvedStats),
-		buildNotesSection(allNotes.slice(0, 3)),
 		buildContactSection(),
 		buildFooterSection()
 	];

@@ -1,7 +1,7 @@
 // Article grid engine: the /lab prototype's layout primitives, extracted and
 // parametrized. Builds the same Cell[][] the landing grid uses, but with an
 // article flow: title, paragraphs with inline links, floated framed images,
-// code blocks. Used by /stack/<project>, /notes/<slug> and the other subpages.
+// code blocks. Used by the /stack/<project> pages and the other subpages.
 
 import { FILLER_SOURCE } from '$lib/data/filler-source';
 import imageDims from '$lib/data/image-dims.json';
@@ -436,14 +436,21 @@ export class ArticleGrid {
 		this.row = r + 1;
 	}
 
-	// Code block in a terminal frame; long lines wrap hard at the inner width.
+	// Code block in a terminal frame with syntax highlighting; long lines
+	// wrap hard at the inner width. The fence label doubles as the language.
 	codeBlock(code: string, label = '') {
 		const rawLines = code.replace(/\t/g, '    ').split('\n');
 		const innerW = this.contentWidth - 4;
-		const lines: string[] = [];
+		const lines: { text: string; types: CellType[] }[] = [];
 		for (const l of rawLines) {
-			if (l.length <= innerW) lines.push(l);
-			else for (let i = 0; i < l.length; i += innerW) lines.push(l.slice(i, i + innerW));
+			const types = highlightLine(l, label);
+			if (l.length <= innerW) {
+				lines.push({ text: l, types });
+			} else {
+				for (let i = 0; i < l.length; i += innerW) {
+					lines.push({ text: l.slice(i, i + innerW), types: types.slice(i, i + innerW) });
+				}
+			}
 		}
 		const w = this.contentWidth;
 		const r0 = this.row;
@@ -454,8 +461,8 @@ export class ArticleGrid {
 			this.setCell(r, this.startCol + w - 1, '|', this.accent.frame);
 			for (let c = this.startCol + 1; c < this.startCol + w - 1; c++) {
 				const idx = c - this.startCol - 2;
-				const ch = idx >= 0 && idx < l.length ? l[idx] : ' ';
-				this.setCell(r, c, ch, ch === ' ' ? 'empty' : 'content');
+				const ch = idx >= 0 && idx < l.text.length ? l.text[idx] : ' ';
+				this.setCell(r, c, ch, ch === ' ' ? 'empty' : (l.types[idx] ?? 'content'));
 			}
 		});
 		this.placeLine(r0 + lines.length + 1, this.startCol, '+' + '-'.repeat(w - 2) + '+', this.accent.frame);
@@ -529,6 +536,105 @@ export class ArticleGrid {
 			rows: this.grid.length
 		};
 	}
+}
+
+// --- Minimal syntax highlighting for code blocks ---
+// Per-character cell types for one line. Handles comments, strings, numbers,
+// and per-language keyword sets; everything else stays 'content'.
+
+const CODE_KEYWORDS: Record<string, Set<string>> = {
+	python: new Set([
+		'def', 'class', 'import', 'from', 'return', 'for', 'in', 'if', 'elif',
+		'else', 'while', 'with', 'as', 'lambda', 'None', 'True', 'False', 'not',
+		'and', 'or', 'try', 'except', 'raise', 'yield', 'pass', 'global',
+		'assert', 'del', 'async', 'await'
+	]),
+	rust: new Set([
+		'fn', 'let', 'mut', 'use', 'pub', 'struct', 'impl', 'enum', 'match',
+		'for', 'in', 'if', 'else', 'return', 'mod', 'crate', 'self', 'Self',
+		'const', 'static', 'trait', 'where', 'loop', 'while', 'break',
+		'continue', 'unsafe', 'as', 'dyn', 'ref', 'move', 'async', 'await',
+		'true', 'false'
+	]),
+	javascript: new Set([
+		'const', 'let', 'var', 'function', 'return', 'for', 'of', 'in', 'if',
+		'else', 'while', 'class', 'new', 'import', 'from', 'export', 'default',
+		'async', 'await', 'true', 'false', 'null', 'undefined', 'this'
+	])
+};
+CODE_KEYWORDS.ts = CODE_KEYWORDS.javascript;
+CODE_KEYWORDS.js = CODE_KEYWORDS.javascript;
+CODE_KEYWORDS.py = CODE_KEYWORDS.python;
+
+const COMMENT_PREFIX: Record<string, string> = {
+	python: '#', py: '#', bash: '#', sh: '#', yaml: '#', toml: '#',
+	rust: '//', javascript: '//', ts: '//', js: '//', c: '//', cpp: '//'
+};
+
+function highlightLine(line: string, lang: string): CellType[] {
+	const types: CellType[] = new Array(line.length).fill('content');
+	const keywords = CODE_KEYWORDS[lang];
+	const commentPrefix = COMMENT_PREFIX[lang];
+
+	let i = 0;
+	let commentStart = -1;
+	while (i < line.length) {
+		const ch = line[i];
+		// string literal (single line, naive)
+		if (ch === '"' || ch === "'" || ch === '`') {
+			const quote = ch;
+			let j = i + 1;
+			while (j < line.length && line[j] !== quote) {
+				if (line[j] === '\\') j++;
+				j++;
+			}
+			for (let k = i; k <= Math.min(j, line.length - 1); k++) types[k] = 'code-str';
+			i = j + 1;
+			continue;
+		}
+		if (commentPrefix && line.startsWith(commentPrefix, i)) {
+			commentStart = i;
+			break;
+		}
+		// html comments regardless of prefix table
+		if (lang === 'html' && line.startsWith('<!--', i)) {
+			commentStart = i;
+			break;
+		}
+		i++;
+	}
+	if (commentStart >= 0) {
+		for (let k = commentStart; k < line.length; k++) types[k] = 'code-com';
+	}
+
+	const codeEnd = commentStart >= 0 ? commentStart : line.length;
+	const segment = line.slice(0, codeEnd);
+
+	// numbers
+	for (const m of segment.matchAll(/\b\d+(\.\d+)?([eE][+-]?\d+)?\b/g)) {
+		if (types[m.index!] !== 'content') continue;
+		for (let k = m.index!; k < m.index! + m[0].length; k++) types[k] = 'code-num';
+	}
+
+	// keywords
+	if (keywords) {
+		for (const m of segment.matchAll(/[A-Za-z_][A-Za-z0-9_]*/g)) {
+			if (!keywords.has(m[0])) continue;
+			if (types[m.index!] !== 'content') continue;
+			for (let k = m.index!; k < m.index! + m[0].length; k++) types[k] = 'code-kw';
+		}
+	}
+
+	// html tags: color tag names as keywords
+	if (lang === 'html') {
+		for (const m of segment.matchAll(/<\/?([A-Za-z][A-Za-z0-9-]*)/g)) {
+			for (let k = m.index!; k < m.index! + m[0].length; k++) {
+				if (types[k] === 'content') types[k] = 'code-kw';
+			}
+		}
+	}
+
+	return types;
 }
 
 // Split a segment list into two lists at a character offset of the joined

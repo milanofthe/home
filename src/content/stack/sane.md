@@ -47,11 +47,12 @@ and the standard source waveforms (SIN, PULSE, EXP, PWL). Devices cover the
 classic set: diodes, MOSFETs, BJTs (Gummel-Poon), JFETs, MESFETs, controlled
 sources and switches, behavioral sources, and transmission lines.
 
-Compact models are the differentiator: Verilog-A modules (BSIM, PSP, HICUM,
-VBIC, EKV, ...) are compiled natively onto the same DAG. Every parameter stays
-exposed to the autodiff, even in harmonic balance. Temperature is a first-class
-symbolic global, so .temp sweeps are physical and d(metric)/dT is exact. Noise
-sources (thermal, shot, flicker, Verilog-A noise) are summed in one registry.
+Compact models are the differentiator: a native Verilog-A frontend lowers
+BSIM4, PSP, HICUM, VBIC, and EKV onto the same DAG, with no OSDI binary and
+no generated code. Every parameter stays exposed to the autodiff, even in
+harmonic balance. Temperature is a first-class symbolic global, so .temp
+sweeps are physical and d(metric)/dT is exact. Noise sources (thermal, shot,
+flicker, Verilog-A noise) are summed in one registry.
 
 ![Symbolic graph|left|46x14](/screenshots/sane-graph.png)
 
@@ -59,9 +60,17 @@ sources (thermal, shot, flicker, Verilog-A noise) are summed in one registry.
 
 Rust core: hash-consed symbolic DAG, autodiff, threaded sparse LU (via
 [RSLAB](/stack/rslab/)), optional Cranelift JIT. Python binding via PyO3, or
-embed the whole engine in Rust with no Python at all. Validated against
-ngspice and Xyce; scales past 100k parameters on the IBM power-grid
-benchmarks.
+embed the whole engine in Rust with no Python at all.
+
+## Validation
+
+Every claim is checked against independent references on real circuits: more
+than sixty decks spanning RC networks, textbook transistor stages, the uA741,
+production SKY130 AnalogGym operational amplifiers, and IBM power grids past
+100k nodes. DC operating points agree with ngspice within a millivolt across
+the corpus, harmonic balance is checked against Xyce, and the symbolic
+transfer functions against Lcapy. Cold DC solves run in 0.015 to 2.5 ms at
+the raw engine call.
 
 ## History
 

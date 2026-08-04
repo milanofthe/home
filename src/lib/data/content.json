@@ -51,7 +51,7 @@
 						"paragraphs": [
 							"A drop-in Rust replacement for PathSim. Same Python API: swap the import and go. Python callbacks are traced into an SSA graph, symbolically differentiated, and compiled to native code at runtime."
 						],
-						"metrics": "50-100x faster / 21 ODE solvers / JIT + autodiff / FMI 3.0 / C99 code generation for embedded targets",
+						"metrics": "191x median per-step speedup (55-system benchmark catalog) / 21 ODE solvers / JIT + autodiff / FMI 3.0 / C99 code generation for embedded targets",
 						"statsText": "fast.pathsim.org / licensing: info@pathsim.org"
 					},
 					{
@@ -146,10 +146,6 @@
 				]
 			}
 		]
-	},
-	"notes": {
-		"heading": "NOTES",
-		"intro": "Engineering notes on numerics, solvers, and scientific UI."
 	},
 	"contact": {
 		"heading": "GET IN TOUCH",

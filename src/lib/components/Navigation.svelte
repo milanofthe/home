@@ -20,8 +20,6 @@
 	}
 
 	const navLinks = [
-		{ href: '/stack/', label: 'Stack' },
-		{ href: '/notes/', label: 'Notes' },
 		{ href: '/consulting/', label: 'Consulting' },
 		{ href: '/about/', label: 'About' },
 		// Every page renders the contact block at the bottom with a #contact

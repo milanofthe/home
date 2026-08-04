@@ -84,7 +84,7 @@
 		});
 	}
 
-	// Rebuild when the build callback changes (e.g. a tag filter on /notes).
+	// Rebuild when the build callback changes.
 	let lastBuild: typeof build | null = null;
 	$effect(() => {
 		const b = build;

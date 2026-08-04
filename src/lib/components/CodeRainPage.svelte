@@ -128,9 +128,8 @@
 		{ text: '[ Consulting ]', types: ['cta'], href: '/consulting/' },
 		{ text: '[ View the Stack ]', types: ['cta'], scrollTo: 'projects' },
 		{ text: '[ more about consulting -> ]', types: ['cta'], href: '/consulting/' },
-		{ text: '[ explore the stack -> ]', types: ['cta'], href: '/stack/' },
+		{ text: '[ explore the stack -> ]', types: ['cta'], scrollTo: 'projects' },
 		{ text: '[ full story -> ]', types: ['cta'], href: '/about/' },
-		{ text: '[ all notes -> ]', types: ['cta'], href: '/notes/' },
 		{ text: '[ SEND MESSAGE -> ]', types: ['cta'], action: 'submit-form' },
 		...readMoreTargets,
 		{ text: 'Impressum', types: ['footer'], href: '/impressum/' },
@@ -425,24 +424,20 @@
 	<section id="paths">
 		<h2>What I do</h2>
 		<p><a href="/consulting/">Consulting</a>: custom solvers and engineering tools, built and integrated end to end. Scoped into weekly sprints and multi-week projects.</p>
-		<p><a href="/stack/">Products &amp; licensing</a>: FastSim, SANE, and RapidMoM are source-available, free for academia, and commercially licensed with support and integration.</p>
+		<p><a href="/#projects">Products &amp; licensing</a>: FastSim, SANE, and RapidMoM are source-available, free for academia, and commercially licensed with support and integration.</p>
 		<p><a href="/about/">About</a>: simulation engineer, open-source author of PathSim.</p>
 	</section>
 	<section id="projects">
 		<h2>The Stack</h2>
 		<p>One vertically integrated simulation stack for electronics: from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.</p>
 		<h3>Systems</h3>
-		<p><a href="/stack/pathsim/">PathSim</a>: pure-Python system simulation framework, MIT open source, JOSS-published. <a href="/stack/fastsim/">FastSim</a>: drop-in Rust replacement, 50-100x faster, JIT, autodiff, FMI 3.0, C99 code generation. <a href="/stack/pathview/">PathView</a>: browser-based visual model editor.</p>
+		<p><a href="/stack/pathsim/">PathSim</a>: pure-Python system simulation framework, MIT open source, JOSS-published. <a href="/stack/fastsim/">FastSim</a>: drop-in Rust replacement with 191x median per-step speedup, JIT, autodiff, FMI 3.0, C99 code generation. <a href="/stack/pathview/">PathView</a>: browser-based visual model editor.</p>
 		<h3>Circuits</h3>
 		<p><a href="/stack/sane/">SANE</a>: Symbolic Analog Network Engine. Symbolic and numeric circuit analysis: DC, transient, AC, poles/zeros, noise, harmonic balance, exact sensitivities. SPICE and Verilog-A frontends. Validated against ngspice and Xyce.</p>
 		<h3>Fields</h3>
 		<p><a href="/stack/rapidmom/">RapidMoM</a>: 2.5D Method-of-Moments solver for planar RF passives on layered substrates. <a href="/stack/rapidfem/">RapidFEM</a>: Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="/stack/rapidpassives/">RapidPassives</a>: browser-based RFIC passive layout generation.</p>
 		<h3>Foundations</h3>
 		<p><a href="/stack/rslab/">RSLAB</a>: sparse direct solver in pure Rust. <a href="/stack/rapidmesh/">RapidMesh</a>: mesh generator for electromagnetic FEM and MoM.</p>
-	</section>
-	<section id="notes">
-		<h2>Notes</h2>
-		<p><a href="/notes/">Engineering notes</a> on numerics, solvers, and scientific UI.</p>
 	</section>
 	<section id="contact">
 		<h2>Get in Touch</h2>

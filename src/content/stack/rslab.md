@@ -31,6 +31,23 @@ time. On MNA-like circuit matrices the KLU path factors 5-12x faster than the
 general LU with up to 5.7x less fill, and same-pattern frequency sweeps run
 10-40x faster end to end.
 
+## Benchmarks
+
+All cross-solver figures come from one benchmark engine over a
+complete-distribution corpus: structured-grid generators (curl-curl Maxwell,
+shifted Helmholtz, Stokes/KKT saddle-point, convection-diffusion, BEM/MoM
+near-field kernels) plus the complex SuiteSparse matrices, measured in a
+single run so the ratios carry no run-to-run drift. Geomean over 63 sizes per
+path: 6.7x faster factor than faer on the symmetric class and 2.7x on the
+unsymmetric class with less peak memory on LDLT, and within 5.1-5.6x of MKL
+PARDISO. On factor time the LU heuristic pick scales flatter than PARDISO, so
+the gap narrows with size.
+
+Where RSLAB factors, it is accurate: 24 of 31 complex SuiteSparse matrices
+land below 1e-8 relative residual, matching PARDISO and ahead of faer. The
+never-fail static-pivot factor used as a GMRES preconditioner covers most of
+the remaining gap.
+
 ![A-priori memory estimate|left|46x14](/images/rslab-memory-estimate.png)
 
 ## Deterministic and budgetable
@@ -50,5 +67,5 @@ rebuilt into a full sparse direct solver, driven directly by what
 [SANE](/stack/sane/),
 [RapidFEM](/stack/rapidfem/), and [RapidMoM](/stack/rapidmom/) need from
 their linear algebra. The repository ships a technical report that derives
-the algorithms and carries the full evaluation; the headline numbers are
-summarized in [the RSLAB benchmark note](/notes/rslab-vs-faer-mkl-pardiso/).
+the algorithms and carries the full evaluation; every benchmark reruns from
+the repository with one command.

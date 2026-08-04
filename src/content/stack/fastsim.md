@@ -11,8 +11,9 @@ cta2: [ Read the docs -> ]|https://fast.pathsim.org
 ---
 
 FastSim is a Rust reimplementation of [PathSim](/stack/pathsim/) with an
-identical Python API. Your existing model runs 50-100x faster by changing one
-line:
+identical Python API. Across a 55-system benchmark catalog the median
+measured per-step speedup over PathSim is 191x, and your existing model gets
+it by changing one line:
 
 ```python
 # from pathsim import Simulation, Connection
@@ -29,7 +30,8 @@ no toolchain on the user's machine, no model rewrite.
 
 - JIT compiler: Python functions traced into a flat-tape IR with common subexpression elimination, constant folding, strength reduction, and FMA detection
 - Symbolic forward-mode automatic differentiation for analytical Jacobians
-- 21 ODE solvers, explicit and implicit, adaptive and fixed-step, plus standalone use: RKDP54.integrate(func, x0, time_end=50) with automatic JIT
+- 21 ODE solvers, explicit and implicit, adaptive and fixed-step, with a preconditioned-Anderson implicit solve, periodic steady state, and collocation boundary-value problems
+- Standalone solver use: RKDP54.integrate(func, x0, time_end=50) with automatic JIT
 - jit(func) and jacobian(func) exposed as standalone JAX-style transformations
 - Zero-copy data paths, flat DAG evaluation, dynamic block sizing
 - Event handling, hierarchical subsystems, and mutable parameters, exactly like PathSim
@@ -38,10 +40,17 @@ no toolchain on the user's machine, no model rewrite.
 
 ## Beyond speed
 
-FastSim reaches where a Python engine cannot: FMI 3.0 export for
-co-simulation, and C99 code generation for embedded targets. The generated C
-is verified software-in-the-loop: sim.verify_c() compiles it locally and pins
-it against the reference engine, sample by sample.
+FastSim reaches where a Python engine cannot: FMI 3.0 import and export
+for co-simulation, WebAssembly deployment, and dependency-free C99 code
+generation for embedded targets. The generated C is verified
+software-in-the-loop: sim.verify_c() compiles it locally and pins it against
+the reference engine, sample by sample.
+
+The engine ships with a technical report that states the theory and the
+implementation together, and a benchmark suite that reruns every claim with
+one command per study: fixed-order integrators are verified to converge at
+their theoretical orders, accuracy is measured against reference solutions,
+and comparisons cover SciPy, CasADi, and DifferentialEquations.jl.
 
 ## History
 

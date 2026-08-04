@@ -3,7 +3,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import ArticlePage from '$lib/components/ArticlePage.svelte';
 	import { ArticleGrid, type ArticleResult } from '$lib/layout/articleLayout';
-	import { getStackPage, notesFor } from '$lib/content';
+	import { getStackPage } from '$lib/content';
 	import { blocksToHtml } from '$lib/content/markdown';
 	import { renderBlocks } from '$lib/content/render';
 	import { BOOKING_URL, CONTACT_EMAIL } from '$lib/config';
@@ -11,7 +11,6 @@
 	let { data } = $props();
 
 	let page = $derived(getStackPage(data.slug)!);
-	let related = $derived(notesFor(data.slug));
 
 	// frontmatter link format: "label|url"
 	function fmLink(value: string | undefined): { label: string; href: string } | null {
@@ -24,7 +23,7 @@
 		const g = new ArticleGrid(cols, page.accent, 6, cellRatio);
 		const fm = page.doc.frontmatter;
 
-		g.linkLine('[ <- the stack ]', '/stack/', 'link');
+		g.linkLine('[ <- back ]', '/#projects', 'link');
 		g.spacer();
 		g.title(page.title, page.tagline);
 		g.metaLine(`${page.group}  /  ${fm.license ?? ''}`);
@@ -37,17 +36,6 @@
 		const repo = fmLink(fm.repo);
 		if (site) g.linkLine(site.label, site.href);
 		if (repo) g.linkLine(repo.label, repo.href);
-
-		// related notes
-		if (related.length > 0) {
-			g.spacer();
-			g.sectionHeading('notes');
-			for (const n of related) {
-				g.metaLine(`${n.date}  /  ${n.readingMinutes} min read`);
-				g.paragraph([{ text: n.title, href: `/notes/${n.slug}/` }]);
-				g.spacer();
-			}
-		}
 
 		// Project CTAs, then the site-wide contact block
 		g.spacer();
@@ -74,13 +62,5 @@
 		<p>{page.tagline}</p>
 		<!-- eslint-disable-next-line svelte/no-at-html-tags — own build-time content -->
 		{@html blocksToHtml(page.doc.blocks)}
-		{#if related.length > 0}
-			<h2>Notes</h2>
-			<ul>
-				{#each related as n}
-					<li><a href={`/notes/${n.slug}/`}>{n.title}</a></li>
-				{/each}
-			</ul>
-		{/if}
 	{/snippet}
 </ArticlePage>
