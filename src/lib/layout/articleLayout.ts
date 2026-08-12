@@ -94,20 +94,23 @@ export interface TextSegment {
 	accent?: AccentKey; // link color override (defaults to article accent)
 }
 
+// A framed artifact attached to a timeline entry.
+export interface TimelineImage {
+	src: string;
+	label: string;
+	w?: number;
+	href?: string;
+	fit?: 'cover' | 'contain';
+	background?: string;
+}
+
 // One block on the vertical timeline (see ArticleGrid.timeline).
 export interface TimelineEntry {
-	period: string; // label in the year column, e.g. '2015'
+	period: string; // label in the year column, e.g. '2015-2021'
 	heading: string;
 	accent?: AccentKey; // heading and connector color (defaults to article accent)
 	body?: (string | TextSegment[])[];
-	image?: {
-		src: string;
-		label: string;
-		w?: number;
-		href?: string;
-		fit?: 'cover' | 'contain';
-		background?: string;
-	};
+	images?: TimelineImage[];
 	links?: { text: string; href: string }[];
 }
 
@@ -366,27 +369,34 @@ export class ArticleGrid {
 		}
 	}
 
-	// Vertical timeline: a year column, a continuous rail of '|' cells, and
-	// one block per entry (heading, paragraphs, optional framed image, optional
-	// link row). Same ASCII vocabulary as the tile frames on the landing page.
+	// Vertical timeline: a continuous rail of '|' cells with the year column,
+	// framed images to the LEFT of the rail and the entry text to the RIGHT.
+	// Same ASCII vocabulary as the tile frames on the landing page.
 	//
-	//   2015 -+  b.sc. electrical engineering
-	//         |  TU Braunschweig ...
-	//         |
-	//   2019 -+  internship, volkswagen
+	//   +- artifact -----+  2026 -+  one stack
+	//   |                |        |  The full roundtrip ...
+	//   +----------------+        |  [ view the stack -> ]
+	//                             |
+	//                     2025 -+  open source
 	//
+	// On narrow grids there is no room for a side column; images stack below
+	// their entry text instead and the rail moves to the left edge.
 	timeline(entries: TimelineEntry[]) {
 		const periodW = Math.max(...entries.map((e) => e.period.length));
-		const railCol = this.startCol + periodW + 2;
+		const side = this.twoCol;
+		const imgColW = side ? Math.min(48, Math.floor(this.contentWidth * 0.42)) : 0;
+		const yearCol = this.startCol + (side ? imgColW + 2 : 0);
+		const railCol = yearCol + periodW + 2;
 		const contentCol = railCol + 3;
-		const contentW = this.contentWidth - (contentCol - this.startCol);
+		const contentW = this.startCol + this.contentWidth - contentCol;
 		const railStart = this.row;
 
 		for (const entry of entries) {
 			const entryAccent = entry.accent ? accentTypes(entry.accent) : this.accent;
+			const entryStart = this.row;
 
 			// Year, connector and heading share the first row of the entry.
-			this.placeLine(this.row, this.startCol, entry.period.padStart(periodW), 'link');
+			this.placeLine(this.row, yearCol, entry.period.padStart(periodW), 'link');
 			this.placeLine(this.row, railCol - 1, '-+', entryAccent.heading);
 			for (const line of ArticleGrid.wordWrap(entry.heading, contentW)) {
 				this.placeLine(this.row, contentCol, line, entryAccent.heading);
@@ -400,15 +410,18 @@ export class ArticleGrid {
 				this.row += lines + 1;
 			}
 
-			if (entry.image) {
-				const fw = Math.min(entry.image.w ?? 44, contentW);
-				const rows = this.imageRows(entry.image.src, fw - 2, 12);
-				const consumed = this.drawFrame(this.row, contentCol, fw, rows, entry.image.label, entry.image.src, {
-					href: entry.image.href,
-					fit: entry.image.fit,
-					background: entry.image.background
-				});
-				this.row += consumed + 1;
+			// Stacked fallback: images sit below the text, full text width.
+			if (!side) {
+				for (const img of entry.images ?? []) {
+					const fw = Math.min(img.w ?? 44, contentW);
+					const rows = this.imageRows(img.src, fw - 2, 12);
+					const consumed = this.drawFrame(this.row, contentCol, fw, rows, img.label, img.src, {
+						href: img.href,
+						fit: img.fit,
+						background: img.background
+					});
+					this.row += consumed + 1;
+				}
 			}
 
 			if (entry.links?.length) {
@@ -425,15 +438,37 @@ export class ArticleGrid {
 				}
 				this.row += 2;
 			}
+
+			// Side images: left of the rail, the first one top-aligned with the
+			// heading, further ones stacked below it. Right-aligned against the
+			// rail so they visibly hang off the line. The entry is as tall as
+			// the taller of text and image stack.
+			if (side && entry.images?.length) {
+				let imgRow = entryStart;
+				for (const img of entry.images) {
+					const fw = Math.min(img.w ?? imgColW, imgColW);
+					const rows = this.imageRows(img.src, fw - 2, 12);
+					const imgCol = this.startCol + imgColW - fw;
+					const consumed = this.drawFrame(imgRow, imgCol, fw, rows, img.label, img.src, {
+						href: img.href,
+						fit: img.fit,
+						background: img.background
+					});
+					imgRow += consumed + 1;
+				}
+				this.row = Math.max(this.row, imgRow);
+			}
+
+			// Breathing room between entries.
+			this.row += 1;
 		}
 
 		// The rail: every row from the first entry down to the end of the last
 		// one, except where a connector already sits.
-		for (let r = railStart; r < this.row - 1; r++) {
+		for (let r = railStart; r < this.row - 2; r++) {
 			this.ensureRow(r);
 			if (this.grid[r][railCol].char !== '+') this.setCell(r, railCol, '|', 'link');
 		}
-		this.row += 1;
 	}
 
 	// List item with a "- " bullet, wrapped with hanging indent.

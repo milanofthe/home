@@ -7,87 +7,20 @@
 	import content from '$lib/data/content.json';
 	import { accentFor, paragraphText, toSegments, type ProseParagraph } from '$lib/content/prose';
 
-	// The CV as a timeline: dates and artifacts, where the story above is the
-	// narrative. Old GitHub projects appear where they actually happened.
+	// The CV as a timeline, newest first: education, positions and the
+	// projects of each era, with artifacts pulled from the repos of the time.
 	const TIMELINE: TimelineEntry[] = [
 		{
-			period: '2014',
-			heading: 'climbing coach, DAV Braunschweig',
+			period: '2026',
+			heading: 'one stack',
+			accent: 'sane',
 			body: [
-				'Led the competition climbing team from entry level to international level, until 2021. First lesson in building things over years.'
-			]
-		},
-		{
-			period: '2015',
-			heading: 'electrical engineering, TU Braunschweig',
-			body: [
-				'B.Sc. in electrical engineering. From 2018 on teaching assistant: weekly tutorials on linear dynamical systems and circuit theory for 50+ students, the material that became the throughline of everything since.'
-			]
-		},
-		{
-			period: '2019',
-			heading: 'internship, Volkswagen AG',
-			body: [
-				'Low-voltage and redundant power supply systems in Wolfsburg: concept, schematic, hardware, ASIL considerations.'
-			]
-		},
-		{
-			period: '2021',
-			heading: "master's + research assistant, CMOS design",
-			body: [
-				'M.Sc. in electrical engineering at TU Braunschweig, with honors. Research assistant at the Institut fuer CMOS Design: high-frequency measurement calibration, verification hardware, teaching the circuit theory seminar.',
-				'And in the summer: the 120-page LaTeX manuscript on linear system theory, written to help out a friend.'
+				'The full roundtrip back through circuits and fields: RapidFEM, RapidMesh, RapidMoM, RSLAB, SANE, FastSim. One architecture, SSA-style compute graphs, Rust cores, Python APIs, browser interfaces.'
 			],
-			image: {
-				src: '/images/timeline/lti-manuscript.png',
-				label: 'the manuscript',
-				w: 52,
-				href: 'https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript',
-				fit: 'contain',
-				background: '#ffffff'
-			},
-			links: [{ text: '[ lti manuscript ]', href: 'https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript' }]
-		},
-		{
-			period: '2022',
-			heading: 'first numerical side projects',
-			body: [
-				'The early experiments went on GitHub: an interactive 2D electromagnetic FDTD simulation environment, a fast relaxed vector fitting implementation for MIMO systems, an interactive Bode plot tool.'
+			images: [
+				{ src: '/screenshots/sane-graph.png', label: 'sane symbolic graph', href: '/stack/sane/' }
 			],
-			image: { src: '/images/timeline/fdtd.png', label: 'fdtd.png', w: 40 },
-			links: [
-				{ text: '[ 2d fdtd ]', href: 'https://github.com/milanofthe/Interactive_2D_FDTD' },
-				{ text: '[ vectorfitting ]', href: 'https://github.com/milanofthe/Vectorfitting' },
-				{ text: '[ bode plot ]', href: 'https://github.com/milanofthe/Interactive_BodePlot' }
-			]
-		},
-		{
-			period: '2023',
-			heading: 'PhD + research associate, CMOS design',
-			accent: 'rapidpassives',
-			body: [
-				'External PhD program at TU Ilmenau, research associate at the Institut fuer CMOS Design: numerical modeling of electrochemical sensors for analog circuit design, bio-impedance spectroscopy hardware and software, and an EDA pipeline for RFIC passives, validated in silicon for cryogenic quantum applications. That pipeline became RapidPassives.'
-			],
-			image: {
-				src: '/images/timeline/rapidpassives-tkinter.png',
-				label: 'the pipeline, back then',
-				w: 46,
-				href: '/stack/rapidpassives/'
-			},
-			links: [{ text: '[ rapidpassives ]', href: '/stack/rapidpassives/' }]
-		},
-		{
-			period: '2024',
-			heading: 'PathSim',
-			accent: 'pathsim',
-			body: [
-				'Started in February as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework. The same year: a minimalistic harmonic balance framework and a symbolic circuit analysis tool, the seed of what is now SANE.'
-			],
-			image: { src: '/images/timeline/harmonicbalance.png', label: 'harmonicbalance.png', w: 44, fit: 'contain', background: '#ffffff' },
-			links: [
-				{ text: '[ pathsim ]', href: 'https://github.com/pathsim/pathsim' },
-				{ text: '[ harmonicbalance ]', href: 'https://github.com/milanofthe/harmonicbalance' }
-			]
+			links: [{ text: '[ view the stack -> ]', href: '/#projects' }]
 		},
 		{
 			period: '2025',
@@ -96,31 +29,132 @@
 			body: [
 				'PathSim opened in early 2025 as an open alternative to Simulink. JOSS-published, adopted for nuclear fusion fuel-cycle modeling at the MIT Plasma Science & Fusion Center and by JSBSim for flight dynamics. PathView, the browser-based visual editor, followed.'
 			],
-			image: {
-				src: '/screenshots/view-pathsim-org.png',
-				label: 'view.pathsim.org',
-				w: 46,
-				href: '/stack/pathview/'
-			},
+			images: [
+				{ src: '/screenshots/view-pathsim-org.png', label: 'view.pathsim.org', href: '/stack/pathview/' }
+			],
 			links: [
 				{ text: '[ pathsim.org ]', href: 'https://pathsim.org' },
 				{ text: '[ pathview ]', href: '/stack/pathview/' }
 			]
 		},
 		{
-			period: '2026',
-			heading: 'one stack',
-			accent: 'sane',
+			period: '2024',
+			heading: 'PathSim',
+			accent: 'pathsim',
 			body: [
-				'The full roundtrip back through circuits and fields: RapidFEM, RapidMesh, RapidMoM, RSLAB, SANE, FastSim. One architecture, SSA-style compute graphs, Rust cores, Python APIs, browser interfaces.'
+				'Started in February as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework. The same year: a minimalistic harmonic balance framework and a symbolic circuit analysis tool, the seed of what is now SANE.'
 			],
-			image: {
-				src: '/screenshots/sane-graph.png',
-				label: 'sane symbolic graph',
-				w: 46,
-				href: '/stack/sane/'
-			},
-			links: [{ text: '[ view the stack -> ]', href: '/#projects' }]
+			images: [
+				{
+					src: '/images/timeline/harmonicbalance.png',
+					label: 'harmonicbalance.png',
+					fit: 'contain',
+					background: '#ffffff',
+					href: 'https://github.com/milanofthe/harmonicbalance'
+				}
+			],
+			links: [
+				{ text: '[ pathsim ]', href: 'https://github.com/pathsim/pathsim' },
+				{ text: '[ harmonicbalance ]', href: 'https://github.com/milanofthe/harmonicbalance' }
+			]
+		},
+		{
+			period: '2023-2025',
+			heading: 'research associate, CMOS design',
+			accent: 'rapidpassives',
+			body: [
+				'Research associate at the Institut fuer CMOS Design, TU Braunschweig: numerical modeling of electrochemical sensors for analog circuit design, bio-impedance spectroscopy hardware and software, and an EDA pipeline for RFIC passives, validated in silicon for cryogenic quantum applications. That pipeline became RapidPassives.'
+			],
+			images: [
+				{
+					src: '/images/timeline/rapidpassives-tkinter.png',
+					label: 'the pipeline, back then',
+					href: '/stack/rapidpassives/'
+				}
+			],
+			links: [{ text: '[ rapidpassives ]', href: '/stack/rapidpassives/' }]
+		},
+		{
+			period: '2023-now',
+			heading: 'PhD candidate, TU Ilmenau',
+			body: ['External PhD program in electrical engineering.']
+		},
+		{
+			period: '2022-2023',
+			heading: 'first numerical side projects',
+			body: [
+				'The early experiments went on GitHub: an interactive 2D electromagnetic FDTD simulation environment, a fast relaxed vector fitting implementation for MIMO systems, an interactive Bode plot tool.'
+			],
+			images: [
+				{ src: '/images/timeline/fdtd.png', label: 'fdtd.png', href: 'https://github.com/milanofthe/Interactive_2D_FDTD' },
+				{
+					src: '/images/timeline/vf-freq.png',
+					label: 'vectorfitting',
+					fit: 'contain',
+					background: '#ffffff',
+					href: 'https://github.com/milanofthe/Vectorfitting'
+				}
+			],
+			links: [
+				{ text: '[ 2d fdtd ]', href: 'https://github.com/milanofthe/Interactive_2D_FDTD' },
+				{ text: '[ vectorfitting ]', href: 'https://github.com/milanofthe/Vectorfitting' },
+				{ text: '[ bode plot ]', href: 'https://github.com/milanofthe/Interactive_BodePlot' }
+			]
+		},
+		{
+			period: '2021-2023',
+			heading: "M.Sc. electrical engineering, TU Braunschweig",
+			body: ['Master of science with honors, thesis graded excellent.']
+		},
+		{
+			period: '2021-2023',
+			heading: 'research assistant, CMOS design',
+			body: [
+				'High-frequency measurement calibration methods, design and implementation of verification hardware, teaching the circuit theory seminar.'
+			]
+		},
+		{
+			period: '2021',
+			heading: 'the manuscript',
+			body: [
+				'The 120-page LaTeX manuscript on linear system theory, written over the summer to help out a friend.'
+			],
+			images: [
+				{
+					src: '/images/timeline/lti-manuscript.png',
+					label: 'the manuscript',
+					fit: 'contain',
+					background: '#ffffff',
+					href: 'https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript'
+				}
+			],
+			links: [{ text: '[ lti manuscript ]', href: 'https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript' }]
+		},
+		{
+			period: '2019-2020',
+			heading: 'internship, Volkswagen AG',
+			body: [
+				'Low-voltage and redundant power supply systems in Wolfsburg: concept, schematic, hardware, ASIL considerations.'
+			]
+		},
+		{
+			period: '2018-2021',
+			heading: 'teaching assistant, TU Braunschweig',
+			body: [
+				'Weekly independent tutorials on linear dynamical systems and circuit theory for 50+ students, the material that became the throughline of everything since.'
+			]
+		},
+		{
+			period: '2015-2021',
+			heading: 'B.Sc. electrical engineering, TU Braunschweig',
+			body: ['Bachelor of science, thesis graded excellent.']
+		},
+		{
+			period: '2014-2021',
+			heading: 'climbing coach, DAV Braunschweig',
+			body: [
+				'Led the competition climbing team from entry level to international level. First lesson in building things over years.'
+			]
 		}
 	];
 
