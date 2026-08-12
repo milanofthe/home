@@ -242,8 +242,11 @@ export class ArticleGrid {
 			for (const word of seg.text.split(' ')) {
 				if (word.length === 0) continue;
 				// Punctuation opening a segment attaches to the previous token
-				// (no space before ", an open-source library" after a link).
-				const glue = first && /^[,.;:!?)]/.test(word);
+				// (no space before ", an open-source library" after a link), and
+				// a segment right after an opening bracket attaches too (no space
+				// in "EM solvers (RapidFEM").
+				const prev = toks[toks.length - 1];
+				const glue = first && (/^[,.;:!?)]/.test(word) || (prev ? /[([{/]$/.test(prev.word) : false));
 				toks.push({ word, href: seg.href, label: seg.text, accent: seg.accent, glue });
 				first = false;
 			}

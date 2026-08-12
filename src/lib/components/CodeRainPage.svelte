@@ -8,6 +8,11 @@
 	import { BOOKING_URL } from '$lib/config';
 	import { submitContactForm } from '$lib/contactForm';
 	import { tileReveal as sharedTileReveal } from '$lib/tileReveal';
+	import content from '$lib/data/content.json';
+	import { paragraphText, type ProseParagraph } from '$lib/content/prose';
+
+	// Screen-reader / crawler copy for the sections the grid draws as characters.
+	const ABOUT_PARAGRAPHS = (content.about.paragraphs as ProseParagraph[]).map(paragraphText);
 
 	const STATS_URL = 'https://raw.githubusercontent.com/milanofthe/milanofthe.github.io/main/src/lib/data/github-stats.json';
 
@@ -130,7 +135,7 @@
 		{ text: '[ View the Stack ]', types: ['cta'], scrollTo: 'projects' },
 		{ text: '[ more about consulting -> ]', types: ['cta'], href: '/consulting/' },
 		{ text: '[ explore the stack -> ]', types: ['cta'], scrollTo: 'projects' },
-		{ text: '[ full story -> ]', types: ['cta'], href: '/about/' },
+		{ text: '[ full story -> ]', types: ['cta'], scrollTo: 'about' },
 		{ text: '[ SEND MESSAGE -> ]', types: ['cta'], action: 'submit-form' },
 		...readMoreTargets,
 		{ text: 'Impressum', types: ['footer'], href: '/impressum/' },
@@ -308,11 +313,9 @@
 		}
 
 		// Handle initial hash on load. Sections that moved to their own pages
-		// redirect so old /#about-style links keep working.
+		// redirect so old /#services-style links keep working.
 		const MOVED_SECTIONS: Record<string, string> = {
-			about: '/about/',
-			services: '/consulting/',
-			other: '/about/'
+			services: '/consulting/'
 		};
 		if (window.location.hash) {
 			const id = window.location.hash.replace('#', '');
@@ -342,6 +345,12 @@
 		<p><a href="/#projects">Products &amp; licensing</a>: FastSim, SANE, and RapidMoM are source-available, free for academia, and commercially licensed with support and integration.</p>
 		<p><a href="/about/">About</a>: simulation engineer, open-source author of PathSim.</p>
 	</section>
+	<section id="about">
+		<h2>Who am I</h2>
+		{#each ABOUT_PARAGRAPHS as p}
+			<p>{p}</p>
+		{/each}
+	</section>
 	<section id="projects">
 		<h2>The Stack</h2>
 		<p>One vertically integrated simulation stack for electronics: from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.</p>
@@ -353,6 +362,15 @@
 		<p><a href="/stack/rapidmom/">RapidMoM</a>: 2.5D Method-of-Moments solver for planar RF passives on layered substrates. <a href="/stack/rapidfem/">RapidFEM</a>: Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="/stack/rapidpassives/">RapidPassives</a>: browser-based RFIC passive layout generation.</p>
 		<h3>Foundations</h3>
 		<p><a href="/stack/rslab/">RSLAB</a>: sparse direct solver in pure Rust. <a href="/stack/rapidmesh/">RapidMesh</a>: mesh generator for electromagnetic FEM and MoM.</p>
+	</section>
+	<section id="other">
+		<h2>Other Projects</h2>
+		<p>{content.other.intro}</p>
+		<ul>
+			{#each content.other.items as item}
+				<li><a href={item.url}>{item.heading}</a>: {item.paragraphs[0]}</li>
+			{/each}
+		</ul>
 	</section>
 	<section id="contact">
 		<h2>Get in Touch</h2>

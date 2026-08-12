@@ -3,6 +3,7 @@
 
 import contentData from '$lib/data/content.json';
 import defaultStats from '$lib/data/github-stats.json';
+import { inlineLinksFor, paragraphText, type ProseParagraph } from '$lib/content/prose';
 
 export interface GitHubStats {
 	pathsim: { stars: number; forks: number; watchers?: number; openIssues?: number };
@@ -208,6 +209,22 @@ function buildPathsSection(): ContentSection {
 	return { id: 'paths', fillerLinesBefore: 5, regions };
 }
 
+// The full story on the landing page. Same copy as /about — both read the
+// paragraphs from content.json, only the link rendering differs.
+function buildAboutSection(): ContentSection {
+	const c = contentData.about;
+	const regions: ContentRegion[] = [
+		sectionHeading(c.heading),
+		spacer()
+	];
+	for (const p of c.paragraphs as ProseParagraph[]) {
+		const links = inlineLinksFor(p);
+		regions.push(paragraph(paragraphText(p), links.length ? links : undefined), spacer());
+	}
+	regions.push(linkLine(c.links));
+	return { id: 'about', fillerLinesBefore: 5, regions };
+}
+
 interface ProjectItem {
 	id: string;
 	heading: string;
@@ -218,6 +235,7 @@ interface ProjectItem {
 	statsSource?: string;
 	statsText?: string;
 	domain?: string;
+	url?: string; // canonical site, used by the /about side-project list
 }
 
 function buildStatsMap(stats: GitHubStats): Record<string, Record<string, number | undefined>> {
@@ -231,8 +249,10 @@ function buildStatsMap(stats: GitHubStats): Record<string, Record<string, number
 function renderProjectItem(
 	item: ProjectItem,
 	statsMap: Record<string, Record<string, number | undefined>>,
-	regions: ContentRegion[]
+	regions: ContentRegion[],
+	options: { readMore?: boolean } = {}
 ) {
+	const { readMore = true } = options;
 	regions.push(spacer());
 	regions.push({ ...heading(item.heading, HEADING_TYPES[item.headingType ?? ''] ?? 'heading'), id: item.id });
 	regions.push(spacer());
@@ -269,9 +289,12 @@ function renderProjectItem(
 	}
 
 	// Read-more link to the project detail page (unique text per project so
-	// the overlay matcher can map it to its href).
-	regions.push(spacer());
-	regions.push({ type: 'cta', lines: [`[ more on ${item.heading} -> ]`], align: 'center' });
+	// the overlay matcher can map it to its href). Only the stack projects
+	// have such a page — side projects link out through their stats line.
+	if (readMore) {
+		regions.push(spacer());
+		regions.push({ type: 'cta', lines: [`[ more on ${item.heading} -> ]`], align: 'center' });
+	}
 
 	// Extra spacing between projects
 	regions.push(spacer(), spacer());
@@ -302,6 +325,26 @@ function buildProjectsSection(stats: GitHubStats): ContentSection {
 	}
 
 	return { id: 'projects', fillerLinesBefore: 5, regions };
+}
+
+// Side projects outside the simulation stack — same tile treatment, but no
+// detail pages behind them.
+function buildOtherSection(stats: GitHubStats): ContentSection {
+	const c = contentData.other;
+	const regions: ContentRegion[] = [
+		sectionHeading(c.heading),
+		spacer(),
+		paragraph(c.intro),
+		spacer()
+	];
+
+	const statsMap = buildStatsMap(stats);
+
+	for (const item of c.items as ProjectItem[]) {
+		renderProjectItem(item, statsMap, regions, { readMore: false });
+	}
+
+	return { id: 'other', fillerLinesBefore: 5, regions };
 }
 
 function buildContactSection(): ContentSection {
@@ -363,7 +406,9 @@ export function buildContentSections(stats?: GitHubStats): ContentSection[] {
 	return [
 		buildHeroSection(),
 		buildPathsSection(),
+		buildAboutSection(),
 		buildProjectsSection(resolvedStats),
+		buildOtherSection(resolvedStats),
 		buildContactSection(),
 		buildFooterSection()
 	];
