@@ -94,6 +94,23 @@ export interface TextSegment {
 	accent?: AccentKey; // link color override (defaults to article accent)
 }
 
+// One block on the vertical timeline (see ArticleGrid.timeline).
+export interface TimelineEntry {
+	period: string; // label in the year column, e.g. '2015'
+	heading: string;
+	accent?: AccentKey; // heading and connector color (defaults to article accent)
+	body?: (string | TextSegment[])[];
+	image?: {
+		src: string;
+		label: string;
+		w?: number;
+		href?: string;
+		fit?: 'cover' | 'contain';
+		background?: string;
+	};
+	links?: { text: string; href: string }[];
+}
+
 export class ArticleGrid {
 	readonly cols: number;
 	readonly contentWidth: number;
@@ -347,6 +364,76 @@ export class ArticleGrid {
 				this.row += 2;
 			}
 		}
+	}
+
+	// Vertical timeline: a year column, a continuous rail of '|' cells, and
+	// one block per entry (heading, paragraphs, optional framed image, optional
+	// link row). Same ASCII vocabulary as the tile frames on the landing page.
+	//
+	//   2015 -+  b.sc. electrical engineering
+	//         |  TU Braunschweig ...
+	//         |
+	//   2019 -+  internship, volkswagen
+	//
+	timeline(entries: TimelineEntry[]) {
+		const periodW = Math.max(...entries.map((e) => e.period.length));
+		const railCol = this.startCol + periodW + 2;
+		const contentCol = railCol + 3;
+		const contentW = this.contentWidth - (contentCol - this.startCol);
+		const railStart = this.row;
+
+		for (const entry of entries) {
+			const entryAccent = entry.accent ? accentTypes(entry.accent) : this.accent;
+
+			// Year, connector and heading share the first row of the entry.
+			this.placeLine(this.row, this.startCol, entry.period.padStart(periodW), 'link');
+			this.placeLine(this.row, railCol - 1, '-+', entryAccent.heading);
+			for (const line of ArticleGrid.wordWrap(entry.heading, contentW)) {
+				this.placeLine(this.row, contentCol, line, entryAccent.heading);
+				this.row += 1;
+			}
+			this.row += 1;
+
+			for (const p of entry.body ?? []) {
+				const segs: TextSegment[] = typeof p === 'string' ? [{ text: p }] : p;
+				const lines = this.paragraph(segs, contentW, contentCol, this.row);
+				this.row += lines + 1;
+			}
+
+			if (entry.image) {
+				const fw = Math.min(entry.image.w ?? 44, contentW);
+				const rows = this.imageRows(entry.image.src, fw - 2, 12);
+				const consumed = this.drawFrame(this.row, contentCol, fw, rows, entry.image.label, entry.image.src, {
+					href: entry.image.href,
+					fit: entry.image.fit,
+					background: entry.image.background
+				});
+				this.row += consumed + 1;
+			}
+
+			if (entry.links?.length) {
+				let c = contentCol;
+				for (const link of entry.links) {
+					// Wrap onto a new row when the next button no longer fits.
+					if (c + link.text.length > contentCol + contentW) {
+						c = contentCol;
+						this.row += 2;
+					}
+					this.placeLine(this.row, c, link.text, 'cta');
+					this.overlays.push({ row: this.row, col: c, length: link.text.length, label: link.text, href: link.href });
+					c += link.text.length + 3;
+				}
+				this.row += 2;
+			}
+		}
+
+		// The rail: every row from the first entry down to the end of the last
+		// one, except where a connector already sits.
+		for (let r = railStart; r < this.row - 1; r++) {
+			this.ensureRow(r);
+			if (this.grid[r][railCol].char !== '+') this.setCell(r, railCol, '|', 'link');
+		}
+		this.row += 1;
 	}
 
 	// List item with a "- " bullet, wrapped with hanging indent.
