@@ -4,6 +4,7 @@
 	import type { ArticleResult } from '$lib/layout/articleLayout';
 	import { submitContactForm } from '$lib/contactForm';
 	import { tileReveal } from '$lib/tileReveal';
+	import { BOOKING_URL } from '$lib/config';
 	import CharacterGrid from './CharacterGrid.svelte';
 
 	interface Props {
@@ -153,6 +154,7 @@
 				href={overlay.href}
 				target={overlay.href.startsWith('http') ? '_blank' : undefined}
 				rel={overlay.href.startsWith('http') ? 'noopener' : undefined}
+				data-wmt-booking={overlay.href === BOOKING_URL ? '' : undefined}
 				aria-label={overlay.label}
 				style="top: {overlay.row * lineHeight}px; left: {overlay.col * charWidth}px; width: {overlay.length * charWidth}px; height: {lineHeight}px;"
 			></a>

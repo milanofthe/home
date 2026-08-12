@@ -535,6 +535,7 @@
 					href={overlay.href}
 					target={overlay.href.startsWith('/') ? undefined : '_blank'}
 					rel={overlay.href.startsWith('/') ? undefined : 'noopener'}
+					data-wmt-booking={overlay.href === BOOKING_URL ? '' : undefined}
 					aria-label={overlay.label}
 					style="top: {overlay.row * lineHeight}px; left: {overlay.col * charWidth}px; width: {overlay.length * charWidth}px; height: {lineHeight}px;"
 				></a>

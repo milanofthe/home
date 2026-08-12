@@ -60,6 +60,7 @@
 					href={BOOKING_URL}
 					target="_blank"
 					rel="noopener"
+					data-wmt-booking
 					class="text-sm text-cream font-medium hover:text-cream-light transition-colors"
 				>
 					[ Book a call ]
@@ -99,6 +100,7 @@
 						href={BOOKING_URL}
 						target="_blank"
 						rel="noopener"
+						data-wmt-booking
 						class="text-sm text-cream font-medium"
 						onclick={closeMenu}
 					>
