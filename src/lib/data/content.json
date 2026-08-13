@@ -72,7 +72,7 @@
 					},
 					"One architecture throughout: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy; the bet is that one coherent stack does better.",
 					"It arrived in one run. RapidFEM and FastSim from April, then SANE, RSLAB, RapidMoM and RapidMesh from June, the fields, circuits and foundations levels growing together rather than in sequence, because a solver, its mesher and its linear algebra only fit if they are designed against each other.",
-					"Nothing in it is a wrapper. RSLAB took PARDISO's place and is benchmarked against it; RapidMesh is the youngest piece and still on its way, with the 2D path meshing for RapidMoM while RapidFEM runs on gmsh a while longer. Owning the full depth is the slow way to build and the only way the layers actually fit."
+					"Nothing in it is a wrapper. RSLAB took PARDISO's place and is benchmarked against it. RapidMesh is the least finished: its 2D path meshes for RapidMoM and does exact element budgets, which gmsh does not, while the 3D path is slower than gmsh and still leaves slivers on some geometries, so RapidFEM meshes with gmsh a while longer. Owning the full depth is the slow way to build and the only way the layers actually fit."
 				],
 				"images": [
 					{ "src": "/images/sane-common-emitter.png", "label": "sane", "project": "sane" },
@@ -500,9 +500,9 @@
 						"heading": "RapidMesh",
 						"headingType": "rapidpassives",
 						"paragraphs": [
-							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact-arithmetic CSG booleans, watertight by construction, count-based meshing with exact element budgets, and an API whose mesh representations serve the solver as an oracle. The 2D path meshes for RapidMoM today; the 3D path is on its way to replacing gmsh inside the stack."
+							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact-arithmetic CSG booleans, watertight by construction, count-based meshing with exact element budgets, and an API designed for mesher-in-the-loop operation rather than file exchange. The 2D path meshes for RapidMoM today; the 3D path is not at gmsh parity yet."
 						],
-						"metrics": "work in progress / exact CSG / dihedral-angle quality optimization / planar + tetrahedral",
+						"metrics": "work in progress / exact element budgets / FEM + MoM interfaces / 2D in production, 3D not yet at gmsh parity",
 						"statsText": "mesh.rapidpassives.org / github.com/milanofthe/rapidmesh"
 					}
 				]

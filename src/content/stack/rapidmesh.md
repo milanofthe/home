@@ -81,6 +81,23 @@ boolean is easy to get almost right, so the check runs every time rather than
 once at the end of the algorithm. The API serves the solver as an oracle: mesh
 representations carry exactly what FEM assembly and refinement need.
 
+## Where it stands
+
+The 2D path is the mature one. It meshes for [RapidMoM](/stack/rapidmom/), and
+the count-based budget, an exact element target rather than a size hint, is
+something gmsh does not offer at all.
+
+The 3D path is not at gmsh parity. Element quality holds up, but it is slower,
+and some geometries still leave straddler slivers along curved intersection
+edges, where the faceted chain sits a sagitta off the true carrier surface.
+[RapidFEM](/stack/rapidfem/) therefore still meshes with gmsh.
+
+What is finished is the solver side. RapidMesh is designed for
+mesher-in-the-loop operation rather than file exchange, and the FEM and MoM
+interfaces are all there: a solver asks for a mesh, gets the topology it needs
+from the same call, and can ask again with a different budget without leaving
+the process.
+
 ## History
 
 The first mesher I wrote was a 2D QuadTree in 2023, built because a
@@ -92,7 +109,4 @@ file format.
 
 RapidMesh started in June 2026 with one goal: replace gmsh inside the stack
 with a deterministic, embeddable mesher. It is the youngest part of the stack
-and still work in progress. What is in production today is the 2D path, which
-meshes for [RapidMoM](/stack/rapidmom/), together with the budgeted meshing.
-The 3D path is built to take over [RapidFEM](/stack/rapidfem/)'s meshing but
-is not in it yet; RapidFEM still runs on gmsh.
+and the least finished.
