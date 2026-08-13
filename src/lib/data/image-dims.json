@@ -23,6 +23,14 @@
 		1274,
 		301
 	],
+	"/images/rapidfem-eigenmode.png": [
+		1000,
+		1039
+	],
+	"/images/rapidfem-iris.png": [
+		985,
+		1311
+	],
 	"/images/rapidmesh-drilled-block.png": [
 		1000,
 		820
@@ -79,10 +87,6 @@
 		1380,
 		455
 	],
-	"/images/timeline/lti-bode.png": [
-		1240,
-		1753
-	],
 	"/images/timeline/lti-frequency.png": [
 		1240,
 		1753
@@ -94,10 +98,6 @@
 	"/images/timeline/lti-transient.png": [
 		1240,
 		1753
-	],
-	"/images/timeline/ma-layerstack.png": [
-		921,
-		1306
 	],
 	"/images/timeline/ma-stencils.png": [
 		921,

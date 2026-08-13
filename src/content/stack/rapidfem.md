@@ -50,11 +50,22 @@ examples ship with the package, from microstrips and coupled lines through
 iris and stepped-impedance filters to patch, Vivaldi, and inverted-F
 antennas, pyramidal horns, dielectric resonators, and on-chip passives.
 
-![fem.rapidpassives.org|left|46x14](/screenshots/rapidfem-home.png)
+![Iris filter|left|46x14](/images/rapidfem-iris.png)
 
 A local notebook UI provides a code editor with interactive geometry, mesh,
 and field renderers, so a simulation setup is inspectable at every stage
-instead of a black box behind a job queue.
+instead of a black box behind a job queue. Above: an iris-coupled waveguide
+filter driven from port 1 at 10.82 GHz, the field rendered as a point cloud
+over the tetrahedral mesh, so the two coupled cavities and the evanescent
+irises between them are visible in the same view as the geometry that
+produced them.
+
+![Resonator eigenmode|right|46x14](/images/rapidfem-eigenmode.png)
+
+The same renderer draws eigenmodes: here the second mode of a dielectric
+resonator at 2.2763 GHz. An eigenmode solve has no excitation to point at, so
+being able to see the field is the only way to tell which mode the solver
+actually found.
 
 ## History
 

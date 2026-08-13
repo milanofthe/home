@@ -79,7 +79,8 @@
 					{ "src": "/screenshots/sane-app.png", "label": "sane", "project": "sane" },
 					{ "src": "/images/rapidmesh-resonator.png", "label": "rapidmesh", "project": "rapidmesh", "fit": "contain", "background": "#131316" },
 					{ "src": "/images/rapidmom-current.png", "label": "rapidmom", "project": "rapidmom", "fit": "contain", "background": "#131316" },
-					{ "src": "/screenshots/rapidfem-home.png", "label": "rapidfem", "project": "rapidfem" },
+					{ "src": "/images/rapidfem-eigenmode.png", "label": "rapidfem eigenmode", "project": "rapidfem" },
+					{ "src": "/images/rapidfem-iris.png", "label": "iris filter", "project": "rapidfem" },
 					{ "src": "/images/rslab-h2h-ldlt.png", "label": "rslab benchmark", "project": "rslab", "fit": "contain", "background": "#08080c" }
 				],
 				"links": [
@@ -283,7 +284,6 @@
 				"images": [
 					{ "src": "/images/timeline/ma-title.png", "label": "master thesis", "fit": "contain", "background": "#ffffff" },
 					{ "src": "/images/timeline/ma-windings.png", "label": "polygonal windings", "fit": "contain", "background": "#ffffff" },
-					{ "src": "/images/timeline/ma-layerstack.png", "label": "layerstack", "fit": "contain", "background": "#ffffff" },
 					{ "src": "/images/timeline/ma-stencils.png", "label": "derivative stencils", "fit": "contain", "background": "#ffffff" }
 				]
 			},
@@ -319,13 +319,6 @@
 					{
 						"src": "/images/timeline/lti-frequency.png",
 						"label": "frequency response",
-						"fit": "contain",
-						"background": "#ffffff",
-						"href": "https://github.com/milanofthe/lti-manuscript-en"
-					},
-					{
-						"src": "/images/timeline/lti-bode.png",
-						"label": "the damped oscillator",
 						"fit": "contain",
 						"background": "#ffffff",
 						"href": "https://github.com/milanofthe/lti-manuscript-en"
