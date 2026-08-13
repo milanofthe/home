@@ -35,6 +35,16 @@ result = prob.sweep(np.linspace(8e9, 12e9, 21))
 # the same Problem also drives eigenmode solves and far-field patterns
 ```
 
+## Two backends, one API
+
+The two backends answer different questions and share everything else. The
+frequency-domain solver is what you want when the question is a network over
+a band: it solves each frequency directly and gives S-parameters and modes.
+The time-domain DGTD solver is what you want when the question is broadband
+or transient behaviour, where sweeping frequencies one at a time is the wrong
+shape of computation. Both read the same geometry, the same materials and the
+same ports, so choosing between them is a keyword rather than a second model.
+
 ## Practical by default
 
 ![RFIC spiral in the notebook|right|46x14](/images/rapidfem-rfic.png)

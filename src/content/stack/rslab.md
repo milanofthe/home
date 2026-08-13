@@ -38,37 +38,18 @@ one-time cached hardware calibration. The solvers never measure implicitly.
 ## The circuit path
 
 Circuit matrices are their own class: unsymmetric, very sparse, and solved
-thousands of times on a pattern that never changes. The KLU path treats them
-that way. A block triangular form, maximum transversal followed by Tarjan
-SCC, splits the matrix and detects structural singularity before any numeric
-work happens; each block is ordered with AMD and factored with a left-looking
-Gilbert-Peierls LU with threshold pivoting and row scaling. The path is
-strictly sequential and bit-deterministic.
+thousands of times on a pattern that never changes. A general sparse solver
+treats every one of those solves as a new problem. The KLU path instead
+splits the matrix into its block triangular form once, orders and factors the
+blocks separately, and from then on refactors numerically on the frozen
+pattern and pivots. Structural singularity falls out of the block analysis
+before any numeric work happens.
 
-On MNA-shaped matrices it factors 2 to 19x faster than the multifrontal LU
-with 1.7 to 5.7x less fill, and the gap widens with size. A 20-point sweep on
-a frozen pattern runs 6 to 19x faster end to end, because refactor keeps the
-pattern and the pivots and only the numeric values change. solve_transpose
-runs A^T x = b on the same factors, which is what the adjoint sensitivity
-solves in [SANE](/stack/sane/) need.
-
-## What is tunable
-
-Three factorization schedules (supernodal left-looking by default,
-multifrontal, right-looking), fill-reducing orderings (AMD, AMF, nested
-dissection via METIS, Scotch or KaHIP, and RCM for band and profile),
-equilibration (one-pass infinity-norm, iterative Ruiz, MC64 matching, or off)
-and the factor emit and memory modes sit behind one flat settings struct.
-Orderings can be selected or raced per matrix. The factor doubles as a
-preconditioner for the iterative solvers in the same crate, and the parallel
-multi-RHS solve is 8 to 19x faster than solving column by column while staying
-bit-identical to the serial path.
-
-A learned auto-tuner exists too: one small MLP per factorization path,
-selecting a configuration from the matrix's structural features behind an
-a-priori memory backstop that keeps it from ever using more memory than the
-default. It is opt-in, meant for tuning to one problem class on one machine.
-The default factor() does not consult it.
+On MNA-shaped matrices that is 2 to 19x faster to factor with 1.7 to 5.7x
+less fill than the general path, widening with size, and a 20-point sweep
+runs 6 to 19x faster end to end. The same factors also solve the transposed
+system, which is what the adjoint sensitivity solves in
+[SANE](/stack/sane/) need.
 
 ## Benchmarks
 

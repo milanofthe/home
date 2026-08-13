@@ -54,16 +54,14 @@ for the plot, and the plot never blocks the simulation.
 
 ## Toolboxes and sharing
 
-Blocks can be added without rebuilding the app: install a toolbox from PyPI
-through micropip, from a wheel at any URL, or paste a module inline for a
-single session. PathView introspects the module's Block and Event subclasses
-and registers them as node types, and each block can be renamed, recategorized
-or hidden afterwards. A saved .pvm records which toolboxes it depends on, so
-opening it on another machine offers to install the missing ones.
+Blocks can be added without rebuilding the app. A toolbox is just a Python
+module with Block subclasses in it, so PathView installs one at runtime,
+introspects it, and registers what it finds as new node types. A saved model
+records which toolboxes it depends on, so opening it on another machine
+offers to install the missing ones.
 
-A model also opens straight from a link: ?model= takes any URL to a .pvm or
-.json file, and ?modelgh=user/repo/path/to/model.pvm expands to the raw file
-on GitHub.
+A model also opens straight from a link, including from a raw file in a
+GitHub repository, which is how the examples and the shared models work.
 
 ## History
 

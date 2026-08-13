@@ -15,6 +15,14 @@ and 3D rendering, and export production-ready GDS-II directly from the
 browser. Everything runs client-side: no upload, no account, no data leaving
 the machine.
 
+Client-side is the part that decides whether the tool gets used. An RFIC
+layout on a real process stack is not something a designer uploads to a
+stranger's server, and asking for an account before the first look costs more
+users than any feature wins back. Everything therefore runs in the browser,
+which also means the generators and the viewer are the same code whether they
+run on rapidpassives.org, inside the notebook UI, or embedded in someone
+else's page.
+
 ## Generators and viewer
 
 ![rapidpassives.org|right|46x14](/screenshots/rapidpassives-org.png)

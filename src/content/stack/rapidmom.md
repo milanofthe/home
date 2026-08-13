@@ -39,15 +39,14 @@ build time to the conductor's terminal edge run; on an outline that runs along
 a trace rather than ending at one, that resolution is ambiguous and the
 preflight rejects it instead of guessing.
 
-Two contact kinds and the ground plane give four port models out of that one
-primitive: an in-plane delta-gap cut against ground, a two-terminal
-differential gap whose loop closes locally, a vertical ideal probe against the
-reference, and a contact-to-contact port between two conductors, inter-layer
-or coplanar. All four are ideal in the same sense: the link between a contact
-and its reference is a zero-length lumped current source at the contact plane,
-with zero series impedance by construction. The reference plane sits at the
-metal, so there is nothing to de-embed and the networks compare directly
-against the port conventions of commercial planar solvers.
+Two contact kinds and the ground plane give the usual port types out of that
+one primitive: in-plane cuts, differential gaps whose loop closes locally,
+vertical probes against the reference, and ports between two conductors on the
+same or on different layers. All of them are ideal in the same sense, a
+zero-length lumped source at the contact plane with no feed geometry and no
+series impedance. The reference plane sits at the metal, so there is nothing
+to de-embed and the networks compare directly against the port conventions of
+commercial planar solvers.
 
 ## Capacitance without the full-wave solve
 
