@@ -3,7 +3,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<Seo title="Datenschutz — Milan Rother" description="Datenschutz — Milan Rother" path="/datenschutz/" />
+<Seo title="Datenschutz - Milan Rother" description="Datenschutz - Milan Rother" path="/datenschutz/" />
 
 <Navigation />
 

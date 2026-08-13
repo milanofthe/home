@@ -195,13 +195,13 @@
 		return overlays;
 	});
 
-	// The SEND MESSAGE overlay — used to anchor the status line below it.
+	// The SEND MESSAGE overlay, used to anchor the status line below it.
 	let submitOverlay = $derived(clickOverlays.find((o) => o.action === 'submit-form'));
 
 	function computeLayout() {
 		const vw = document.documentElement.clientWidth;
 
-		// Fixed font size — smaller on mobile so text isn't squished
+		// Fixed font size, smaller on mobile so text isn't squished
 		fontSize = vw < 640 ? 11 : 14;
 
 		// Measure the font's natural advance width at 14px
@@ -239,7 +239,7 @@
 		}
 
 		// Hold the reveal until the web font is ready. Revealing on fallback
-		// metrics and then swapping to JetBrains Mono relayouts the whole grid —
+		// metrics and then swapping to JetBrains Mono relayouts the whole grid,
 		// the single biggest source of first-load jank. Once fonts.ready fires
 		// (fast, because the primary subset is preloaded) the grid is measured
 		// with real metrics and revealed without a reflow.
@@ -391,7 +391,7 @@
 			<div id={anchor.id} style="position: absolute; width: 1px; height: 1px; pointer-events: none; top: {(anchor.row - 4) * lineHeight}px;"></div>
 		{/each}
 
-		<!-- Embedded block overlays — absolutely positioned to match frame -->
+		<!-- Embedded block overlays, absolutely positioned to match frame -->
 		{#each gridLayout.embeddedBlocks as block}
 			{#if block.id === 'photo'}
 				<div class="overlay-block" use:tileReveal style="top: {block.row * lineHeight}px; left: {block.col * charWidth}px; width: {block.cols * charWidth}px; height: {block.rows * lineHeight}px;">

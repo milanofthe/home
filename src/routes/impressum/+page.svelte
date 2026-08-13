@@ -3,7 +3,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<Seo title="Impressum — Milan Rother" description="Impressum — Milan Rother" path="/impressum/" />
+<Seo title="Impressum - Milan Rother" description="Impressum - Milan Rother" path="/impressum/" />
 
 <Navigation />
 

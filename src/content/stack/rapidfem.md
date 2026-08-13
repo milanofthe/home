@@ -69,9 +69,15 @@ antennas, pyramidal horns, dielectric resonators, and on-chip passives.
 
 ![Iris filter|left|46x14](/images/rapidfem-iris.png)
 
-A local notebook UI provides a code editor with interactive geometry, mesh,
-and field renderers, so a simulation setup is inspectable at every stage
-instead of a black box behind a job queue. Above: an iris-coupled waveguide
+The UI is a notebook rather than a CAD program, and that was a decision, not
+a shortcut. Building a CAD front end is its own multi-year project, and the
+setups people write here are code anyway. What was missing was the part CAD
+does well: seeing the thing. So the notebook keeps the code workflow and puts
+interactive geometry, mesh and field renderers next to it, which makes a
+simulation inspectable at every stage instead of a black box behind a job
+queue. The renderer itself comes largely from
+[RapidPassives](/stack/rapidpassives/), extended for tetrahedral meshes and
+mesh display. Above: an iris-coupled waveguide
 filter driven from port 1 at 10.82 GHz, the field rendered as a point cloud
 over the tetrahedral mesh, so the two coupled cavities and the evanescent
 irises between them are visible in the same view as the geometry that

@@ -100,7 +100,7 @@
 </script>
 
 <Seo
-	title="Consulting — Milan Rother"
+	title="Consulting - Milan Rother"
 	description="Custom solvers and engineering tools for client teams, built and integrated end to end. Numerics and UX for circuits and systems."
 	path="/consulting/"
 />

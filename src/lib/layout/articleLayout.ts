@@ -10,12 +10,12 @@ import type { Cell, CellType } from './gridLayout';
 
 /// Timeline artifacts share one column width and pack two abreast; the height of
 /// each tile comes from the picture's own proportions, so nothing is cropped to fit
-/// a frame it never had. A uniform width is what makes the column read as a grid —
+/// a frame it never had. A uniform width is what makes the column read as a grid,
 /// a uniform height would only mean cutting landscape screenshots into portraits.
 const TILE_W_MIN = 26;
 const TILE_W_MAX = 46;
 
-/// Frame proportion a picture falls back to when its dimensions are unknown — the
+/// Frame proportion a picture falls back to when its dimensions are unknown, the
 /// same aspect the landing page's portal tiles capture at.
 const TILE_AR = 1.55;
 
@@ -29,7 +29,7 @@ const TIMELINE_TEXT_W = 60;
 
 const IMAGE_DIMS = imageDims as unknown as Record<string, [number, number]>;
 
-// Project accent — maps to the existing code-grid-* color classes.
+// Project accent: maps to the existing code-grid-* color classes.
 export type AccentKey =
 	| 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim'
 	| 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'neutral';
@@ -289,7 +289,7 @@ export class ArticleGrid {
 
 	// Segment-aware paragraph: wraps across the full content width; link
 	// segments are colored and get click overlays. Link phrases wrap like
-	// normal text — overlays are recorded per line.
+	// normal text, overlays are recorded per line.
 	paragraph(segments: string | TextSegment[], width?: number, col?: number, startRow?: number): number {
 		const segs: TextSegment[] = typeof segments === 'string' ? [{ text: segments }] : segments;
 		const w = width ?? this.contentWidth;

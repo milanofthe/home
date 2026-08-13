@@ -50,7 +50,7 @@
 </script>
 
 <Seo
-	title="{page.title} — Milan Rother"
+	title="{page.title} - Milan Rother"
 	description={page.tagline}
 	path="/stack/{page.slug}/"
 />
@@ -60,7 +60,7 @@
 	{#snippet semantic()}
 		<h1>{page.title}</h1>
 		<p>{page.tagline}</p>
-		<!-- eslint-disable-next-line svelte/no-at-html-tags — own build-time content -->
+		<!-- eslint-disable-next-line svelte/no-at-html-tags: own build-time content -->
 		{@html blocksToHtml(page.doc.blocks)}
 	{/snippet}
 </ArticlePage>

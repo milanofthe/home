@@ -98,7 +98,7 @@
 		if (twAnimating) return;
 		let line = twQueue.shift();
 		// Reveal instantly any queued line that has already scrolled above the
-		// viewport — keeps the stream from lagging far behind a fast scroll.
+		// viewport, which keeps the stream from lagging far behind a fast scroll.
 		while (line && line.getBoundingClientRect().bottom < 0) {
 			snapLine(line);
 			line = twQueue.shift();
@@ -228,7 +228,7 @@
 
 	onMount(() => {
 		// Chrome sometimes leaves composited steps() clip-path animations one step
-		// short of the final keyframe (last char stays filler-dark) — pin the end
+		// short of the final keyframe (last char stays filler-dark), pin the end
 		// state explicitly when each reveal finishes.
 		const pinFinalClip = (e: AnimationEvent) => {
 			const t = e.target as HTMLElement;

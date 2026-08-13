@@ -14,7 +14,7 @@
 	const TIMELINE_JSON = content.about.timeline as TimelineEntryJson[];
 	const TIMELINE = toTimeline(TIMELINE_JSON);
 
-	// Story and side projects come from content.json — the same copy the landing
+	// Story and side projects come from content.json, the same copy the landing
 	// page renders into the character grid. Here the inline links resolve to the
 	// stack detail pages instead of scroll targets.
 	const PARAGRAPHS = content.about.paragraphs as ProseParagraph[];
@@ -65,7 +65,7 @@
 </script>
 
 <Seo
-	title="About — Milan Rother"
+	title="About - Milan Rother"
 	description="I build the simulation stack for electronics: fields, circuits, systems. Custom solvers and engineering tools for client teams, built and integrated end to end."
 	path="/about/"
 />

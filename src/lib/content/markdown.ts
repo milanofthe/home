@@ -1,4 +1,4 @@
-// Minimal markdown subset for the grid article pages. No external parser —
+// Minimal markdown subset for the grid article pages. No external parser,
 // the renderer targets a character grid, not HTML, so a small block/segment
 // model beats a full AST.
 //

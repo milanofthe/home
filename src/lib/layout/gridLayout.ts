@@ -70,7 +70,7 @@ const PROJECT_LINK_CELL: Record<string, CellType> = {
 };
 
 // Re-type the cells covering each inline-link phrase so they render in the project color.
-// Phrases never contain spaces, so wordWrap keeps them on a single line — a per-line substring match suffices.
+// Phrases never contain spaces, so wordWrap keeps them on a single line; a per-line substring match suffices.
 function applyInlineLinks(
 	row: Cell[],
 	line: string,

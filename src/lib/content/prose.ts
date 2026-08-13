@@ -40,7 +40,7 @@ export const PROJECT_ACCENT: Record<string, AccentKey> = {
 };
 
 // Projects with a detail page under /stack. The side projects deliberately
-// have none — they link out to their own sites instead.
+// have none: they link out to their own sites instead.
 const STACK_SLUGS = new Set([
 	'pathsim', 'pathview', 'fastsim', 'sane',
 	'rapidmom', 'rapidfem', 'rapidpassives', 'rslab', 'rapidmesh'

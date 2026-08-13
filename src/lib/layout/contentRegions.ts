@@ -1,5 +1,5 @@
 // Declarative content structure for the code rain grid
-// Content text lives in content.json — this file handles layout and structure
+// Content text lives in content.json; this file handles layout and structure
 
 import contentData from '$lib/data/content.json';
 import defaultStats from '$lib/data/github-stats.json';
@@ -192,7 +192,7 @@ function buildHeroSection(): ContentSection {
 	};
 }
 
-// The two-path fork (consulting / products) plus the about teaser — the
+// The two-path fork (consulting / products) plus the about teaser, the
 // visitor picks a funnel here instead of scrolling through everything.
 function buildPathsSection(): ContentSection {
 	const c = contentData.paths;
@@ -209,7 +209,7 @@ function buildPathsSection(): ContentSection {
 	return { id: 'paths', fillerLinesBefore: 5, regions };
 }
 
-// The full story on the landing page. Same copy as /about — both read the
+// The full story on the landing page. Same copy as /about: both read the
 // paragraphs from content.json, only the link rendering differs.
 function buildAboutSection(): ContentSection {
 	const c = contentData.about;
@@ -277,7 +277,7 @@ function renderProjectItem(
 		regions.push(linkLine(item.statsText, LINK_LINE_TYPES[item.id] ?? 'link-line'));
 	}
 
-	// Domain line (rendered when domain is set alongside a stats line —
+	// Domain line (rendered when domain is set alongside a stats line,
 	// projects using statsText already encode the domain there, so we
 	// only emit this extra line when it would not be redundant).
 	if (item.domain && item.statsTemplate) {
@@ -293,7 +293,7 @@ function renderProjectItem(
 
 	// Read-more link to the project detail page (unique text per project so
 	// the overlay matcher can map it to its href). Only the stack projects
-	// have such a page — side projects link out through their stats line.
+	// have such a page, side projects link out through their stats line.
 	if (readMore) {
 		regions.push(spacer());
 		regions.push({ type: 'cta', lines: [`[ more on ${item.heading} -> ]`], align: 'center' });
@@ -330,7 +330,7 @@ function buildProjectsSection(stats: GitHubStats): ContentSection {
 	return { id: 'projects', fillerLinesBefore: 5, regions };
 }
 
-// Side projects outside the simulation stack — same tile treatment, but no
+// Side projects outside the simulation stack, same tile treatment, but no
 // detail pages behind them.
 function buildOtherSection(stats: GitHubStats): ContentSection {
 	const c = contentData.other;

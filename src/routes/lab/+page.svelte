@@ -1,5 +1,5 @@
 <script lang="ts">
-	// LAYOUT PROTOTYPE — isolated demo route, NOT wired into the landing/nav.
+	// LAYOUT PROTOTYPE: isolated demo route, NOT wired into the landing/nav.
 	// Reuses the landing's character-grid look (CharacterGrid renderer, filler
 	// source, .code-grid-* classes) but with a 2-column article layout to
 	// prototype per-project detail pages. Filled with lorem ipsum + local
@@ -159,7 +159,7 @@
 
 		let row = 3;
 
-		// Title — clean, no comment markers
+		// Title: clean, no comment markers
 		placeLine(row, startCol, 'PathSim', accentHeading); row += 1;
 		placeLine(row, startCol, 'Open-source system simulation in pure Python.', 'content'); row += 2;
 
