@@ -267,17 +267,17 @@ export class ArticleGrid {
 		this.row += 1;
 	}
 
-	// Section heading inside the article, padded with the fill char to the
-	// content width (same divider look as the landing page).
+	// Section heading inside the article, padded with the fill char across the
+	// grid less a two-character margin (same divider look as the landing page).
 	sectionHeading(text: string, fillChar = '-') {
-		const target = this.contentWidth;
+		const target = this.cols - 4;
 		let line = text;
 		if (text.length < target - 4) {
 			const total = target - text.length - 2;
 			const left = Math.floor(total / 2);
 			line = fillChar.repeat(left) + ' ' + text + ' ' + fillChar.repeat(total - left);
 		}
-		this.placeLine(this.row, this.startCol, line, this.accent.heading);
+		this.placeLine(this.row, Math.max(0, Math.floor((this.cols - line.length) / 2)), line, this.accent.heading);
 		this.row += 2;
 	}
 

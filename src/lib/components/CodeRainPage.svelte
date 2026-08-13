@@ -136,6 +136,7 @@
 		{ text: '[ more about consulting -> ]', types: ['cta'], href: '/consulting/' },
 		{ text: '[ explore the stack -> ]', types: ['cta'], scrollTo: 'projects' },
 		{ text: '[ full story -> ]', types: ['cta'], scrollTo: 'about' },
+		{ text: '[ more about me -> ]', types: ['cta'], href: '/about/' },
 		{ text: '[ SEND MESSAGE -> ]', types: ['cta'], action: 'submit-form' },
 		...readMoreTargets,
 		{ text: 'Impressum', types: ['footer'], href: '/impressum/' },

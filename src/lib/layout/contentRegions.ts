@@ -221,6 +221,9 @@ function buildAboutSection(): ContentSection {
 		const links = inlineLinksFor(p);
 		regions.push(paragraph(paragraphText(p), links.length ? links : undefined), spacer());
 	}
+	// The landing page carries the story; the timeline, the side quests and the
+	// rest of the CV live on /about.
+	regions.push({ type: 'cta', lines: [c.cta], align: 'center' }, spacer());
 	regions.push(linkLine(c.links));
 	return { id: 'about', fillerLinesBefore: 5, regions };
 }
