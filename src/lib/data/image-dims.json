@@ -68,8 +68,8 @@
 		864
 	],
 	"/images/timeline/fusion-paper.png": [
-		1654,
-		1060
+		1240,
+		1753
 	],
 	"/images/timeline/harmonicbalance.png": [
 		947,
@@ -88,16 +88,12 @@
 		1753
 	],
 	"/images/timeline/lti-manuscript.png": [
-		1670,
-		1170
+		1240,
+		1753
 	],
 	"/images/timeline/lti-transient.png": [
 		1240,
 		1753
-	],
-	"/images/timeline/ma-derivatives.png": [
-		920,
-		1308
 	],
 	"/images/timeline/ma-layerstack.png": [
 		921,
@@ -120,12 +116,8 @@
 		1067
 	],
 	"/images/timeline/qesfvm-field.png": [
-		1240,
-		1240
-	],
-	"/images/timeline/quadtree-triangulation.png": [
-		960,
-		960
+		1023,
+		598
 	],
 	"/images/timeline/quadtree.png": [
 		960,

@@ -170,7 +170,7 @@
 						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
 					},
 					"The same stretch brought three more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, a symbolic circuit analysis tool inspired by Analog Insydes, and a finite volume solver for quasi-electrostatic frequency-domain analysis that came out of the sensor modeling at the institute.",
-					"The solver needed a mesh, so it got one: a 2D QuadTree that refines toward edges, balances itself, and triangulates with Laplacian smoothing. Writing my own mesher for the first time is where the idea started that a solver and its mesher should be designed against each other, which is what RapidMesh is now."
+					"The solver needed a mesh, so it got one: a 2D QuadTree that refines toward edges and balances itself. Writing my own mesher for the first time is where the idea started that a solver and its mesher should be designed against each other, which is what RapidMesh is now."
 				],
 				"images": [
 					{
@@ -190,13 +190,6 @@
 					{
 						"src": "/images/timeline/quadtree.png",
 						"label": "quadtree refinement",
-						"fit": "contain",
-						"background": "#ffffff",
-						"href": "https://github.com/milanofthe/QuadTree"
-					},
-					{
-						"src": "/images/timeline/quadtree-triangulation.png",
-						"label": "triangulated",
 						"fit": "contain",
 						"background": "#ffffff",
 						"href": "https://github.com/milanofthe/QuadTree"
@@ -291,7 +284,6 @@
 					{ "src": "/images/timeline/ma-title.png", "label": "master thesis", "fit": "contain", "background": "#ffffff" },
 					{ "src": "/images/timeline/ma-windings.png", "label": "polygonal windings", "fit": "contain", "background": "#ffffff" },
 					{ "src": "/images/timeline/ma-layerstack.png", "label": "layerstack", "fit": "contain", "background": "#ffffff" },
-					{ "src": "/images/timeline/ma-derivatives.png", "label": "partial derivatives", "fit": "contain", "background": "#ffffff" },
 					{ "src": "/images/timeline/ma-stencils.png", "label": "derivative stencils", "fit": "contain", "background": "#ffffff" }
 				]
 			},

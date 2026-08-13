@@ -180,6 +180,18 @@ export class ArticleGrid {
 		return this.imageRows(src, innerCols, Math.round((innerCols * this.cellRatio) / TILE_AR));
 	}
 
+	// Tiles per band. Portrait artifacts (thesis chapters, manuscript pages) are
+	// tall and thin at two-up: three to a band gives them a sane height and a
+	// proportion closer to the page they are. Landscape stays two-up.
+	private tilesPerBand(images: TimelineImage[], imgColW: number): number {
+		const allPortrait = images.every((img) => {
+			const dims = IMAGE_DIMS[img.src];
+			return dims ? dims[0] / dims[1] < 1 : false;
+		});
+		if (!allPortrait) return 2;
+		return Math.floor((imgColW - 2 * TILE_GAP) / 3) >= TILE_W_MIN ? 3 : 2;
+	}
+
 	setAccent(accent: AccentKey) {
 		this.accent = accentTypes(accent);
 	}
@@ -488,25 +500,27 @@ export class ArticleGrid {
 				this.row += 2;
 			}
 
-			// Side images: two to a band, left of the rail, the first band top-aligned
-			// with the heading. Every tile shares the band's top row, so the column keeps
-			// the horizontal reading of a grid; heights differ inside a band because each
-			// picture keeps its own proportions, and the band advances by the taller of
-			// the two. The entry is as tall as the taller of text and image stack.
+			// Side images: banded left of the rail, the first band top-aligned with the
+			// heading. Every tile shares the band's top row, so the column keeps the
+			// horizontal reading of a grid; heights differ inside a band because each
+			// picture keeps its own proportions, and the band advances by the tallest of
+			// them. The entry is as tall as the taller of text and image stack.
 			if (side && entry.images?.length) {
+				const perBand = this.tilesPerBand(entry.images, imgColW);
+				// Three-up divides the same column, so the tiles come out smaller.
+				const w = Math.floor((imgColW - (perBand - 1) * TILE_GAP) / perBand);
 				let bandRow = entryStart;
 
-				for (let i = 0; i < entry.images.length; i += 2) {
-					const band = entry.images.slice(i, i + 2);
-					// A lone tile in the last band sits against the rail, where the
-					// right-hand tile of a full band would be, next to the text it
-					// belongs to rather than stranded at the far edge.
-					const bandCol = band.length === 2 ? left : left + tileW + TILE_GAP;
+				for (let i = 0; i < entry.images.length; i += perBand) {
+					const band = entry.images.slice(i, i + perBand);
+					// A short last band is pushed against the rail, next to the text it
+					// belongs to, rather than stranded at the far edge of the column.
+					const bandCol = left + (perBand - band.length) * (w + TILE_GAP);
 					let bandRows = 0;
 
 					band.forEach((img, index) => {
-						const rows = this.tileRows(img.src, tileW - 2);
-						this.drawFrame(bandRow, bandCol + index * (tileW + TILE_GAP), tileW, rows, img.label, img.src, {
+						const rows = this.tileRows(img.src, w - 2);
+						this.drawFrame(bandRow, bandCol + index * (w + TILE_GAP), w, rows, img.label, img.src, {
 							href: img.href,
 							fit: img.fit,
 							background: img.background,
