@@ -28,11 +28,35 @@ port-space network itself stops moving, including a dedicated criterion for
 the real part. Every port configuration lands on the dense-operator answer
 instead of drifting with the iterative tolerance.
 
+## One port primitive
+
 Ports are one primitive: a current driven between two contacts, each an
-oriented segment on a metal layer. The excitation is a voltage source across
-the gap, never an imposed current profile, so edge singularity and skin
-crowding come out of the solve. Ambiguous port placements are rejected in a
-preflight instead of guessed.
+oriented segment on a metal layer, free in position, length and orientation.
+The excitation is a voltage source across the gap, never an imposed current
+profile, so the current distribution over the cross-section, edge singularity
+and skin crowding included, comes out of the solve. A label point resolves at
+build time to the conductor's terminal edge run; on an outline that runs along
+a trace rather than ending at one, that resolution is ambiguous and the
+preflight rejects it instead of guessing.
+
+Two contact kinds and the ground plane give four port models out of that one
+primitive: an in-plane delta-gap cut against ground, a two-terminal
+differential gap whose loop closes locally, a vertical ideal probe against the
+reference, and a contact-to-contact port between two conductors, inter-layer
+or coplanar. All four are ideal in the same sense: the link between a contact
+and its reference is a zero-length lumped current source at the contact plane,
+with zero series impedance by construction. The reference plane sits at the
+metal, so there is nothing to de-embed and the networks compare directly
+against the port conventions of commercial planar solvers.
+
+## Capacitance without the full-wave solve
+
+The A-EFIE saddle carries both potentials: the vector potential in the
+edge-current block, the scalar potential in the patch-charge block. A
+capacitance is a statement about the scalar potential alone, so dropping the
+magnetic half leaves a system in the charges and node potentials that yields
+the Maxwell C and G matrices over the design's galvanic nets directly, without
+solving the full-wave problem at all.
 
 ## Conductor models and outputs
 
