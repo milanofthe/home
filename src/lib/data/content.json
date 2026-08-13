@@ -76,8 +76,8 @@
 				],
 				"images": [
 					{ "src": "/images/sane-common-emitter.png", "label": "sane", "project": "sane" },
-					{ "src": "/images/rapidmesh-transformer.png", "label": "rapidmesh, planar", "project": "rapidmesh" },
-					{ "src": "/images/rapidmesh-box-2spheres.png", "label": "rapidmesh, tetrahedral", "project": "rapidmesh" },
+					{ "src": "/images/rapidmesh-transformer.png", "label": "rapidmesh, planar", "project": "rapidmesh", "fit": "contain", "background": "#131316" },
+					{ "src": "/images/rapidmesh-box-2spheres.png", "label": "rapidmesh, tetrahedral", "project": "rapidmesh", "fit": "contain", "background": "#131316" },
 					{ "src": "/images/rapidfem-rfic.png", "label": "rapidfem", "project": "rapidfem" },
 					{ "src": "/images/rapidfem-iris.png", "label": "iris filter", "project": "rapidfem" },
 					{ "src": "/images/rapidmom-current.png", "label": "rapidmom", "project": "rapidmom", "fit": "contain", "background": "#131316" },
