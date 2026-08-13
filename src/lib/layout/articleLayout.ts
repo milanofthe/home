@@ -5,7 +5,16 @@
 
 import { FILLER_SOURCE } from '$lib/data/filler-source';
 import imageDims from '$lib/data/image-dims.json';
+import { glowFor } from '$lib/content/prose';
 import type { Cell, CellType } from './gridLayout';
+
+/// Narrowest a paired timeline image may get before the pair stacks instead. Below
+/// this the two frames are thumbnails rather than pictures.
+const MIN_PAIR_WIDTH = 20;
+
+/// Share of the article width the timeline's image column takes. Wide enough that a
+/// pair of images still reads, narrow enough to leave the text a comfortable measure.
+const TIMELINE_IMAGE_SHARE = 0.46;
 
 const IMAGE_DIMS = imageDims as unknown as Record<string, [number, number]>;
 
@@ -46,6 +55,9 @@ export interface ArticleImage {
 	cols: number;
 	fit?: 'cover' | 'contain';
 	background?: string;
+	/// Hover glow, so a framed image behaves like the portal tiles on the landing
+	/// page rather than being the one static picture on an otherwise live surface.
+	glow?: string;
 }
 
 export interface ArticleOverlay {
@@ -384,7 +396,7 @@ export class ArticleGrid {
 	timeline(entries: TimelineEntry[]) {
 		const periodW = Math.max(...entries.map((e) => e.period.length));
 		const side = this.twoCol;
-		const imgColW = side ? Math.min(48, Math.floor(this.contentWidth * 0.42)) : 0;
+		const imgColW = side ? Math.min(52, Math.floor(this.contentWidth * TIMELINE_IMAGE_SHARE)) : 0;
 		const yearCol = this.startCol + (side ? imgColW + 2 : 0);
 		const railCol = yearCol + periodW + 2;
 		const contentCol = railCol + 3;
@@ -393,6 +405,7 @@ export class ArticleGrid {
 
 		for (const entry of entries) {
 			const entryAccent = entry.accent ? accentTypes(entry.accent) : this.accent;
+			const entryGlow = glowFor(entry.accent);
 			const entryStart = this.row;
 
 			// Year, connector and heading share the first row of the entry.
@@ -418,7 +431,8 @@ export class ArticleGrid {
 					const consumed = this.drawFrame(this.row, contentCol, fw, rows, img.label, img.src, {
 						href: img.href,
 						fit: img.fit,
-						background: img.background
+						background: img.background,
+						glow: entryGlow
 					});
 					this.row += consumed + 1;
 				}
@@ -439,22 +453,51 @@ export class ArticleGrid {
 				this.row += 2;
 			}
 
-			// Side images: left of the rail, the first one top-aligned with the
-			// heading, further ones stacked below it. Right-aligned against the
-			// rail so they visibly hang off the line. The entry is as tall as
-			// the taller of text and image stack.
+			// Side images: left of the rail, the first row top-aligned with the
+			// heading, further rows stacked below. Right-aligned against the rail
+			// so they visibly hang off the line. The entry is as tall as the
+			// taller of text and image stack.
+			//
+			// Two sit side by side when the column is wide enough for both to stay
+			// legible; below that they stack, because a pair of thumbnails too
+			// small to read is worse than one picture you can see.
 			if (side && entry.images?.length) {
+				const gap = 2;
+				const pairWidth = Math.floor((imgColW - gap) / 2);
+				const pairs = pairWidth >= MIN_PAIR_WIDTH;
 				let imgRow = entryStart;
-				for (const img of entry.images) {
-					const fw = Math.min(img.w ?? imgColW, imgColW);
-					const rows = this.imageRows(img.src, fw - 2, 12);
-					const imgCol = this.startCol + imgColW - fw;
-					const consumed = this.drawFrame(imgRow, imgCol, fw, rows, img.label, img.src, {
-						href: img.href,
-						fit: img.fit,
-						background: img.background
-					});
-					imgRow += consumed + 1;
+
+				for (let i = 0; i < entry.images.length; ) {
+					const first = entry.images[i];
+					const second = entry.images[i + 1];
+					// A declared width means the caller wants that size; only
+					// undeclared images are candidates for pairing.
+					const canPair = pairs && second && !first.w && !second.w;
+
+					if (canPair) {
+						const rowsA = this.imageRows(first.src, pairWidth - 2, 12);
+						const rowsB = this.imageRows(second.src, pairWidth - 2, 12);
+						// One height for the pair, so their frames line up.
+						const rows = Math.min(rowsA, rowsB);
+						const leftCol = this.startCol + imgColW - (pairWidth * 2 + gap);
+						this.drawFrame(imgRow, leftCol, pairWidth, rows, first.label, first.src, {
+							href: first.href, fit: first.fit, background: first.background, glow: entryGlow
+						});
+						this.drawFrame(imgRow, leftCol + pairWidth + gap, pairWidth, rows, second.label, second.src, {
+							href: second.href, fit: second.fit, background: second.background, glow: entryGlow
+						});
+						imgRow += rows + 3;
+						i += 2;
+					} else {
+						const fw = Math.min(first.w ?? imgColW, imgColW);
+						const rows = this.imageRows(first.src, fw - 2, 12);
+						const imgCol = this.startCol + imgColW - fw;
+						const consumed = this.drawFrame(imgRow, imgCol, fw, rows, first.label, first.src, {
+							href: first.href, fit: first.fit, background: first.background, glow: entryGlow
+						});
+						imgRow += consumed + 1;
+						i += 1;
+					}
 				}
 				this.row = Math.max(this.row, imgRow);
 			}
@@ -492,7 +535,8 @@ export class ArticleGrid {
 	// Terminal frame with an image overlay inside. Returns rows consumed.
 	private drawFrame(
 		startRow: number, col: number, w: number, h: number,
-		label: string, src: string, opts?: { href?: string; fit?: 'cover' | 'contain'; background?: string }
+		label: string, src: string,
+		opts?: { href?: string; fit?: 'cover' | 'contain'; background?: string; glow?: string }
 	): number {
 		this.placeLine(startRow, col, this.buildFrameTop(w, label), this.accent.frame);
 		for (let r = 1; r <= h; r++) {
@@ -506,6 +550,7 @@ export class ArticleGrid {
 		this.placeLine(startRow + h + 1, col, '+' + '-'.repeat(w - 2) + '+', this.accent.frame);
 		this.images.push({
 			src, label, href: opts?.href, fit: opts?.fit, background: opts?.background,
+			glow: opts?.glow,
 			row: startRow + 1, col: col + 1, rows: h, cols: w - 2
 		});
 		return h + 2;

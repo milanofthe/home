@@ -7,6 +7,22 @@
 	import { BOOKING_URL } from '$lib/config';
 	import CharacterGrid from './CharacterGrid.svelte';
 
+	// The same tilt the portal tiles use on the landing page, so a framed image
+	// behaves identically wherever it appears. Kept here rather than imported from
+	// PortalTile because that component owns a link and a screenshot; this is the
+	// gesture alone, applied to a frame the article grid has already placed.
+	function tilt(event: MouseEvent) {
+		const el = event.currentTarget as HTMLElement;
+		const rect = el.getBoundingClientRect();
+		const x = (event.clientX - rect.left) / rect.width - 0.5;
+		const y = (event.clientY - rect.top) / rect.height - 0.5;
+		el.style.transform = `perspective(800px) rotateY(${x * 15}deg) rotateX(${-y * 15}deg) scale(1.03)`;
+	}
+
+	function resetTilt(event: MouseEvent) {
+		(event.currentTarget as HTMLElement).style.transform = '';
+	}
+
 	interface Props {
 		// Builds the article grid for a given column count and cell aspect
 		// ratio (charWidth / lineHeight, for image sizing). Re-invoked on
@@ -125,23 +141,30 @@
 		<CharacterGrid cells={article.cells} />
 
 		{#each article.images as img (`${img.src}:${img.row}:${img.col}`)}
+			{@const box = `top: ${img.row * lineHeight}px; left: ${img.col * charWidth}px; width: ${img.cols * charWidth}px; height: ${img.rows * lineHeight}px; ${img.background ? `background:${img.background};` : ''}${img.glow ? `--glow-color:${img.glow};` : ''}`}
 			{#if img.href}
 				<a
-					class="article-img"
+					class="article-img tilt"
 					href={img.href}
 					target={img.href.startsWith('/') ? undefined : '_blank'}
 					rel={img.href.startsWith('/') ? undefined : 'noopener'}
 					aria-label={img.label}
 					use:tileReveal={{ charWidth, lineHeight }}
-					style="top: {img.row * lineHeight}px; left: {img.col * charWidth}px; width: {img.cols * charWidth}px; height: {img.rows * lineHeight}px; {img.background ? `background:${img.background};` : ''}"
+					onmousemove={tilt}
+					onmouseleave={resetTilt}
+					style={box}
 				>
 					<img src={img.src} alt={img.label} class:fit-contain={img.fit === 'contain'} decoding="async" />
 				</a>
 			{:else}
 				<div
 					class="article-img"
+					class:tilt={Boolean(img.glow)}
 					use:tileReveal={{ charWidth, lineHeight }}
-					style="top: {img.row * lineHeight}px; left: {img.col * charWidth}px; width: {img.cols * charWidth}px; height: {img.rows * lineHeight}px; {img.background ? `background:${img.background};` : ''}"
+					onmousemove={img.glow ? tilt : undefined}
+					onmouseleave={img.glow ? resetTilt : undefined}
+					role="presentation"
+					style={box}
 				>
 					<img src={img.src} alt={img.label} class:fit-contain={img.fit === 'contain'} decoding="async" />
 				</div>
@@ -242,6 +265,25 @@
 		overflow: hidden;
 		border-radius: 4px;
 		display: block;
+	}
+
+	/* Portal-tile behaviour: the frame tilts under the cursor and lights up in its
+	   project's colour. Same timings and glow as PortalTile so the two read as one
+	   component wherever they appear. */
+	.article-img.tilt {
+		transition: transform 0.15s ease-out, box-shadow 0.3s;
+		will-change: transform;
+	}
+
+	.article-img.tilt:hover {
+		box-shadow: 0 8px 30px var(--glow-color, rgba(150, 149, 145, 0.25));
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.article-img.tilt {
+			transition: box-shadow 0.3s;
+			transform: none !important;
+		}
 	}
 
 	.article-img img {

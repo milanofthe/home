@@ -18,7 +18,10 @@
 				'The full roundtrip back through circuits and fields: RapidFEM, RapidMesh, RapidMoM, RSLAB, SANE, FastSim. One architecture, SSA-style compute graphs, Rust cores, Python APIs, browser interfaces.'
 			],
 			images: [
-				{ src: '/screenshots/sane-graph.png', label: 'sane symbolic graph', href: '/stack/sane/' }
+				{ src: '/screenshots/sane-graph.png', label: 'sane symbolic graph', href: '/stack/sane/' },
+				{ src: '/screenshots/sane-app.png', label: 'sane', href: '/stack/sane/' },
+				{ src: '/images/rapidmesh-resonator.png', label: 'rapidmesh', href: '/stack/rapidmesh/', fit: 'contain', background: '#131316' },
+				{ src: '/images/rapidmom-current.png', label: 'rapidmom current density', href: '/stack/rapidmom/', fit: 'contain', background: '#131316' }
 			],
 			links: [{ text: '[ view the stack -> ]', href: '/#projects' }]
 		},
@@ -30,7 +33,9 @@
 				'PathSim opened in early 2025 as an open alternative to Simulink. JOSS-published, adopted for nuclear fusion fuel-cycle modeling at the MIT Plasma Science & Fusion Center and by JSBSim for flight dynamics. PathView, the browser-based visual editor, followed.'
 			],
 			images: [
-				{ src: '/screenshots/view-pathsim-org.png', label: 'view.pathsim.org', href: '/stack/pathview/' }
+				{ src: '/screenshots/view-pathsim-org.png', label: 'view.pathsim.org', href: '/stack/pathview/' },
+				{ src: '/screenshots/pathsim-org.png', label: 'pathsim.org', href: 'https://pathsim.org' },
+				{ src: '/screenshots/docs-pathsim-org.png', label: 'docs', href: 'https://docs.pathsim.org' }
 			],
 			links: [
 				{ text: '[ pathsim.org ]', href: 'https://pathsim.org' },
@@ -47,10 +52,17 @@
 			images: [
 				{
 					src: '/images/timeline/harmonicbalance.png',
-					label: 'harmonicbalance.png',
+					label: 'harmonic balance',
 					fit: 'contain',
 					background: '#ffffff',
 					href: 'https://github.com/milanofthe/harmonicbalance'
+				},
+				{
+					src: '/images/timeline/qesfvm.png',
+					label: 'electrostatic FVM',
+					fit: 'contain',
+					background: '#ffffff',
+					href: 'https://github.com/milanofthe/QESFVM'
 				}
 			],
 			links: [
@@ -65,12 +77,11 @@
 			body: [
 				'Research associate at the Institut fuer CMOS Design, TU Braunschweig: numerical modeling of electrochemical sensors for analog circuit design, bio-impedance spectroscopy hardware and software, and an EDA pipeline for RFIC passives, validated in silicon for cryogenic quantum applications. That pipeline became RapidPassives.'
 			],
+			// Then and now, side by side: the Tkinter pipeline of 2023 next to what it
+			// became. The pair says more about the arc than either picture alone.
 			images: [
-				{
-					src: '/images/timeline/rapidpassives-tkinter.png',
-					label: 'the pipeline, back then',
-					href: '/stack/rapidpassives/'
-				}
+				{ src: '/images/timeline/rapidpassives-tkinter.png', label: 'back then', href: '/stack/rapidpassives/' },
+				{ src: '/screenshots/rapidpassives-transformer.png', label: 'today', href: '/stack/rapidpassives/' }
 			],
 			links: [{ text: '[ rapidpassives ]', href: '/stack/rapidpassives/' }]
 		},

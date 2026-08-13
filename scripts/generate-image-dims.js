@@ -44,16 +44,37 @@ function webpSize(buf) {
 }
 
 const dims = {};
-for (const dir of ['images', 'screenshots']) {
-	const abs = join(root, 'static', dir);
-	for (const file of readdirSync(abs)) {
-		const ext = extname(file).toLowerCase();
+
+/**
+ * Walks a directory tree, recording every image it finds under its public URL.
+ *
+ * Recursive because images live in subfolders too (static/images/timeline). A flat
+ * read silently skipped those, and a missing entry is not a visible error: the
+ * layout just falls back to a declared height and the frame no longer matches the
+ * picture's aspect ratio.
+ */
+function collect(abs, urlPrefix) {
+	for (const entry of readdirSync(abs, { withFileTypes: true })) {
+		const path = join(abs, entry.name);
+		const url = `${urlPrefix}/${entry.name}`;
+
+		if (entry.isDirectory()) {
+			collect(path, url);
+			continue;
+		}
+
+		const ext = extname(entry.name).toLowerCase();
 		if (ext !== '.png' && ext !== '.webp') continue;
-		const buf = readFileSync(join(abs, file));
+
+		const buf = readFileSync(path);
 		const size = ext === '.png' ? pngSize(buf) : webpSize(buf);
-		if (size) dims[`/${dir}/${file}`] = [size.w, size.h];
-		else console.warn(`could not read dimensions: ${dir}/${file}`);
+		if (size) dims[url] = [size.w, size.h];
+		else console.warn(`could not read dimensions: ${url}`);
 	}
+}
+
+for (const dir of ['images', 'screenshots']) {
+	collect(join(root, 'static', dir), `/${dir}`);
 }
 
 const out = join(root, 'src', 'lib', 'data', 'image-dims.json');

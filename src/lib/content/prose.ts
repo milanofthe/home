@@ -50,6 +50,26 @@ export function accentFor(project?: string): AccentKey {
 	return (project && PROJECT_ACCENT[project]) || 'neutral';
 }
 
+// Hover glow per accent, matching PortalTile's palette so a framed image on an
+// article page lights up in the same colour as the same project's tile on the
+// landing page.
+const GLOW: Record<AccentKey, string> = {
+	pathsim: 'rgba(0, 112, 192, 0.3)',
+	pysimhub: 'rgba(99, 102, 241, 0.3)',
+	rapidpassives: 'rgba(217, 81, 60, 0.3)',
+	scidata: 'rgba(216, 53, 26, 0.3)',
+	fastsim: 'rgba(209, 65, 41, 0.3)',
+	sane: 'rgba(78, 149, 217, 0.3)',
+	rslab: 'rgba(59, 130, 246, 0.3)',
+	thesisos: 'rgba(107, 138, 253, 0.3)',
+	whatsmytraffic: 'rgba(111, 220, 142, 0.3)',
+	neutral: 'rgba(150, 149, 145, 0.25)'
+};
+
+export function glowFor(accent: AccentKey | undefined): string {
+	return GLOW[accent ?? 'neutral'] ?? GLOW.neutral;
+}
+
 export function hrefFor(link: ProseLink): string | undefined {
 	if (link.href) return link.href;
 	if (link.project && STACK_SLUGS.has(link.project)) return `/stack/${link.project}/`;
