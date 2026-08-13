@@ -416,10 +416,10 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 		let lines = region.lines;
 		const maxWidth = cols - 4;
 		if (region.fill && region.type.startsWith('heading')) {
-			// Dividers run the width of the grid less a two-character margin, so
+			// Dividers run the width of the grid less a four-character margin, so
 			// they are the widest thing on the page without touching its edges.
 			// The title stays centred because the line is centred.
-			const target = cols - 4;
+			const target = cols - 8;
 			const ch = region.fillChar || '-';
 			lines = lines.map(l => {
 				if (l.length >= target - 4) return l;

@@ -268,9 +268,9 @@ export class ArticleGrid {
 	}
 
 	// Section heading inside the article, padded with the fill char across the
-	// grid less a two-character margin (same divider look as the landing page).
+	// grid less a four-character margin (same divider look as the landing page).
 	sectionHeading(text: string, fillChar = '-') {
-		const target = this.cols - 4;
+		const target = this.cols - 8;
 		let line = text;
 		if (text.length < target - 4) {
 			const total = target - text.length - 2;
