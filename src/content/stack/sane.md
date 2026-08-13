@@ -102,9 +102,17 @@ analytically off the block structure of the MNA matrices. The autodiff over
 the DAG is the general version of that.
 
 It also builds on work I did together with Ralf Sommer, the inventor of
-Analog Insydes, on reviving that tool from December 2024 on. In June 2026 I
-picked the ideas up again on my own stack, with SSA-style compute graphs at
-the core of the engine. The first two months
+Analog Insydes, on reviving that tool from December 2024 on.
+
+What actually started it came from the other end of the stack.
+[FastSim](/stack/fastsim/) had just been built on SSA compute graphs, Python
+callbacks traced into a flat tape and differentiated symbolically, and
+carrying that representation over to circuits looked like the obvious next
+thing to try, with Analog Insydes in the back of my mind throughout. Matt
+Keeter's writing on SSA graphs for implicit surfaces was the other half of the
+push: the same representation, an entirely different field.
+
+In June 2026 I picked the ideas up on my own stack. The first two months
 produced the SPICE parser, the symbolic DAG engine, the full set of analyses,
 and the Verilog-A frontend. The web app at sane.milanrother.com is public;
 the core engine is in early access.
