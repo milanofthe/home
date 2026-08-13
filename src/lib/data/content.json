@@ -34,7 +34,7 @@
 				"links": [{ "phrase": "RapidPassives", "project": "rapidpassives" }]
 			},
 			{
-				"text": "At the beginning of my PhD (early 2023) I diverged from the circuit path to the more general system level, where you have signal flow diagrams and ODEs instead of Maxwell and KVL/KCL. During that time PathSim started as a side project. Initially just an analog computer emulator, it evolved into a fully fledged continuous and discrete (hybrid, we have events!) system modeling and simulation framework. I open sourced it in early 2025 as an open alternative to Simulink, and a modern take on system modeling in general. Clean API, mutability from the get-go, robust solvers (stiffness, algebraic loops, no problem). Today (mid 2026) we are at roughly 400 stars on GitHub and have many users and collaborators worldwide, some of them prominent figures such as the MIT Plasma Science and Fusion Center, scikit-rf, and JSBSim developers.",
+				"text": "At the beginning of my PhD (early 2023) I diverged from the circuit path to the more general system level, where you have signal flow diagrams and ODEs instead of Maxwell and KVL/KCL. During that time PathSim started as a side project. Initially just an analog computer emulator, it evolved into a fully fledged continuous and discrete (hybrid, we have events!) system modeling and simulation framework. I announced it in March 2025 as an open alternative to Simulink, and a modern take on system modeling in general. Clean API, mutability from the get-go, robust solvers (stiffness, algebraic loops, no problem). Today (mid 2026) we are at roughly 400 stars on GitHub and have many users and collaborators worldwide, some of them prominent figures such as the MIT Plasma Science and Fusion Center, scikit-rf, and JSBSim developers.",
 				"links": [{ "phrase": "PathSim", "project": "pathsim" }]
 			},
 			{
@@ -119,7 +119,7 @@
 				"project": "pathsim",
 				"body": [
 					{
-						"text": "PathSim opened in early 2025 as an open alternative to Simulink: clean API, mutability from the get-go, solvers that handle stiffness and algebraic loops without ceremony. Published in the Journal of Open Source Software, released on PyPI and conda-forge, and picked up faster than I expected.",
+						"text": "The repository had been public since the summer of 2024, but March 2025 is when I actually announced PathSim: an open alternative to Simulink, with a clean API, mutability from the get-go, and solvers that handle stiffness and algebraic loops without ceremony. Published in the Journal of Open Source Software, released on PyPI and conda-forge, and picked up faster than I expected.",
 						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
 					},
 					"Past 400 stars and nine contributors later, the part I did not write is the interesting part: domain toolboxes for chemical engineering, batteries, vehicles, flight dynamics, RF and FMI co-simulation, several of them contributed by people I have never met. JSBSim picked it up for flight dynamics.",
@@ -166,7 +166,7 @@
 				"project": "pathsim",
 				"body": [
 					{
-						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had. It went public on GitHub in August 2024.",
+						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had. It stayed on my own machine for a year and a half before the repository went public in the summer of 2024.",
 						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
 					},
 					"The same stretch brought three more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, a symbolic circuit analysis tool inspired by Analog Insydes, and a finite volume solver for quasi-electrostatic frequency-domain analysis that came out of the sensor modeling at the institute, with a 2D QuadTree mesher underneath it."

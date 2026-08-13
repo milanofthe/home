@@ -71,8 +71,8 @@ full API reference.
 
 PathSim started in early 2023, at the beginning of my PhD, as an analog
 computer emulator side project. It grew into a full hybrid system simulation
-framework, went public on GitHub in August 2024, and was released in early
-2025 as an open alternative to Simulink. Since then: a JOSS publication,
+framework, went public on GitHub in the summer of 2024, and was announced in
+March 2025 as an open alternative to Simulink. Since then: a JOSS publication,
 roughly 400 GitHub stars, nine contributors, adoption by JSBSim and the MIT
 Plasma Science and Fusion Center, and community-contributed domain toolboxes.
 [FastSim](/stack/fastsim/) accelerates the same API as a drop-in Rust engine,
