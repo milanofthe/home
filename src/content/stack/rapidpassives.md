@@ -46,12 +46,11 @@ the front page is a live gds-viewer instance.
 ## History
 
 RapidPassives grew out of my master's thesis on area optimized modelling of
-passive magnetic structures for chip-level integration. Two of its
-foundations are still in the tool: the polygonal winding parametrization,
-which turns a spiral inductor into a handful of geometric numbers instead of
-a drawing, and the reduction of a full process layerstack to the layers an EM
-solver actually needs, without which the parameter sweeps behind a compact
-model are unaffordable.
+passive magnetic structures for chip-level integration. Two things from it are
+still in the tool: the polygonal winding parametrization, which turns a spiral
+inductor into a handful of geometric numbers instead of a drawing, and the
+reduction of a full process layerstack to the layers an EM solver needs, which
+is what makes the parameter sweeps behind a compact model affordable.
 
 It started as a small Python package with a tkinter GUI, was rebuilt into the
 fully client-side browser tool it is today, and became the seed of the whole

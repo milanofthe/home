@@ -78,11 +78,11 @@ against the literature, and high-fidelity multi-dimensional transport in the
 finite element code FESTIM, wrapped as ordinary blocks. The same system model
 scales down to lab experiments like BABY and LIBRA.
 
-That is the case the block abstraction was built for. A component's fidelity
-is a property of the block, not of the framework, so a residence-time
-approximation can be swapped for a finite element solve without touching the
-system around it, and a thirty-component transient still solves in seconds,
-which is what makes Monte Carlo and uncertainty quantification affordable.
+A component's fidelity is a property of the block, not of the framework, so a
+residence-time approximation can be swapped for a finite element solve without
+touching the system around it. A thirty-component bubbler transient solves in
+seconds, which is what makes the Monte Carlo and uncertainty quantification
+runs affordable.
 
 The workflow is written up in *Physics-informed tritium fuel cycle modelling
 workflow for fusion reactors*

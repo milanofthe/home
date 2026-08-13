@@ -66,11 +66,10 @@ flicker, Verilog-A noise) are summed in one registry.
 
 ![Common-emitter stage, full graph|left|46x14](/images/sane-common-emitter.png)
 
-What that costs is visible: a common-emitter stage is one transistor and seven
-passives, and the Gummel-Poon model of that single BJT is most of the graph
-you see. Nothing in it is opaque, every node is differentiable, and every
-parameter of the compact model is still a symbol the sensitivity analysis can
-reach.
+A common-emitter stage is one transistor and seven passives, and the
+Gummel-Poon model of that single BJT is most of the graph shown here. Every
+node in it is differentiable, and every parameter of the compact model is
+still a symbol the sensitivity analysis can reach.
 
 ## The engine
 
@@ -96,8 +95,8 @@ built on nothing but Python's math module: my own matrix class, my own complex
 arithmetic, symbolic element types in s, netlists in and Cauer ladders out.
 The second was the exact parameter sensitivities in my master's thesis, where
 the first and second partial derivatives of RLCk transfer functions are read
-analytically off the block structure of the MNA matrices, which is what the
-autodiff over the DAG generalizes.
+analytically off the block structure of the MNA matrices. The autodiff over
+the DAG is the general version of that.
 
 It also builds on work I did together with Ralf Sommer, the inventor of
 Analog Insydes, on reviving that tool from December 2024 on. In June 2026 I

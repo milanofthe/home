@@ -66,9 +66,8 @@ produced them.
 ![Resonator eigenmode|right|46x14](/images/rapidfem-eigenmode.png)
 
 The same renderer draws eigenmodes: here the second mode of a dielectric
-resonator at 2.2763 GHz. An eigenmode solve has no excitation to point at, so
-being able to see the field is the only way to tell which mode the solver
-actually found.
+resonator at 2.2763 GHz. An eigenmode solve has no excitation, so the field
+plot is what identifies which mode came out.
 
 ## History
 

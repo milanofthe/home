@@ -76,10 +76,9 @@ component; separate metal layers never merge.
 
 A corpus of 101 geometries (primitives, booleans, multi-region assemblies, RF
 passives, STL/OBJ imports) is re-run and re-rendered on every full run, each
-one checked for watertightness, manifoldness and minimal dihedral angle. A
-boolean is easy to get almost right, so the check runs every time rather than
-once at the end of the algorithm. The API serves the solver as an oracle: mesh
-representations carry exactly what FEM assembly and refinement need.
+one checked for watertightness, manifoldness and minimal dihedral angle. The
+API serves the solver as an oracle: mesh representations carry exactly what
+FEM assembly and refinement need.
 
 ## Where it stands
 
@@ -103,9 +102,7 @@ the process.
 The first mesher I wrote was a 2D QuadTree in 2023, built because a
 quasi-electrostatic finite volume solver of mine needed one: refinement toward
 edges, a balanced tree, and a triangulation with Laplacian smoothing on top.
-It taught me the thing RapidMesh is built on, that a solver and its mesher
-should be designed against each other rather than bolted together through a
-file format.
+It was written against one solver, which is how RapidMesh is built too.
 
 RapidMesh started in June 2026 with one goal: replace gmsh inside the stack
 with a deterministic, embeddable mesher. It is the youngest part of the stack
