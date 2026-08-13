@@ -10,14 +10,15 @@ license: open source
 cta1: [ Open RapidMesh -> ]|https://mesh.rapidpassives.org
 ---
 
-![Boolean difference, cutaway|right|40x12](/images/rapidmesh-drilled-block.png)
+![Box minus two spheres|right|40x12](/images/rapidmesh-box-2spheres.png)
 
 RapidMesh is a tetrahedral mesh generator for 3D electromagnetic FEM with a
 first-class 2D path for 2.5D MoM solvers, in pure Rust. Solid primitives
 (box, cylinder, sphere, cone, torus, prism, sweep, loft) assemble into a
 tagged complex; exact-arithmetic CSG booleans (exact predicates, no float
 snapping) produce a non-manifold B-rep with exactly conforming material
-interfaces.
+interfaces. A box minus two overlapping spheres comes out watertight, with the
+sphere patches meshed at their own curvature.
 
 ![Dielectric resonator, cutaway|left|40x14](/images/rapidmesh-resonator.png)
 
@@ -34,10 +35,9 @@ system, not approximated ad hoc.
 
 ![Two-region via, cutaway|right|40x12](/images/rapidmesh-via.png)
 
-Multi-region assemblies are the case that separates a mesher from a
-triangulator: a coaxial step carries a conductor, a dielectric and a change of
-diameter, and the interfaces between them have to be shared triangle for
-triangle or the solver sees a crack that is not in the geometry.
+A coaxial step carries a conductor, a dielectric and a change of diameter. The
+interfaces between those regions have to be shared triangle for triangle;
+where they are not, the solver sees a crack that is not in the geometry.
 
 ![Coaxial step, tagged regions|left|40x12](/images/rapidmesh-coax-step.png)
 
@@ -70,22 +70,16 @@ layers = rm.mesh_layers(groups, sizing, target_count=20_000)
 Overlapping regions within a group weld into one electrically continuous
 component; separate metal layers never merge.
 
-## Validated, not assumed
-
-![Box minus two spheres|right|40x12](/images/rapidmesh-box-2spheres.png)
-
-A validation corpus of 101 geometries (primitives, booleans, multi-region
-assemblies, RF passives, STL/OBJ imports) is re-run and re-rendered on every
-full run, each one checked for watertightness, manifoldness and dihedral
-angle. The API serves the solver as an oracle: mesh representations carry
-exactly what FEM assembly and refinement need.
+## The corpus
 
 ![mesh.rapidpassives.org|left|46x14](/screenshots/rapidmesh-site.png)
 
-The point of the corpus is that a boolean is easy to get almost right. A box
-minus two overlapping spheres has to come out watertight with the sphere
-patches meshed at their own curvature, and that is checked on every run rather
-than assumed from the algorithm.
+A corpus of 101 geometries (primitives, booleans, multi-region assemblies, RF
+passives, STL/OBJ imports) is re-run and re-rendered on every full run, each
+one checked for watertightness, manifoldness and minimal dihedral angle. A
+boolean is easy to get almost right, so the check runs every time rather than
+once at the end of the algorithm. The API serves the solver as an oracle: mesh
+representations carry exactly what FEM assembly and refinement need.
 
 ## History
 
