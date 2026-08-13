@@ -169,7 +169,8 @@
 						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had. It stayed on my own machine for a year and a half before the repository went public in the summer of 2024.",
 						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
 					},
-					"The same stretch brought three more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, a symbolic circuit analysis tool inspired by Analog Insydes, and a finite volume solver for quasi-electrostatic frequency-domain analysis that came out of the sensor modeling at the institute, with a 2D QuadTree mesher underneath it."
+					"The same stretch brought three more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, a symbolic circuit analysis tool inspired by Analog Insydes, and a finite volume solver for quasi-electrostatic frequency-domain analysis that came out of the sensor modeling at the institute.",
+					"The solver needed a mesh, so it got one: a 2D QuadTree that refines toward edges, balances itself, and triangulates with Laplacian smoothing. Writing my own mesher for the first time is where the idea started that a solver and its mesher should be designed against each other, which is what RapidMesh is now."
 				],
 				"images": [
 					{
@@ -180,11 +181,25 @@
 						"href": "https://github.com/milanofthe/harmonicbalance"
 					},
 					{
-						"src": "/images/timeline/qesfvm.png",
+						"src": "/images/timeline/qesfvm-field.png",
 						"label": "electrostatic FVM",
 						"fit": "contain",
 						"background": "#ffffff",
 						"href": "https://github.com/milanofthe/QESFVM"
+					},
+					{
+						"src": "/images/timeline/quadtree.png",
+						"label": "quadtree refinement",
+						"fit": "contain",
+						"background": "#ffffff",
+						"href": "https://github.com/milanofthe/QuadTree"
+					},
+					{
+						"src": "/images/timeline/quadtree-triangulation.png",
+						"label": "triangulated",
+						"fit": "contain",
+						"background": "#ffffff",
+						"href": "https://github.com/milanofthe/QuadTree"
 					}
 				],
 				"links": [
@@ -259,7 +274,26 @@
 			{
 				"period": "2021-2023",
 				"heading": "M.Sc. electrical engineering, TU Braunschweig",
-				"body": ["Master of science with honors, thesis graded excellent."]
+				"project": "sane",
+				"body": [
+					"Master of science with honors, thesis graded excellent. Written at the Institut fuer CMOS Design between October 2022 and March 2023: area optimized neural network based modelling of passive magnetic structures for chip-level integration.",
+					"Three things had to be built for it. Polygonal windings parametrised down to the geometry, so a spiral inductor is a handful of numbers rather than a drawing. Infineon's B12HFC layerstack reduced to the layers an EM solver actually needs, because the full stack makes the simulation unaffordable. And a completely analytical derivation of the first and second partial derivatives of RLCk transfer functions with respect to the circuit parameters, read straight off the block structure of the MNA matrices.",
+					{
+						"text": "Those derivative stencils are the idea SANE now runs symbolically over a whole compute graph, and the windings and layerstacks are what RapidPassives generates and RapidMoM solves. At the time I just wanted the optimizer to stop finite-differencing.",
+						"links": [
+							{ "phrase": "SANE", "project": "sane" },
+							{ "phrase": "RapidPassives", "project": "rapidpassives" },
+							{ "phrase": "RapidMoM", "project": "rapidmom" }
+						]
+					}
+				],
+				"images": [
+					{ "src": "/images/timeline/ma-title.png", "label": "master thesis", "fit": "contain", "background": "#ffffff" },
+					{ "src": "/images/timeline/ma-windings.png", "label": "polygonal windings", "fit": "contain", "background": "#ffffff" },
+					{ "src": "/images/timeline/ma-layerstack.png", "label": "layerstack", "fit": "contain", "background": "#ffffff" },
+					{ "src": "/images/timeline/ma-derivatives.png", "label": "partial derivatives", "fit": "contain", "background": "#ffffff" },
+					{ "src": "/images/timeline/ma-stencils.png", "label": "derivative stencils", "fit": "contain", "background": "#ffffff" }
+				]
 			},
 			{
 				"period": "2021-2023",
@@ -281,25 +315,28 @@
 						"label": "the manuscript",
 						"fit": "contain",
 						"background": "#ffffff",
-						"href": "https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript"
+						"href": "https://github.com/milanofthe/lti-manuscript-en"
 					},
 					{
-						"src": "/images/timeline/state-space.png",
-						"label": "state space",
+						"src": "/images/timeline/lti-transient.png",
+						"label": "transient response",
 						"fit": "contain",
-						"background": "#ffffff"
+						"background": "#ffffff",
+						"href": "https://github.com/milanofthe/lti-manuscript-en"
 					},
 					{
-						"src": "/images/timeline/phasor.png",
-						"label": "phasor",
+						"src": "/images/timeline/lti-frequency.png",
+						"label": "frequency response",
 						"fit": "contain",
-						"background": "#ffffff"
+						"background": "#ffffff",
+						"href": "https://github.com/milanofthe/lti-manuscript-en"
 					},
 					{
-						"src": "/images/timeline/step-response.png",
-						"label": "step response",
+						"src": "/images/timeline/lti-bode.png",
+						"label": "the damped oscillator",
 						"fit": "contain",
-						"background": "#ffffff"
+						"background": "#ffffff",
+						"href": "https://github.com/milanofthe/lti-manuscript-en"
 					}
 				],
 				"links": [
@@ -312,16 +349,14 @@
 				"heading": "before GitHub",
 				"project": "sane",
 				"body": [
-					"The first real project never made it to a repository. MiCir was a circuit analysis library written in Python from nothing: my own matrix class, my own complex arithmetic, my own polynomial and symbolic element types in s. Not because there was no numpy, but because I wanted to know what numpy was doing before I let it do it for me.",
+					"The first real project never made it to a repository. MiCir was a symbolic network analysis library written in Python from nothing: my own matrix class, my own complex arithmetic, my own polynomial and symbolic element types in s. Not because there was no numpy, but because I wanted to know what numpy was doing before I let it do it for me.",
 					{
-						"text": "It read netlists, solved networks symbolically, synthesised Cauer ladders from a driving-point impedance, and drew its own Bode and locus plots. In February 2020 I typeset the whole thing in LaTeX, the first time I documented a tool of mine instead of just using it. Every idea SANE is built on, this one had first and did badly.",
+						"text": "It read netlists, solved networks symbolically, synthesised Cauer ladders from a driving-point impedance, and drew its own Bode and locus plots. In February 2020 I typeset the whole thing in LaTeX, the first time I documented a tool of mine instead of just using it. It is the same problem SANE solves today, six years and a great deal of technique later: keep the circuit's symbolic structure instead of collapsing it into numbers, and read the answers off it.",
 						"links": [{ "phrase": "SANE", "project": "sane" }]
 					},
 					"The same folder holds the detours of a student with a compiler and time: Mandelbrot sets in the complex plane at resolutions my laptop resented, Monte Carlo estimates of pi, a DFT written out by hand to see where the symmetry comes from."
 				],
 				"images": [
-					{ "src": "/images/timeline/micir-doc.png", "label": "micir, documented", "fit": "contain", "background": "#ffffff" },
-					{ "src": "/images/timeline/micir-bode.png", "label": "micir bode plot", "fit": "contain", "background": "#ffffff" },
 					{ "src": "/images/timeline/mandelbrot.png", "label": "mandelbrot", "fit": "contain", "background": "#ffffff" }
 				]
 			},
@@ -336,13 +371,25 @@
 				"period": "2018-2021",
 				"heading": "teaching assistant, TU Braunschweig",
 				"body": [
-					"Weekly independent tutorials on linear dynamical systems and circuit theory for 50+ students, the material that became the throughline of everything since. Most of the tools above exist because a room full of people needed the same thing explained better."
+					"Weekly independent tutorials on linear dynamical systems and circuit theory for 50+ students, the material that became the throughline of everything since. Most of the tools above exist because a room full of people needed the same thing explained better.",
+					"The Fachschaft tutorial for Netzwerke / Wechselstroeme und Netzwerke came with its own problem set, typeset and drawn from scratch and never quite finished: networks with switching instants, initial values, asymptotic stability, harmonic steady state. Writing good exercises is the hardest form of understanding something."
+				],
+				"images": [
+					{ "src": "/images/timeline/wun-title.png", "label": "tutorial problems", "fit": "contain", "background": "#ffffff" },
+					{ "src": "/images/timeline/wun-network.png", "label": "a network", "fit": "contain", "background": "#ffffff" }
 				]
 			},
 			{
 				"period": "2015-2021",
 				"heading": "B.Sc. electrical engineering, TU Braunschweig",
-				"body": ["Bachelor of science, thesis graded excellent."]
+				"body": [
+					"Bachelor of science, thesis graded excellent. Written over the winter of 2020/21: order reduction of interconnect network models for efficient calculation with SPICE simulators.",
+					"The interesting half was not the reduction but what has to survive it. A reduced RLC network model is only usable if it stays passive and stable, and both properties are readable off the structure of the MNA system matrices before any reduction happens. That is where I first met rational fitting, passivity enforcement and the papers that later became my vector fitting implementation."
+				],
+				"images": [
+					{ "src": "/images/timeline/ba-title.png", "label": "bachelor thesis", "fit": "contain", "background": "#ffffff" },
+					{ "src": "/images/timeline/ba-passivity.png", "label": "passivity", "fit": "contain", "background": "#ffffff" }
+				]
 			},
 			{
 				"period": "2014-2021",

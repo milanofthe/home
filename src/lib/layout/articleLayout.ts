@@ -488,31 +488,37 @@ export class ArticleGrid {
 				this.row += 2;
 			}
 
-			// Side images: two columns left of the rail, top-aligned with the heading.
-			// Same width for every tile, own height for every picture — so the next one
-			// goes wherever the shorter column currently ends, and the two columns stay
-			// level however assorted the artifacts are. The entry is as tall as the
-			// taller of text and image stack.
+			// Side images: two to a band, left of the rail, the first band top-aligned
+			// with the heading. Every tile shares the band's top row, so the column keeps
+			// the horizontal reading of a grid; heights differ inside a band because each
+			// picture keeps its own proportions, and the band advances by the taller of
+			// the two. The entry is as tall as the taller of text and image stack.
 			if (side && entry.images?.length) {
-				const colLeft = [left, left + tileW + TILE_GAP];
-				const colBottom = [entryStart, entryStart];
-				// A single artifact sits against the rail, next to the text it belongs
-				// to, rather than stranded at the far edge of an empty column.
-				const lone = entry.images.length === 1;
+				let bandRow = entryStart;
 
-				for (const img of entry.images) {
-					const i = lone ? 1 : colBottom[0] <= colBottom[1] ? 0 : 1;
-					const rows = this.tileRows(img.src, tileW - 2);
-					this.drawFrame(colBottom[i], colLeft[i], tileW, rows, img.label, img.src, {
-						href: img.href,
-						fit: img.fit,
-						background: img.background,
-						glow: entryGlow
+				for (let i = 0; i < entry.images.length; i += 2) {
+					const band = entry.images.slice(i, i + 2);
+					// A lone tile in the last band sits against the rail, where the
+					// right-hand tile of a full band would be, next to the text it
+					// belongs to rather than stranded at the far edge.
+					const bandCol = band.length === 2 ? left : left + tileW + TILE_GAP;
+					let bandRows = 0;
+
+					band.forEach((img, index) => {
+						const rows = this.tileRows(img.src, tileW - 2);
+						this.drawFrame(bandRow, bandCol + index * (tileW + TILE_GAP), tileW, rows, img.label, img.src, {
+							href: img.href,
+							fit: img.fit,
+							background: img.background,
+							glow: entryGlow
+						});
+						bandRows = Math.max(bandRows, rows);
 					});
-					// Frame height plus its two border rows, then a gap row.
-					colBottom[i] += rows + 3;
+
+					// Tallest frame in the band plus its two border rows, then a gap row.
+					bandRow += bandRows + 3;
 				}
-				this.row = Math.max(this.row, colBottom[0], colBottom[1]);
+				this.row = Math.max(this.row, bandRow);
 			}
 
 			// Breathing room between entries.
