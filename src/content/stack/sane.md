@@ -40,15 +40,18 @@ and parameters read and write hierarchically: model.X1.R2 = 1e3.
 
 ## Frontends and devices
 
-![SANE|right|46x14](/screenshots/sane-app.png)
+![Schematic, netlist and graph|right|46x14](/images/sane-twin-t.png)
 
 The SPICE frontend parses .param expressions, .subckt hierarchy, .model cards,
 and the standard source waveforms (SIN, PULSE, EXP, PWL). Devices cover the
 classic set: diodes, MOSFETs, BJTs (Gummel-Poon), JFETs, MESFETs, controlled
 sources and switches, behavioral sources, and transmission lines. The web app
-at sane.milanrother.com runs the full engine in the browser.
+at sane.milanrother.com runs the full engine in the browser: schematic,
+netlist and the graph the engine actually solves are three views of one
+circuit, live next to each other. Above, a twin-T notch filter, seven
+elements, small enough that the whole DAG fits on screen.
 
-![Symbolic graph|left|46x14](/screenshots/sane-graph.png)
+![Common-emitter stage, full graph|left|46x14](/images/sane-common-emitter.png)
 
 Compact models are the differentiator: a native Verilog-A frontend lowers
 BSIM4, PSP, HICUM, VBIC, and EKV onto the same DAG, with no OSDI binary and
@@ -56,6 +59,12 @@ no generated code. Every parameter stays exposed to the autodiff, even in
 harmonic balance. Temperature is a first-class symbolic global, so .temp
 sweeps are physical and d(metric)/dT is exact. Noise sources (thermal, shot,
 flicker, Verilog-A noise) are summed in one registry.
+
+What that costs is visible: the graph beside this paragraph is a
+common-emitter stage, one transistor and seven passives, and the Gummel-Poon
+model of that single BJT is most of what you see. Nothing in it is opaque,
+every node is differentiable, and every parameter of the compact model is
+still a symbol the sensitivity analysis can reach.
 
 ## The engine
 
