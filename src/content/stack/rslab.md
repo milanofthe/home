@@ -20,10 +20,13 @@ matrices.
 
 ![vs faer and MKL PARDISO|right|46x14|contain](/images/rslab-h2h-ldlt.png)
 
-The design target is a solver that sits inside an engine, not on a cluster
-queue. The numeric factor is bit-identical across thread counts. Peak memory
-and runtime are predicted exactly from the symbolic structure before any
-numeric work. Fixed-pattern sequences (frequency sweeps, Newton steps)
+The design target is a solver that sits inside an engine rather than behind a
+job submission. The numeric factor is bit-identical across thread counts. Peak
+memory and runtime are predicted exactly from the symbolic structure before
+any numeric work, which is what makes a sweep schedulable: how many solves fit
+on a cloud machine, which instance size to rent for them, and whether a given
+system fits at all, are all answerable before anything is started rather than
+after a run dies. Fixed-pattern sequences (frequency sweeps, Newton steps)
 refactor numeric-only on frozen pivots, and solve_transpose reuses the same
 factors for adjoint and sensitivity solves. Mixed-precision solves factor in
 single precision, refine against the double-precision original, and return a
@@ -75,8 +78,9 @@ What it became after that was decided by the matrices it had to solve. FEM
 and MoM systems came first, for [RapidFEM](/stack/rapidfem/) and
 [RapidMoM](/stack/rapidmom/); circuit matrices came later, with
 [SANE](/stack/sane/), and brought the KLU path with them. The a-priori
-estimators have the same origin: a solver that sits inside another engine has
-to say what a factorization will cost before it runs it, and the symbolic
+estimators have the same origin: the sweeps these solvers run are cloud work,
+and packing and scheduling cloud work means knowing the peak memory of a
+factorization before paying for the machine that would run it. The symbolic
 analysis already holds everything needed to answer that.
 
 Along the way I built an MLP cost-model auto-tuner for picking solver
