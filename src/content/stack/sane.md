@@ -57,9 +57,9 @@ it came from.
 
 ![Symbolic graph|right|46x14](/screenshots/sane-graph.png)
 
-Compact models are the differentiator: a native Verilog-A frontend lowers
-BSIM4, PSP, HICUM, VBIC, and EKV onto the same DAG, with no OSDI binary and
-no generated code. Every parameter stays exposed to the autodiff, even in
+Compact models go the same way: a native Verilog-A frontend lowers BSIM4, PSP,
+HICUM, VBIC, and EKV onto the same DAG, with no OSDI binary and no generated
+code. Every parameter stays exposed to the autodiff, even in
 harmonic balance. Temperature is a first-class symbolic global, so .temp
 sweeps are physical and d(metric)/dT is exact. Noise sources (thermal, shot,
 flicker, Verilog-A noise) are summed in one registry.
