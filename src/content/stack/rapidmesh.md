@@ -74,6 +74,13 @@ component.
 
 ## History
 
+The first mesher I wrote was a 2D QuadTree in 2023, built because a
+quasi-electrostatic finite volume solver of mine needed one: refinement toward
+edges, a balanced tree, and a triangulation with Laplacian smoothing on top.
+It taught me the thing RapidMesh is built on, that a solver and its mesher
+should be designed against each other rather than bolted together through a
+file format.
+
 RapidMesh started in June 2026 with one goal: replace gmsh inside the stack
 with a deterministic, embeddable mesher. The 2D path is now the mesher inside
 [RapidMoM](/stack/rapidmom/); the 3D path is built to take over

@@ -37,7 +37,9 @@ and Plotly for interactive results.
 ## History
 
 PathView began as a project at the MIT Plasma Science and Fusion Center: a
-way to build and inspect PathSim models visually. Starting in November 2025 I
+way to build and inspect PathSim models visually. It is part of the published
+tritium fuel cycle workflow there, where a fuel cycle is a diagram before it
+is a script. Starting in November 2025 I
 rewrote it on my own stack (SvelteKit, SvelteFlow, Pyodide), and we
 transferred it to the PathSim organization. Today it is hosted free for
 everyone at view.pathsim.org, with the pip-installable local server for

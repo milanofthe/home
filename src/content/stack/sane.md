@@ -75,10 +75,19 @@ the raw engine call.
 
 ## History
 
-SANE is the return to my RFIC EDA roots. It builds on work I did together
-with Ralf Sommer, the inventor of Analog Insydes, on reviving that tool from
-December 2024 on. In June 2026 I picked the ideas up again on my own stack,
-with SSA-style compute graphs at the core of the engine. The first two months
+SANE is the return to my RFIC EDA roots, and the third time I have written
+this tool. The first was MiCir in 2019, a symbolic network analysis library
+built on nothing but Python's math module: my own matrix class, my own complex
+arithmetic, symbolic element types in s, netlists in and Cauer ladders out.
+The second was the exact parameter sensitivities in my master's thesis, where
+the first and second partial derivatives of RLCk transfer functions are read
+analytically off the block structure of the MNA matrices, which is what the
+autodiff over the DAG generalizes.
+
+It also builds on work I did together with Ralf Sommer, the inventor of
+Analog Insydes, on reviving that tool from December 2024 on. In June 2026 I
+picked the ideas up again on my own stack, with SSA-style compute graphs at
+the core of the engine. The first two months
 produced the SPICE parser, the symbolic DAG engine, the full set of analyses,
 and the Verilog-A frontend. The web app at sane.milanrother.com is public;
 the core engine is in early access.

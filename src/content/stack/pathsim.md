@@ -67,6 +67,29 @@ Install with pip install pathsim or conda install conda-forge::pathsim. The
 documentation at docs.pathsim.org has tutorials, end-to-end examples, and the
 full API reference.
 
+## In fusion research
+
+The MIT Plasma Science and Fusion Center and the UK Atomic Energy Authority
+use PathSim as the orchestrating framework for tritium fuel cycle modelling.
+The published workflow puts three fidelities in one timestepping loop: a
+zero-dimensional residence time model of an ARC-class power plant, an
+intermediate one-dimensional model of a liquid metal bubble column validated
+against the literature, and high-fidelity multi-dimensional transport in the
+finite element code FESTIM, wrapped as ordinary blocks. The same system model
+scales down to lab experiments like BABY and LIBRA.
+
+That is the case the block abstraction was built for. A component's fidelity
+is a property of the block, not of the framework, so a residence-time
+approximation can be swapped for a finite element solve without touching the
+system around it, and a thirty-component transient still solves in seconds,
+which is what makes Monte Carlo and uncertainty quantification affordable.
+
+The workflow is written up in *Physics-informed tritium fuel cycle modelling
+workflow for fusion reactors*
+([arXiv:2603.25751](https://arxiv.org/abs/2603.25751)), which I co-authored,
+and I presented PathSim at the IAEA workshop on digital engineering for fusion
+energy research in December 2025.
+
 ## History
 
 PathSim started in early 2023, at the beginning of my PhD, as an analog
