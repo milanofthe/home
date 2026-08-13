@@ -15,31 +15,42 @@
 			heading: 'one stack',
 			accent: 'sane',
 			body: [
-				'The full roundtrip back through circuits and fields: RapidFEM, RapidMesh, RapidMoM, RSLAB, SANE, FastSim. One architecture, SSA-style compute graphs, Rust cores, Python APIs, browser interfaces.'
+				'The full roundtrip back through circuits and fields, built as one stack rather than six tools: RapidFEM and RapidMoM for electromagnetic fields, RapidMesh generating what they solve on, RSLAB underneath as the sparse direct solver, SANE for symbolic and numeric circuit analysis, FastSim compiling system models to native code.',
+				'One architecture throughout: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy; the bet is that one coherent stack does better.'
 			],
 			images: [
-				{ src: '/screenshots/sane-graph.png', label: 'sane symbolic graph', href: '/stack/sane/' },
+				{ src: '/screenshots/sane-graph.png', label: 'sane graph', href: '/stack/sane/' },
 				{ src: '/screenshots/sane-app.png', label: 'sane', href: '/stack/sane/' },
 				{ src: '/images/rapidmesh-resonator.png', label: 'rapidmesh', href: '/stack/rapidmesh/', fit: 'contain', background: '#131316' },
-				{ src: '/images/rapidmom-current.png', label: 'rapidmom current density', href: '/stack/rapidmom/', fit: 'contain', background: '#131316' }
+				{ src: '/images/rapidmom-current.png', label: 'rapidmom', href: '/stack/rapidmom/', fit: 'contain', background: '#131316' },
+				{ src: '/screenshots/rapidfem-home.png', label: 'rapidfem', href: '/stack/rapidfem/' },
+				{ src: '/images/rslab-h2h-ldlt.png', label: 'rslab benchmark', href: '/stack/rslab/', fit: 'contain', background: '#08080c' }
 			],
-			links: [{ text: '[ view the stack -> ]', href: '/#projects' }]
+			links: [
+				{ text: '[ view the stack -> ]', href: '/#projects' },
+				{ text: '[ rapidfem ]', href: 'https://github.com/milanofthe/rapidfem' },
+				{ text: '[ rslab ]', href: 'https://github.com/milanofthe/rslab' }
+			]
 		},
 		{
 			period: '2025',
 			heading: 'open source',
 			accent: 'pathsim',
 			body: [
-				'PathSim opened in early 2025 as an open alternative to Simulink. JOSS-published, adopted for nuclear fusion fuel-cycle modeling at the MIT Plasma Science & Fusion Center and by JSBSim for flight dynamics. PathView, the browser-based visual editor, followed.'
+				'PathSim opened in early 2025 as an open alternative to Simulink: clean API, mutability from the get-go, solvers that handle stiffness and algebraic loops without ceremony. JOSS-published, and picked up faster than expected — nuclear fusion fuel-cycle modeling at the MIT Plasma Science & Fusion Center, flight dynamics in JSBSim, and domain toolboxes contributed by people I had never met.',
+				'PathView followed: the same models as drag-and-drop block diagrams in the browser, running entirely client-side through Pyodide. Nothing to install to try it.'
 			],
 			images: [
-				{ src: '/screenshots/view-pathsim-org.png', label: 'view.pathsim.org', href: '/stack/pathview/' },
+				{ src: '/screenshots/view-pathsim-org.png', label: 'pathview', href: '/stack/pathview/' },
 				{ src: '/screenshots/pathsim-org.png', label: 'pathsim.org', href: 'https://pathsim.org' },
-				{ src: '/screenshots/docs-pathsim-org.png', label: 'docs', href: 'https://docs.pathsim.org' }
+				{ src: '/screenshots/docs-pathsim-org.png', label: 'docs', href: 'https://docs.pathsim.org' },
+				{ src: '/screenshots/pysimhub-io.png', label: 'pysimhub', href: 'https://pysimhub.io' }
 			],
 			links: [
 				{ text: '[ pathsim.org ]', href: 'https://pathsim.org' },
-				{ text: '[ pathview ]', href: '/stack/pathview/' }
+				{ text: '[ pathview ]', href: '/stack/pathview/' },
+				{ text: '[ docs ]', href: 'https://docs.pathsim.org' },
+				{ text: '[ pysimhub ]', href: 'https://pysimhub.io' }
 			]
 		},
 		{
@@ -47,7 +58,8 @@
 			heading: 'PathSim',
 			accent: 'pathsim',
 			body: [
-				'Started in February as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework. The same year: a minimalistic harmonic balance framework and a symbolic circuit analysis tool, the seed of what is now SANE.'
+				'Started in February as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles.',
+				'The same year brought two more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, and a symbolic circuit analysis tool inspired by Analog Insydes, the seed of what is now SANE. A finite volume solver for quasi-electrostatic frequency-domain analysis came out of the sensor modeling at the institute.'
 			],
 			images: [
 				{
@@ -67,15 +79,18 @@
 			],
 			links: [
 				{ text: '[ pathsim ]', href: 'https://github.com/pathsim/pathsim' },
-				{ text: '[ harmonicbalance ]', href: 'https://github.com/milanofthe/harmonicbalance' }
+				{ text: '[ harmonicbalance ]', href: 'https://github.com/milanofthe/harmonicbalance' },
+				{ text: '[ qesfvm ]', href: 'https://github.com/milanofthe/QESFVM' },
+				{ text: '[ sca ]', href: 'https://github.com/milanofthe/sca' }
 			]
 		},
 		{
 			period: '2023-2025',
 			heading: 'research associate, CMOS design',
 			accent: 'rapidpassives',
-			body: [
-				'Research associate at the Institut fuer CMOS Design, TU Braunschweig: numerical modeling of electrochemical sensors for analog circuit design, bio-impedance spectroscopy hardware and software, and an EDA pipeline for RFIC passives, validated in silicon for cryogenic quantum applications. That pipeline became RapidPassives.'
+				body: [
+				'Research associate at the Institut fuer CMOS Design, TU Braunschweig. Three strands ran in parallel: numerical modeling of electrochemical sensors for analog circuit design, system design and hardware for bio-impedance spectroscopy, and an EDA pipeline for RFIC passives that was validated in silicon for cryogenic quantum applications.',
+				'That last one started as a Tkinter window that drew inductors and exported GDS. It became RapidPassives: browser-based layout generation with real-time preview and a WebGL viewer that renders million-polygon GDS at 60 fps.'
 			],
 			// Then and now, side by side: the Tkinter pipeline of 2023 next to what it
 			// became. The pair says more about the arc than either picture alone.
@@ -83,7 +98,10 @@
 				{ src: '/images/timeline/rapidpassives-tkinter.png', label: 'back then', href: '/stack/rapidpassives/' },
 				{ src: '/screenshots/rapidpassives-transformer.png', label: 'today', href: '/stack/rapidpassives/' }
 			],
-			links: [{ text: '[ rapidpassives ]', href: '/stack/rapidpassives/' }]
+			links: [
+				{ text: '[ rapidpassives ]', href: '/stack/rapidpassives/' },
+				{ text: '[ rapidpassives.org ]', href: 'https://rapidpassives.org' }
+			]
 		},
 		{
 			period: '2023-now',
@@ -94,7 +112,8 @@
 			period: '2022-2023',
 			heading: 'first numerical side projects',
 			body: [
-				'The early experiments went on GitHub: an interactive 2D electromagnetic FDTD simulation environment, a fast relaxed vector fitting implementation for MIMO systems, an interactive Bode plot tool.'
+				'The early experiments went on GitHub, one per idea worth chasing. An interactive 2D electromagnetic FDTD environment with a live field view. A fast relaxed vector fitting implementation for MIMO systems, fitting measured frequency responses to pole-residue models. An interactive Bode plot tool for seeing what a transfer function does when you move its poles.',
+				'And a 2D QuadTree mesher, written because the FDTD work needed one and writing it was more interesting than installing one.'
 			],
 			images: [
 				{ src: '/images/timeline/fdtd.png', label: 'fdtd.png', href: 'https://github.com/milanofthe/Interactive_2D_FDTD' },
@@ -109,7 +128,8 @@
 			links: [
 				{ text: '[ 2d fdtd ]', href: 'https://github.com/milanofthe/Interactive_2D_FDTD' },
 				{ text: '[ vectorfitting ]', href: 'https://github.com/milanofthe/Vectorfitting' },
-				{ text: '[ bode plot ]', href: 'https://github.com/milanofthe/Interactive_BodePlot' }
+				{ text: '[ bode plot ]', href: 'https://github.com/milanofthe/Interactive_BodePlot' },
+				{ text: '[ quadtree ]', href: 'https://github.com/milanofthe/QuadTree' }
 			]
 		},
 		{
@@ -128,7 +148,7 @@
 			period: '2021',
 			heading: 'the manuscript',
 			body: [
-				'The 120-page LaTeX manuscript on linear system theory, written over the summer to help out a friend.'
+				'The 120-page LaTeX manuscript on linear system theory, written over the summer to help out a friend: Laplace analysis, poles and zeros in the complex plane, frequency response, state space. It has since been translated to English and is still the clearest statement of the material everything after it rests on.'
 			],
 			images: [
 				{
@@ -139,7 +159,10 @@
 					href: 'https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript'
 				}
 			],
-			links: [{ text: '[ lti manuscript ]', href: 'https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript' }]
+			links: [
+				{ text: '[ manuscript, de ]', href: 'https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript' },
+				{ text: '[ manuscript, en ]', href: 'https://github.com/milanofthe/lti-manuscript-en' }
+			]
 		},
 		{
 			period: '2019-2020',

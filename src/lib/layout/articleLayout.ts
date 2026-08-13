@@ -8,13 +8,19 @@ import imageDims from '$lib/data/image-dims.json';
 import { glowFor } from '$lib/content/prose';
 import type { Cell, CellType } from './gridLayout';
 
-/// Narrowest a paired timeline image may get before the pair stacks instead. Below
-/// this the two frames are thumbnails rather than pictures.
-const MIN_PAIR_WIDTH = 20;
+/// One timeline artifact, in grid cells. Every picture gets this frame whatever its
+/// own proportions are — the same decision the landing page's portal tiles make, and
+/// what turns a column of assorted screenshots into one repeating element.
+const TILE_W = 26;
+const TILE_H = 13;
 
-/// Share of the article width the timeline's image column takes. Wide enough that a
-/// pair of images still reads, narrow enough to leave the text a comfortable measure.
-const TIMELINE_IMAGE_SHARE = 0.46;
+/// Gap between two tiles sharing a row.
+const TILE_GAP = 2;
+
+/// Text measure the timeline aims for beside its images. The timeline claims more
+/// width than the prose above it: it carries a year column, a rail and a picture
+/// column, and squeezing those into the reading measure leaves nothing for any of them.
+const TIMELINE_TEXT_W = 48;
 
 const IMAGE_DIMS = imageDims as unknown as Record<string, [number, number]>;
 
@@ -106,11 +112,11 @@ export interface TextSegment {
 	accent?: AccentKey; // link color override (defaults to article accent)
 }
 
-// A framed artifact attached to a timeline entry.
+// A framed artifact attached to a timeline entry. No size: every tile on the
+// timeline is the same, which is what makes the column read as a grid.
 export interface TimelineImage {
 	src: string;
 	label: string;
-	w?: number;
 	href?: string;
 	fit?: 'cover' | 'contain';
 	background?: string;
@@ -395,12 +401,29 @@ export class ArticleGrid {
 	// their entry text instead and the rail moves to the left edge.
 	timeline(entries: TimelineEntry[]) {
 		const periodW = Math.max(...entries.map((e) => e.period.length));
-		const side = this.twoCol;
-		const imgColW = side ? Math.min(52, Math.floor(this.contentWidth * TIMELINE_IMAGE_SHARE)) : 0;
-		const yearCol = this.startCol + (side ? imgColW + 2 : 0);
+
+		// The timeline lays itself out across the full grid rather than inside the
+		// article's reading measure: prose wants a narrow column, but this carries a
+		// year, a rail and pictures beside it. Centred on the same axis so it reads as
+		// part of the page and not as something that escaped it.
+		const gutter = 4;
+		const available = this.cols - gutter * 2;
+		// Two tiles wide when there is room for them plus the rail and a readable
+		// measure; one otherwise. Below that the whole thing stacks.
+		const twoTiles = TILE_W * 2 + TILE_GAP;
+		const railBlock = periodW + 2 + 3;
+		const side = available >= twoTiles + railBlock + TIMELINE_TEXT_W;
+		const imgColW = side ? twoTiles : 0;
+
+		const width = side
+			? Math.min(available, imgColW + 2 + railBlock + Math.max(TIMELINE_TEXT_W, this.contentWidth - 20))
+			: this.contentWidth;
+		const left = side ? Math.floor((this.cols - width) / 2) : this.startCol;
+
+		const yearCol = left + (side ? imgColW + 2 : 0);
 		const railCol = yearCol + periodW + 2;
 		const contentCol = railCol + 3;
-		const contentW = this.startCol + this.contentWidth - contentCol;
+		const contentW = left + width - contentCol;
 		const railStart = this.row;
 
 		for (const entry of entries) {
@@ -423,11 +446,12 @@ export class ArticleGrid {
 				this.row += lines + 1;
 			}
 
-			// Stacked fallback: images sit below the text, full text width.
+			// Stacked fallback: images sit below the text. Still one size for all of
+			// them, scaled to whatever width is left.
 			if (!side) {
+				const fw = Math.min(TILE_W + 8, contentW);
+				const rows = Math.round((TILE_H * fw) / TILE_W);
 				for (const img of entry.images ?? []) {
-					const fw = Math.min(img.w ?? 44, contentW);
-					const rows = this.imageRows(img.src, fw - 2, 12);
 					const consumed = this.drawFrame(this.row, contentCol, fw, rows, img.label, img.src, {
 						href: img.href,
 						fit: img.fit,
@@ -453,51 +477,35 @@ export class ArticleGrid {
 				this.row += 2;
 			}
 
-			// Side images: left of the rail, the first row top-aligned with the
-			// heading, further rows stacked below. Right-aligned against the rail
-			// so they visibly hang off the line. The entry is as tall as the
-			// taller of text and image stack.
-			//
-			// Two sit side by side when the column is wide enough for both to stay
-			// legible; below that they stack, because a pair of thumbnails too
-			// small to read is worse than one picture you can see.
+			// Side images: left of the rail, packed two to a row, the first row
+			// top-aligned with the heading. Every tile is the same size whatever the
+			// picture's own proportions are — a grid of identical frames, like the
+			// portal tiles on the landing page. The entry is as tall as the taller of
+			// text and image stack.
 			if (side && entry.images?.length) {
-				const gap = 2;
-				const pairWidth = Math.floor((imgColW - gap) / 2);
-				const pairs = pairWidth >= MIN_PAIR_WIDTH;
 				let imgRow = entryStart;
 
-				for (let i = 0; i < entry.images.length; ) {
-					const first = entry.images[i];
-					const second = entry.images[i + 1];
-					// A declared width means the caller wants that size; only
-					// undeclared images are candidates for pairing.
-					const canPair = pairs && second && !first.w && !second.w;
+				for (let i = 0; i < entry.images.length; i += 2) {
+					const pair = entry.images.slice(i, i + 2);
+					// A lone tile in the last row sits against the rail, where the
+					// right-hand tile of a full row would be, so the column keeps one
+					// edge rather than centring odd rows.
+					const startCol = pair.length === 2 ? left : left + TILE_W + TILE_GAP;
 
-					if (canPair) {
-						const rowsA = this.imageRows(first.src, pairWidth - 2, 12);
-						const rowsB = this.imageRows(second.src, pairWidth - 2, 12);
-						// One height for the pair, so their frames line up.
-						const rows = Math.min(rowsA, rowsB);
-						const leftCol = this.startCol + imgColW - (pairWidth * 2 + gap);
-						this.drawFrame(imgRow, leftCol, pairWidth, rows, first.label, first.src, {
-							href: first.href, fit: first.fit, background: first.background, glow: entryGlow
-						});
-						this.drawFrame(imgRow, leftCol + pairWidth + gap, pairWidth, rows, second.label, second.src, {
-							href: second.href, fit: second.fit, background: second.background, glow: entryGlow
-						});
-						imgRow += rows + 3;
-						i += 2;
-					} else {
-						const fw = Math.min(first.w ?? imgColW, imgColW);
-						const rows = this.imageRows(first.src, fw - 2, 12);
-						const imgCol = this.startCol + imgColW - fw;
-						const consumed = this.drawFrame(imgRow, imgCol, fw, rows, first.label, first.src, {
-							href: first.href, fit: first.fit, background: first.background, glow: entryGlow
-						});
-						imgRow += consumed + 1;
-						i += 1;
-					}
+					pair.forEach((img, index) => {
+						this.drawFrame(
+							imgRow,
+							startCol + index * (TILE_W + TILE_GAP),
+							TILE_W,
+							TILE_H,
+							img.label,
+							img.src,
+							{ href: img.href, fit: img.fit, background: img.background, glow: entryGlow }
+						);
+					});
+
+					// Frame height plus its two border rows, then a gap row.
+					imgRow += TILE_H + 3;
 				}
 				this.row = Math.max(this.row, imgRow);
 			}
