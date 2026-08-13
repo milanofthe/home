@@ -53,6 +53,285 @@
 				"links": [{ "phrase": "don't hesitate to reach out", "href": "/consulting/" }]
 			}
 		],
+		"timeline": [
+			{
+				"period": "2026",
+				"heading": "one stack",
+				"project": "sane",
+				"body": [
+					{
+						"text": "The full roundtrip back through circuits and fields, built as one stack rather than six tools: RapidFEM and RapidMoM for electromagnetic fields, RapidMesh generating what they solve on, RSLAB underneath as the sparse direct solver, SANE for symbolic and numeric circuit analysis, FastSim compiling system models to native code.",
+						"links": [
+							{ "phrase": "RapidFEM", "project": "rapidfem" },
+							{ "phrase": "RapidMoM", "project": "rapidmom" },
+							{ "phrase": "RapidMesh", "project": "rapidmesh" },
+							{ "phrase": "RSLAB", "project": "rslab" },
+							{ "phrase": "SANE", "project": "sane" },
+							{ "phrase": "FastSim", "project": "fastsim" }
+						]
+					},
+					"One architecture throughout: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy; the bet is that one coherent stack does better.",
+					"Nothing in it is a wrapper. RSLAB took PARDISO's place and is benchmarked against it, RapidMesh took gmsh's. Owning the full depth is the slow way to build and the only way the layers actually fit."
+				],
+				"images": [
+					{ "src": "/screenshots/sane-graph.png", "label": "sane graph", "project": "sane" },
+					{ "src": "/screenshots/sane-app.png", "label": "sane", "project": "sane" },
+					{ "src": "/images/rapidmesh-resonator.png", "label": "rapidmesh", "project": "rapidmesh", "fit": "contain", "background": "#131316" },
+					{ "src": "/images/rapidmom-current.png", "label": "rapidmom", "project": "rapidmom", "fit": "contain", "background": "#131316" },
+					{ "src": "/screenshots/rapidfem-home.png", "label": "rapidfem", "project": "rapidfem" },
+					{ "src": "/images/rslab-h2h-ldlt.png", "label": "rslab benchmark", "project": "rslab", "fit": "contain", "background": "#08080c" }
+				],
+				"links": [
+					{ "text": "[ view the stack -> ]", "href": "/#projects" },
+					{ "text": "[ rapidfem ]", "href": "https://github.com/milanofthe/rapidfem" },
+					{ "text": "[ rslab ]", "href": "https://github.com/milanofthe/rslab" }
+				]
+			},
+			{
+				"period": "2025-2026",
+				"heading": "fusion",
+				"project": "pathsim",
+				"body": [
+					{
+						"text": "PathSim found users I never went looking for. The MIT Plasma Science and Fusion Center and the UK Atomic Energy Authority build tritium fuel-cycle models on it: a zero-dimensional residence-time model of an ARC-class power plant, a one-dimensional liquid-metal bubble column, and full FESTIM finite-element transport, all coupled inside one timestepping loop.",
+						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
+					},
+					"Mixing fidelities inside one model is exactly what the block-diagram abstraction is for. It took a fusion lab to prove the point: the same system model runs against lab experiments like BABY and LIBRA and against whole power-plant concepts, and a thirty-component bubbler transient solves in seconds, which is what makes uncertainty quantification affordable at all.",
+					"I presented the framework at the IAEA workshop on digital engineering for fusion energy in December 2025, and I am a co-author on the multi-fidelity fuel-cycle paper that came out of the collaboration."
+				],
+				"images": [
+					{ "src": "/images/timeline/fusion-paper.png", "label": "the paper", "href": "https://arxiv.org/abs/2603.25751", "fit": "contain", "background": "#ffffff" }
+				],
+				"links": [
+					{ "text": "[ the paper ]", "href": "https://arxiv.org/abs/2603.25751" },
+					{ "text": "[ IAEA workshop ]", "href": "https://conferences.iaea.org/event/412/" },
+					{ "text": "[ FESTIM ]", "href": "https://github.com/festim-dev/FESTIM" }
+				]
+			},
+			{
+				"period": "2025",
+				"heading": "open source",
+				"project": "pathsim",
+				"body": [
+					{
+						"text": "PathSim opened in early 2025 as an open alternative to Simulink: clean API, mutability from the get-go, solvers that handle stiffness and algebraic loops without ceremony. Published in the Journal of Open Source Software, released on PyPI and conda-forge, and picked up faster than I expected.",
+						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
+					},
+					"Past 400 stars and nine contributors later, the part I did not write is the interesting part: domain toolboxes for chemical engineering, batteries, vehicles, flight dynamics, RF and FMI co-simulation, several of them contributed by people I have never met. JSBSim picked it up for flight dynamics.",
+					{
+						"text": "PathView followed: the same models as drag-and-drop block diagrams in the browser, running entirely client-side through Pyodide. Nothing to install to try it. PySimHub came out of the same year, a catalog for Python's scattered simulation communities, because the hard part of open source is being found.",
+						"links": [
+							{ "phrase": "PathView", "project": "pathview" },
+							{ "phrase": "PySimHub", "href": "https://pysimhub.io" }
+						]
+					}
+				],
+				"images": [
+					{ "src": "/screenshots/view-pathsim-org.png", "label": "pathview", "project": "pathview" },
+					{ "src": "/screenshots/pathsim-org.png", "label": "pathsim.org", "href": "https://pathsim.org" },
+					{ "src": "/screenshots/docs-pathsim-org.png", "label": "docs", "href": "https://docs.pathsim.org" },
+					{ "src": "/screenshots/pysimhub-io.png", "label": "pysimhub", "href": "https://pysimhub.io" }
+				],
+				"links": [
+					{ "text": "[ pathsim.org ]", "href": "https://pathsim.org" },
+					{ "text": "[ the JOSS paper ]", "href": "https://doi.org/10.21105/joss.08158" },
+					{ "text": "[ pathview ]", "project": "pathview" },
+					{ "text": "[ docs ]", "href": "https://docs.pathsim.org" },
+					{ "text": "[ pysimhub ]", "href": "https://pysimhub.io" }
+				]
+			},
+			{
+				"period": "2024",
+				"heading": "PathSim",
+				"project": "pathsim",
+				"body": [
+					{
+						"text": "Started in February as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had.",
+						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
+					},
+					"The same year brought two more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, and a symbolic circuit analysis tool inspired by Analog Insydes, the seed of what is now SANE. A finite volume solver for quasi-electrostatic frequency-domain analysis came out of the sensor modeling at the institute, and with it a 2D QuadTree mesher."
+				],
+				"images": [
+					{
+						"src": "/images/timeline/harmonicbalance.png",
+						"label": "harmonic balance",
+						"fit": "contain",
+						"background": "#ffffff",
+						"href": "https://github.com/milanofthe/harmonicbalance"
+					},
+					{
+						"src": "/images/timeline/qesfvm.png",
+						"label": "electrostatic FVM",
+						"fit": "contain",
+						"background": "#ffffff",
+						"href": "https://github.com/milanofthe/QESFVM"
+					}
+				],
+				"links": [
+					{ "text": "[ pathsim ]", "href": "https://github.com/pathsim/pathsim" },
+					{ "text": "[ harmonicbalance ]", "href": "https://github.com/milanofthe/harmonicbalance" },
+					{ "text": "[ qesfvm ]", "href": "https://github.com/milanofthe/QESFVM" },
+					{ "text": "[ quadtree ]", "href": "https://github.com/milanofthe/QuadTree" },
+					{ "text": "[ sca ]", "href": "https://github.com/milanofthe/sca" }
+				]
+			},
+			{
+				"period": "2023-2025",
+				"heading": "research associate, CMOS design",
+				"project": "rapidpassives",
+				"body": [
+					"Research associate at the Institut fuer CMOS Design, TU Braunschweig. Three strands ran in parallel: numerical modeling of electrochemical sensors for analog circuit design, system design and hardware for bio-impedance spectroscopy, and an EDA pipeline for RFIC passives that was validated in silicon for cryogenic quantum applications.",
+					{
+						"text": "That last one started as a Tkinter window that drew inductors and exported GDS. It became RapidPassives: browser-based layout generation with real-time preview and a WebGL viewer that renders million-polygon GDS at 60 fps. Six years of the same problem, and the tooling around it kept being the bottleneck.",
+						"links": [{ "phrase": "RapidPassives", "project": "rapidpassives" }]
+					}
+				],
+				"images": [
+					{ "src": "/images/timeline/rapidpassives-tkinter.png", "label": "back then", "project": "rapidpassives" },
+					{ "src": "/screenshots/rapidpassives-transformer.png", "label": "today", "project": "rapidpassives" }
+				],
+				"links": [
+					{ "text": "[ rapidpassives ]", "project": "rapidpassives" },
+					{ "text": "[ rapidpassives.org ]", "href": "https://rapidpassives.org" }
+				]
+			},
+			{
+				"period": "2023-now",
+				"heading": "PhD candidate, TU Ilmenau",
+				"body": ["External PhD program in electrical engineering, run alongside the work in Braunschweig and everything that grew out of it."]
+			},
+			{
+				"period": "2022-2023",
+				"heading": "first repos",
+				"body": [
+					"The first experiments that went public: an interactive 2D electromagnetic FDTD environment with a live field view, a fast relaxed vector fitting implementation that turns measured MIMO frequency responses into compact circuit models, and an interactive Bode plot tool for teaching.",
+					"Vector fitting had been sitting in a folder since 2020 as rational interpolation experiments, complex fitting by iteratively reweighted least squares, a stack of papers on passivity enforcement. Putting it on GitHub was mostly a decision to stop treating my own work as scratch files."
+				],
+				"images": [
+					{ "src": "/images/timeline/fdtd.png", "label": "fdtd", "href": "https://github.com/milanofthe/Interactive_2D_FDTD" },
+					{
+						"src": "/images/timeline/vf-freq.png",
+						"label": "vectorfitting",
+						"fit": "contain",
+						"background": "#ffffff",
+						"href": "https://github.com/milanofthe/Vectorfitting"
+					}
+				],
+				"links": [
+					{ "text": "[ 2d fdtd ]", "href": "https://github.com/milanofthe/Interactive_2D_FDTD" },
+					{ "text": "[ vectorfitting ]", "href": "https://github.com/milanofthe/Vectorfitting" },
+					{ "text": "[ bode plot ]", "href": "https://github.com/milanofthe/Interactive_BodePlot" }
+				]
+			},
+			{
+				"period": "2021-2022",
+				"heading": "things you could click",
+				"body": [
+					"A run of interactive desktop toys, all pygame, all packaged with PyInstaller into a single executable so I could hand someone a file instead of an install guide. A Verlet physics sandbox with numba-compiled constraint solving, a few thousand particles on collision courses, and a random polygon generator built out of packed circles.",
+					"The one that mattered was the interactive Laplace domain: drag poles and zeros around the complex plane and watch magnitude, phase and step response follow in real time. Students got the pole-zero picture in a minute that a blackboard never delivered. Everything I have built since that runs in a browser is the same instinct with a better delivery mechanism."
+				],
+				"images": [
+					{ "src": "/images/timeline/interactive-bode.png", "label": "interactive laplace", "href": "https://github.com/milanofthe/Interactive_BodePlot" },
+					{ "src": "/images/timeline/collisions.png", "label": "collisions", "fit": "contain", "background": "#ffffff" },
+					{ "src": "/images/timeline/random-polygon.png", "label": "random polygons", "fit": "contain", "background": "#ffffff" }
+				]
+			},
+			{
+				"period": "2021-2023",
+				"heading": "M.Sc. electrical engineering, TU Braunschweig",
+				"body": ["Master of science with honors, thesis graded excellent."]
+			},
+			{
+				"period": "2021-2023",
+				"heading": "research assistant, CMOS design",
+				"body": [
+					"High-frequency measurement calibration methods, design and implementation of verification hardware, teaching the circuit theory seminar."
+				]
+			},
+			{
+				"period": "2020-2021",
+				"heading": "writing it down",
+				"body": [
+					"The 120-page LaTeX manuscript on linear system theory, written over the summer of 2021 to help out a friend: Laplace analysis, poles and zeros in the complex plane, frequency response, state space. It has since been translated to English and is still the clearest statement of the material everything after it rests on.",
+					"A separate writeup on state-space representations of linear time-invariant network models came first, in 2020. And for the tutorials I animated the parts that do not survive being drawn once on a blackboard: the rotating phasor, resonance sweeping through a Bode plot, the step response of a damped oscillator. Explaining things carefully turned out to be the same skill as designing an API."
+				],
+				"images": [
+					{
+						"src": "/images/timeline/lti-manuscript.png",
+						"label": "the manuscript",
+						"fit": "contain",
+						"background": "#ffffff",
+						"href": "https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript"
+					},
+					{
+						"src": "/images/timeline/state-space.png",
+						"label": "state space",
+						"fit": "contain",
+						"background": "#ffffff"
+					},
+					{
+						"src": "/images/timeline/phasor.png",
+						"label": "phasor",
+						"fit": "contain",
+						"background": "#ffffff"
+					},
+					{
+						"src": "/images/timeline/step-response.png",
+						"label": "step response",
+						"fit": "contain",
+						"background": "#ffffff"
+					}
+				],
+				"links": [
+					{ "text": "[ manuscript, de ]", "href": "https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript" },
+					{ "text": "[ manuscript, en ]", "href": "https://github.com/milanofthe/lti-manuscript-en" }
+				]
+			},
+			{
+				"period": "2019-2021",
+				"heading": "before GitHub",
+				"project": "sane",
+				"body": [
+					"The first real project never made it to a repository. MiCir was a circuit analysis library written in Python from nothing: my own matrix class, my own complex arithmetic, my own polynomial and symbolic element types in s. Not because there was no numpy, but because I wanted to know what numpy was doing before I let it do it for me.",
+					{
+						"text": "It read netlists, solved networks symbolically, synthesised Cauer ladders from a driving-point impedance, and drew its own Bode and locus plots. In February 2020 I typeset the whole thing in LaTeX, the first time I documented a tool of mine instead of just using it. Every idea SANE is built on, this one had first and did badly.",
+						"links": [{ "phrase": "SANE", "project": "sane" }]
+					},
+					"The same folder holds the detours of a student with a compiler and time: Mandelbrot sets in the complex plane at resolutions my laptop resented, Monte Carlo estimates of pi, a DFT written out by hand to see where the symmetry comes from."
+				],
+				"images": [
+					{ "src": "/images/timeline/micir-doc.png", "label": "micir, documented", "fit": "contain", "background": "#ffffff" },
+					{ "src": "/images/timeline/micir-bode.png", "label": "micir bode plot", "fit": "contain", "background": "#ffffff" },
+					{ "src": "/images/timeline/mandelbrot.png", "label": "mandelbrot", "fit": "contain", "background": "#ffffff" }
+				]
+			},
+			{
+				"period": "2019-2020",
+				"heading": "internship, Volkswagen AG",
+				"body": [
+					"Low-voltage and redundant power supply systems in Wolfsburg: concept, schematic, hardware, ASIL considerations."
+				]
+			},
+			{
+				"period": "2018-2021",
+				"heading": "teaching assistant, TU Braunschweig",
+				"body": [
+					"Weekly independent tutorials on linear dynamical systems and circuit theory for 50+ students, the material that became the throughline of everything since. Most of the tools above exist because a room full of people needed the same thing explained better."
+				]
+			},
+			{
+				"period": "2015-2021",
+				"heading": "B.Sc. electrical engineering, TU Braunschweig",
+				"body": ["Bachelor of science, thesis graded excellent."]
+			},
+			{
+				"period": "2014-2021",
+				"heading": "climbing coach, DAV Braunschweig",
+				"body": [
+					"Led the competition climbing team from entry level to international level. First lesson in building things over years."
+				]
+			}
+		],
 		"links": "GitHub   LinkedIn   X"
 	},
 	"projects": {

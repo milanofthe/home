@@ -1,195 +1,18 @@
-<script lang="ts">
+﻿<script lang="ts">
 	import Navigation from '$lib/components/Navigation.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import ArticlePage from '$lib/components/ArticlePage.svelte';
-	import { ArticleGrid, type ArticleResult, type TextSegment, type TimelineEntry } from '$lib/layout/articleLayout';
+	import { ArticleGrid, type ArticleResult, type TextSegment } from '$lib/layout/articleLayout';
 	import { BOOKING_URL, CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, X_URL } from '$lib/config';
 	import content from '$lib/data/content.json';
 	import { accentFor, paragraphText, toSegments, type ProseParagraph } from '$lib/content/prose';
+	import { entryText, toTimeline, type TimelineEntryJson } from '$lib/content/timeline';
 
-	// The CV as a timeline, newest first: education, positions and the
-	// projects of each era, with artifacts pulled from the repos of the time.
-	const TIMELINE: TimelineEntry[] = [
-		{
-			period: '2026',
-			heading: 'one stack',
-			accent: 'sane',
-			body: [
-				'The full roundtrip back through circuits and fields, built as one stack rather than six tools: RapidFEM and RapidMoM for electromagnetic fields, RapidMesh generating what they solve on, RSLAB underneath as the sparse direct solver, SANE for symbolic and numeric circuit analysis, FastSim compiling system models to native code.',
-				'One architecture throughout: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy; the bet is that one coherent stack does better.'
-			],
-			images: [
-				{ src: '/screenshots/sane-graph.png', label: 'sane graph', href: '/stack/sane/' },
-				{ src: '/screenshots/sane-app.png', label: 'sane', href: '/stack/sane/' },
-				{ src: '/images/rapidmesh-resonator.png', label: 'rapidmesh', href: '/stack/rapidmesh/', fit: 'contain', background: '#131316' },
-				{ src: '/images/rapidmom-current.png', label: 'rapidmom', href: '/stack/rapidmom/', fit: 'contain', background: '#131316' },
-				{ src: '/screenshots/rapidfem-home.png', label: 'rapidfem', href: '/stack/rapidfem/' },
-				{ src: '/images/rslab-h2h-ldlt.png', label: 'rslab benchmark', href: '/stack/rslab/', fit: 'contain', background: '#08080c' }
-			],
-			links: [
-				{ text: '[ view the stack -> ]', href: '/#projects' },
-				{ text: '[ rapidfem ]', href: 'https://github.com/milanofthe/rapidfem' },
-				{ text: '[ rslab ]', href: 'https://github.com/milanofthe/rslab' }
-			]
-		},
-		{
-			period: '2025',
-			heading: 'open source',
-			accent: 'pathsim',
-			body: [
-				'PathSim opened in early 2025 as an open alternative to Simulink: clean API, mutability from the get-go, solvers that handle stiffness and algebraic loops without ceremony. JOSS-published, and picked up faster than expected — nuclear fusion fuel-cycle modeling at the MIT Plasma Science & Fusion Center, flight dynamics in JSBSim, and domain toolboxes contributed by people I had never met.',
-				'PathView followed: the same models as drag-and-drop block diagrams in the browser, running entirely client-side through Pyodide. Nothing to install to try it.'
-			],
-			images: [
-				{ src: '/screenshots/view-pathsim-org.png', label: 'pathview', href: '/stack/pathview/' },
-				{ src: '/screenshots/pathsim-org.png', label: 'pathsim.org', href: 'https://pathsim.org' },
-				{ src: '/screenshots/docs-pathsim-org.png', label: 'docs', href: 'https://docs.pathsim.org' },
-				{ src: '/screenshots/pysimhub-io.png', label: 'pysimhub', href: 'https://pysimhub.io' }
-			],
-			links: [
-				{ text: '[ pathsim.org ]', href: 'https://pathsim.org' },
-				{ text: '[ pathview ]', href: '/stack/pathview/' },
-				{ text: '[ docs ]', href: 'https://docs.pathsim.org' },
-				{ text: '[ pysimhub ]', href: 'https://pysimhub.io' }
-			]
-		},
-		{
-			period: '2024',
-			heading: 'PathSim',
-			accent: 'pathsim',
-			body: [
-				'Started in February as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles.',
-				'The same year brought two more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, and a symbolic circuit analysis tool inspired by Analog Insydes, the seed of what is now SANE. A finite volume solver for quasi-electrostatic frequency-domain analysis came out of the sensor modeling at the institute, and with it a 2D QuadTree mesher.'
-			],
-			images: [
-				{
-					src: '/images/timeline/harmonicbalance.png',
-					label: 'harmonic balance',
-					fit: 'contain',
-					background: '#ffffff',
-					href: 'https://github.com/milanofthe/harmonicbalance'
-				},
-				{
-					src: '/images/timeline/qesfvm.png',
-					label: 'electrostatic FVM',
-					fit: 'contain',
-					background: '#ffffff',
-					href: 'https://github.com/milanofthe/QESFVM'
-				}
-			],
-			links: [
-				{ text: '[ pathsim ]', href: 'https://github.com/pathsim/pathsim' },
-				{ text: '[ harmonicbalance ]', href: 'https://github.com/milanofthe/harmonicbalance' },
-				{ text: '[ qesfvm ]', href: 'https://github.com/milanofthe/QESFVM' },
-				{ text: '[ quadtree ]', href: 'https://github.com/milanofthe/QuadTree' },
-				{ text: '[ sca ]', href: 'https://github.com/milanofthe/sca' }
-			]
-		},
-		{
-			period: '2023-2025',
-			heading: 'research associate, CMOS design',
-			accent: 'rapidpassives',
-				body: [
-				'Research associate at the Institut fuer CMOS Design, TU Braunschweig. Three strands ran in parallel: numerical modeling of electrochemical sensors for analog circuit design, system design and hardware for bio-impedance spectroscopy, and an EDA pipeline for RFIC passives that was validated in silicon for cryogenic quantum applications.',
-				'That last one started as a Tkinter window that drew inductors and exported GDS. It became RapidPassives: browser-based layout generation with real-time preview and a WebGL viewer that renders million-polygon GDS at 60 fps.'
-			],
-			// Then and now, side by side: the Tkinter pipeline of 2023 next to what it
-			// became. The pair says more about the arc than either picture alone.
-			images: [
-				{ src: '/images/timeline/rapidpassives-tkinter.png', label: 'back then', href: '/stack/rapidpassives/' },
-				{ src: '/screenshots/rapidpassives-transformer.png', label: 'today', href: '/stack/rapidpassives/' }
-			],
-			links: [
-				{ text: '[ rapidpassives ]', href: '/stack/rapidpassives/' },
-				{ text: '[ rapidpassives.org ]', href: 'https://rapidpassives.org' }
-			]
-		},
-		{
-			period: '2023-now',
-			heading: 'PhD candidate, TU Ilmenau',
-			body: ['External PhD program in electrical engineering.']
-		},
-		{
-			period: '2022-2023',
-			heading: 'first numerical side projects',
-			body: [
-				'The early experiments went on GitHub: an interactive 2D electromagnetic FDTD environment with a live field view, a fast relaxed vector fitting implementation that turns measured MIMO frequency responses into compact circuit models, and an interactive Bode plot tool for teaching.'
-			],
-			images: [
-				{ src: '/images/timeline/fdtd.png', label: 'fdtd.png', href: 'https://github.com/milanofthe/Interactive_2D_FDTD' },
-				{
-					src: '/images/timeline/vf-freq.png',
-					label: 'vectorfitting',
-					fit: 'contain',
-					background: '#ffffff',
-					href: 'https://github.com/milanofthe/Vectorfitting'
-				}
-			],
-			links: [
-				{ text: '[ 2d fdtd ]', href: 'https://github.com/milanofthe/Interactive_2D_FDTD' },
-				{ text: '[ vectorfitting ]', href: 'https://github.com/milanofthe/Vectorfitting' },
-				{ text: '[ bode plot ]', href: 'https://github.com/milanofthe/Interactive_BodePlot' }
-			]
-		},
-		{
-			period: '2021-2023',
-			heading: "M.Sc. electrical engineering, TU Braunschweig",
-			body: ['Master of science with honors, thesis graded excellent.']
-		},
-		{
-			period: '2021-2023',
-			heading: 'research assistant, CMOS design',
-			body: [
-				'High-frequency measurement calibration methods, design and implementation of verification hardware, teaching the circuit theory seminar.'
-			]
-		},
-		{
-			period: '2021',
-			heading: 'the manuscript',
-			body: [
-				'The 120-page LaTeX manuscript on linear system theory, written over the summer to help out a friend: Laplace analysis, poles and zeros in the complex plane, frequency response, state space. It has since been translated to English and is still the clearest statement of the material everything after it rests on.'
-			],
-			images: [
-				{
-					src: '/images/timeline/lti-manuscript.png',
-					label: 'the manuscript',
-					fit: 'contain',
-					background: '#ffffff',
-					href: 'https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript'
-				}
-			],
-			links: [
-				{ text: '[ manuscript, de ]', href: 'https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript' },
-				{ text: '[ manuscript, en ]', href: 'https://github.com/milanofthe/lti-manuscript-en' }
-			]
-		},
-		{
-			period: '2019-2020',
-			heading: 'internship, Volkswagen AG',
-			body: [
-				'Low-voltage and redundant power supply systems in Wolfsburg: concept, schematic, hardware, ASIL considerations.'
-			]
-		},
-		{
-			period: '2018-2021',
-			heading: 'teaching assistant, TU Braunschweig',
-			body: [
-				'Weekly independent tutorials on linear dynamical systems and circuit theory for 50+ students, the material that became the throughline of everything since.'
-			]
-		},
-		{
-			period: '2015-2021',
-			heading: 'B.Sc. electrical engineering, TU Braunschweig',
-			body: ['Bachelor of science, thesis graded excellent.']
-		},
-		{
-			period: '2014-2021',
-			heading: 'climbing coach, DAV Braunschweig',
-			body: [
-				'Led the competition climbing team from entry level to international level. First lesson in building things over years.'
-			]
-		}
-	];
+	// The CV as a timeline, newest first: education, positions and the projects of
+	// each era, with the artifacts of the time beside them. Lives in content.json
+	// with the rest of the copy.
+	const TIMELINE_JSON = content.about.timeline as TimelineEntryJson[];
+	const TIMELINE = toTimeline(TIMELINE_JSON);
 
 	// Story and side projects come from content.json — the same copy the landing
 	// page renders into the character grid. Here the inline links resolve to the
@@ -256,10 +79,10 @@
 		{/each}
 		<h2>Timeline</h2>
 		<ul>
-			{#each TIMELINE as entry}
+			{#each TIMELINE_JSON as entry}
 				<li>
 					<strong>{entry.period}: {entry.heading}.</strong>
-					{(entry.body ?? []).map((p) => (typeof p === 'string' ? p : p.map((s) => s.text).join(' '))).join(' ')}
+					{entryText(entry)}
 				</li>
 			{/each}
 		</ul>

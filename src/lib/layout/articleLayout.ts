@@ -496,9 +496,12 @@ export class ArticleGrid {
 			if (side && entry.images?.length) {
 				const colLeft = [left, left + tileW + TILE_GAP];
 				const colBottom = [entryStart, entryStart];
+				// A single artifact sits against the rail, next to the text it belongs
+				// to, rather than stranded at the far edge of an empty column.
+				const lone = entry.images.length === 1;
 
 				for (const img of entry.images) {
-					const i = colBottom[0] <= colBottom[1] ? 0 : 1;
+					const i = lone ? 1 : colBottom[0] <= colBottom[1] ? 0 : 1;
 					const rows = this.tileRows(img.src, tileW - 2);
 					this.drawFrame(colBottom[i], colLeft[i], tileW, rows, img.label, img.src, {
 						href: img.href,

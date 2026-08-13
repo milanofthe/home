@@ -51,6 +51,10 @@
 		1930,
 		1411
 	],
+	"/images/timeline/collisions.png": [
+		900,
+		900
+	],
 	"/images/timeline/fdtd.png": [
 		796,
 		864
@@ -59,17 +63,49 @@
 		947,
 		587
 	],
+	"/images/timeline/interactive-bode.png": [
+		1380,
+		455
+	],
 	"/images/timeline/lti-manuscript.png": [
 		1670,
 		1170
+	],
+	"/images/timeline/mandelbrot.png": [
+		1600,
+		1067
+	],
+	"/images/timeline/micir-bode.png": [
+		1154,
+		933
+	],
+	"/images/timeline/micir-doc.png": [
+		853,
+		360
+	],
+	"/images/timeline/phasor.png": [
+		773,
+		719
 	],
 	"/images/timeline/qesfvm.png": [
 		3200,
 		1800
 	],
+	"/images/timeline/random-polygon.png": [
+		603,
+		575
+	],
 	"/images/timeline/rapidpassives-tkinter.png": [
 		1201,
 		702
+	],
+	"/images/timeline/state-space.png": [
+		1211,
+		971
+	],
+	"/images/timeline/step-response.png": [
+		1600,
+		594
 	],
 	"/images/timeline/vf-freq.png": [
 		3000,
