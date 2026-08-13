@@ -43,7 +43,7 @@ sim.run(30)
 scp.plot()
 ```
 
-## What sets it apart
+## Solvers and events
 
 ![pathsim.org|right|46x14](/screenshots/pathsim-org.png)
 

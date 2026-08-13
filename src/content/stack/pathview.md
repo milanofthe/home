@@ -34,6 +34,37 @@ including packages with native dependencies that Pyodide cannot load. The UI
 is SvelteKit with SvelteFlow for the node editor, CodeMirror for code cells,
 and Plotly for interactive results.
 
+## The diagram is the model
+
+Node parameters are Python expressions, stored as strings and handed to
+PathSim verbatim; the engine does the type checking, not the editor.
+Subsystems are nested graphs, with an Interface node inside mirroring the
+parent's ports in the opposite direction. Wires route orthogonally around the
+nodes with A* pathfinding, Simulink style, and take manual waypoints where the
+automatic route reads badly. A spatial index keeps rerouting incremental, so
+dragging a node stays smooth on a large diagram.
+
+## Streaming results
+
+A simulation does not run to completion and then draw. The Python loop runs
+autonomously in a Web Worker and pushes results at about 10 Hz, the main
+thread accumulates them in a queue, and every animation frame extends the
+existing Plotly traces rather than redrawing them. The simulation never waits
+for the plot, and the plot never blocks the simulation.
+
+## Toolboxes and sharing
+
+Blocks can be added without rebuilding the app: install a toolbox from PyPI
+through micropip, from a wheel at any URL, or paste a module inline for a
+single session. PathView introspects the module's Block and Event subclasses
+and registers them as node types, and each block can be renamed, recategorized
+or hidden afterwards. A saved .pvm records which toolboxes it depends on, so
+opening it on another machine offers to install the missing ones.
+
+A model also opens straight from a link: ?model= takes any URL to a .pvm or
+.json file, and ?modelgh=user/repo/path/to/model.pvm expands to the raw file
+on GitHub.
+
 ## History
 
 PathView began as a project at the MIT Plasma Science and Fusion Center: a

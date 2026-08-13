@@ -39,7 +39,7 @@ result = prob.sweep(np.linspace(8e9, 12e9, 21))
 
 ![RFIC spiral in the notebook|right|46x14](/images/rapidfem-rfic.png)
 
-Distribution is deliberately boring: pip install rapidfem ships
+Distribution is a plain pip install: pip install rapidfem ships
 ahead-of-time compiled wheels for Windows, Linux, and macOS. No Rust
 toolchain, no vendor install, no license server. External CAD comes in as
 STEP, IGES, or BREP and lands in the same geometry kernel as the primitives,

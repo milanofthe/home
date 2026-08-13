@@ -66,18 +66,17 @@ hierarchical subsystems, and mutable parameters work exactly like PathSim.
 
 ## Beyond speed
 
-FastSim reaches where a Python engine cannot: FMI 3.0 import and export
-for co-simulation, WebAssembly deployment, and dependency-free C99 code
+A Rust engine also opens paths a Python one does not have: FMI 3.0 import and
+export for co-simulation, WebAssembly deployment, and dependency-free C99 code
 generation for embedded targets. The generated C is verified
 software-in-the-loop: sim.verify_c() compiles it locally and pins it against
 the reference engine, sample by sample.
 
-Every claim is measured, not asserted: a benchmark suite reruns each study
-with one command, fixed-order integrators are verified to converge at their
-theoretical orders, accuracy is measured against reference solutions, and
-comparisons cover SciPy, CasADi, and DifferentialEquations.jl. A technical
-report that states the theory and the implementation together is available
-on request.
+A benchmark suite reruns each study with one command. Fixed-order integrators
+are checked against their theoretical convergence orders, accuracy is measured
+against reference solutions, and the comparisons cover SciPy, CasADi, and
+DifferentialEquations.jl. A technical report that states the theory and the
+implementation together is available on request.
 
 ## History
 
