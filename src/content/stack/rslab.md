@@ -10,12 +10,11 @@ cta1: [ View on GitHub -> ]|https://github.com/milanofthe/rslab
 ---
 
 RSLAB is a sparse direct solver for real and complex matrices in pure Rust
-with no BLAS, LAPACK, or MKL dependency. It started from the feral project,
-made generic over the scalar type (f64, f32, and their complex counterparts),
-and grew into three factorization paths matched to their operator classes:
-symmetric LDLT with Bunch-Kaufman pivoting, threshold-pivoted unsymmetric LU,
-and a KLU path for circuit-shaped matrices (BTF block structure, per-block
-AMD, Gilbert-Peierls LU).
+with no BLAS, LAPACK, or MKL dependency. It is generic over the scalar type,
+f64, f32 and their complex counterparts, and carries three factorization
+paths matched to their operator classes: symmetric LDLT with Bunch-Kaufman
+pivoting, threshold-pivoted unsymmetric LU, and a KLU path for circuit-shaped
+matrices.
 
 ## Built for solver-in-the-loop
 
@@ -67,9 +66,20 @@ matrices below 1e-8 relative residual, matching PARDISO and ahead of faer.
 
 ## History
 
-RSLAB started in late June 2026 from feral, driven directly by what
-[SANE](/stack/sane/) and [RapidMoM](/stack/rapidmom/) need from their linear
-algebra. Along the way I built an MLP cost-model auto-tuner for picking solver
+I was looking for a sparse direct solver in Rust and found feral, by John
+Kitchin. After talking with him I forked it, in late June 2026. feral was
+real-valued only, so the first piece of work was making it generic over the
+scalar type, without which it is of no use to electromagnetics at all.
+
+What it became after that was decided by the matrices it had to solve. FEM
+and MoM systems came first, for [RapidFEM](/stack/rapidfem/) and
+[RapidMoM](/stack/rapidmom/); circuit matrices came later, with
+[SANE](/stack/sane/), and brought the KLU path with them. The a-priori
+estimators have the same origin: a solver that sits inside another engine has
+to say what a factorization will cost before it runs it, and the symbolic
+analysis already holds everything needed to answer that.
+
+Along the way I built an MLP cost-model auto-tuner for picking solver
 configurations and then took it out of the default path: the deterministic
 heuristic is simpler, reproducible, and holds up. The repository ships a technical
 report that derives the algorithms and carries the full evaluation; every
