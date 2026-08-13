@@ -37,7 +37,7 @@ result = prob.sweep(np.linspace(8e9, 12e9, 21))
 
 ## Practical by default
 
-![Iris filter notebook|right|46x14](/screenshots/rapidfem-editor.png)
+![RFIC spiral in the notebook|right|46x14](/images/rapidfem-rfic.png)
 
 Distribution is deliberately boring: pip install rapidfem ships
 ahead-of-time compiled wheels for Windows, Linux, and macOS. No Rust
@@ -45,7 +45,10 @@ toolchain, no vendor install, no license server. External CAD comes in as
 STEP, IGES, or BREP and lands in the same geometry kernel as the primitives,
 so imported parts take booleans, transforms, and physics exactly like a
 g.box(); STL is healed into a meshable solid. For RFIC work, process stacks
-and GDS layouts become 3D geometry via rapidfem.rfic. Validated end-to-end
+and GDS layouts become 3D geometry via rapidfem.rfic: the octagonal spiral
+above is a layout description loaded straight into the solver, meshed through
+its dielectric stack, with the S-parameters of the run below the code that
+produced it. Validated end-to-end
 examples ship with the package, from microstrips and coupled lines through
 iris and stepped-impedance filters to patch, Vivaldi, and inverted-F
 antennas, pyramidal horns, dielectric resonators, and on-chip passives.
