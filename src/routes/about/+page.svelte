@@ -59,7 +59,7 @@
 			accent: 'pathsim',
 			body: [
 				'Started in February as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles.',
-				'The same year brought two more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, and a symbolic circuit analysis tool inspired by Analog Insydes, the seed of what is now SANE. A finite volume solver for quasi-electrostatic frequency-domain analysis came out of the sensor modeling at the institute.'
+				'The same year brought two more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, and a symbolic circuit analysis tool inspired by Analog Insydes, the seed of what is now SANE. A finite volume solver for quasi-electrostatic frequency-domain analysis came out of the sensor modeling at the institute, and with it a 2D QuadTree mesher, written first so the solver had something to discretise on.'
 			],
 			images: [
 				{
@@ -81,6 +81,7 @@
 				{ text: '[ pathsim ]', href: 'https://github.com/pathsim/pathsim' },
 				{ text: '[ harmonicbalance ]', href: 'https://github.com/milanofthe/harmonicbalance' },
 				{ text: '[ qesfvm ]', href: 'https://github.com/milanofthe/QESFVM' },
+				{ text: '[ quadtree ]', href: 'https://github.com/milanofthe/QuadTree' },
 				{ text: '[ sca ]', href: 'https://github.com/milanofthe/sca' }
 			]
 		},
@@ -112,8 +113,7 @@
 			period: '2022-2023',
 			heading: 'first numerical side projects',
 			body: [
-				'The early experiments went on GitHub, one per idea worth chasing. An interactive 2D electromagnetic FDTD environment with a live field view. A fast relaxed vector fitting implementation for MIMO systems, fitting measured frequency responses to pole-residue models. An interactive Bode plot tool for seeing what a transfer function does when you move its poles.',
-				'And a 2D QuadTree mesher, written because the FDTD work needed one and writing it was more interesting than installing one.'
+				'The early experiments went on GitHub, one per idea worth chasing. An interactive 2D electromagnetic FDTD environment with a live field view. A fast relaxed vector fitting implementation for MIMO systems, fitting measured frequency responses to pole-residue models. An interactive Bode plot tool for seeing what a transfer function does when you move its poles.'
 			],
 			images: [
 				{ src: '/images/timeline/fdtd.png', label: 'fdtd.png', href: 'https://github.com/milanofthe/Interactive_2D_FDTD' },
@@ -128,8 +128,7 @@
 			links: [
 				{ text: '[ 2d fdtd ]', href: 'https://github.com/milanofthe/Interactive_2D_FDTD' },
 				{ text: '[ vectorfitting ]', href: 'https://github.com/milanofthe/Vectorfitting' },
-				{ text: '[ bode plot ]', href: 'https://github.com/milanofthe/Interactive_BodePlot' },
-				{ text: '[ quadtree ]', href: 'https://github.com/milanofthe/QuadTree' }
+				{ text: '[ bode plot ]', href: 'https://github.com/milanofthe/Interactive_BodePlot' }
 			]
 		},
 		{
