@@ -8,19 +8,24 @@ import imageDims from '$lib/data/image-dims.json';
 import { glowFor } from '$lib/content/prose';
 import type { Cell, CellType } from './gridLayout';
 
-/// One timeline artifact, in grid cells. Every picture gets this frame whatever its
-/// own proportions are — the same decision the landing page's portal tiles make, and
-/// what turns a column of assorted screenshots into one repeating element.
-const TILE_W = 26;
-const TILE_H = 13;
+/// Timeline artifacts share one column width and pack two abreast; the height of
+/// each tile comes from the picture's own proportions, so nothing is cropped to fit
+/// a frame it never had. A uniform width is what makes the column read as a grid —
+/// a uniform height would only mean cutting landscape screenshots into portraits.
+const TILE_W_MIN = 26;
+const TILE_W_MAX = 46;
+
+/// Frame proportion a picture falls back to when its dimensions are unknown — the
+/// same aspect the landing page's portal tiles capture at.
+const TILE_AR = 1.55;
 
 /// Gap between two tiles sharing a row.
 const TILE_GAP = 2;
 
-/// Text measure the timeline aims for beside its images. The timeline claims more
-/// width than the prose above it: it carries a year column, a rail and a picture
-/// column, and squeezing those into the reading measure leaves nothing for any of them.
-const TIMELINE_TEXT_W = 48;
+/// Text measure beside the timeline. Narrower than the prose above it: this column
+/// sits next to the picture column, and the pictures want the width more than a
+/// third clause of the same sentence does.
+const TIMELINE_TEXT_W = 60;
 
 const IMAGE_DIMS = imageDims as unknown as Record<string, [number, number]>;
 
@@ -167,6 +172,12 @@ export class ArticleGrid {
 		const [iw, ih] = dims;
 		const rows = Math.round((innerCols * this.cellRatio * ih) / iw);
 		return Math.max(4, Math.min(rows, 36));
+	}
+
+	// Inner rows for a timeline tile of the given inner width: the picture's own
+	// aspect ratio, or the portal tile proportion when its dimensions are unknown.
+	private tileRows(src: string, innerCols: number): number {
+		return this.imageRows(src, innerCols, Math.round((innerCols * this.cellRatio) / TILE_AR));
 	}
 
 	setAccent(accent: AccentKey) {
@@ -408,16 +419,16 @@ export class ArticleGrid {
 		// part of the page and not as something that escaped it.
 		const gutter = 4;
 		const available = this.cols - gutter * 2;
-		// Two tiles wide when there is room for them plus the rail and a readable
-		// measure; one otherwise. Below that the whole thing stacks.
-		const twoTiles = TILE_W * 2 + TILE_GAP;
+		// The rail and the text measure are fixed; whatever is left over goes to the
+		// pictures, so they grow with the window instead of the paragraphs doing it.
+		// Below the minimum tile width there is no side column and the whole thing stacks.
 		const railBlock = periodW + 2 + 3;
-		const side = available >= twoTiles + railBlock + TIMELINE_TEXT_W;
-		const imgColW = side ? twoTiles : 0;
+		const spare = available - railBlock - TIMELINE_TEXT_W - 2;
+		const tileW = Math.min(TILE_W_MAX, Math.floor((spare - TILE_GAP) / 2));
+		const side = tileW >= TILE_W_MIN;
+		const imgColW = side ? tileW * 2 + TILE_GAP : 0;
 
-		const width = side
-			? Math.min(available, imgColW + 2 + railBlock + Math.max(TIMELINE_TEXT_W, this.contentWidth - 20))
-			: this.contentWidth;
+		const width = side ? imgColW + 2 + railBlock + TIMELINE_TEXT_W : this.contentWidth;
 		const left = side ? Math.floor((this.cols - width) / 2) : this.startCol;
 
 		const yearCol = left + (side ? imgColW + 2 : 0);
@@ -446,12 +457,12 @@ export class ArticleGrid {
 				this.row += lines + 1;
 			}
 
-			// Stacked fallback: images sit below the text. Still one size for all of
-			// them, scaled to whatever width is left.
+			// Stacked fallback: images sit below the text, full measure, each one
+			// still at its own proportions.
 			if (!side) {
-				const fw = Math.min(TILE_W + 8, contentW);
-				const rows = Math.round((TILE_H * fw) / TILE_W);
+				const fw = contentW;
 				for (const img of entry.images ?? []) {
+					const rows = this.tileRows(img.src, fw - 2);
 					const consumed = this.drawFrame(this.row, contentCol, fw, rows, img.label, img.src, {
 						href: img.href,
 						fit: img.fit,
@@ -477,37 +488,28 @@ export class ArticleGrid {
 				this.row += 2;
 			}
 
-			// Side images: left of the rail, packed two to a row, the first row
-			// top-aligned with the heading. Every tile is the same size whatever the
-			// picture's own proportions are — a grid of identical frames, like the
-			// portal tiles on the landing page. The entry is as tall as the taller of
-			// text and image stack.
+			// Side images: two columns left of the rail, top-aligned with the heading.
+			// Same width for every tile, own height for every picture — so the next one
+			// goes wherever the shorter column currently ends, and the two columns stay
+			// level however assorted the artifacts are. The entry is as tall as the
+			// taller of text and image stack.
 			if (side && entry.images?.length) {
-				let imgRow = entryStart;
+				const colLeft = [left, left + tileW + TILE_GAP];
+				const colBottom = [entryStart, entryStart];
 
-				for (let i = 0; i < entry.images.length; i += 2) {
-					const pair = entry.images.slice(i, i + 2);
-					// A lone tile in the last row sits against the rail, where the
-					// right-hand tile of a full row would be, so the column keeps one
-					// edge rather than centring odd rows.
-					const startCol = pair.length === 2 ? left : left + TILE_W + TILE_GAP;
-
-					pair.forEach((img, index) => {
-						this.drawFrame(
-							imgRow,
-							startCol + index * (TILE_W + TILE_GAP),
-							TILE_W,
-							TILE_H,
-							img.label,
-							img.src,
-							{ href: img.href, fit: img.fit, background: img.background, glow: entryGlow }
-						);
+				for (const img of entry.images) {
+					const i = colBottom[0] <= colBottom[1] ? 0 : 1;
+					const rows = this.tileRows(img.src, tileW - 2);
+					this.drawFrame(colBottom[i], colLeft[i], tileW, rows, img.label, img.src, {
+						href: img.href,
+						fit: img.fit,
+						background: img.background,
+						glow: entryGlow
 					});
-
 					// Frame height plus its two border rows, then a gap row.
-					imgRow += TILE_H + 3;
+					colBottom[i] += rows + 3;
 				}
-				this.row = Math.max(this.row, imgRow);
+				this.row = Math.max(this.row, colBottom[0], colBottom[1]);
 			}
 
 			// Breathing room between entries.
