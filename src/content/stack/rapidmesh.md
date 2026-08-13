@@ -34,6 +34,13 @@ system, not approximated ad hoc.
 
 ![Two-region via, cutaway|right|40x12](/images/rapidmesh-via.png)
 
+Multi-region assemblies are the case that separates a mesher from a
+triangulator: a coaxial step carries a conductor, a dielectric and a change of
+diameter, and the interfaces between them have to be shared triangle for
+triangle or the solver sees a crack that is not in the geometry.
+
+![Coaxial step, tagged regions|left|40x12](/images/rapidmesh-coax-step.png)
+
 Meshing is budgeted: mesh(target_elements=N) retunes the global size scale
 over a few remeshes, since the element count scales with the third power of
 the scale, and lands within a few percent of N while the relative refinement
@@ -44,6 +51,8 @@ on the worst-quality triangles. Solvers can plan a mesh the way RSLAB plans
 a factorization: the cost is decided before the run, not discovered after.
 
 ## The 2D path
+
+![Symmetric transformer, MoM surface mesh|right|40x12](/images/rapidmesh-transformer.png)
 
 The same core that meshes each 3D surface patch is the standalone planar
 mesher for MoM: graded, sliver-free constrained Delaunay triangulation of
@@ -63,14 +72,20 @@ component; separate metal layers never merge.
 
 ## Validated, not assumed
 
-![mesh.rapidpassives.org|left|46x14](/screenshots/rapidmesh-site.png)
+![Box minus two spheres|right|40x12](/images/rapidmesh-box-2spheres.png)
 
 A validation corpus of 101 geometries (primitives, booleans, multi-region
 assemblies, RF passives, STL/OBJ imports) is re-run and re-rendered on every
-full run. The API serves the solver as an oracle: mesh representations carry
-exactly what FEM assembly and refinement need. It is built to replace gmsh
-inside the stack: one less external dependency, one more deterministic
-component.
+full run, each one checked for watertightness, manifoldness and dihedral
+angle. The API serves the solver as an oracle: mesh representations carry
+exactly what FEM assembly and refinement need.
+
+![mesh.rapidpassives.org|left|46x14](/screenshots/rapidmesh-site.png)
+
+The point of the corpus is that a boolean is easy to get almost right. A box
+minus two overlapping spheres has to come out watertight with the sphere
+patches meshed at their own curvature, and that is checked on every run rather
+than assumed from the algorithm.
 
 ## History
 
@@ -82,6 +97,8 @@ should be designed against each other rather than bolted together through a
 file format.
 
 RapidMesh started in June 2026 with one goal: replace gmsh inside the stack
-with a deterministic, embeddable mesher. The 2D path is now the mesher inside
-[RapidMoM](/stack/rapidmom/); the 3D path is built to take over
-[RapidFEM](/stack/rapidfem/)'s meshing, which still runs on gmsh today.
+with a deterministic, embeddable mesher. It is the youngest part of the stack
+and still work in progress. What is in production today is the 2D path, which
+meshes for [RapidMoM](/stack/rapidmom/), together with the budgeted meshing.
+The 3D path is built to take over [RapidFEM](/stack/rapidfem/)'s meshing but
+is not in it yet; RapidFEM still runs on gmsh.

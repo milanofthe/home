@@ -35,6 +35,14 @@
 		1240,
 		692
 	],
+	"/images/rapidmesh-box-2spheres.png": [
+		1240,
+		1017
+	],
+	"/images/rapidmesh-coax-step.png": [
+		1240,
+		1017
+	],
 	"/images/rapidmesh-drilled-block.png": [
 		1000,
 		820
@@ -42,6 +50,10 @@
 	"/images/rapidmesh-resonator.png": [
 		899,
 		992
+	],
+	"/images/rapidmesh-transformer.png": [
+		1240,
+		1017
 	],
 	"/images/rapidmesh-via.png": [
 		1000,

@@ -60,7 +60,7 @@
 				"project": "sane",
 				"body": [
 					{
-						"text": "The full roundtrip back through circuits and fields, built as one stack rather than six tools: RapidFEM and RapidMoM for electromagnetic fields, RapidMesh generating what they solve on, RSLAB underneath as the sparse direct solver, SANE for symbolic and numeric circuit analysis, FastSim compiling system models to native code.",
+						"text": "The full roundtrip back through circuits and fields, built as one stack rather than six tools: RapidFEM and RapidMoM for electromagnetic fields, RapidMesh generating what RapidMoM solves on, RSLAB underneath as the sparse direct solver, SANE for symbolic and numeric circuit analysis, FastSim compiling system models to native code.",
 						"links": [
 							{ "phrase": "RapidFEM", "project": "rapidfem" },
 							{ "phrase": "RapidMoM", "project": "rapidmom" },
@@ -72,12 +72,12 @@
 					},
 					"One architecture throughout: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy; the bet is that one coherent stack does better.",
 					"It arrived in one run. RapidFEM and FastSim from April, then SANE, RSLAB, RapidMoM and RapidMesh from June, the fields, circuits and foundations levels growing together rather than in sequence, because a solver, its mesher and its linear algebra only fit if they are designed against each other.",
-					"Nothing in it is a wrapper. RSLAB took PARDISO's place and is benchmarked against it, RapidMesh took gmsh's, and both are validated against what they replaced. Owning the full depth is the slow way to build and the only way the layers actually fit."
+					"Nothing in it is a wrapper. RSLAB took PARDISO's place and is benchmarked against it; RapidMesh is the youngest piece and still on its way, with the 2D path meshing for RapidMoM while RapidFEM runs on gmsh a while longer. Owning the full depth is the slow way to build and the only way the layers actually fit."
 				],
 				"images": [
 					{ "src": "/screenshots/sane-graph.png", "label": "sane graph", "project": "sane" },
 					{ "src": "/screenshots/sane-app.png", "label": "sane", "project": "sane" },
-					{ "src": "/images/rapidmesh-resonator.png", "label": "rapidmesh", "project": "rapidmesh", "fit": "contain", "background": "#131316" },
+					{ "src": "/images/rapidmesh-transformer.png", "label": "rapidmesh", "project": "rapidmesh" },
 					{ "src": "/images/rapidmom-current.png", "label": "rapidmom", "project": "rapidmom", "fit": "contain", "background": "#131316" },
 					{ "src": "/images/rapidfem-eigenmode.png", "label": "rapidfem eigenmode", "project": "rapidfem" },
 					{ "src": "/images/rapidfem-iris.png", "label": "iris filter", "project": "rapidfem" },
@@ -500,9 +500,9 @@
 						"heading": "RapidMesh",
 						"headingType": "rapidpassives",
 						"paragraphs": [
-							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact-arithmetic CSG booleans, watertight by construction, count-based meshing with exact element budgets, and an API whose mesh representations serve the solver as an oracle. Replaces gmsh inside the stack."
+							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact-arithmetic CSG booleans, watertight by construction, count-based meshing with exact element budgets, and an API whose mesh representations serve the solver as an oracle. The 2D path meshes for RapidMoM today; the 3D path is on its way to replacing gmsh inside the stack."
 						],
-						"metrics": "exact CSG / dihedral-angle quality optimization / planar + tetrahedral",
+						"metrics": "work in progress / exact CSG / dihedral-angle quality optimization / planar + tetrahedral",
 						"statsText": "mesh.rapidpassives.org / github.com/milanofthe/rapidmesh"
 					}
 				]
