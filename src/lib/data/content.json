@@ -71,7 +71,8 @@
 						]
 					},
 					"One architecture throughout: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy; the bet is that one coherent stack does better.",
-					"Nothing in it is a wrapper. RSLAB took PARDISO's place and is benchmarked against it, RapidMesh took gmsh's. Owning the full depth is the slow way to build and the only way the layers actually fit."
+					"It arrived in one run. RapidFEM and FastSim from April, then SANE, RSLAB, RapidMoM and RapidMesh from June, the fields, circuits and foundations levels growing together rather than in sequence, because a solver, its mesher and its linear algebra only fit if they are designed against each other.",
+					"Nothing in it is a wrapper. RSLAB took PARDISO's place and is benchmarked against it, RapidMesh took gmsh's, and both are validated against what they replaced. Owning the full depth is the slow way to build and the only way the layers actually fit."
 				],
 				"images": [
 					{ "src": "/screenshots/sane-graph.png", "label": "sane graph", "project": "sane" },
@@ -97,6 +98,10 @@
 						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
 					},
 					"Mixing fidelities inside one model is exactly what the block-diagram abstraction is for. It took a fusion lab to prove the point: the same system model runs against lab experiments like BABY and LIBRA and against whole power-plant concepts, and a thirty-component bubbler transient solves in seconds, which is what makes uncertainty quantification affordable at all.",
+					{
+						"text": "PathView came out of the same collaboration: it started at the Plasma Science and Fusion Center as a way to see PathSim models rather than read them. From November 2025 I rewrote it on my own stack and it moved to the PathSim organization, where it is now hosted free for everyone.",
+						"links": [{ "phrase": "PathView", "project": "pathview" }]
+					},
 					"I presented the framework at the IAEA workshop on digital engineering for fusion energy in December 2025, and I am a co-author on the multi-fidelity fuel-cycle paper that came out of the collaboration."
 				],
 				"images": [
@@ -141,15 +146,30 @@
 				]
 			},
 			{
-				"period": "2024",
+				"period": "2024-2025",
+				"heading": "Analog Insydes, revisited",
+				"project": "sane",
+				"body": [
+					{
+						"text": "From December 2024 I worked with Ralf Sommer, the inventor of Analog Insydes, on reviving that tool. Symbolic circuit analysis had been done properly once, in Mathematica, by people who knew exactly what they were doing, and then the industry moved on and left it there.",
+						"links": [{ "phrase": "Analog Insydes", "href": "https://www.itwm.fraunhofer.de/en/departments/sys/products-and-services/analog-insydes.html" }]
+					},
+					{
+						"text": "Picking those ideas back up on my own stack in June 2026 is what became SANE. Two years between reading someone else's design carefully and being able to rebuild it is about right.",
+						"links": [{ "phrase": "SANE", "project": "sane" }]
+					}
+				]
+			},
+			{
+				"period": "2023-2024",
 				"heading": "PathSim",
 				"project": "pathsim",
 				"body": [
 					{
-						"text": "Started in February as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had.",
+						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had. It went public on GitHub in August 2024.",
 						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
 					},
-					"The same year brought two more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, and a symbolic circuit analysis tool inspired by Analog Insydes, the seed of what is now SANE. A finite volume solver for quasi-electrostatic frequency-domain analysis came out of the sensor modeling at the institute, and with it a 2D QuadTree mesher."
+					"The same stretch brought three more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, a symbolic circuit analysis tool inspired by Analog Insydes, and a finite volume solver for quasi-electrostatic frequency-domain analysis that came out of the sensor modeling at the institute, with a 2D QuadTree mesher underneath it."
 				],
 				"images": [
 					{
