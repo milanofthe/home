@@ -11,8 +11,9 @@ cta1: [ Open the notebook -> ]|https://fem.rapidpassives.org/notebook?example=fd
 
 RapidFEM is an electromagnetic FEM solver written in Rust, distributed as a
 Python package. Two backends sit behind one geometry / material / physics API:
-a frequency-domain solver (Nedelec curl-conforming edge elements,
-complex-symmetric sparse linear algebra) and a time-domain DGTD solver (nodal
+a frequency-domain solver (Nedelec curl-conforming edge elements of first and
+second order, mixable within one mesh, complex-symmetric sparse linear
+algebra) and a time-domain DGTD solver (nodal
 discontinuous Galerkin with Krylov/ETD exponential time integration and model
 order reduction). Geometry is non-dimensionalized before assembly, so
 sub-micron RFIC passives and metre-scale antennas use the same numerical path.
@@ -37,13 +38,16 @@ result = prob.sweep(np.linspace(8e9, 12e9, 21))
 
 ## Two backends, one API
 
-The two backends answer different questions and share everything else. The
-frequency-domain solver is what you want when the question is a network over
-a band: it solves each frequency directly and gives S-parameters and modes.
-The time-domain DGTD solver is what you want when the question is broadband
-or transient behaviour, where sweeping frequencies one at a time is the wrong
-shape of computation. Both read the same geometry, the same materials and the
-same ports, so choosing between them is a keyword rather than a second model.
+The frequency-domain solver came first: solve each frequency directly, get
+S-parameters, fields and modes out of it. The DGTD backend was added for
+reasons that have less to do with coverage than with what a discontinuous
+Galerkin operator makes possible. It is element-local, which is the shape of
+computation a GPU wants, and it is where operator-level model order reduction
+can be tried at all. It also never forms a factorization, so a mesh that is
+too large to factor is still solvable.
+
+Both backends read the same geometry, the same materials and the same ports,
+so choosing between them is a keyword rather than a second model.
 
 ## Practical by default
 
@@ -81,10 +85,21 @@ plot is what identifies which mode came out.
 
 ## History
 
-RapidFEM began in April 2026 as a port of Robert Fennis' emerge project and
-has since been completely reimplemented: a fresh solver core, first-order
-elements, and the DGTD time-domain backend built next to the frequency-domain
-solver, plus the notebook UI and the RFIC path. Meshing and linear algebra
-currently come from gmsh and PARDISO; moving onto
+RapidFEM began in April 2026 as a Rust port of emerge, by Robert Fennis. The
+DGTD time-domain backend came on top of that, built because I wanted to
+experiment with running the operator on a GPU and with operator-level model
+order reduction, and because large meshes need a solver that does not have to
+hold a factorization.
+
+Since then it has been completely reimplemented: its own kernels, first- and
+second-order basis functions, and the assembly rebuilt to mix the two orders
+in one mesh. Mixed order is what the RFIC path needs. Fine structures drive
+the element count up until the degrees of freedom explode, and being able to
+spend second-order elements only where the field asks for them, while the
+already dense regions stay first order, is what keeps such a system small
+enough to solve at all.
+
+The notebook UI and the RFIC path came with the reimplementation. Meshing and
+linear algebra currently come from gmsh and PARDISO; moving onto
 [RapidMesh](/stack/rapidmesh/) and [RSLAB](/stack/rslab/) is where the stack
 is heading.
