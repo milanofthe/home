@@ -113,7 +113,7 @@
 			period: '2022-2023',
 			heading: 'first numerical side projects',
 			body: [
-				'The early experiments went on GitHub, one per idea worth chasing. An interactive 2D electromagnetic FDTD environment with a live field view. A fast relaxed vector fitting implementation for MIMO systems, fitting measured frequency responses to pole-residue models. An interactive Bode plot tool for seeing what a transfer function does when you move its poles.'
+				'The early experiments went on GitHub: an interactive 2D electromagnetic FDTD environment with a live field view, a fast relaxed vector fitting implementation that turns measured MIMO frequency responses into compact circuit models, and an interactive Bode plot tool for teaching.'
 			],
 			images: [
 				{ src: '/images/timeline/fdtd.png', label: 'fdtd.png', href: 'https://github.com/milanofthe/Interactive_2D_FDTD' },
