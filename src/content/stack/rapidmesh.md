@@ -31,7 +31,7 @@ removal targeting the minimal dihedral angle. The frozen surface
 triangulation is a hard constraint on the volume Delaunay, which is what
 makes the boundary watertight by construction. The sizing and chart formulae
 for every curve and surface modality are derived with a computer-algebra
-system, not approximated ad hoc.
+system rather than approximated ad hoc.
 
 ![Two-region via, cutaway|right|40x12](/images/rapidmesh-via.png)
 
@@ -48,7 +48,7 @@ from curvature and sizing keeps its shape. Surface budgets act as a cap
 instead: the count-driven refinement resolves the sizing field but stops at
 the triangle budget, split across patches by area, spending its last splits
 on the worst-quality triangles. Solvers can plan a mesh the way RSLAB plans
-a factorization: the cost is decided before the run, not discovered after.
+a factorization: the cost is known before the run.
 
 ## The 2D path
 

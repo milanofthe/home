@@ -16,13 +16,13 @@ low-frequency breakdown (stable down to DC), layered-media Green's functions
 in the Michalski-Mosig formulation, and a kernel-independent ACA / H-matrix
 fast solver with block-GMRES in O(N log N).
 
-## Converging the network, not the residual
+## Converging the network
 
 ![Transformer mesh|right|46x14](/images/rapidmom-mesh.png)
 
 A GMRES residual bounds the algebraic error, but a port observable can be a
-small difference of large quantities (that is exactly what a quality factor
-is) or live in a different block of the saddle system entirely. RapidMoM
+small difference of large quantities (a quality factor, for instance) or live
+in a different block of the saddle system entirely. RapidMoM
 therefore continues the solve down a tolerance ladder, warm-started, until the
 port-space network itself stops moving, including a dedicated criterion for
 the real part. Every port configuration lands on the dense-operator answer
@@ -66,8 +66,8 @@ the classical 2.5D treatment: one RWG current sheet per metal with the
 two-sided skin-effect surface impedance, the right default for thin metals.
 The boxed model treats each conductor as a closed thick box with the
 conductor interior entering through the slab internal-impedance two-port.
-Output is standard Touchstone (S, Y, Z) plus the extracted device metrics
-engineers actually design against: L, Q, coupling.
+Output is standard Touchstone (S, Y, Z) plus the device metrics
+engineers design against: L, Q, coupling.
 
 Validation runs against closed-form analytics, physical invariants (Lorentz
 reciprocity, mutual-sign checks, skin-effect rise), and an independent

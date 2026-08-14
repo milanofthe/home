@@ -39,17 +39,16 @@ result = prob.sweep(np.linspace(8e9, 12e9, 21))
 ## Two backends, one API
 
 The frequency-domain solver came first: solve each frequency directly, get
-S-parameters, fields and modes out of it. The DGTD backend was added for
-reasons that have less to do with coverage than with what a discontinuous
-Galerkin operator makes possible. It is element-local, which is the shape of
-computation a GPU wants, and it is where operator-level model order reduction
-can be tried at all. It also never forms a factorization, so a mesh that is
-too large to factor is still solvable.
+S-parameters, fields and modes out of it. The DGTD backend was added for what
+the discontinuous Galerkin operator makes possible. It is element-local, which
+is the shape of computation a GPU wants, and it is where operator-level model
+order reduction can be tried. It also never forms a factorization, so a mesh
+that is too large to factor is still solvable.
 
 Both backends read the same geometry, the same materials and the same ports,
 so choosing between them is a keyword rather than a second model.
 
-## Practical by default
+## The workflow
 
 ![RFIC spiral in the notebook|right|46x14](/images/rapidfem-rfic.png)
 
@@ -69,8 +68,8 @@ antennas, pyramidal horns, dielectric resonators, and on-chip passives.
 
 ![Iris filter|left|46x14](/images/rapidfem-iris.png)
 
-The UI is a notebook rather than a CAD program, and that was a decision, not
-a shortcut. Building a CAD front end is its own multi-year project, and the
+The UI is a notebook rather than a CAD program. Building a CAD front end is
+its own multi-year project, and the
 setups people write here are code anyway. What was missing was the part CAD
 does well: seeing the thing. So the notebook keeps the code workflow and puts
 interactive geometry, mesh and field renderers next to it, which makes a

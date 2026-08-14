@@ -1,7 +1,7 @@
 ---
 title: SANE
 accent: sane
-tagline: Symbolic Analog Network Engine, symbolic and numeric circuit analysis.
+tagline: Symbolic Analog Network Engine. Symbolic and numeric circuit analysis.
 group: circuits
 order: 4
 site: sane.milanrother.com|https://sane.milanrother.com
@@ -57,8 +57,7 @@ it came from.
 
 ![Symbolic graph|right|46x14](/screenshots/sane-graph.png)
 
-Compact models go the same way, and that is the decision the whole engine
-turns on. The usual route into a simulator is an OSDI binary compiled from
+Compact models go the same way. The usual route into a simulator is an OSDI binary compiled from
 the Verilog-A source: fast, and opaque to everything upstream of it. SANE
 lowers the Verilog-A onto the same DAG instead, with no OSDI binary and no
 generated code. That costs work at model load and buys the derivative of

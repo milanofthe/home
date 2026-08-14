@@ -64,13 +64,15 @@ automatic JIT, RKDP54.integrate(func, x0, time_end=50), and jit(func) and
 jacobian(func) are exposed as JAX-style transformations. Event handling,
 hierarchical subsystems, and mutable parameters work exactly like PathSim.
 
-## Beyond speed
+## Export targets
 
 A Rust engine also opens paths a Python one does not have: FMI 3.0 import and
 export for co-simulation, WebAssembly deployment, and dependency-free C99 code
 generation for embedded targets. The generated C is verified
 software-in-the-loop: sim.verify_c() compiles it locally and pins it against
 the reference engine, sample by sample.
+
+## Validation
 
 A benchmark suite reruns each study with one command. Fixed-order integrators
 are checked against their theoretical convergence orders, accuracy is measured
@@ -81,6 +83,7 @@ implementation together is available on request.
 ## History
 
 FastSim development started in April 2026, after the PathSim API had
-stabilized and the SSA compute-graph architecture had proven itself across
-the stack. Four months of development produced the engine, JIT, autodiff, FMI
-export, and C code generation, tracking the PathSim API throughout. Commercial licensing funds the open system level.
+stabilized. Four months of development produced the engine, JIT, autodiff, FMI
+export, and C code generation, tracking the PathSim API throughout. The SSA
+compute graphs built here are the ones [SANE](/stack/sane/) later carried
+over to circuits. Commercial licensing funds the open system level.
