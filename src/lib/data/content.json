@@ -134,7 +134,7 @@
 				],
 				"images": [
 					{ "src": "/images/pathsim-pitch.png", "label": "the pitch slide", "project": "pathsim", "fit": "contain", "background": "#ffffff" },
-					{ "src": "/screenshots/view-pathsim-org.png", "label": "pathview", "project": "pathview" },
+					{ "src": "/images/pathview-pid.png", "label": "pathview", "project": "pathview" },
 					{ "src": "/screenshots/pathsim-org.png", "label": "pathsim.org", "href": "https://pathsim.org" },
 					{ "src": "/screenshots/docs-pathsim-org.png", "label": "docs", "href": "https://docs.pathsim.org" },
 					{ "src": "/screenshots/pysimhub-io.png", "label": "pysimhub", "href": "https://pysimhub.io" }

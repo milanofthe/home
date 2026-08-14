@@ -36,6 +36,8 @@ and Plotly for interactive results.
 
 ## The diagram is the model
 
+![PID loop example|left|46x14](/images/pathview-pid.png)
+
 Node parameters are Python expressions, stored as strings and handed to
 PathSim verbatim; the engine does the type checking, not the editor.
 Subsystems are nested graphs, with an Interface node inside mirroring the
@@ -43,6 +45,10 @@ parent's ports in the opposite direction. Wires route orthogonally around the
 nodes with A* pathfinding, Simulink style, and take manual waypoints where the
 automatic route reads badly. A spatial index keeps rerouting incremental, so
 dragging a node stays smooth on a large diagram.
+
+The PID loop example shows the pieces together: the plant modeled as a
+subsystem, scopes previewing their traces directly on the canvas, and a text
+annotation next to the diagram it describes.
 
 ## Streaming results
 
@@ -52,7 +58,14 @@ thread accumulates them in a queue, and every animation frame extends the
 existing Plotly traces rather than redrawing them. The simulation never waits
 for the plot, and the plot never blocks the simulation.
 
-## Toolboxes and sharing
+## Blocks and toolboxes
+
+![Block library|right|46x14](/images/pathview-blocks.png)
+
+The block library documents itself in the editor: each block carries its
+description, its equations, and its parameter table, next to the canvas it is
+dragged onto. The library covers the PathSim block set, from sources and
+integrators through filters and controllers to noise generators.
 
 Blocks can be added without rebuilding the app. A toolbox is just a Python
 module with Block subclasses in it, so PathView installs one at runtime,
