@@ -36,9 +36,22 @@
 			]
 		},
 		{
+			heading: 'domain toolboxes, scikit-rf & JSBSim',
+			text: 'Two of PathSim\'s domain toolboxes came out of collaborations with the upstream projects: pathsim-rf with the scikit-rf developers, and pathsim-flight with the JSBSim developers, whose flight dynamics engine PathSim models couple to.',
+			links: [
+				{ text: '[ pathsim-rf ]', href: 'https://github.com/pathsim/pathsim-rf' },
+				{ text: '[ pathsim-flight ]', href: 'https://github.com/pathsim/pathsim-flight' }
+			]
+		},
+		{
 			heading: 'batched dynamical systems on the GPU',
 			text: 'A proprietary client engagement: C code compiled in the browser, and batches of dynamical systems dispatched to the GPU for parallel evaluation. Client and application are under NDA.',
 			links: []
+		},
+		{
+			heading: 'Analog Insydes, with Ralf Sommer',
+			text: 'From December 2024 I worked with Ralf Sommer, the inventor of Analog Insydes, on reviving that tool: symbolic circuit analysis in Mathematica, from the Fraunhofer ITWM. The ideas from that work are part of what SANE builds on.',
+			links: [{ text: '[ sane ]', href: '/stack/sane/' }]
 		},
 		{
 			heading: 'RFIC passives, validated in silicon',
