@@ -39,6 +39,7 @@
 		for (const p of STORY) {
 			g.paragraph(p);
 		}
+		g.cta([{ text: '[ CV (pdf) -> ]', href: '/cv/milan-rother-cv.pdf' }]);
 		g.spacer();
 
 		g.sectionHeading('timeline');
