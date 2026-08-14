@@ -414,7 +414,10 @@
 			}
 		],
 		"talks": [
-			{ "text": "PathSim goes embedded. PyCon DE & PyData, April 2026." },
+			{
+				"text": "PathSim: block diagram simulation in pure Python. PyCon DE & PyData, April 2026. [ talk ]",
+				"links": [{ "phrase": "[ talk ]", "href": "https://2026.pycon.de/talks/DBDCU9/" }]
+			},
 			{ "text": "An open-source Python framework for dynamic system simulation in fusion energy applications. OSSFE 2026, March 2026." },
 			{
 				"text": "PathSim, at the IAEA Workshop on Digital Engineering for Fusion Energy Research, MIT Plasma Science and Fusion Center, December 2025. [ workshop ]",

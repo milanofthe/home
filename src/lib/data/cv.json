@@ -106,7 +106,7 @@
 		"R. Delaporte-Mathurin, R. MacDonald, J. Dark, M. Rother, T. Zulfiqar, K. B. Woller, “Physics-informed tritium fuel cycle modelling workflow for fusion reactors”, arXiv:2603.25751, 2026."
 	],
 	"talks": [
-		"PathSim goes embedded. PyCon DE & PyData, April 2026.",
+		"PathSim: Block Diagram Simulation in Pure Python. PyCon DE & PyData, April 2026.",
 		"An open-source Python framework for dynamic system simulation in fusion energy applications. OSSFE 2026, March 2026.",
 		"PathSim. IAEA Workshop on Digital Engineering for Fusion Energy Research, MIT Plasma Science and Fusion Center, December 2025.",
 		"PathSim. GAMM RSE/RDM workshop, December 2025.",
