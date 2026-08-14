@@ -5,7 +5,7 @@
 	import { ArticleGrid, type ArticleResult, type TextSegment } from '$lib/layout/articleLayout';
 	import { BOOKING_URL, CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, X_URL } from '$lib/config';
 	import content from '$lib/data/content.json';
-	import { accentFor, paragraphText, toSegments, type ProseParagraph } from '$lib/content/prose';
+	import { paragraphText, toSegments, type ProseParagraph } from '$lib/content/prose';
 	import { entryText, toTimeline, type TimelineEntryJson } from '$lib/content/timeline';
 
 	// The CV as a timeline, newest first: education, positions and the projects of
@@ -22,13 +22,6 @@
 
 	const PUBLICATIONS = (content.about.publications as ProseParagraph[]).map(toSegments);
 	const TALKS = (content.about.talks as ProseParagraph[]).map(toSegments);
-
-	const SIDE_PROJECTS = content.other.items.map((item) => ({
-		name: item.heading,
-		href: item.url,
-		accent: accentFor(item.id),
-		text: item.paragraphs[0]
-	}));
 
 	function build(cols: number, cellRatio: number): ArticleResult {
 		const g = new ArticleGrid(cols, 'neutral', 6, cellRatio);
@@ -60,15 +53,6 @@
 			g.paragraph(t);
 		}
 		g.spacer();
-
-		g.sectionHeading('side quests');
-		g.paragraph(content.other.intro);
-		g.spacer();
-		for (const sp of SIDE_PROJECTS) {
-			g.paragraph([{ text: sp.name, href: sp.href, accent: sp.accent }]);
-			g.paragraph(sp.text);
-			g.spacer();
-		}
 
 		g.sectionHeading('elsewhere');
 		g.cta([
@@ -118,11 +102,5 @@
 			{/each}
 		</ul>
 		<p><a href="/cv/milan-rother-cv.pdf">Curriculum vitae (PDF)</a></p>
-		<h2>Side projects</h2>
-		<ul>
-			{#each SIDE_PROJECTS as sp}
-				<li><a href={sp.href}>{sp.name}</a>: {sp.text}</li>
-			{/each}
-		</ul>
 	{/snippet}
 </ArticlePage>
