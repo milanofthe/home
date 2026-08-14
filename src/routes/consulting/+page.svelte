@@ -23,6 +23,30 @@
 		}
 	];
 
+	// Proof, in facts: what the work looks like when it is done. Each item names
+	// what kind of engagement it was, so a collaboration is not dressed up as a
+	// client mandate.
+	const WORK = [
+		{
+			heading: 'tritium fuel cycles, MIT PSFC & UKAEA',
+			text: 'An open-source collaboration around PathSim. The MIT Plasma Science and Fusion Center and the UK Atomic Energy Authority build tritium fuel-cycle models on it, mixing residence-time models, a liquid-metal bubble column and FESTIM finite-element transport in one timestepping loop. I co-authored the workflow paper and rebuilt PathView, the visual editor the models are assembled in.',
+			links: [
+				{ text: '[ the paper ]', href: 'https://arxiv.org/abs/2603.25751' },
+				{ text: '[ pathsim ]', href: '/stack/pathsim/' }
+			]
+		},
+		{
+			heading: 'RFIC passives, validated in silicon',
+			text: 'At the Institut fuer CMOS Design, TU Braunschweig, I built an EDA pipeline for RFIC passives that was validated in silicon for cryogenic quantum applications. It became RapidPassives, and the layouts it generates are what RapidMoM simulates today.',
+			links: [{ text: '[ rapidpassives ]', href: '/stack/rapidpassives/' }]
+		},
+		{
+			heading: 'the stack on this site',
+			text: 'Two EM solvers, a mesher, a sparse direct solver, a symbolic circuit engine and two system simulators, built between 2023 and 2026 on one architecture: Rust cores, Python APIs, browser interfaces. Benchmarked against PARDISO, faer, CasADi and ngspice, and each detail page states what is validated and what is not.',
+			links: [{ text: '[ view the stack -> ]', href: '/#projects' }]
+		}
+	];
+
 	// The collaboration, step by step. This mirrors how real engagements run.
 	const STEPS = [
 		{
@@ -78,6 +102,15 @@
 			g.spacer();
 		}
 
+		g.sectionHeading('selected work');
+		g.spacer();
+		for (const w of WORK) {
+			g.heading('// ' + w.heading);
+			g.paragraph(w.text);
+			g.cta(w.links);
+			g.spacer();
+		}
+
 		g.sectionHeading('how a collaboration works');
 		g.spacer();
 		for (const step of STEPS) {
@@ -113,6 +146,11 @@
 		{#each OFFERS as offer}
 			<h2>{offer.heading}</h2>
 			<p>{offer.text}</p>
+		{/each}
+		<h2>Selected work</h2>
+		{#each WORK as w}
+			<h3>{w.heading}</h3>
+			<p>{w.text}</p>
 		{/each}
 		<h2>How a collaboration works</h2>
 		{#each STEPS as step}
