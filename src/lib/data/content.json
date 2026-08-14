@@ -168,7 +168,7 @@
 				"project": "pathsim",
 				"body": [
 					{
-						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had. It stayed on my own machine for a year and a half, versioned as 31 zip snapshots, before the repository went public in the summer of 2024. The earliest snapshot, December 2023, already carries Simulation, Connection and the block names the API has today.",
+						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had. It stayed on my own machine for a year and a half, versioned as 31 zip snapshots, before the repository went public in the summer of 2024. The earliest snapshot, December 2023, already contains Simulation, Connection and the block names the API uses today.",
 						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
 					},
 					"The same stretch brought three more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, a symbolic circuit analysis tool inspired by Analog Insydes, and a finite volume solver for quasi-electrostatic frequency-domain analysis that came out of the sensor modeling at the institute.",
