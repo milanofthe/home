@@ -21,6 +21,7 @@
 	const STORY: TextSegment[][] = PARAGRAPHS.map(toSegments);
 
 	const PUBLICATIONS = (content.about.publications as ProseParagraph[]).map(toSegments);
+	const TALKS = (content.about.talks as ProseParagraph[]).map(toSegments);
 
 	const SIDE_PROJECTS = content.other.items.map((item) => ({
 		name: item.heading,
@@ -49,6 +50,13 @@
 		g.spacer();
 		for (const p of PUBLICATIONS) {
 			g.paragraph(p);
+		}
+		g.spacer();
+
+		g.sectionHeading('talks');
+		g.spacer();
+		for (const t of TALKS) {
+			g.paragraph(t);
 		}
 		g.spacer();
 
@@ -100,6 +108,12 @@
 		<ul>
 			{#each content.about.publications as p}
 				<li>{paragraphText(p as ProseParagraph)}</li>
+			{/each}
+		</ul>
+		<h2>Talks</h2>
+		<ul>
+			{#each content.about.talks as t}
+				<li>{paragraphText(t as ProseParagraph)}</li>
 			{/each}
 		</ul>
 		<p><a href="/cv/milan-rother-cv.pdf">Curriculum vitae (PDF)</a></p>

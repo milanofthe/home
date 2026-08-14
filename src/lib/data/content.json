@@ -402,10 +402,6 @@
 				"links": [{ "phrase": "[ arxiv ]", "href": "https://arxiv.org/abs/2603.25751" }]
 			},
 			{
-				"text": "PathSim, presented at the IAEA Workshop on Digital Engineering for Fusion Energy Research, December 2025. [ workshop ]",
-				"links": [{ "phrase": "[ workshop ]", "href": "https://conferences.iaea.org/event/412/" }]
-			},
-			{
 				"text": "I built an open-source Simulink alternative that runs in your browser. dev.to. [ article ]",
 				"links": [{ "phrase": "[ article ]", "href": "https://dev.to/milan_rother/i-built-an-open-source-simulink-alternative-that-runs-in-your-browser-4gpg" }]
 			},
@@ -416,6 +412,18 @@
 					{ "phrase": "[ en ]", "href": "https://github.com/milanofthe/lti-manuscript-en" }
 				]
 			}
+		],
+		"talks": [
+			{ "text": "PathSim goes embedded. PyCon DE & PyData, April 2026." },
+			{ "text": "An open-source Python framework for dynamic system simulation in fusion energy applications. OSSFE 2026, March 2026." },
+			{
+				"text": "PathSim, at the IAEA Workshop on Digital Engineering for Fusion Energy Research, MIT Plasma Science and Fusion Center, December 2025. [ workshop ]",
+				"links": [{ "phrase": "[ workshop ]", "href": "https://conferences.iaea.org/event/412/" }]
+			},
+			{ "text": "PathSim, at the GAMM RSE/RDM workshop, December 2025." },
+			{ "text": "The decentralized perspective on dynamical system simulation. Guest lecture at the MUSEN colloquium, TU Braunschweig, May 2025." },
+			{ "text": "PathSim, at Gauss Fusion, May 2025, and at IFAS, May 2025." },
+			{ "text": "Die Anatomie eines Systemsimulators. IMMS, March 2025." }
 		]
 	},
 	"projects": {

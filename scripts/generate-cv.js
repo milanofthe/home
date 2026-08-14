@@ -113,8 +113,13 @@ const html = `<!doctype html>
 </section>
 
 <section class="pubs">
-	<h2>Publications &amp; talks</h2>
+	<h2>Publications</h2>
 	<ul>${cv.publications.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>
+</section>
+
+<section class="pubs">
+	<h2>Talks</h2>
+	<ul>${cv.talks.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>
 </section>
 
 <section class="skills">

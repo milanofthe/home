@@ -103,8 +103,16 @@
 	],
 	"publications": [
 		"M. Rother, “PathSim - A System Simulation Framework”, Journal of Open Source Software 10(109), 8158, 2025.",
-		"R. Delaporte-Mathurin, R. MacDonald, J. Dark, M. Rother, T. Zulfiqar, K. B. Woller, “Physics-informed tritium fuel cycle modelling workflow for fusion reactors”, arXiv:2603.25751, 2026.",
-		"Talk: PathSim, IAEA Workshop on Digital Engineering for Fusion Energy Research, December 2025."
+		"R. Delaporte-Mathurin, R. MacDonald, J. Dark, M. Rother, T. Zulfiqar, K. B. Woller, “Physics-informed tritium fuel cycle modelling workflow for fusion reactors”, arXiv:2603.25751, 2026."
+	],
+	"talks": [
+		"PathSim goes embedded. PyCon DE & PyData, April 2026.",
+		"An open-source Python framework for dynamic system simulation in fusion energy applications. OSSFE 2026, March 2026.",
+		"PathSim. IAEA Workshop on Digital Engineering for Fusion Energy Research, MIT Plasma Science and Fusion Center, December 2025.",
+		"PathSim. GAMM RSE/RDM workshop, December 2025.",
+		"The decentralized perspective on dynamical system simulation. Guest lecture, MUSEN colloquium, TU Braunschweig, May 2025.",
+		"PathSim. Gauss Fusion, May 2025; IFAS, May 2025.",
+		"Die Anatomie eines Systemsimulators. IMMS, March 2025."
 	],
 	"skills": [
 		{ "label": "Programming", "text": "Python, Rust, TypeScript, C, LaTeX" },
