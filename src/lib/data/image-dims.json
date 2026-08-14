@@ -11,6 +11,10 @@
 		803,
 		879
 	],
+	"/images/pathsim-pitch.png": [
+		1193,
+		666
+	],
 	"/images/pathsim_logo.png": [
 		566,
 		316
@@ -138,6 +142,10 @@
 	"/images/timeline/mandelbrot.png": [
 		1600,
 		1067
+	],
+	"/images/timeline/pathsim-2023.png": [
+		1300,
+		1040
 	],
 	"/images/timeline/qesfvm-field.png": [
 		1023,

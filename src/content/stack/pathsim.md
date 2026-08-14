@@ -93,11 +93,32 @@ energy research in December 2025.
 ## History
 
 PathSim started in early 2023, at the beginning of my PhD, as an analog
-computer emulator side project. It grew into a full hybrid system simulation
-framework, went public on GitHub in the summer of 2024, and was announced in
-March 2025 as an open alternative to Simulink. Since then: a JOSS publication,
-roughly 400 GitHub stars, nine contributors, adoption by JSBSim and the MIT
-Plasma Science and Fusion Center, and community-contributed domain toolboxes.
+computer emulator side project. Before it had a repository it had a zip
+archive: 31 snapshots between December 2023 and August 2024, saved whenever
+something changed that was worth keeping.
+
+![The first engine, re-run today|right|46x14|contain](/images/timeline/pathsim-2023.png)
+
+The earliest snapshot, from December 17, 2023, already carries Simulation,
+Connection, Integrator, Amplifier, Adder and Scope, the names the API still
+has today, and its test cases are a damped harmonic oscillator checked
+against the analytical solution, a slip-stick system with Coulomb friction,
+and a radar system in a notebook. The figure here is that December 2023
+engine running its own harmonic oscillator test today, unchanged.
+
+The last snapshot and the first GitHub commit share a date: August 11, 2024,
+the day the zip archive became a repository. I announced PathSim in March
+2025 as an open alternative to Simulink.
+
+![The original pitch slide|left|46x14|contain](/images/pathsim-pitch.png)
+
+The original pitch slide from that spring puts the idea in one picture: draw
+the system as a block diagram, translate it one-to-one into the API, simulate
+and look at the result.
+
+Since then: a JOSS publication, roughly 400 GitHub stars, nine contributors,
+adoption by JSBSim and the MIT Plasma Science and Fusion Center, and
+community-contributed domain toolboxes.
 [FastSim](/stack/fastsim/) accelerates the same API as a drop-in Rust engine,
 and [PathView](/stack/pathview/) edits PathSim models visually in the
 browser.

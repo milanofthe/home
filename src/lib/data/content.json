@@ -133,6 +133,7 @@
 					}
 				],
 				"images": [
+					{ "src": "/images/pathsim-pitch.png", "label": "the pitch slide", "project": "pathsim", "fit": "contain", "background": "#ffffff" },
 					{ "src": "/screenshots/view-pathsim-org.png", "label": "pathview", "project": "pathview" },
 					{ "src": "/screenshots/pathsim-org.png", "label": "pathsim.org", "href": "https://pathsim.org" },
 					{ "src": "/screenshots/docs-pathsim-org.png", "label": "docs", "href": "https://docs.pathsim.org" },
@@ -167,13 +168,19 @@
 				"project": "pathsim",
 				"body": [
 					{
-						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had. It stayed on my own machine for a year and a half before the repository went public in the summer of 2024.",
+						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had. It stayed on my own machine for a year and a half, versioned as 31 zip snapshots, before the repository went public in the summer of 2024. The earliest snapshot, December 2023, already carries Simulation, Connection and the block names the API has today.",
 						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
 					},
 					"The same stretch brought three more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, a symbolic circuit analysis tool inspired by Analog Insydes, and a finite volume solver for quasi-electrostatic frequency-domain analysis that came out of the sensor modeling at the institute.",
 					"The solver needed a mesh, so it got one: a 2D QuadTree that refines toward edges and balances itself. Writing my own mesher for the first time is where the idea started that a solver and its mesher should be designed against each other, which is what RapidMesh is now."
 				],
 				"images": [
+					{
+						"src": "/images/timeline/pathsim-2023.png",
+						"label": "the first engine, re-run",
+						"fit": "contain",
+						"background": "#ffffff"
+					},
 					{
 						"src": "/images/timeline/harmonicbalance.png",
 						"label": "harmonic balance",
