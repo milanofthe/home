@@ -59,4 +59,7 @@ is what makes the parameter sweeps behind a compact model affordable.
 
 It started as a small Python package with a tkinter GUI, was rebuilt into the
 fully client-side browser tool it is today, and became the seed of the whole
-fields level of the stack.
+fields level of the stack. The current integration runs through
+[RapidFEM](/stack/rapidfem/): GDS layouts and process stacks load into the
+solver as 3D geometry via rapidfem.rfic, and the viewer here became the
+renderer in its notebook UI.
