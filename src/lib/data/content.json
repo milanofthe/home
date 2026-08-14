@@ -391,7 +391,32 @@
 			}
 		],
 		"cta": "[ more about me -> ]",
-		"links": "GitHub   LinkedIn   X"
+		"links": "GitHub   LinkedIn   X",
+		"publications": [
+			{
+				"text": "PathSim: a system simulation framework. Journal of Open Source Software 10(109), 8158, 2025. [ doi ]",
+				"links": [{ "phrase": "[ doi ]", "href": "https://doi.org/10.21105/joss.08158" }]
+			},
+			{
+				"text": "Physics-informed tritium fuel cycle modelling workflow for fusion reactors, with R. Delaporte-Mathurin, R. MacDonald, J. Dark, T. Zulfiqar and K. B. Woller. arXiv:2603.25751, 2026. [ arxiv ]",
+				"links": [{ "phrase": "[ arxiv ]", "href": "https://arxiv.org/abs/2603.25751" }]
+			},
+			{
+				"text": "PathSim, presented at the IAEA Workshop on Digital Engineering for Fusion Energy Research, December 2025. [ workshop ]",
+				"links": [{ "phrase": "[ workshop ]", "href": "https://conferences.iaea.org/event/412/" }]
+			},
+			{
+				"text": "I built an open-source Simulink alternative that runs in your browser. dev.to. [ article ]",
+				"links": [{ "phrase": "[ article ]", "href": "https://dev.to/milan_rother/i-built-an-open-source-simulink-alternative-that-runs-in-your-browser-4gpg" }]
+			},
+			{
+				"text": "Linear time-invariant systems: a 120-page manuscript on system theory, in German and English. [ de ] [ en ]",
+				"links": [
+					{ "phrase": "[ de ]", "href": "https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript" },
+					{ "phrase": "[ en ]", "href": "https://github.com/milanofthe/lti-manuscript-en" }
+				]
+			}
+		]
 	},
 	"projects": {
 		"heading": "THE STACK",

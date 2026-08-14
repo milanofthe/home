@@ -20,6 +20,8 @@
 	const PARAGRAPHS = content.about.paragraphs as ProseParagraph[];
 	const STORY: TextSegment[][] = PARAGRAPHS.map(toSegments);
 
+	const PUBLICATIONS = (content.about.publications as ProseParagraph[]).map(toSegments);
+
 	const SIDE_PROJECTS = content.other.items.map((item) => ({
 		name: item.heading,
 		href: item.url,
@@ -43,6 +45,13 @@
 		g.timeline(TIMELINE);
 		g.spacer();
 
+		g.sectionHeading('publications & writing');
+		g.spacer();
+		for (const p of PUBLICATIONS) {
+			g.paragraph(p);
+		}
+		g.spacer();
+
 		g.sectionHeading('side quests');
 		g.paragraph(content.other.intro);
 		g.spacer();
@@ -56,7 +65,8 @@
 		g.cta([
 			{ text: '[ GitHub ]', href: GITHUB_URL },
 			{ text: '[ LinkedIn ]', href: LINKEDIN_URL },
-			{ text: '[ X ]', href: X_URL }
+			{ text: '[ X ]', href: X_URL },
+			{ text: '[ CV (pdf) ]', href: '/cv/milan-rother-cv.pdf' }
 		]);
 		g.spacer();
 		g.contactSection({ bookingUrl: BOOKING_URL, email: CONTACT_EMAIL });
@@ -86,6 +96,13 @@
 				</li>
 			{/each}
 		</ul>
+		<h2>Publications and writing</h2>
+		<ul>
+			{#each content.about.publications as p}
+				<li>{paragraphText(p as ProseParagraph)}</li>
+			{/each}
+		</ul>
+		<p><a href="/cv/milan-rother-cv.pdf">Curriculum vitae (PDF)</a></p>
 		<h2>Side projects</h2>
 		<ul>
 			{#each SIDE_PROJECTS as sp}

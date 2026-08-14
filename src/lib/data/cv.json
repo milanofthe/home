@@ -1,0 +1,117 @@
+{
+	"name": "Milan Rother",
+	"headline": "Simulation and numerical software: fields, circuits, systems",
+	"contact": {
+		"email": "info@milanrother.com",
+		"web": "milanrother.com",
+		"github": "github.com/milanofthe",
+		"linkedin": "linkedin.com/in/milan-rother-648474183",
+		"location": "Germany",
+		"languages": "German (native), English (fluent)"
+	},
+	"summary": "Author of the PathSim simulation ecosystem and of a vertically integrated simulation stack for electronics: electromagnetic field solvers, symbolic circuit analysis, and system-level simulation. One architecture throughout: SSA compute graphs at the core of the engines, Rust cores, Python APIs, browser interfaces.",
+	"experience": [
+		{
+			"period": "2025 - present",
+			"title": "Independent engineering consultant",
+			"org": "self-employed",
+			"bullets": [
+				"Custom solvers and engineering tools for client teams; commercial licensing of FastSim, SANE and RapidMoM",
+				"Client work including in-browser C compilation and GPU dispatch of batched dynamical systems (under NDA)",
+				"Open-source collaboration with the MIT Plasma Science and Fusion Center and the UK Atomic Energy Authority on tritium fuel-cycle modelling"
+			]
+		},
+		{
+			"period": "2023 - 2025",
+			"title": "Research associate",
+			"org": "Institut für CMOS Design, TU Braunschweig",
+			"bullets": [
+				"Numerical modelling of electrochemical sensors for analog circuit design",
+				"System design and hardware for bio-impedance spectroscopy",
+				"EDA pipeline for RFIC passives, validated in silicon for cryogenic quantum applications"
+			]
+		},
+		{
+			"period": "2021 - 2023",
+			"title": "Research assistant",
+			"org": "Institut für CMOS Design, TU Braunschweig",
+			"bullets": [
+				"High-frequency measurement calibration methods and verification hardware; taught the circuit theory seminar"
+			]
+		},
+		{
+			"period": "2019 - 2020",
+			"title": "Intern, electrics/electronics development",
+			"org": "Volkswagen AG, Wolfsburg",
+			"bullets": [
+				"Low-voltage and redundant power supply systems: concept, schematic, hardware, ASIL considerations"
+			]
+		},
+		{
+			"period": "2018 - 2021",
+			"title": "Teaching assistant",
+			"org": "TU Braunschweig",
+			"bullets": [
+				"Weekly independent tutorials on linear dynamical systems and circuit theory for 50+ students"
+			]
+		}
+	],
+	"education": [
+		{
+			"period": "2023 - present",
+			"title": "PhD candidate, electrical engineering (external)",
+			"org": "TU Ilmenau"
+		},
+		{
+			"period": "2021 - 2023",
+			"title": "M.Sc. electrical engineering, with honors",
+			"org": "TU Braunschweig",
+			"note": "Thesis (graded excellent): area optimized neural network based modelling of passive magnetic structures for chip-level integration"
+		},
+		{
+			"period": "2015 - 2021",
+			"title": "B.Sc. electrical engineering",
+			"org": "TU Braunschweig",
+			"note": "Thesis (graded excellent): order reduction of interconnect network models for efficient calculation with SPICE simulators"
+		}
+	],
+	"openSource": [
+		{
+			"name": "PathSim",
+			"desc": "Python framework for hybrid system simulation. JOSS-published, {pathsimStars}+ GitHub stars, adopted by JSBSim, used at MIT PSFC and UKAEA for fusion fuel-cycle modelling."
+		},
+		{
+			"name": "FastSim",
+			"desc": "Drop-in Rust engine for PathSim: trace-based JIT, symbolic autodiff, FMI 3.0, C99 code generation. 191x median per-step speedup over the Python engine."
+		},
+		{
+			"name": "SANE",
+			"desc": "Symbolic and numeric circuit analysis in Rust with a native Verilog-A frontend; validated against ngspice and Xyce, scales past 100k parameters."
+		},
+		{
+			"name": "RSLAB",
+			"desc": "Sparse direct solver in pure Rust (LDLT, LU, KLU paths); benchmarked against MKL PARDISO and faer, bit-identical across thread counts."
+		},
+		{
+			"name": "RapidFEM / RapidMoM / RapidMesh / RapidPassives",
+			"desc": "Electromagnetic solver stack: Maxwell FEM, 2.5D MoM for planar RF passives, tetrahedral and planar meshing, browser-based RFIC layout generation."
+		},
+		{
+			"name": "PathView",
+			"desc": "Browser-based visual editor for PathSim models, running client-side through Pyodide. Started at MIT PSFC, now part of the PathSim organization."
+		}
+	],
+	"publications": [
+		"M. Rother, “PathSim - A System Simulation Framework”, Journal of Open Source Software 10(109), 8158, 2025.",
+		"R. Delaporte-Mathurin, R. MacDonald, J. Dark, M. Rother, T. Zulfiqar, K. B. Woller, “Physics-informed tritium fuel cycle modelling workflow for fusion reactors”, arXiv:2603.25751, 2026.",
+		"Talk: PathSim, IAEA Workshop on Digital Engineering for Fusion Energy Research, December 2025."
+	],
+	"skills": [
+		{ "label": "Programming", "text": "Python, Rust, TypeScript, C, LaTeX" },
+		{ "label": "Numerics", "text": "FEM and MoM electromagnetics, circuit simulation (MNA, harmonic balance, Verilog-A), ODE/DAE solvers, sparse direct solvers, model order reduction, automatic differentiation, JIT compilation" },
+		{ "label": "Web & tooling", "text": "SvelteKit, WebGL, WebAssembly / Pyodide, PyO3, CI pipelines" }
+	],
+	"other": [
+		{ "period": "2014 - 2021", "text": "Competition climbing coach, DAV Braunschweig: led the team from entry level to international level." }
+	]
+}

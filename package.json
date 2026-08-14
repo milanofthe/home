@@ -11,6 +11,7 @@
 		"fetch-stats": "node scripts/fetch-github-stats.js",
 		"fetch-star-history": "node scripts/fetch-star-history.js",
 		"screenshots": "node scripts/capture-screenshots.js",
+		"cv": "node scripts/generate-cv.js",
 		"image-dims": "node scripts/generate-image-dims.js"
 	},
 	"devDependencies": {

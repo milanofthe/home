@@ -8,6 +8,8 @@
 	const INTRO =
 		'Custom solvers and engineering tools for client teams, built and integrated end to end. Numerics and UX for circuits and systems.';
 
+	const BASICS = 'Based in Germany. Working languages German and English, remote or on-site.';
+
 	const OFFERS = [
 		{
 			heading: 'custom solvers',
@@ -108,6 +110,7 @@
 		const g = new ArticleGrid(cols, 'neutral', 6, cellRatio);
 		g.title('CONSULTING');
 		g.paragraph(INTRO);
+		g.paragraph(BASICS);
 		g.spacer();
 		g.cta([{ text: '[ Book an intro call -> ]', href: BOOKING_URL }]);
 		g.spacer();
@@ -161,6 +164,7 @@
 	{#snippet semantic()}
 		<h1>Consulting</h1>
 		<p>{INTRO}</p>
+		<p>{BASICS}</p>
 		{#each OFFERS as offer}
 			<h2>{offer.heading}</h2>
 			<p>{offer.text}</p>
