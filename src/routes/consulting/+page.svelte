@@ -36,6 +36,11 @@
 			]
 		},
 		{
+			heading: 'batched dynamical systems on the GPU',
+			text: 'A proprietary client engagement: C code compiled in the browser, and batches of dynamical systems dispatched to the GPU for parallel evaluation. Client and application are under NDA.',
+			links: []
+		},
+		{
 			heading: 'RFIC passives, validated in silicon',
 			text: 'At the Institut fuer CMOS Design, TU Braunschweig, I built an EDA pipeline for RFIC passives that was validated in silicon for cryogenic quantum applications. It became RapidPassives.',
 			links: [{ text: '[ rapidpassives ]', href: '/stack/rapidpassives/' }]
@@ -107,7 +112,7 @@
 		for (const w of WORK) {
 			g.heading('// ' + w.heading);
 			g.paragraph(w.text);
-			g.cta(w.links);
+			if (w.links.length) g.cta(w.links);
 			g.spacer();
 		}
 
