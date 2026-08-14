@@ -273,11 +273,10 @@
 					"Master of science with honors, thesis graded excellent. Written at the Institut fuer CMOS Design between October 2022 and March 2023: area optimized neural network based modelling of passive magnetic structures for chip-level integration.",
 					"Three things had to be built for it. Polygonal windings parametrised down to the geometry, so a spiral inductor is a handful of numbers rather than a drawing. Infineon's B12HFC layerstack reduced to the layers an EM solver actually needs, because the full stack makes the simulation unaffordable. And a completely analytical derivation of the first and second partial derivatives of RLCk transfer functions with respect to the circuit parameters, read straight off the block structure of the MNA matrices.",
 					{
-						"text": "Those derivative stencils are what SANE now runs symbolically over a whole compute graph, and the windings and layerstacks are what RapidPassives generates and RapidMoM solves. At the time the point was to stop the optimizer finite-differencing.",
+						"text": "Those derivative stencils are what SANE now runs symbolically over a whole compute graph, and the windings and layerstacks are what RapidPassives generates today. At the time the point was to stop the optimizer finite-differencing.",
 						"links": [
 							{ "phrase": "SANE", "project": "sane" },
-							{ "phrase": "RapidPassives", "project": "rapidpassives" },
-							{ "phrase": "RapidMoM", "project": "rapidmom" }
+							{ "phrase": "RapidPassives", "project": "rapidpassives" }
 						]
 					}
 				],

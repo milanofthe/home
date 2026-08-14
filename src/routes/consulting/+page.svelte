@@ -37,7 +37,7 @@
 		},
 		{
 			heading: 'RFIC passives, validated in silicon',
-			text: 'At the Institut fuer CMOS Design, TU Braunschweig, I built an EDA pipeline for RFIC passives that was validated in silicon for cryogenic quantum applications. It became RapidPassives, and the layouts it generates are what RapidMoM simulates today.',
+			text: 'At the Institut fuer CMOS Design, TU Braunschweig, I built an EDA pipeline for RFIC passives that was validated in silicon for cryogenic quantum applications. It became RapidPassives.',
 			links: [{ text: '[ rapidpassives ]', href: '/stack/rapidpassives/' }]
 		},
 		{
