@@ -37,7 +37,7 @@
 		},
 		{
 			heading: 'domain toolboxes, scikit-rf & JSBSim',
-			text: 'Two of PathSim\'s domain toolboxes came out of collaborations with the upstream projects: pathsim-rf with the scikit-rf developers, and pathsim-flight with the JSBSim developers, whose flight dynamics engine PathSim models couple to.',
+			text: 'Two of PathSim\'s domain toolboxes came out of collaborations with the upstream projects: pathsim-rf with the scikit-rf developers, and pathsim-flight with the JSBSim developers, which wraps JSBSim flight dynamics models as PathSim blocks.',
 			links: [
 				{ text: '[ pathsim-rf ]', href: 'https://github.com/pathsim/pathsim-rf' },
 				{ text: '[ pathsim-flight ]', href: 'https://github.com/pathsim/pathsim-flight' }
