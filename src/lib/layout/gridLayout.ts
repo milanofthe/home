@@ -5,7 +5,7 @@ import { FILLER_SOURCE } from '$lib/data/filler-source';
 import { contentSections, type ContentSection, type ContentRegion } from './contentRegions';
 export type { ContentSection };
 
-export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'link-sane' | 'link-rslab' | 'link-thesisos' | 'link-whatsmytraffic' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim' | 'frame-sane' | 'frame-rslab' | 'frame-thesisos' | 'frame-whatsmytraffic' | 'code-kw' | 'code-str' | 'code-com' | 'code-num';
+export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'heading-falllow' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'link-sane' | 'link-rslab' | 'link-thesisos' | 'link-whatsmytraffic' | 'link-falllow' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim' | 'frame-sane' | 'frame-rslab' | 'frame-thesisos' | 'frame-whatsmytraffic' | 'frame-falllow' | 'code-kw' | 'code-str' | 'code-com' | 'code-num';
 
 export interface Cell {
 	char: string;
@@ -95,7 +95,7 @@ function applyInlineLinks(
 
 // Types that should be word-wrapped when lines exceed available width
 const WRAPPABLE_TYPES: Set<string> = new Set([
-	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'link-line-rapidpassives', 'link-line-scidata', 'link-line-fastsim', 'link-line-thesisos', 'link-line-whatsmytraffic', 'footer-line'
+	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'link-line-rapidpassives', 'link-line-scidata', 'link-line-fastsim', 'link-line-thesisos', 'link-line-whatsmytraffic', 'link-line-falllow', 'footer-line'
 ]);
 
 // Fill a line with filler source characters, cycling through the source
@@ -213,6 +213,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 			region.type === 'heading-rslab' ? 'heading-rslab' :
 			region.type === 'heading-thesisos' ? 'heading-thesisos' :
 			region.type === 'heading-whatsmytraffic' ? 'heading-whatsmytraffic' :
+			region.type === 'heading-falllow' ? 'heading-falllow' :
 			region.type === 'cta' ? 'cta' :
 			region.type === 'link-line' ? 'link' :
 			region.type === 'link-line-pathsim' ? 'link-pathsim' :
@@ -224,6 +225,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 			region.type === 'link-line-rslab' ? 'link-rslab' :
 			region.type === 'link-line-thesisos' ? 'link-thesisos' :
 			region.type === 'link-line-whatsmytraffic' ? 'link-whatsmytraffic' :
+			region.type === 'link-line-falllow' ? 'link-falllow' :
 			region.type === 'footer-line' ? 'footer' :
 			region.type === 'form-field' ? 'form-field' :
 			'content';
@@ -245,6 +247,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 				region.frameColor === 'rslab' ? 'frame-rslab' :
 				region.frameColor === 'thesisos' ? 'frame-thesisos' :
 				region.frameColor === 'whatsmytraffic' ? 'frame-whatsmytraffic' :
+				region.frameColor === 'falllow' ? 'frame-falllow' :
 				'frame';
 			const innerRows = region.embeddedRows || 10;
 

@@ -33,7 +33,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow';
 		themeParam?: boolean;
 		fit?: 'cover' | 'contain';
 		background?: string;
@@ -61,7 +61,8 @@
 		'rslab-memory': { name: 'A-priori Memory Estimate', url: 'https://github.com/milanofthe/rslab', screenshot: '/images/rslab-memory-estimate.png', color: 'rslab', themeParam: false, fit: 'contain', background: '#08080c' },
 		'thesisos-landing': { name: 'Landing', url: 'https://thesisos.io', screenshot: '/screenshots/thesisos-landing.png', color: 'thesisos', themeParam: false },
 		'thesisos-graph': { name: 'Citation Graph', url: 'https://thesisos.io/graph?root=cb35ff8e-d0f5-437c-9528-89307638622a', screenshot: '/screenshots/thesisos-graph.png', color: 'thesisos', themeParam: false },
-		'whatsmytraffic-landing': { name: 'WhatsMyTraffic', url: 'https://whatsmytraffic.com', screenshot: '/screenshots/whatsmytraffic-landing.png', color: 'whatsmytraffic', themeParam: false }
+		'whatsmytraffic-landing': { name: 'WhatsMyTraffic', url: 'https://whatsmytraffic.com', screenshot: '/screenshots/whatsmytraffic-landing.png', color: 'whatsmytraffic', themeParam: false },
+		'falllow-landing': { name: 'falllow', url: 'https://falllow.com', screenshot: '/screenshots/falllow-landing.png', color: 'falllow', themeParam: false }
 	};
 
 	// Video tile data
@@ -167,6 +168,7 @@
 		{ text: 'pysimhub.io', types: ['link-pysimhub'], href: 'https://pysimhub.io' },
 		{ text: 'thesisos.io', types: ['link-thesisos'], href: 'https://thesisos.io' },
 		{ text: 'whatsmytraffic.com', types: ['link-whatsmytraffic'], href: 'https://whatsmytraffic.com' },
+		{ text: 'falllow.com', types: ['link-falllow'], href: 'https://falllow.com' },
 	];
 
 	let clickOverlays = $derived.by((): ClickOverlay[] => {

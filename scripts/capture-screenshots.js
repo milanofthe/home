@@ -38,7 +38,10 @@ const sites = [
 	{ id: 'fastsim-org', url: 'https://fast.pathsim.org', waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 12000 },
 	{ id: 'thesisos-landing', url: 'https://thesisos.io/?static=true', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
 	{ id: 'thesisos-graph', url: 'https://thesisos.io/graph?root=cb35ff8e-d0f5-437c-9528-89307638622a', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 20000 },
-	{ id: 'whatsmytraffic-landing', url: 'https://whatsmytraffic.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 }
+	{ id: 'whatsmytraffic-landing', url: 'https://whatsmytraffic.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
+	// falllow opens with a canvas animation that covers the viewport for about five
+	// seconds, so this wait is what stands between a screenshot and a black rectangle.
+	{ id: 'falllow-landing', url: 'https://falllow.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 12000 }
 ];
 
 const themes = ['dark', 'light'];

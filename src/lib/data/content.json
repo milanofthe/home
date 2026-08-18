@@ -597,6 +597,16 @@
 					"Self-hosted web analytics with a form backend and passwordless auth. A Docker stack (Umami, Postgres, a SvelteKit dashboard behind Caddy) on a VPS."
 				],
 				"statsText": "whatsmytraffic.com"
+			},
+			{
+				"id": "falllow",
+				"heading": "falllow",
+				"headingType": "falllow",
+				"url": "https://falllow.com",
+				"paragraphs": [
+					"A distributed compute pool for tests and builds. Enrol the machines you already own; work lands on whichever is free, runs in a container with reserved threads and memory, and reports back the command's own exit code."
+				],
+				"statsText": "falllow.com"
 			}
 		]
 	},

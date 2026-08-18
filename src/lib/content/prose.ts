@@ -36,7 +36,8 @@ export const PROJECT_ACCENT: Record<string, AccentKey> = {
 	pysimhub: 'pysimhub',
 	scidata: 'scidata',
 	thesisos: 'thesisos',
-	whatsmytraffic: 'whatsmytraffic'
+	whatsmytraffic: 'whatsmytraffic',
+	falllow: 'falllow'
 };
 
 // Projects with a detail page under /stack. The side projects deliberately
@@ -63,6 +64,7 @@ const GLOW: Record<AccentKey, string> = {
 	rslab: 'rgba(59, 130, 246, 0.3)',
 	thesisos: 'rgba(107, 138, 253, 0.3)',
 	whatsmytraffic: 'rgba(111, 220, 142, 0.3)',
+	falllow: 'rgba(250, 250, 250, 0.3)',
 	neutral: 'rgba(150, 149, 145, 0.25)'
 };
 

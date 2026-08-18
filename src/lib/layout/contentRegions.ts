@@ -11,7 +11,7 @@ export interface GitHubStats {
 	pysimhub: { projects: number; members?: number; cumulativeStars: number };
 }
 
-export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-sane' | 'link-line-rslab' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'footer-line' | 'content' | 'form-field';
+export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'heading-falllow' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-sane' | 'link-line-rslab' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'link-line-falllow' | 'footer-line' | 'content' | 'form-field';
 
 export interface ContentRegion {
 	type: RegionType;
@@ -24,7 +24,7 @@ export interface ContentRegion {
 	url?: string; // for links within text
 	inlineLinks?: { phrase: string; project: string }[]; // colored, clickable phrases embedded in paragraph text
 	label?: string; // frame title for embedded blocks
-	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic'; // project color for frame
+	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow'; // project color for frame
 	align?: 'center' | 'left';
 	fill?: boolean; // pad heading up to the tile-row width
 	fillChar?: string; // padding character, defaults to '-'
@@ -138,6 +138,11 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		type: 'embedded', lines: [], frameColor: 'whatsmytraffic',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'whatsmytraffic-landing', label: 'WhatsMyTraffic' }]
+	},
+	falllow: {
+		type: 'embedded', lines: [], frameColor: 'falllow',
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
+		tiles: [{ id: 'falllow-landing', label: 'falllow' }]
 	}
 };
 
@@ -154,7 +159,8 @@ const LINK_LINE_TYPES: Record<string, RegionType> = {
 	sane: 'link-line-sane',
 	rslab: 'link-line-rslab',
 	thesisos: 'link-line-thesisos',
-	whatsmytraffic: 'link-line-whatsmytraffic'
+	whatsmytraffic: 'link-line-whatsmytraffic',
+	falllow: 'link-line-falllow'
 };
 
 const HEADING_TYPES: Record<string, RegionType> = {
@@ -168,7 +174,8 @@ const HEADING_TYPES: Record<string, RegionType> = {
 	sane: 'heading-sane',
 	rslab: 'heading-rslab',
 	thesisos: 'heading-thesisos',
-	whatsmytraffic: 'heading-whatsmytraffic'
+	whatsmytraffic: 'heading-whatsmytraffic',
+	falllow: 'heading-falllow'
 };
 
 // --- Section builders ---
