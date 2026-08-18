@@ -199,6 +199,10 @@
 		2880,
 		1800
 	],
+	"/screenshots/falllow-landing.png": [
+		1878,
+		1220
+	],
 	"/screenshots/fastsim-org-dark.png": [
 		2880,
 		1800
@@ -350,5 +354,9 @@
 	"/screenshots/view-pathsim-org.png": [
 		2880,
 		1800
+	],
+	"/screenshots/whatsmytraffic-landing.png": [
+		1878,
+		1220
 	]
 }
