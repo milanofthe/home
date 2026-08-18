@@ -4,6 +4,7 @@
 import contentData from '$lib/data/content.json';
 import defaultStats from '$lib/data/github-stats.json';
 import { inlineLinksFor, paragraphText, type ProseParagraph } from '$lib/content/prose';
+import { getStackPage } from '$lib/content';
 
 export interface GitHubStats {
 	pathsim: { stars: number; forks: number; watchers?: number; openIssues?: number };
@@ -262,7 +263,10 @@ function renderProjectItem(
 	regions: ContentRegion[],
 	options: { readMore?: boolean } = {}
 ) {
-	const { readMore = true } = options;
+	// A project gets a read-more link when it has a page to read. Deciding that here
+	// rather than per section is what lets a side project have one: adding the
+	// markdown file is the whole of it, with nothing to remember to switch on.
+	const { readMore = !!getStackPage(item.id) } = options;
 	regions.push(spacer());
 	regions.push({ ...heading(item.heading, HEADING_TYPES[item.headingType ?? ''] ?? 'heading'), id: item.id });
 	regions.push(spacer());
@@ -299,8 +303,7 @@ function renderProjectItem(
 	}
 
 	// Read-more link to the project detail page (unique text per project so
-	// the overlay matcher can map it to its href). Only the stack projects
-	// have such a page, side projects link out through their stats line.
+	// the overlay matcher can map it to its href).
 	if (readMore) {
 		regions.push(spacer());
 		regions.push({ type: 'cta', lines: [`[ more on ${item.heading} -> ]`], align: 'center' });
@@ -351,7 +354,7 @@ function buildOtherSection(stats: GitHubStats): ContentSection {
 	const statsMap = buildStatsMap(stats);
 
 	for (const item of c.items as ProjectItem[]) {
-		renderProjectItem(item, statsMap, regions, { readMore: false });
+		renderProjectItem(item, statsMap, regions);
 	}
 
 	return { id: 'other', fillerLinesBefore: 5, regions };

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { stackPages } from '$lib/content';
 	import { onMount, tick } from 'svelte';
 	import { computeGridLayout, type GridLayout, type FormFieldPosition, type CellType, type ContentSection } from '$lib/layout/gridLayout';
 	import { buildContentSections, type GitHubStats } from '$lib/layout/contentRegions';
@@ -120,14 +121,13 @@
 		action?: string;
 	}
 
-	// Read-more targets: one per stack project (unique text -> unique href).
-	const readMoreTargets = [
-		'PathSim', 'FastSim', 'PathView', 'SANE', 'RapidMoM', 'RapidFEM',
-		'RapidPassives', 'RSLAB', 'RapidMesh'
-	].map((name) => ({
-		text: `[ more on ${name} -> ]`,
+	// Read-more targets, one per page that exists (unique text -> unique href).
+	// Read from the pages themselves rather than listed again here, so a new one is
+	// a markdown file and nothing else.
+	const readMoreTargets = stackPages.map((page) => ({
+		text: `[ more on ${page.title} -> ]`,
 		types: ['cta'] as CellType[],
-		href: `/stack/${name.toLowerCase()}/`
+		href: `/stack/${page.slug}/`
 	}));
 
 	const clickTargets: { text: string; types: CellType[]; href?: string; scrollTo?: string; action?: string }[] = [
