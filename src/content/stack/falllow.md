@@ -129,7 +129,8 @@ wants breadth, more machines rather than a faster one, and breadth is exactly wh
 is lying around unused: old gaming machines nobody plays on any more, a desktop
 that idles through most of the day, a box in the corner switched on for one thing a
 week. That is real compute, sitting still, belonging to people who would not mind
-lending it.
+lending it, and it is already paid for. With compute priced the way it is at the
+moment, that last part is most of the argument.
 
 The machine you happen to be sitting at is not always one you want to run anything
 on. Away from the desk, on a laptop, that same suite is a flat battery and an hour
@@ -147,10 +148,5 @@ The GitHub bridge came out of the same arithmetic. Those runs are billed in Acti
 minutes, and an allowance goes quickly when the jobs are long and there are a lot
 of them. The machines that were going to sit idle anyway can take the workflow
 instead, and the workflow does not have to know that anything changed.
-
-And the timing is not subtle. Compute is expensive right now, and a validation run
-does not need the fastest hardware in the world. It needs enough cores, for long
-enough, somewhere other than where you are working. That is a much easier thing to
-find than a datacentre, and most people already own it.
 
 Started in August 2026.
