@@ -110,3 +110,47 @@ The control plane is Rust, axum and Postgres, deployed as a container beside Cad
 on a single VPS. The manager and the public site are SvelteKit, prerendered; the
 desktop app is the same component library again, in Tauri, so the machine's window
 and the browser's are not two designs that drifted apart.
+
+## History
+
+This came out of validation. A field solver is worth what its answers are worth, so
+[RapidFEM](/stack/rapidfem/) and [RapidMoM](/stack/rapidmom/) are checked against
+analytic cases, reference codes and measured structures, across a corpus rather
+than a handful of examples. That is the shape of work that started this: many
+medium-sized jobs, none of them enormous, all of them long. No single one needs a
+big machine. Together they need a lot of machine for hours, and every one of those
+hours was a stretch where the computer I was writing on was not really mine to
+write on. The work that blocks you is rarely the work you are thinking about.
+
+That shape is also what makes an ordinary computer enough. A job that wants eight
+cores for forty minutes does not care whether those cores are the current
+generation. It cares that they are not the ones you are typing on. Such a workload
+wants breadth, more machines rather than a faster one, and breadth is exactly what
+is lying around unused: old gaming machines nobody plays on any more, a desktop
+that idles through most of the day, a box in the corner switched on for one thing a
+week. That is real compute, sitting still, belonging to people who would not mind
+lending it.
+
+The machine you happen to be sitting at is not always one you want to run anything
+on. Away from the desk, on a laptop, that same suite is a flat battery and an hour
+of waiting, while the desktop at home sits idle behind a router that nothing
+outside can reach. Wanting to use it from somewhere else is where the outbound
+connection comes from: the machines at home dial out and hold the line open, so
+there is nothing to forward, nothing to expose, and no address that has to stay
+put.
+
+Coding agents made it more pressing rather than less. An agent that runs the test
+suite runs it on your machine, and it will happily do that while you are using it.
+Somewhere to send that work is worth having on its own.
+
+The GitHub bridge came out of the same arithmetic. Those runs are billed in Actions
+minutes, and an allowance goes quickly when the jobs are long and there are a lot
+of them. The machines that were going to sit idle anyway can take the workflow
+instead, and the workflow does not have to know that anything changed.
+
+And the timing is not subtle. Compute is expensive right now, and a validation run
+does not need the fastest hardware in the world. It needs enough cores, for long
+enough, somewhere other than where you are working. That is a much easier thing to
+find than a datacentre, and most people already own it.
+
+Started in August 2026.
