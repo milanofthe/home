@@ -341,6 +341,22 @@
 	color: #6fdc8e;
 }
 
+/* falllow: the one achromatic entry. Its own interface has no accent hue at all, so
+   a colour picked here would be one the project does not have. It still reads as its
+   own thing, being brighter than both the body text and the grey of a plain heading. */
+.code-grid-heading-falllow {
+	color: #fafafa;
+	font-weight: bold;
+}
+
+.code-grid-link-falllow {
+	color: #fafafa;
+}
+
+.code-grid-frame-falllow {
+	color: #fafafa;
+}
+
 /* Typewriter: filler-colored base with real-colored overlay stacked via CSS grid */
 .tw-wrapper {
 	display: inline-grid;

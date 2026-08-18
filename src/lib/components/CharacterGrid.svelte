@@ -23,6 +23,7 @@
 		'heading-rslab': 'code-grid-heading-rslab',
 		'heading-thesisos': 'code-grid-heading-thesisos',
 		'heading-whatsmytraffic': 'code-grid-heading-whatsmytraffic',
+		'heading-falllow': 'code-grid-heading-falllow',
 		cta: 'code-grid-cta',
 		link: 'code-grid-link',
 		'link-pathsim': 'code-grid-link-pathsim',
@@ -34,6 +35,7 @@
 		'link-rslab': 'code-grid-link-rslab',
 		'link-thesisos': 'code-grid-link-thesisos',
 		'link-whatsmytraffic': 'code-grid-link-whatsmytraffic',
+		'link-falllow': 'code-grid-link-falllow',
 		footer: 'code-grid-footer',
 		empty: 'code-grid-empty',
 		'form-field': 'code-grid-form-field',
@@ -47,6 +49,7 @@
 		'frame-rslab': 'code-grid-frame-rslab',
 		'frame-thesisos': 'code-grid-frame-thesisos',
 		'frame-whatsmytraffic': 'code-grid-frame-whatsmytraffic',
+		'frame-falllow': 'code-grid-frame-falllow',
 		'code-kw': 'code-grid-code-kw',
 		'code-str': 'code-grid-code-str',
 		'code-com': 'code-grid-code-com',
@@ -161,7 +164,7 @@
 
 		// For each content span inside a line: keep filler-colored base, add real-colored overlay
 		for (const line of contentLines) {
-			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-frame-rapidpassives):not(.code-grid-frame-scidata):not(.code-grid-frame-fastsim):not(.code-grid-frame-sane):not(.code-grid-frame-rslab):not(.code-grid-frame-thesisos):not(.code-grid-frame-whatsmytraffic):not(.code-grid-empty)'));
+			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-frame-rapidpassives):not(.code-grid-frame-scidata):not(.code-grid-frame-fastsim):not(.code-grid-frame-sane):not(.code-grid-frame-rslab):not(.code-grid-frame-thesisos):not(.code-grid-frame-whatsmytraffic):not(.code-grid-frame-falllow):not(.code-grid-empty)'));
 			for (const span of spans) {
 				const text = span.textContent || '';
 				if (!text.trim()) continue;
