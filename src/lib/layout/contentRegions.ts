@@ -42,6 +42,7 @@ export interface ProjectCard {
 	statsLines: { text: string; type: RegionType }[];
 	tile: { id: string; label: string };
 	frameColor?: ContentRegion['frameColor'];
+	readMore?: string; // '[ more on X -> ]', matched to its page by the click-target list
 }
 
 export interface ContentSection {
@@ -385,7 +386,10 @@ function buildProjectCard(
 		paragraphs: item.paragraphs,
 		statsLines,
 		tile,
-		frameColor: embed.frameColor
+		frameColor: embed.frameColor,
+		// Same rule as a full-width project: a card links onward when there is a page
+		// to link to, so adding the markdown file is still the whole of it.
+		readMore: getStackPage(item.id) ? `[ more on ${item.heading} -> ]` : undefined
 	};
 }
 

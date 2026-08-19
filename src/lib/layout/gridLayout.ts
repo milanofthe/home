@@ -371,6 +371,18 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 				cells.push(botRow);
 				advanceOffset(cols);
 
+				// Read-more line under the picture, centred in its own column.
+				if (group.some((card) => card.readMore)) {
+					cells.push(fillerLine(cols, fillerOffset));
+					advanceOffset(cols);
+					const ctaRow = fillerLine(cols, fillerOffset);
+					group.forEach((card, i) => {
+						if (card.readMore) stamp(ctaRow, colStart[i], card.readMore, 'cta');
+					});
+					cells.push(ctaRow);
+					advanceOffset(cols);
+				}
+
 				if (groups.length > 1) {
 					cells.push(fillerLine(cols, fillerOffset));
 					advanceOffset(cols);
