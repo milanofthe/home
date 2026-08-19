@@ -12,12 +12,9 @@ import type { Cell, CellType } from './gridLayout';
 /// each tile comes from the picture's own proportions, so nothing is cropped to fit
 /// a frame it never had. A uniform width is what makes the column read as a grid,
 /// a uniform height would only mean cutting landscape screenshots into portraits.
-// Prose is inset from the image band by TEXT_INDENT, so a paragraph never runs
-// flush against a rule or a frame. A modest indent rather than centring the text
-// in the band: centring costs 17 cells on each side, which starves the column
-// beside a right-hand float. Float images scale up from their declared width and
-// stop where that column would fall below MIN_BESIDE.
-const TEXT_INDENT = 6;
+// Prose is centred inside the image band, so a paragraph sits between the frames
+// rather than flush against one edge of them. Float images scale up from their
+// declared width and stop where the column beside one would fall below MIN_BESIDE.
 const IMAGE_SCALE = 1.25;
 const MIN_BESIDE = 46;
 
@@ -175,10 +172,10 @@ export class ArticleGrid {
 		this.contentWidth = Math.min(cols - 4, 114);
 		this.textWidth = Math.min(this.contentWidth, 80);
 		this.startCol = Math.floor((cols - this.contentWidth) / 2);
-		// Prose sits on its own rail, inset from the image band, so a paragraph is
-		// indented from the rules and frames instead of running flush against their
-		// left edge. Code blocks ride the same rail: a snippet is text.
-		this.textCol = this.startCol + Math.min(TEXT_INDENT, this.contentWidth - this.textWidth);
+		// Prose sits on its own rail, centred inside the image band. Code blocks do
+		// NOT: a snippet is a figure as much as a screenshot is, and hard-wrapping
+		// it to the prose measure would be a worse trade than the wider column.
+		this.textCol = this.startCol + Math.floor((this.contentWidth - this.textWidth) / 2);
 		this.twoCol = this.contentWidth >= 78;
 		this.cellRatio = cellRatio;
 		this.row = topRows;
@@ -635,32 +632,29 @@ export class ArticleGrid {
 		// Declared widths date from a single 104-cell content width. Now that prose
 		// has its own measure, a float can take more of the band: scale the declared
 		// width, and stop where the column beside it would stop being readable.
-		const w = Math.min(Math.round(imgW * IMAGE_SCALE),
-			this.contentWidth - (this.textCol - this.startCol) - MIN_BESIDE - 2);
+		const w = Math.min(Math.round(imgW * IMAGE_SCALE), this.contentWidth - MIN_BESIDE - 2);
 		const rows = this.imageRows(src, w - 2, imgH);
 		const imgTotalH = rows + 2;
 		const gap = 2;
 		const narrowWidth = this.contentWidth - w - gap;
 		const imgCol = side === 'right' ? this.startCol + this.contentWidth - w : this.startCol;
-		// A right-hand float leaves its text against the band edge, 17 characters
-		// left of every other paragraph on the page; put it on the prose rail instead.
-		const textCol = side === 'right' ? this.textCol : this.startCol + w + gap;
-		const besideWidth = side === 'right'
-			? this.startCol + this.contentWidth - w - gap - textCol
-			: narrowWidth;
+		// The text beside a float uses the band, not the prose rail: a figure and its
+		// column are one block, and pulling the column onto the rail would cost it
+		// the 17 cells the centring takes.
+		const textCol = side === 'right' ? this.startCol : this.startCol + w + gap;
 		const r0 = this.row;
 		this.drawFrame(r0, imgCol, w, rows, label, src, opts);
 
 		// Wrap at the narrow width beside the image; remainder flows full width.
 		const segs: TextSegment[] = typeof segments === 'string' ? [{ text: segments }] : segments;
 		const plain = segs.map(s => s.text).join(' ');
-		const narrowLines = ArticleGrid.wordWrap(plain, besideWidth);
+		const narrowLines = ArticleGrid.wordWrap(plain, narrowWidth);
 		const besideText = narrowLines.slice(0, imgTotalH).join(' ');
 		const belowText = narrowLines.slice(imgTotalH).join(' ');
 
 		// Re-split segments at the beside/below boundary, preserving links.
 		const [besideSegs, belowSegs] = splitSegments(segs, besideText.length);
-		const besideRows = this.paragraph(besideSegs, besideWidth, textCol, r0);
+		const besideRows = this.paragraph(besideSegs, narrowWidth, textCol, r0);
 		let r = r0 + Math.max(imgTotalH, besideRows) + 1;
 		if (belowText.trim()) {
 			const belowRows = this.paragraph(belowSegs, this.textWidth, this.textCol, r);
@@ -674,7 +668,7 @@ export class ArticleGrid {
 	codeBlock(code: string, label = '') {
 		const rawLines = code.replace(/\t/g, '    ').split('\n');
 		const lineTypes = highlightCode(rawLines, label);
-		const innerW = this.textWidth - 4;
+		const innerW = this.contentWidth - 4;
 		const lines: { text: string; types: CellType[] }[] = [];
 		rawLines.forEach((l, li) => {
 			const types = lineTypes[li];
@@ -686,20 +680,20 @@ export class ArticleGrid {
 				}
 			}
 		});
-		const w = this.textWidth;
+		const w = this.contentWidth;
 		const r0 = this.row;
-		this.placeLine(r0, this.textCol, this.buildFrameTop(w, label), this.accent.frame);
+		this.placeLine(r0, this.startCol, this.buildFrameTop(w, label), this.accent.frame);
 		lines.forEach((l, i) => {
 			const r = r0 + 1 + i;
-			this.setCell(r, this.textCol, '|', this.accent.frame);
-			this.setCell(r, this.textCol + w - 1, '|', this.accent.frame);
-			for (let c = this.textCol + 1; c < this.textCol + w - 1; c++) {
-				const idx = c - this.textCol - 2;
+			this.setCell(r, this.startCol, '|', this.accent.frame);
+			this.setCell(r, this.startCol + w - 1, '|', this.accent.frame);
+			for (let c = this.startCol + 1; c < this.startCol + w - 1; c++) {
+				const idx = c - this.startCol - 2;
 				const ch = idx >= 0 && idx < l.text.length ? l.text[idx] : ' ';
 				this.setCell(r, c, ch, ch === ' ' ? 'empty' : (l.types[idx] ?? 'content'));
 			}
 		});
-		this.placeLine(r0 + lines.length + 1, this.textCol, '+' + '-'.repeat(w - 2) + '+', this.accent.frame);
+		this.placeLine(r0 + lines.length + 1, this.startCol, '+' + '-'.repeat(w - 2) + '+', this.accent.frame);
 		this.row = r0 + lines.length + 2 + 1;
 	}
 
