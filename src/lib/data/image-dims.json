@@ -163,6 +163,14 @@
 		1600,
 		1067
 	],
+	"/images/timeline/netsynth-cauer.png": [
+		1400,
+		1050
+	],
+	"/images/timeline/netsynth-title.png": [
+		1400,
+		1050
+	],
 	"/images/timeline/pathsim-2023.png": [
 		1300,
 		1040
@@ -182,6 +190,18 @@
 	"/images/timeline/rapidpassives-tkinter.png": [
 		1201,
 		702
+	],
+	"/images/timeline/schroedinger-1d.png": [
+		1100,
+		1833
+	],
+	"/images/timeline/schroedinger-2d.png": [
+		1100,
+		1540
+	],
+	"/images/timeline/slime.png": [
+		1105,
+		794
 	],
 	"/images/timeline/vf-freq.png": [
 		3000,

@@ -493,7 +493,7 @@
 				"period": "2021-2022",
 				"heading": "things you could click",
 				"body": [
-					"A run of interactive desktop toys, all pygame, all packaged with PyInstaller into a single executable so I could hand someone a file instead of an install guide. A Verlet physics sandbox with numba-compiled constraint solving, a few thousand particles on collision courses, and a random polygon generator built out of packed circles.",
+					"A run of interactive desktop toys, all pygame, all packaged with PyInstaller into a single executable so I could hand someone a file instead of an install guide. A Verlet physics sandbox with numba-compiled constraint solving, a few thousand particles on collision courses, a random polygon generator built out of packed circles, and a slime mould that grows its own transport network out of a few hundred thousand agents following their own trails, numba on the CPU and CUDA when there was a GPU.",
 					"The one I kept using was the interactive Laplace domain: drag poles and zeros around the complex plane and watch magnitude, phase and step response follow in real time. It went into the tutorials."
 				],
 				"images": [
@@ -513,6 +513,10 @@
 						"label": "random polygons",
 						"fit": "contain",
 						"background": "#ffffff"
+					},
+					{
+						"src": "/images/timeline/slime.png",
+						"label": "slime mould"
 					}
 				]
 			},
@@ -607,6 +611,26 @@
 				]
 			},
 			{
+				"period": "2020-2021",
+				"heading": "eigenmodes",
+				"body": [
+					"A finite-difference eigenmode solver for the Schrödinger equation, 1D and 2D: discretise the Laplacian, add the potential on the diagonal, hand the matrix to an eigensolver and read the bound states off it.",
+					"The part I kept coming back to was the input. Any picture could be a potential, hand drawn or otherwise, so the modes of a ring of wells, a portrait or a photograph were all one run apart. The same trick as a field solver: the operator does not care what the geometry means."
+				],
+				"images": [
+					{
+						"src": "/images/timeline/schroedinger-2d.png",
+						"label": "2D eigenmodes",
+						"fit": "contain"
+					},
+					{
+						"src": "/images/timeline/schroedinger-1d.png",
+						"label": "1D coulomb well",
+						"fit": "contain"
+					}
+				]
+			},
+			{
 				"period": "2019-2021",
 				"heading": "before GitHub",
 				"project": "sane",
@@ -637,6 +661,25 @@
 				"heading": "internship, Volkswagen AG",
 				"body": [
 					"Low-voltage and redundant power supply systems in Wolfsburg: concept, schematic, hardware, ASIL considerations."
+				]
+			},
+			{
+				"period": "2019",
+				"heading": "network synthesis",
+				"accent": "sane",
+				"body": [
+					"A seminar talk at the institute for electronic devices and circuits, on the synthesis of passive one-ports: which driving-point functions a network of resistors, inductors and capacitors can realise at all, and how to build one that does. Positive-real functions, Foster and Cauer ladders, and the Bott-Duffin recursion that reaches any of them.",
+					"Analysis run backwards. It is the first thing I worked on that turns an expression into a circuit rather than the other way round, which is what SANE does now."
+				],
+				"images": [
+					{
+						"src": "/images/timeline/netsynth-title.png",
+						"label": "network synthesis"
+					},
+					{
+						"src": "/images/timeline/netsynth-cauer.png",
+						"label": "cauer ladder"
+					}
 				]
 			},
 			{
