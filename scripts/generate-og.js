@@ -91,6 +91,18 @@ function buildRows() {
 		rows.push(cells);
 	}
 
+	// A one-cell quiet zone around the frame. Without it whatever the filler happens
+	// to spell runs straight into the border, and the filler at this spot is the
+	// unicode-range list: its "U+0304" puts a + against the corner and the frame reads
+	// as if it had two.
+	for (let r = FRAME.row - 1; r <= FRAME.row + FRAME.innerRows + 2; r++) {
+		if (r < 0 || r >= ROWS) continue;
+		for (let c = FRAME.col - 1; c <= FRAME.col + FRAME.cols; c++) {
+			if (c < 0 || c >= COLS) continue;
+			rows[r][c] = { ch: ' ', cls: 'f' };
+		}
+	}
+
 	// The frame, in the page's own vocabulary: +- label ---+ over | sides over +---+.
 	const put = (r, c, text) => {
 		for (let i = 0; i < text.length; i++) rows[r][c + i] = { ch: text[i], cls: 'fr' };
