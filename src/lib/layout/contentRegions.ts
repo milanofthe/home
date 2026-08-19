@@ -188,7 +188,7 @@ function buildHeroSection(): ContentSection {
 		regions: [
 			{
 				type: 'embedded', lines: [], embeddedId: 'photo',
-				label: 'milan.png', embeddedRows: 10, embeddedCols: 22, align: 'center'
+				label: 'milan.png', embeddedRows: 15, embeddedCols: 33, align: 'center'
 			},
 			spacer(),
 			heading(c.heading),
