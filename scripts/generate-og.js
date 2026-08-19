@@ -134,11 +134,13 @@ body {
 }
 .r { height: ${LINE_PX}px; }
 .f { color: ${FILLER}; }
-	.fr { color: ${ACCENT}; }
-.name { font-size: 62px; line-height: 1; font-weight: 600; letter-spacing: 0.1em; color: ${CREAM}; }
-.lead { font-size: 23px; line-height: 1.45; color: ${CREAM}; max-width: 1080px; white-space: normal; }
-.site { font-size: 22px; color: ${ACCENT}; letter-spacing: 0.06em; }
-	.site .p { color: ${TEAL}; }
+.fr { color: ${ACCENT}; }
+/* The name is capped by the column, not by taste: 12 characters at 0.1em tracking
+   fill 0.7 em each, so anything past 84px runs out of the message column. */
+.name { font-size: 84px; line-height: 1.05; font-weight: 600; letter-spacing: 0.1em; color: ${CREAM}; }
+.lead { font-size: 35px; line-height: 1.4; color: ${CREAM}; white-space: normal; margin-top: 30px; }
+.site { font-size: 33px; color: ${ACCENT}; letter-spacing: 0.06em; margin-top: 30px; }
+.site .p { color: ${TEAL}; }
 	.portrait {
 		position: absolute;
 		left: ${FRAME_PX.x}px; top: ${FRAME_PX.y}px;
