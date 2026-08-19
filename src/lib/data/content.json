@@ -615,7 +615,7 @@
 				"heading": "eigenmodes",
 				"body": [
 					"A finite-difference eigenmode solver for the Schrödinger equation, 1D and 2D: discretize the Laplacian, add the potential on the diagonal, and hand the matrix to an eigensolver to get the bound states and energy levels.",
-					"Since the potential is just an array over the grid, anything works as input: potential wells, hand-drawn sketches, even photographs (the project folder still has Einstein and an alpaca in it)."
+					"Since the potential is just an array over the grid, anything works as input: potential wells, hand-drawn sketches, even photographs. I found it funny to feed it a photo of Schrödinger himself."
 				],
 				"images": [
 					{
