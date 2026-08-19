@@ -43,7 +43,20 @@ const fillerSrc = readFileSync(join(root, 'src/lib/data/filler-source.ts'), 'utf
 const FILLER_SOURCE = JSON.parse(fillerSrc.slice(fillerSrc.indexOf('"'), fillerSrc.lastIndexOf('"') + 1));
 
 const fontB64 = readFileSync(join(root, 'static/fonts/jetbrains-mono-latin.woff2')).toString('base64');
-const portraitB64 = readFileSync(join(root, 'static/images/headshot_milan.png')).toString('base64');
+const portraitB64 = readFileSync(join(root, 'static/images/headshot_milan.webp')).toString('base64');
+
+// The picture sits in the same ASCII frame the page draws around every image, so the
+// frame is part of the character grid and the photo is positioned into its interior
+// by grid coordinates -- exactly how the code-rain page places its own tiles.
+const CHAR_W = WIDTH / COLS;
+const FRAME = { col: 4, cols: 28, row: 3, innerRows: 12, label: 'milan.png' };
+const FRAME_PX = {
+	x: (FRAME.col + 1) * CHAR_W,
+	y: (FRAME.row + 1) * LINE_PX,
+	w: (FRAME.cols - 2) * CHAR_W,
+	h: FRAME.innerRows * LINE_PX
+};
+const MSG_X = (FRAME.col + FRAME.cols + 3) * CHAR_W;
 
 // One sentence, not the whole tagline: a card is read at thumbnail size and gets to
 // say one thing. The rest of the positioning is on the page it links to.
@@ -78,6 +91,18 @@ function buildRows() {
 		rows.push(cells);
 	}
 
+	// The frame, in the page's own vocabulary: +- label ---+ over | sides over +---+.
+	const put = (r, c, text) => {
+		for (let i = 0; i < text.length; i++) rows[r][c + i] = { ch: text[i], cls: 'fr' };
+	};
+	const label = ` ${FRAME.label} `;
+	const dashes = FRAME.cols - 3 - label.length;
+	put(FRAME.row, FRAME.col, '+-' + label + '-'.repeat(Math.max(0, dashes)) + '+');
+	for (let r = FRAME.row + 1; r <= FRAME.row + FRAME.innerRows; r++) {
+		put(r, FRAME.col, '|');
+		put(r, FRAME.col + FRAME.cols - 1, '|');
+	}
+	put(FRAME.row + FRAME.innerRows + 1, FRAME.col, '+' + '-'.repeat(FRAME.cols - 2) + '+');
 	return rows;
 }
 
@@ -97,21 +122,22 @@ body {
 }
 .r { height: ${LINE_PX}px; }
 .f { color: ${FILLER}; }
-.card {
-	position: absolute; inset: 0;
-	display: flex; flex-direction: row; align-items: center;
-	gap: 64px; padding: 0 76px; box-sizing: border-box;
-}
+	.fr { color: ${ACCENT}; }
 .name { font-size: 62px; line-height: 1; font-weight: 600; letter-spacing: 0.1em; color: ${CREAM}; }
 .lead { font-size: 23px; line-height: 1.45; color: ${CREAM}; max-width: 1080px; white-space: normal; }
 .site { font-size: 22px; color: ${ACCENT}; letter-spacing: 0.06em; }
 	.site .p { color: ${TEAL}; }
 	.portrait {
-		flex: 0 0 auto; width: 340px; height: 340px; border-radius: 50%;
-		object-fit: cover; object-position: 50% 34%;
-		border: 2px solid rgba(240, 239, 233, 0.12);
+		position: absolute;
+		left: ${FRAME_PX.x}px; top: ${FRAME_PX.y}px;
+		width: ${FRAME_PX.w}px; height: ${FRAME_PX.h}px;
+		object-fit: cover; object-position: 50% 30%;
 	}
-	.msg { flex: 1 1 auto; min-width: 0; }
+	.msg {
+		position: absolute; left: ${MSG_X}px; right: 60px;
+		top: 0; bottom: 0;
+		display: flex; flex-direction: column; justify-content: center;
+	}
 </style></head><body>${buildRows()
 	.map((cells) => {
 		// Collapse runs of the same class so the DOM stays small.
@@ -129,13 +155,11 @@ body {
 		flush();
 		return `<div class="r">${out}</div>`;
 	})
-	.join('')}<div class="card">
-	<img class="portrait" src="data:image/png;base64,${portraitB64}" alt="" />
-	<div class="msg">
-		<div class="name">${content.hero.heading}</div>
-		<div class="lead">${LEAD}</div>
-		<div class="site"><span class="p">&gt;</span> milanrother.com</div>
-	</div>
+	.join('')}<img class="portrait" src="data:image/webp;base64,${portraitB64}" alt="" />
+<div class="msg">
+	<div class="name">${content.hero.heading}</div>
+	<div class="lead">${LEAD}</div>
+	<div class="site"><span class="p">&gt;</span> milanrother.com</div>
 </div></body></html>`;
 
 const browser = await puppeteer.launch({ channel: 'chrome', headless: 'new' });

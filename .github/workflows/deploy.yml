@@ -36,6 +36,11 @@ jobs:
       - name: Generate image dimensions
         run: npm run image-dims
 
+      # The social card carries the site's own tagline, so it is regenerated here
+      # rather than kept by hand: editing content.json is enough to update it.
+      - name: Generate social card
+        run: npm run og
+
       - name: Build
         run: npm run build
 
