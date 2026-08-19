@@ -66,9 +66,19 @@ hierarchical subsystems, and mutable parameters work exactly like PathSim.
 
 ## Export targets
 
+![FastSim in PathView, under Pyodide|left|46x14](/images/fastsim-pathview-model.png)
+
 A Rust engine also opens paths a Python one does not have: FMI 3.0 import and
 export for co-simulation, WebAssembly deployment, and dependency-free C99 code
-generation for embedded targets. The generated C is verified
+generation for embedded targets. WebAssembly is a clean build target, which is
+what lets FastSim run inside [PathView](/stack/pathview/) under Pyodide: the
+same drop-in swap of the import, in a browser tab.
+
+![Generated model.h and model.c|right|46x14](/images/fastsim-codegen-ui.png)
+
+Code generation has its own UI. A block diagram becomes model.h and model.c
+with numeric type, solver, structure and API layout as switches; a seven-block
+model comes out at 15.9 kB in 12 ms. The generated C is verified
 software-in-the-loop: sim.verify_c() compiles it locally and pins it against
 the reference engine, sample by sample.
 
