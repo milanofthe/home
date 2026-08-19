@@ -43,6 +43,7 @@ const fillerSrc = readFileSync(join(root, 'src/lib/data/filler-source.ts'), 'utf
 const FILLER_SOURCE = JSON.parse(fillerSrc.slice(fillerSrc.indexOf('"'), fillerSrc.lastIndexOf('"') + 1));
 
 const fontB64 = readFileSync(join(root, 'static/fonts/jetbrains-mono-latin.woff2')).toString('base64');
+const portraitB64 = readFileSync(join(root, 'static/images/headshot_milan.png')).toString('base64');
 
 // One sentence, not the whole tagline: a card is read at thumbnail size and gets to
 // say one thing. The rest of the positioning is on the page it links to.
@@ -98,13 +99,19 @@ body {
 .f { color: ${FILLER}; }
 .card {
 	position: absolute; inset: 0;
-	display: flex; flex-direction: column; align-items: center; justify-content: center;
-	gap: 26px; text-align: center;
+	display: flex; flex-direction: row; align-items: center;
+	gap: 64px; padding: 0 76px; box-sizing: border-box;
 }
 .name { font-size: 62px; line-height: 1; font-weight: 600; letter-spacing: 0.1em; color: ${CREAM}; }
 .lead { font-size: 23px; line-height: 1.45; color: ${CREAM}; max-width: 1080px; white-space: normal; }
 .site { font-size: 22px; color: ${ACCENT}; letter-spacing: 0.06em; }
 	.site .p { color: ${TEAL}; }
+	.portrait {
+		flex: 0 0 auto; width: 340px; height: 340px; border-radius: 50%;
+		object-fit: cover; object-position: 50% 34%;
+		border: 2px solid rgba(240, 239, 233, 0.12);
+	}
+	.msg { flex: 1 1 auto; min-width: 0; }
 </style></head><body>${buildRows()
 	.map((cells) => {
 		// Collapse runs of the same class so the DOM stays small.
@@ -123,9 +130,12 @@ body {
 		return `<div class="r">${out}</div>`;
 	})
 	.join('')}<div class="card">
-	<div class="name">${content.hero.heading}</div>
-	<div class="lead">${LEAD}</div>
-	<div class="site"><span class="p">&gt;</span> milanrother.com</div>
+	<img class="portrait" src="data:image/png;base64,${portraitB64}" alt="" />
+	<div class="msg">
+		<div class="name">${content.hero.heading}</div>
+		<div class="lead">${LEAD}</div>
+		<div class="site"><span class="p">&gt;</span> milanrother.com</div>
+	</div>
 </div></body></html>`;
 
 const browser = await puppeteer.launch({ channel: 'chrome', headless: 'new' });

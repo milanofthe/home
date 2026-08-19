@@ -1,7 +1,7 @@
 {
 	"hero": {
 		"heading": "MILAN ROTHER",
-		"tagline": "I build the simulation stack for electronics: fields, circuits, systems. Custom solvers and engineering tools for client teams, built and integrated end to end.",
+		"tagline": "I build simulation software from the solver up: dynamical systems, circuits and electromagnetic fields, the ODEs, DAEs and PDEs underneath them. Custom solvers, engineering tools and the interfaces to drive them, built and integrated for client teams.",
 		"cta": "[ Book an intro call -> ]   [ Consulting ]   [ View the Stack ]"
 	},
 	"paths": {
@@ -31,26 +31,56 @@
 			"Long ago during my studies I was already building small numerical side projects. A symbolic circuit analysis tool, an eigenmode solver for the Schrödinger equation, a CUDA-accelerated 2D FDTD solver, a MIMO vector fitting implementation, and so on. I even wrote a 120-page LaTeX manuscript on linear system theory during the summer of 2021 to help out a friend.",
 			{
 				"text": "During my master's I dipped my toes into the RFIC EDA world and worked on compact modeling and layout generation of RFIC passives (inductors, transformers, baluns...). This has now become RapidPassives, an open-source library.",
-				"links": [{ "phrase": "RapidPassives", "project": "rapidpassives" }]
+				"links": [
+					{
+						"phrase": "RapidPassives",
+						"project": "rapidpassives"
+					}
+				]
 			},
 			{
 				"text": "At the beginning of my PhD (early 2023) I diverged from the circuit path to the more general system level, where you have signal flow diagrams and ODEs instead of Maxwell and KVL/KCL. During that time PathSim started as a side project. Initially just an analog computer emulator, it evolved into a fully fledged continuous and discrete (hybrid, we have events!) system modeling and simulation framework. I announced it in March 2025 as an open alternative to Simulink, and a modern take on system modeling in general. Clean API, mutability from the get-go, robust solvers (stiffness, algebraic loops, no problem). Today (mid 2026) we are at roughly 400 stars on GitHub and have many users and collaborators worldwide, some of them prominent figures such as the MIT Plasma Science and Fusion Center, scikit-rf, and JSBSim developers.",
-				"links": [{ "phrase": "PathSim", "project": "pathsim" }]
+				"links": [
+					{
+						"phrase": "PathSim",
+						"project": "pathsim"
+					}
+				]
 			},
 			{
 				"text": "Now I'm making the full roundtrip back through circuits and fields, bringing it all together into one vertically integrated stack: EM solvers (RapidFEM, RapidMoM), a symbolic circuit engine (SANE), and system-level simulation (PathSim, FastSim). One architecture: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy. I think one coherent, modern stack can do better.",
 				"links": [
-					{ "phrase": "RapidFEM", "project": "rapidfem" },
-					{ "phrase": "RapidMoM", "project": "rapidmom" },
-					{ "phrase": "SANE", "project": "sane" },
-					{ "phrase": "PathSim", "project": "pathsim" },
-					{ "phrase": "FastSim", "project": "fastsim" }
+					{
+						"phrase": "RapidFEM",
+						"project": "rapidfem"
+					},
+					{
+						"phrase": "RapidMoM",
+						"project": "rapidmom"
+					},
+					{
+						"phrase": "SANE",
+						"project": "sane"
+					},
+					{
+						"phrase": "PathSim",
+						"project": "pathsim"
+					},
+					{
+						"phrase": "FastSim",
+						"project": "fastsim"
+					}
 				]
 			},
 			"Those who have talked to me know that I can't stop talking about numerics, modeling, and simulation principles and ideas.",
 			{
 				"text": "I work as a freelancer and license my tools commercially, free for academia. If you have something you want my take on, or need some ideas and even implementation, don't hesitate to reach out.",
-				"links": [{ "phrase": "don't hesitate to reach out", "href": "/consulting/" }]
+				"links": [
+					{
+						"phrase": "don't hesitate to reach out",
+						"href": "/consulting/"
+					}
+				]
 			}
 		],
 		"timeline": [
@@ -62,12 +92,30 @@
 					{
 						"text": "The full roundtrip back through circuits and fields, built as one stack rather than six tools: RapidFEM and RapidMoM for electromagnetic fields, RapidMesh generating what RapidMoM solves on, RSLAB underneath as the sparse direct solver, SANE for symbolic and numeric circuit analysis, FastSim compiling system models to native code.",
 						"links": [
-							{ "phrase": "RapidFEM", "project": "rapidfem" },
-							{ "phrase": "RapidMoM", "project": "rapidmom" },
-							{ "phrase": "RapidMesh", "project": "rapidmesh" },
-							{ "phrase": "RSLAB", "project": "rslab" },
-							{ "phrase": "SANE", "project": "sane" },
-							{ "phrase": "FastSim", "project": "fastsim" }
+							{
+								"phrase": "RapidFEM",
+								"project": "rapidfem"
+							},
+							{
+								"phrase": "RapidMoM",
+								"project": "rapidmom"
+							},
+							{
+								"phrase": "RapidMesh",
+								"project": "rapidmesh"
+							},
+							{
+								"phrase": "RSLAB",
+								"project": "rslab"
+							},
+							{
+								"phrase": "SANE",
+								"project": "sane"
+							},
+							{
+								"phrase": "FastSim",
+								"project": "fastsim"
+							}
 						]
 					},
 					"One architecture throughout: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy; the bet is that one coherent stack does better.",
@@ -75,18 +123,63 @@
 					"RSLAB took PARDISO's place and is benchmarked against it. RapidMesh is the least finished: its 2D path meshes for RapidMoM and does exact element budgets, which gmsh does not, while the 3D path is slower than gmsh and still leaves slivers on some geometries, so RapidFEM meshes with gmsh a while longer."
 				],
 				"images": [
-					{ "src": "/images/sane-common-emitter.png", "label": "sane", "project": "sane" },
-					{ "src": "/images/rapidmesh-transformer.png", "label": "rapidmesh, planar", "project": "rapidmesh", "fit": "contain", "background": "#131316" },
-					{ "src": "/images/rapidmesh-box-2spheres.png", "label": "rapidmesh, tetrahedral", "project": "rapidmesh", "fit": "contain", "background": "#131316" },
-					{ "src": "/images/rapidfem-rfic.png", "label": "rapidfem", "project": "rapidfem" },
-					{ "src": "/images/rapidfem-iris.png", "label": "iris filter", "project": "rapidfem" },
-					{ "src": "/images/rapidmom-current.png", "label": "rapidmom", "project": "rapidmom", "fit": "contain", "background": "#131316" },
-					{ "src": "/images/rslab-h2h-ldlt.png", "label": "rslab benchmark", "project": "rslab", "fit": "contain", "background": "#08080c" }
+					{
+						"src": "/images/sane-common-emitter.png",
+						"label": "sane",
+						"project": "sane"
+					},
+					{
+						"src": "/images/rapidmesh-transformer.png",
+						"label": "rapidmesh, planar",
+						"project": "rapidmesh",
+						"fit": "contain",
+						"background": "#131316"
+					},
+					{
+						"src": "/images/rapidmesh-box-2spheres.png",
+						"label": "rapidmesh, tetrahedral",
+						"project": "rapidmesh",
+						"fit": "contain",
+						"background": "#131316"
+					},
+					{
+						"src": "/images/rapidfem-rfic.png",
+						"label": "rapidfem",
+						"project": "rapidfem"
+					},
+					{
+						"src": "/images/rapidfem-iris.png",
+						"label": "iris filter",
+						"project": "rapidfem"
+					},
+					{
+						"src": "/images/rapidmom-current.png",
+						"label": "rapidmom",
+						"project": "rapidmom",
+						"fit": "contain",
+						"background": "#131316"
+					},
+					{
+						"src": "/images/rslab-h2h-ldlt.png",
+						"label": "rslab benchmark",
+						"project": "rslab",
+						"fit": "contain",
+						"background": "#08080c"
+					}
 				],
 				"links": [
-					{ "text": "[ view the stack -> ]", "href": "/#projects" },
-					{ "text": "[ rapidfem ]", "href": "https://github.com/milanofthe/rapidfem" },
-					{ "text": "[ rslab ]", "href": "https://github.com/milanofthe/rslab" }
+					{
+						"text": "[ view the stack -> ]",
+						"href": "/#projects"
+					},
+					{
+						"text": "[ rapidfem ]",
+						"href": "https://github.com/milanofthe/rapidfem"
+					},
+					{
+						"text": "[ rslab ]",
+						"href": "https://github.com/milanofthe/rslab"
+					}
 				]
 			},
 			{
@@ -96,22 +189,47 @@
 				"body": [
 					{
 						"text": "The MIT Plasma Science and Fusion Center and the UK Atomic Energy Authority build tritium fuel-cycle models on PathSim: a zero-dimensional residence-time model of an ARC-class power plant, a one-dimensional liquid-metal bubble column, and full FESTIM finite-element transport, all coupled inside one timestepping loop.",
-						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
+						"links": [
+							{
+								"phrase": "PathSim",
+								"project": "pathsim"
+							}
+						]
 					},
 					"The same system model runs against lab experiments like BABY and LIBRA and against whole power-plant concepts, and a thirty-component bubbler transient solves in seconds, which is what makes the Monte Carlo and uncertainty quantification runs affordable.",
 					{
 						"text": "PathView came out of the same collaboration: it started at the Plasma Science and Fusion Center as a way to build and inspect PathSim models visually. From November 2025 I rewrote it on my own stack and it moved to the PathSim organization, where it is hosted free for everyone.",
-						"links": [{ "phrase": "PathView", "project": "pathview" }]
+						"links": [
+							{
+								"phrase": "PathView",
+								"project": "pathview"
+							}
+						]
 					},
 					"I presented the framework at the IAEA workshop on digital engineering for fusion energy in December 2025, and I am a co-author on the multi-fidelity fuel-cycle paper that came out of the collaboration."
 				],
 				"images": [
-					{ "src": "/images/timeline/fusion-paper.png", "label": "the paper", "href": "https://arxiv.org/abs/2603.25751", "fit": "contain", "background": "#ffffff" }
+					{
+						"src": "/images/timeline/fusion-paper.png",
+						"label": "the paper",
+						"href": "https://arxiv.org/abs/2603.25751",
+						"fit": "contain",
+						"background": "#ffffff"
+					}
 				],
 				"links": [
-					{ "text": "[ the paper ]", "href": "https://arxiv.org/abs/2603.25751" },
-					{ "text": "[ IAEA workshop ]", "href": "https://conferences.iaea.org/event/412/" },
-					{ "text": "[ FESTIM ]", "href": "https://github.com/festim-dev/FESTIM" }
+					{
+						"text": "[ the paper ]",
+						"href": "https://arxiv.org/abs/2603.25751"
+					},
+					{
+						"text": "[ IAEA workshop ]",
+						"href": "https://conferences.iaea.org/event/412/"
+					},
+					{
+						"text": "[ FESTIM ]",
+						"href": "https://github.com/festim-dev/FESTIM"
+					}
 				]
 			},
 			{
@@ -121,30 +239,78 @@
 				"body": [
 					{
 						"text": "The repository had been public since the summer of 2024, but March 2025 is when I actually announced PathSim: an open alternative to Simulink, with a clean API, mutability from the get-go, and solvers that handle stiffness and algebraic loops without ceremony. Published in the Journal of Open Source Software, released on PyPI and conda-forge, and picked up faster than I expected.",
-						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
+						"links": [
+							{
+								"phrase": "PathSim",
+								"project": "pathsim"
+							}
+						]
 					},
 					"It is past 400 stars and nine contributors. The domain toolboxes cover chemical engineering, batteries, vehicles, flight dynamics, RF and FMI co-simulation, several of them contributed by people I have never met. JSBSim picked it up for flight dynamics.",
 					{
 						"text": "PathView followed: the same models as drag-and-drop block diagrams in the browser, running entirely client-side through Pyodide, nothing to install. PySimHub came out of the same year, a catalog for Python's scattered simulation communities.",
 						"links": [
-							{ "phrase": "PathView", "project": "pathview" },
-							{ "phrase": "PySimHub", "href": "https://pysimhub.io" }
+							{
+								"phrase": "PathView",
+								"project": "pathview"
+							},
+							{
+								"phrase": "PySimHub",
+								"href": "https://pysimhub.io"
+							}
 						]
 					}
 				],
 				"images": [
-					{ "src": "/images/pathsim-pitch.png", "label": "the pitch slide", "project": "pathsim", "fit": "contain", "background": "#ffffff" },
-					{ "src": "/images/pathview-pid.png", "label": "pathview", "project": "pathview" },
-					{ "src": "/screenshots/pathsim-org.png", "label": "pathsim.org", "href": "https://pathsim.org" },
-					{ "src": "/screenshots/docs-pathsim-org.png", "label": "docs", "href": "https://docs.pathsim.org" },
-					{ "src": "/screenshots/pysimhub-io.png", "label": "pysimhub", "href": "https://pysimhub.io" }
+					{
+						"src": "/images/pathsim-pitch.png",
+						"label": "the pitch slide",
+						"project": "pathsim",
+						"fit": "contain",
+						"background": "#ffffff"
+					},
+					{
+						"src": "/images/pathview-pid.png",
+						"label": "pathview",
+						"project": "pathview"
+					},
+					{
+						"src": "/screenshots/pathsim-org.png",
+						"label": "pathsim.org",
+						"href": "https://pathsim.org"
+					},
+					{
+						"src": "/screenshots/docs-pathsim-org.png",
+						"label": "docs",
+						"href": "https://docs.pathsim.org"
+					},
+					{
+						"src": "/screenshots/pysimhub-io.png",
+						"label": "pysimhub",
+						"href": "https://pysimhub.io"
+					}
 				],
 				"links": [
-					{ "text": "[ pathsim.org ]", "href": "https://pathsim.org" },
-					{ "text": "[ the JOSS paper ]", "href": "https://doi.org/10.21105/joss.08158" },
-					{ "text": "[ pathview ]", "project": "pathview" },
-					{ "text": "[ docs ]", "href": "https://docs.pathsim.org" },
-					{ "text": "[ pysimhub ]", "href": "https://pysimhub.io" }
+					{
+						"text": "[ pathsim.org ]",
+						"href": "https://pathsim.org"
+					},
+					{
+						"text": "[ the JOSS paper ]",
+						"href": "https://doi.org/10.21105/joss.08158"
+					},
+					{
+						"text": "[ pathview ]",
+						"project": "pathview"
+					},
+					{
+						"text": "[ docs ]",
+						"href": "https://docs.pathsim.org"
+					},
+					{
+						"text": "[ pysimhub ]",
+						"href": "https://pysimhub.io"
+					}
 				]
 			},
 			{
@@ -154,11 +320,21 @@
 				"body": [
 					{
 						"text": "From December 2024 I worked with Ralf Sommer, the inventor of Analog Insydes, on reviving that tool: symbolic circuit analysis in Mathematica, from the Fraunhofer ITWM, largely out of use today.",
-						"links": [{ "phrase": "Analog Insydes", "href": "https://www.itwm.fraunhofer.de/en/departments/sys/products-and-services/analog-insydes.html" }]
+						"links": [
+							{
+								"phrase": "Analog Insydes",
+								"href": "https://www.itwm.fraunhofer.de/en/departments/sys/products-and-services/analog-insydes.html"
+							}
+						]
 					},
 					{
 						"text": "Picking those ideas back up on my own stack in June 2026 is what became SANE.",
-						"links": [{ "phrase": "SANE", "project": "sane" }]
+						"links": [
+							{
+								"phrase": "SANE",
+								"project": "sane"
+							}
+						]
 					}
 				]
 			},
@@ -169,7 +345,12 @@
 				"body": [
 					{
 						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had. It stayed on my own machine for a year and a half, versioned as 31 zip snapshots, before the repository went public in the summer of 2024. The earliest snapshot, December 2023, already contains Simulation, Connection and the block names the API uses today.",
-						"links": [{ "phrase": "PathSim", "project": "pathsim" }]
+						"links": [
+							{
+								"phrase": "PathSim",
+								"project": "pathsim"
+							}
+						]
 					},
 					"The same stretch brought three more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, a symbolic circuit analysis tool inspired by Analog Insydes, and a finite volume solver for quasi-electrostatic frequency-domain analysis that came out of the sensor modeling at the institute.",
 					"The solver needed a mesh, so it got one: a 2D QuadTree that refines toward edges and balances itself. Writing my own mesher for the first time is where the idea started that a solver and its mesher should be designed against each other, which is what RapidMesh is now."
@@ -204,11 +385,26 @@
 					}
 				],
 				"links": [
-					{ "text": "[ pathsim ]", "href": "https://github.com/pathsim/pathsim" },
-					{ "text": "[ harmonicbalance ]", "href": "https://github.com/milanofthe/harmonicbalance" },
-					{ "text": "[ qesfvm ]", "href": "https://github.com/milanofthe/QESFVM" },
-					{ "text": "[ quadtree ]", "href": "https://github.com/milanofthe/QuadTree" },
-					{ "text": "[ sca ]", "href": "https://github.com/milanofthe/sca" }
+					{
+						"text": "[ pathsim ]",
+						"href": "https://github.com/pathsim/pathsim"
+					},
+					{
+						"text": "[ harmonicbalance ]",
+						"href": "https://github.com/milanofthe/harmonicbalance"
+					},
+					{
+						"text": "[ qesfvm ]",
+						"href": "https://github.com/milanofthe/QESFVM"
+					},
+					{
+						"text": "[ quadtree ]",
+						"href": "https://github.com/milanofthe/QuadTree"
+					},
+					{
+						"text": "[ sca ]",
+						"href": "https://github.com/milanofthe/sca"
+					}
 				]
 			},
 			{
@@ -219,22 +415,43 @@
 					"Research associate at the Institut fuer CMOS Design, TU Braunschweig. Three strands ran in parallel: numerical modeling of electrochemical sensors for analog circuit design, system design and hardware for bio-impedance spectroscopy, and an EDA pipeline for RFIC passives that was validated in silicon for cryogenic quantum applications.",
 					{
 						"text": "That last one started as a Tkinter window that drew inductors and exported GDS. It became RapidPassives: browser-based layout generation with real-time preview and a WebGL viewer that renders million-polygon GDS at 60 fps.",
-						"links": [{ "phrase": "RapidPassives", "project": "rapidpassives" }]
+						"links": [
+							{
+								"phrase": "RapidPassives",
+								"project": "rapidpassives"
+							}
+						]
 					}
 				],
 				"images": [
-					{ "src": "/images/timeline/rapidpassives-tkinter.png", "label": "back then", "project": "rapidpassives" },
-					{ "src": "/screenshots/rapidpassives-transformer.png", "label": "today", "project": "rapidpassives" }
+					{
+						"src": "/images/timeline/rapidpassives-tkinter.png",
+						"label": "back then",
+						"project": "rapidpassives"
+					},
+					{
+						"src": "/screenshots/rapidpassives-transformer.png",
+						"label": "today",
+						"project": "rapidpassives"
+					}
 				],
 				"links": [
-					{ "text": "[ rapidpassives ]", "project": "rapidpassives" },
-					{ "text": "[ rapidpassives.org ]", "href": "https://rapidpassives.org" }
+					{
+						"text": "[ rapidpassives ]",
+						"project": "rapidpassives"
+					},
+					{
+						"text": "[ rapidpassives.org ]",
+						"href": "https://rapidpassives.org"
+					}
 				]
 			},
 			{
 				"period": "2023-now",
 				"heading": "PhD candidate, TU Ilmenau",
-				"body": ["External PhD program in electrical engineering, run alongside the work in Braunschweig and everything that grew out of it."]
+				"body": [
+					"External PhD program in electrical engineering, run alongside the work in Braunschweig and everything that grew out of it."
+				]
 			},
 			{
 				"period": "2022-2023",
@@ -244,7 +461,11 @@
 					"Vector fitting had been sitting in a folder since 2020 as rational interpolation experiments, complex fitting by iteratively reweighted least squares, and a stack of papers on passivity enforcement. December 2022 is when it went into a repository."
 				],
 				"images": [
-					{ "src": "/images/timeline/fdtd.png", "label": "fdtd", "href": "https://github.com/milanofthe/Interactive_2D_FDTD" },
+					{
+						"src": "/images/timeline/fdtd.png",
+						"label": "fdtd",
+						"href": "https://github.com/milanofthe/Interactive_2D_FDTD"
+					},
 					{
 						"src": "/images/timeline/vf-freq.png",
 						"label": "vectorfitting",
@@ -254,9 +475,18 @@
 					}
 				],
 				"links": [
-					{ "text": "[ 2d fdtd ]", "href": "https://github.com/milanofthe/Interactive_2D_FDTD" },
-					{ "text": "[ vectorfitting ]", "href": "https://github.com/milanofthe/Vectorfitting" },
-					{ "text": "[ bode plot ]", "href": "https://github.com/milanofthe/Interactive_BodePlot" }
+					{
+						"text": "[ 2d fdtd ]",
+						"href": "https://github.com/milanofthe/Interactive_2D_FDTD"
+					},
+					{
+						"text": "[ vectorfitting ]",
+						"href": "https://github.com/milanofthe/Vectorfitting"
+					},
+					{
+						"text": "[ bode plot ]",
+						"href": "https://github.com/milanofthe/Interactive_BodePlot"
+					}
 				]
 			},
 			{
@@ -267,9 +497,23 @@
 					"The one I kept using was the interactive Laplace domain: drag poles and zeros around the complex plane and watch magnitude, phase and step response follow in real time. It went into the tutorials."
 				],
 				"images": [
-					{ "src": "/images/timeline/interactive-bode.png", "label": "interactive laplace", "href": "https://github.com/milanofthe/Interactive_BodePlot" },
-					{ "src": "/images/timeline/collisions.png", "label": "collisions", "fit": "contain", "background": "#ffffff" },
-					{ "src": "/images/timeline/random-polygon.png", "label": "random polygons", "fit": "contain", "background": "#ffffff" }
+					{
+						"src": "/images/timeline/interactive-bode.png",
+						"label": "interactive laplace",
+						"href": "https://github.com/milanofthe/Interactive_BodePlot"
+					},
+					{
+						"src": "/images/timeline/collisions.png",
+						"label": "collisions",
+						"fit": "contain",
+						"background": "#ffffff"
+					},
+					{
+						"src": "/images/timeline/random-polygon.png",
+						"label": "random polygons",
+						"fit": "contain",
+						"background": "#ffffff"
+					}
 				]
 			},
 			{
@@ -282,15 +526,36 @@
 					{
 						"text": "Those derivative stencils are what SANE now runs symbolically over a whole compute graph, and the windings and layerstacks are what RapidPassives generates today. At the time the point was to stop the optimizer finite-differencing.",
 						"links": [
-							{ "phrase": "SANE", "project": "sane" },
-							{ "phrase": "RapidPassives", "project": "rapidpassives" }
+							{
+								"phrase": "SANE",
+								"project": "sane"
+							},
+							{
+								"phrase": "RapidPassives",
+								"project": "rapidpassives"
+							}
 						]
 					}
 				],
 				"images": [
-					{ "src": "/images/timeline/ma-title.png", "label": "master thesis", "fit": "contain", "background": "#ffffff" },
-					{ "src": "/images/timeline/ma-windings.png", "label": "polygonal windings", "fit": "contain", "background": "#ffffff" },
-					{ "src": "/images/timeline/ma-stencils.png", "label": "derivative stencils", "fit": "contain", "background": "#ffffff" }
+					{
+						"src": "/images/timeline/ma-title.png",
+						"label": "master thesis",
+						"fit": "contain",
+						"background": "#ffffff"
+					},
+					{
+						"src": "/images/timeline/ma-windings.png",
+						"label": "polygonal windings",
+						"fit": "contain",
+						"background": "#ffffff"
+					},
+					{
+						"src": "/images/timeline/ma-stencils.png",
+						"label": "derivative stencils",
+						"fit": "contain",
+						"background": "#ffffff"
+					}
 				]
 			},
 			{
@@ -331,8 +596,14 @@
 					}
 				],
 				"links": [
-					{ "text": "[ manuscript, de ]", "href": "https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript" },
-					{ "text": "[ manuscript, en ]", "href": "https://github.com/milanofthe/lti-manuscript-en" }
+					{
+						"text": "[ manuscript, de ]",
+						"href": "https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript"
+					},
+					{
+						"text": "[ manuscript, en ]",
+						"href": "https://github.com/milanofthe/lti-manuscript-en"
+					}
 				]
 			},
 			{
@@ -343,12 +614,22 @@
 					"The first real project never made it to a repository. MiCir was a symbolic network analysis library written in Python from nothing: my own matrix class, my own complex arithmetic, my own polynomial and symbolic element types in s. Not because there was no numpy, but because I wanted to know what numpy was doing before I let it do it for me.",
 					{
 						"text": "It read netlists, solved networks symbolically, synthesised Cauer ladders from a driving-point impedance, and drew its own Bode and locus plots. In February 2020 I typeset the whole thing in LaTeX. It is the same problem SANE solves today: keep the circuit's symbolic structure instead of collapsing it into numbers, and read the answers off it.",
-						"links": [{ "phrase": "SANE", "project": "sane" }]
+						"links": [
+							{
+								"phrase": "SANE",
+								"project": "sane"
+							}
+						]
 					},
 					"The same folder holds the detours: Mandelbrot sets in the complex plane at resolutions my laptop resented, Monte Carlo estimates of pi, a DFT written out by hand."
 				],
 				"images": [
-					{ "src": "/images/timeline/mandelbrot.png", "label": "mandelbrot", "fit": "contain", "background": "#ffffff" }
+					{
+						"src": "/images/timeline/mandelbrot.png",
+						"label": "mandelbrot",
+						"fit": "contain",
+						"background": "#ffffff"
+					}
 				]
 			},
 			{
@@ -366,8 +647,18 @@
 					"The Fachschaft tutorial for Netzwerke / Wechselstroeme und Netzwerke came with its own problem set, typeset and drawn from scratch and never quite finished: networks with switching instants, initial values, asymptotic stability, harmonic steady state."
 				],
 				"images": [
-					{ "src": "/images/timeline/wun-title.png", "label": "tutorial problems", "fit": "contain", "background": "#ffffff" },
-					{ "src": "/images/timeline/wun-network.png", "label": "a network", "fit": "contain", "background": "#ffffff" }
+					{
+						"src": "/images/timeline/wun-title.png",
+						"label": "tutorial problems",
+						"fit": "contain",
+						"background": "#ffffff"
+					},
+					{
+						"src": "/images/timeline/wun-network.png",
+						"label": "a network",
+						"fit": "contain",
+						"background": "#ffffff"
+					}
 				]
 			},
 			{
@@ -378,8 +669,18 @@
 					"A reduced RLC network model is only usable if it stays passive and stable, and both properties are readable off the structure of the MNA system matrices before any reduction happens. That is where I first met rational fitting, passivity enforcement and the papers that later became my vector fitting implementation."
 				],
 				"images": [
-					{ "src": "/images/timeline/ba-title.png", "label": "bachelor thesis", "fit": "contain", "background": "#ffffff" },
-					{ "src": "/images/timeline/ba-passivity.png", "label": "passivity", "fit": "contain", "background": "#ffffff" }
+					{
+						"src": "/images/timeline/ba-title.png",
+						"label": "bachelor thesis",
+						"fit": "contain",
+						"background": "#ffffff"
+					},
+					{
+						"src": "/images/timeline/ba-passivity.png",
+						"label": "passivity",
+						"fit": "contain",
+						"background": "#ffffff"
+					}
 				]
 			},
 			{
@@ -395,38 +696,79 @@
 		"publications": [
 			{
 				"text": "PathSim: a system simulation framework. Journal of Open Source Software 10(109), 8158, 2025. [ doi ]",
-				"links": [{ "phrase": "[ doi ]", "href": "https://doi.org/10.21105/joss.08158" }]
+				"links": [
+					{
+						"phrase": "[ doi ]",
+						"href": "https://doi.org/10.21105/joss.08158"
+					}
+				]
 			},
 			{
 				"text": "Physics-informed tritium fuel cycle modelling workflow for fusion reactors, with R. Delaporte-Mathurin, R. MacDonald, J. Dark, T. Zulfiqar and K. B. Woller. arXiv:2603.25751, 2026. [ arxiv ]",
-				"links": [{ "phrase": "[ arxiv ]", "href": "https://arxiv.org/abs/2603.25751" }]
+				"links": [
+					{
+						"phrase": "[ arxiv ]",
+						"href": "https://arxiv.org/abs/2603.25751"
+					}
+				]
 			},
 			{
 				"text": "I built an open-source Simulink alternative that runs in your browser. dev.to. [ article ]",
-				"links": [{ "phrase": "[ article ]", "href": "https://dev.to/milan_rother/i-built-an-open-source-simulink-alternative-that-runs-in-your-browser-4gpg" }]
+				"links": [
+					{
+						"phrase": "[ article ]",
+						"href": "https://dev.to/milan_rother/i-built-an-open-source-simulink-alternative-that-runs-in-your-browser-4gpg"
+					}
+				]
 			},
 			{
 				"text": "Linear time-invariant systems: a 120-page manuscript on system theory, in German and English. [ de ] [ en ]",
 				"links": [
-					{ "phrase": "[ de ]", "href": "https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript" },
-					{ "phrase": "[ en ]", "href": "https://github.com/milanofthe/lti-manuscript-en" }
+					{
+						"phrase": "[ de ]",
+						"href": "https://github.com/milanofthe/Lineare-Zeitinvariante-Systeme-Skript"
+					},
+					{
+						"phrase": "[ en ]",
+						"href": "https://github.com/milanofthe/lti-manuscript-en"
+					}
 				]
 			}
 		],
 		"talks": [
 			{
 				"text": "PathSim: block diagram simulation in pure Python. PyCon DE & PyData, April 2026. [ talk ]",
-				"links": [{ "phrase": "[ talk ]", "href": "https://2026.pycon.de/talks/DBDCU9/" }]
+				"links": [
+					{
+						"phrase": "[ talk ]",
+						"href": "https://2026.pycon.de/talks/DBDCU9/"
+					}
+				]
 			},
-			{ "text": "An open-source Python framework for dynamic system simulation in fusion energy applications. OSSFE 2026, March 2026." },
+			{
+				"text": "An open-source Python framework for dynamic system simulation in fusion energy applications. OSSFE 2026, March 2026."
+			},
 			{
 				"text": "PathSim, at the IAEA Workshop on Digital Engineering for Fusion Energy Research, MIT Plasma Science and Fusion Center, December 2025. [ workshop ]",
-				"links": [{ "phrase": "[ workshop ]", "href": "https://conferences.iaea.org/event/412/" }]
+				"links": [
+					{
+						"phrase": "[ workshop ]",
+						"href": "https://conferences.iaea.org/event/412/"
+					}
+				]
 			},
-			{ "text": "PathSim, at the GAMM RSE/RDM workshop, December 2025." },
-			{ "text": "The decentralized perspective on dynamical system simulation. Guest lecture at the MUSEN colloquium, TU Braunschweig, May 2025." },
-			{ "text": "PathSim, at Gauss Fusion, May 2025, and at IFAS, May 2025." },
-			{ "text": "Die Anatomie eines Systemsimulators. IMMS, March 2025." }
+			{
+				"text": "PathSim, at the GAMM RSE/RDM workshop, December 2025."
+			},
+			{
+				"text": "The decentralized perspective on dynamical system simulation. Guest lecture at the MUSEN colloquium, TU Braunschweig, May 2025."
+			},
+			{
+				"text": "PathSim, at Gauss Fusion, May 2025, and at IFAS, May 2025."
+			},
+			{
+				"text": "Die Anatomie eines Systemsimulators. IMMS, March 2025."
+			}
 		]
 	},
 	"projects": {
