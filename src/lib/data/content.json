@@ -622,11 +622,6 @@
 						"src": "/images/timeline/schroedinger-2d.png",
 						"label": "2D eigenmodes",
 						"fit": "contain"
-					},
-					{
-						"src": "/images/timeline/schroedinger-1d.png",
-						"label": "1D coulomb well",
-						"fit": "contain"
 					}
 				]
 			},
