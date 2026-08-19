@@ -12,7 +12,8 @@
 		"fetch-star-history": "node scripts/fetch-star-history.js",
 		"screenshots": "node scripts/capture-screenshots.js",
 		"cv": "node scripts/generate-cv.js",
-		"image-dims": "node scripts/generate-image-dims.js"
+		"image-dims": "node scripts/generate-image-dims.js",
+		"og": "node scripts/generate-og.js"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.0",
