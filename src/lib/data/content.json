@@ -1,7 +1,7 @@
 {
 	"hero": {
 		"heading": "MILAN ROTHER",
-		"tagline": "I build simulation software from the solver up: dynamical systems, circuits and electromagnetic fields, the ODEs, DAEs and PDEs underneath them. Custom solvers, engineering tools and the interfaces to drive them, built and integrated for client teams.",
+		"tagline": "Solvers and tools for dynamical systems, circuits and electromagnetic fields: ODEs, DAEs and PDEs, with browser interfaces on top.",
 		"cta": "[ Book an intro call -> ]   [ Consulting ]   [ View the Stack ]"
 	},
 	"paths": {
@@ -615,12 +615,12 @@
 				"heading": "eigenmodes",
 				"body": [
 					"A finite-difference eigenmode solver for the Schrödinger equation, 1D and 2D: discretise the Laplacian, add the potential on the diagonal, hand the matrix to an eigensolver and read the bound states off it.",
-					"The part I kept coming back to was the input. Any picture could be a potential, hand drawn or otherwise, so the modes of a ring of wells, a portrait or a photograph were all one run apart. The same trick as a field solver: the operator does not care what the geometry means."
+					"The part I kept coming back to was the input. Any picture could be a potential, hand drawn or otherwise, so the modes of a well, a portrait or a photograph were all one run apart. The same trick as a field solver: the operator does not care what the geometry means."
 				],
 				"images": [
 					{
 						"src": "/images/timeline/schroedinger-2d.png",
-						"label": "2D eigenmodes",
+						"label": "radial well, first modes",
 						"fit": "contain"
 					}
 				]
