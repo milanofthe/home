@@ -70,7 +70,10 @@ hierarchical subsystems, and mutable parameters work exactly like PathSim.
 
 All export targets lower from the same SSA graph, operation by operation:
 FMI 3.0 import and export (model exchange and co-simulation, events
-included), WebAssembly, and dependency-free C99 for embedded targets. WebAssembly is a
+included), WebAssembly, and dependency-free C99 for embedded targets.
+Interpreted mode, compiled mode and the exported artifacts all run the same
+op-level IR, structure-preserving throughout, so the outputs stay verifiable
+and qualifiable. WebAssembly is a
 clean build target, which is how FastSim runs inside
 [PathView](/stack/pathview/) under Pyodide: the same drop-in swap of the
 import, in a browser tab.

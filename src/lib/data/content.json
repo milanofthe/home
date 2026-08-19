@@ -119,7 +119,7 @@
 						]
 					},
 					"One architecture throughout: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy; I think one coherent stack can do better.",
-					"RSLAB took PARDISO's place and is benchmarked against it. RapidMesh is the least finished: its 2D path meshes for RapidMoM and does exact element budgets, which gmsh does not, while the 3D path is slower than gmsh and still leaves slivers on some geometries, so RapidFEM meshes with gmsh a while longer."
+					"The design question behind all of it: what do you actually want from simulation tools today? Rent cloud compute for a few days, spin the solvers up fast (a few MB of install, not GB), run big parallel optimization and data-generation batches headless, tear everything down again, train surrogates on the results. That takes deterministic solvers, resource management you can schedule (peak memory predicted from the symbolic analysis before anything runs), and models that are differentiable, written by agents if need be, and still readable and auditable by humans."
 				],
 				"images": [
 					{
