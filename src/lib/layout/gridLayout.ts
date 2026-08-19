@@ -148,6 +148,47 @@ function buildFrameTop(frameCols: number, label: string): string {
 	return prefix + '-'.repeat(Math.max(0, frameCols - prefix.length - 1)) + '+';
 }
 
+// Region type -> cell type for the pieces a project card is made of. The big
+// ternary in addContentRegion does the same job for whole regions; a card composes
+// its own lines, so it needs the mapping on its own.
+const CARD_CELL_TYPE: Record<string, CellType> = {
+	'heading': 'heading',
+	'heading-pathsim': 'heading-pathsim',
+	'heading-pysimhub': 'heading-pysimhub',
+	'heading-rapidpassives': 'heading-rapidpassives',
+	'heading-scidata': 'heading-scidata',
+	'heading-fastsim': 'heading-fastsim',
+	'heading-sane': 'heading-sane',
+	'heading-rslab': 'heading-rslab',
+	'heading-thesisos': 'heading-thesisos',
+	'heading-whatsmytraffic': 'heading-whatsmytraffic',
+	'heading-falllow': 'heading-falllow',
+	'link-line': 'link',
+	'link-line-pathsim': 'link-pathsim',
+	'link-line-pysimhub': 'link-pysimhub',
+	'link-line-rapidpassives': 'link-rapidpassives',
+	'link-line-scidata': 'link-scidata',
+	'link-line-fastsim': 'link-fastsim',
+	'link-line-sane': 'link-sane',
+	'link-line-rslab': 'link-rslab',
+	'link-line-thesisos': 'link-thesisos',
+	'link-line-whatsmytraffic': 'link-whatsmytraffic',
+	'link-line-falllow': 'link-falllow'
+};
+
+const FRAME_CELL_TYPE: Record<string, CellType> = {
+	pathsim: 'frame-pathsim',
+	pysimhub: 'frame-pysimhub',
+	rapidpassives: 'frame-rapidpassives',
+	scidata: 'frame-scidata',
+	fastsim: 'frame-fastsim',
+	sane: 'frame-sane',
+	rslab: 'frame-rslab',
+	thesisos: 'frame-thesisos',
+	whatsmytraffic: 'frame-whatsmytraffic',
+	falllow: 'frame-falllow'
+};
+
 function buildFrameBottom(frameCols: number): string {
 	return '+' + '-'.repeat(frameCols - 2) + '+';
 }
@@ -233,6 +274,108 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 		if (region.type === 'spacer') {
 			cells.push(fillerLine(cols, fillerOffset));
 			advanceOffset(cols);
+			return;
+		}
+
+		// Two side projects share a band, each centred in its own column with a single
+		// picture under it. Below the width where two columns would starve the prose,
+		// the cards stack and each one takes the band alone.
+		if (region.type === 'project-pair' && region.cards?.length) {
+			const gap = 4;
+			const band = Math.min(cols - 4, 114);
+			const twoUp = region.cards.length > 1 && band >= 84;
+			const colW = twoUp ? Math.floor((band - gap) / 2) : Math.min(band, 60);
+			const groups = twoUp ? [region.cards] : region.cards.map((c) => [c]);
+
+			for (const group of groups) {
+				const total = group.length * colW + (group.length - 1) * gap;
+				const bandStart = Math.floor((cols - total) / 2);
+				const colStart = group.map((_c, i) => bandStart + i * (colW + gap));
+				const frameType = (card: typeof group[number]): CellType =>
+					FRAME_CELL_TYPE[card.frameColor ?? ''] ?? 'frame';
+
+				// Text block: every card writes its own lines, the band is as tall as
+				// the tallest of them so the pictures below start on one row.
+				const blocks = group.map((card) => {
+					const out: { text: string; type: CellType }[] = [];
+					out.push({ text: card.heading, type: CARD_CELL_TYPE[card.headingType] ?? 'heading' });
+					out.push({ text: '', type: 'content' });
+					for (const p of card.paragraphs) {
+						for (const l of wordWrap(p, colW - 2)) out.push({ text: l, type: 'content' });
+						out.push({ text: '', type: 'content' });
+					}
+					for (const line of card.statsLines) {
+						out.push({ text: line.text, type: CARD_CELL_TYPE[line.type] ?? 'link' });
+					}
+					return out;
+				});
+
+				const stamp = (row: Cell[], col: number, text: string, type: CellType) => {
+					const start = col + Math.floor((colW - text.length) / 2);
+					for (let k = 0; k < text.length; k++) row[start + k] = { char: text[k], type };
+				};
+
+				for (let r = 0; r < Math.max(...blocks.map((b) => b.length)); r++) {
+					const row = fillerLine(cols, fillerOffset);
+					blocks.forEach((b, i) => {
+						const line = b[r];
+						if (line?.text) stamp(row, colStart[i], line.text, line.type);
+					});
+					cells.push(row);
+					advanceOffset(cols);
+				}
+
+				cells.push(fillerLine(cols, fillerOffset));
+				advanceOffset(cols);
+
+				// One picture per card, framed to the column width.
+				const innerRows = region.embeddedRows || 13;
+				const topRow = fillerLine(cols, fillerOffset);
+				group.forEach((card, i) => {
+					// The frame carries the project name, not the shot's own label: with one
+					// picture per card "Landing" says nothing the heading above has not.
+					const top = buildFrameTop(colW, card.heading);
+					for (let k = 0; k < top.length; k++) {
+						topRow[colStart[i] + k] = { char: top[k], type: frameType(card) };
+					}
+				});
+				cells.push(topRow);
+				advanceOffset(cols);
+
+				group.forEach((card, i) => {
+					embeddedBlocks.push({
+						id: card.tile.id, row: cells.length,
+						col: colStart[i] + 1, rows: innerRows, cols: colW - 2
+					});
+				});
+				for (let r = 0; r < innerRows; r++) {
+					const row = fillerLine(cols, fillerOffset);
+					group.forEach((card, i) => {
+						row[colStart[i]] = { char: '|', type: frameType(card) };
+						row[colStart[i] + colW - 1] = { char: '|', type: frameType(card) };
+						for (let c = colStart[i] + 1; c < colStart[i] + colW - 1; c++) {
+							row[c] = { char: ' ', type: 'empty' };
+						}
+					});
+					cells.push(row);
+					advanceOffset(cols);
+				}
+
+				const botRow = fillerLine(cols, fillerOffset);
+				group.forEach((card, i) => {
+					const bot = buildFrameBottom(colW);
+					for (let k = 0; k < bot.length; k++) {
+						botRow[colStart[i] + k] = { char: bot[k], type: frameType(card) };
+					}
+				});
+				cells.push(botRow);
+				advanceOffset(cols);
+
+				if (groups.length > 1) {
+					cells.push(fillerLine(cols, fillerOffset));
+					advanceOffset(cols);
+				}
+			}
 			return;
 		}
 

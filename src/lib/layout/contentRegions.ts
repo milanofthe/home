@@ -12,7 +12,7 @@ export interface GitHubStats {
 	pysimhub: { projects: number; members?: number; cumulativeStars: number };
 }
 
-export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'heading-falllow' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-sane' | 'link-line-rslab' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'link-line-falllow' | 'footer-line' | 'content' | 'form-field';
+export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'heading-falllow' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-sane' | 'link-line-rslab' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'link-line-falllow' | 'footer-line' | 'content' | 'form-field' | 'project-pair';
 
 export interface ContentRegion {
 	type: RegionType;
@@ -29,6 +29,19 @@ export interface ContentRegion {
 	align?: 'center' | 'left';
 	fill?: boolean; // pad heading up to the tile-row width
 	fillChar?: string; // padding character, defaults to '-'
+	cards?: ProjectCard[]; // for 'project-pair': the projects sharing this band
+}
+
+// One project rendered as a column of its own: heading, prose, its link line and a
+// single picture, all centred in that column. Two of them share a band.
+export interface ProjectCard {
+	id: string;
+	heading: string;
+	headingType: RegionType;
+	paragraphs: string[];
+	statsLines: { text: string; type: RegionType }[];
+	tile: { id: string; label: string };
+	frameColor?: ContentRegion['frameColor'];
 }
 
 export interface ContentSection {
@@ -342,6 +355,40 @@ function buildProjectsSection(stats: GitHubStats): ContentSection {
 
 // Side projects outside the simulation stack, same tile treatment, but no
 // detail pages behind them.
+// One card per side project: the heading, its prose, the link line and the FIRST of
+// its tiles. A side project does not need two screenshots to make its point, and one
+// each is what lets two of them share a row.
+function buildProjectCard(
+	item: ProjectItem,
+	statsMap: Record<string, Record<string, number | undefined>>
+): ProjectCard | null {
+	const embed = PROJECT_EMBEDS[item.id];
+	const tile = embed?.tiles?.[0];
+	if (!tile) return null;
+
+	const statsLines: { text: string; type: RegionType }[] = [];
+	const linkType = LINK_LINE_TYPES[item.id] ?? 'link-line';
+	if (item.statsTemplate && item.statsSource) {
+		statsLines.push({
+			text: resolveStats(item.statsTemplate, statsMap[item.statsSource] ?? {}),
+			type: linkType
+		});
+		if (item.domain) statsLines.push({ text: item.domain, type: linkType });
+	} else if (item.statsText) {
+		statsLines.push({ text: item.statsText, type: linkType });
+	}
+
+	return {
+		id: item.id,
+		heading: item.heading,
+		headingType: HEADING_TYPES[item.headingType ?? ''] ?? 'heading',
+		paragraphs: item.paragraphs,
+		statsLines,
+		tile,
+		frameColor: embed.frameColor
+	};
+}
+
 function buildOtherSection(stats: GitHubStats): ContentSection {
 	const c = contentData.other;
 	const regions: ContentRegion[] = [
@@ -352,9 +399,15 @@ function buildOtherSection(stats: GitHubStats): ContentSection {
 	];
 
 	const statsMap = buildStatsMap(stats);
+	const cards = (c.items as ProjectItem[])
+		.map((item) => buildProjectCard(item, statsMap))
+		.filter((card): card is ProjectCard => card !== null);
 
-	for (const item of c.items as ProjectItem[]) {
-		renderProjectItem(item, statsMap, regions);
+	// Two to a band; an odd last card sits centred on its own.
+	for (let i = 0; i < cards.length; i += 2) {
+		regions.push(spacer());
+		regions.push({ type: 'project-pair', lines: [], cards: cards.slice(i, i + 2) });
+		regions.push(spacer(), spacer());
 	}
 
 	return { id: 'other', fillerLinesBefore: 5, regions };
