@@ -16,6 +16,9 @@ import type { Cell, CellType } from './gridLayout';
 // rather than flush against one edge of them. Float images scale up from their
 // declared width and stop where the column beside one would fall below MIN_BESIDE.
 const IMAGE_SCALE = 1.25;
+
+// Where a line sits inside its column.
+type Align = 'left' | 'center' | 'right';
 const MIN_BESIDE = 46;
 
 const TILE_W_MIN = 26;
@@ -264,12 +267,14 @@ export class ArticleGrid {
 	// Page title in the accent color, with an optional plain subtitle.
 	title(text: string, subtitle?: string) {
 		for (const line of ArticleGrid.wordWrap(text, this.textWidth)) {
-			this.placeLine(this.row, this.textCol, line, this.accent.heading);
+			this.placeLine(this.row, this.alignCol(this.textCol, this.textWidth, line.length),
+				line, this.accent.heading);
 			this.row += 1;
 		}
 		if (subtitle) {
 			for (const line of ArticleGrid.wordWrap(subtitle, this.textWidth)) {
-				this.placeLine(this.row, this.textCol, line, 'content');
+				this.placeLine(this.row, this.alignCol(this.textCol, this.textWidth, line.length),
+					line, 'content');
 				this.row += 1;
 			}
 		}
@@ -279,7 +284,8 @@ export class ArticleGrid {
 	// Meta line under the title (date / tags / reading time), muted link style.
 	metaLine(text: string) {
 		for (const line of ArticleGrid.wordWrap(text, this.textWidth)) {
-			this.placeLine(this.row, this.textCol, line, 'link');
+			this.placeLine(this.row, this.alignCol(this.textCol, this.textWidth, line.length),
+				line, 'link');
 			this.row += 1;
 		}
 		this.row += 1;
@@ -299,16 +305,29 @@ export class ArticleGrid {
 		this.row += 2;
 	}
 
-	// Plain left-aligned subheading.
+	// Subheading, on the same axis as the prose under it.
 	heading(text: string) {
-		this.placeLine(this.row, this.textCol, text, this.accent.heading);
+		this.placeLine(this.row, this.alignCol(this.textCol, this.textWidth, text.length),
+			text, this.accent.heading);
 		this.row += 2;
+	}
+
+	// Left edge of a line of `len` characters inside the box [col, col+width),
+	// under the current alignment. Centred is the page default -- the landing sets
+	// every line on its own centre axis and the article pages follow it; a column
+	// beside a picture or the timeline rail is flush against that neighbour instead,
+	// so the edge the two share stays a straight line.
+	private alignCol(col: number, width: number, len: number, align: Align = 'center'): number {
+		if (align === 'left') return col;
+		if (align === 'right') return col + Math.max(0, width - len);
+		return col + Math.max(0, Math.floor((width - len) / 2));
 	}
 
 	// Segment-aware paragraph: wraps across the full content width; link
 	// segments are colored and get click overlays. Link phrases wrap like
 	// normal text, overlays are recorded per line.
-	paragraph(segments: string | TextSegment[], width?: number, col?: number, startRow?: number): number {
+	paragraph(segments: string | TextSegment[], width?: number, col?: number, startRow?: number,
+		align: Align = 'center'): number {
 		const segs: TextSegment[] = typeof segments === 'string' ? [{ text: segments }] : segments;
 		const w = width ?? this.textWidth;
 		const c = col ?? this.textCol;
@@ -352,7 +371,8 @@ export class ArticleGrid {
 		// place lines, record overlays for consecutive same-href runs
 		lines.forEach((line, i) => {
 			const r = r0 + i;
-			let cc = c;
+			const len = line.reduce((n, t, j) => n + t.word.length + (j > 0 && !t.glue ? 1 : 0), 0);
+			let cc = this.alignCol(c, w, len, align);
 			let runStart = -1;
 			let runHref: string | undefined;
 			let runLabel = '';
@@ -402,8 +422,9 @@ export class ArticleGrid {
 
 	// Standalone clickable line (e.g. "[ read more -> ]" or a bare URL).
 	linkLine(text: string, href: string, cellType?: CellType) {
-		this.placeLine(this.row, this.textCol, text, cellType ?? this.accent.link);
-		this.overlays.push({ row: this.row, col: this.textCol, length: text.length, label: text, href });
+		const lc = this.alignCol(this.textCol, this.textWidth, text.length);
+		this.placeLine(this.row, lc, text, cellType ?? this.accent.link);
+		this.overlays.push({ row: this.row, col: lc, length: text.length, label: text, href });
 		this.row += 2;
 	}
 
@@ -412,7 +433,7 @@ export class ArticleGrid {
 	cta(buttons: { text: string; href: string }[]) {
 		const joined = buttons.map(b => b.text).join('   ');
 		if (joined.length <= this.textWidth) {
-			let c = this.textCol;
+			let c = this.alignCol(this.textCol, this.textWidth, joined.length);
 			for (const b of buttons) {
 				this.placeLine(this.row, c, b.text, 'cta');
 				this.overlays.push({ row: this.row, col: c, length: b.text.length, label: b.text, href: b.href });
@@ -421,8 +442,9 @@ export class ArticleGrid {
 			this.row += 2;
 		} else {
 			for (const b of buttons) {
-				this.placeLine(this.row, this.textCol, b.text, 'cta');
-				this.overlays.push({ row: this.row, col: this.textCol, length: b.text.length, label: b.text, href: b.href });
+				const bc = this.alignCol(this.textCol, this.textWidth, b.text.length);
+				this.placeLine(this.row, bc, b.text, 'cta');
+				this.overlays.push({ row: this.row, col: bc, length: b.text.length, label: b.text, href: b.href });
 				this.row += 2;
 			}
 		}
@@ -483,7 +505,7 @@ export class ArticleGrid {
 
 			for (const p of entry.body ?? []) {
 				const segs: TextSegment[] = typeof p === 'string' ? [{ text: p }] : p;
-				const lines = this.paragraph(segs, contentW, contentCol, this.row);
+				const lines = this.paragraph(segs, contentW, contentCol, this.row, 'left');
 				this.row += lines + 1;
 			}
 
@@ -654,7 +676,8 @@ export class ArticleGrid {
 
 		// Re-split segments at the beside/below boundary, preserving links.
 		const [besideSegs, belowSegs] = splitSegments(segs, besideText.length);
-		const besideRows = this.paragraph(besideSegs, narrowWidth, textCol, r0);
+		const besideRows = this.paragraph(besideSegs, narrowWidth, textCol, r0,
+			side === 'left' ? 'left' : 'right');
 		let r = r0 + Math.max(imgTotalH, besideRows) + 1;
 		if (belowText.trim()) {
 			const belowRows = this.paragraph(belowSegs, this.textWidth, this.textCol, r);
