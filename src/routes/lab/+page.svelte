@@ -230,7 +230,7 @@
 	style="font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: {fontSize}px; line-height: {lineHeight}px; letter-spacing: {letterSpacingPx}px;"
 >
 	{#if cells.length}
-		<CharacterGrid {cells} />
+		<CharacterGrid {cells} armed={mounted} />
 
 		{#each images as img}
 			<div
@@ -250,7 +250,7 @@
 		min-height: 100vh;
 		white-space: pre;
 		overflow: hidden;
-		transition: opacity 0.3s;
+		transition: opacity var(--grid-fade);
 		background: #0f0f0f;
 		text-rendering: geometricPrecision;
 		-webkit-font-smoothing: antialiased;

@@ -7,6 +7,11 @@ interface RevealParams {
 	lineHeight: number;
 }
 
+// Frames a tile takes to clear, whatever its size. Matched to the character
+// grid's typing speed so a tile and the text around it finish together instead
+// of the images trailing the copy by a second.
+const REVEAL_FRAMES = 24;
+
 export function tileReveal(node: HTMLElement, params: RevealParams) {
 	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 		return { destroy() {} };
@@ -76,7 +81,7 @@ export function tileReveal(node: HTMLElement, params: RevealParams) {
 				}
 
 				let i = 0;
-				const perFrame = Math.max(1, Math.ceil(total / 80));
+				const perFrame = Math.max(1, Math.ceil(total / REVEAL_FRAMES));
 				(function step() {
 					for (let n = 0; n < perFrame && i < total; n++, i++) {
 						const c = order[i] % cols;

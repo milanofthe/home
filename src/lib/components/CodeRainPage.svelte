@@ -291,12 +291,18 @@
 		document.fonts.ready.then(markFontsReady);
 		setTimeout(markFontsReady, 1200);
 
-		// Fetch latest GitHub stats and rebuild grid with fresh data
+		// Fetch latest GitHub stats. A rebuild re-renders the whole grid and
+		// restarts every reveal, so it only happens when the fresh numbers
+		// actually differ from the committed ones the first paint used --
+		// otherwise the reveal visibly resets a few hundred ms into the load.
+		const baselineSections = JSON.stringify(buildContentSections());
 		fetch(STATS_URL, { cache: 'no-store' })
 			.then(r => r.ok ? r.json() : null)
 			.then(data => {
 				if (!data?.current) return;
-				dynamicSections = buildContentSections(data.current as GitHubStats);
+				const fresh = buildContentSections(data.current as GitHubStats);
+				if (JSON.stringify(fresh) === baselineSections) return;
+				dynamicSections = fresh;
 				// Force grid recompute with new sections
 				gridLayout = null;
 				computeLayout();
@@ -386,7 +392,7 @@
 <div bind:this={containerEl} class="code-rain-container" class:opacity-0={!mounted}
 	style="font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: {fontSize}px; line-height: {lineHeight}px; letter-spacing: {letterSpacingPx}px;">
 	{#if gridLayout}
-		<CharacterGrid cells={gridLayout.cells} />
+		<CharacterGrid cells={gridLayout.cells} armed={mounted} />
 
 		<!-- Native scroll anchors so plain #hash links work (nav Contact etc.) -->
 		{#each gridLayout.sectionAnchors as anchor}
@@ -571,7 +577,7 @@
 		min-height: 100vh;
 		white-space: pre;
 		overflow: hidden;
-		transition: opacity 0.3s;
+		transition: opacity var(--grid-fade);
 		text-rendering: geometricPrecision;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;

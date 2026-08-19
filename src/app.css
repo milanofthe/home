@@ -55,6 +55,13 @@
 @layer base {
 	html {
 		scroll-behavior: smooth;
+
+		/* Shared page-load fade for the character-grid pages. The grid is held
+		   hidden until the web font is measured, so this is the one transition
+		   the reader sees on load and every grid page uses the same one. Kept
+		   just under the time the first screen takes to type itself in, so the
+		   two read as one motion rather than a fade followed by a reveal. */
+		--grid-fade: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
 	/* Prevent horizontal scrollbar from full-bleed elements that use 100vw
