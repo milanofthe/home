@@ -248,7 +248,7 @@
 					},
 					"It is past 400 stars and nine contributors. The domain toolboxes cover chemical engineering, batteries, vehicles, flight dynamics, RF and FMI co-simulation, several of them contributed by people I have never met. JSBSim picked it up for flight dynamics.",
 					{
-						"text": "PathView followed: the same models as drag-and-drop block diagrams in the browser, running entirely client-side through Pyodide, nothing to install. PySimHub came out of the same year, a catalog for Python's scattered simulation communities.",
+						"text": "PathView followed: the same models as drag-and-drop block diagrams in the browser, running entirely client-side through Pyodide, nothing to install. PySimHub came out of the same year, built together with Peter Corke and Jared Callaham: a tag-based community platform for simulation tools across Python's scattered domains.",
 						"links": [
 							{
 								"phrase": "PathView",
@@ -934,7 +934,7 @@
 	},
 	"other": {
 		"heading": "OTHER PROJECTS",
-		"intro": "Side quests: smaller tools I built for my own use.",
+		"intro": "Side quests: community projects, and tools and infrastructure I needed myself.",
 		"items": [
 			{
 				"id": "pysimhub",
@@ -942,7 +942,7 @@
 				"headingType": "pysimhub",
 				"url": "https://pysimhub.io",
 				"paragraphs": [
-					"An open community catalog bridging Python's scattered simulation communities. An awesome list that's also awesome to use."
+					"A community platform for simulation tools in the Python ecosystem, built together with Peter Corke and Jared Callaham. Tag-based cross-domain discovery instead of domain-siloed awesome lists, with automated stats and submissions."
 				],
 				"statsTemplate": "{projects} projects / {cumulativeStars} cumulative stars",
 				"statsSource": "pysimhub",
