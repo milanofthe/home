@@ -27,7 +27,7 @@
 		const g = new ArticleGrid(cols, 'neutral', 6, cellRatio);
 		g.title(content.about.heading);
 		g.spacer();
-		g.image('/images/headshot_milan.webp', 'milan.png', 24, 10);
+		g.image('/images/headshot_milan.webp', 'milan.png', 36, 15);
 		g.spacer();
 		for (const p of STORY) {
 			g.paragraph(p);

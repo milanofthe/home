@@ -57,6 +57,8 @@ inductor into a handful of geometric numbers instead of a drawing, and the
 reduction of a full process layerstack to the layers an EM solver needs, which
 is what makes the parameter sweeps behind a compact model affordable.
 
+![The original tkinter GUI, 2024|left|46x14|contain](/images/timeline/rapidpassives-tkinter.png)
+
 It started as a small Python package with a tkinter GUI, was rebuilt into the
 fully client-side browser tool it is today, and became the seed of the whole
 fields level of the stack. The current integration runs through
