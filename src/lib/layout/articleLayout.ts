@@ -12,6 +12,15 @@ import type { Cell, CellType } from './gridLayout';
 /// each tile comes from the picture's own proportions, so nothing is cropped to fit
 /// a frame it never had. A uniform width is what makes the column read as a grid,
 /// a uniform height would only mean cutting landscape screenshots into portraits.
+// Prose is inset from the image band by TEXT_INDENT, so a paragraph never runs
+// flush against a rule or a frame. A modest indent rather than centring the text
+// in the band: centring costs 17 cells on each side, which starves the column
+// beside a right-hand float. Float images scale up from their declared width and
+// stop where that column would fall below MIN_BESIDE.
+const TEXT_INDENT = 6;
+const IMAGE_SCALE = 1.25;
+const MIN_BESIDE = 46;
+
 const TILE_W_MIN = 26;
 const TILE_W_MAX = 46;
 
@@ -142,6 +151,7 @@ export class ArticleGrid {
 	readonly contentWidth: number;
 	readonly textWidth: number;
 	readonly startCol: number;
+	readonly textCol: number;
 	readonly twoCol: boolean;
 	readonly cellRatio: number; // charWidth / lineHeight of a grid cell
 
@@ -165,6 +175,10 @@ export class ArticleGrid {
 		this.contentWidth = Math.min(cols - 4, 114);
 		this.textWidth = Math.min(this.contentWidth, 80);
 		this.startCol = Math.floor((cols - this.contentWidth) / 2);
+		// Prose sits on its own rail, inset from the image band, so a paragraph is
+		// indented from the rules and frames instead of running flush against their
+		// left edge. Code blocks ride the same rail: a snippet is text.
+		this.textCol = this.startCol + Math.min(TEXT_INDENT, this.contentWidth - this.textWidth);
 		this.twoCol = this.contentWidth >= 78;
 		this.cellRatio = cellRatio;
 		this.row = topRows;
@@ -252,13 +266,13 @@ export class ArticleGrid {
 
 	// Page title in the accent color, with an optional plain subtitle.
 	title(text: string, subtitle?: string) {
-		for (const line of ArticleGrid.wordWrap(text, this.contentWidth)) {
-			this.placeLine(this.row, this.startCol, line, this.accent.heading);
+		for (const line of ArticleGrid.wordWrap(text, this.textWidth)) {
+			this.placeLine(this.row, this.textCol, line, this.accent.heading);
 			this.row += 1;
 		}
 		if (subtitle) {
-			for (const line of ArticleGrid.wordWrap(subtitle, this.contentWidth)) {
-				this.placeLine(this.row, this.startCol, line, 'content');
+			for (const line of ArticleGrid.wordWrap(subtitle, this.textWidth)) {
+				this.placeLine(this.row, this.textCol, line, 'content');
 				this.row += 1;
 			}
 		}
@@ -267,8 +281,8 @@ export class ArticleGrid {
 
 	// Meta line under the title (date / tags / reading time), muted link style.
 	metaLine(text: string) {
-		for (const line of ArticleGrid.wordWrap(text, this.contentWidth)) {
-			this.placeLine(this.row, this.startCol, line, 'link');
+		for (const line of ArticleGrid.wordWrap(text, this.textWidth)) {
+			this.placeLine(this.row, this.textCol, line, 'link');
 			this.row += 1;
 		}
 		this.row += 1;
@@ -290,7 +304,7 @@ export class ArticleGrid {
 
 	// Plain left-aligned subheading.
 	heading(text: string) {
-		this.placeLine(this.row, this.startCol, text, this.accent.heading);
+		this.placeLine(this.row, this.textCol, text, this.accent.heading);
 		this.row += 2;
 	}
 
@@ -300,7 +314,7 @@ export class ArticleGrid {
 	paragraph(segments: string | TextSegment[], width?: number, col?: number, startRow?: number): number {
 		const segs: TextSegment[] = typeof segments === 'string' ? [{ text: segments }] : segments;
 		const w = width ?? this.textWidth;
-		const c = col ?? this.startCol;
+		const c = col ?? this.textCol;
 		const r0 = startRow ?? this.row;
 
 		interface Tok { word: string; href?: string; label?: string; accent?: AccentKey; glue?: boolean }
@@ -391,8 +405,8 @@ export class ArticleGrid {
 
 	// Standalone clickable line (e.g. "[ read more -> ]" or a bare URL).
 	linkLine(text: string, href: string, cellType?: CellType) {
-		this.placeLine(this.row, this.startCol, text, cellType ?? this.accent.link);
-		this.overlays.push({ row: this.row, col: this.startCol, length: text.length, label: text, href });
+		this.placeLine(this.row, this.textCol, text, cellType ?? this.accent.link);
+		this.overlays.push({ row: this.row, col: this.textCol, length: text.length, label: text, href });
 		this.row += 2;
 	}
 
@@ -400,8 +414,8 @@ export class ArticleGrid {
 	// lines when they don't fit).
 	cta(buttons: { text: string; href: string }[]) {
 		const joined = buttons.map(b => b.text).join('   ');
-		if (joined.length <= this.contentWidth) {
-			let c = this.startCol;
+		if (joined.length <= this.textWidth) {
+			let c = this.textCol;
 			for (const b of buttons) {
 				this.placeLine(this.row, c, b.text, 'cta');
 				this.overlays.push({ row: this.row, col: c, length: b.text.length, label: b.text, href: b.href });
@@ -410,8 +424,8 @@ export class ArticleGrid {
 			this.row += 2;
 		} else {
 			for (const b of buttons) {
-				this.placeLine(this.row, this.startCol, b.text, 'cta');
-				this.overlays.push({ row: this.row, col: this.startCol, length: b.text.length, label: b.text, href: b.href });
+				this.placeLine(this.row, this.textCol, b.text, 'cta');
+				this.overlays.push({ row: this.row, col: this.textCol, length: b.text.length, label: b.text, href: b.href });
 				this.row += 2;
 			}
 		}
@@ -556,9 +570,9 @@ export class ArticleGrid {
 
 	// List item with a "- " bullet, wrapped with hanging indent.
 	listItem(segments: string | TextSegment[]) {
-		this.placeLine(this.row, this.startCol, '-', this.accent.heading);
+		this.placeLine(this.row, this.textCol, '-', this.accent.heading);
 		const segs: TextSegment[] = typeof segments === 'string' ? [{ text: segments }] : segments;
-		const lines = this.paragraph(segs, this.contentWidth - 2, this.startCol + 2, this.row);
+		const lines = this.paragraph(segs, this.textWidth - 2, this.textCol + 2, this.row);
 		this.row += lines;
 	}
 
@@ -618,29 +632,38 @@ export class ArticleGrid {
 			this.paragraph(segments);
 			return;
 		}
-		const w = Math.min(imgW, this.contentWidth - 24);
+		// Declared widths date from a single 104-cell content width. Now that prose
+		// has its own measure, a float can take more of the band: scale the declared
+		// width, and stop where the column beside it would stop being readable.
+		const w = Math.min(Math.round(imgW * IMAGE_SCALE),
+			this.contentWidth - (this.textCol - this.startCol) - MIN_BESIDE - 2);
 		const rows = this.imageRows(src, w - 2, imgH);
 		const imgTotalH = rows + 2;
 		const gap = 2;
 		const narrowWidth = this.contentWidth - w - gap;
 		const imgCol = side === 'right' ? this.startCol + this.contentWidth - w : this.startCol;
-		const textCol = side === 'right' ? this.startCol : this.startCol + w + gap;
+		// A right-hand float leaves its text against the band edge, 17 characters
+		// left of every other paragraph on the page; put it on the prose rail instead.
+		const textCol = side === 'right' ? this.textCol : this.startCol + w + gap;
+		const besideWidth = side === 'right'
+			? this.startCol + this.contentWidth - w - gap - textCol
+			: narrowWidth;
 		const r0 = this.row;
 		this.drawFrame(r0, imgCol, w, rows, label, src, opts);
 
 		// Wrap at the narrow width beside the image; remainder flows full width.
 		const segs: TextSegment[] = typeof segments === 'string' ? [{ text: segments }] : segments;
 		const plain = segs.map(s => s.text).join(' ');
-		const narrowLines = ArticleGrid.wordWrap(plain, narrowWidth);
+		const narrowLines = ArticleGrid.wordWrap(plain, besideWidth);
 		const besideText = narrowLines.slice(0, imgTotalH).join(' ');
 		const belowText = narrowLines.slice(imgTotalH).join(' ');
 
 		// Re-split segments at the beside/below boundary, preserving links.
 		const [besideSegs, belowSegs] = splitSegments(segs, besideText.length);
-		const besideRows = this.paragraph(besideSegs, narrowWidth, textCol, r0);
+		const besideRows = this.paragraph(besideSegs, besideWidth, textCol, r0);
 		let r = r0 + Math.max(imgTotalH, besideRows) + 1;
 		if (belowText.trim()) {
-			const belowRows = this.paragraph(belowSegs, this.textWidth, this.startCol, r);
+			const belowRows = this.paragraph(belowSegs, this.textWidth, this.textCol, r);
 			r += belowRows;
 		}
 		this.row = r + 1;
@@ -651,7 +674,7 @@ export class ArticleGrid {
 	codeBlock(code: string, label = '') {
 		const rawLines = code.replace(/\t/g, '    ').split('\n');
 		const lineTypes = highlightCode(rawLines, label);
-		const innerW = this.contentWidth - 4;
+		const innerW = this.textWidth - 4;
 		const lines: { text: string; types: CellType[] }[] = [];
 		rawLines.forEach((l, li) => {
 			const types = lineTypes[li];
@@ -663,20 +686,20 @@ export class ArticleGrid {
 				}
 			}
 		});
-		const w = this.contentWidth;
+		const w = this.textWidth;
 		const r0 = this.row;
-		this.placeLine(r0, this.startCol, this.buildFrameTop(w, label), this.accent.frame);
+		this.placeLine(r0, this.textCol, this.buildFrameTop(w, label), this.accent.frame);
 		lines.forEach((l, i) => {
 			const r = r0 + 1 + i;
-			this.setCell(r, this.startCol, '|', this.accent.frame);
-			this.setCell(r, this.startCol + w - 1, '|', this.accent.frame);
-			for (let c = this.startCol + 1; c < this.startCol + w - 1; c++) {
-				const idx = c - this.startCol - 2;
+			this.setCell(r, this.textCol, '|', this.accent.frame);
+			this.setCell(r, this.textCol + w - 1, '|', this.accent.frame);
+			for (let c = this.textCol + 1; c < this.textCol + w - 1; c++) {
+				const idx = c - this.textCol - 2;
 				const ch = idx >= 0 && idx < l.text.length ? l.text[idx] : ' ';
 				this.setCell(r, c, ch, ch === ' ' ? 'empty' : (l.types[idx] ?? 'content'));
 			}
 		});
-		this.placeLine(r0 + lines.length + 1, this.startCol, '+' + '-'.repeat(w - 2) + '+', this.accent.frame);
+		this.placeLine(r0 + lines.length + 1, this.textCol, '+' + '-'.repeat(w - 2) + '+', this.accent.frame);
 		this.row = r0 + lines.length + 2 + 1;
 	}
 
