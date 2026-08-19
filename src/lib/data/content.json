@@ -489,6 +489,26 @@
 				]
 			},
 			{
+				"period": "2022-2023",
+				"heading": "GDS rendering",
+				"accent": "rapidpassives",
+				"body": [
+					"A master's seminar on the visualization of GDSII layouts that turned into a real tool: a GDS renderer with a Tkinter GUI around it, reading the PDK's layermaps and display resources so a layout renders in its true layer colors, packaged as a single executable through eight versions.",
+					"The goal was full layout renderings, up to 3D: extrude the layerstack and render the chip in Blender. The computational geometry from this time is where the random polygon generator came from, and the RapidPassives viewer picks up the same problem in WebGL today."
+				],
+				"images": [
+					{
+						"src": "/images/timeline/gds-render-2d.png",
+						"label": "rendered GDS, true layer colors",
+						"fit": "contain"
+					},
+					{
+						"src": "/images/timeline/gds-render-3d.png",
+						"label": "extruded to 3D, Blender"
+					}
+				]
+			},
+			{
 				"period": "2021-2022",
 				"heading": "desktop toys",
 				"body": [
