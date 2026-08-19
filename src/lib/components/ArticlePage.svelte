@@ -158,11 +158,10 @@
 				</a>
 			{:else}
 				<div
-					class="article-img"
-					class:tilt={Boolean(img.glow)}
+					class="article-img tilt"
 					use:tileReveal={{ charWidth, lineHeight }}
-					onmousemove={img.glow ? tilt : undefined}
-					onmouseleave={img.glow ? resetTilt : undefined}
+					onmousemove={tilt}
+					onmouseleave={resetTilt}
 					role="presentation"
 					style={box}
 				>

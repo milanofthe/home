@@ -140,6 +140,7 @@ export interface TimelineEntry {
 export class ArticleGrid {
 	readonly cols: number;
 	readonly contentWidth: number;
+	readonly textWidth: number;
 	readonly startCol: number;
 	readonly twoCol: boolean;
 	readonly cellRatio: number; // charWidth / lineHeight of a grid cell
@@ -156,7 +157,13 @@ export class ArticleGrid {
 	constructor(cols: number, accent: AccentKey = 'neutral', topRows = 3, cellRatio = 0.4) {
 		this.cols = cols;
 		this.accent = accentTypes(accent);
-		this.contentWidth = Math.min(cols - 8, 104);
+		// Two widths, as on the landing page: images, rules and code span the full
+		// content column, prose wraps narrower because a 114-character line is not
+		// a readable measure. The column also matches the value ArticlePage
+		// publishes as --grid-content-width, so the nav bar and the content now
+		// share an edge instead of missing it by five characters.
+		this.contentWidth = Math.min(cols - 4, 114);
+		this.textWidth = Math.min(this.contentWidth, 80);
 		this.startCol = Math.floor((cols - this.contentWidth) / 2);
 		this.twoCol = this.contentWidth >= 78;
 		this.cellRatio = cellRatio;
@@ -292,7 +299,7 @@ export class ArticleGrid {
 	// normal text, overlays are recorded per line.
 	paragraph(segments: string | TextSegment[], width?: number, col?: number, startRow?: number): number {
 		const segs: TextSegment[] = typeof segments === 'string' ? [{ text: segments }] : segments;
-		const w = width ?? this.contentWidth;
+		const w = width ?? this.textWidth;
 		const c = col ?? this.startCol;
 		const r0 = startRow ?? this.row;
 
@@ -633,7 +640,7 @@ export class ArticleGrid {
 		const besideRows = this.paragraph(besideSegs, narrowWidth, textCol, r0);
 		let r = r0 + Math.max(imgTotalH, besideRows) + 1;
 		if (belowText.trim()) {
-			const belowRows = this.paragraph(belowSegs, this.contentWidth, this.startCol, r);
+			const belowRows = this.paragraph(belowSegs, this.textWidth, this.startCol, r);
 			r += belowRows;
 		}
 		this.row = r + 1;
