@@ -621,6 +621,11 @@
 						"src": "/images/timeline/schroedinger-2d.png",
 						"label": "radial well, first modes",
 						"fit": "contain"
+					},
+					{
+						"src": "/images/timeline/schroedinger-portrait.png",
+						"label": "Schrödinger as the potential",
+						"fit": "contain"
 					}
 				]
 			},
@@ -666,10 +671,6 @@
 					"This was my first contact with the synthesis direction, constructing a circuit from a given impedance function instead of analyzing a given circuit. MiCir picked up the Cauer ladders shortly after, and SANE builds on the same theme today."
 				],
 				"images": [
-					{
-						"src": "/images/timeline/netsynth-title.png",
-						"label": "network synthesis"
-					},
 					{
 						"src": "/images/timeline/netsynth-cauer.png",
 						"label": "cauer ladder"

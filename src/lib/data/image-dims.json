@@ -167,10 +167,6 @@
 		1400,
 		1050
 	],
-	"/images/timeline/netsynth-title.png": [
-		1400,
-		1050
-	],
 	"/images/timeline/pathsim-2023.png": [
 		1300,
 		1040
@@ -194,6 +190,10 @@
 	"/images/timeline/schroedinger-2d.png": [
 		1100,
 		1334
+	],
+	"/images/timeline/schroedinger-portrait.png": [
+		1100,
+		873
 	],
 	"/images/timeline/slime.png": [
 		1105,
