@@ -33,7 +33,7 @@ a Web Worker, and holds 60 fps on million-polygon files in the
 instanced-WebGL renderer. Five PDK presets are unified across generators,
 viewer, and embed: SKY130, SG13G2, GF180MCU, ASAP7, FreePDK45.
 
-![Kai Harris' openframe CPU|left|46x14](/images/rapidpassives-kai-harris-cpu-render.png)
+![Kai Harris' openframe CPU|left|62x18](/images/rapidpassives-kai-harris-cpu-render.png)
 
 The largest layout put through it so far is Kai Harris' openframe CPU: a 230 MB
 GDS-II file, 22 layers, 11.3 million polygons.
