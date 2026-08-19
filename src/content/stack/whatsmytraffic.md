@@ -33,12 +33,13 @@ deployed from GitHub releases.
 
 ## History
 
-This started with a limit. Cloudflare Web Analytics stops at ten websites and I
-had run out. A 2 EUR per month VPS running Umami came out cheapest and by some
+This started with a limit: Cloudflare Web Analytics stops at ten websites,
+and I had run out. A 2 EUR per month VPS running Umami came out cheapest and by some
 distance the most flexible.
 
-What I kept from Cloudflare was the shape of the snippet: a script tag with a
-data attribute and nothing else to do. That set the pattern for everything after.
+I kept the shape of the Cloudflare snippet, a script tag with a data
+attribute and nothing else to do, and every later service follows the same
+pattern.
 
 Forms came from not wanting to pay Formspark for something the same box could
 already do, then passwordless auth, and most recently booking, from not wanting

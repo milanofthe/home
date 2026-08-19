@@ -37,12 +37,12 @@ falllow came out of the validation runs for [RapidFEM](/stack/rapidfem/) and
 [RapidMoM](/stack/rapidmom/): many medium-sized jobs, none of them large, all of
 them long. They occupied the machine I was working on for hours at a time.
 
-That load does not need current hardware, it needs a lot of ordinary cores
-elsewhere. Old gaming machines and desktops that idle through most of the day are
-already bought, and at present compute prices that is most of the argument.
+That kind of load does not need current hardware, just a lot of ordinary
+cores. Old gaming machines and desktops idle through most of the day and are
+already paid for, so that is where the cores come from.
 
-Three things followed. Away from the desk the same runs are a flat laptop
-battery, and the machines at home sit behind a router, which is why runners dial
-out rather than listen. Coding agents run test suites on whichever machine they
-are on. And in CI those runs are billed in Actions minutes, which is where the
-GitHub bridge comes from.
+A few practical constraints shaped the rest. Away from the desk the same runs
+drain the laptop battery, and the machines at home sit behind a router, which
+is why runners dial out rather than listen. Coding agents can offload test
+suites to the pool instead of blocking the machine they run on. And CI runs
+are billed in Actions minutes, which is what the GitHub bridge is for.

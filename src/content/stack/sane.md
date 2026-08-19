@@ -57,12 +57,12 @@ it came from.
 
 ![Symbolic graph|right|46x14](/screenshots/sane-graph.png)
 
-Compact models go the same way. The usual route into a simulator is an OSDI binary compiled from
-the Verilog-A source: fast, and opaque to everything upstream of it. SANE
-lowers the Verilog-A onto the same DAG instead, with no OSDI binary and no
-generated code. That costs work at model load and buys the derivative of
-every model parameter. Every parameter stays exposed to the autodiff, even in
-harmonic balance. Temperature is a first-class symbolic global, so .temp
+Compact models go the same way. The usual route into a simulator is an OSDI
+binary compiled from the Verilog-A source, which is fast but opaque to
+everything upstream of it. SANE instead lowers the Verilog-A onto the same
+DAG, with no OSDI binary and no generated code. This costs some extra work at
+model load, but in return every model parameter stays exposed to the
+autodiff, even in harmonic balance. Temperature is a first-class symbolic global, so .temp
 sweeps are physical and d(metric)/dT is exact. Noise sources (thermal, shot,
 flicker, Verilog-A noise) are summed in one registry.
 
@@ -103,11 +103,11 @@ the DAG is the general version of that.
 It also builds on work I did together with Ralf Sommer, the inventor of
 Analog Insydes, on reviving that tool from December 2024 on.
 
-What actually started it came from the other end of the stack.
+The direct trigger came from the other end of the stack:
 [FastSim](/stack/fastsim/) had just been built on SSA compute graphs, Python
 callbacks traced into a flat tape and differentiated symbolically, and
 carrying that representation over to circuits looked like the obvious next
-thing to try, with Analog Insydes in the back of my mind throughout. Matt
+step, with Analog Insydes in the back of my mind throughout. Matt
 Keeter's writing on SSA graphs for implicit surfaces was the other half of the
 push: the same representation, an entirely different field.
 

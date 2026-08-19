@@ -6,7 +6,7 @@
 	import { BOOKING_URL, CONTACT_EMAIL } from '$lib/config';
 
 	const INTRO =
-		'Custom solvers and engineering tools for client teams, built and integrated end to end. Numerics and UX for circuits and systems.';
+		'Custom solvers and engineering tools for client teams: dynamical systems, circuits and electromagnetics, from the numerics to the UI.';
 
 	const BASICS = 'Based in Germany. Working languages German and English, remote or on-site.';
 

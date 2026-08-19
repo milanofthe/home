@@ -39,10 +39,9 @@ result = prob.sweep(np.linspace(8e9, 12e9, 21))
 ## Two backends, one API
 
 The frequency-domain solver came first: solve each frequency directly, get
-S-parameters, fields and modes out of it. The DGTD backend was added for what
-the discontinuous Galerkin operator makes possible. It is element-local, which
-is the shape of computation a GPU wants, and it is where operator-level model
-order reduction can be tried. It also never forms a factorization, so a mesh
+S-parameters, fields and modes out of it. The DGTD backend was added later. The discontinuous
+Galerkin operator is element-local, which maps well onto GPUs and onto
+operator-level model order reduction. It also never forms a factorization, so a mesh
 that is too large to factor is still solvable.
 
 Both backends read the same geometry, the same materials and the same ports,
@@ -70,11 +69,11 @@ antennas, pyramidal horns, dielectric resonators, and on-chip passives.
 
 The UI is a notebook rather than a CAD program. Building a CAD front end is
 its own multi-year project, and the
-setups people write here are code anyway. What was missing was the part CAD
-does well: seeing the thing. So the notebook keeps the code workflow and puts
-interactive geometry, mesh and field renderers next to it, which makes a
-simulation inspectable at every stage instead of a black box behind a job
-queue. The renderer itself comes largely from
+setups people write here are code anyway. What was missing was the visual part:
+seeing the geometry, the mesh and the fields. So the notebook keeps the code
+workflow and puts interactive geometry, mesh and field renderers next to it,
+and the simulation stays inspectable at every stage instead of running as a
+black box behind a job queue. The renderer itself comes largely from
 [RapidPassives](/stack/rapidpassives/), extended for tetrahedral meshes and
 mesh display. Above: an iris-coupled waveguide
 filter driven from port 1 at 10.82 GHz, the field rendered as a point cloud
@@ -100,9 +99,9 @@ Since then it has been completely reimplemented: its own kernels, first- and
 second-order basis functions, and the assembly rebuilt to mix the two orders
 in one mesh. Mixed order is what the RFIC path needs. Fine structures drive
 the element count up until the degrees of freedom explode, and being able to
-spend second-order elements only where the field asks for them, while the
-already dense regions stay first order, is what keeps such a system small
-enough to solve at all.
+use second-order elements only where the field needs the accuracy, while the
+already dense regions stay first order, keeps such a system small enough to
+solve at all.
 
 The notebook UI and the RFIC path came with the reimplementation. Meshing and
 linear algebra currently come from gmsh and PARDISO; moving onto

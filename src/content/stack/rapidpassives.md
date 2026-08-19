@@ -16,7 +16,7 @@ browser. Everything runs client-side: no upload, no account, no data leaving
 the machine.
 
 Client-side is a hard requirement: an RFIC layout on a real process stack is
-not something a designer uploads to a stranger's server. It also means the generators and the viewer are the same code
+not something a designer uploads to someone else's server. It also means the generators and the viewer are the same code
 whether they run on rapidpassives.org, inside the RapidFEM notebook UI, or
 embedded in someone else's page.
 

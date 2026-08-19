@@ -9,7 +9,7 @@
 		"items": [
 			{
 				"heading": "// consulting",
-				"text": "Custom solvers and engineering tools, built and integrated end to end. Scoped into weekly sprints and multi-week projects.",
+				"text": "Custom solvers and engineering tools. Scoped into weekly sprints and multi-week projects.",
 				"link": "[ more about consulting -> ]"
 			},
 			{
@@ -118,7 +118,7 @@
 							}
 						]
 					},
-					"One architecture throughout: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy; the bet is that one coherent stack does better.",
+					"One architecture throughout: SSA-style compute graphs at the heart of the engines, Rust cores, Python APIs, browser interfaces. The commercial EDA world splits these levels across vendors and decades of legacy; I think one coherent stack can do better.",
 					"Most of it is one year: RapidFEM and FastSim from April, then SANE, RSLAB, RapidMoM and RapidMesh from June, the fields, circuits and foundations levels growing together rather than in sequence.",
 					"RSLAB took PARDISO's place and is benchmarked against it. RapidMesh is the least finished: its 2D path meshes for RapidMoM and does exact element budgets, which gmsh does not, while the 3D path is slower than gmsh and still leaves slivers on some geometries, so RapidFEM meshes with gmsh a while longer."
 				],
@@ -196,7 +196,7 @@
 							}
 						]
 					},
-					"The same system model runs against lab experiments like BABY and LIBRA and against whole power-plant concepts, and a thirty-component bubbler transient solves in seconds, which is what makes the Monte Carlo and uncertainty quantification runs affordable.",
+					"The same system model runs against lab experiments like BABY and LIBRA and against whole power-plant concepts, and a thirty-component bubbler transient solves in seconds, fast enough for Monte Carlo and uncertainty quantification runs.",
 					{
 						"text": "PathView came out of the same collaboration: it started at the Plasma Science and Fusion Center as a way to build and inspect PathSim models visually. From November 2025 I rewrote it on my own stack and it moved to the PathSim organization, where it is hosted free for everyone.",
 						"links": [
@@ -238,7 +238,7 @@
 				"project": "pathsim",
 				"body": [
 					{
-						"text": "The repository had been public since the summer of 2024, but March 2025 is when I actually announced PathSim: an open alternative to Simulink, with a clean API, mutability from the get-go, and solvers that handle stiffness and algebraic loops without ceremony. Published in the Journal of Open Source Software, released on PyPI and conda-forge, and picked up faster than I expected.",
+						"text": "The repository had been public since the summer of 2024, but March 2025 is when I actually announced PathSim: an open alternative to Simulink, with a clean API, mutability from the get-go, and robust solvers (stiffness, algebraic loops, no problem). Published in the Journal of Open Source Software, released on PyPI and conda-forge, and picked up faster than I expected.",
 						"links": [
 							{
 								"phrase": "PathSim",
@@ -328,7 +328,7 @@
 						]
 					},
 					{
-						"text": "Picking those ideas back up on my own stack in June 2026 is what became SANE.",
+						"text": "In June 2026 I picked those ideas back up on my own stack; this became SANE.",
 						"links": [
 							{
 								"phrase": "SANE",
@@ -344,7 +344,7 @@
 				"project": "pathsim",
 				"body": [
 					{
-						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles rather than copied from the tool everyone already had. It stayed on my own machine for a year and a half, versioned as 31 zip snapshots, before the repository went public in the summer of 2024. The earliest snapshot, December 2023, already contains Simulation, Connection and the block names the API uses today.",
+						"text": "Started in early 2023 at the beginning of the PhD as an analog computer emulator side project, PathSim grew into a full hybrid system modeling and simulation framework: custom solvers, an event system for discrete behaviour alongside continuous dynamics, and a block-diagram API built from first principles. It stayed on my own machine for a year and a half, versioned as 31 zip snapshots, before the repository went public in the summer of 2024. The earliest snapshot, December 2023, already contains Simulation, Connection and the block names the API uses today.",
 						"links": [
 							{
 								"phrase": "PathSim",
@@ -353,7 +353,7 @@
 						]
 					},
 					"The same stretch brought three more: a minimalistic harmonic balance framework for nonlinear periodic steady-state response, a symbolic circuit analysis tool inspired by Analog Insydes, and a finite volume solver for quasi-electrostatic frequency-domain analysis that came out of the sensor modeling at the institute.",
-					"The solver needed a mesh, so it got one: a 2D QuadTree that refines toward edges and balances itself. Writing my own mesher for the first time is where the idea started that a solver and its mesher should be designed against each other, which is what RapidMesh is now."
+					"The solver needed a mesh, so I wrote a 2D QuadTree mesher that refines toward edges and balances itself. It was my first mesher, and the idea that a solver and its mesher should be designed together stuck; RapidMesh follows the same principle today."
 				],
 				"images": [
 					{
@@ -491,9 +491,9 @@
 			},
 			{
 				"period": "2021-2022",
-				"heading": "things you could click",
+				"heading": "desktop toys",
 				"body": [
-					"A run of interactive desktop toys, all pygame, all packaged with PyInstaller into a single executable so I could hand someone a file instead of an install guide. A Verlet physics sandbox with numba-compiled constraint solving, a few thousand particles on collision courses, a random polygon generator built out of packed circles, and a slime mould that grows its own transport network out of a few hundred thousand agents following their own trails, numba on the CPU and CUDA when there was a GPU.",
+					"A run of interactive desktop toys, all pygame, all packaged with PyInstaller into a single executable so I could hand someone a file instead of an install guide. A Verlet physics sandbox with numba-compiled constraint solving, a few thousand particles on collision courses, a random polygon generator built out of packed circles, and a slime mould simulation with a few hundred thousand trail-following agents (numba on the CPU, CUDA when a GPU was available).",
 					"The one I kept using was the interactive Laplace domain: drag poles and zeros around the complex plane and watch magnitude, phase and step response follow in real time. It went into the tutorials."
 				],
 				"images": [
@@ -526,9 +526,9 @@
 				"project": "sane",
 				"body": [
 					"Master of science with honors, thesis graded excellent. Written at the Institut fuer CMOS Design between October 2022 and March 2023: area optimized neural network based modelling of passive magnetic structures for chip-level integration.",
-					"Three things had to be built for it. Polygonal windings parametrised down to the geometry, so a spiral inductor is a handful of numbers rather than a drawing. Infineon's B12HFC layerstack reduced to the layers an EM solver actually needs, because the full stack makes the simulation unaffordable. And a completely analytical derivation of the first and second partial derivatives of RLCk transfer functions with respect to the circuit parameters, read straight off the block structure of the MNA matrices.",
+					"Three things had to be built for it: a polygonal winding parametrization that reduces a spiral inductor to a handful of geometric parameters, a reduction of Infineon's B12HFC layerstack to the layers an EM solver actually needs (the full stack makes the simulation unaffordable), and a fully analytical derivation of the first and second partial derivatives of RLCk transfer functions with respect to the circuit parameters, read off the block structure of the MNA matrices.",
 					{
-						"text": "Those derivative stencils are what SANE now runs symbolically over a whole compute graph, and the windings and layerstacks are what RapidPassives generates today. At the time the point was to stop the optimizer finite-differencing.",
+						"text": "The goal back then was to give the optimizer exact gradients instead of finite differences. Today SANE computes the same sensitivities symbolically over a whole compute graph, and RapidPassives generates the windings and layerstacks.",
 						"links": [
 							{
 								"phrase": "SANE",
@@ -574,7 +574,7 @@
 				"heading": "writing it down",
 				"body": [
 					"The 120-page LaTeX manuscript on linear system theory, written over the summer of 2021 to help out a friend: Laplace analysis, poles and zeros in the complex plane, frequency response, state space. It has since been translated to English.",
-					"A separate writeup on state-space representations of linear time-invariant network models came first, in 2020. And for the tutorials I animated the parts that are hard to draw once on a blackboard: the rotating phasor, resonance sweeping through a Bode plot, the step response of a damped oscillator."
+					"A separate writeup on state-space representations of linear time-invariant network models came first, in 2020. And for the tutorials I animated the parts that are hard to draw on a blackboard: the rotating phasor, resonance sweeping through a Bode plot, the step response of a damped oscillator."
 				],
 				"images": [
 					{
@@ -614,8 +614,8 @@
 				"period": "2020-2021",
 				"heading": "eigenmodes",
 				"body": [
-					"A finite-difference eigenmode solver for the Schrödinger equation, 1D and 2D: discretise the Laplacian, add the potential on the diagonal, hand the matrix to an eigensolver and read the bound states off it.",
-					"The part I kept coming back to was the input. Any picture could be a potential, hand drawn or otherwise, so the modes of a well, a portrait or a photograph were all one run apart. The same trick as a field solver: the operator does not care what the geometry means."
+					"A finite-difference eigenmode solver for the Schrödinger equation, 1D and 2D: discretize the Laplacian, add the potential on the diagonal, and hand the matrix to an eigensolver to get the bound states and energy levels.",
+					"Since the potential is just an array over the grid, anything works as input: potential wells, hand-drawn sketches, even photographs (the project folder still has Einstein and an alpaca in it)."
 				],
 				"images": [
 					{
@@ -630,9 +630,9 @@
 				"heading": "before GitHub",
 				"project": "sane",
 				"body": [
-					"The first real project never made it to a repository. MiCir was a symbolic network analysis library written in Python from nothing: my own matrix class, my own complex arithmetic, my own polynomial and symbolic element types in s. Not because there was no numpy, but because I wanted to know what numpy was doing before I let it do it for me.",
+					"The first real project never made it to a repository. MiCir was a symbolic network analysis library written in Python from scratch: my own matrix class, my own complex arithmetic, my own polynomial and symbolic element types in s. There was numpy, of course, but I wanted to understand what it was doing before using it.",
 					{
-						"text": "It read netlists, solved networks symbolically, synthesised Cauer ladders from a driving-point impedance, and drew its own Bode and locus plots. In February 2020 I typeset the whole thing in LaTeX. It is the same problem SANE solves today: keep the circuit's symbolic structure instead of collapsing it into numbers, and read the answers off it.",
+						"text": "It read netlists, solved networks symbolically, synthesised Cauer ladders from a driving-point impedance, and drew its own Bode and locus plots. In February 2020 I typeset the whole thing in LaTeX. SANE builds on the same idea today: keep the circuit's symbolic structure instead of collapsing it into numbers.",
 						"links": [
 							{
 								"phrase": "SANE",
@@ -640,7 +640,7 @@
 							}
 						]
 					},
-					"The same folder holds the detours: Mandelbrot sets in the complex plane at resolutions my laptop resented, Monte Carlo estimates of pi, a DFT written out by hand."
+					"The same folder holds the detours: Mandelbrot fractals in the complex plane, Monte Carlo estimates of pi, a DFT written out by hand."
 				],
 				"images": [
 					{
@@ -664,7 +664,7 @@
 				"accent": "sane",
 				"body": [
 					"A seminar talk at the institute for electronic devices and circuits, on the synthesis of passive one-ports: which driving-point functions a network of resistors, inductors and capacitors can realise at all, and how to build one that does. Positive-real functions, Foster and Cauer ladders, and the Bott-Duffin recursion that reaches any of them.",
-					"Analysis run backwards. It is the first thing I worked on that turns an expression into a circuit rather than the other way round, which is what SANE does now."
+					"This was my first contact with the synthesis direction, constructing a circuit from a given impedance function instead of analyzing a given circuit. MiCir picked up the Cauer ladders shortly after, and SANE builds on the same theme today."
 				],
 				"images": [
 					{
@@ -704,7 +704,7 @@
 				"heading": "B.Sc. electrical engineering, TU Braunschweig",
 				"body": [
 					"Bachelor of science, thesis graded excellent. Written over the winter of 2020/21: order reduction of interconnect network models for efficient calculation with SPICE simulators.",
-					"A reduced RLC network model is only usable if it stays passive and stable, and both properties are readable off the structure of the MNA system matrices before any reduction happens. That is where I first met rational fitting, passivity enforcement and the papers that later became my vector fitting implementation."
+					"A reduced RLC network model is only usable if it stays passive and stable, and both properties are readable off the structure of the MNA system matrices before any reduction happens. Working on this I first encountered rational fitting, passivity enforcement, and the papers my vector fitting implementation later grew from."
 				],
 				"images": [
 					{
@@ -811,7 +811,7 @@
 	},
 	"projects": {
 		"heading": "THE STACK",
-		"intro": "One vertically integrated simulation stack for electronics: from electromagnetic fields to circuits to systems. Open source where it builds trust, source-available and commercially licensed where it creates value. Free for academia.",
+		"intro": "One vertically integrated simulation stack, from electromagnetic fields through circuits to dynamical systems. Partly MIT open source, partly source-available with commercial licenses. Free for academia.",
 		"groups": [
 			{
 				"heading": "systems",
@@ -913,7 +913,7 @@
 						"heading": "RSLAB",
 						"headingType": "rslab",
 						"paragraphs": [
-							"A sparse direct solver for real and complex matrices, a PARDISO-style embeddable backend in pure Rust with no BLAS, LAPACK, or MKL dependency. Symmetric LDLT, unsymmetric LU, and a KLU path for circuit matrices, plus iterative solvers and preconditioners. Settings pick themselves: a deterministic heuristic (nested-dissection bakeoff, one-time hardware calibration), no ML in the default path. Mixed-precision solves come with an honest backward-error certificate, and peak memory and runtime are predicted exactly from the symbolic structure before any numeric work."
+							"A sparse direct solver for real and complex matrices, a PARDISO-style embeddable backend in pure Rust with no BLAS, LAPACK, or MKL dependency. Symmetric LDLT, unsymmetric LU, and a KLU path for circuit matrices, plus iterative solvers and preconditioners. Settings come from a deterministic heuristic (nested-dissection bakeoff, one-time hardware calibration), no ML in the default path. Mixed-precision solves come with a backward-error certificate, and peak memory and runtime are predicted exactly from the symbolic structure before any numeric work."
 						],
 						"metrics": "bit-identical across thread counts / faster than faer, ~5x to MKL PARDISO / PyPI",
 						"statsText": "github.com/milanofthe/rslab"
@@ -934,7 +934,7 @@
 	},
 	"other": {
 		"heading": "OTHER PROJECTS",
-		"intro": "Side quests: tools I built because I wanted them to exist.",
+		"intro": "Side quests: smaller tools I built for my own use.",
 		"items": [
 			{
 				"id": "pysimhub",

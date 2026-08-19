@@ -81,8 +81,7 @@ scales down to lab experiments like BABY and LIBRA.
 A component's fidelity is a property of the block, not of the framework, so a
 residence-time approximation can be swapped for a finite element solve without
 touching the system around it. A thirty-component bubbler transient solves in
-seconds, which is what makes the Monte Carlo and uncertainty quantification
-runs affordable.
+seconds, fast enough for Monte Carlo and uncertainty quantification runs.
 
 The workflow is written up in *Physics-informed tritium fuel cycle modelling
 workflow for fusion reactors*

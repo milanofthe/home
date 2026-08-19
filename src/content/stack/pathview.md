@@ -52,11 +52,11 @@ annotation next to the diagram it describes.
 
 ## Streaming results
 
-A simulation does not run to completion and then draw. The Python loop runs
-autonomously in a Web Worker and pushes results at about 10 Hz, the main
-thread accumulates them in a queue, and every animation frame extends the
-existing Plotly traces rather than redrawing them. The simulation never waits
-for the plot, and the plot never blocks the simulation.
+Results stream while the simulation runs. The Python loop runs autonomously
+in a Web Worker and pushes results at about 10 Hz, the main thread
+accumulates them in a queue, and every animation frame extends the existing
+Plotly traces rather than redrawing them, so the plot never slows down the
+simulation.
 
 ## Blocks and toolboxes
 

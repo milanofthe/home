@@ -74,7 +74,7 @@ Kitchin. After talking with him I forked it, in late June 2026. feral was
 real-valued only, so the first piece of work was making it generic over the
 scalar type, without which it is of no use to electromagnetics at all.
 
-What it became after that was decided by the matrices it had to solve. FEM
+After that, development followed the matrices it had to solve. FEM
 and MoM systems came first, for [RapidFEM](/stack/rapidfem/) and
 [RapidMoM](/stack/rapidmom/); circuit matrices came later, with
 [SANE](/stack/sane/), and brought the KLU path with them. The a-priori
