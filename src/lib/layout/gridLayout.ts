@@ -281,9 +281,13 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 		// picture under it. Below the width where two columns would starve the prose,
 		// the cards stack and each one takes the band alone.
 		if (region.type === 'project-pair' && region.cards?.length) {
-			const gap = 4;
+			// Same gap the full-width tile rows use, so a card frame comes out at the
+			// same 56 columns as a tile there instead of one short of it.
+			const gap = 2;
 			const band = Math.min(cols - 4, 114);
-			const twoUp = region.cards.length > 1 && band >= 84;
+			// The column width follows the band, not the number of cards: a lone card
+			// keeps the same 56 columns as a paired one and is simply centred.
+			const twoUp = band >= 84;
 			const colW = twoUp ? Math.floor((band - gap) / 2) : Math.min(band, 60);
 			const groups = twoUp ? [region.cards] : region.cards.map((c) => [c]);
 
