@@ -45,12 +45,16 @@ matrix follows, so the reported residual is measured.
 ## History
 
 I already had [RapidFEM](/stack/rapidfem/) for the production work, which is a
-much larger body of code. nanofem was the other direction: see how far 1000
-lines get you, and end up with something you can actually read, because there is
-simply less of it. It ended at 954.
+much larger body of code. The hard part of FEM is the meshing, and Gmsh is state
+of the art there. The formulation itself is not complicated, so 1000 lines
+looked like enough to find out, with the mesh coming in from outside as the
+natural cut.
 
-The report is sized to match, short enough to read next to the code in a day. It
-derives the formulation, maps it to the code section by section, and lists what
-was left out and why.
+The linear solver usually comes from outside as well, PARDISO or Accelerate or
+my own [RSLAB](/stack/rslab/). Here it fit in the budget, and I wanted no
+dependencies at all, so the ordering and the factorization sit in the file with
+everything else. It ended at 954.
+
+The report is sized to match, short enough to read next to the code in a day.
 
 [nanospice](/stack/nanospice/) asks the same question of circuit simulation.
