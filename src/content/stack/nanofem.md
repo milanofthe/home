@@ -44,9 +44,12 @@ matrix follows, so the reported residual is measured.
 
 ## History
 
-nanofem came directly after [nanospice](/stack/nanospice/), same rule for the
-same reason: a solver you can read and understand in a day, with a report short
-enough to read next to it and a talk that fits in thirty minutes.
+I already had [RapidFEM](/stack/rapidfem/), a production Maxwell solver with two
+backends, second order elements, modal ports and model order reduction. It is a
+lot of code, and that is what it costs to be that solver. nanofem was the other
+direction: see how far 1000 lines get you, and end up with something readable
+because there is simply less of it. [nanospice](/stack/nanospice/) had answered
+the same question for circuits a few days earlier.
 
 Circuit simulation is a settled algorithm set and the work is fitting it; a
 field solver spends the budget elsewhere. The linear algebra is the largest
@@ -57,4 +60,5 @@ room for the physics.
 The final count is 954 of 1000. The report lists what the remaining 46 would not
 have bought, with estimates: second order elements at 150 to 190 lines, modal
 waveguide ports and a supernodal factorization at 200 each, adaptive refinement
-at 100.
+at 100. The report itself is sized like the solver, short enough to read next to
+it in a day.
