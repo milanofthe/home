@@ -158,6 +158,18 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		type: 'embedded', lines: [], frameColor: 'falllow',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'falllow-landing', label: 'falllow' }]
+	},
+	// No frameColor: the two reading projects carry no brand of their own and
+	// take the neutral grey frame.
+	nanospice: {
+		type: 'embedded', lines: [],
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
+		tiles: [{ id: 'nanospice-title', label: 'Talk' }, { id: 'nanospice-osc', label: 'Ring Oscillator' }]
+	},
+	nanofem: {
+		type: 'embedded', lines: [],
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
+		tiles: [{ id: 'nanofem-mesh', label: 'Antenna Mesh' }, { id: 'nanofem-field', label: 'Field at Resonance' }]
 	}
 };
 

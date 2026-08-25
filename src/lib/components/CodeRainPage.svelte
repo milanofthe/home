@@ -34,7 +34,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow' | 'neutral';
 		themeParam?: boolean;
 		fit?: 'cover' | 'contain';
 		background?: string;
@@ -63,7 +63,11 @@
 		'thesisos-landing': { name: 'Landing', url: 'https://thesisos.io', screenshot: '/screenshots/thesisos-landing.png', color: 'thesisos', themeParam: false },
 		'thesisos-graph': { name: 'Citation Graph', url: 'https://thesisos.io/graph?root=cb35ff8e-d0f5-437c-9528-89307638622a', screenshot: '/screenshots/thesisos-graph.png', color: 'thesisos', themeParam: false },
 		'whatsmytraffic-landing': { name: 'WhatsMyTraffic', url: 'https://whatsmytraffic.com', screenshot: '/screenshots/whatsmytraffic-landing.png', color: 'whatsmytraffic', themeParam: false },
-		'falllow-landing': { name: 'falllow', url: 'https://falllow.com', screenshot: '/screenshots/falllow-landing.png', color: 'falllow', themeParam: false }
+		'falllow-landing': { name: 'falllow', url: 'https://falllow.com', screenshot: '/screenshots/falllow-landing.png', color: 'falllow', themeParam: false },
+		'nanospice-title': { name: 'How much SPICE in 1000 lines', url: 'https://github.com/milanofthe/nanospice', screenshot: '/images/nanospice-slide-title.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' },
+		'nanospice-osc': { name: 'Ring Oscillator', url: 'https://github.com/milanofthe/nanospice', screenshot: '/images/nanospice-slide-osc.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' },
+		'nanofem-mesh': { name: 'Antenna Mesh', url: 'https://github.com/milanofthe/nanofem', screenshot: '/images/nanofem-mesh.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' },
+		'nanofem-field': { name: 'Field at Resonance', url: 'https://github.com/milanofthe/nanofem', screenshot: '/images/nanofem-field.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' }
 	};
 
 	// Video tile data

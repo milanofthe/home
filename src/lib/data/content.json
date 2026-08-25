@@ -1013,7 +1013,7 @@
 				"heading": "nanospice",
 				"url": "https://github.com/milanofthe/nanospice",
 				"paragraphs": [
-					"A classic SPICE circuit simulator in one Rust source file, capped at 1000 lines of code. MNA, Newton-Raphson with junction limiting, trapezoidal transient with LTE timestep control, AC, and compact models for diodes, MOSFETs, JFETs and BJTs. The report derives every algorithm and maps it to the code."
+					"A classic SPICE circuit simulator in one Rust source file, capped at 1000 lines of code. MNA, Newton-Raphson, transient, AC, eleven device types."
 				],
 				"statsText": "github.com/milanofthe/nanospice"
 			},
@@ -1022,7 +1022,7 @@
 				"heading": "nanofem",
 				"url": "https://github.com/milanofthe/nanofem",
 				"paragraphs": [
-					"A 3D finite element electromagnetic field solver under the same 1000 line cap. First order Nedelec edge elements on tetrahedra, perfectly matched layers, lumped ports and scattering parameters, solved by a sparse complex symmetric LDL^T behind a nested dissection ordering."
+					"A 3D finite element electromagnetic field solver in one Rust source file, capped at 1000 lines of code. Nedelec edge elements, perfectly matched layers, S parameters."
 				],
 				"statsText": "github.com/milanofthe/nanofem"
 			}

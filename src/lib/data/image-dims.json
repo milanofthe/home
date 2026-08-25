@@ -27,13 +27,17 @@
 		1600,
 		906
 	],
-	"/images/nanospice-bench.png": [
-		1400,
-		624
+	"/images/nanospice-slide-budget.png": [
+		1386,
+		780
 	],
-	"/images/nanospice-ring.png": [
-		1400,
-		457
+	"/images/nanospice-slide-osc.png": [
+		1386,
+		780
+	],
+	"/images/nanospice-slide-title.png": [
+		1386,
+		780
 	],
 	"/images/pathsim-pitch.png": [
 		1193,

@@ -9,61 +9,41 @@ license: MIT open source
 cta1: [ View on GitHub -> ]|https://github.com/milanofthe/nanospice
 ---
 
-nanospice is a SPICE circuit simulator in one Rust source file, src/main.rs, with
-no dependencies outside the standard library. A test counts the nonblank,
-noncomment lines of that file and fails the build above 1000. The current count
-is 1000.
+![Where the lines go|right|46x15|contain](/images/nanospice-slide-budget.png)
 
-The point of the cap is that every feature has to displace another one, which
-makes the cost of each decision explicit and keeps the whole simulator readable
-in one sitting.
+nanospice is a classic SPICE circuit simulator in one Rust source file, capped
+at 1000 lines of code by a test that counts the file and fails the build above
+it. Operating point, DC sweep, transient with an adaptive timestep and AC, on
+modified nodal analysis with branch currents for voltage sources and inductors.
+Newton-Raphson with pnjlim junction limiting, gmin stepping and source stepping
+as operating point fallbacks, trapezoidal companion models with local truncation
+error timestep control, and a sparse LU generic over real and complex scalars.
 
-## What fits in 1000 lines
+Every device stamp goes through two Verilog-A style contribution primitives, one
+for currents and one for voltage-defined branches, which is what leaves room for
+eleven device types: diodes, level 1 MOSFETs, JFETs, Ebers-Moll BJTs, the
+passives, sources with sine, pulse and piecewise linear waveforms, and
+controlled sources. Junction capacitances desugar into internal graded
+capacitors instead of separate model code.
 
-![Ring oscillator: three inverters in a loop|right|46x15|contain](/images/nanospice-ring.png)
+![Results: it oscillates|left|46x15|contain](/images/nanospice-slide-osc.png)
 
-Four analyses: operating point, DC source sweep, transient with an adaptive
-timestep, and AC. Modified nodal analysis with branch currents for voltage
-sources, inductors and controlled sources. Every device stamp goes through two
-Verilog-A style contribution primitives, one for currents and one for
-voltage-defined branches, which is what keeps eleven device types inside the
-budget.
+Twenty three tests check the binary against analytic references: RC and RL step
+responses, LC amplitude and energy conservation, MOSFET, JFET and BJT bias
+points, and a randomized resistor ladder against a Thevenin reduction computed
+inside the test. That ladder is also the scaling picture. Below a thousand nodes
+the process startup dominates; beyond it the wall clock follows the node count
+linearly out to thirty thousand nodes.
 
-Newton-Raphson with pnjlim junction limiting, and gmin stepping and source
-stepping as operating point fallbacks. Transient uses trapezoidal companion
-models, a quadratic predictor, local truncation error timestep control, and
-waveform breakpoints with damped backward Euler restart steps. AC linearizes at
-the operating point. The linear solver is a sparse LU with partial pivoting,
-generic over real and complex scalars.
+Not in it: subcircuits, .param, noise analysis. The report lists them with the
+lines each would have cost.
 
-The device set is diodes, MOSFETs at level 1, JFETs, Ebers-Moll BJTs, resistors,
-capacitors, inductors, independent sources with sine, pulse and piecewise linear
-waveforms, and voltage and current controlled sources. Junction capacitances
-desugar into internal graded capacitors rather than into separate model code.
+## History
 
-## What it costs
+A side project, to see how far 1000 lines of code get you. The report that came
+out of it derives every algorithm, traces the algorithm set back to its Berkeley
+origins, and maps both to the code section by section; there are slides for a
+thirty minute talk on the same material.
 
-![Operating point of resistor ladders|left|46x15|contain](/images/nanospice-bench.png)
-
-Twenty three integration tests run the release binary against analytic
-references: RC and RL step responses, an RC corner frequency, LC amplitude and
-energy conservation, MOSFET, JFET and BJT bias points, an npn/pnp symmetry
-check, and a randomized resistor ladder verified against a Thevenin reduction
-computed inside the test.
-
-The ladder benchmark is the scaling picture. Below about a thousand nodes the
-1.7 ms process startup dominates; beyond it the wall clock follows the node
-count linearly through the last point, 30 ms for a thirty thousand node ladder.
-
-Not supported, and listed with reasons in the report: subcircuits, .param, noise
-analysis.
-
-## The report
-
-The repository carries a report that traces the algorithm set to its Berkeley
-origins, derives every algorithm in the simulator, explains the design decisions
-the budget forced, and maps both to the code section by section. Slides for a
-thirty minute talk cover the same material. Both are committed as prebuilt PDFs,
-and the plots in them regenerate from the release binary with one command.
-
-[nanofem](/stack/nanofem/) is the same exercise for electromagnetic fields.
+[nanofem](/stack/nanofem/) came out of the same question, for electromagnetic
+fields.
