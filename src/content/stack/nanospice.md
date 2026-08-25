@@ -41,8 +41,7 @@ device models together come to 64 lines.
 SPICE 2G6 is 14595 nonblank, noncomment lines of Fortran, SPICE 3f5 126697 lines
 of C, ngspice today 562128. Most of that is device models, UI and compatibility
 rather than algorithm, and I wanted to know what is left once all of it is gone.
-A thousand lines is roughly where something is still readable in a day: one
-file, one sitting, nothing to chase down.
+A thousand lines is roughly where something is still readable in a day.
 
 It was enough for the 1975 core, complete. The algorithm set is fifty years old
 and still carries a working simulator.
