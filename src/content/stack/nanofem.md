@@ -36,11 +36,6 @@ dissection, then a sparse LDLT, equilibrated with the inverse square root of the
 diagonal, followed by one step of iterative refinement per solve against the
 unscaled matrix, which also yields a residual.
 
-Two models come with it, a 2.45 GHz patch antenna terminated by a perfectly
-matched layer and a shielded microstrip line with a lumped port at each end. Not
-in it: modal waveguide ports, adaptive refinement, elements beyond first order,
-dispersive materials.
-
 ## History
 
 A side project, to see how far 1000 lines of code get you, this time for fields
