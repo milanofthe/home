@@ -169,7 +169,7 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 	nanofem: {
 		type: 'embedded', lines: [],
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
-		tiles: [{ id: 'nanofem-mesh', label: 'Antenna Mesh' }, { id: 'nanofem-field', label: 'Field at Resonance' }]
+		tiles: [{ id: 'nanofem-field', label: 'Field at Resonance' }, { id: 'nanofem-mesh', label: 'Antenna Mesh' }]
 	}
 };
 
