@@ -20,7 +20,7 @@ and complex scalars.
 
 ## Two primitives carry every device
 
-![Where the lines go|right|46x15|contain](/images/nanospice-slide-budget.png)
+![Line budget by code section|right|46x15|contain](/images/nanospice-slide-budget.png)
 
 Every device stamp goes through two Verilog-A style contribution primitives, one
 for currents and one for voltage-defined branches. That is what leaves eleven
@@ -33,7 +33,7 @@ carries charge storage of its own and the AC path sees them as capacitors.
 The parser is the largest section at 275 lines, ahead of the solver at 142 and
 the sparse LU at 121. Device models are 64 lines for all eleven.
 
-![Results: it oscillates|left|46x15|contain](/images/nanospice-slide-osc.png)
+![Ring oscillator, transient|left|46x15|contain](/images/nanospice-slide-osc.png)
 
 ## History
 

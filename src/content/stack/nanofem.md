@@ -19,7 +19,7 @@ volume conductivity and conductor sheets with the skin effect all fit.
 
 ## Three decisions buy the room
 
-![The reference antenna, cut open at the feed|right|46x15|contain](/images/nanofem-mesh.png)
+![Patch antenna mesh, cut at the feed|right|46x15|contain](/images/nanofem-mesh.png)
 
 Sorting the mesh vertices on input makes every local edge run from the lower to
 the higher global node. Neighboring elements then agree on their Whitney
@@ -34,7 +34,7 @@ a sweep assembles once no matter how many loss mechanisms are in the model.
 Storing the PML stretch separately from the permittivity lets the conduction
 current reuse the mass entry instead of building a second one.
 
-![The field of the antenna at its resonance|left|46x15|contain](/images/nanofem-field.png)
+![Field cut at the resonance|left|46x15|contain](/images/nanofem-field.png)
 
 The system is complex symmetric and solved directly: geometric nested
 dissection, then a sparse LDLT, equilibrated with the inverse square root of the
@@ -44,12 +44,11 @@ matrix follows, so the reported residual is measured.
 
 ## History
 
-I already had [RapidFEM](/stack/rapidfem/), a production Maxwell solver: two
-backends, modal ports, and the machinery to mix first and second order elements
-within one mesh. It is a lot of code, and that is what it costs to be that
-solver. nanofem was the other direction: see how far 1000 lines get you, and
-end up with something readable because there is simply less of it. [nanospice](/stack/nanospice/) had answered
-the same question for circuits a few days earlier.
+I already had [RapidFEM](/stack/rapidfem/) for the production work, which is a
+much larger body of code. nanofem was the other direction: see how far 1000
+lines get you, and end up with something readable because there is simply less
+of it. [nanospice](/stack/nanospice/) had answered the same question for
+circuits a few days earlier.
 
 Circuit simulation is a settled algorithm set and the work is fitting it; a
 field solver spends the budget elsewhere. The linear algebra is the largest

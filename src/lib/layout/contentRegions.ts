@@ -164,12 +164,12 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 	nanospice: {
 		type: 'embedded', lines: [],
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
-		tiles: [{ id: 'nanospice-title', label: 'Talk' }, { id: 'nanospice-osc', label: 'Ring Oscillator' }]
+		tiles: [{ id: 'nanospice-title', label: 'Talk slides' }, { id: 'nanospice-osc', label: 'Ring oscillator' }]
 	},
 	nanofem: {
 		type: 'embedded', lines: [],
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
-		tiles: [{ id: 'nanofem-field', label: 'Field at Resonance' }, { id: 'nanofem-mesh', label: 'Antenna Mesh' }]
+		tiles: [{ id: 'nanofem-field', label: 'Field cut' }, { id: 'nanofem-mesh', label: 'Patch antenna mesh' }]
 	}
 };
 
