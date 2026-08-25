@@ -38,16 +38,17 @@ device models together come to 64 lines.
 
 ## History
 
-SPICE 2G6 is 14595 nonblank, noncomment lines of Fortran, SPICE 3f5 126697 lines
-of C, ngspice today 562128. Most of that is device models, UI and compatibility
-rather than algorithm, and I wanted to know what is left once all of it is gone.
-A thousand lines is roughly where something is still readable in a day.
+After [SANE](/stack/sane/) I wanted to do a bit of classic SPICE, and talking to
+people from the SPICE world made the idea concrete. VACASK is around twenty
+thousand lines where ngspice is over half a million, which raised the question
+of how much further down it goes. How much do you actually need?
 
-It was enough for the 1975 core, complete. The algorithm set is fifty years old
-and still carries a working simulator.
+The cap is an older habit. On the Python version of [PathSim](/stack/pathsim/) I
+spent a long time holding everything under 2000 lines, after George Hotz's
+tinygrad. A thousand turned out to be enough here for the 1975 core, complete;
+the algorithm set is fifty years old and still carries a working simulator.
 
 The report is sized to match, and so is the talk: thirty minutes, slides in the
-repository. It derives every algorithm and traces the set back to its Berkeley
-origins, from Rohrer's 1969 class through CANCER to SPICE.
+repository.
 
 [nanofem](/stack/nanofem/) asks the same question of electromagnetic fields.
