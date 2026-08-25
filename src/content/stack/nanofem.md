@@ -46,14 +46,11 @@ matrix follows, so the reported residual is measured.
 
 I already had [RapidFEM](/stack/rapidfem/) for the production work, which is a
 much larger body of code. nanofem was the other direction: see how far 1000
-lines get you, and end up with something readable because there is simply less
-of it. [nanospice](/stack/nanospice/) had answered the same question for
-circuits a few days earlier.
+lines get you, and end up with something you can actually read, because there is
+simply less of it. It ended at 954.
 
-The linear algebra is the largest block at 213 lines for the ordering and the
-factorization, the mesh reader and the deck parser another 175. The final count
-is 954 of 1000. The report lists what the remaining 46 would not have bought,
-with estimates: second order elements at 150 to 190 lines, modal waveguide ports
-and a supernodal factorization at 200 each, adaptive refinement at 100. The
-report itself is sized like the solver, short enough to read next to it in a
-day.
+The report is sized to match, short enough to read next to the code in a day. It
+derives the formulation, maps it to the code section by section, and lists what
+was left out and why.
+
+[nanospice](/stack/nanospice/) asks the same question of circuit simulation.
