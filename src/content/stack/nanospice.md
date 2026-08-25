@@ -30,8 +30,9 @@ waveforms, and voltage and current controlled sources. Junction capacitances
 desugar in the parser into internal graded capacitors, so no device model
 carries charge storage of its own and the AC path sees them as capacitors.
 
-The parser is the largest section at 275 lines, ahead of the solver at 142 and
-the sparse LU at 121. Device models are 64 lines for all eleven.
+Reading netlists costs more code than solving them: the parser is the largest
+section in the file, ahead of the solver and the sparse LU, while all eleven
+device models together come to 64 lines.
 
 ![Ring oscillator, transient|left|46x15|contain](/images/nanospice-slide-osc.png)
 
@@ -39,18 +40,15 @@ the sparse LU at 121. Device models are 64 lines for all eleven.
 
 SPICE 2G6 is 14595 nonblank, noncomment lines of Fortran, SPICE 3f5 126697 lines
 of C, ngspice today 562128. Most of that is device models, UI and compatibility
-rather than algorithm. I wanted a version small enough to read and understand in
-a day: one file, one sitting, nothing to chase down. A thousand lines is roughly
-where that sits.
+rather than algorithm, and I wanted to know what is left once all of it is gone.
+A thousand lines is roughly where something is still readable in a day: one
+file, one sitting, nothing to chase down.
 
-It turned out to be enough for the 1975 core, complete: sparse LU, Newton with
-limiting and homotopy fallbacks, trapezoid with LTE, breakpoints and damped
-restarts, graded junction capacitances, AC from the DC Jacobian. The algorithm
-set is fifty years old and still carries a working simulator.
+It was enough for the 1975 core, complete. The algorithm set is fifty years old
+and still carries a working simulator.
 
-The report is sized for the same day. It derives every algorithm, traces the set
-back to its Berkeley origins from Rohrer's 1969 class through CANCER to SPICE,
-maps both to the code section by section, and stops there. It is also a thirty
-minute talk, and the slides for it are in the repository.
+The report is sized to match, and so is the talk: thirty minutes, slides in the
+repository. It derives every algorithm and traces the set back to its Berkeley
+origins, from Rohrer's 1969 class through CANCER to SPICE.
 
 [nanofem](/stack/nanofem/) asks the same question of electromagnetic fields.
