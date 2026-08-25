@@ -954,7 +954,7 @@
 	},
 	"other": {
 		"heading": "OTHER PROJECTS",
-		"intro": "Side quests: community projects, and tools and infrastructure I needed myself.",
+		"intro": "Side quests: community projects, tools and infrastructure I needed myself, and solvers written small enough to read in one sitting.",
 		"items": [
 			{
 				"id": "pysimhub",
@@ -1007,6 +1007,24 @@
 					"A distributed compute pool for tests and builds. Enrol the machines you already own; work lands on whichever is free, runs in a container with reserved threads and memory, and reports back the command's own exit code."
 				],
 				"statsText": "falllow.com"
+			},
+			{
+				"id": "nanospice",
+				"heading": "nanospice",
+				"url": "https://github.com/milanofthe/nanospice",
+				"paragraphs": [
+					"A classic SPICE circuit simulator in one Rust source file, capped at 1000 lines of code. MNA, Newton-Raphson with junction limiting, trapezoidal transient with LTE timestep control, AC, and compact models for diodes, MOSFETs, JFETs and BJTs. The report derives every algorithm and maps it to the code."
+				],
+				"statsText": "github.com/milanofthe/nanospice"
+			},
+			{
+				"id": "nanofem",
+				"heading": "nanofem",
+				"url": "https://github.com/milanofthe/nanofem",
+				"paragraphs": [
+					"A 3D finite element electromagnetic field solver under the same 1000 line cap. First order Nedelec edge elements on tetrahedra, perfectly matched layers, lumped ports and scattering parameters, solved by a sparse complex symmetric LDL^T behind a nested dissection ordering."
+				],
+				"statsText": "github.com/milanofthe/nanofem"
 			}
 		]
 	},

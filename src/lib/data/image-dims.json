@@ -19,6 +19,22 @@
 		803,
 		879
 	],
+	"/images/nanofem-field.png": [
+		1400,
+		792
+	],
+	"/images/nanofem-mesh.png": [
+		1600,
+		906
+	],
+	"/images/nanospice-bench.png": [
+		1400,
+		624
+	],
+	"/images/nanospice-ring.png": [
+		1400,
+		457
+	],
 	"/images/pathsim-pitch.png": [
 		1193,
 		666

@@ -169,6 +169,8 @@
 		{ text: 'thesisos.io', types: ['link-thesisos'], href: 'https://thesisos.io' },
 		{ text: 'whatsmytraffic.com', types: ['link-whatsmytraffic'], href: 'https://whatsmytraffic.com' },
 		{ text: 'falllow.com', types: ['link-falllow'], href: 'https://falllow.com' },
+		{ text: 'github.com/milanofthe/nanospice', types: ['link'], href: 'https://github.com/milanofthe/nanospice' },
+		{ text: 'github.com/milanofthe/nanofem', types: ['link'], href: 'https://github.com/milanofthe/nanofem' },
 	];
 
 	let clickOverlays = $derived.by((): ClickOverlay[] => {
