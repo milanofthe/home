@@ -44,12 +44,15 @@ matrix follows, so the reported residual is measured.
 
 ## History
 
-nanofem came directly after [nanospice](/stack/nanospice/), same rule, different
-physics. Circuit simulation is a settled algorithm set and the work is fitting
-it; a field solver spends the budget elsewhere. The linear algebra is the
-largest block at 213 lines for the ordering and the factorization, the mesh
-reader and the deck parser are another 175, and the three decisions above are
-what left room for the physics.
+nanofem came directly after [nanospice](/stack/nanospice/), same rule for the
+same reason: a solver you can read and understand in a day, with a report short
+enough to read next to it and a talk that fits in thirty minutes.
+
+Circuit simulation is a settled algorithm set and the work is fitting it; a
+field solver spends the budget elsewhere. The linear algebra is the largest
+block at 213 lines for the ordering and the factorization, the mesh reader and
+the deck parser are another 175, and the three decisions above are what left
+room for the physics.
 
 The final count is 954 of 1000. The report lists what the remaining 46 would not
 have bought, with estimates: second order elements at 150 to 190 lines, modal
