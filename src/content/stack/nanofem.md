@@ -44,11 +44,11 @@ matrix follows, so the reported residual is measured.
 
 ## History
 
-I already had [RapidFEM](/stack/rapidfem/), a production Maxwell solver with two
-backends, second order elements, modal ports and model order reduction. It is a
-lot of code, and that is what it costs to be that solver. nanofem was the other
-direction: see how far 1000 lines get you, and end up with something readable
-because there is simply less of it. [nanospice](/stack/nanospice/) had answered
+I already had [RapidFEM](/stack/rapidfem/), a production Maxwell solver: two
+backends, modal ports, and the machinery to mix first and second order elements
+within one mesh. It is a lot of code, and that is what it costs to be that
+solver. nanofem was the other direction: see how far 1000 lines get you, and
+end up with something readable because there is simply less of it. [nanospice](/stack/nanospice/) had answered
 the same question for circuits a few days earlier.
 
 Circuit simulation is a settled algorithm set and the work is fitting it; a
