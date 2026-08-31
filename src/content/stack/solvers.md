@@ -11,7 +11,7 @@ cta1: [ Open solvers -> ]|https://solvers.milanrother.com
 cta2: [ View on GitHub -> ]|https://github.com/milanofthe/solvers
 ---
 
-![The library, 122 methods sorted by family|center|114x22|contain](/images/solvers-gallery.png)
+![The library, 122 methods sorted by year|center|114x22|contain](/images/solvers-gallery.png)
 
 solvers holds 122 published integration methods as JSON files. A file carries
 the coefficients and the paper they came from and nothing else. Order, stage
@@ -37,10 +37,16 @@ downloads as JSON.
 ![Measured convergence, PathSim 2024|left|57x15|contain](/images/solvers-pathsim-convergence.png)
 
 Early in 2024 I spent about three months on the solvers in
-[PathSim](/stack/pathsim/). Finding the tableaux was most of the work: papers,
-appendices, scanned tables, the same method under four names with coefficients
-that did not always agree. I benchmarked what I found, measured the order
-against an analytical solution and drew the stability regions for the set.
+[PathSim](/stack/pathsim/). It started with forward Euler, then the
+Adams-Bashforth methods, then BDF, still without a good nonlinear solver. A
+conversation with a friend who works on CFD brought in the SSPRK methods, later
+the DIRK and ESDIRK families, which are the ones I reach for now, and the GEAR
+methods after that.
+
+Finding the tableaux was most of the work: papers, appendices, scanned tables,
+the same method under four names with coefficients that did not always agree. I
+benchmarked what I found, measured the order against an analytical solution and
+drew the stability regions for the set.
 
 ![Stability regions, PathSim 2024|right|57x15|contain](/images/solvers-pathsim-stability.png)
 
