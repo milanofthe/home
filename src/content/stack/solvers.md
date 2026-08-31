@@ -40,7 +40,11 @@ the models needed something more robust. Talking it through with a few
 numerical mathematicians set off about three months of trying every Butcher
 table I could find, to see how each one behaved in system simulation. The SSPRK
 methods came out of one of those conversations, later the DIRK and ESDIRK
-families, which are the ones I reach for now, and the GEAR methods after that.
+families, and the GEAR methods after that. A DIRK stage is a backward Euler
+solve, which makes them robust and self-starting, with no history to ramp up and
+no coupled stage system, one sequential solve per stage. In some applications
+that beats Radau, whose stages are coupled: when the coupling is stiff the
+nonlinear solve comes out badly conditioned.
 
 ![Measured convergence, 2024|83x14|contain](/images/solvers-pathsim-convergence.png)
 ![Stability regions, 2024|29x14|contain](/images/solvers-pathsim-stability.png)
