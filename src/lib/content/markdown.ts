@@ -10,10 +10,20 @@
 //   ![label](src)              centered framed image
 //   ![label|right|46x18](src)  floated image; the following paragraph wraps
 //                              beside it (left|right|center, WxH in cells)
+//   two image lines in a row  one band side by side; the declared widths
+//                              divide the measure between them
 //   ``` fenced code ```        framed code block (optional language as label)
 //   - item                     list items
 
 import type { TextSegment, AccentKey } from '$lib/layout/articleLayout';
+
+export interface ImageSpec {
+	src: string;
+	label: string;
+	w: number;
+	h: number;
+	fit?: 'contain';
+}
 
 export type Block =
 	| { kind: 'title'; text: string }
@@ -21,6 +31,7 @@ export type Block =
 	| { kind: 'subheading'; text: string }
 	| { kind: 'paragraph'; segments: TextSegment[] }
 	| { kind: 'image'; src: string; label: string; side: 'left' | 'right' | 'center'; w: number; h: number; fit?: 'contain' }
+	| { kind: 'imagerow'; images: ImageSpec[] }
 	| { kind: 'code'; code: string; label: string }
 	| { kind: 'list'; items: TextSegment[][] };
 
@@ -146,6 +157,25 @@ export function parseMarkdown(raw: string): ArticleDoc {
 		if (img) {
 			flushParagraph();
 			flushList();
+			// Images on consecutive lines are one band, side by side. A blank line
+			// between them keeps them as separate blocks, as before.
+			const row = [img];
+			while (i + 1 < lines.length) {
+				const next = lines[i + 1].trim().match(IMAGE_RE);
+				if (!next) break;
+				row.push(next);
+				i++;
+			}
+			if (row.length > 1) {
+				blocks.push({
+					kind: 'imagerow',
+					images: row.map(r => {
+						const { label, w, h, fit } = parseImageLabel(r[1]);
+						return { src: r[2], label, w, h, fit };
+					})
+				});
+				continue;
+			}
 			const { label, side, w, h, fit } = parseImageLabel(img[1]);
 			blocks.push({ kind: 'image', src: img[2], label, side, w, h, fit });
 			continue;
@@ -198,6 +228,7 @@ export function blocksToHtml(blocks: Block[]): string {
 			case 'subheading': parts.push(`<h3>${esc(b.text)}</h3>`); break;
 			case 'paragraph': parts.push(`<p>${segs(b.segments)}</p>`); break;
 			case 'image': parts.push(`<p><img src="${esc(b.src)}" alt="${esc(b.label)}"></p>`); break;
+			case 'imagerow': parts.push(`<p>${b.images.map(im => `<img src="${esc(im.src)}" alt="${esc(im.label)}">`).join('')}</p>`); break;
 			case 'code': parts.push(`<pre><code>${esc(b.code)}</code></pre>`); break;
 			case 'list': parts.push(`<ul>${b.items.map(it => `<li>${segs(it)}</li>`).join('')}</ul>`); break;
 		}

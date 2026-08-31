@@ -29,6 +29,9 @@ export function renderBlocks(g: ArticleGrid, blocks: Block[], opts?: { skipTitle
 			case 'code':
 				g.codeBlock(b.code, b.label);
 				break;
+			case 'imagerow':
+				g.imageRow(b.images);
+				break;
 			case 'image': {
 				const next = blocks[i + 1];
 				const opts = b.fit ? { fit: b.fit } : undefined;

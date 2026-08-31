@@ -630,6 +630,30 @@ export class ArticleGrid {
 	}
 
 	// Centered standalone framed image, height from the real aspect ratio.
+	// A row of figures that belong together, drawn on one baseline. The declared
+	// widths divide the measure, so two pictures of different proportions can be
+	// given matching heights by writing the wider one wider.
+	imageRow(images: { src: string; label: string; w: number; h: number; fit?: 'contain' }[]) {
+		if (images.length === 1) {
+			this.image(images[0].src, images[0].label, images[0].w, images[0].h, images[0].fit ? { fit: images[0].fit } : undefined);
+			return;
+		}
+		const gaps = TILE_GAP * (images.length - 1);
+		const declared = images.reduce((sum, im) => sum + im.w, 0);
+		const scale = Math.min(1, (this.contentWidth - gaps) / declared);
+		const widths = images.map(im => Math.max(8, Math.floor(im.w * scale)));
+		const total = widths.reduce((a, b) => a + b, 0) + gaps;
+		let col = this.startCol + Math.floor((this.contentWidth - total) / 2);
+		let bandRows = 0;
+		images.forEach((im, index) => {
+			const rows = this.imageRows(im.src, widths[index] - 2, im.h);
+			this.drawFrame(this.row, col, widths[index], rows, im.label, im.src, im.fit ? { fit: im.fit } : undefined);
+			bandRows = Math.max(bandRows, rows);
+			col += widths[index] + TILE_GAP;
+		});
+		this.row += bandRows + 3;
+	}
+
 	image(src: string, label: string, w: number, h: number, opts?: { href?: string; fit?: 'cover' | 'contain'; background?: string }) {
 		const fw = Math.min(w, this.contentWidth);
 		const rows = this.imageRows(src, fw - 2, Math.min(h, 24));
