@@ -11,20 +11,20 @@ cta1: [ Open solvers -> ]|https://solvers.milanrother.com
 cta2: [ View on GitHub -> ]|https://github.com/milanofthe/solvers
 ---
 
-![The library, 122 methods sorted by year|center|114x22|contain](/images/solvers-gallery.png)
+![The library, sorted by year|center|114x22|contain](/images/solvers-gallery.png)
 
-solvers holds 122 published integration methods as JSON files. A file carries
-the coefficients and the paper they came from and nothing else. Order, stage
-order, stability region, damping, nonlinear stability, dispersion and cost are
-derived from the coefficients rather than stored. Coefficients given as
-fractions are checked as identities in exact arithmetic, decimals numerically,
-and the report says which of the two happened.
+solvers holds published integration methods as JSON files. A file carries the
+coefficients and the paper they came from and nothing else. Order, stage order,
+stability region, damping, nonlinear stability, dispersion and cost are derived
+from the coefficients rather than stored. Coefficients given as fractions are
+checked as identities in exact arithmetic, decimals numerically, and the report
+says which of the two happened.
 
-Explicit and implicit Runge-Kutta, the collocation families to order sixteen,
-twenty-six Rosenbrock-Wanner methods, the strong stability preserving family,
-Runge-Kutta-Chebyshev, Adams, BDF, Nystrom and Milne-Simpson. Each entry has
-the DOI of its source, 51 also the name they go by in SciPy, MATLAB,
-OrdinaryDiffEq.jl, GSL and Boost.Odeint.
+Explicit and implicit Runge-Kutta, the collocation families, Rosenbrock-Wanner,
+strong stability preserving methods, Runge-Kutta-Chebyshev, Adams, BDF, Nystrom
+and Milne-Simpson. Entries carry the DOI of their source and, where there is
+one, the name they go by in SciPy, MATLAB, OrdinaryDiffEq.jl, GSL and
+Boost.Odeint.
 
 The Rust core compiles to WebAssembly with the method files baked in, so the
 stability regions, convergence studies and work precision diagrams are computed
