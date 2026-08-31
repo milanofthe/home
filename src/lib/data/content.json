@@ -1031,7 +1031,7 @@
 				"heading": "solvers",
 				"url": "https://solvers.milanrother.com",
 				"paragraphs": [
-					"A reference library of ODE integration methods held as data. Every method is a file of coefficients and the paper it was published in; its order, stability, damping and cost are derived from those coefficients in the browser rather than read from the file."
+					"A reference library of ODE integration methods held as data. 122 coefficient files whose order, stability, damping and cost are derived in the browser rather than read from the file."
 				],
 				"statsText": "solvers.milanrother.com"
 			}
