@@ -170,6 +170,11 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		type: 'embedded', lines: [],
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'nanofem-field', label: 'Field cut' }, { id: 'nanofem-mesh', label: 'Patch antenna mesh' }]
+	},
+	solvers: {
+		type: 'embedded', lines: [],
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
+		tiles: [{ id: 'solvers-library', label: 'Library' }, { id: 'solvers-method', label: 'Radau IIA 5' }]
 	}
 };
 

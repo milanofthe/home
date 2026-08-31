@@ -1025,6 +1025,15 @@
 					"A 3D finite element electromagnetic field solver in one Rust source file, capped at 1000 lines of code. Nedelec edge elements, perfectly matched layers, S parameters."
 				],
 				"statsText": "github.com/milanofthe/nanofem"
+			},
+			{
+				"id": "solvers",
+				"heading": "solvers",
+				"url": "https://solvers.milanrother.com",
+				"paragraphs": [
+					"A reference library of ODE integration methods held as data. Every method is a file of coefficients and the paper it was published in; its order, stability, damping and cost are derived from those coefficients in the browser rather than read from the file."
+				],
+				"statsText": "solvers.milanrother.com"
 			}
 		]
 	},

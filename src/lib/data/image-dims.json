@@ -127,6 +127,14 @@
 		1240,
 		796
 	],
+	"/images/solvers-pathsim-convergence.png": [
+		2800,
+		1200
+	],
+	"/images/solvers-pathsim-stability.png": [
+		902,
+		1181
+	],
 	"/images/timeline/ba-passivity.png": [
 		920,
 		1308
@@ -390,6 +398,22 @@
 	"/screenshots/scidata-io.png": [
 		2880,
 		1800
+	],
+	"/screenshots/solvers-library-dark.png": [
+		1878,
+		1220
+	],
+	"/screenshots/solvers-library.png": [
+		1878,
+		1220
+	],
+	"/screenshots/solvers-method-dark.png": [
+		1878,
+		1220
+	],
+	"/screenshots/solvers-method.png": [
+		1878,
+		1220
 	],
 	"/screenshots/thesisos-landing.png": [
 		2880,

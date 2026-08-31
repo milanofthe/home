@@ -41,7 +41,9 @@ const sites = [
 	{ id: 'whatsmytraffic-landing', url: 'https://whatsmytraffic.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 10000 },
 	// falllow opens with a canvas animation that covers the viewport for about five
 	// seconds, so this wait is what stands between a screenshot and a black rectangle.
-	{ id: 'falllow-landing', url: 'https://falllow.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 12000 }
+	{ id: 'falllow-landing', url: 'https://falllow.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 12000 },
+	{ id: 'solvers-library', url: 'https://solvers.milanrother.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 18000 },
+	{ id: 'solvers-method', url: 'https://solvers.milanrother.com/methods/radau_iia_5', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 18000 }
 ];
 
 const themes = ['dark', 'light'];
@@ -117,7 +119,11 @@ async function main() {
 	});
 
 	try {
-		for (const site of sites) {
+		// Named ids on the command line capture only those, which is what makes
+		// adding one site bearable while the other twenty are already on disk.
+		const only = process.argv.slice(2);
+		const wanted = only.length ? sites.filter((s) => only.includes(s.id)) : sites;
+		for (const site of wanted) {
 			console.log(`\nCapturing ${site.id} (${site.url}):`);
 			const siteThemes = site.darkOnly ? ['dark'] : themes;
 			for (const theme of siteThemes) {

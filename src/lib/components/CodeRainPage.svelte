@@ -67,7 +67,9 @@
 		'nanospice-title': { name: 'Talk slides', url: 'https://github.com/milanofthe/nanospice', screenshot: '/images/nanospice-slide-title.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' },
 		'nanospice-osc': { name: 'Ring oscillator', url: 'https://github.com/milanofthe/nanospice', screenshot: '/images/nanospice-slide-osc.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' },
 		'nanofem-mesh': { name: 'Patch antenna mesh', url: 'https://github.com/milanofthe/nanofem', screenshot: '/images/nanofem-mesh.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' },
-		'nanofem-field': { name: 'Field cut', url: 'https://github.com/milanofthe/nanofem', screenshot: '/images/nanofem-field.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' }
+		'nanofem-field': { name: 'Field cut', url: 'https://github.com/milanofthe/nanofem', screenshot: '/images/nanofem-field.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' },
+		'solvers-library': { name: 'Library', url: 'https://solvers.milanrother.com', screenshot: '/screenshots/solvers-library.png', color: 'neutral', themeParam: false },
+		'solvers-method': { name: 'Radau IIA 5', url: 'https://solvers.milanrother.com/methods/radau_iia_5', screenshot: '/screenshots/solvers-method.png', color: 'neutral', themeParam: false }
 	};
 
 	// Video tile data
@@ -175,6 +177,7 @@
 		{ text: 'falllow.com', types: ['link-falllow'], href: 'https://falllow.com' },
 		{ text: 'github.com/milanofthe/nanospice', types: ['link'], href: 'https://github.com/milanofthe/nanospice' },
 		{ text: 'github.com/milanofthe/nanofem', types: ['link'], href: 'https://github.com/milanofthe/nanofem' },
+		{ text: 'solvers.milanrother.com', types: ['link'], href: 'https://solvers.milanrother.com' },
 	];
 
 	let clickOverlays = $derived.by((): ClickOverlay[] => {
