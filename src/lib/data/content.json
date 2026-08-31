@@ -1031,7 +1031,7 @@
 				"heading": "solvers",
 				"url": "https://solvers.milanrother.com",
 				"paragraphs": [
-					"A reference library of ODE integration methods held as data. Each method is a file of coefficients and the paper it came from, with its properties computed from the coefficients."
+					"A reference library of ODE integration methods held as data. One JSON file per method with its coefficients and the paper they came from, everything else computed from them."
 				],
 				"statsText": "solvers.milanrother.com"
 			}
