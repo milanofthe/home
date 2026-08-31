@@ -33,13 +33,14 @@ disagreements are listed. The whole library downloads as JSON.
 
 ## History
 
-Early in 2024 I spent about three months on the solvers in
-[PathSim](/stack/pathsim/). It started with forward Euler, then the
-Adams-Bashforth methods, then BDF, still without a good nonlinear solver. A
-conversation with a friend who works on CFD brought in the SSPRK methods, later
-the DIRK and ESDIRK families, which are the ones I reach for now, and the GEAR
-methods after that. Finding the tableaux was most of the work, and the two
-figures are from those notes.
+The first [PathSim](/stack/pathsim/) prototype had forward Euler, early in
+2023, and Adams-Bashforth shortly after, since it sits on top of Euler with
+little extra. BDF followed, still without a good nonlinear solver. A year later
+the models needed something more robust. Talking it through with a few
+numerical analysts set off about three months of trying every Butcher table I
+could find, to see how each one behaved in system simulation. The SSPRK methods
+came out of one of those conversations, later the DIRK and ESDIRK families,
+which are the ones I reach for now, and the GEAR methods after that.
 
 ![Measured convergence, 2024|83x14|contain](/images/solvers-pathsim-convergence.png)
 ![Stability regions, 2024|29x14|contain](/images/solvers-pathsim-stability.png)
