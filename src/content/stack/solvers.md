@@ -1,7 +1,7 @@
 ---
 title: solvers
 accent: neutral
-tagline: A reference library of ODE integration methods, held as data rather than as code.
+tagline: A reference library of ODE integration methods, held as data.
 group: reading
 order: 32
 site: solvers.milanrother.com|https://solvers.milanrother.com
