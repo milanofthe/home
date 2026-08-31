@@ -43,15 +43,4 @@ conversation with a friend who works on CFD brought in the SSPRK methods, later
 the DIRK and ESDIRK families, which are the ones I reach for now, and the GEAR
 methods after that.
 
-Finding the tableaux was most of the work: papers, appendices, scanned tables,
-the same method under four names with coefficients that did not always agree. I
-benchmarked what I found, measured the order against an analytical solution and
-drew the stability regions for the set.
-
-![Stability regions, PathSim 2024|right|57x15|contain](/images/solvers-pathsim-stability.png)
-
-Both figures are from those notes, the convergence measurement as PathSim
-produced it and the stability sheet laid out in PowerPoint around the plots.
-The tables are scattered and mostly unverified, and a published order is rarely
-checked against the coefficients printed next to it. solvers is the same set in
-one place, with the checking done.
+![Stability regions, PathSim 2024|center|44x22|contain](/images/solvers-pathsim-stability.png)
