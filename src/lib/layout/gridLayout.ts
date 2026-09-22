@@ -1,11 +1,20 @@
 // Grid layout engine: takes viewport info + content definitions,
 // outputs a 2D array of character cells
 
+import { PROJECT_ACCENTS, type AccentKey } from '$lib/accents';
 import { FILLER_SOURCE } from '$lib/data/filler-source';
 import { contentSections, type ContentSection, type ContentRegion } from './contentRegions';
 export type { ContentSection };
 
-export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'heading-falllow' | 'heading-sanity' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'link-sane' | 'link-rslab' | 'link-thesisos' | 'link-whatsmytraffic' | 'link-falllow' | 'link-sanity' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim' | 'frame-sane' | 'frame-rslab' | 'frame-thesisos' | 'frame-whatsmytraffic' | 'frame-falllow' | 'frame-sanity' | 'code-kw' | 'code-str' | 'code-com' | 'code-num';
+export type CellType =
+	| 'filler' | 'content' | 'cta' | 'footer' | 'empty' | 'form-field'
+	| 'code-kw' | 'code-str' | 'code-com' | 'code-num'
+	// The three that can carry a project's colour, plain or accented. Spelled
+	// as template literals over the accent list rather than by hand, which is
+	// what kept a new project's colour out of a union nobody thought to edit.
+	| 'heading' | `heading-${AccentKey}`
+	| 'link' | `link-${AccentKey}`
+	| 'frame' | `frame-${AccentKey}`;
 
 export interface Cell {
 	char: string;
@@ -93,9 +102,11 @@ function applyInlineLinks(
 	}
 }
 
-// Types that should be word-wrapped when lines exceed available width
+// Types that should be word-wrapped when lines exceed available width. Every
+// link line wraps, whichever project it belongs to.
 const WRAPPABLE_TYPES: Set<string> = new Set([
-	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'link-line-rapidpassives', 'link-line-scidata', 'link-line-fastsim', 'link-line-thesisos', 'link-line-whatsmytraffic', 'link-line-falllow', 'link-line-sanity', 'footer-line'
+	'paragraph', 'content', 'link-line', 'footer-line',
+	...PROJECT_ACCENTS.map((a) => `link-line-${a}`)
 ]);
 
 // Fill a line with filler source characters, cycling through the source
@@ -149,55 +160,27 @@ function buildFrameTop(frameCols: number, label: string): string {
 }
 
 // Region type -> cell type, for whole regions and for the lines a project card
-// composes itself.
-//
-// One table rather than a table and a matching chain of ternaries, which is
-// what this was: adding a project meant five separate edits, and the two that
-// live in this file are exactly the two that got forgotten, so the new entry
-// came out in the default grey with the colour sitting unused in the CSS.
+// composes itself. Derived from the accent list, so a project is one entry in
+// lib/accents.ts rather than a row in each of these.
 const REGION_CELL_TYPE: Record<string, CellType> = {
-	'heading': 'heading',
-	'heading-pathsim': 'heading-pathsim',
-	'heading-pysimhub': 'heading-pysimhub',
-	'heading-rapidpassives': 'heading-rapidpassives',
-	'heading-scidata': 'heading-scidata',
-	'heading-fastsim': 'heading-fastsim',
-	'heading-sane': 'heading-sane',
-	'heading-rslab': 'heading-rslab',
-	'heading-thesisos': 'heading-thesisos',
-	'heading-whatsmytraffic': 'heading-whatsmytraffic',
-	'heading-falllow': 'heading-falllow',
-	'heading-sanity': 'heading-sanity',
+	heading: 'heading',
 	'link-line': 'link',
-	'link-line-pathsim': 'link-pathsim',
-	'link-line-pysimhub': 'link-pysimhub',
-	'link-line-rapidpassives': 'link-rapidpassives',
-	'link-line-scidata': 'link-scidata',
-	'link-line-fastsim': 'link-fastsim',
-	'link-line-sane': 'link-sane',
-	'link-line-rslab': 'link-rslab',
-	'link-line-thesisos': 'link-thesisos',
-	'link-line-whatsmytraffic': 'link-whatsmytraffic',
-	'link-line-falllow': 'link-falllow',
-	'link-line-sanity': 'link-sanity',
-	'cta': 'cta',
+	cta: 'cta',
 	'footer-line': 'footer',
-	'form-field': 'form-field'
+	'form-field': 'form-field',
+	...Object.fromEntries(
+		PROJECT_ACCENTS.flatMap((a) => [
+			[`heading-${a}`, `heading-${a}` as CellType],
+			[`link-line-${a}`, `link-${a}` as CellType]
+		])
+	)
 };
 
-const FRAME_CELL_TYPE: Record<string, CellType> = {
-	pathsim: 'frame-pathsim',
-	pysimhub: 'frame-pysimhub',
-	rapidpassives: 'frame-rapidpassives',
-	scidata: 'frame-scidata',
-	fastsim: 'frame-fastsim',
-	sane: 'frame-sane',
-	rslab: 'frame-rslab',
-	thesisos: 'frame-thesisos',
-	whatsmytraffic: 'frame-whatsmytraffic',
-	falllow: 'frame-falllow',
-	sanity: 'frame-sanity'
-};
+// `neutral` is deliberately absent: a frame with no project behind it takes
+// the plain grey through the fallback at the call site.
+const FRAME_CELL_TYPE: Record<string, CellType> = Object.fromEntries(
+	PROJECT_ACCENTS.map((a) => [a, `frame-${a}` as CellType])
+);
 
 function buildFrameBottom(frameCols: number): string {
 	return '+' + '-'.repeat(frameCols - 2) + '+';

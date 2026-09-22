@@ -8,7 +8,8 @@
 // Keeping the translation here is what makes content.json the single source of
 // truth for the story instead of two copies drifting apart.
 
-import type { AccentKey, TextSegment } from '$lib/layout/articleLayout';
+import { accentClass, type AccentKey } from '$lib/accents';
+import type { TextSegment } from '$lib/layout/articleLayout';
 
 // A link inside a paragraph. `project` colors the phrase in the project accent
 // and, on the landing page, makes it scroll to that project's block. `href`
@@ -52,26 +53,13 @@ export function accentFor(project?: string): AccentKey {
 	return (project && PROJECT_ACCENT[project]) || 'neutral';
 }
 
-// Hover glow per accent, matching PortalTile's palette so a framed image on an
-// article page lights up in the same colour as the same project's tile on the
-// landing page.
-const GLOW: Record<AccentKey, string> = {
-	pathsim: 'rgba(0, 112, 192, 0.3)',
-	pysimhub: 'rgba(99, 102, 241, 0.3)',
-	rapidpassives: 'rgba(217, 81, 60, 0.3)',
-	scidata: 'rgba(216, 53, 26, 0.3)',
-	fastsim: 'rgba(209, 65, 41, 0.3)',
-	sane: 'rgba(78, 149, 217, 0.3)',
-	rslab: 'rgba(59, 130, 246, 0.3)',
-	thesisos: 'rgba(107, 138, 253, 0.3)',
-	whatsmytraffic: 'rgba(111, 220, 142, 0.3)',
-	falllow: 'rgba(250, 250, 250, 0.3)',
-	sanity: 'rgba(255, 32, 32, 0.3)',
-	neutral: 'rgba(150, 149, 145, 0.25)'
-};
-
+// The class that carries a project's colour, for a framed image on an article
+// page: it lights up in the same accent as the same project's tile on the
+// landing page, out of the one palette in app.css rather than out of a copy of
+// it here. `glowFor` kept its name and its callers; what it returns is a class
+// now, not a colour.
 export function glowFor(accent: AccentKey | undefined): string {
-	return GLOW[accent ?? 'neutral'] ?? GLOW.neutral;
+	return accentClass(accent);
 }
 
 export function hrefFor(link: ProseLink): string | undefined {

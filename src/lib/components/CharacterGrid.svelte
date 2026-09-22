@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { untrack, onMount } from 'svelte';
+	import { accentClass, PROJECT_ACCENTS } from '$lib/accents';
 	import type { Cell } from '$lib/layout/gridLayout';
 
 	interface Props {
@@ -27,53 +28,32 @@
 	// sight are already typed by the time the reader scrolls to them.
 	const REACH_MARGIN_PX = 300;
 
+	// Cell type -> class. The three that can carry a project's colour take the
+	// generic accent class plus that project's `accent-<name>` class, which is
+	// where the colour comes from; see lib/accents.ts and the palette in
+	// app.css. This used to be a row per project per kind, thirty of them, and a
+	// missing row showed up as the default grey rather than as an error.
 	const TYPE_CLASSES: Record<string, string> = {
 		filler: 'code-grid-filler',
 		content: 'code-grid-content',
 		heading: 'code-grid-heading',
-		'heading-pathsim': 'code-grid-heading-pathsim',
-		'heading-pysimhub': 'code-grid-heading-pysimhub',
-		'heading-rapidpassives': 'code-grid-heading-rapidpassives',
-		'heading-scidata': 'code-grid-heading-scidata',
-		'heading-fastsim': 'code-grid-heading-fastsim',
-		'heading-sane': 'code-grid-heading-sane',
-		'heading-rslab': 'code-grid-heading-rslab',
-		'heading-thesisos': 'code-grid-heading-thesisos',
-		'heading-whatsmytraffic': 'code-grid-heading-whatsmytraffic',
-		'heading-falllow': 'code-grid-heading-falllow',
-		'heading-sanity': 'code-grid-heading-sanity',
 		cta: 'code-grid-cta',
 		link: 'code-grid-link',
-		'link-pathsim': 'code-grid-link-pathsim',
-		'link-pysimhub': 'code-grid-link-pysimhub',
-		'link-rapidpassives': 'code-grid-link-rapidpassives',
-		'link-scidata': 'code-grid-link-scidata',
-		'link-fastsim': 'code-grid-link-fastsim',
-		'link-sane': 'code-grid-link-sane',
-		'link-rslab': 'code-grid-link-rslab',
-		'link-thesisos': 'code-grid-link-thesisos',
-		'link-whatsmytraffic': 'code-grid-link-whatsmytraffic',
-		'link-falllow': 'code-grid-link-falllow',
-		'link-sanity': 'code-grid-link-sanity',
 		footer: 'code-grid-footer',
 		empty: 'code-grid-empty',
 		'form-field': 'code-grid-form-field',
 		frame: 'code-grid-frame',
-		'frame-pathsim': 'code-grid-frame-pathsim',
-		'frame-pysimhub': 'code-grid-frame-pysimhub',
-		'frame-rapidpassives': 'code-grid-frame-rapidpassives',
-		'frame-scidata': 'code-grid-frame-scidata',
-		'frame-fastsim': 'code-grid-frame-fastsim',
-		'frame-sane': 'code-grid-frame-sane',
-		'frame-rslab': 'code-grid-frame-rslab',
-		'frame-thesisos': 'code-grid-frame-thesisos',
-		'frame-whatsmytraffic': 'code-grid-frame-whatsmytraffic',
-		'frame-falllow': 'code-grid-frame-falllow',
-		'frame-sanity': 'code-grid-frame-sanity',
 		'code-kw': 'code-grid-code-kw',
 		'code-str': 'code-grid-code-str',
 		'code-com': 'code-grid-code-com',
-		'code-num': 'code-grid-code-num'
+		'code-num': 'code-grid-code-num',
+		...Object.fromEntries(
+			PROJECT_ACCENTS.flatMap((a) => [
+				[`heading-${a}`, `code-grid-heading-accent ${accentClass(a)}`],
+				[`link-${a}`, `code-grid-link-accent ${accentClass(a)}`],
+				[`frame-${a}`, `code-grid-frame-accent ${accentClass(a)}`]
+			])
+		)
 	};
 
 	// Stream-in scheduler state. Every batch picks its lines fresh, walking
@@ -254,7 +234,14 @@
 
 		// For each content span inside a line: keep filler-colored base, add real-colored overlay
 		for (const { el: line } of contentLines) {
-			const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-pathsim):not(.code-grid-frame-pysimhub):not(.code-grid-frame-rapidpassives):not(.code-grid-frame-scidata):not(.code-grid-frame-fastsim):not(.code-grid-frame-sane):not(.code-grid-frame-rslab):not(.code-grid-frame-thesisos):not(.code-grid-frame-whatsmytraffic):not(.code-grid-frame-falllow):not(.code-grid-empty)'));
+			// Frames are drawn, not typed, whatever colour they are. One selector
+			// for all of them rather than one clause per project: this list had
+			// fallen behind the palette twice.
+			const spans = Array.from(
+				line.querySelectorAll<HTMLSpanElement>(
+					'span:not(.code-grid-filler):not(.code-grid-frame):not(.code-grid-frame-accent):not(.code-grid-empty)'
+				)
+			);
 			for (const span of spans) {
 				const text = span.textContent || '';
 				if (!text.trim()) continue;

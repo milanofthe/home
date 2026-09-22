@@ -141,10 +141,10 @@
 		<CharacterGrid cells={article.cells} armed={mounted} />
 
 		{#each article.images as img (`${img.src}:${img.row}:${img.col}`)}
-			{@const box = `top: ${img.row * lineHeight}px; left: ${img.col * charWidth}px; width: ${img.cols * charWidth}px; height: ${img.rows * lineHeight}px; ${img.background ? `background:${img.background};` : ''}${img.glow ? `--glow-color:${img.glow};` : ''}`}
+			{@const box = `top: ${img.row * lineHeight}px; left: ${img.col * charWidth}px; width: ${img.cols * charWidth}px; height: ${img.rows * lineHeight}px; ${img.background ? `background:${img.background};` : ''}`}
 			{#if img.href}
 				<a
-					class="article-img tilt"
+					class="article-img tilt {img.glow ?? ''}"
 					href={img.href}
 					target={img.href.startsWith('/') ? undefined : '_blank'}
 					rel={img.href.startsWith('/') ? undefined : 'noopener'}
@@ -158,7 +158,7 @@
 				</a>
 			{:else}
 				<div
-					class="article-img tilt"
+					class="article-img tilt {img.glow ?? ''}"
 					use:tileReveal={{ charWidth, lineHeight }}
 					onmousemove={tilt}
 					onmouseleave={resetTilt}
@@ -275,7 +275,7 @@
 	}
 
 	.article-img.tilt:hover {
-		box-shadow: 0 8px 30px var(--glow-color, rgba(150, 149, 145, 0.25));
+		box-shadow: 0 8px 30px color-mix(in srgb, var(--accent-colour, #969591) 30%, transparent);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

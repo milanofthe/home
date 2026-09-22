@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { AccentKey } from '$lib/accents';
 	import { stackPages } from '$lib/content';
 	import { onMount, tick } from 'svelte';
 	import { computeGridLayout, type GridLayout, type FormFieldPosition, type CellType, type ContentSection } from '$lib/layout/gridLayout';
@@ -34,7 +35,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow' | 'sanity' | 'neutral';
+		color: AccentKey;
 		themeParam?: boolean;
 		fit?: 'cover' | 'contain';
 		background?: string;
