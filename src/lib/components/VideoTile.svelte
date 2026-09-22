@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { accentClass, type AccentKey } from '$lib/accents';
 	interface Props {
 		id: string;
 		name: string;
 		src: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives';
+		color: AccentKey;
 	}
 
 	let { id, name, src, color }: Props = $props();
@@ -21,19 +22,13 @@
 		tileElement.style.transform = '';
 	}
 
-	const glowColors = {
-		pathsim: 'rgba(0, 112, 192, 0.3)',
-		pysimhub: 'rgba(99, 102, 241, 0.3)',
-		rapidpassives: 'rgba(217, 81, 60, 0.3)'
-	};
 </script>
 
 <div
 	bind:this={tileElement}
 	onmousemove={handleTilt}
 	onmouseleave={handleTiltReset}
-	class="video-tile"
-	style="--glow-color: {glowColors[color]};"
+	class="video-tile {accentClass(color)}"
 	role="img"
 	aria-label="{name} video"
 >
@@ -58,7 +53,7 @@
 	}
 
 	.video-tile:hover {
-		box-shadow: 0 8px 30px var(--glow-color, rgba(0, 217, 192, 0.2));
+		box-shadow: 0 8px 30px color-mix(in srgb, var(--accent-colour, #969591) 30%, transparent);
 	}
 
 	.video-tile-video {

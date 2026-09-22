@@ -187,15 +187,7 @@
 	font-weight: bold;
 }
 
-.code-grid-heading-pathsim {
-	color: #0070c0;
-	font-weight: bold;
-}
 
-.code-grid-heading-pysimhub {
-	color: #6366f1;
-	font-weight: bold;
-}
 
 .code-grid-cta {
 	color: #969591;
@@ -206,13 +198,7 @@
 	color: #969591;
 }
 
-.code-grid-link-pathsim {
-	color: #0070c0;
-}
 
-.code-grid-link-pysimhub {
-	color: #6366f1;
-}
 
 .code-grid-footer {
 	color: #f0efe9;
@@ -232,91 +218,62 @@
 	color: #969591;
 }
 
-.code-grid-frame-pathsim {
-	color: #0070c0;
-}
+/* --- Project accents ----------------------------------------------------
+   One line per project, and the only place a project's colour is written.
+   Anything that paints in it reads --accent-colour, so a heading, a link
+   line, a frame and a tile's glow all come from the same value, and adding a
+   project is this line plus its name in lib/accents.ts.
 
-.code-grid-frame-pysimhub {
-	color: #6366f1;
-}
+   falllow is the achromatic one: its own interface has no accent hue, so a
+   colour picked for it here would be one the project does not have. It still
+   reads as its own thing by being brighter than the body text. */
+.accent-pathsim { --accent-colour: #0070c0; }
+.accent-pysimhub { --accent-colour: #6366f1; }
+.accent-rapidpassives { --accent-colour: #d9513c; }
+.accent-scidata { --accent-colour: #d8351a; }
+.accent-fastsim { --accent-colour: #d14129; }
+.accent-sane { --accent-colour: #4e95d9; }
+.accent-rslab { --accent-colour: #3b82f6; }
+.accent-thesisos { --accent-colour: #6b8afd; }
+.accent-whatsmytraffic { --accent-colour: #6fdc8e; }
+.accent-falllow { --accent-colour: #fafafa; }
+.accent-sanity { --accent-colour: #ff2020; }
 
-.code-grid-heading-rapidpassives {
-	color: #d9513c;
+/* The three things that carry one. Without an accent class above them they
+   fall back to the same grey as their plain counterparts, which is what the
+   neutral projects use. */
+.code-grid-heading-accent {
+	color: var(--accent-colour, #969591);
 	font-weight: bold;
 }
 
-.code-grid-link-rapidpassives {
-	color: #d9513c;
+.code-grid-link-accent {
+	color: var(--accent-colour, #969591);
 }
 
-.code-grid-frame-rapidpassives {
-	color: #d9513c;
+.code-grid-frame-accent {
+	color: var(--accent-colour, #969591);
 }
 
-.code-grid-heading-scidata {
-	color: #d8351a;
-	font-weight: bold;
-}
 
-.code-grid-link-scidata {
-	color: #d8351a;
-}
 
-.code-grid-frame-scidata {
-	color: #d8351a;
-}
 
-.code-grid-heading-fastsim {
-	color: #D14129;
-	font-weight: bold;
-}
 
-.code-grid-link-fastsim {
-	color: #D14129;
-}
 
-.code-grid-frame-fastsim {
-	color: #D14129;
-}
 
-.code-grid-heading-sane {
-	color: #4E95D9;
-	font-weight: bold;
-}
 
-.code-grid-link-sane {
-	color: #4E95D9;
-}
 
-.code-grid-frame-sane {
-	color: #4E95D9;
-}
 
-.code-grid-heading-rslab {
-	color: #3b82f6;
-	font-weight: bold;
-}
 
-.code-grid-link-rslab {
-	color: #3b82f6;
-}
 
-.code-grid-frame-rslab {
-	color: #3b82f6;
-}
 
-.code-grid-heading-thesisos {
-	color: #6b8afd;
-	font-weight: bold;
-}
 
-.code-grid-link-thesisos {
-	color: #6b8afd;
-}
 
-.code-grid-frame-thesisos {
-	color: #6b8afd;
-}
+
+
+
+
+
 
 /* Code block syntax highlighting (colors reused from the project palette) */
 .code-grid-code-kw {
@@ -335,49 +292,12 @@
 	color: #6b8afd;
 }
 
-.code-grid-heading-whatsmytraffic {
-	color: #6fdc8e;
-	font-weight: bold;
-}
 
-.code-grid-link-whatsmytraffic {
-	color: #6fdc8e;
-}
 
-.code-grid-frame-whatsmytraffic {
-	color: #6fdc8e;
-}
 
-/* falllow: the one achromatic entry. Its own interface has no accent hue at all, so
-   a colour picked here would be one the project does not have. It still reads as its
-   own thing, being brighter than both the body text and the grey of a plain heading. */
-.code-grid-heading-falllow {
-	color: #fafafa;
-	font-weight: bold;
-}
 
-.code-grid-link-falllow {
-	color: #fafafa;
-}
 
-.code-grid-frame-falllow {
-	color: #fafafa;
-}
 
-/* sanity: the red of its logo and of its own interface, one step off pure red
-   so it does not vibrate against the dark ground the way #ff0000 does. */
-.code-grid-heading-sanity {
-	color: #ff2020;
-	font-weight: bold;
-}
-
-.code-grid-link-sanity {
-	color: #ff2020;
-}
-
-.code-grid-frame-sanity {
-	color: #ff2020;
-}
 
 /* Typewriter: filler-colored base with real-colored overlay stacked via CSS grid */
 .tw-wrapper {

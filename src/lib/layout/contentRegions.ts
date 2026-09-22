@@ -3,7 +3,8 @@
 
 import contentData from '$lib/data/content.json';
 import defaultStats from '$lib/data/github-stats.json';
-import { inlineLinksFor, paragraphText, type ProseParagraph } from '$lib/content/prose';
+import type { AccentKey } from '$lib/accents';
+import { inlineLinksFor, paragraphText, PROJECT_ACCENT, type ProseParagraph } from '$lib/content/prose';
 import { getStackPage } from '$lib/content';
 
 export interface GitHubStats {
@@ -12,7 +13,14 @@ export interface GitHubStats {
 	pysimhub: { projects: number; members?: number; cumulativeStars: number };
 }
 
-export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'heading-falllow' | 'heading-sanity' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-sane' | 'link-line-rslab' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'link-line-falllow' | 'link-line-sanity' | 'footer-line' | 'content' | 'form-field' | 'project-pair';
+export type RegionType =
+	| 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'footer-line' | 'content'
+	| 'form-field' | 'project-pair'
+	// A heading or a link line can belong to a project, which is what gives it
+	// that project's colour. Written over the accent list rather than by hand:
+	// see lib/accents.ts.
+	| 'heading' | `heading-${AccentKey}`
+	| 'link-line' | `link-line-${AccentKey}`;
 
 export interface ContentRegion {
 	type: RegionType;
@@ -25,7 +33,7 @@ export interface ContentRegion {
 	url?: string; // for links within text
 	inlineLinks?: { phrase: string; project: string }[]; // colored, clickable phrases embedded in paragraph text
 	label?: string; // frame title for embedded blocks
-	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow' | 'sanity'; // project color for frame
+	frameColor?: AccentKey; // project colour for the frame
 	align?: 'center' | 'left';
 	fill?: boolean; // pad heading up to the tile-row width
 	fillChar?: string; // padding character, defaults to '-'
@@ -183,39 +191,17 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 	}
 };
 
-const LINK_LINE_TYPES: Record<string, RegionType> = {
-	pathsim: 'link-line-pathsim',
-	pathview: 'link-line-pathsim',
-	pysimhub: 'link-line-pysimhub',
-	rapidpassives: 'link-line-rapidpassives',
-	rapidfem: 'link-line-rapidpassives',
-	rapidmom: 'link-line-rapidpassives',
-	rapidmesh: 'link-line-rapidpassives',
-	scidata: 'link-line-scidata',
-	fastsim: 'link-line-fastsim',
-	sane: 'link-line-sane',
-	rslab: 'link-line-rslab',
-	thesisos: 'link-line-thesisos',
-	whatsmytraffic: 'link-line-whatsmytraffic',
-	falllow: 'link-line-falllow',
-	sanity: 'link-line-sanity'
-};
+// Project -> region type, for the heading of a card and for its link line.
+// Both are the same question as "which accent does this project use", which
+// content/prose.ts already answers, so they are derived from it: rapidfem
+// takes rapidpassives' colour here for the same reason it does there.
+const LINK_LINE_TYPES: Record<string, RegionType> = Object.fromEntries(
+	Object.entries(PROJECT_ACCENT).map(([project, accent]) => [project, `link-line-${accent}`])
+);
 
-const HEADING_TYPES: Record<string, RegionType> = {
-	pathsim: 'heading-pathsim',
-	pysimhub: 'heading-pysimhub',
-	rapidpassives: 'heading-rapidpassives',
-	rapidfem: 'heading-rapidpassives',
-	rapidmom: 'heading-rapidpassives',
-	scidata: 'heading-scidata',
-	fastsim: 'heading-fastsim',
-	sane: 'heading-sane',
-	rslab: 'heading-rslab',
-	thesisos: 'heading-thesisos',
-	whatsmytraffic: 'heading-whatsmytraffic',
-	falllow: 'heading-falllow',
-	sanity: 'heading-sanity'
-};
+const HEADING_TYPES: Record<string, RegionType> = Object.fromEntries(
+	Object.entries(PROJECT_ACCENT).map(([project, accent]) => [project, `heading-${accent}`])
+);
 
 // --- Section builders ---
 

@@ -5,6 +5,7 @@
 
 import { FILLER_SOURCE } from '$lib/data/filler-source';
 import imageDims from '$lib/data/image-dims.json';
+import type { AccentKey } from '$lib/accents';
 import { glowFor } from '$lib/content/prose';
 import type { Cell, CellType } from './gridLayout';
 
@@ -38,10 +39,9 @@ const TIMELINE_TEXT_W = 60;
 
 const IMAGE_DIMS = imageDims as unknown as Record<string, [number, number]>;
 
-// Project accent: maps to the existing code-grid-* color classes.
-export type AccentKey =
-	| 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim'
-	| 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow' | 'sanity' | 'neutral';
+// Re-exported so the many modules that import AccentKey from here keep
+// working; the list itself lives in lib/accents.ts.
+export type { AccentKey };
 
 interface AccentTypes {
 	heading: CellType;
@@ -75,8 +75,9 @@ export interface ArticleImage {
 	cols: number;
 	fit?: 'cover' | 'contain';
 	background?: string;
-	/// Hover glow, so a framed image behaves like the portal tiles on the landing
-	/// page rather than being the one static picture on an otherwise live surface.
+	/// Accent class for the hover glow, so a framed image behaves like the
+	/// portal tiles on the landing page rather than being the one static
+	/// picture on an otherwise live surface.
 	glow?: string;
 }
 

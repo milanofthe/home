@@ -15,7 +15,8 @@
 //   ``` fenced code ```        framed code block (optional language as label)
 //   - item                     list items
 
-import type { TextSegment, AccentKey } from '$lib/layout/articleLayout';
+import { accentKey } from '$lib/accents';
+import type { TextSegment } from '$lib/layout/articleLayout';
 
 export interface ImageSpec {
 	src: string;
@@ -44,14 +45,9 @@ const IMAGE_RE = /^!\[([^\]]*)\]\(([^)]+)\)\s*$/;
 const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
 
 // Accents recognized as `accent:` frontmatter and link color overrides.
-const ACCENTS = new Set([
-	'pathsim', 'pysimhub', 'rapidpassives', 'scidata', 'fastsim',
-	'sane', 'rslab', 'thesisos', 'whatsmytraffic', 'falllow', 'sanity', 'neutral'
-]);
 
-export function accentKey(value: string | undefined): AccentKey {
-	return value && ACCENTS.has(value) ? (value as AccentKey) : 'neutral';
-}
+
+export { accentKey };
 
 function stripInlineMarkers(text: string): string {
 	return text

@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { accentClass, type AccentKey } from '$lib/accents';
+
 	interface Props {
 		id: string;
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow' | 'sanity' | 'neutral';
+		color: AccentKey;
 		themeParam?: boolean;
 		// 'cover' (default) fills the tile edge-to-edge; 'contain' scales the
 		// image into the tile bounding box on a charcoal backdrop (letterboxed).
@@ -29,21 +31,6 @@
 		tileElement.style.transform = '';
 	}
 
-	const glowColors = {
-		pathsim: 'rgba(0, 112, 192, 0.3)',
-		pysimhub: 'rgba(99, 102, 241, 0.3)',
-		rapidpassives: 'rgba(217, 81, 60, 0.3)',
-		scidata: 'rgba(216, 53, 26, 0.3)',
-		fastsim: 'rgba(209, 65, 41, 0.3)',
-		sane: 'rgba(78, 149, 217, 0.3)',
-		rslab: 'rgba(59, 130, 246, 0.3)',
-		thesisos: 'rgba(107, 138, 253, 0.3)',
-		whatsmytraffic: 'rgba(111, 220, 142, 0.3)',
-		falllow: 'rgba(250, 250, 250, 0.3)',
-		sanity: 'rgba(255, 32, 32, 0.3)',
-		// the muted grey of the page text, for projects with no brand of their own
-		neutral: 'rgba(150, 149, 145, 0.3)'
-	};
 </script>
 
 <a
@@ -53,8 +40,7 @@
 	rel="noopener"
 	onmousemove={handleTilt}
 	onmouseleave={handleTiltReset}
-	class="tile-tilt"
-	style="--glow-color: {glowColors[color]};"
+	class="tile-tilt {accentClass(color)}"
 	aria-label="Open {name}"
 >
 	<img
@@ -78,8 +64,11 @@
 		will-change: transform;
 	}
 
+	/* The glow is the accent at three tenths, mixed from the same variable the
+	   rest of the page paints with, so there is no second palette to keep in
+	   step with the first. */
 	.tile-tilt:hover {
-		box-shadow: 0 8px 30px var(--glow-color, rgba(0, 217, 192, 0.2));
+		box-shadow: 0 8px 30px color-mix(in srgb, var(--accent-colour, #969591) 30%, transparent);
 	}
 
 	.tile-img {
