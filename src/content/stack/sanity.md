@@ -11,7 +11,7 @@ cta1: [ Open the demo -> ]|https://sanity.milanrother.com
 cta2: [ View on GitHub -> ]|https://github.com/milanofthe/sanity
 ---
 
-![pathsim, 328 files and 64,377 lines|center|114x22|contain](/images/sanity-project.png)
+![pathsim, 375 files and 64,377 lines|center|114x22|contain](/images/sanity-project.png)
 
 sanity opens a folder and draws every file in it at once. Each file that git does
 not ignore becomes a read-only panel, panels are packed by directory, and the
@@ -43,6 +43,17 @@ The layout is a squarified treemap on an integer grid, one cell per line height,
 nested by directory. Between 83 and 99 percent of the canvas is panel, measured
 across seven repository shapes from 120 to 2500 files. Panels are sized by what
 is in them, so the shape of a project is visible before you read a single name.
+
+Not only code. A notebook is read as its cells rather than as the JSON they are
+stored in, an image file is a panel in the image's own proportion, and a PDF
+shows its first page. Pictures are worth about as much canvas as a 500 line
+source file at most, and each one is decoded to the resolution the zoom asks
+for: holding pathsim's 47 figures at their own size would be 730 MB of texture
+against the 96 MB all of its code costs, so the budget is 64 MB shared between
+whatever is on screen.
+
+![47 figures, drawn|56x15|contain](/images/sanity-pictures.png)
+![rslab's report figures, first pages of PDFs|56x15|contain](/images/sanity-pdf.png)
 
 There are three levels of detail, weighted so nothing double-draws through a
 transition. Below 1.8 pixels per line a file is one textured quad per column,
