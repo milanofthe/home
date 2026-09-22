@@ -1009,6 +1009,15 @@
 				"statsText": "falllow.com"
 			},
 			{
+				"id": "sanity",
+				"heading": "sanity",
+				"url": "https://sanity.milanrother.com",
+				"paragraphs": [
+					"A read-only view of a whole repository: every file that is not gitignored becomes a panel on one zoomable canvas, packed by directory, and edits light up where they happen. Built for watching what a coding agent is doing to a codebase while it works."
+				],
+				"statsText": "sanity.milanrother.com"
+			},
+			{
 				"id": "nanospice",
 				"heading": "nanospice",
 				"url": "https://github.com/milanofthe/nanospice",

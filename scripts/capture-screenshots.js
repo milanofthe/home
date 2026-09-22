@@ -43,7 +43,11 @@ const sites = [
 	// seconds, so this wait is what stands between a screenshot and a black rectangle.
 	{ id: 'falllow-landing', url: 'https://falllow.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 60000, extraWaitMs: 12000 },
 	{ id: 'solvers-library', url: 'https://solvers.milanrother.com', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 18000 },
-	{ id: 'solvers-method', url: 'https://solvers.milanrother.com/methods/radau_iia_5', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 18000 }
+	{ id: 'solvers-method', url: 'https://solvers.milanrother.com/methods/radau_iia_5', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 18000 },
+	// sanity loads a dumped repository over HTTP and lays it out on a GPU
+	// canvas, then holds a one line hint in its status bar for twelve seconds.
+	// The wait is past both. ?demo=pathsim is the same view the link opens on.
+	{ id: 'sanity-app', url: 'https://sanity.milanrother.com/?demo=pathsim', darkOnly: true, waitUntil: 'networkidle2', timeout: 90000, extraWaitMs: 16000 }
 ];
 
 const themes = ['dark', 'light'];

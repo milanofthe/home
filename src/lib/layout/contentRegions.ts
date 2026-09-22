@@ -175,6 +175,11 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		type: 'embedded', lines: [],
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'solvers-library', label: 'Library' }, { id: 'solvers-method', label: 'Radau IIA 5' }]
+	},
+	sanity: {
+		type: 'embedded', lines: [],
+		embeddedRows: 14, embeddedCols: 54, align: 'center',
+		tiles: [{ id: 'sanity-app', label: 'sanity' }]
 	}
 };
 

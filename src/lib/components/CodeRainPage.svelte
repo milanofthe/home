@@ -69,7 +69,8 @@
 		'nanofem-mesh': { name: 'Patch antenna mesh', url: 'https://github.com/milanofthe/nanofem', screenshot: '/images/nanofem-mesh.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' },
 		'nanofem-field': { name: 'Field cut', url: 'https://github.com/milanofthe/nanofem', screenshot: '/images/nanofem-field.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' },
 		'solvers-library': { name: 'Library', url: 'https://solvers.milanrother.com', screenshot: '/screenshots/solvers-library.png', color: 'neutral', themeParam: false },
-		'solvers-method': { name: 'Radau IIA 5', url: 'https://solvers.milanrother.com/methods/radau_iia_5', screenshot: '/screenshots/solvers-method.png', color: 'neutral', themeParam: false }
+		'solvers-method': { name: 'Radau IIA 5', url: 'https://solvers.milanrother.com/methods/radau_iia_5', screenshot: '/screenshots/solvers-method.png', color: 'neutral', themeParam: false },
+		'sanity-app': { name: 'sanity', url: 'https://sanity.milanrother.com', screenshot: '/screenshots/sanity-app.png', color: 'neutral', themeParam: false }
 	};
 
 	// Video tile data
