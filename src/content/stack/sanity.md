@@ -11,7 +11,7 @@ cta1: [ Open the demo -> ]|https://sanity.milanrother.com
 cta2: [ View on GitHub -> ]|https://github.com/milanofthe/sanity
 ---
 
-![pathsim, 328 files and 71,278 lines|center|114x22|contain](/images/sanity-project.png)
+![pathsim, 328 files and 64,377 lines|center|114x22|contain](/images/sanity-project.png)
 
 sanity opens a folder and draws every file in it at once. Each file that git does
 not ignore becomes a read-only panel, panels are packed by directory, and the
