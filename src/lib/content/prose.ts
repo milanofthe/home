@@ -37,7 +37,8 @@ export const PROJECT_ACCENT: Record<string, AccentKey> = {
 	scidata: 'scidata',
 	thesisos: 'thesisos',
 	whatsmytraffic: 'whatsmytraffic',
-	falllow: 'falllow'
+	falllow: 'falllow',
+	sanity: 'sanity'
 };
 
 // Projects with a detail page under /stack. The side projects deliberately
@@ -65,6 +66,7 @@ const GLOW: Record<AccentKey, string> = {
 	thesisos: 'rgba(107, 138, 253, 0.3)',
 	whatsmytraffic: 'rgba(111, 220, 142, 0.3)',
 	falllow: 'rgba(250, 250, 250, 0.3)',
+	sanity: 'rgba(255, 32, 32, 0.3)',
 	neutral: 'rgba(150, 149, 145, 0.25)'
 };
 

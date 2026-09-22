@@ -46,7 +46,7 @@ const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
 // Accents recognized as `accent:` frontmatter and link color overrides.
 const ACCENTS = new Set([
 	'pathsim', 'pysimhub', 'rapidpassives', 'scidata', 'fastsim',
-	'sane', 'rslab', 'thesisos', 'whatsmytraffic', 'falllow', 'neutral'
+	'sane', 'rslab', 'thesisos', 'whatsmytraffic', 'falllow', 'sanity', 'neutral'
 ]);
 
 export function accentKey(value: string | undefined): AccentKey {

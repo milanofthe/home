@@ -5,7 +5,7 @@ import { FILLER_SOURCE } from '$lib/data/filler-source';
 import { contentSections, type ContentSection, type ContentRegion } from './contentRegions';
 export type { ContentSection };
 
-export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'heading-falllow' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'link-sane' | 'link-rslab' | 'link-thesisos' | 'link-whatsmytraffic' | 'link-falllow' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim' | 'frame-sane' | 'frame-rslab' | 'frame-thesisos' | 'frame-whatsmytraffic' | 'frame-falllow' | 'code-kw' | 'code-str' | 'code-com' | 'code-num';
+export type CellType = 'filler' | 'content' | 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'heading-falllow' | 'heading-sanity' | 'cta' | 'link' | 'link-pathsim' | 'link-pysimhub' | 'link-rapidpassives' | 'link-scidata' | 'link-fastsim' | 'link-sane' | 'link-rslab' | 'link-thesisos' | 'link-whatsmytraffic' | 'link-falllow' | 'link-sanity' | 'footer' | 'empty' | 'form-field' | 'frame' | 'frame-pathsim' | 'frame-pysimhub' | 'frame-rapidpassives' | 'frame-scidata' | 'frame-fastsim' | 'frame-sane' | 'frame-rslab' | 'frame-thesisos' | 'frame-whatsmytraffic' | 'frame-falllow' | 'frame-sanity' | 'code-kw' | 'code-str' | 'code-com' | 'code-num';
 
 export interface Cell {
 	char: string;
@@ -95,7 +95,7 @@ function applyInlineLinks(
 
 // Types that should be word-wrapped when lines exceed available width
 const WRAPPABLE_TYPES: Set<string> = new Set([
-	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'link-line-rapidpassives', 'link-line-scidata', 'link-line-fastsim', 'link-line-thesisos', 'link-line-whatsmytraffic', 'link-line-falllow', 'footer-line'
+	'paragraph', 'content', 'link-line', 'link-line-pathsim', 'link-line-pysimhub', 'link-line-rapidpassives', 'link-line-scidata', 'link-line-fastsim', 'link-line-thesisos', 'link-line-whatsmytraffic', 'link-line-falllow', 'link-line-sanity', 'footer-line'
 ]);
 
 // Fill a line with filler source characters, cycling through the source
@@ -148,10 +148,14 @@ function buildFrameTop(frameCols: number, label: string): string {
 	return prefix + '-'.repeat(Math.max(0, frameCols - prefix.length - 1)) + '+';
 }
 
-// Region type -> cell type for the pieces a project card is made of. The big
-// ternary in addContentRegion does the same job for whole regions; a card composes
-// its own lines, so it needs the mapping on its own.
-const CARD_CELL_TYPE: Record<string, CellType> = {
+// Region type -> cell type, for whole regions and for the lines a project card
+// composes itself.
+//
+// One table rather than a table and a matching chain of ternaries, which is
+// what this was: adding a project meant five separate edits, and the two that
+// live in this file are exactly the two that got forgotten, so the new entry
+// came out in the default grey with the colour sitting unused in the CSS.
+const REGION_CELL_TYPE: Record<string, CellType> = {
 	'heading': 'heading',
 	'heading-pathsim': 'heading-pathsim',
 	'heading-pysimhub': 'heading-pysimhub',
@@ -163,6 +167,7 @@ const CARD_CELL_TYPE: Record<string, CellType> = {
 	'heading-thesisos': 'heading-thesisos',
 	'heading-whatsmytraffic': 'heading-whatsmytraffic',
 	'heading-falllow': 'heading-falllow',
+	'heading-sanity': 'heading-sanity',
 	'link-line': 'link',
 	'link-line-pathsim': 'link-pathsim',
 	'link-line-pysimhub': 'link-pysimhub',
@@ -173,7 +178,11 @@ const CARD_CELL_TYPE: Record<string, CellType> = {
 	'link-line-rslab': 'link-rslab',
 	'link-line-thesisos': 'link-thesisos',
 	'link-line-whatsmytraffic': 'link-whatsmytraffic',
-	'link-line-falllow': 'link-falllow'
+	'link-line-falllow': 'link-falllow',
+	'link-line-sanity': 'link-sanity',
+	'cta': 'cta',
+	'footer-line': 'footer',
+	'form-field': 'form-field'
 };
 
 const FRAME_CELL_TYPE: Record<string, CellType> = {
@@ -186,7 +195,8 @@ const FRAME_CELL_TYPE: Record<string, CellType> = {
 	rslab: 'frame-rslab',
 	thesisos: 'frame-thesisos',
 	whatsmytraffic: 'frame-whatsmytraffic',
-	falllow: 'frame-falllow'
+	falllow: 'frame-falllow',
+	sanity: 'frame-sanity'
 };
 
 function buildFrameBottom(frameCols: number): string {
@@ -243,33 +253,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 	}
 
 	function addContentRegion(region: ContentRegion) {
-		const type: CellType =
-			region.type === 'heading' ? 'heading' :
-			region.type === 'heading-pathsim' ? 'heading-pathsim' :
-			region.type === 'heading-pysimhub' ? 'heading-pysimhub' :
-			region.type === 'heading-rapidpassives' ? 'heading-rapidpassives' :
-			region.type === 'heading-scidata' ? 'heading-scidata' :
-			region.type === 'heading-fastsim' ? 'heading-fastsim' :
-			region.type === 'heading-sane' ? 'heading-sane' :
-			region.type === 'heading-rslab' ? 'heading-rslab' :
-			region.type === 'heading-thesisos' ? 'heading-thesisos' :
-			region.type === 'heading-whatsmytraffic' ? 'heading-whatsmytraffic' :
-			region.type === 'heading-falllow' ? 'heading-falllow' :
-			region.type === 'cta' ? 'cta' :
-			region.type === 'link-line' ? 'link' :
-			region.type === 'link-line-pathsim' ? 'link-pathsim' :
-			region.type === 'link-line-pysimhub' ? 'link-pysimhub' :
-			region.type === 'link-line-rapidpassives' ? 'link-rapidpassives' :
-			region.type === 'link-line-scidata' ? 'link-scidata' :
-			region.type === 'link-line-fastsim' ? 'link-fastsim' :
-			region.type === 'link-line-sane' ? 'link-sane' :
-			region.type === 'link-line-rslab' ? 'link-rslab' :
-			region.type === 'link-line-thesisos' ? 'link-thesisos' :
-			region.type === 'link-line-whatsmytraffic' ? 'link-whatsmytraffic' :
-			region.type === 'link-line-falllow' ? 'link-falllow' :
-			region.type === 'footer-line' ? 'footer' :
-			region.type === 'form-field' ? 'form-field' :
-			'content';
+		const type: CellType = REGION_CELL_TYPE[region.type] ?? 'content';
 
 		if (region.type === 'spacer') {
 			cells.push(fillerLine(cols, fillerOffset));
@@ -302,14 +286,14 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 				// the tallest of them so the pictures below start on one row.
 				const blocks = group.map((card) => {
 					const out: { text: string; type: CellType }[] = [];
-					out.push({ text: card.heading, type: CARD_CELL_TYPE[card.headingType] ?? 'heading' });
+					out.push({ text: card.heading, type: REGION_CELL_TYPE[card.headingType] ?? 'heading' });
 					out.push({ text: '', type: 'content' });
 					for (const p of card.paragraphs) {
 						for (const l of wordWrap(p, colW - 2)) out.push({ text: l, type: 'content' });
 						out.push({ text: '', type: 'content' });
 					}
 					for (const line of card.statsLines) {
-						out.push({ text: line.text, type: CARD_CELL_TYPE[line.type] ?? 'link' });
+						out.push({ text: line.text, type: REGION_CELL_TYPE[line.type] ?? 'link' });
 					}
 					return out;
 				});
@@ -396,18 +380,7 @@ export function computeGridLayout(cols: number, sections?: ContentSection[]): Gr
 		}
 
 		if (region.type === 'embedded') {
-			const frameType: CellType =
-				region.frameColor === 'pathsim' ? 'frame-pathsim' :
-				region.frameColor === 'pysimhub' ? 'frame-pysimhub' :
-				region.frameColor === 'rapidpassives' ? 'frame-rapidpassives' :
-				region.frameColor === 'scidata' ? 'frame-scidata' :
-				region.frameColor === 'fastsim' ? 'frame-fastsim' :
-				region.frameColor === 'sane' ? 'frame-sane' :
-				region.frameColor === 'rslab' ? 'frame-rslab' :
-				region.frameColor === 'thesisos' ? 'frame-thesisos' :
-				region.frameColor === 'whatsmytraffic' ? 'frame-whatsmytraffic' :
-				region.frameColor === 'falllow' ? 'frame-falllow' :
-				'frame';
+			const frameType: CellType = FRAME_CELL_TYPE[region.frameColor ?? ''] ?? 'frame';
 			const innerRows = region.embeddedRows || 10;
 
 			// Individual framed tiles (embeddedCols = per-tile inner width)

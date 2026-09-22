@@ -41,7 +41,7 @@ const IMAGE_DIMS = imageDims as unknown as Record<string, [number, number]>;
 // Project accent: maps to the existing code-grid-* color classes.
 export type AccentKey =
 	| 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim'
-	| 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow' | 'neutral';
+	| 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow' | 'sanity' | 'neutral';
 
 interface AccentTypes {
 	heading: CellType;

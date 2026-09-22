@@ -12,7 +12,7 @@ export interface GitHubStats {
 	pysimhub: { projects: number; members?: number; cumulativeStars: number };
 }
 
-export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'heading-falllow' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-sane' | 'link-line-rslab' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'link-line-falllow' | 'footer-line' | 'content' | 'form-field' | 'project-pair';
+export type RegionType = 'heading' | 'heading-pathsim' | 'heading-pysimhub' | 'heading-rapidpassives' | 'heading-scidata' | 'heading-fastsim' | 'heading-sane' | 'heading-rslab' | 'heading-thesisos' | 'heading-whatsmytraffic' | 'heading-falllow' | 'heading-sanity' | 'paragraph' | 'spacer' | 'embedded' | 'cta' | 'link-line' | 'link-line-pathsim' | 'link-line-pysimhub' | 'link-line-rapidpassives' | 'link-line-scidata' | 'link-line-fastsim' | 'link-line-sane' | 'link-line-rslab' | 'link-line-thesisos' | 'link-line-whatsmytraffic' | 'link-line-falllow' | 'link-line-sanity' | 'footer-line' | 'content' | 'form-field' | 'project-pair';
 
 export interface ContentRegion {
 	type: RegionType;
@@ -25,7 +25,7 @@ export interface ContentRegion {
 	url?: string; // for links within text
 	inlineLinks?: { phrase: string; project: string }[]; // colored, clickable phrases embedded in paragraph text
 	label?: string; // frame title for embedded blocks
-	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow'; // project color for frame
+	frameColor?: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow' | 'sanity'; // project color for frame
 	align?: 'center' | 'left';
 	fill?: boolean; // pad heading up to the tile-row width
 	fillChar?: string; // padding character, defaults to '-'
@@ -177,7 +177,7 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		tiles: [{ id: 'solvers-library', label: 'Library' }, { id: 'solvers-method', label: 'Radau IIA 5' }]
 	},
 	sanity: {
-		type: 'embedded', lines: [],
+		type: 'embedded', lines: [], frameColor: 'sanity',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
 		tiles: [{ id: 'sanity-app', label: 'sanity' }]
 	}
@@ -197,7 +197,8 @@ const LINK_LINE_TYPES: Record<string, RegionType> = {
 	rslab: 'link-line-rslab',
 	thesisos: 'link-line-thesisos',
 	whatsmytraffic: 'link-line-whatsmytraffic',
-	falllow: 'link-line-falllow'
+	falllow: 'link-line-falllow',
+	sanity: 'link-line-sanity'
 };
 
 const HEADING_TYPES: Record<string, RegionType> = {
@@ -212,7 +213,8 @@ const HEADING_TYPES: Record<string, RegionType> = {
 	rslab: 'heading-rslab',
 	thesisos: 'heading-thesisos',
 	whatsmytraffic: 'heading-whatsmytraffic',
-	falllow: 'heading-falllow'
+	falllow: 'heading-falllow',
+	sanity: 'heading-sanity'
 };
 
 // --- Section builders ---

@@ -1011,9 +1011,10 @@
 			{
 				"id": "sanity",
 				"heading": "sanity",
+				"headingType": "sanity",
 				"url": "https://sanity.milanrother.com",
 				"paragraphs": [
-					"A read-only view of a whole repository: every file that is not gitignored becomes a panel on one zoomable canvas, packed by directory, and edits light up where they happen. Built for watching what a coding agent is doing to a codebase while it works."
+					"Every file in a repository as a read-only panel on one zoomable canvas, packed by directory. Saves are picked up live and the lines that changed are marked."
 				],
 				"statsText": "sanity.milanrother.com"
 			},

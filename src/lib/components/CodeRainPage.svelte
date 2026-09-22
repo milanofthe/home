@@ -34,7 +34,7 @@
 		name: string;
 		url: string;
 		screenshot: string;
-		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow' | 'neutral';
+		color: 'pathsim' | 'pysimhub' | 'rapidpassives' | 'scidata' | 'fastsim' | 'sane' | 'rslab' | 'thesisos' | 'whatsmytraffic' | 'falllow' | 'sanity' | 'neutral';
 		themeParam?: boolean;
 		fit?: 'cover' | 'contain';
 		background?: string;
@@ -70,7 +70,7 @@
 		'nanofem-field': { name: 'Field cut', url: 'https://github.com/milanofthe/nanofem', screenshot: '/images/nanofem-field.png', color: 'neutral', themeParam: false, fit: 'contain', background: '#08080c' },
 		'solvers-library': { name: 'Library', url: 'https://solvers.milanrother.com', screenshot: '/screenshots/solvers-library.png', color: 'neutral', themeParam: false },
 		'solvers-method': { name: 'Radau IIA 5', url: 'https://solvers.milanrother.com/methods/radau_iia_5', screenshot: '/screenshots/solvers-method.png', color: 'neutral', themeParam: false },
-		'sanity-app': { name: 'sanity', url: 'https://sanity.milanrother.com', screenshot: '/screenshots/sanity-app.png', color: 'neutral', themeParam: false }
+		'sanity-app': { name: 'sanity', url: 'https://sanity.milanrother.com', screenshot: '/screenshots/sanity-app.png', color: 'sanity', themeParam: false }
 	};
 
 	// Video tile data
@@ -176,6 +176,7 @@
 		{ text: 'thesisos.io', types: ['link-thesisos'], href: 'https://thesisos.io' },
 		{ text: 'whatsmytraffic.com', types: ['link-whatsmytraffic'], href: 'https://whatsmytraffic.com' },
 		{ text: 'falllow.com', types: ['link-falllow'], href: 'https://falllow.com' },
+		{ text: 'sanity.milanrother.com', types: ['link-sanity'], href: 'https://sanity.milanrother.com' },
 		{ text: 'github.com/milanofthe/nanospice', types: ['link'], href: 'https://github.com/milanofthe/nanospice' },
 		{ text: 'github.com/milanofthe/nanofem', types: ['link'], href: 'https://github.com/milanofthe/nanofem' },
 		{ text: 'solvers.milanrother.com', types: ['link'], href: 'https://solvers.milanrother.com' },

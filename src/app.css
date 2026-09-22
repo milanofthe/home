@@ -364,6 +364,21 @@
 	color: #fafafa;
 }
 
+/* sanity: the red of its logo and of its own interface, one step off pure red
+   so it does not vibrate against the dark ground the way #ff0000 does. */
+.code-grid-heading-sanity {
+	color: #ff2020;
+	font-weight: bold;
+}
+
+.code-grid-link-sanity {
+	color: #ff2020;
+}
+
+.code-grid-frame-sanity {
+	color: #ff2020;
+}
+
 /* Typewriter: filler-colored base with real-colored overlay stacked via CSS grid */
 .tw-wrapper {
 	display: inline-grid;
