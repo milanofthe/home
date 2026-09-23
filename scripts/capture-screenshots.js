@@ -116,9 +116,11 @@ async function main() {
 	}
 
 	console.log('Launching browser...');
+	// The installed Chrome, or any other Chromium when CHROME_PATH names one:
+	// a machine without Chrome has Playwright's in its cache.
 	const browser = await puppeteer.launch({
 		headless: true,
-		channel: 'chrome',
+		...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : { channel: 'chrome' }),
 		args: ['--no-sandbox', '--disable-setuid-sandbox']
 	});
 
