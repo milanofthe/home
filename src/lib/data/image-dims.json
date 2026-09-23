@@ -135,14 +135,6 @@
 		3200,
 		2000
 	],
-	"/images/sanity-pdf.png": [
-		3200,
-		2000
-	],
-	"/images/sanity-search.png": [
-		3200,
-		2000
-	],
 	"/images/solvers-gallery.png": [
 		3575,
 		1426
@@ -403,9 +395,13 @@
 		1878,
 		1220
 	],
+	"/screenshots/sanity-app-dark.png": [
+		1878,
+		1220
+	],
 	"/screenshots/sanity-app.png": [
-		2880,
-		1870
+		1878,
+		1220
 	],
 	"/screenshots/scidata-app-dark.png": [
 		2880,
