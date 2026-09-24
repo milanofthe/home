@@ -111,6 +111,34 @@
 		3105,
 		1427
 	],
+	"/images/rsdag-adaptive.png": [
+		1480,
+		816
+	],
+	"/images/rsdag-lu.png": [
+		2206,
+		1608
+	],
+	"/images/rsdag-pipeline.png": [
+		2816,
+		1008
+	],
+	"/images/rsdag-solve-bench.png": [
+		1973,
+		631
+	],
+	"/images/rsdag-solve.png": [
+		1118,
+		908
+	],
+	"/images/rsdag-solver-path.png": [
+		2568,
+		878
+	],
+	"/images/rsdag-tape.png": [
+		1190,
+		1320
+	],
 	"/images/rslab-h2h-ldlt.png": [
 		1627,
 		756

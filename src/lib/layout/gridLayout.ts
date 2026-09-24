@@ -74,6 +74,7 @@ const PROJECT_LINK_CELL: Record<string, CellType> = {
 	fastsim: 'link-fastsim',
 	sane: 'link-sane',
 	rslab: 'link-rslab',
+	rsdag: 'link-rslab',
 	thesisos: 'link-thesisos',
 	whatsmytraffic: 'link-whatsmytraffic'
 };

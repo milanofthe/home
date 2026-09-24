@@ -30,6 +30,7 @@ export const PROJECT_ACCENT: Record<string, AccentKey> = {
 	fastsim: 'fastsim',
 	sane: 'sane',
 	rslab: 'rslab',
+	rsdag: 'rslab',
 	rapidpassives: 'rapidpassives',
 	rapidfem: 'rapidpassives',
 	rapidmom: 'rapidpassives',
@@ -46,7 +47,7 @@ export const PROJECT_ACCENT: Record<string, AccentKey> = {
 // have none: they link out to their own sites instead.
 const STACK_SLUGS = new Set([
 	'pathsim', 'pathview', 'fastsim', 'sane',
-	'rapidmom', 'rapidfem', 'rapidpassives', 'rslab', 'rapidmesh'
+	'rapidmom', 'rapidfem', 'rapidpassives', 'rslab', 'rsdag', 'rapidmesh'
 ]);
 
 export function accentFor(project?: string): AccentKey {

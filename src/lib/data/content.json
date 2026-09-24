@@ -926,7 +926,7 @@
 			},
 			{
 				"heading": "foundations",
-				"intro": "The stack rests on its own numerical infrastructure. No black-box dependencies. Both are built for solver-in-the-loop operation: deterministic, budgetable, embeddable.",
+				"intro": "The stack rests on its own numerical infrastructure. No black-box dependencies. All three are built for solver-in-the-loop operation: deterministic, budgetable, embeddable.",
 				"items": [
 					{
 						"id": "rslab",
@@ -937,6 +937,16 @@
 						],
 						"metrics": "bit-identical across thread counts / faster than faer, ~5x to MKL PARDISO / PyPI",
 						"statsText": "github.com/milanofthe/rslab"
+					},
+					{
+						"id": "rsdag",
+						"heading": "RSDAG",
+						"headingType": "rslab",
+						"paragraphs": [
+							"An expression graph compiler for ODE and DAE systems, taken out of FastSim and SANE into a library of its own. Models are traced into a hash-consed graph of ops and differentiated symbolically, then lowered to a flat tape with shared subexpressions, folded constants, slots by lifetime, and a prolog that runs once per parameter binding. The tape runs interpreted or as machine code that RSDAG emits itself, bit for bit the same. The solver goes into the graph too: a sparse LU on a fixed pattern is one program, the factorization in its prolog and the substitution per Newton step."
+						],
+						"metrics": "bit-identical across backends / native AArch64 + x86-64, interpreter anywhere / Rust + Python / AGPL-3.0",
+						"statsText": "github.com/milanofthe/rsdag"
 					},
 					{
 						"id": "rapidmesh",

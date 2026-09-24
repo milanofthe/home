@@ -3,7 +3,7 @@ title: RapidMesh
 accent: rapidpassives
 tagline: 2D and 3D mesh generation for electromagnetic FEM and MoM in pure Rust.
 group: foundations
-order: 9
+order: 10
 site: mesh.rapidpassives.org|https://mesh.rapidpassives.org
 repo: github.com/milanofthe/rapidmesh|https://github.com/milanofthe/rapidmesh
 license: open source
