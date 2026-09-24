@@ -75,9 +75,11 @@ still a symbol the sensitivity analysis can reach.
 
 ## The engine
 
-Rust core: hash-consed symbolic DAG, autodiff, threaded sparse LU (via
-[RSLAB](/stack/rslab/)), optional Cranelift JIT. Python binding via PyO3, or
-embed the whole engine in Rust with no Python at all.
+Rust core on [RSDAG](/stack/rsdag/): hash-consed symbolic DAG, autodiff, and
+tapes that run interpreted or as native code RSDAG emits itself. Sparse LU as
+an RSDAG program for circuit-shaped systems, and threaded through
+[RSLAB](/stack/rslab/) for the rest. Python binding via PyO3, or embed the
+whole engine in Rust with no Python at all.
 
 ## Validation
 
