@@ -33,20 +33,13 @@ a hundredfold tighter tolerance moves S by round-off.
 
 ## Ports
 
-Ports come in two kinds. A lumped port is an ideal source between two
-references, each a contact on a metal layer or the ground: an in-plane gap cut
-across a conductor, or a band of the conductor at its terminal, driven against
-the backside ground or a second contact. The source has zero length and no feed
-geometry, so the reference plane is at the metal and nothing needs de-embedding;
-the current distribution over the cross-section, edge singularity and skin
-crowding included, comes out of the solve.
-
-A calibrated port attaches a feed of the terminal's cross-section that carries
-the line's discrete mode, incident and reflected, with its propagation constant
-and a complex characteristic impedance solved on a periodic strip of the port's
-metal at every frequency. The network is referenced to the drawn terminal
-without line standards to fit, and terminals side by side share one feed that
-carries the pair's even and odd modes.
+A port is an ideal source between two references, each a contact on a metal
+layer or the ground: an in-plane gap cut across a conductor, or a band of the
+conductor at its terminal, driven against the backside ground or a second
+contact. The source has zero length and no feed geometry, so the reference plane
+is at the metal and nothing needs de-embedding; the current distribution over
+the cross-section, edge singularity and skin crowding included, comes out of the
+solve.
 
 ## Capacitance without the full-wave solve
 
