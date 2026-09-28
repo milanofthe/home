@@ -15,7 +15,7 @@
 		"pysimhub": {
 			"projects": 33,
 			"members": 3,
-			"cumulativeStars": 16520
+			"cumulativeStars": 16519
 		}
 	},
 	"history": [
@@ -4747,9 +4747,29 @@
 				"members": 3,
 				"cumulativeStars": 16520
 			}
+		},
+		{
+			"date": "2026-09-28",
+			"pathsim": {
+				"stars": 497,
+				"forks": 52,
+				"watchers": 10,
+				"openIssues": 15
+			},
+			"pathview": {
+				"stars": 92,
+				"forks": 14,
+				"watchers": 4,
+				"openIssues": 9
+			},
+			"pysimhub": {
+				"projects": 33,
+				"members": 3,
+				"cumulativeStars": 16519
+			}
 		}
 	],
-	"fetchedAt": "2026-09-27T20:15:20.352Z",
+	"fetchedAt": "2026-09-28T00:49:23.663Z",
 	"starHistory": {
 		"pathsim": [
 			{
