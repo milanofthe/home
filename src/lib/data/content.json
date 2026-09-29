@@ -953,9 +953,9 @@
 						"heading": "RapidMesh",
 						"headingType": "rapidpassives",
 						"paragraphs": [
-							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact-arithmetic CSG booleans, watertight by construction, count-based meshing with exact element budgets, and an API designed for mesher-in-the-loop operation rather than file exchange. The 2D path meshes for RapidMoM today; the 3D path is not at gmsh parity yet."
+							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact CSG on a B-rep with true surfaces, meshed bottom-up (edges, faces, then each region by its constrained Delaunay tetrahedralization), so material interfaces conform by construction. Large models are cut into blocks meshed in parallel. Two to three times faster than gmsh at less than half its memory per element, with the better worst element on most models; the 2D path meshes for RapidMoM."
 						],
-						"metrics": "work in progress / exact element budgets / FEM + MoM interfaces / 2D in production, 3D not yet at gmsh parity",
+						"metrics": "bottom-up, conforming by construction / 2x to 3x faster than gmsh / 334 bytes per tet / 196-geometry corpus",
 						"statsText": "mesh.rapidpassives.org / github.com/milanofthe/rapidmesh"
 					}
 				]

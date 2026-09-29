@@ -76,28 +76,32 @@
 		692
 	],
 	"/images/rapidmesh-box-2spheres.png": [
-		1240,
-		1017
+		1022,
+		932
 	],
-	"/images/rapidmesh-coax-step.png": [
-		1240,
-		1017
+	"/images/rapidmesh-cheburashka.png": [
+		838,
+		838
+	],
+	"/images/rapidmesh-chip.png": [
+		1306,
+		813
 	],
 	"/images/rapidmesh-drilled-block.png": [
 		1000,
 		820
 	],
+	"/images/rapidmesh-luneburg.png": [
+		913,
+		1002
+	],
 	"/images/rapidmesh-resonator.png": [
-		899,
-		992
+		935,
+		1028
 	],
 	"/images/rapidmesh-transformer.png": [
-		1240,
-		1017
-	],
-	"/images/rapidmesh-via.png": [
-		1000,
-		820
+		946,
+		546
 	],
 	"/images/rapidmom-current.png": [
 		1100,
