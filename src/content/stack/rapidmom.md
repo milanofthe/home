@@ -6,7 +6,7 @@ group: fields
 order: 5
 site: mom.rapidpassives.org|https://mom.rapidpassives.org
 license: early access / free for academia / commercial licenses
-cta1: [ Download the evaluation kit -> ]|https://mom.rapidpassives.org/rapidmom-evalkit.zip
+cta1: [ Download the evaluation kit -> ]|https://mom.rapidpassives.org/kit/rapidmom-evalkit.zip
 cta2: [ Request evaluation -> ]|mailto:rapidmom@milanrother.com?subject=RapidMoM%20evaluation
 ---
 
@@ -33,13 +33,9 @@ a hundredfold tighter tolerance moves S by round-off.
 
 ## Ports
 
-A port is an ideal source between two references, each a contact on a metal
-layer or the ground: an in-plane gap cut across a conductor, or a band of the
-conductor at its terminal, driven against the backside ground or a second
-contact. The source has zero length and no feed geometry, so the reference plane
-is at the metal and nothing needs de-embedding; the current distribution over
-the cross-section, edge singularity and skin crowding included, comes out of the
-solve.
+Calibrated ports continue each terminal as a feed line of its own cross-section
+and take the network in that line's mode at the drawn terminal, so there is
+nothing to de-embed. Ideal zero-length ports remain for internal nodes.
 
 ## Capacitance without the full-wave solve
 
@@ -66,9 +62,9 @@ engineers design against: L, Q, coupling.
 Validation runs against closed-form analytics, 2D field referees, physical
 invariants (Lorentz reciprocity, mutual-sign checks, skin-effect rise) and an
 independent reference solver on controlled cases before any device claim is
-made. The evaluation kit, fourteen devices on the IHP SG13G2 stack solved on
-both conductor paths with their Touchstones, run logs and a generated report,
-is available for download.
+made. The evaluation kit, RFIC passives on the IHP SG13G2 stack and RF PCB
+examples solved on both conductor paths with calibrated ports, with their
+Touchstones, run logs and a generated report, is available for download.
 
 ## Built for sweeps
 
