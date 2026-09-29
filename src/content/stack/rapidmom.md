@@ -4,8 +4,10 @@ accent: rapidpassives
 tagline: 2.5D Method-of-Moments for planar RF passives on layered substrates.
 group: fields
 order: 5
+site: mom.rapidpassives.org|https://mom.rapidpassives.org
 license: early access / free for academia / commercial licenses
-cta1: [ Request evaluation -> ]|mailto:rapidmom@milanrother.com?subject=RapidMoM%20evaluation
+cta1: [ Download the evaluation kit -> ]|https://mom.rapidpassives.org/kit/rapidmom-evalkit.zip
+cta2: [ Request evaluation -> ]|mailto:rapidmom@milanrother.com?subject=RapidMoM%20evaluation
 ---
 
 RapidMoM is a 2.5D Method-of-Moments solver for planar RF passives on layered
@@ -14,7 +16,8 @@ metal layouts on a real process stack. The formulation is a mixed-potential surf
 integral equation with an RWG basis, an A-EFIE saddle-point system against the
 low-frequency breakdown (stable down to DC), layered-media Green's functions
 in the Michalski-Mosig formulation, and a kernel-independent ACA / H-matrix
-fast solver with block-GMRES in O(N log N).
+fast solver with block-GMRES, preconditioned by a sparse LU of the near field
+from [RSLAB](/stack/rslab/).
 
 ## Converging the network
 
@@ -24,29 +27,15 @@ A GMRES residual bounds the algebraic error, but a port observable can be a
 small difference of large quantities (a quality factor, for instance) or live
 in a different block of the saddle system entirely. RapidMoM
 therefore continues the solve down a tolerance ladder, warm-started, until the
-port-space network itself stops moving, including a dedicated criterion for
-the real part. Every port configuration lands on the dense-operator answer
-instead of drifting with the iterative tolerance.
+port network itself stops moving. A solve is reproducible bit for bit, and its
+network does not depend on the path the solver took: another preconditioner or
+a hundredfold tighter tolerance moves S by round-off.
 
-## One port primitive
+## Ports
 
-Ports are one primitive: a current driven between two contacts, each an
-oriented segment on a metal layer, free in position, length and orientation.
-The excitation is a voltage source across the gap, never an imposed current
-profile, so the current distribution over the cross-section, edge singularity
-and skin crowding included, comes out of the solve. A label point resolves at
-build time to the conductor's terminal edge run; on an outline that runs along
-a trace rather than ending at one, that resolution is ambiguous and the
-preflight rejects it instead of guessing.
-
-Two contact kinds and the ground plane give the usual port types out of that
-one primitive: in-plane cuts, differential gaps whose loop closes locally,
-vertical probes against the reference, and ports between two conductors on the
-same or on different layers. All of them are ideal in the same sense, a
-zero-length lumped source at the contact plane with no feed geometry and no
-series impedance. The reference plane sits at the metal, so there is nothing
-to de-embed and the networks compare directly against the port conventions of
-commercial planar solvers.
+Calibrated ports continue each terminal as a feed line of its own cross-section
+and take the network in that line's mode at the drawn terminal, so there is
+nothing to de-embed. Ideal zero-length ports remain for internal nodes.
 
 ## Capacitance without the full-wave solve
 
@@ -61,28 +50,32 @@ solving the full-wave problem at all.
 
 ![Current density|left|46x14](/images/rapidmom-current.png)
 
-Two production conductor models are available per layer. The sheet model is
-the classical 2.5D treatment: one RWG current sheet per metal with the
-two-sided skin-effect surface impedance, the right default for thin metals.
-The boxed model treats each conductor as a closed thick box with the
-conductor interior entering through the slab internal-impedance two-port.
-Output is standard Touchstone (S, Y, Z) plus the device metrics
+Two conductor models are available per metal. The thin model is the classical
+2.5D treatment: one RWG current sheet per metal with the two-sided skin-effect
+surface impedance, the right choice for metals thinner than a skin depth. The
+thick model carries both faces and the side walls of a conductor, coupled
+through the exact differential surface admittance of its cross-section, so the
+current crowding across the thickness and into the corners comes out of the
+solve. Output is standard Touchstone (S, Y, Z) plus the device metrics
 engineers design against: L, Q, coupling.
 
-Validation runs against closed-form analytics, physical invariants (Lorentz
-reciprocity, mutual-sign checks, skin-effect rise), and an independent
-reference solver on controlled cases before any device claim is made. The
-evaluation report is auto-generated from the same pipeline and available on
-request.
+Validation runs against closed-form analytics, 2D field referees, physical
+invariants (Lorentz reciprocity, mutual-sign checks, skin-effect rise) and an
+independent reference solver on controlled cases before any device claim is
+made. The evaluation kit, RFIC passives on the IHP SG13G2 stack and RF PCB
+examples solved on both conductor paths with calibrated ports, with their
+Touchstones, run logs and a generated report, is available for download.
 
 ## Built for sweeps
 
-Zero-external-dependency pure Rust with a Python API: lightweight, installs in
-seconds, built for massive cloud parameter sweeps. Solver controls are
-first-class API (tolerances, warm-started sweeps, feed de-embedding), so
-embedding needs no environment variables. Broadband S-parameters of an SG13G2
-spiral come out of a ROM sweep in about 5 seconds within roughly 600 MB,
-validated on the real IHP SG13G2 stack.
+Pure Rust with a Python API: lightweight, installs in seconds, built for large
+parameter sweeps. Solver controls are first-class API, so embedding needs no
+environment variables. A sweep either solves every requested frequency or
+adapts: a few exact solves and a rational model through them, the next solve
+placed where the model is least certain by a leave-one-out estimate, passivity
+checked at every requested frequency. Over 1 to 40 GHz that takes 10 to 17
+solves for inductors, transformers, capacitors and lines at 1e-3 on S, and the
+model gives S anywhere in the band.
 
 ## History
 
