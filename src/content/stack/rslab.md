@@ -12,30 +12,38 @@ cta1: [ View on GitHub -> ]|https://github.com/milanofthe/rslab
 RSLAB is a sparse direct solver for real and complex matrices in pure Rust
 with no BLAS, LAPACK, or MKL dependency. It is generic over the scalar type,
 f64, f32 and their complex counterparts, and carries three factorization
-paths matched to their operator classes: symmetric LDLT with Bunch-Kaufman
-pivoting, threshold-pivoted unsymmetric LU, and a KLU path for circuit-shaped
+paths matched to their operator classes: supernodal LDLT with Bunch-Kaufman
+pivoting for symmetric and complex-symmetric systems, supernodal LU with
+threshold pivoting for unsymmetric ones, and a KLU path for circuit-shaped
 matrices.
 
 ## Built for solver-in-the-loop
 
-![vs faer and MKL PARDISO|right|46x14|contain](/images/rslab-h2h-ldlt.png)
+![vs MKL PARDISO|right|46x14|contain](/images/rslab-pardiso.png)
 
 The design target is a solver that sits inside an engine rather than behind a
-job submission. The numeric factor is bit-identical across thread counts. Peak
-memory and runtime are predicted exactly from the symbolic structure before
-any numeric work, which is what makes a sweep schedulable: how many solves fit
-on a cloud machine, which instance size to rent for them, and whether a given
-system fits at all, are all answerable before anything is started rather than
-after a run dies. Fixed-pattern sequences (frequency sweeps, Newton steps)
-refactor numeric-only on frozen pivots, and solve_transpose reuses the same
-factors for adjoint and sensitivity solves. Mixed-precision solves factor in
-single precision, refine against the double-precision original, and return a
-backward-error certificate. Where a matrix is outside the target class, RSLAB
-declines rather than returning a degraded solution.
+job submission. The factor is bit-identical for every thread count. The
+analysis depends on the pattern only, so a frequency sweep or a Newton loop
+analyzes once and from then on only factors: in place, into the buffers of
+the previous factor, and without allocating per solve. solve_transpose reuses
+the same factors for adjoint and sensitivity solves.
 
-Configuration is a deterministic heuristic: adaptive ordering, an exact
-nested-dissection bakeoff on large systems, and a worker count from a
-one-time cached hardware calibration. The solvers never measure implicitly.
+Before any numeric work, a memory plan predicts the heap a factorization
+needs: what the analysis and the factor will hold, the peak while factoring,
+and the work vectors of a solve. That is what makes a sweep schedulable: how
+many factorizations fit side by side on a cloud machine, which instance size
+to rent for them, and whether a given system fits at all, are answered before
+anything is started rather than after a run dies.
+
+Every factor is also a preconditioner for the built-in Krylov solvers (GMRES,
+block GMRES, COCG, COCR). With static pivoting the factorization never fails,
+a drop tolerance trades fill for iterations, and a single-precision factor
+preconditions the double-precision iteration at half the factor memory.
+
+Configuration is deterministic: the orderings (AMD, AMF, RCM, parallel nested
+dissection) are raced on the exact fill of each candidate, the worker count
+is predicted from the analysis, and every tuning constant is a setting with
+the tuned value as its default.
 
 ## The circuit path
 
@@ -45,27 +53,27 @@ treats every one of those solves as a new problem. The KLU path instead
 splits the matrix into its block triangular form once, orders and factors the
 blocks separately, and from then on refactors numerically on the frozen
 pattern and pivots. Structural singularity falls out of the block analysis
-before any numeric work happens.
-
-On MNA-shaped matrices that is 2 to 19x faster to factor with 1.7 to 5.7x
-less fill than the general path, widening with size, and a 20-point sweep
-runs 6 to 19x faster end to end. The same factors also solve the transposed
+before any numeric work happens. The same factors also solve the transposed
 system, which is what the adjoint sensitivity solves in
 [SANE](/stack/sane/) need.
 
 ## Benchmarks
 
-![A-priori memory estimate|left|46x14|contain](/images/rslab-memory-estimate.png)
+![Memory plan against the measurement|left|46x14|contain](/images/rslab-memory-plan.png)
 
-All cross-solver figures come from one benchmark engine over a
-complete-distribution corpus: structured-grid generators (curl-curl Maxwell,
-shifted Helmholtz, Stokes/KKT, convection-diffusion, BEM/MoM kernels) plus
-the complex SuiteSparse matrices, measured in a single run. Geomean over 63
-sizes per path: 6.7x faster factor than faer on the symmetric class, 2.7x on
-the unsymmetric class, within 5.1-5.6x of MKL PARDISO. On the circuit class
-the KLU path factors 5-12x faster than the general LU, and same-pattern
-sweeps run 10-40x faster end to end. Accuracy: 24 of 31 complex SuiteSparse
-matrices below 1e-8 relative residual, matching PARDISO and ahead of faer.
+The reference is MKL PARDISO, on 15 systems exported from
+[RapidFEM](/stack/rapidfem/), [RapidMoM](/stack/rapidmom/) and
+[SANE](/stack/sane/) plus 13 SuiteSparse circuit matrices, 12 threads each.
+PARDISO runs its defaults, per system the faster of its classic and two-level
+factorization. Analysis, factorization and solve together take 0.74 of
+PARDISO's wall time on the MoM systems, 1.05 on FEM, 1.06 on the power grids
+and 1.12 on the circuits (geomean per class). The solve alone takes 0.30 to
+0.43 of PARDISO's time in every class.
+
+Against the heap measured with a counting allocator, the planned peak is
+within 15 percent on 25 of the 28 systems. The planned factor storage is
+within 6 percent on all but one circuit, where the threshold pivoting of KLU
+adds fill beyond the prediction.
 
 ## History
 
@@ -77,14 +85,14 @@ scalar type, without which it is of no use to electromagnetics at all.
 After that, development followed the matrices it had to solve. FEM
 and MoM systems came first, for [RapidFEM](/stack/rapidfem/) and
 [RapidMoM](/stack/rapidmom/); circuit matrices came later, with
-[SANE](/stack/sane/), and brought the KLU path with them. The a-priori
-estimators have the same origin: the sweeps these solvers run are cloud work,
-and packing and scheduling cloud work means knowing the peak memory of a
-factorization before paying for the machine that would run it. The symbolic
-analysis already holds everything needed to answer that.
+[SANE](/stack/sane/), and brought the KLU path with them. The memory plan has
+the same origin: the sweeps these solvers run are cloud work, and packing and
+scheduling cloud work means knowing the peak memory of a factorization before
+paying for the machine that would run it. The symbolic analysis already holds
+everything needed to answer that.
 
 Along the way I built an MLP cost-model auto-tuner for picking solver
 configurations and then took it out of the default path: the deterministic
-heuristic is simpler, reproducible, and holds up. The repository ships a technical
-report that derives the algorithms and carries the full evaluation; every
-benchmark reruns with one command.
+heuristic is simpler, reproducible, and holds up. Version 1.0 came out in
+September 2026, as a git dependency for Rust and on PyPI, and the PARDISO
+comparison reruns from the repository with two commands.
