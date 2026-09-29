@@ -150,7 +150,7 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 	rslab: {
 		type: 'embedded', lines: [], frameColor: 'rslab',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
-		tiles: [{ id: 'rslab-h2h', label: 'vs faer & PARDISO' }, { id: 'rslab-memory', label: 'Memory Estimate' }]
+		tiles: [{ id: 'rslab-pardiso', label: 'vs MKL PARDISO' }, { id: 'rslab-memory', label: 'Memory Plan' }]
 	},
 	rsdag: {
 		// Shares the rslab brand color.

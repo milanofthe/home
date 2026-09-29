@@ -90,7 +90,7 @@
 		},
 		{
 			"name": "RSLAB",
-			"desc": "Sparse direct solver in pure Rust (LDLT, LU, KLU paths); benchmarked against MKL PARDISO and faer, bit-identical across thread counts."
+			"desc": "Sparse direct solver in pure Rust (LDLT, LU, KLU paths); 0.74 to 1.12x the wall time of MKL PARDISO on FEM, MoM and circuit systems, bit-identical across thread counts."
 		},
 		{
 			"name": "RapidFEM / RapidMoM / RapidMesh / RapidPassives",
