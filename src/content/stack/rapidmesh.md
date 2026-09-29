@@ -35,22 +35,6 @@ nested shells, each its own region. Every interface is one face of the
 B-rep, meshed once and shared by the regions on both sides, so the solver
 never sees a crack that is not in the geometry.
 
-## Scale
-
-![Four passive layouts in one dielectric, cutaway|left|46x14](/images/rapidmesh-chip.png)
-
-A chip is thousands of conductors in one dielectric, and a region is the unit
-the stages parallelize over. Large models are therefore cut into blocks by
-planes through the gaps between structures. The cuts go into the exact
-arrangement, their faces are meshed like any other, and every block is
-meshed in parallel; afterwards the cuts disappear.
-
-Nine tiles of passive layouts (2.75 million tets) take 8 s on eight threads
-at 334 bytes per tet. gmsh needs 25 s and 1.6 GB for half as many tets, or
-20 s and 1.1 GB with its parallel HXT mesher. On the 23 comparison
-geometries RapidMesh takes under half of gmsh's time and has the better
-smallest dihedral angle on 22.
-
 ## The 2D path
 
 ![Symmetric transformer, MoM surface mesh|right|40x12](/images/rapidmesh-transformer.png)
@@ -73,6 +57,8 @@ layers = rm.mesh_layers(groups, sizing, target_count=20_000)
 
 A corpus of 196 geometries is meshed on every change and compared with a
 stored baseline for watertightness, slivers and fidelity to the input.
+Against gmsh on 23 of them, RapidMesh takes under half the time and has the
+better smallest dihedral angle on 22.
 Solvers use RapidMesh in-process: one call returns the mesh with the
 topology, signs and named sets they need, and a new budget is one more call.
 
