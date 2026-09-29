@@ -70,10 +70,10 @@ PARDISO's wall time on the MoM systems, 1.05 on FEM, 1.06 on the power grids
 and 1.12 on the circuits (geomean per class). The solve alone takes 0.30 to
 0.43 of PARDISO's time in every class.
 
-Against the heap measured with a counting allocator, the planned peak is
-within 15 percent on 25 of the 28 systems. The planned factor storage is
-within 6 percent on all but one circuit, where the threshold pivoting of KLU
-adds fill beyond the prediction.
+Against the heap measured with a counting allocator, the planned peak lies
+above the measured one on 27 of the 28 systems, by 12 percent in the median.
+The exception is one circuit, where the threshold pivoting of KLU adds fill
+beyond the prediction.
 
 ## History
 
