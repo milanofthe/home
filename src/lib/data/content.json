@@ -90,7 +90,7 @@
 				"project": "sane",
 				"body": [
 					{
-						"text": "The full roundtrip back through circuits and fields, built as one stack rather than six tools: RapidFEM and RapidMoM for electromagnetic fields, RapidMesh generating what RapidMoM solves on, RSLAB underneath as the sparse direct solver, SANE for symbolic and numeric circuit analysis, FastSim compiling system models to native code.",
+						"text": "The full roundtrip back through circuits and fields, built as one stack rather than six tools: RapidFEM and RapidMoM for electromagnetic fields, RapidMesh generating the meshes RapidFEM solves on, RSLAB underneath as the sparse direct solver, SANE for symbolic and numeric circuit analysis, FastSim compiling system models to native code.",
 						"links": [
 							{
 								"phrase": "RapidFEM",
