@@ -78,5 +78,4 @@ versions refined one restricted Delaunay triangulation of the whole model
 and recovered the boundary afterwards; conformity stayed approximate. The
 bottom-up mesher replaced it at the end of September 2026, and with it the
 3D path went from behind gmsh to ahead of it. In October 2026 RapidMesh
-widened from electromagnetics to FEM and FVM in general, and its planar path
-moves into RapidMoM.
+widened from electromagnetics to FEM and FVM in general.
