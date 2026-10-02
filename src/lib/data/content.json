@@ -128,8 +128,8 @@
 						"project": "sane"
 					},
 					{
-						"src": "/images/rapidmesh-transformer.png",
-						"label": "rapidmesh, planar",
+						"src": "/images/rapidmesh-step-part.png",
+						"label": "rapidmesh, STEP part",
 						"project": "rapidmesh",
 						"fit": "contain",
 						"background": "#131316"
@@ -953,9 +953,9 @@
 						"heading": "RapidMesh",
 						"headingType": "rapidpassives",
 						"paragraphs": [
-							"A 2D and 3D mesh generator for electromagnetic FEM and MoM in pure Rust. Exact CSG on a B-rep with true surfaces, meshed bottom-up (edges, faces, then each region by its constrained Delaunay tetrahedralization), so material interfaces conform by construction. Large models are cut into blocks meshed in parallel. Two to three times faster than gmsh at less than half its memory per element, with the better worst element on most models; the 2D path meshes for RapidMoM."
+							"A tetrahedral and surface mesh generator for FEM and FVM in pure Rust. Exact CSG on a B-rep with true surfaces, built from primitives or read from STEP, meshed bottom-up (edges, faces, then each region by its constrained Delaunay tetrahedralization), so material interfaces conform by construction. Large models are cut into blocks meshed in parallel. Second-order elements on the true geometry, polyhedral cells for finite volumes, OpenFOAM, CalculiX and gmsh output. Twice as fast as gmsh, with the better worst element on every model compared."
 						],
-						"metrics": "bottom-up, conforming by construction / 2x to 3x faster than gmsh / 334 bytes per tet / 196-geometry corpus",
+						"metrics": "bottom-up, conforming by construction / 2x faster than gmsh / FEM + FVM output / 223-geometry corpus",
 						"statsText": "mesh.rapidpassives.org / github.com/milanofthe/rapidmesh"
 					}
 				]
