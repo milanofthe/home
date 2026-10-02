@@ -1,7 +1,7 @@
 ---
 title: RapidMesh
 accent: rapidpassives
-tagline: 2D and 3D mesh generation for electromagnetic FEM and MoM in pure Rust.
+tagline: Tetrahedral and surface meshes for FEM and FVM in pure Rust.
 group: foundations
 order: 10
 site: mesh.rapidpassives.org|https://mesh.rapidpassives.org
@@ -12,10 +12,10 @@ cta1: [ Open RapidMesh -> ]|https://mesh.rapidpassives.org
 
 ![Box minus two spheres|right|40x12](/images/rapidmesh-box-2spheres.png)
 
-RapidMesh is a tetrahedral mesh generator for 3D electromagnetic FEM with a
-first-class 2D path for 2.5D MoM solvers, in pure Rust. Primitives, booleans,
-fillets and imported meshes assemble into one model through an exact
-arrangement, with no float snapping. The resulting B-rep carries the true
+RapidMesh is a tetrahedral and surface mesh generator for finite element and
+finite volume solvers, in pure Rust. Primitives, booleans, fillets, STEP files
+and imported meshes assemble into one model through an exact arrangement, with
+no float snapping. The resulting B-rep carries the true
 surfaces (quadrics, tori, extrusions, revolutions, NURBS), and the mesh is
 measured against those, not against their facets.
 
@@ -35,30 +35,35 @@ nested shells, each its own region. Every interface is one face of the
 B-rep, meshed once and shared by the regions on both sides, so the solver
 never sees a crack that is not in the geometry.
 
-## The 2D path
+## What a solver gets
 
-![Symmetric transformer, MoM surface mesh|right|40x12](/images/rapidmesh-transformer.png)
+![NIST test part FTC-10, read from STEP|right|40x12](/images/rapidmesh-step-part.png)
 
-The planar mesher serves MoM: graded, sliver-free constrained Delaunay
-triangulation of tagged polygons with holes, with the RWG edge topology in
-the same bundle. A target_count budget sets the size so the mesh lands near
-the requested triangle count across all metal layers:
+The mesh comes with what a solver otherwise rebuilds: edge and face topology
+with orientation signs, the B-rep entity every node, edge and face lies on,
+and named sets for materials, ports and boundary conditions. For finite
+elements it comes in second order too, every mid-edge node on the true surface
+or curve; on a unit ball that takes the volume error from 2.9 % to 0.01 %. For
+finite volumes the tets, or the polyhedral cells of their median dual at a
+third to a quarter of the count, go out as an OpenFOAM polyMesh, with the
+non-orthogonality and skewness checkMesh would report:
 
 ```python
-import rapidmesh as rm
-
-layers = rm.mesh_layers(groups, sizing, target_count=20_000)
-# points, tris, tags, RWG edges and boundary topology per layer
+mesh = g.mesh()
+mesh.write_foam("case", polyhedral=True)  # OpenFOAM, polyhedral cells
+mesh.write_inp("part.inp", order=2)       # CalculiX / Abaqus, tet10
+mesh.write_msh("part.msh", order=2)       # gmsh, second order
 ```
 
 ## The corpus
 
 ![mesh.rapidpassives.org|left|46x14](/screenshots/rapidmesh-site.png)
 
-A corpus of 196 geometries is meshed on every change and compared with a
-stored baseline for watertightness, slivers and fidelity to the input.
-Against gmsh on 23 of them, RapidMesh takes under half the time and has the
-better smallest dihedral angle on 22.
+A corpus of 223 geometries, CAD parts from STEP files among them, is meshed
+on every change, compared with a stored baseline for watertightness, slivers
+and fidelity to the input, and rendered. Against gmsh on 27 of them,
+RapidMesh takes half the time and has the better smallest dihedral angle on
+all 27.
 Solvers use RapidMesh in-process: one call returns the mesh with the
 topology, signs and named sets they need, and a new budget is one more call.
 
@@ -72,4 +77,6 @@ RapidMesh started in June 2026 to replace gmsh inside the stack. The first
 versions refined one restricted Delaunay triangulation of the whole model
 and recovered the boundary afterwards; conformity stayed approximate. The
 bottom-up mesher replaced it at the end of September 2026, and with it the
-3D path went from behind gmsh to ahead of it.
+3D path went from behind gmsh to ahead of it. In October 2026 RapidMesh
+widened from electromagnetics to FEM and FVM in general, and its planar path
+moves into RapidMoM.
