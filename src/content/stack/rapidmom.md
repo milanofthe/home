@@ -69,6 +69,10 @@ conductor interior entering through the slab internal-impedance two-port.
 Output is standard Touchstone (S, Y, Z) plus the device metrics
 engineers design against: L, Q, coupling.
 
+![Inductors of the evaluation kit, IHP SG13G2, boxed model solid, sheet model dashed|center|114x30|contain](/images/rapidmom-inductors.png)
+
+![Transformers of the evaluation kit, IHP SG13G2, boxed model solid, sheet model dashed|center|114x20|contain](/images/rapidmom-transformers.png)
+
 Validation runs against closed-form analytics, physical invariants (Lorentz
 reciprocity, mutual-sign checks, skin-effect rise), and an independent
 reference solver on controlled cases before any device claim is made. The
