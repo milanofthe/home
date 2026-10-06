@@ -96,12 +96,20 @@
 		760
 	],
 	"/images/rapidmom-current.png": [
-		1100,
-		850
+		887,
+		509
+	],
+	"/images/rapidmom-inductors.png": [
+		1720,
+		680
 	],
 	"/images/rapidmom-mesh.png": [
-		1100,
-		850
+		750,
+		511
+	],
+	"/images/rapidmom-transformers.png": [
+		2579,
+		680
 	],
 	"/images/rapidpassives-kai-harris-cpu-render.png": [
 		3105,
