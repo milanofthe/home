@@ -62,7 +62,7 @@
 		'rslab-pardiso': { name: 'vs MKL PARDISO', url: 'https://github.com/milanofthe/rslab', screenshot: '/images/rslab-pardiso.png', color: 'rslab', themeParam: false, fit: 'contain', background: '#08080c' },
 		'rslab-memory': { name: 'Memory plan', url: 'https://github.com/milanofthe/rslab', screenshot: '/images/rslab-memory-plan.png', color: 'rslab', themeParam: false, fit: 'contain', background: '#08080c' },
 		'rsdag-tape': { name: 'A diode as a tape', url: 'https://github.com/milanofthe/rsdag', screenshot: '/images/rsdag-tape.png', color: 'rslab', themeParam: false, fit: 'contain', background: '#08080c' },
-		'rsdag-solve': { name: 'Sparse LU as a program vs KLU', url: 'https://github.com/milanofthe/rsdag', screenshot: '/images/rsdag-solve.png', color: 'rslab', themeParam: false, fit: 'contain', background: '#08080c' },
+		'rsdag-bodies': { name: 'Model bodies as a tape', url: 'https://github.com/milanofthe/rsdag', screenshot: '/images/rsdag-bodies.png', color: 'rslab', themeParam: false, fit: 'contain', background: '#08080c' },
 		'thesisos-landing': { name: 'Landing', url: 'https://thesisos.io', screenshot: '/screenshots/thesisos-landing.png', color: 'thesisos', themeParam: false },
 		'thesisos-graph': { name: 'Citation Graph', url: 'https://thesisos.io/graph?root=cb35ff8e-d0f5-437c-9528-89307638622a', screenshot: '/screenshots/thesisos-graph.png', color: 'thesisos', themeParam: false },
 		'whatsmytraffic-landing': { name: 'WhatsMyTraffic', url: 'https://whatsmytraffic.com', screenshot: '/screenshots/whatsmytraffic-landing.png', color: 'whatsmytraffic', themeParam: false },

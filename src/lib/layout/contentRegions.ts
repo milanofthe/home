@@ -156,7 +156,7 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		// Shares the rslab brand color.
 		type: 'embedded', lines: [], frameColor: 'rslab',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
-		tiles: [{ id: 'rsdag-tape', label: 'Prolog and main' }, { id: 'rsdag-solve', label: 'vs KLU' }]
+		tiles: [{ id: 'rsdag-tape', label: 'Prolog and main' }, { id: 'rsdag-bodies', label: 'Model bodies' }]
 	},
 	thesisos: {
 		type: 'embedded', lines: [], frameColor: 'thesisos',
