@@ -58,20 +58,18 @@ extraction on the same mesh, without the full-wave solve.
 
 ## Currents and radiation
 
-![Geometry and mesh of a 2x2 patch array|left|46x14|contain](/images/rapidmom-viewer-mesh.png)
+![Geometry and mesh of a 2x2 patch array|57x17|contain](/images/rapidmom-viewer-mesh.png)
+![Current density with port P1 driven|57x17|contain](/images/rapidmom-viewer-currents.png)
 
-The interactive viewer shows the layout as it is solved: metals, nets,
-ports and the mesh, with the stack beside it. It runs in a native window, in
-the browser or inside a Jupyter cell, next to the code that set up the
+The interactive viewer shows the layout as it is solved: metals, nets, ports
+and the mesh, with the stack beside it. The current density is shown per
+frequency, port and phase, as magnitude or as the time-harmonic current, on a
+linear or logarithmic scale; driving one patch of the array shows how much
+current it couples into its neighbours. The viewer runs in a native window,
+in the browser or inside a Jupyter cell, next to the code that set up the
 problem.
 
-![Current density with port P1 driven|right|46x14|contain](/images/rapidmom-viewer-currents.png)
-
-The current density is shown per frequency, port and phase, as magnitude or
-as the time-harmonic current, on a linear or logarithmic scale. Driving one
-patch of the array shows how much current it couples into its neighbours.
-
-![Realized gain of the 2x2 array, the beam steered by the port phases|center|114x34|contain](/images/rapidmom-viewer-farfield.png)
+![Realized gain, the beam steered by the port phases|left|46x14|contain](/images/rapidmom-viewer-farfield.png)
 
 The far field of any excitation comes from the layered Green's function, so
 substrate, ground and stack shape the pattern. Out of it come the pattern and
@@ -82,14 +80,16 @@ layout.
 
 ## Against measurement
 
-![IHP SG13G2 inductors L2n0 and L6n2 against the on-wafer measurement, thick model solid, thin model dashed|center|114x30|contain](/images/rapidmom-sg13g2.png)
+![SG13G2 inductance vs measurement|57x23|contain](/images/rapidmom-sg13g2-l.png)
+![SG13G2 quality factor vs measurement|57x23|contain](/images/rapidmom-sg13g2-q.png)
 
 The reference is the IHP SG13G2 test structures of the
 [em-reference-suite](https://github.com/milanofthe/em-reference-suite),
 measured on wafer and de-embedded by IHP. The inductors L2n0 and L6n2 are
 solved with an adaptive sweep on both conductor models, with TopMetal1 and
-TopMetal2 as thick conductors in the thick runs. The plot shows inductance and
-quality factor of the winding against the measurement.
+TopMetal2 as thick conductors in the thick runs. The plots show inductance and
+quality factor of the winding against the measurement, the inductance up to
+just below the self-resonance.
 
 ## Evaluation kit
 
@@ -106,15 +106,16 @@ Python API, so the results can be reproduced in another EM tool and compared.
 
 ## Under the hood
 
-![Transformer mesh|right|46x14](/images/rapidmom-mesh.png)
+![Transformer mesh|52x17|contain](/images/rapidmom-mesh.png)
+![Transformer current density|62x17|contain](/images/rapidmom-current.png)
 
 The solver discretizes a mixed-potential surface integral equation in A-EFIE
 form, which avoids the low-frequency breakdown, on Green's functions of the
 stack tabulated once per stack and band. The metal is meshed quad-dominant,
 and the system is solved by GMRES on an H-matrix compressed with ACA,
-preconditioned by a sparse LU of the near field from [RSLAB](/stack/rslab/). The port network is read through a
-residual-corrected functional and refined until the S-parameters stop
-moving.
+preconditioned by a sparse LU of the near field from [RSLAB](/stack/rslab/).
+The port network is read through a residual-corrected functional and refined
+until the S-parameters stop moving.
 
 Pure Rust with no BLAS or LAPACK, and a Python API packaged as a
 pip-installable wheel. The rapidmom binary runs a job without Python, for
