@@ -635,8 +635,10 @@ export class ArticleGrid {
 	// widths divide the measure, so two pictures of different proportions can be
 	// given matching heights by writing the wider one wider.
 	imageRow(images: { src: string; label: string; w: number; h: number; fit?: 'contain' }[]) {
-		if (images.length === 1) {
-			this.image(images[0].src, images[0].label, images[0].w, images[0].h, images[0].fit ? { fit: images[0].fit } : undefined);
+		// A single figure, or a grid too narrow for two columns (a phone): one per
+		// band, each at the full measure, rather than side by side at half of it.
+		if (images.length === 1 || !this.twoCol) {
+			for (const im of images) this.image(im.src, im.label, im.w, im.h, im.fit ? { fit: im.fit } : undefined);
 			return;
 		}
 		const gaps = TILE_GAP * (images.length - 1);

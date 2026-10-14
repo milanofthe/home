@@ -11,7 +11,8 @@
 //   ![label|right|46x18](src)  floated image; the following paragraph wraps
 //                              beside it (left|right|center, WxH in cells)
 //   two image lines in a row  one band side by side; the declared widths
-//                              divide the measure between them
+//                              divide the measure between them; on a grid
+//                              too narrow for two columns they stack
 //   ``` fenced code ```        framed code block (optional language as label)
 //   - item                     list items
 

@@ -107,9 +107,29 @@
 		750,
 		511
 	],
+	"/images/rapidmom-sg13g2-l.png": [
+		960,
+		780
+	],
+	"/images/rapidmom-sg13g2-q.png": [
+		960,
+		780
+	],
 	"/images/rapidmom-transformers.png": [
 		2579,
 		680
+	],
+	"/images/rapidmom-viewer-currents.png": [
+		1600,
+		950
+	],
+	"/images/rapidmom-viewer-farfield.png": [
+		1600,
+		950
+	],
+	"/images/rapidmom-viewer-mesh.png": [
+		1600,
+		950
 	],
 	"/images/rapidpassives-kai-harris-cpu-render.png": [
 		3105,

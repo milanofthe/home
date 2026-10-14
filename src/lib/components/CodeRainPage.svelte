@@ -49,7 +49,7 @@
 		'pysimhub-pathsim': { name: 'Project Page', url: 'https://pysimhub.io/projects/pathsim/', screenshot: '/screenshots/pysimhub-pathsim.png', color: 'pysimhub' },
 		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
 		'rapidmom-mesh': { name: 'Transformer Mesh', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-mesh.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
-		'rapidmom-current': { name: 'Current Density', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-current.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
+		'rapidmom-farfield': { name: 'Far Field', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-viewer-farfield.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
 		'rapidfem-editor': { name: 'Iris Filter', url: 'https://fem.rapidpassives.org/notebook?example=fd_iris_filter', screenshot: '/screenshots/rapidfem-editor.png', color: 'rapidpassives', themeParam: false },
 		'rapidmesh-site': { name: 'RapidMesh', url: 'https://mesh.rapidpassives.org', screenshot: '/screenshots/rapidmesh-site.png', color: 'rapidpassives', themeParam: false },
 		'rapidmesh-resonator': { name: 'Dielectric Resonator', url: 'https://mesh.rapidpassives.org', screenshot: '/images/rapidmesh-resonator.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
@@ -383,7 +383,7 @@
 		<h3>Circuits</h3>
 		<p><a href="/stack/sane/">SANE</a>: Symbolic Analog Network Engine. Symbolic and numeric circuit analysis: DC, transient, AC, poles/zeros, noise, harmonic balance, exact sensitivities. SPICE and Verilog-A frontends. Validated against ngspice and Xyce.</p>
 		<h3>Fields</h3>
-		<p><a href="/stack/rapidmom/">RapidMoM</a>: 2.5D Method-of-Moments solver for planar RF passives on layered substrates. <a href="/stack/rapidfem/">RapidFEM</a>: Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="/stack/rapidpassives/">RapidPassives</a>: browser-based RFIC passive layout generation.</p>
+		<p><a href="/stack/rapidmom/">RapidMoM</a>: full-wave Method-of-Moments solver for planar layouts in layered media, RF ICs and PCBs. <a href="/stack/rapidfem/">RapidFEM</a>: Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="/stack/rapidpassives/">RapidPassives</a>: browser-based RFIC passive layout generation.</p>
 		<h3>Foundations</h3>
 		<p><a href="/stack/rslab/">RSLAB</a>: sparse direct solver in pure Rust. <a href="/stack/rapidmesh/">RapidMesh</a>: mesh generator for electromagnetic FEM and MoM.</p>
 	</section>
