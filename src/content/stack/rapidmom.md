@@ -1,92 +1,147 @@
 ---
 title: RapidMoM
 accent: rapidpassives
-tagline: 2.5D Method-of-Moments for planar RF passives on layered substrates.
+tagline: Full-wave Method of Moments for planar layouts in layered media.
 group: fields
 order: 5
 license: early access / free for academia / commercial licenses
 cta1: [ Request evaluation -> ]|mailto:rapidmom@milanrother.com?subject=RapidMoM%20evaluation
 ---
 
-RapidMoM is a 2.5D Method-of-Moments solver for planar RF passives on layered
-substrates: PCB and RFIC, from single inductors and transformers to full
-metal layouts on a real process stack. The formulation is a mixed-potential surface
-integral equation with an RWG basis, an A-EFIE saddle-point system against the
-low-frequency breakdown (stable down to DC), layered-media Green's functions
-in the Michalski-Mosig formulation, and a kernel-independent ACA / H-matrix
-fast solver with block-GMRES in O(N log N).
+RapidMoM is a full-wave Method-of-Moments solver for planar layouts in
+layered media, on RF ICs and PCBs: inductors, transformers, capacitors, lines,
+filters and printed antennas on a real process stack. The formulation is a
+mixed-potential surface integral equation, set up as an A-EFIE saddle-point
+system against the low-frequency breakdown. The Green's functions of the
+stack are tabulated from their spectral form once per stack and band. The
+metal is meshed quad-dominant, with rooftops on the rectangles and RWG
+functions on the triangles, and the system is solved by GMRES on an H-matrix
+compressed with ACA, preconditioned by a sparse LU of the near field from
+[RSLAB](/stack/rslab/).
+
+```python
+import numpy as np
+import rapidmom as rm
+
+prob = rm.from_fem_json("spiral.json", cell=5e-6)    # layout, stack and ports
+rm.gfcache.setup(prob, "cache", **rm.gfcache.RFIC)   # Green's function tables, cached
+
+res = prob.sweep_adaptive(np.linspace(0.1e9, 50e9, 201), tol=1e-3)
+res.to_touchstone("spiral.s2p")
+s = res.model(12.3e9)                                # S anywhere in the band
+prob.show(res.exact)                                 # geometry, mesh, currents
+```
 
 ## Converging the network
 
 ![Transformer mesh|right|46x14](/images/rapidmom-mesh.png)
 
 A GMRES residual bounds the algebraic error, but a port observable can be a
-small difference of large quantities (a quality factor, for instance) or live
-in a different block of the saddle system entirely. RapidMoM
-therefore continues the solve down a tolerance ladder, warm-started, until the
-port-space network itself stops moving, including a dedicated criterion for
-the real part. Every port configuration lands on the dense-operator answer
-instead of drifting with the iterative tolerance.
+small difference of large quantities, a quality factor for instance. The port
+network is therefore read through a residual-corrected Galerkin functional:
+its error is quadratic in the solver error, and the network is reciprocal by
+construction. On top of that the solve continues down a tolerance ladder,
+warm-started, until the S-parameters stop moving, which takes one or two
+rungs.
 
-## One port primitive
+## Ports
 
-Ports are one primitive: a current driven between two contacts, each an
-oriented segment on a metal layer, free in position, length and orientation.
-The excitation is a voltage source across the gap, never an imposed current
-profile, so the current distribution over the cross-section, edge singularity
-and skin crowding included, comes out of the solve. A label point resolves at
-build time to the conductor's terminal edge run; on an outline that runs along
-a trace rather than ending at one, that resolution is ambiguous and the
-preflight rejects it instead of guessing.
+A port is a voltage source across a gap between two contacts, each an
+oriented segment on a metal layer. The current distribution over the
+cross-section, edge singularity and skin crowding included, comes out of the
+solve. Cuts across a line, differential gaps, vertical probes against the
+ground and ports between two conductors all come from this one primitive, and
+all of them are ideal: a zero-length source at the metal, nothing to
+de-embed.
 
-Two contact kinds and the ground plane give the usual port types out of that
-one primitive: in-plane cuts, differential gaps whose loop closes locally,
-vertical probes against the reference, and ports between two conductors on the
-same or on different layers. All of them are ideal in the same sense, a
-zero-length lumped source at the contact plane with no feed geometry and no
-series impedance. The reference plane sits at the metal, so there is nothing
-to de-embed and the networks compare directly against the port conventions of
-commercial planar solvers.
+Calibrated ports remove what an ideal source at an abrupt line end still
+sees, the end fringing and the field it launches. Each terminal is extended
+by a line of its own cross-section, driven by a gap at the far end with an
+absorber behind it, and the extension is de-embedded with a line standard
+solved by the same solver. Terminals running side by side form one coupled
+group. The reference plane is the drawn terminal.
 
-## Capacitance without the full-wave solve
-
-The A-EFIE saddle carries both potentials: the vector potential in the
-edge-current block, the scalar potential in the patch-charge block. A
-capacitance is a statement about the scalar potential alone, so dropping the
-magnetic half leaves a system in the charges and node potentials that yields
-the Maxwell C and G matrices over the design's galvanic nets directly, without
-solving the full-wave problem at all.
-
-## Conductor models and outputs
+## Two conductor models
 
 ![Current density|left|46x14](/images/rapidmom-current.png)
 
-Two production conductor models are available per layer. The sheet model is
-the classical 2.5D treatment: one RWG current sheet per metal with the
-two-sided skin-effect surface impedance, the right default for thin metals.
-The boxed model treats each conductor as a closed thick box with the
-conductor interior entering through the slab internal-impedance two-port.
-Output is standard Touchstone (S, Y, Z) plus the device metrics
-engineers design against: L, Q, coupling.
+Every metal layer solves through one of two models on the same kernel,
+H-matrix and ports. The thin model is one current sheet per metal with the
+skin-effect surface impedance of the slab, the right choice wherever the
+thickness is small against the lateral features. The thick model carries the
+top and bottom faces of a conductor, coupled through the metal by the exact
+slab impedance, and its side walls; faces and walls share one surface
+admittance operator of the rectangular cross-section. Skin and proximity
+effect across the thickness and the current crowding into the corners come
+out of the solve.
 
-![Inductors of the evaluation kit, IHP SG13G2, boxed model solid, sheet model dashed|center|114x30|contain](/images/rapidmom-inductors.png)
+## Capacitance without the full-wave solve
 
-![Transformers of the evaluation kit, IHP SG13G2, boxed model solid, sheet model dashed|center|114x20|contain](/images/rapidmom-transformers.png)
+The A-EFIE saddle carries both potentials, the vector potential in the edge
+currents and the scalar potential in the patch charges. A capacitance
+depends on the scalar potential alone, so dropping the magnetic half leaves a
+system in the charges that gives the Maxwell C and G matrices over the
+galvanic nets of a design directly, on the same mesh, Green's function and
+preconditioner, with the charges as the only unknowns. The result reports its
+own electrical size and the frequency up to which the quasi-static answer
+holds.
 
-Validation runs against closed-form analytics, physical invariants (Lorentz
-reciprocity, mutual-sign checks, skin-effect rise), and an independent
-reference solver on controlled cases before any device claim is made. The
-evaluation report is auto-generated from the same pipeline and available on
-request.
+## Sweeps and far field
+
+An adaptive sweep solves a few frequencies exactly and fits a set-valued AAA
+rational model through them. The next solve goes where a leave-one-out
+estimate says the model is least certain, and passivity is checked at every
+requested frequency. From 1 to 40 GHz that takes 10 to 17 solves at 1e-3 on S
+for inductors, transformers, capacitors and lines, and the model gives S
+anywhere in the band.
+
+The far field of any excitation comes from every current of the solution
+through the layered Green's function at the far-field wavenumber, so
+substrate, ground and stack shape the pattern. Out of it come the pattern and
+its cuts, directivity, gain and realized gain, radiated and surface-wave
+power, and the radiation efficiency.
+
+## Against measurement
+
+![IHP SG13G2 inductors L2n0 and L6n2 against the on-wafer measurement, thick model solid, thin model dashed|center|114x30|contain](/images/rapidmom-sg13g2.png)
+
+The reference is the IHP SG13G2 test structures of the
+[em-reference-suite](https://github.com/milanofthe/em-reference-suite),
+measured on wafer and de-embedded by IHP: the inductors L2n0 (2 turns) and
+L6n2 (4 turns) from 0.1 to 50 GHz and an 880 um line to 110 GHz, each solved
+with an adaptive sweep at 1e-3 on S. With TopMetal1 and TopMetal2 as thick conductors the
+inductance at 1 GHz lies 0.1 percent (L2n0) and 0.8 percent (L6n2) above the
+measurement, the peak Q 12 and 3 percent below it, the self-resonance 7 and 8
+percent below it. The thin model reads both inductances 6 percent high. The
+thick runs take 6 and 14 exact solves on 4,385 and 8,274 unknowns, 33 s and
+126 s at 1.7 and 3.3 GB peak on 8 threads, with the Green's function tables
+built beforehand.
+
+## Evaluation kit
+
+![Inductors of the evaluation kit, IHP SG13G2, thick model solid, thin sheet model dashed|center|114x30|contain](/images/rapidmom-inductors.png)
+
+![Transformers of the evaluation kit, IHP SG13G2, thick model solid, thin sheet model dashed|center|114x20|contain](/images/rapidmom-transformers.png)
+
+The evaluation kit covers 28 devices, each solved on both conductor models:
+inductors, transformers, MIM and MOM capacitors, lines and a rat-race coupler
+on IHP SG13G2 and SkyWater SKY130, and a stripline lowpass, a coupled-line
+bandpass and a via transition on PCB. Each comes with its layout GDS, the
+stack, the Touchstone files, the solver logs and a script that rebuilds it
+with the Python API, so every result can be reproduced in another EM tool and
+compared. Behind it sit
+closed-form physics checks, exact invariants (Lorentz reciprocity, mutual
+signs, the skin-effect rise) and 2D referees for the conductor models.
 
 ## Built for sweeps
 
-Zero-external-dependency pure Rust with a Python API: lightweight, installs in
-seconds, built for massive cloud parameter sweeps. Solver controls are
-first-class API (tolerances, warm-started sweeps, feed de-embedding), so
-embedding needs no environment variables. Broadband S-parameters of an SG13G2
-spiral come out of a ROM sweep in about 5 seconds within roughly 600 MB,
-validated on the real IHP SG13G2 stack.
+Pure Rust with no BLAS or LAPACK, and a Python API packaged as a
+pip-installable wheel. The rapidmom binary runs a job without Python, a
+FEM-JSON layout in and Touchstone out, for containers and cloud dispatch, and
+predicts the peak memory of a solve before it starts. Layouts come in as GDS
+or FEM-JSON, results go out as Touchstone. The interactive viewer shows the
+geometry, the mesh, the currents per frequency, port and phase, and the 3D
+far-field pattern, in a native window, the browser or a Jupyter cell.
 
 ## History
 
