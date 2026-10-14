@@ -383,7 +383,7 @@
 		<h3>Circuits</h3>
 		<p><a href="/stack/sane/">SANE</a>: Symbolic Analog Network Engine. Symbolic and numeric circuit analysis: DC, transient, AC, poles/zeros, noise, harmonic balance, exact sensitivities. SPICE and Verilog-A frontends. Validated against ngspice and Xyce.</p>
 		<h3>Fields</h3>
-		<p><a href="/stack/rapidmom/">RapidMoM</a>: 2.5D Method-of-Moments solver for planar RF passives on layered substrates. <a href="/stack/rapidfem/">RapidFEM</a>: Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="/stack/rapidpassives/">RapidPassives</a>: browser-based RFIC passive layout generation.</p>
+		<p><a href="/stack/rapidmom/">RapidMoM</a>: full-wave Method-of-Moments solver for planar layouts in layered media, RF ICs and PCBs. <a href="/stack/rapidfem/">RapidFEM</a>: Maxwell FEM solver in Rust with frequency-domain and time-domain backends. <a href="/stack/rapidpassives/">RapidPassives</a>: browser-based RFIC passive layout generation.</p>
 		<h3>Foundations</h3>
 		<p><a href="/stack/rslab/">RSLAB</a>: sparse direct solver in pure Rust. <a href="/stack/rapidmesh/">RapidMesh</a>: mesh generator for electromagnetic FEM and MoM.</p>
 	</section>

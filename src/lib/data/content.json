@@ -896,10 +896,10 @@
 						"heading": "RapidMoM",
 						"headingType": "rapidmom",
 						"paragraphs": [
-							"A 2.5D Method-of-Moments solver for planar RF passives on layered substrates (PCB, RFIC). Mixed-potential formulation, stable down to DC, layered-media Green's functions, and a fast ACA solver in O(N log N).",
-							"Zero-external-dependency pure Rust with a Python API: lightweight, installs in seconds, built for massive cloud parameter sweeps."
+							"A full-wave Method-of-Moments solver for planar layouts in layered media (RFIC, PCB). Tabulated layered-media Green's functions, thin and thick conductor models, quad-dominant meshing, and an H-matrix solver with ACA and a near-field preconditioned GMRES.",
+							"Calibrated ports, adaptive frequency sweeps, far field and radiation efficiency, GDS in and Touchstone out. Pure Rust with a Python API and an interactive viewer for geometry, mesh, currents and the 3D pattern, also inside Jupyter."
 						],
-						"metrics": "broadband S-parameters of an SG13G2 spiral via ROM sweep in ~5 s / ~600 MB / validated on the real IHP SG13G2 stack",
+						"metrics": "IHP SG13G2 inductors vs on-wafer measurement: L within 1% at 1 GHz / 6 to 14 exact solves per sweep to 50 GHz",
 						"statsText": "early access / licensing: rapidmom@milanrother.com"
 					},
 					{
