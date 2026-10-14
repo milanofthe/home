@@ -88,8 +88,8 @@ The reference is the IHP SG13G2 test structures of the
 measured on wafer and de-embedded by IHP. The inductors L2n0 and L6n2 are
 solved with an adaptive sweep on both conductor models, with TopMetal1 and
 TopMetal2 as thick conductors in the thick runs. The plots show inductance and
-quality factor of the winding against the measurement, the inductance up to
-just below the self-resonance.
+quality factor of the winding against the measurement, over the band and past
+the self-resonance.
 
 ## Evaluation kit
 
