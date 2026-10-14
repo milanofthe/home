@@ -23,14 +23,26 @@ compressed with ACA, preconditioned by a sparse LU of the near field from
 import numpy as np
 import rapidmom as rm
 
-prob = rm.from_fem_json("spiral.json", cell=5e-6)    # layout, stack and ports
-rm.gfcache.setup(prob, "cache", **rm.gfcache.RFIC)   # Green's function tables, cached
+rm.set_length_unit("um")
+stack = rm.Stack(
+    dielectrics=[rm.Dielectric(10.0, rm.Material.dielectric(4.1))],
+    metals=[rm.MetalLayer(8.0, 3.0, rm.Conductivity.COPPER, conductor_model="thick")],
+    cover_bot=rm.Cover.pec(), cover_top=rm.Cover.open(),
+)
+prob = rm.Problem(stack, cell=5)
+line = [[0, 0], [400, 0], [400, 10], [0, 10]]
+prob.add_metal(rm.Metal("M1", 8.0, [{"polygon": line}], thickness=3.0, conductor_model="thick"))
+prob.add_port(rm.Port("P1", 0, (0, 5), grounded=True))
+prob.add_port(rm.Port("P2", 0, (400, 5), grounded=True))
 
-res = prob.sweep_adaptive(np.linspace(0.1e9, 50e9, 201), tol=1e-3)
-res.to_touchstone("spiral.s2p")
-s = res.model(12.3e9)                                # S anywhere in the band
-prob.show(res.exact)                                 # geometry, mesh, currents
+rm.gfcache.setup(prob, "cache", **rm.gfcache.RFIC)    # Green's function store
+res = prob.sweep_adaptive(np.linspace(1e9, 40e9, 157), tol=1e-3)
+res.to_touchstone("line.s2p")
+prob.show(res)                                        # geometry, mesh, currents
 ```
+
+Layouts also come from GDS through rapidmom.gds.read_gds with a layer map,
+or from polygons through the problem builder of the Rust API.
 
 ## Converging the network
 
@@ -41,8 +53,7 @@ small difference of large quantities, a quality factor for instance. The port
 network is therefore read through a residual-corrected Galerkin functional:
 its error is quadratic in the solver error, and the network is reciprocal by
 construction. On top of that the solve continues down a tolerance ladder,
-warm-started, until the S-parameters stop moving, which takes one or two
-rungs.
+warm-started, until the S-parameters stop moving.
 
 ## Ports
 
@@ -91,9 +102,8 @@ holds.
 An adaptive sweep solves a few frequencies exactly and fits a set-valued AAA
 rational model through them. The next solve goes where a leave-one-out
 estimate says the model is least certain, and passivity is checked at every
-requested frequency. From 1 to 40 GHz that takes 10 to 17 solves at 1e-3 on S
-for inductors, transformers, capacitors and lines, and the model gives S
-anywhere in the band.
+requested frequency. The number of solves follows the response rather than
+the frequency grid, and the model gives S anywhere in the band.
 
 The far field of any excitation comes from every current of the solution
 through the layered Green's function at the far-field wavenumber, so
@@ -107,15 +117,10 @@ power, and the radiation efficiency.
 
 The reference is the IHP SG13G2 test structures of the
 [em-reference-suite](https://github.com/milanofthe/em-reference-suite),
-measured on wafer and de-embedded by IHP: the inductors L2n0 (2 turns) and
-L6n2 (4 turns) from 0.1 to 50 GHz and an 880 um line to 110 GHz, each solved
-with an adaptive sweep at 1e-3 on S. With TopMetal1 and TopMetal2 as thick conductors the
-inductance at 1 GHz lies 0.1 percent (L2n0) and 0.8 percent (L6n2) above the
-measurement, the peak Q 12 and 3 percent below it, the self-resonance 7 and 8
-percent below it. The thin model reads both inductances 6 percent high. The
-thick runs take 6 and 14 exact solves on 4,385 and 8,274 unknowns, 33 s and
-126 s at 1.7 and 3.3 GB peak on 8 threads, with the Green's function tables
-built beforehand.
+measured on wafer and de-embedded by IHP. The inductors L2n0 and L6n2 are
+solved with an adaptive sweep on both conductor models, with TopMetal1 and
+TopMetal2 as thick conductors in the thick runs. The plot shows inductance and
+quality factor of the winding against the measurement.
 
 ## Evaluation kit
 
@@ -123,7 +128,7 @@ built beforehand.
 
 ![Transformers of the evaluation kit, IHP SG13G2, thick model solid, thin sheet model dashed|center|114x20|contain](/images/rapidmom-transformers.png)
 
-The evaluation kit covers 28 devices, each solved on both conductor models:
+The evaluation kit solves each of its devices on both conductor models:
 inductors, transformers, MIM and MOM capacitors, lines and a rat-race coupler
 on IHP SG13G2 and SkyWater SKY130, and a stripline lowpass, a coupled-line
 bandpass and a via transition on PCB. Each comes with its layout GDS, the
@@ -136,10 +141,9 @@ signs, the skin-effect rise) and 2D referees for the conductor models.
 ## Built for sweeps
 
 Pure Rust with no BLAS or LAPACK, and a Python API packaged as a
-pip-installable wheel. The rapidmom binary runs a job without Python, a
-FEM-JSON layout in and Touchstone out, for containers and cloud dispatch, and
-predicts the peak memory of a solve before it starts. Layouts come in as GDS
-or FEM-JSON, results go out as Touchstone. The interactive viewer shows the
+pip-installable wheel. The rapidmom binary runs a job without Python, for
+containers and cloud dispatch, and predicts the peak memory of a solve before
+it starts. Results go out as Touchstone. The interactive viewer shows the
 geometry, the mesh, the currents per frequency, port and phase, and the 3D
 far-field pattern, in a native window, the browser or a Jupyter cell.
 
