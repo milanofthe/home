@@ -896,10 +896,10 @@
 						"heading": "RapidMoM",
 						"headingType": "rapidmom",
 						"paragraphs": [
-							"A full-wave Method-of-Moments solver for planar layouts in layered media (RFIC, PCB). Tabulated layered-media Green's functions, thin and thick conductor models, quad-dominant meshing, and an H-matrix solver with ACA and a near-field preconditioned GMRES.",
-							"Calibrated ports, adaptive frequency sweeps, far field and radiation efficiency, GDS in and Touchstone out. Pure Rust with a Python API and an interactive viewer for geometry, mesh, currents and the 3D pattern, also inside Jupyter."
+							"A full-wave Method-of-Moments solver for planar layouts in layered media (RFIC, PCB). Inductors, transformers, lines, filters and antennas from GDS or Python, up to the full multi-port passive network of a power amplifier: S-parameters over the band from a handful of exact solves, Touchstone out.",
+							"An interactive viewer for geometry, mesh, currents and the 3D radiation pattern, in a window, the browser or a Jupyter cell. Pure Rust core with a Python API."
 						],
-						"metrics": "IHP SG13G2 inductors against on-wafer measurement / evaluation kit on SG13G2, SKY130 and PCB / Rust core, Python API",
+						"metrics": "IHP SG13G2 inductors against on-wafer measurement / evaluation kit on SG13G2, SKY130 and PCB / antenna far field and array steering",
 						"statsText": "early access / licensing: rapidmom@milanrother.com"
 					},
 					{
