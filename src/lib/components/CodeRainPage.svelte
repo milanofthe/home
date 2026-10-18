@@ -49,7 +49,7 @@
 		'pysimhub-pathsim': { name: 'Project Page', url: 'https://pysimhub.io/projects/pathsim/', screenshot: '/screenshots/pysimhub-pathsim.png', color: 'pysimhub' },
 		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
 		'rapidmom-mesh': { name: 'LNA Mesh', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-lna-mesh.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
-		'rapidmom-farfield': { name: 'Far Field', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-viewer-farfield.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
+		'rapidmom-current': { name: 'LNA Current Density', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-lna-current.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
 		'rapidfem-editor': { name: 'Iris Filter', url: 'https://fem.rapidpassives.org/notebook?example=fd_iris_filter', screenshot: '/screenshots/rapidfem-editor.png', color: 'rapidpassives', themeParam: false },
 		'rapidmesh-site': { name: 'RapidMesh', url: 'https://mesh.rapidpassives.org', screenshot: '/screenshots/rapidmesh-site.png', color: 'rapidpassives', themeParam: false },
 		'rapidmesh-resonator': { name: 'Dielectric Resonator', url: 'https://mesh.rapidpassives.org', screenshot: '/images/rapidmesh-resonator.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
