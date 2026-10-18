@@ -48,7 +48,7 @@
 		'pysimhub-io': { name: 'PySimHub', url: 'https://pysimhub.io', screenshot: '/screenshots/pysimhub-io.png', color: 'pysimhub' },
 		'pysimhub-pathsim': { name: 'Project Page', url: 'https://pysimhub.io/projects/pathsim/', screenshot: '/screenshots/pysimhub-pathsim.png', color: 'pysimhub' },
 		'rapidpassives-org': { name: 'RapidPassives', url: 'https://rapidpassives.org', screenshot: '/screenshots/rapidpassives-org.png', color: 'rapidpassives', themeParam: false },
-		'rapidmom-mesh': { name: 'Transformer Mesh', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-mesh.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
+		'rapidmom-mesh': { name: 'LNA Mesh', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-lna-mesh.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
 		'rapidmom-farfield': { name: 'Far Field', url: 'mailto:rapidmom@milanrother.com', screenshot: '/images/rapidmom-viewer-farfield.png', color: 'rapidpassives', themeParam: false, fit: 'contain' },
 		'rapidfem-editor': { name: 'Iris Filter', url: 'https://fem.rapidpassives.org/notebook?example=fd_iris_filter', screenshot: '/screenshots/rapidfem-editor.png', color: 'rapidpassives', themeParam: false },
 		'rapidmesh-site': { name: 'RapidMesh', url: 'https://mesh.rapidpassives.org', screenshot: '/screenshots/rapidmesh-site.png', color: 'rapidpassives', themeParam: false },
@@ -366,7 +366,7 @@
 	<section id="paths">
 		<h2>What I do</h2>
 		<p><a href="/consulting/">Consulting</a>: custom solvers and engineering tools, built and integrated end to end. Scoped into weekly sprints and multi-week projects.</p>
-		<p><a href="/#projects">Products &amp; licensing</a>: FastSim, SANE, and RapidMoM are source-available, free for academia, and commercially licensed with support and integration.</p>
+		<p><a href="/#projects">Products &amp; licensing</a>: FastSim and SANE are source-available and free for academia, RapidMoM is proprietary; all three are commercially licensed with support and integration.</p>
 		<p><a href="/about/">About</a>: simulation engineer, open-source author of PathSim.</p>
 	</section>
 	<section id="about">

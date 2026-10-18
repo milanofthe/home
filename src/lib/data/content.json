@@ -14,7 +14,7 @@
 			},
 			{
 				"heading": "// products & licensing",
-				"text": "FastSim, SANE, and RapidMoM are source-available, free for academia, and commercially licensed with support and integration. Evaluation licenses on request.",
+				"text": "FastSim and SANE are source-available and free for academia, RapidMoM is proprietary; all three are commercially licensed with support and integration. Evaluation licenses on request.",
 				"link": "[ explore the stack -> ]"
 			},
 			{
@@ -152,7 +152,7 @@
 						"project": "rapidfem"
 					},
 					{
-						"src": "/images/rapidmom-current.png",
+						"src": "/images/rapidmom-lna-current.png",
 						"label": "rapidmom",
 						"project": "rapidmom",
 						"fit": "contain",
@@ -896,11 +896,11 @@
 						"heading": "RapidMoM",
 						"headingType": "rapidmom",
 						"paragraphs": [
-							"A full-wave Method-of-Moments solver for planar layouts in layered media (RFIC, PCB). Inductors, transformers, lines, filters and antennas from GDS or Python, up to the full multi-port passive network of a power amplifier: S-parameters over the band from a handful of exact solves, Touchstone out.",
-							"An interactive viewer for geometry, mesh, currents and the 3D radiation pattern, in a window, the browser or a Jupyter cell. Pure Rust core with a Python API."
+							"A full-wave Method-of-Moments solver for planar layouts in layered media (RFIC, PCB). Inductors, transformers, lines, filters and antennas from GDS or Python, up to whole blocks: a synthetic 23-port LNA on IHP SG13G2, 63,624 unknowns, DC to 40 GHz in 19 exact solves. Conductor model per metal, calibrated ports, Touchstone out.",
+							"Adaptive sweep with a resonance finder, far field and power budget, an interactive viewer for mesh, currents and the 3D pattern. Pure Rust core with a Python API, a command line and project files."
 						],
-						"metrics": "IHP SG13G2 inductors against on-wafer measurement / evaluation kit on SG13G2, SKY130 and PCB / antenna far field and array steering",
-						"statsText": "early access / licensing: rapidmom@milanrother.com"
+						"metrics": "IHP SG13G2 inductors against on-wafer measurement / evaluation kit on SG13G2, SKY130 and PCB / N log N up to 100k unknowns",
+						"statsText": "proprietary / commercial and source licenses: rapidmom@milanrother.com"
 					},
 					{
 						"id": "rapidfem",
