@@ -1,7 +1,7 @@
 {
 	"current": {
 		"pathsim": {
-			"stars": 503,
+			"stars": 505,
 			"forks": 53,
 			"watchers": 10,
 			"openIssues": 15
@@ -15,7 +15,7 @@
 		"pysimhub": {
 			"projects": 33,
 			"members": 3,
-			"cumulativeStars": 16664
+			"cumulativeStars": 16709
 		}
 	},
 	"history": [
@@ -5071,7 +5071,7 @@
 		{
 			"date": "2026-10-14",
 			"pathsim": {
-				"stars": 503,
+				"stars": 504,
 				"forks": 53,
 				"watchers": 10,
 				"openIssues": 15
@@ -5085,11 +5085,91 @@
 			"pysimhub": {
 				"projects": 33,
 				"members": 3,
-				"cumulativeStars": 16664
+				"cumulativeStars": 16679
+			}
+		},
+		{
+			"date": "2026-10-15",
+			"pathsim": {
+				"stars": 505,
+				"forks": 53,
+				"watchers": 10,
+				"openIssues": 15
+			},
+			"pathview": {
+				"stars": 95,
+				"forks": 14,
+				"watchers": 4,
+				"openIssues": 9
+			},
+			"pysimhub": {
+				"projects": 33,
+				"members": 3,
+				"cumulativeStars": 16690
+			}
+		},
+		{
+			"date": "2026-10-16",
+			"pathsim": {
+				"stars": 505,
+				"forks": 53,
+				"watchers": 10,
+				"openIssues": 15
+			},
+			"pathview": {
+				"stars": 95,
+				"forks": 14,
+				"watchers": 4,
+				"openIssues": 9
+			},
+			"pysimhub": {
+				"projects": 33,
+				"members": 3,
+				"cumulativeStars": 16705
+			}
+		},
+		{
+			"date": "2026-10-17",
+			"pathsim": {
+				"stars": 505,
+				"forks": 53,
+				"watchers": 10,
+				"openIssues": 15
+			},
+			"pathview": {
+				"stars": 95,
+				"forks": 14,
+				"watchers": 4,
+				"openIssues": 9
+			},
+			"pysimhub": {
+				"projects": 33,
+				"members": 3,
+				"cumulativeStars": 16709
+			}
+		},
+		{
+			"date": "2026-10-18",
+			"pathsim": {
+				"stars": 505,
+				"forks": 53,
+				"watchers": 10,
+				"openIssues": 15
+			},
+			"pathview": {
+				"stars": 95,
+				"forks": 14,
+				"watchers": 4,
+				"openIssues": 9
+			},
+			"pysimhub": {
+				"projects": 33,
+				"members": 3,
+				"cumulativeStars": 16709
 			}
 		}
 	],
-	"fetchedAt": "2026-10-14T04:19:17.208Z",
+	"fetchedAt": "2026-10-18T08:18:31.765Z",
 	"starHistory": {
 		"pathsim": [
 			{
