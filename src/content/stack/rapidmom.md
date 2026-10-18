@@ -110,7 +110,8 @@ files.
 
 ## History
 
-RapidMoM development started in June 2026, in the same push that produced
+The first prototypes of a 2D Method of Moments date from March 2026; development
+proper started in June 2026, in the same push that produced
 [RapidMesh](/stack/rapidmesh/) and [RSLAB](/stack/rslab/): the planar solver,
 its mesher and its linear algebra grew together as one vertically integrated
 unit.
