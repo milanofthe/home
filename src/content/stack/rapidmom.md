@@ -99,8 +99,9 @@ rebuild script, for comparison with another EM tool.
 The reference is the IHP SG13G2 test structures of the
 [em-reference-suite](https://github.com/milanofthe/em-reference-suite),
 measured on wafer and de-embedded by IHP. The inductors L2n0 and L6n2 are
-solved with an adaptive sweep on both conductor models, with TopMetal1 and
-TopMetal2 as thick conductors in the thick runs. The plots show inductance and
+solved with an adaptive sweep with TopMetal1 and TopMetal2 on two conductor
+models: as thick conductors with faces and walls (solid) and as a thin sheet
+(dashed). The plots show inductance and
 quality factor of the winding against the measurement, over the band and past
 the self-resonance.
 
@@ -111,7 +112,7 @@ Green's functions tabulated once per stack and band. Block GMRES on an
 H-matrix compressed with ACA, preconditioned by a sparse LU of the near field
 from [RSLAB](/stack/rslab/); N log N, measured up to 100 k unknowns. An exact
 solve of a 4x4 patch array with 81,779 unknowns takes 130 s on 16 threads of
-an AMD EPYC 9B14, 11.3 GB peak. The peak memory of a solve is known before it starts.
+an AMD EPYC 9B14, 11.3 GB peak.
 Pure Rust, with a Python API, a command line and TOML project files.
 
 ## History
