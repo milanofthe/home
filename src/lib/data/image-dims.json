@@ -95,17 +95,29 @@
 		1021,
 		760
 	],
-	"/images/rapidmom-current.png": [
-		887,
-		509
-	],
-	"/images/rapidmom-inductors.png": [
+	"/images/rapidmom-adaptive-sweep.png": [
 		1720,
-		680
+		880
 	],
-	"/images/rapidmom-mesh.png": [
-		750,
-		511
+	"/images/rapidmom-lna-current.png": [
+		1600,
+		1181
+	],
+	"/images/rapidmom-lna-mesh.png": [
+		1600,
+		1181
+	],
+	"/images/rapidmom-mimcap.png": [
+		1200,
+		843
+	],
+	"/images/rapidmom-patch-current.png": [
+		1200,
+		826
+	],
+	"/images/rapidmom-patch-farfield.png": [
+		1440,
+		792
 	],
 	"/images/rapidmom-sg13g2-l.png": [
 		960,
@@ -115,19 +127,11 @@
 		960,
 		780
 	],
-	"/images/rapidmom-transformers.png": [
-		2579,
-		680
-	],
-	"/images/rapidmom-viewer-currents.png": [
-		1600,
-		950
+	"/images/rapidmom-spiral.png": [
+		1200,
+		987
 	],
 	"/images/rapidmom-viewer-farfield.png": [
-		1600,
-		950
-	],
-	"/images/rapidmom-viewer-mesh.png": [
 		1600,
 		950
 	],
