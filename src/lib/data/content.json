@@ -896,7 +896,7 @@
 						"heading": "RapidMoM",
 						"headingType": "rapidmom",
 						"paragraphs": [
-							"A full-wave Method-of-Moments solver for planar layouts in layered media (RFIC, PCB). Inductors, transformers, lines, filters and antennas from GDS or Python, up to whole blocks: a synthetic 23-port LNA on IHP SG13G2, 63,624 unknowns, DC to 40 GHz in 19 exact solves. Conductor model per metal, calibrated ports, Touchstone out.",
+							"A full-wave Method-of-Moments solver for planar layouts in layered media (RFIC, PCB). Inductors, transformers, lines, filters and antennas from GDS or Python, up to whole blocks: a synthetic 23-port LNA on IHP SG13G2, 79,078 unknowns, DC to 40 GHz in 68 exact solves. Conductor model per metal, calibrated ports, Touchstone out.",
 							"Adaptive sweep with a resonance finder, far field and power budget, an interactive viewer for mesh, currents and the 3D pattern. Pure Rust core with a Python API, a command line and project files."
 						],
 						"metrics": "IHP SG13G2 inductors against on-wafer measurement / evaluation kit on SG13G2, SKY130 and PCB / N log N, measured to 81,779 unknowns",

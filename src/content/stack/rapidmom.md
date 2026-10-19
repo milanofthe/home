@@ -39,14 +39,14 @@ prob.show(res)                                               # mesh and currents
 ![LNA, current density at 28 GHz|57x22|contain](/images/rapidmom-lna-current.png)
 
 A synthetic two-stage cascode LNA with a transformer balun at 28 GHz on IHP
-SG13G2, 799 x 532 um on all seven metal levels: pads, spirals, capacitor
+SG13G2, 749 x 413 um on all seven metal levels: pads, spirals, capacitor
 stacks, bias and supply lines and a ground grid. Transistors, current mirrors
 and resistors are ports, 23 in all. TopMetal1 and TopMetal2 run as
 faces+walls/faces+walls, Metal5 as shared/faces and Metal1 to Metal4 as
-mid/mid, 63,624 unknowns. The adaptive sweep from DC to 40 GHz over 161
-frequencies took 19 exact solves and 28 min, 30.3 GB peak, on 8 threads of an
-AMD Ryzen 9 9900X. The current density is the exact solve at 28 GHz with the
-input and both stage outputs driven.
+mid/mid, 79,078 unknowns. The adaptive sweep from DC to 40 GHz over 161
+frequencies took 68 exact solves and 2 h 37 min, 36.4 GB peak, on 16 threads
+of an AMD Ryzen 9 9900X. The current density, on a log scale, is the exact
+solve at 28 GHz with the input and both stage outputs driven.
 
 ## Conductor model and adaptive sweep
 
