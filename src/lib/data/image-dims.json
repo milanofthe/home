@@ -95,45 +95,37 @@
 		1021,
 		760
 	],
-	"/images/rapidmom-lna-current.png": [
+	"/images/rapidmom-block-current.png": [
 		1600,
-		940
+		1110
 	],
-	"/images/rapidmom-lna-mesh.png": [
+	"/images/rapidmom-block-mesh.png": [
 		1600,
-		940
+		1110
 	],
-	"/images/rapidmom-mimcap.png": [
-		1365,
-		1020
+	"/images/rapidmom-block.png": [
+		2000,
+		1623
 	],
-	"/images/rapidmom-patch-current.png": [
-		1365,
-		1020
+	"/images/rapidmom-momcap.png": [
+		1332,
+		1132
 	],
-	"/images/rapidmom-patch-farfield.png": [
-		1365,
-		1020
+	"/images/rapidmom-patch-array.png": [
+		817,
+		636
 	],
-	"/images/rapidmom-sg13g2-l.png": [
-		1365,
-		1020
-	],
-	"/images/rapidmom-sg13g2-q.png": [
-		1365,
-		1020
+	"/images/rapidmom-scaling.png": [
+		1258,
+		887
 	],
 	"/images/rapidmom-spiral.png": [
-		1365,
-		1020
+		1219,
+		837
 	],
-	"/images/rapidmom-sweep-band.png": [
-		1365,
-		1020
-	],
-	"/images/rapidmom-sweep-zoom.png": [
-		1365,
-		1020
+	"/images/rapidmom-transformer.png": [
+		1220,
+		842
 	],
 	"/images/rapidpassives-kai-harris-cpu-render.png": [
 		3105,

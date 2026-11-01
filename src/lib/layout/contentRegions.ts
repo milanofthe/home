@@ -118,7 +118,7 @@ const PROJECT_EMBEDS: Record<string, ContentRegion> = {
 		// Shares the rapidpassives brand color.
 		type: 'embedded', lines: [], frameColor: 'rapidpassives',
 		embeddedRows: 14, embeddedCols: 54, align: 'center',
-		tiles: [{ id: 'rapidmom-mesh', label: 'LNA Mesh' }, { id: 'rapidmom-current', label: 'Current Density' }]
+		tiles: [{ id: 'rapidmom-mesh', label: 'PA Mesh' }, { id: 'rapidmom-current', label: 'Current Density' }]
 	},
 	rapidfem: {
 		// Shares the rapidpassives brand color.
