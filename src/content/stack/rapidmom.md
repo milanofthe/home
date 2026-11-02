@@ -19,8 +19,8 @@ current and charge on every conductor that the network comes from.
 
 A 180 GHz four-way power amplifier from IHP's open SG13G2 tape-outs, taken as
 drawn. Every metal level is meshed and every transistor terminal and pad is a
-port: 104 ports, 229,928 unknowns. One frequency is one exact solve, 23
-minutes on 12 threads. Charge and current are that solve with the input
+port: 56 ports, 226,063 unknowns. One frequency is one exact solve, 27
+minutes on 16 threads. Charge and current are that solve with the input
 driven, on log scales: the signal path stands out of the ground.
 
 ## Devices
