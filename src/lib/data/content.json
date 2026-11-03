@@ -896,7 +896,7 @@
 						"heading": "RapidMoM",
 						"headingType": "rapidmom",
 						"paragraphs": [
-							"A full-wave solver for the passive structure of RF circuits: chip and board metal in its layered stack, read from GDS. The network at the ports, S, Y and Z from DC up, and the current and charge behind it, for single devices and for complete blocks: a 180 GHz power amplifier from IHP's open SG13G2 tape-outs, 56 ports and 226,063 unknowns, in one solve per frequency.",
+							"A full-wave solver for the passive structure of RF circuits: chip and board metal in its layered stack, read from GDS. The network at the ports, S, Y and Z from DC up, and the current and charge behind it, for single devices and for complete blocks: a 180 GHz power amplifier from IHP's open SG13G2 tape-outs, 56 ports and 230,945 unknowns, in one solve per frequency.",
 							"Conductor model per metal, far field from the layered Green's function, an interactive viewer. A Rust core with a Python API, a command line and project files."
 						],
 						"metrics": "IHP SG13G2 open tape-outs / evaluation kit on SG13G2, SKY130 and PCB / N log N, measured past 200,000 unknowns",
